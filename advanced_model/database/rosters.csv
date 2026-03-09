@@ -1,0 +1,527 @@
+Team,Player,Position
+Atlanta Hawks,Asa Newell,F
+Atlanta Hawks,Buddy Hield,G
+Atlanta Hawks,CJ McCollum,G
+Atlanta Hawks,Caleb Houstan,G
+Atlanta Hawks,Christian Koloko,C
+Atlanta Hawks,Corey Kispert,F
+Atlanta Hawks,Dyson Daniels,G
+Atlanta Hawks,Gabe Vincent,G
+Atlanta Hawks,Jalen Johnson,F
+Atlanta Hawks,Jock Landale,C
+Atlanta Hawks,Jonathan Kuminga,F
+Atlanta Hawks,Keaton Wallace,G
+Atlanta Hawks,Mouhamed Gueye,F
+Atlanta Hawks,Nickeil Alexander-Walker,G
+Atlanta Hawks,Onyeka Okongwu,F
+Atlanta Hawks,RayJ Dennis,G
+Atlanta Hawks,Zaccharie Risacher,F
+Boston Celtics,Amari Williams,F
+Boston Celtics,Baylor Scheierman,G
+Boston Celtics,Dalano Banton,F
+Boston Celtics,Derrick White,G
+Boston Celtics,Hugo Gonzalez,G
+Boston Celtics,Jaylen Brown,G
+Boston Celtics,Jayson Tatum,F
+Boston Celtics,John Tonje,F
+Boston Celtics,Jordan Walsh,G
+Boston Celtics,Luka Garza,C
+Boston Celtics,Max Shulga,G
+Boston Celtics,Neemias Queta,C
+Boston Celtics,Nikola Vucevic,C
+Boston Celtics,Payton Pritchard,G
+Boston Celtics,Ron Harper Jr.,G
+Boston Celtics,Sam Hauser,F
+Brooklyn Nets,Chaney Johnson,F
+Brooklyn Nets,Danny Wolf,F
+Brooklyn Nets,Day'Ron Sharpe,C
+Brooklyn Nets,Drake Powell,G
+Brooklyn Nets,E.J. Liddell,F
+Brooklyn Nets,Egor Demin,G
+Brooklyn Nets,Hunter Tyson,F
+Brooklyn Nets,Jalen Wilson,F
+Brooklyn Nets,Michael Porter Jr.,F
+Brooklyn Nets,Nic Claxton,C
+Brooklyn Nets,Noah Clowney,F
+Brooklyn Nets,Nolan Traore,G
+Brooklyn Nets,Ochai Agbaji,G
+Brooklyn Nets,Terance Mann,G
+Brooklyn Nets,Tyson Etienne,G
+Brooklyn Nets,Ziaire Williams,F
+Charlotte Hornets,Antonio Reeves,G
+Charlotte Hornets,Brandon Miller,F
+Charlotte Hornets,Coby White,G
+Charlotte Hornets,Grant Williams,F
+Charlotte Hornets,Josh Green,G
+Charlotte Hornets,Kon Knueppel,G
+Charlotte Hornets,LaMelo Ball,G
+Charlotte Hornets,Liam McNeeley,G
+Charlotte Hornets,Malaki Branham,G
+Charlotte Hornets,Miles Bridges,F
+Charlotte Hornets,Moussa Diabate,F
+Charlotte Hornets,PJ Hall,C
+Charlotte Hornets,Pat Connaughton,G
+Charlotte Hornets,Ryan Kalkbrenner,C
+Charlotte Hornets,Sion James,G
+Charlotte Hornets,Tidjane Salaun,F
+Charlotte Hornets,Tosan Evbuomwan,F
+Charlotte Hornets,Tre Mann,G
+Charlotte Hornets,Xavier Tillman,F
+Chicago Bulls,Anfernee Simons,G
+Chicago Bulls,Collin Sexton,G
+Chicago Bulls,Guerschon Yabusele,F
+Chicago Bulls,Isaac Okoro,F
+Chicago Bulls,Jaden Ivey,G
+Chicago Bulls,Jalen Smith,F
+Chicago Bulls,Josh Giddey,G
+Chicago Bulls,Lachlan Olbrich,C
+Chicago Bulls,Leonard Miller,F
+Chicago Bulls,Mac McClung,G
+Chicago Bulls,Matas Buzelis,F
+Chicago Bulls,Nick Richards,C
+Chicago Bulls,Noa Essengue,F
+Chicago Bulls,Patrick Williams,F
+Chicago Bulls,Rob Dillingham,G
+Chicago Bulls,Tre Jones,G
+Chicago Bulls,Yuki Kawamura,G
+Chicago Bulls,Zach Collins,F
+Cleveland Cavaliers,Craig Porter Jr.,G
+Cleveland Cavaliers,Darius Brown,G
+Cleveland Cavaliers,Dean Wade,F
+Cleveland Cavaliers,Dennis Schroder,G
+Cleveland Cavaliers,Donovan Mitchell,G
+Cleveland Cavaliers,Evan Mobley,C
+Cleveland Cavaliers,James Harden,G
+Cleveland Cavaliers,Jarrett Allen,C
+Cleveland Cavaliers,Jaylon Tyson,G
+Cleveland Cavaliers,Keon Ellis,G
+Cleveland Cavaliers,Larry Nance Jr.,F
+Cleveland Cavaliers,Max Strus,G
+Cleveland Cavaliers,Nae'Qwan Tomlin,F
+Cleveland Cavaliers,Riley Minix,F
+Cleveland Cavaliers,Sam Merrill,G
+Cleveland Cavaliers,Thomas Bryant,C
+Cleveland Cavaliers,Tristan Enaruna,F
+Cleveland Cavaliers,Tyrese Proctor,G
+Dallas Mavericks,AJ Johnson,G
+Dallas Mavericks,Brandon Williams,G
+Dallas Mavericks,Caleb Martin,F
+Dallas Mavericks,Cooper Flagg,F
+Dallas Mavericks,Daniel Gafford,F
+Dallas Mavericks,Dereck Lively II,C
+Dallas Mavericks,Dwight Powell,F
+Dallas Mavericks,Khris Middleton,F
+Dallas Mavericks,Klay Thompson,G
+Dallas Mavericks,Kyrie Irving,G
+Dallas Mavericks,Marvin Bagley III,F
+Dallas Mavericks,Max Christie,G
+Dallas Mavericks,Miles Kelly,G
+Dallas Mavericks,Moussa Cisse,C
+Dallas Mavericks,Naji Marshall,F
+Dallas Mavericks,P.J. Washington,F
+Dallas Mavericks,Ryan Nembhard,G
+Dallas Mavericks,Tyus Jones,G
+Denver Nuggets,Aaron Gordon,F
+Denver Nuggets,Bruce Brown,G
+Denver Nuggets,Cameron Johnson,F
+Denver Nuggets,Christian Braun,G
+Denver Nuggets,Curtis Jones,G
+Denver Nuggets,DaRon Holmes II,F
+Denver Nuggets,Jalen Pickett,G
+Denver Nuggets,Jamal Murray,G
+Denver Nuggets,Jonas Valanciunas,C
+Denver Nuggets,Julian Strawther,G
+Denver Nuggets,KJ Simpson,G
+Denver Nuggets,Nikola Jokic,C
+Denver Nuggets,Peyton Watson,G
+Denver Nuggets,Spencer Jones,F
+Denver Nuggets,Tamar Bates,G
+Denver Nuggets,Tim Hardaway Jr.,G
+Denver Nuggets,Zeke Nnaji,F
+Detroit Pistons,Ausar Thompson,G
+Detroit Pistons,Bobi Klintman,F
+Detroit Pistons,Cade Cunningham,G
+Detroit Pistons,Caris LeVert,G
+Detroit Pistons,Chaz Lanier,G
+Detroit Pistons,Daniss Jenkins,G
+Detroit Pistons,Duncan Robinson,F
+Detroit Pistons,Isaac Jones,C
+Detroit Pistons,Isaiah Stewart,F
+Detroit Pistons,Jalen Duren,C
+Detroit Pistons,Javonte Green,G
+Detroit Pistons,Kevin Huerter,G
+Detroit Pistons,Marcus Sasser,G
+Detroit Pistons,Paul Reed,F
+Detroit Pistons,Ronald Holland II,F
+Detroit Pistons,Tobias Harris,F
+Detroit Pistons,Tolu Smith,F
+Detroit Pistons,Wendell Moore Jr.,F
+Golden State Warriors,Al Horford,C
+Golden State Warriors,Brandin Podziemski,G
+Golden State Warriors,De'Anthony Melton,G
+Golden State Warriors,Draymond Green,F
+Golden State Warriors,Gary Payton II,G
+Golden State Warriors,Gui Santos,F
+Golden State Warriors,Jimmy Butler III,F
+Golden State Warriors,Kristaps Porzingis,C
+Golden State Warriors,L.J. Cryer,G
+Golden State Warriors,Malevy Leons,F
+Golden State Warriors,Moses Moody,G
+Golden State Warriors,Nate Williams,G
+Golden State Warriors,Pat Spencer,G
+Golden State Warriors,Quinten Post,C
+Golden State Warriors,Seth Curry,G
+Golden State Warriors,Stephen Curry,G
+Golden State Warriors,Will Richard,G
+Houston Rockets,Aaron Holiday,G
+Houston Rockets,Alperen Sengun,C
+Houston Rockets,Amen Thompson,G
+Houston Rockets,Clint Capela,C
+Houston Rockets,Dorian Finney-Smith,F
+Houston Rockets,Fred VanVleet,G
+Houston Rockets,Isaiah Crawford,F
+Houston Rockets,JD Davison,G
+Houston Rockets,Jabari Smith Jr.,F
+Houston Rockets,Jae'Sean Tate,F
+Houston Rockets,Jeff Green,F
+Houston Rockets,Josh Okogie,G
+Houston Rockets,Kevin Durant,F
+Houston Rockets,Reed Sheppard,G
+Houston Rockets,Steven Adams,C
+Houston Rockets,Tari Eason,F
+Houston Rockets,Tristen Newton,G
+Indiana Pacers,Aaron Nesmith,G
+Indiana Pacers,Andrew Nembhard,G
+Indiana Pacers,Ben Sheppard,G
+Indiana Pacers,Ethan Thompson,G
+Indiana Pacers,Ivica Zubac,C
+Indiana Pacers,Jarace Walker,F
+Indiana Pacers,Jay Huff,C
+Indiana Pacers,Johnny Furphy,G
+Indiana Pacers,Kam Jones,G
+Indiana Pacers,Kobe Brown,G
+Indiana Pacers,Micah Potter,C
+Indiana Pacers,Obi Toppin,F
+Indiana Pacers,Pascal Siakam,F
+Indiana Pacers,Quenton Jackson,G
+Indiana Pacers,T.J. McConnell,G
+Indiana Pacers,Taelon Peter,G
+Indiana Pacers,Tyrese Haliburton,G
+LA Clippers,Bennedict Mathurin,G
+LA Clippers,Bogdan Bogdanovic,G
+LA Clippers,Bradley Beal,G
+LA Clippers,Brook Lopez,C
+LA Clippers,Cam Christie,G
+LA Clippers,Darius Garland,G
+LA Clippers,Derrick Jones Jr.,F
+LA Clippers,Isaiah Jackson,F
+LA Clippers,John Collins,F
+LA Clippers,Jordan Miller,G
+LA Clippers,Kawhi Leonard,F
+LA Clippers,Kobe Sanders,G
+LA Clippers,Kris Dunn,G
+LA Clippers,Nicolas Batum,F
+LA Clippers,Norchad Omier,F
+LA Clippers,TyTy Washington Jr.,G
+LA Clippers,Yanic Konan Niederhauser,C
+Los Angeles Lakers,Adou Thiero,F
+Los Angeles Lakers,Austin Reaves,G
+Los Angeles Lakers,Bronny James,G
+Los Angeles Lakers,Chris Manon,G
+Los Angeles Lakers,Dalton Knecht,F
+Los Angeles Lakers,Deandre Ayton,C
+Los Angeles Lakers,Drew Timme,F
+Los Angeles Lakers,Jake LaRavia,F
+Los Angeles Lakers,Jarred Vanderbilt,F
+Los Angeles Lakers,Jaxson Hayes,C
+Los Angeles Lakers,Kobe Bufkin,G
+Los Angeles Lakers,LeBron James,F
+Los Angeles Lakers,Luka Doncic,G
+Los Angeles Lakers,Luke Kennard,G
+Los Angeles Lakers,Marcus Smart,G
+Los Angeles Lakers,Maxi Kleber,F
+Los Angeles Lakers,Nick Smith Jr.,G
+Los Angeles Lakers,Rui Hachimura,F
+Memphis Grizzlies,Brandon Clarke,F
+Memphis Grizzlies,Cam Spencer,G
+Memphis Grizzlies,Cedric Coward,F
+Memphis Grizzlies,GG Jackson,F
+Memphis Grizzlies,Ja Morant,G
+Memphis Grizzlies,Jahmai Mashack,G
+Memphis Grizzlies,Javon Small,G
+Memphis Grizzlies,Jaylen Wells,F
+Memphis Grizzlies,Kentavious Caldwell-Pope,G
+Memphis Grizzlies,Kyle Anderson,F
+Memphis Grizzlies,Olivier-Maxence Prosper,F
+Memphis Grizzlies,Rayan Rupert,G
+Memphis Grizzlies,Santi Aldama,F
+Memphis Grizzlies,Scotty Pippen Jr.,G
+Memphis Grizzlies,Taylor Hendricks,F
+Memphis Grizzlies,Ty Jerome,G
+Memphis Grizzlies,Walter Clayton Jr.,G
+Memphis Grizzlies,Zach Edey,C
+Miami Heat,Andrew Wiggins,F
+Miami Heat,Bam Adebayo,C
+Miami Heat,Davion Mitchell,G
+Miami Heat,Dru Smith,G
+Miami Heat,Jahmir Young,G
+Miami Heat,Jaime Jaquez Jr.,F
+Miami Heat,Kasparas Jakucionis,G
+Miami Heat,Kel'el Ware,C
+Miami Heat,Keshad Johnson,F
+Miami Heat,Myron Gardner,F
+Miami Heat,Nikola Jovic,F
+Miami Heat,Norman Powell,G
+Miami Heat,Pelle Larsson,G
+Miami Heat,Simone Fontecchio,F
+Miami Heat,Terry Rozier,G
+Miami Heat,Trevor Keels,G
+Miami Heat,Tyler Herro,G
+Miami Heat,Vladislav Goldin,C
+Milwaukee Bucks,AJ Green,G
+Milwaukee Bucks,Alex Antetokounmpo,F
+Milwaukee Bucks,Andre Jackson Jr.,G
+Milwaukee Bucks,Bobby Portis,F
+Milwaukee Bucks,Cam Thomas,G
+Milwaukee Bucks,Gary Harris,G
+Milwaukee Bucks,Gary Trent Jr.,G
+Milwaukee Bucks,Giannis Antetokounmpo,F
+Milwaukee Bucks,Jericho Sims,C
+Milwaukee Bucks,Kevin Porter Jr.,G
+Milwaukee Bucks,Kyle Kuzma,F
+Milwaukee Bucks,Myles Turner,C
+Milwaukee Bucks,Ousmane Dieng,F
+Milwaukee Bucks,Pete Nance,F
+Milwaukee Bucks,Ryan Rollins,G
+Milwaukee Bucks,Taurean Prince,F
+Milwaukee Bucks,Thanasis Antetokounmpo,F
+Minnesota Timberwolves,Anthony Edwards,G
+Minnesota Timberwolves,Ayo Dosunmu,G
+Minnesota Timberwolves,Bones Hyland,G
+Minnesota Timberwolves,Donte DiVincenzo,G
+Minnesota Timberwolves,Enrique Freeman,F
+Minnesota Timberwolves,Jaden McDaniels,F
+Minnesota Timberwolves,Jaylen Clark,G
+Minnesota Timberwolves,Joan Beringer,F
+Minnesota Timberwolves,Joe Ingles,F
+Minnesota Timberwolves,Johnny Juzang,G
+Minnesota Timberwolves,Julian Phillips,F
+Minnesota Timberwolves,Julius Randle,F
+Minnesota Timberwolves,Naz Reid,C
+Minnesota Timberwolves,Rocco Zikarsky,C
+Minnesota Timberwolves,Rudy Gobert,C
+Minnesota Timberwolves,Terrence Shannon Jr.,G
+New Orleans Pelicans,Bryce McGowens,G
+New Orleans Pelicans,DeAndre Jordan,C
+New Orleans Pelicans,Dejounte Murray,G
+New Orleans Pelicans,Derik Queen,C
+New Orleans Pelicans,Herbert Jones,F
+New Orleans Pelicans,Hunter Dickinson,C
+New Orleans Pelicans,Jeremiah Fears,G
+New Orleans Pelicans,Jordan Hawkins,G
+New Orleans Pelicans,Jordan Poole,G
+New Orleans Pelicans,Karlo Matkovic,F
+New Orleans Pelicans,Kevon Looney,F
+New Orleans Pelicans,Micah Peavy,G
+New Orleans Pelicans,Saddiq Bey,G
+New Orleans Pelicans,Trey Alexander,G
+New Orleans Pelicans,Trey Murphy III,F
+New Orleans Pelicans,Yves Missi,C
+New Orleans Pelicans,Zion Williamson,F
+New York Knicks,Ariel Hukporti,C
+New York Knicks,Dillon Jones,F
+New York Knicks,Jalen Brunson,G
+New York Knicks,Jeremy Sochan,F
+New York Knicks,Jordan Clarkson,G
+New York Knicks,Jose Alvarado,G
+New York Knicks,Josh Hart,G
+New York Knicks,Karl-Anthony Towns,C
+New York Knicks,Kevin McCullar Jr.,G
+New York Knicks,Landry Shamet,G
+New York Knicks,Mikal Bridges,G
+New York Knicks,Miles McBride,G
+New York Knicks,Mitchell Robinson,C
+New York Knicks,Mohamed Diawara,F
+New York Knicks,OG Anunoby,F
+New York Knicks,Pacome Dadiet,F
+New York Knicks,Trey Jemison III,F
+New York Knicks,Tyler Kolek,G
+Oklahoma City Thunder,Aaron Wiggins,G
+Oklahoma City Thunder,Ajay Mitchell,G
+Oklahoma City Thunder,Alex Caruso,G
+Oklahoma City Thunder,Branden Carlson,C
+Oklahoma City Thunder,Brooks Barnhizer,F
+Oklahoma City Thunder,Buddy Boeheim,F
+Oklahoma City Thunder,Cason Wallace,G
+Oklahoma City Thunder,Chet Holmgren,C
+Oklahoma City Thunder,Isaiah Hartenstein,C
+Oklahoma City Thunder,Isaiah Joe,G
+Oklahoma City Thunder,Jalen Williams,G
+Oklahoma City Thunder,Jared McCain,G
+Oklahoma City Thunder,Jaylin Williams,F
+Oklahoma City Thunder,Kenrich Williams,G
+Oklahoma City Thunder,Luguentz Dort,G
+Oklahoma City Thunder,Nikola Topic,G
+Oklahoma City Thunder,Shai Gilgeous-Alexander,G
+Oklahoma City Thunder,Thomas Sorber,C
+Orlando Magic,Alex Morales,G
+Orlando Magic,Anthony Black,G
+Orlando Magic,Colin Castleton,C
+Orlando Magic,Desmond Bane,G
+Orlando Magic,Franz Wagner,F
+Orlando Magic,Goga Bitadze,C
+Orlando Magic,Jalen Suggs,G
+Orlando Magic,Jamal Cain,F
+Orlando Magic,Jase Richardson,G
+Orlando Magic,Jett Howard,G
+Orlando Magic,Jevon Carter,G
+Orlando Magic,Jonathan Isaac,F
+Orlando Magic,Moritz Wagner,F
+Orlando Magic,Noah Penda,F
+Orlando Magic,Paolo Banchero,F
+Orlando Magic,Tristan da Silva,F
+Orlando Magic,Wendell Carter Jr.,C
+Philadelphia 76ers,Adem Bona,C
+Philadelphia 76ers,Andre Drummond,C
+Philadelphia 76ers,Cameron Payne,PG
+Philadelphia 76ers,Dalen Terry,F
+Philadelphia 76ers,Dominick Barlow,F
+Philadelphia 76ers,Jabari Walker,F
+Philadelphia 76ers,Joel Embiid,C
+Philadelphia 76ers,Johni Broome,F
+Philadelphia 76ers,Justin Edwards,F
+Philadelphia 76ers,Kelly Oubre Jr.,G
+Philadelphia 76ers,Kyle Lowry,G
+Philadelphia 76ers,MarJon Beauchamp,F
+Philadelphia 76ers,Paul George,F
+Philadelphia 76ers,Quentin Grimes,G
+Philadelphia 76ers,Trendon Watford,F
+Philadelphia 76ers,Tyrese Martin,G
+Philadelphia 76ers,Tyrese Maxey,G
+Philadelphia 76ers,VJ Edgecombe,G
+Phoenix Suns,Amir Coffey,G
+Phoenix Suns,Cole Anthony,G
+Phoenix Suns,Collin Gillespie,G
+Phoenix Suns,Devin Booker,G
+Phoenix Suns,Dillon Brooks,F
+Phoenix Suns,Grayson Allen,G
+Phoenix Suns,Haywood Highsmith,F
+Phoenix Suns,Isaiah Livers,F
+Phoenix Suns,Jalen Green,G
+Phoenix Suns,Jamaree Bouyea,G
+Phoenix Suns,Jordan Goodwin,G
+Phoenix Suns,Khaman Maluach,C
+Phoenix Suns,Koby Brea,G
+Phoenix Suns,Mark Williams,C
+Phoenix Suns,Oso Ighodaro,F
+Phoenix Suns,Rasheer Fleming,F
+Phoenix Suns,Royce O'Neale,F
+Phoenix Suns,Ryan Dunn,F
+Portland Trail Blazers,Blake Wesley,G
+Portland Trail Blazers,Caleb Love,G
+Portland Trail Blazers,Damian Lillard,G
+Portland Trail Blazers,Deni Avdija,F
+Portland Trail Blazers,Donovan Clingan,C
+Portland Trail Blazers,Javonte Cooke,G
+Portland Trail Blazers,Jerami Grant,F
+Portland Trail Blazers,Jrue Holiday,G
+Portland Trail Blazers,Kris Murray,F
+Portland Trail Blazers,Matisse Thybulle,G
+Portland Trail Blazers,Robert Williams III,C
+Portland Trail Blazers,Scoot Henderson,G
+Portland Trail Blazers,Shaedon Sharpe,G
+Portland Trail Blazers,Sidy Cissoko,G
+Portland Trail Blazers,Toumani Camara,F
+Portland Trail Blazers,Vit Krejci,G
+Portland Trail Blazers,Yang Hansen,C
+Sacramento Kings,Daeqwon Plowden,G
+Sacramento Kings,De'Andre Hunter,F
+Sacramento Kings,DeMar DeRozan,G
+Sacramento Kings,Devin Carter,G
+Sacramento Kings,Domantas Sabonis,F
+Sacramento Kings,Doug McDermott,F
+Sacramento Kings,Drew Eubanks,F
+Sacramento Kings,Dylan Cardwell,C
+Sacramento Kings,Isaiah Stevens,G
+Sacramento Kings,Keegan Murray,F
+Sacramento Kings,Killian Hayes,G
+Sacramento Kings,Malik Monk,G
+Sacramento Kings,Maxime Raynaud,C
+Sacramento Kings,Nique Clifford,G
+Sacramento Kings,Patrick Baldwin Jr.,G
+Sacramento Kings,Precious Achiuwa,PF
+Sacramento Kings,Russell Westbrook,G
+Sacramento Kings,Zach LaVine,G
+San Antonio Spurs,Bismack Biyombo,C
+San Antonio Spurs,Carter Bryant,F
+San Antonio Spurs,David Jones Garcia,F
+San Antonio Spurs,De'Aaron Fox,G
+San Antonio Spurs,Devin Vassell,G
+San Antonio Spurs,Dylan Harper,G
+San Antonio Spurs,Emanuel Miller,F
+San Antonio Spurs,Harrison Barnes,F
+San Antonio Spurs,Harrison Ingram,F
+San Antonio Spurs,Jordan McLaughlin,G
+San Antonio Spurs,Julian Champagnie,F
+San Antonio Spurs,Keldon Johnson,F
+San Antonio Spurs,Kelly Olynyk,F
+San Antonio Spurs,Lindy Waters III,F
+San Antonio Spurs,Luke Kornet,C
+San Antonio Spurs,Mason Plumlee,C
+San Antonio Spurs,Stephon Castle,G
+San Antonio Spurs,Victor Wembanyama,F
+Toronto Raptors,A.J. Lawson,G
+Toronto Raptors,Alijah Martin,G
+Toronto Raptors,Brandon Ingram,F
+Toronto Raptors,Chucky Hepburn,G
+Toronto Raptors,Collin Murray-Boyles,F
+Toronto Raptors,Garrett Temple,G
+Toronto Raptors,Gradey Dick,G
+Toronto Raptors,Immanuel Quickley,G
+Toronto Raptors,Ja'Kobe Walter,G
+Toronto Raptors,Jakob Poeltl,C
+Toronto Raptors,Jamal Shead,G
+Toronto Raptors,Jamison Battle,F
+Toronto Raptors,Jonathan Mogbo,F
+Toronto Raptors,RJ Barrett,F
+Toronto Raptors,Sandro Mamukelashvili,F
+Toronto Raptors,Scottie Barnes,F
+Toronto Raptors,Trayce Jackson-Davis,F
+Utah Jazz,Ace Bailey,G
+Utah Jazz,Blake Hinson,F
+Utah Jazz,Brice Sensabaugh,F
+Utah Jazz,Cody Williams,F
+Utah Jazz,Elijah Harkless,G
+Utah Jazz,Isaiah Collier,G
+Utah Jazz,Jaren Jackson Jr.,F
+Utah Jazz,John Konchar,G
+Utah Jazz,Jusuf Nurkic,C
+Utah Jazz,Kevin Love,F
+Utah Jazz,Keyonte George,G
+Utah Jazz,Kyle Filipowski,F
+Utah Jazz,Lauri Markkanen,F
+Utah Jazz,Oscar Tshiebwe,C
+Utah Jazz,Svi Mykhailiuk,G
+Utah Jazz,Vince Williams Jr.,G
+Utah Jazz,Walker Kessler,C
+Washington Wizards,Alex Sarr,C
+Washington Wizards,Alondes Williams,G
+Washington Wizards,Anthony Davis,F
+Washington Wizards,Anthony Gill,F
+Washington Wizards,Bilal Coulibaly,G
+Washington Wizards,Bub Carrington,G
+Washington Wizards,Cam Whitmore,F
+Washington Wizards,D'Angelo Russell,G
+Washington Wizards,Jaden Hardy,G
+Washington Wizards,Jamir Watkins,G
+Washington Wizards,Justin Champagnie,F
+Washington Wizards,Kadary Richmond,G
+Washington Wizards,Keshon Gilbert,G
+Washington Wizards,Kyshawn George,F
+Washington Wizards,Leaky Black,F
+Washington Wizards,Sharife Cooper,G
+Washington Wizards,Skal Labissiere,C
+Washington Wizards,Trae Young,G
+Washington Wizards,Tre Johnson,G
+Washington Wizards,Tristan Vukcevic,F
+Washington Wizards,Will Riley,G

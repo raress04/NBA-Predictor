@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project Specific
+*.db
+*.db-journal
+*.log
+advanced_model/.cache/
+advanced_model/predictions/
+advanced_model/results_*.txt
+advanced_model/predicts.txt
+advanced_model/yesterday_results_*.txt
+advanced_model/analyze.txt
+advanced_model/performance_*.txt
+advanced_model/historical_prop_analysis.txt
+
+# LaTeX Output
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.synctex.gz
+
+# IDEs
+.vscode/
+.idea/
+
+# Large Files
+advanced_model/database/*.sqlite
+advanced_model/database/*.csv
