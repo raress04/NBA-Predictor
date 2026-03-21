@@ -1,0 +1,73 @@
+============================================================
+ 🎯 AUTOMATED PREDICTION ANALYSIS 🎯
+============================================================
+
+Total Props Evaluated: 4
+Wins: 3 | Losses: 1 | Win Rate: 75.0%
+
+PLAYER                 | CONF | BET             | ACTUAL   | DIFF    | DIFF %   | STATUS
+----------------------------------------------------------------------------------------
+LAC SPREAD             | 99%  | COVER -13.5 SPR | -9       | -22.5   | +0.0%    | LOST ❌
+Bam Adebayo            | 86%  | UNDER 10.5 REB  | 7        | -3.5    | -33.3%   | WON ✅
+Jamal Murray           | 84%  | UNDER 7.5 ASS   | 6        | -1.5    | -20.0%   | WON ✅
+GAME TOTAL             | 82%  | OVER 244.5 TOT  | 252      | +7.5    | +3.1%    | WON ✅
+
+============================================================
+ 🎯 MEDIAN PROJECTION ACCURACY (Outliers Filtered IQR) 🎯
+============================================================
+
+Total Players Evaluated: 48
+MAE (Filtered) - PTS: 5.1 | REB: 1.6 | AST: 1.1
+Direction Accuracy (Filtered) - PTS: 24/47 (51.1%) | REB: 36/47 (76.6%) | AST: 42/48 (87.5%)
+
+PLAYER                 |  PRED  ACT    D     R |  PRED  ACT    D     R |  PRED  ACT    D     R
+                              --- PTS ---             --- REB ---             --- AST ---     
+----------------------------------------------------------------------------------------------------
+Jamal Murray           |    24    5  +19   HIGH |     3    6   -3    LOW |     5    6   -1    LOW
+DeMar DeRozan          |    15   27  -12    LOW |     2    0   +2   HIGH |     4    7   -3    LOW
+Austin Reaves          |    20   32  -12    LOW |     4    7   -3    LOW |     5    6   -1    LOW
+Marcus Smart           |     9   21  -12    LOW |     2    3   -1    LOW |     3    2   +1   HIGH
+Aaron Gordon           |    15   27  -12    LOW |     4    5   -1    LOW |     3    2   +1   HIGH
+Precious Achiuwa       |    14   25  -11    LOW |     7   13   -6    LOW |     2    1   +1   HIGH
+Darius Garland         |    15   25  -10    LOW |     2    3   -1    LOW |     6    7   -1    LOW
+Derrick Jones Jr.      |    12    2  +10   HIGH |     4    3   +1   HIGH |     1    1   +0  EXACT
+Brook Lopez            |    10    0  +10   HIGH |     5    0   +5   HIGH |     2    2   +0  EXACT
+Tyler Herro            |    19   10   +9   HIGH |     3    6   -3    LOW |     3    5   -2    LOW
+Jaime Jaquez Jr.       |    13   22   -9    LOW |     4    2   +2   HIGH |     4    7   -3    LOW
+Maxime Raynaud         |    15   23   -8    LOW |     8    5   +3   HIGH |     2    2   +0  EXACT
+Kawhi Leonard          |    24   31   -7    LOW |     5    6   -1    LOW |     3    0   +3   HIGH
+Tim Hardaway Jr.       |    13   20   -7    LOW |     2    1   +1   HIGH |     1    3   -2    LOW
+Bam Adebayo            |    27   20   +7   HIGH |     7    7   +0  EXACT |     2    1   +1   HIGH
+Davion Mitchell        |     7   14   -7    LOW |     3    2   +1   HIGH |     5    4   +1   HIGH
+Bennedict Mathurin     |    18   24   -6    LOW |     6    6   +0  EXACT |     3    1   +2   HIGH
+Dylan Cardwell         |     6    0   +6   HIGH |     5    6   -1    LOW |     1    1   +0  EXACT
+Luke Kennard           |     9    3   +6   HIGH |     2    1   +1   HIGH |     2    2   +0  EXACT
+Cameron Johnson        |    12   18   -6    LOW |     3    4   -1    LOW |     2    3   -1    LOW
+Norman Powell          |    14   20   -6    LOW |     2    1   +1   HIGH |     1    3   -2    LOW
+Kris Dunn              |    10    5   +5   HIGH |     5    6   -1    LOW |     6    2   +4   HIGH
+Rui Hachimura          |    11    6   +5   HIGH |     2    4   -2    LOW |     1    0   +1   HIGH
+Bruce Brown            |     7   12   -5    LOW |     3    4   -1    LOW |     2    2   +0  EXACT
+Jordan Miller          |    10    6   +4   HIGH |     3    0   +3   HIGH |     3    2   +1   HIGH
+Daeqwon Plowden        |    11   15   -4    LOW |     3    5   -2    LOW |     1    2   -1    LOW
+Killian Hayes          |     6    2   +4   HIGH |     1    3   -2    LOW |     3    2   +1   HIGH
+Desmond Bane           |    25   21   +4   HIGH |     3    4   -1    LOW |     4    4   +0  EXACT
+Wendell Carter Jr.     |    11   15   -4    LOW |     7    8   -1    LOW |     2    2   +0  EXACT
+Noah Penda             |     3    7   -4    LOW |     3    3   +0  EXACT |     1    2   -1    LOW
+Doug McDermott         |     6    3   +3   HIGH |     1    0   +1   HIGH |     0    0   +0  EXACT
+Jake LaRavia           |     7    4   +3   HIGH |     3    1   +2   HIGH |     2    1   +1   HIGH
+Jaxson Hayes           |     8    5   +3   HIGH |     3    4   -1    LOW |     1    0   +1   HIGH
+Pelle Larsson          |    12   15   -3    LOW |     3    3   +0  EXACT |     4    3   +1   HIGH
+Kel'el Ware            |    10   13   -3    LOW |     8   10   -2    LOW |     0    1   -1    LOW
+Myron Gardner          |     3    0   +3   HIGH |     4    1   +3   HIGH |     1    0   +1   HIGH
+Paolo Banchero         |    25   27   -2    LOW |     7    8   -1    LOW |     4    7   -3    LOW
+Tristan da Silva       |    13   11   +2   HIGH |     4    8   -4    LOW |     2    2   +0  EXACT
+Moritz Wagner          |     9    7   +2   HIGH |     4    4   +0  EXACT |     1    0   +1   HIGH
+John Collins           |    11   10   +1   HIGH |     5    3   +2   HIGH |     1    0   +1   HIGH
+Russell Westbrook      |    13   12   +1   HIGH |     2   12  -10    LOW |     6   10   -4    LOW
+Deandre Ayton          |    10    9   +1   HIGH |     6    9   -3    LOW |     1    2   -1    LOW
+Christian Braun        |    13   12   +1   HIGH |     4    1   +3   HIGH |     3    3   +0  EXACT
+Nique Clifford         |    11   11   +0  EXACT |     4    4   +0  EXACT |     4    4   +0  EXACT
+LeBron James           |    17   17   +0  EXACT |     4    6   -2    LOW |     7    5   +2   HIGH
+Spencer Jones          |     5    5   +0  EXACT |     3    3   +0  EXACT |     1    0   +1   HIGH
+Jalen Suggs            |    14   14   +0  EXACT |     3    5   -2    LOW |     5    6   -1    LOW
+Jevon Carter           |     7    7   +0  EXACT |     2    2   +0  EXACT |     3    3   +0  EXACT

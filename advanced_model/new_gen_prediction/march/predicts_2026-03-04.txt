@@ -1,0 +1,463 @@
+NBA MODEL PREDICTIONS - 2026-03-04
+============================================================
+
+
+============================================================
+ MATCHUP: Portland Trail Blazers vs. Memphis Grizzlies
+============================================================
+PROJECTED TOTAL: 243.0
+  [BIAS CORRECTION] TOTAL | Neutral | median=243.0 | offset=+0.00 | corrected=243.0
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (76% conf, 12.5 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=17.9 | offset=+0.56 | corrected=18.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.3 | offset=+0.30 | corrected= 4.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.1 | offset=+0.21 | corrected= 6.3
+  Jrue Holiday         -> 18 PTS, 5 REB, 6 AST (O/U 18.5 points ignore, O/U 4.5 rebounds VALUABLE: Over (41% conf, 1.3% edge), O/U 5.5 assists VALUABLE: Over (59% conf, 14.3% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=24.0 | offset=+0.56 | corrected=24.6
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.4 | offset=+0.31 | corrected= 3.7
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.5 | offset=+0.23 | corrected= 2.7
+  Jerami Grant         -> 25 PTS, 4 REB, 3 AST (O/U 19.5 points VALUABLE: Over (70% conf, 25.9% edge), O/U 3.5 rebounds VALUABLE: Over (45% conf, 4.8% edge), O/U 2.5 assists VALUABLE: Over (47% conf, 10.0% edge))
+  Robert Williams III  -> 8 PTS, 7 REB, 2 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=15.6 | offset=+0.56 | corrected=16.2
+  [BIAS CORRECTION] REBOUNDS | Starter | median=11.0 | offset=+0.30 | corrected=11.3
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.5 | offset=+0.23 | corrected= 2.7
+  Donovan Clingan      -> 16 PTS, 11 REB, 3 AST (O/U 13.5 points VALUABLE: Over (61% conf, 19.8% edge), O/U 13.5 rebounds VALUABLE: Under (22% conf, 16.4% edge), O/U 2.5 assists VALUABLE: Over (45% conf, 7.8% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=16.8 | offset=+0.56 | corrected=17.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.2 | offset=+0.30 | corrected= 5.5
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.1 | offset=+0.21 | corrected= 3.3
+  Toumani Camara       -> 17 PTS, 5 REB, 3 AST (O/U 14.5 points VALUABLE: Over (59% conf, 20.0% edge), O/U 5.5 rebounds VALUABLE: Under (40% conf, 0.7% edge), O/U 2.5 assists VALUABLE: Over (60% conf, 32.5% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.7 | offset=+0.54 | corrected= 7.2
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.2 | offset=+0.31 | corrected= 2.5
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.9 | offset=+0.23 | corrected= 2.1
+  Sidy Cissoko         -> 7 PTS, 3 REB, 2 AST (O/U 5.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (38% conf, 0.5% edge), O/U 1.5 assists VALUABLE: Over (56% conf, 40.9% edge))
+  Vít Krejčí           -> 11 PTS, 3 REB, 2 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=16.5 | offset=+0.56 | corrected=17.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.8 | offset=+0.31 | corrected= 3.1
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 5.7 | offset=+0.21 | corrected= 5.9
+  Scoot Henderson      -> 17 PTS, 3 REB, 6 AST (O/U 16.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (33% conf, 10.4% edge), O/U 5.5 assists VALUABLE: Over (51% conf, 7.9% edge))
+  Blake Wesley         -> 6 PTS, 2 REB, 3 AST
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=23.3 | offset=+0.56 | corrected=23.9
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.3 | offset=+0.30 | corrected= 5.6
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.2 | offset=+0.23 | corrected= 2.5
+  Jaylen Wells         -> 24 PTS, 6 REB, 2 AST (O/U 16.5 points VALUABLE: Over (80% conf, 44.8% edge), O/U 3.5 rebounds VALUABLE: Over (78% conf, 60.1% edge), O/U 1.5 assists VALUABLE: Over (64% conf, 63.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=18.4 | offset=+0.56 | corrected=19.0
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 6.6 | offset=+0.30 | corrected= 6.9
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.8 | offset=+0.23 | corrected= 2.0
+  GG Jackson           -> 19 PTS, 7 REB, 2 AST (O/U 17.5 points ignore, O/U 6.5 rebounds VALUABLE: Over (50% conf, 6.6% edge), O/U 2.5 assists VALUABLE: Under (25% conf, 20.7% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=14.2 | offset=+0.56 | corrected=14.8
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.4 | offset=+0.30 | corrected= 5.7
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.5 | offset=+0.23 | corrected= 1.7
+  Olivier-Maxence Prosper -> 15 PTS, 6 REB, 2 AST (O/U 14.5 points ignore, O/U 6.5 rebounds VALUABLE: Under (29% conf, 12.7% edge), O/U 1.5 assists VALUABLE: Over (43% conf, 12.4% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=18.7 | offset=+0.56 | corrected=19.3
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.2 | offset=+0.30 | corrected= 4.5
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.8 | offset=+0.21 | corrected= 7.0
+  Cam Spencer          -> 19 PTS, 5 REB, 7 AST (O/U 12.5 points VALUABLE: Over (80% conf, 54.1% edge), O/U 3.5 rebounds VALUABLE: Over (64% conf, 29.8% edge), O/U 5.5 assists VALUABLE: Over (68% conf, 28.0% edge))
+  Javon Small          -> 17 PTS, 6 REB, 6 AST
+  Walter Clayton Jr.   -> 14 PTS, 4 REB, 6 AST
+  Jahmai Mashack       -> 10 PTS, 4 REB, 2 AST
+  Rayan Rupert         -> 8 PTS, 4 REB, 1 AST
+
+============================================================
+ MATCHUP: LA Clippers vs. Indiana Pacers
+============================================================
+PROJECTED TOTAL: 251.1
+  [BIAS CORRECTION] TOTAL | Neutral | median=251.1 | offset=+0.00 | corrected=251.1
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (87% conf, 20.6 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=30.9 | offset=+0.56 | corrected=31.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 6.6 | offset=+0.30 | corrected= 6.9
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.1 | offset=+0.21 | corrected= 4.3
+  Kawhi Leonard        -> 31 PTS, 7 REB, 4 AST (O/U 27.5 points VALUABLE: Over (65% conf, 14.4% edge), O/U 6.5 rebounds VALUABLE: Over (51% conf, 5.9% edge), O/U 3.5 assists VALUABLE: Over (58% conf, 22.6% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=19.6 | offset=+0.56 | corrected=20.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.1 | offset=+0.30 | corrected= 5.4
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.5 | offset=+0.23 | corrected= 2.7
+  Bennedict Mathurin   -> 20 PTS, 5 REB, 3 AST (O/U 19.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (41% conf, 1.4% edge), O/U 2.5 assists VALUABLE: Over (45% conf, 8.8% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=21.3 | offset=+0.56 | corrected=21.9
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.6 | offset=+0.31 | corrected= 2.9
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 8.3 | offset=+0.21 | corrected= 8.5
+  Darius Garland       -> 22 PTS, 3 REB, 9 AST (O/U 14.5 points VALUABLE: Over (82% conf, 51.0% edge), O/U 2.5 rebounds VALUABLE: Over (48% conf, 15.6% edge), O/U 4.5 assists VALUABLE: Over (91% conf, 89.4% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.9 | offset=+0.54 | corrected=10.4
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.5 | offset=+0.31 | corrected= 3.9
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.9 | offset=+0.23 | corrected= 2.1
+  Brook Lopez          -> 10 PTS, 4 REB, 2 AST (O/U 9.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (30% conf, 14.3% edge), O/U 1.5 assists VALUABLE: Over (57% conf, 42.9% edge))
+  Isaiah Jackson       -> 7 PTS, 6 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=11.7 | offset=+0.56 | corrected=12.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.0 | offset=+0.31 | corrected= 3.4
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.5 | offset=+0.23 | corrected= 1.7
+  Derrick Jones Jr.    -> 12 PTS, 3 REB, 2 AST (O/U 11.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (38% conf, 4.1% edge), O/U 1.5 assists VALUABLE: Over (44% conf, 14.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.1 | offset=+0.54 | corrected= 8.7
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.5 | offset=+0.31 | corrected= 3.8
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 5.2 | offset=+0.21 | corrected= 5.4
+  Kris Dunn            -> 9 PTS, 4 REB, 5 AST (O/U 7.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (27% conf, 15.5% edge), O/U 4.5 assists VALUABLE: Over (62% conf, 20.9% edge))
+  Yanic Konan Niederhäuser -> 5 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.7 | offset=+0.54 | corrected= 9.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.7 | offset=+0.31 | corrected= 3.0
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.6 | offset=+0.23 | corrected= 2.9
+  Jordan Miller        -> 9 PTS, 3 REB, 3 AST (O/U 9.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (30% conf, 13.0% edge), O/U 2.5 assists VALUABLE: Over (49% conf, 15.0% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.0 | offset=+0.54 | corrected= 8.5
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.5 | offset=+0.31 | corrected= 2.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.5 | offset=+0.23 | corrected= 2.7
+  Kobe Sanders         -> 9 PTS, 3 REB, 3 AST (O/U 7.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (25% conf, 18.7% edge), O/U 2.5 assists VALUABLE: Over (46% conf, 9.0% edge))
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=24.0 | offset=+0.56 | corrected=24.6
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.6 | offset=+0.30 | corrected= 5.9
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.5 | offset=+0.21 | corrected= 3.7
+  Pascal Siakam        -> 25 PTS, 6 REB, 4 AST (O/U 19.5 points VALUABLE: Over (75% conf, 26.0% edge), O/U 5.5 rebounds VALUABLE: Over (49% conf, 6.6% edge), O/U 2.5 assists VALUABLE: Over (68% conf, 46.4% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.1 | offset=+0.56 | corrected=10.6
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.2 | offset=+0.31 | corrected= 3.5
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.4 | offset=+0.23 | corrected= 1.6
+  Jay Huff             -> 11 PTS, 3 REB, 2 AST (O/U 9.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (20% conf, 22.7% edge), O/U 1.5 assists VALUABLE: Over (41% conf, 6.1% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=11.1 | offset=+0.56 | corrected=11.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.5 | offset=+0.30 | corrected= 4.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.6 | offset=+0.23 | corrected= 2.8
+  Jarace Walker        -> 12 PTS, 5 REB, 3 AST (O/U 12.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (29% conf, 12.6% edge), O/U 2.5 assists VALUABLE: Over (48% conf, 12.3% edge))
+  Micah Potter         -> 8 PTS, 4 REB, 1 AST
+  Quenton Jackson      -> 9 PTS, 2 REB, 3 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=16.2 | offset=+0.56 | corrected=16.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.5 | offset=+0.31 | corrected= 2.8
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.6 | offset=+0.21 | corrected= 6.8
+  Andrew Nembhard      -> 17 PTS, 3 REB, 7 AST (O/U 14.5 points VALUABLE: Over (60% conf, 15.7% edge), O/U 2.5 rebounds VALUABLE: Over (45% conf, 11.3% edge), O/U 6.5 assists VALUABLE: Over (51% conf, 4.3% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.2 | offset=+0.54 | corrected= 9.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.3 | offset=+0.31 | corrected= 2.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 5.0 | offset=+0.21 | corrected= 5.2
+  T.J. McConnell       -> 10 PTS, 3 REB, 5 AST (O/U 7.5 points VALUABLE: Over (65% conf, 30.5% edge), O/U 1.5 rebounds VALUABLE: Over (66% conf, 73.4% edge), O/U 3.5 assists VALUABLE: Over (73% conf, 48.4% edge))
+  Kobe Brown           -> 5 PTS, 2 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=14.5 | offset=+0.56 | corrected=15.1
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 4.0 | offset=+0.31 | corrected= 4.3
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.7 | offset=+0.23 | corrected= 1.9
+  Aaron Nesmith        -> 15 PTS, 4 REB, 2 AST (O/U 9.5 points VALUABLE: Over (79% conf, 58.5% edge), O/U 3.5 rebounds VALUABLE: Over (57% conf, 23.0% edge), O/U 1.5 assists VALUABLE: Over (51% conf, 26.8% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.6 | offset=+0.54 | corrected= 7.1
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.5 | offset=+0.31 | corrected= 2.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.7 | offset=+0.23 | corrected= 1.9
+  Ben Sheppard         -> 7 PTS, 3 REB, 2 AST (O/U 5.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (46% conf, 11.1% edge), O/U 1.5 assists VALUABLE: Over (51% conf, 26.8% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.4 | offset=+0.56 | corrected=11.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.7 | offset=+0.31 | corrected= 4.0
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.9 | offset=+0.23 | corrected= 2.1
+  Obi Toppin           -> 11 PTS, 4 REB, 2 AST (O/U 6.5 points VALUABLE: Over (79% conf, 69.3% edge), O/U 2.5 rebounds VALUABLE: Over (71% conf, 60.4% edge), O/U 1.5 assists VALUABLE: Over (56% conf, 38.5% edge))
+
+============================================================
+ MATCHUP: Oklahoma City Thunder vs. New York Knicks
+============================================================
+PROJECTED TOTAL: 252.4
+  [BIAS CORRECTION] TOTAL | Neutral | median=252.4 | offset=+0.00 | corrected=252.4
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (89% conf, 21.9 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=17.2 | offset=+0.56 | corrected=17.8
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 7.2 | offset=+0.30 | corrected= 7.5
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.0 | offset=+0.23 | corrected= 2.2
+  Chet Holmgren        -> 18 PTS, 8 REB, 2 AST (O/U 15.5 points VALUABLE: Over (61% conf, 14.7% edge), O/U 7.5 rebounds VALUABLE: Over (44% conf, 0.1% edge), O/U 1.5 assists VALUABLE: Over (60% conf, 46.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=33.2 | offset=+0.56 | corrected=33.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 4.0 | offset=+0.31 | corrected= 4.3
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.6 | offset=+0.21 | corrected= 6.8
+  Shai Gilgeous-Alexander -> 34 PTS, 4 REB, 7 AST (O/U 30.5 points VALUABLE: Over (61% conf, 10.8% edge), O/U 3.5 rebounds VALUABLE: Over (59% conf, 22.9% edge), O/U 6.5 assists VALUABLE: Over (49% conf, 4.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.9 | offset=+0.54 | corrected=10.4
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.4 | offset=+0.31 | corrected= 3.7
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.6 | offset=+0.23 | corrected= 1.9
+  Luguentz Dort        -> 10 PTS, 4 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds VALUABLE: Over (45% conf, 6.2% edge), O/U 1.5 assists VALUABLE: Over (47% conf, 25.1% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.4 | offset=+0.54 | corrected=10.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.7 | offset=+0.31 | corrected= 3.0
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.7 | offset=+0.21 | corrected= 3.9
+  Cason Wallace        -> 10 PTS, 3 REB, 4 AST (O/U 8.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (49% conf, 19.7% edge), O/U 2.5 assists VALUABLE: Over (74% conf, 55.4% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 7.5 | offset=+0.54 | corrected= 8.0
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.3 | offset=+0.30 | corrected= 4.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.1 | offset=+0.21 | corrected= 3.3
+  Jaylin Williams      -> 8 PTS, 5 REB, 3 AST (O/U 5.5 points VALUABLE: Over (64% conf, 45.9% edge), O/U 4.5 rebounds VALUABLE: Over (43% conf, 2.2% edge), O/U 2.5 assists VALUABLE: Over (60% conf, 33.3% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.3 | offset=+0.54 | corrected= 8.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.3 | offset=+0.31 | corrected= 2.7
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.6 | offset=+0.23 | corrected= 2.8
+  Alex Caruso          -> 9 PTS, 3 REB, 3 AST (O/U 5.5 points VALUABLE: Over (68% conf, 60.0% edge), O/U 2.5 rebounds VALUABLE: Over (43% conf, 6.4% edge), O/U 2.5 assists VALUABLE: Over (47% conf, 13.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=11.4 | offset=+0.56 | corrected=12.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.0 | offset=+0.31 | corrected= 2.3
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.3 | offset=+0.23 | corrected= 2.5
+  Jared McCain         -> 12 PTS, 2 REB, 3 AST (O/U 8.5 points VALUABLE: Over (69% conf, 41.1% edge), O/U 2.5 rebounds VALUABLE: Under (31% conf, 8.5% edge), O/U 1.5 assists VALUABLE: Over (69% conf, 68.3% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.4 | offset=+0.56 | corrected=11.0
+  Aaron Wiggins        -> 11 PTS, 3 REB, 3 AST (O/U 5.5 points VALUABLE: Over (86% conf, 99.6% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.1 | offset=+0.54 | corrected= 9.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 7.3 | offset=+0.30 | corrected= 7.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.2 | offset=+0.21 | corrected= 4.4
+  Isaiah Hartenstein   -> 10 PTS, 8 REB, 4 AST (O/U 8.5 points ignore, O/U 7.5 rebounds VALUABLE: Over (46% conf, 1.9% edge), O/U 3.5 assists VALUABLE: Over (60% conf, 26.3% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=11.5 | offset=+0.56 | corrected=12.1
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.1 | offset=+0.31 | corrected= 2.4
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.7 | offset=+0.23 | corrected= 1.9
+  Isaiah Joe           -> 12 PTS, 2 REB, 2 AST (O/U 9.5 points VALUABLE: Over (61% conf, 27.0% edge), O/U 2.5 rebounds VALUABLE: Under (35% conf, 4.8% edge), O/U 1.5 assists VALUABLE: Over (51% conf, 28.1% edge))
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=29.0 | offset=+0.56 | corrected=29.5
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.2 | offset=+0.31 | corrected= 3.5
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.3 | offset=+0.21 | corrected= 6.5
+  Jalen Brunson        -> 30 PTS, 3 REB, 6 AST (O/U 23.5 points VALUABLE: Over (76% conf, 25.6% edge), O/U 2.5 rebounds VALUABLE: Over (64% conf, 38.9% edge), O/U 5.5 assists VALUABLE: Over (58% conf, 17.6% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=21.7 | offset=+0.56 | corrected=22.2
+  [BIAS CORRECTION] REBOUNDS | Starter | median=10.8 | offset=+0.30 | corrected=11.1
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.1 | offset=+0.21 | corrected= 3.3
+  Karl-Anthony Towns   -> 22 PTS, 11 REB, 3 AST (O/U 17.5 points VALUABLE: Over (72% conf, 27.1% edge), O/U 12.5 rebounds VALUABLE: Under (30% conf, 11.3% edge), O/U 2.5 assists VALUABLE: Over (61% conf, 30.6% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=19.9 | offset=+0.56 | corrected=20.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.8 | offset=+0.30 | corrected= 5.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.5 | offset=+0.23 | corrected= 2.7
+  OG Anunoby           -> 20 PTS, 5 REB, 3 AST (O/U 14.5 points VALUABLE: Over (79% conf, 41.1% edge), O/U 5.5 rebounds VALUABLE: Under (37% conf, 7.0% edge), O/U 1.5 assists VALUABLE: Over (73% conf, 80.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=12.7 | offset=+0.56 | corrected=13.3
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 7.3 | offset=+0.30 | corrected= 7.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.0 | offset=+0.21 | corrected= 6.2
+  Josh Hart            -> 13 PTS, 8 REB, 6 AST (O/U 11.5 points ignore, O/U 7.5 rebounds VALUABLE: Over (45% conf, 1.5% edge), O/U 4.5 assists VALUABLE: Over (70% conf, 37.3% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=16.7 | offset=+0.56 | corrected=17.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.9 | offset=+0.31 | corrected= 4.2
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.2 | offset=+0.21 | corrected= 4.4
+  Mikal Bridges        -> 17 PTS, 4 REB, 4 AST (O/U 13.5 points VALUABLE: Over (67% conf, 28.2% edge), O/U 3.5 rebounds VALUABLE: Over (56% conf, 21.0% edge), O/U 3.5 assists VALUABLE: Over (59% conf, 26.6% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.1 | offset=+0.56 | corrected=10.7
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 1.5 | offset=+0.31 | corrected= 1.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.4 | offset=+0.23 | corrected= 1.7
+  Landry Shamet        -> 11 PTS, 2 REB, 2 AST (O/U 8.5 points VALUABLE: Over (59% conf, 26.0% edge), O/U 1.5 rebounds VALUABLE: Over (43% conf, 19.4% edge), O/U 1.5 assists VALUABLE: Over (44% conf, 11.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 4.0 | offset=+0.54 | corrected= 4.6
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 1.5 | offset=+0.31 | corrected= 1.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 0.9 | offset=+0.23 | corrected= 1.1
+  Mohamed Diawara      -> 5 PTS, 2 REB, 1 AST (O/U 5.5 points ignore, O/U 2.5 rebounds VALUABLE: Under (19% conf, 26.7% edge), O/U 0.5 assists VALUABLE: Over (60% conf, 128.8% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.4 | offset=+0.54 | corrected= 9.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.3 | offset=+0.31 | corrected= 2.7
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.5 | offset=+0.21 | corrected= 4.7
+  Jose Alvarado        -> 9 PTS, 3 REB, 5 AST (O/U 5.5 points VALUABLE: Over (73% conf, 63.2% edge), O/U 1.5 rebounds VALUABLE: Over (69% conf, 77.4% edge), O/U 2.5 assists VALUABLE: Over (84% conf, 89.5% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 1.8 | offset=+0.54 | corrected= 2.4
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.6 | offset=+0.31 | corrected= 2.9
+  Ariel Hukporti       -> 2 PTS, 3 REB, 1 AST (O/U 2.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (12% conf, 35.2% edge))
+
+============================================================
+ MATCHUP: Philadelphia 76ers vs. Utah Jazz
+============================================================
+PROJECTED TOTAL: 244.6
+  [BIAS CORRECTION] TOTAL | Neutral | median=244.6 | offset=+0.00 | corrected=244.6
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (78% conf, 14.1 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=35.3 | offset=+0.56 | corrected=35.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.7 | offset=+0.31 | corrected= 4.0
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.6 | offset=+0.21 | corrected= 6.8
+  Tyrese Maxey         -> 36 PTS, 4 REB, 7 AST (O/U 33.5 points VALUABLE: Over (56% conf, 6.9% edge), O/U 3.5 rebounds VALUABLE: Over (52% conf, 14.7% edge), O/U 7.5 assists VALUABLE: Under (33% conf, 8.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.7 | offset=+0.54 | corrected= 7.2
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.3 | offset=+0.31 | corrected= 3.6
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 0.9 | offset=+0.23 | corrected= 1.1
+  Jabari Walker        -> 7 PTS, 4 REB, 1 AST (O/U 8.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (13% conf, 35.1% edge), O/U 1.5 assists VALUABLE: Under (22% conf, 23.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=20.0 | offset=+0.56 | corrected=20.6
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.7 | offset=+0.31 | corrected= 4.0
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.9 | offset=+0.21 | corrected= 5.1
+  Quentin Grimes       -> 21 PTS, 4 REB, 5 AST (O/U 17.5 points VALUABLE: Over (62% conf, 17.7% edge), O/U 3.5 rebounds VALUABLE: Over (51% conf, 15.4% edge), O/U 4.5 assists VALUABLE: Over (55% conf, 13.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.5 | offset=+0.54 | corrected= 7.0
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.9 | offset=+0.30 | corrected= 5.2
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 0.8 | offset=+0.23 | corrected= 1.0
+  Adem Bona            -> 7 PTS, 5 REB, 1 AST (O/U 7.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (36% conf, 5.3% edge), O/U 0.5 assists VALUABLE: Over (55% conf, 104.0% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.3 | offset=+0.54 | corrected= 9.9
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.4 | offset=+0.31 | corrected= 3.8
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.0 | offset=+0.21 | corrected= 4.2
+  Trendon Watford      -> 10 PTS, 4 REB, 4 AST (O/U 10.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (13% conf, 31.7% edge), O/U 4.5 assists VALUABLE: Under (38% conf, 6.4% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.1 | offset=+0.54 | corrected= 9.7
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.2 | offset=+0.31 | corrected= 2.5
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.3 | offset=+0.23 | corrected= 2.6
+  Justin Edwards       -> 10 PTS, 3 REB, 3 AST (O/U 8.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (40% conf, 1.6% edge), O/U 1.5 assists VALUABLE: Over (68% conf, 71.3% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.5 | offset=+0.54 | corrected=10.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.5 | offset=+0.30 | corrected= 4.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.6 | offset=+0.23 | corrected= 1.8
+  Dominick Barlow      -> 10 PTS, 5 REB, 2 AST (O/U 10.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (30% conf, 12.5% edge), O/U 0.5 assists VALUABLE: Over (80% conf, 257.2% edge))
+  Tyrese Martin        -> 10 PTS, 3 REB, 3 AST
+  [BIAS CORRECTION] POINTS   | Bench   | median= 7.9 | offset=+0.54 | corrected= 8.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 8.1 | offset=+0.30 | corrected= 8.4
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.6 | offset=+0.23 | corrected= 1.8
+  Andre Drummond       -> 8 PTS, 8 REB, 2 AST (O/U 8.5 points ignore, O/U 9.5 rebounds VALUABLE: Under (31% conf, 12.0% edge), O/U 1.5 assists VALUABLE: Over (51% conf, 22.9% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 7.9 | offset=+0.54 | corrected= 8.4
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 1.3 | offset=+0.31 | corrected= 1.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.3 | offset=+0.21 | corrected= 3.5
+  Cameron Payne        -> 8 PTS, 2 REB, 4 AST (O/U 9.5 points ignore, O/U 1.5 rebounds VALUABLE: Over (36% conf, 4.4% edge), O/U 3.5 assists VALUABLE: Over (42% conf, 1.1% edge))
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=27.1 | offset=+0.56 | corrected=27.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.3 | offset=+0.30 | corrected= 4.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.2 | offset=+0.21 | corrected= 6.4
+  Keyonte George       -> 28 PTS, 5 REB, 6 AST (O/U 21.5 points VALUABLE: Over (78% conf, 28.9% edge), O/U 2.5 rebounds VALUABLE: Over (79% conf, 83.9% edge), O/U 4.5 assists VALUABLE: Over (73% conf, 41.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=13.5 | offset=+0.56 | corrected=14.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.3 | offset=+0.31 | corrected= 3.7
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 8.8 | offset=+0.21 | corrected= 9.0
+  Isaiah Collier       -> 14 PTS, 4 REB, 9 AST (O/U 12.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (68% conf, 46.3% edge), O/U 6.5 assists VALUABLE: Over (79% conf, 38.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=13.4 | offset=+0.56 | corrected=14.0
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 8.5 | offset=+0.30 | corrected= 8.8
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.8 | offset=+0.23 | corrected= 3.0
+  Kyle Filipowski      -> 14 PTS, 9 REB, 3 AST (O/U 13.5 points ignore, O/U 8.5 rebounds VALUABLE: Over (48% conf, 3.2% edge), O/U 2.5 assists VALUABLE: Over (53% conf, 20.6% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.4 | offset=+0.54 | corrected= 8.9
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.3 | offset=+0.31 | corrected= 3.6
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.9 | offset=+0.23 | corrected= 2.1
+  Cody Williams        -> 9 PTS, 4 REB, 2 AST (O/U 4.5 points VALUABLE: Over (78% conf, 97.7% edge), O/U 2.5 rebounds VALUABLE: Over (65% conf, 43.5% edge), O/U 0.5 assists VALUABLE: Over (86% conf, 325.6% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=16.7 | offset=+0.56 | corrected=17.2
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.8 | offset=+0.30 | corrected= 5.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.1 | offset=+0.23 | corrected= 2.3
+  Ace Bailey           -> 17 PTS, 5 REB, 2 AST (O/U 15.5 points ignore, O/U 4.5 rebounds VALUABLE: Over (53% conf, 13.3% edge), O/U 1.5 assists VALUABLE: Over (62% conf, 54.0% edge))
+  Mo Bamba             -> 6 PTS, 6 REB, 1 AST
+  Blake Hinson         -> 12 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=19.0 | offset=+0.56 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.8 | offset=+0.31 | corrected= 4.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.1 | offset=+0.23 | corrected= 2.4
+  Brice Sensabaugh     -> 20 PTS, 4 REB, 2 AST (O/U 14.5 points VALUABLE: Over (73% conf, 34.8% edge), O/U 3.5 rebounds VALUABLE: Over (52% conf, 16.2% edge), O/U 1.5 assists VALUABLE: Over (60% conf, 57.9% edge))
+  Elijah Harkless      -> 9 PTS, 2 REB, 3 AST
+
+============================================================
+ MATCHUP: Atlanta Hawks vs. Milwaukee Bucks
+============================================================
+PROJECTED TOTAL: 246.1
+  [BIAS CORRECTION] TOTAL | Neutral | median=246.1 | offset=+0.00 | corrected=246.1
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (84% conf, 15.6 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=15.9 | offset=+0.56 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 6.6 | offset=+0.30 | corrected= 6.9
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.1 | offset=+0.21 | corrected= 3.3
+  Onyeka Okongwu       -> 16 PTS, 7 REB, 3 AST (O/U 13.5 points VALUABLE: Over (62% conf, 22.1% edge), O/U 7.5 rebounds VALUABLE: Under (34% conf, 7.5% edge), O/U 2.5 assists VALUABLE: Over (62% conf, 34.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=20.6 | offset=+0.56 | corrected=21.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 7.9 | offset=+0.30 | corrected= 8.2
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.9 | offset=+0.21 | corrected= 7.1
+  Jalen Johnson        -> 21 PTS, 8 REB, 7 AST (O/U 22.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (18% conf, 21.8% edge), O/U 7.5 assists VALUABLE: Under (36% conf, 5.7% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=18.9 | offset=+0.56 | corrected=19.4
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.8 | offset=+0.31 | corrected= 3.1
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.0 | offset=+0.21 | corrected= 4.2
+  CJ McCollum          -> 19 PTS, 3 REB, 4 AST (O/U 17.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (30% conf, 10.4% edge), O/U 3.5 assists VALUABLE: Over (55% conf, 18.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=11.2 | offset=+0.56 | corrected=11.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.4 | offset=+0.30 | corrected= 5.7
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.2 | offset=+0.21 | corrected= 6.4
+  Dyson Daniels        -> 12 PTS, 6 REB, 6 AST (O/U 10.5 points ignore, O/U 6.5 rebounds VALUABLE: Under (29% conf, 12.9% edge), O/U 5.5 assists VALUABLE: Over (58% conf, 16.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=19.3 | offset=+0.56 | corrected=19.9
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.7 | offset=+0.31 | corrected= 3.0
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.7 | offset=+0.21 | corrected= 3.9
+  Nickeil Alexander-Walker -> 20 PTS, 3 REB, 4 AST (O/U 17.5 points VALUABLE: Over (59% conf, 13.6% edge), O/U 3.5 rebounds VALUABLE: Under (29% conf, 15.2% edge), O/U 4.5 assists VALUABLE: Under (31% conf, 13.5% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=11.2 | offset=+0.56 | corrected=11.7
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.1 | offset=+0.31 | corrected= 3.4
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.2 | offset=+0.23 | corrected= 1.5
+  Zaccharie Risacher   -> 12 PTS, 3 REB, 1 AST (O/U 7.5 points VALUABLE: Over (73% conf, 56.5% edge), O/U 3.5 rebounds VALUABLE: Under (39% conf, 2.8% edge), O/U 0.5 assists VALUABLE: Over (70% conf, 190.4% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.5 | offset=+0.56 | corrected=11.1
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.0 | offset=+0.31 | corrected= 2.3
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.9 | offset=+0.23 | corrected= 2.1
+  Corey Kispert        -> 11 PTS, 2 REB, 2 AST (O/U 7.5 points VALUABLE: Over (69% conf, 48.0% edge), O/U 1.5 rebounds VALUABLE: Over (59% conf, 53.2% edge), O/U 1.5 assists VALUABLE: Over (57% conf, 40.9% edge))
+  Mouhamed Gueye       -> 5 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Bench   | median= 9.7 | offset=+0.54 | corrected=10.2
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.2 | offset=+0.30 | corrected= 4.5
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.8 | offset=+0.23 | corrected= 2.0
+  Jock Landale         -> 10 PTS, 5 REB, 2 AST (O/U 7.5 points VALUABLE: Over (64% conf, 36.2% edge), O/U 4.5 rebounds VALUABLE: Over (44% conf, 0.6% edge), O/U 1.5 assists VALUABLE: Over (53% conf, 32.4% edge))
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=16.5 | offset=+0.56 | corrected=17.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.8 | offset=+0.31 | corrected= 4.2
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.6 | offset=+0.21 | corrected= 6.8
+  Ryan Rollins         -> 17 PTS, 4 REB, 7 AST (O/U 16.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (34% conf, 7.5% edge), O/U 5.5 assists VALUABLE: Over (62% conf, 22.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=27.8 | offset=+0.56 | corrected=28.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 9.5 | offset=+0.30 | corrected= 9.8
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.4 | offset=+0.21 | corrected= 6.6
+  Giannis Antetokounmpo -> 28 PTS, 10 REB, 7 AST (O/U 25.5 points VALUABLE: Over (60% conf, 11.3% edge), O/U 9.5 rebounds VALUABLE: Over (49% conf, 3.2% edge), O/U 5.5 assists VALUABLE: Over (63% conf, 20.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=15.1 | offset=+0.56 | corrected=15.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.6 | offset=+0.30 | corrected= 5.9
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.0 | offset=+0.23 | corrected= 2.3
+  Bobby Portis         -> 16 PTS, 6 REB, 2 AST (O/U 11.5 points VALUABLE: Over (69% conf, 36.4% edge), O/U 5.5 rebounds VALUABLE: Over (51% conf, 7.6% edge), O/U 1.5 assists VALUABLE: Over (59% conf, 50.8% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=13.8 | offset=+0.56 | corrected=14.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.0 | offset=+0.30 | corrected= 4.3
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.3 | offset=+0.21 | corrected= 3.5
+  Kyle Kuzma           -> 14 PTS, 4 REB, 3 AST (O/U 8.5 points VALUABLE: Over (84% conf, 68.8% edge), O/U 2.5 rebounds VALUABLE: Over (75% conf, 73.1% edge), O/U 1.5 assists VALUABLE: Over (81% conf, 131.2% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.0 | offset=+0.54 | corrected= 6.6
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.0 | offset=+0.31 | corrected= 2.3
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.0 | offset=+0.23 | corrected= 2.2
+  Ousmane Dieng        -> 7 PTS, 2 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (15% conf, 33.1% edge), O/U 2.5 assists VALUABLE: Under (34% conf, 11.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=13.4 | offset=+0.56 | corrected=13.9
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.6 | offset=+0.30 | corrected= 4.9
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.0 | offset=+0.23 | corrected= 2.3
+  Myles Turner         -> 14 PTS, 5 REB, 2 AST (O/U 9.5 points VALUABLE: Over (74% conf, 46.7% edge), O/U 4.5 rebounds VALUABLE: Over (47% conf, 8.1% edge), O/U 1.5 assists VALUABLE: Over (57% conf, 50.4% edge))
+  Jericho Sims         -> 3 PTS, 5 REB, 2 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=18.5 | offset=+0.56 | corrected=19.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 1.9 | offset=+0.31 | corrected= 2.2
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.8 | offset=+0.21 | corrected= 4.0
+  Cam Thomas           -> 19 PTS, 2 REB, 4 AST (O/U 12.5 points VALUABLE: Over (79% conf, 52.2% edge), O/U 1.5 rebounds VALUABLE: Over (56% conf, 46.2% edge), O/U 2.5 assists VALUABLE: Over (74% conf, 61.3% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=10.4 | offset=+0.56 | corrected=11.0
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.3 | offset=+0.31 | corrected= 2.6
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 2.6 | offset=+0.23 | corrected= 2.8
+  AJ Green             -> 11 PTS, 3 REB, 3 AST (O/U 9.5 points ignore, O/U 2.5 rebounds VALUABLE: Over (42% conf, 5.4% edge), O/U 1.5 assists VALUABLE: Over (72% conf, 87.3% edge))
+
+============================================================
+ MATCHUP: Boston Celtics vs. Charlotte Hornets
+============================================================
+PROJECTED TOTAL: 245.4
+  [BIAS CORRECTION] TOTAL | Neutral | median=245.4 | offset=+0.00 | corrected=245.4
+  -> GAME TOTAL: O/U 230.5  VALUABLE: Over (78% conf, 14.9 edge)
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=27.8 | offset=+0.56 | corrected=28.4
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.3 | offset=+0.30 | corrected= 5.6
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.9 | offset=+0.21 | corrected= 5.1
+  Jaylen Brown         -> 28 PTS, 6 REB, 5 AST (O/U 28.5 points ignore, O/U 6.5 rebounds VALUABLE: Under (30% conf, 13.3% edge), O/U 4.5 assists VALUABLE: Over (56% conf, 13.8% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=19.8 | offset=+0.56 | corrected=20.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.6 | offset=+0.31 | corrected= 4.0
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.5 | offset=+0.21 | corrected= 6.7
+  Derrick White        -> 20 PTS, 4 REB, 7 AST (O/U 16.5 points VALUABLE: Over (65% conf, 23.2% edge), O/U 3.5 rebounds VALUABLE: Over (50% conf, 12.9% edge), O/U 5.5 assists VALUABLE: Over (64% conf, 22.7% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 5.2 | offset=+0.54 | corrected= 5.8
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.9 | offset=+0.31 | corrected= 3.2
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.8 | offset=+0.23 | corrected= 2.1
+  Baylor Scheierman    -> 6 PTS, 3 REB, 2 AST (O/U 7.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (14% conf, 29.6% edge), O/U 1.5 assists VALUABLE: Over (55% conf, 37.1% edge))
+  Hugo González        -> 5 PTS, 3 REB, 1 AST
+  Nikola Vučević       -> 16 PTS, 7 REB, 4 AST
+  Luka Garza           -> 7 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=10.5 | offset=+0.56 | corrected=11.1
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 2.8 | offset=+0.31 | corrected= 3.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.8 | offset=+0.23 | corrected= 2.0
+  Sam Hauser           -> 11 PTS, 3 REB, 2 AST (O/U 9.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (32% conf, 10.3% edge), O/U 1.5 assists VALUABLE: Over (54% conf, 34.5% edge))
+  Jordan Walsh         -> 5 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS   | Bench   | median= 8.5 | offset=+0.54 | corrected= 9.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.8 | offset=+0.30 | corrected= 6.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 1.8 | offset=+0.23 | corrected= 2.1
+  Neemias Queta        -> 9 PTS, 6 REB, 2 AST (O/U 9.5 points ignore, O/U 7.5 rebounds VALUABLE: Under (23% conf, 19.2% edge), O/U 1.5 assists VALUABLE: Over (53% conf, 36.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=17.9 | offset=+0.56 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.0 | offset=+0.31 | corrected= 3.4
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.0 | offset=+0.21 | corrected= 6.2
+  Payton Pritchard     -> 18 PTS, 3 REB, 6 AST (O/U 16.5 points ignore, O/U 3.5 rebounds VALUABLE: Under (36% conf, 4.2% edge), O/U 5.5 assists VALUABLE: Over (56% conf, 12.1% edge))
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS   | Starter | median=19.2 | offset=+0.56 | corrected=19.8
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.4 | offset=+0.30 | corrected= 4.7
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.3 | offset=+0.21 | corrected= 3.5
+  Brandon Miller       -> 20 PTS, 5 REB, 3 AST (O/U 19.5 points ignore, O/U 4.5 rebounds VALUABLE: Over (45% conf, 4.0% edge), O/U 2.5 assists VALUABLE: Over (65% conf, 38.9% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=18.7 | offset=+0.56 | corrected=19.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.9 | offset=+0.31 | corrected= 4.2
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 6.5 | offset=+0.21 | corrected= 6.7
+  LaMelo Ball          -> 19 PTS, 4 REB, 7 AST (O/U 17.5 points ignore, O/U 4.5 rebounds VALUABLE: Under (36% conf, 5.7% edge), O/U 6.5 assists VALUABLE: Over (47% conf, 3.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=18.2 | offset=+0.56 | corrected=18.8
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.4 | offset=+0.30 | corrected= 4.7
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.2 | offset=+0.21 | corrected= 3.4
+  Kon Knueppel         -> 19 PTS, 5 REB, 3 AST (O/U 16.5 points VALUABLE: Over (59% conf, 13.9% edge), O/U 4.5 rebounds VALUABLE: Over (48% conf, 4.2% edge), O/U 2.5 assists VALUABLE: Over (62% conf, 36.5% edge))
+  Moussa Diabaté       -> 7 PTS, 7 REB, 2 AST
+  [BIAS CORRECTION] POINTS   | Starter | median=18.7 | offset=+0.56 | corrected=19.3
+  [BIAS CORRECTION] REBOUNDS | Bench   | median= 3.2 | offset=+0.31 | corrected= 3.5
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 4.2 | offset=+0.21 | corrected= 4.4
+  Coby White           -> 19 PTS, 3 REB, 4 AST (O/U 11.5 points VALUABLE: Over (87% conf, 67.7% edge), O/U 2.5 rebounds VALUABLE: Over (62% conf, 39.2% edge), O/U 2.5 assists VALUABLE: Over (79% conf, 75.0% edge))
+  [BIAS CORRECTION] POINTS   | Starter | median=16.5 | offset=+0.56 | corrected=17.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 5.0 | offset=+0.30 | corrected= 5.3
+  [BIAS CORRECTION] ASSISTS  | Starter | median= 3.2 | offset=+0.21 | corrected= 3.4
+  Miles Bridges        -> 17 PTS, 5 REB, 3 AST (O/U 14.5 points VALUABLE: Over (60% conf, 17.8% edge), O/U 5.5 rebounds VALUABLE: Under (38% conf, 4.2% edge), O/U 2.5 assists VALUABLE: Over (62% conf, 36.5% edge))
+  [BIAS CORRECTION] POINTS   | Bench   | median= 6.5 | offset=+0.54 | corrected= 7.1
+  [BIAS CORRECTION] REBOUNDS | Starter | median= 4.8 | offset=+0.30 | corrected= 5.1
+  [BIAS CORRECTION] ASSISTS  | Bench   | median= 0.9 | offset=+0.23 | corrected= 1.1
+  Ryan Kalkbrenner     -> 7 PTS, 5 REB, 1 AST (O/U 4.5 points VALUABLE: Over (66% conf, 57.3% edge), O/U 4.5 rebounds VALUABLE: Over (51% conf, 12.4% edge), O/U 0.5 assists VALUABLE: Over (59% conf, 120.0% edge))
+  Sion James           -> 5 PTS, 3 REB, 2 AST
+  Josh Green           -> 6 PTS, 2 REB, 1 AST
+  Pat Connaughton      -> 4 PTS, 2 REB, 1 AST
+  Antonio Reeves       -> 7 PTS, 1 REB, 1 AST

@@ -20,7 +20,21 @@ import re
 import os
 import sqlite3
 import argparse
-from datetime import date as date_type
+from datetime import date as date_type, datetime
+
+# Add etl directory to path for imports if needed, but bet_tracker is already in etl
+try:
+    from advanced_model.etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
+except ImportError:
+    from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
+
+def get_month_folder(date_str):
+    """Maps YYYY-MM-DD to lowercase month name (e.g. 'march')."""
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        return dt.strftime("%B").lower()
+    except:
+        return "march" # Fallback
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 MODEL_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,7 +74,7 @@ def _parse_analyze_tex_full(tex_path: str) -> list[dict]:
 
     records = []
     stat_map = {
-        'REB': 'REBOUNDS', 'POI': 'POINTS', 'AST': 'ASSISTS',
+        'REB': 'REBOUNDS', 'POI': 'POINTS', 'AST': 'ASSISTS', 'ASS': 'ASSISTS',
         'TOT': 'TOTAL', 'SPR': 'SPREAD',
         'POINTS': 'POINTS', 'REBOUNDS': 'REBOUNDS', 'ASSISTS': 'ASSISTS',
         'TOTAL': 'TOTAL', 'SPREAD': 'SPREAD',
@@ -71,8 +85,8 @@ def _parse_analyze_tex_full(tex_path: str) -> list[dict]:
     }
 
     row_re = re.compile(
-        r'^([A-Za-z\s\.\'\-]+?)\s*&\s*(\d+)\\%\s*&\s*(OVER|UNDER|COVER)\s+([\d\.]+)\s+(\w+)'
-        r'\s*&\s*([\-\d\.]+)\s*&\s*([+\-][\d\.]+)\s*&\s*([+\-][\d\.]+)\\%\s*&\s*\\textcolor\{[^}]+\}\{(WON|LOST)',
+        r'^([A-Za-z\s\.\'\-]+?)\s*&\s*(\d+)\\%\s*&\s*(OVER|UNDER|COVER)\s+([+\-]?[\d\.]+)\s+(\w+)'
+        r'\s*&\s*([\-\d\.]+)\s*&\s*([+\-]?[\d\.]+)\s*&\s*([+\-]?[\d\.]+)\\%\s*&\s*\\textcolor\{[^}]+\}\{(WON|LOST)',
         re.MULTILINE | re.IGNORECASE
     )
 
@@ -89,7 +103,7 @@ def _parse_analyze_tex_full(tex_path: str) -> list[dict]:
             'direction': direction.upper(),
             'line': float(line),
             'blended_confidence': float(conf),
-            'sim_confidence': float(conf),
+            'sim_confidence': None, # To be enriched from predicts.tex if available
             'odds': None,
             'edge_pct': None,
             'game': '',
@@ -129,6 +143,7 @@ def _enrich_from_predicts_tex(records: list[dict], tex_path: str) -> list[dict]:
                 r['odds'] = float(odds)
                 r['edge_pct'] = float(edge)
                 r['blended_confidence'] = float(conf)
+                # Note: We do NOT overwrite r['sim_confidence'] here if it was already set from analyze.tex/TXT
                 break
             if 'Over' in pick_text and r['bet_type'] == 'total' and str(r['line']) in pick_text:
                 r['game'] = game_text
@@ -152,8 +167,61 @@ def _enrich_from_predicts_tex(records: list[dict], tex_path: str) -> list[dict]:
     return records
 
 
+def _enrich_clv(records: list[dict], game_date: str) -> list[dict]:
+    """Enrich records with CLV (Closing Line Value) from ESPN open/close odds data."""
+    # We only fetch live odds if it's today's run
+    today = datetime.now().strftime("%Y-%m-%d")
+    if game_date != today:
+        return records
+
+    try:
+        all_odds = fetch_espn_odds()
+    except Exception as e:
+        print(f"    [-] Could not fetch ESPN odds for CLV: {e}")
+        return records
+
+    if not all_odds:
+        return records
+
+    for r in records:
+        game_label = r.get('game', '')
+        if ' @ ' not in game_label:
+            continue
+            
+        away_team, home_team = game_label.split(' @ ')
+        match = match_espn_odds_to_game(all_odds, home_team.strip(), away_team.strip())
+        if not match:
+            continue
+            
+        _, odds_data = match
+        stat = r.get('stat_category')
+        direction = r.get('direction')
+        
+        clv = None
+        if stat == 'SPREAD':
+            open_val = odds_data.get('open_home_spread')
+            close_val = odds_data.get('spreads', {}).get('home_spread')
+            if open_val is not None and close_val is not None:
+                # For SPREAD, 'line' is from the perspective of the bet side (r['line'])
+                # So Opening - Closing works for both fav and dog
+                clv = r.get('line', 0) - close_val if r.get('player_or_team') == odds_data['home_team'] else r.get('line', 0) - odds_data.get('spreads', {}).get('away_spread', -close_val)
+        elif stat == 'TOTAL':
+            open_val = odds_data.get('open_total')
+            close_val = odds_data.get('totals', {}).get('total')
+            if open_val is not None and close_val is not None:
+                if direction == 'OVER':
+                    clv = close_val - open_val
+                elif direction == 'UNDER':
+                    clv = open_val - close_val
+        
+        if clv is not None:
+            r['clv'] = round(clv, 2)
+            
+    return records
+
+
 def _parse_txt_valuable_picks(txt_path: str) -> list[dict]:
-    """Parse VALUABLE picks from a raw predicts_YYYY-MM-DD.txt file (historical mode)."""
+    """Parse VALUABLE picks (props, spreads, totals) from a raw predicts_YYYY-MM-DD.txt file."""
     if not os.path.exists(txt_path):
         print(f"  [-] File not found: {txt_path}")
         return []
@@ -162,33 +230,76 @@ def _parse_txt_valuable_picks(txt_path: str) -> list[dict]:
     with open(txt_path, 'r', encoding='utf-8') as fh:
         content = fh.read()
         
-    # Example line:
-    # Rudy Gobert          -> 10 PTS, 8 REB, 1 AST (O/U 11.5 points ignore, O/U 12.5 rebounds VALUABLE: Under (94% conf, 43.5% edge))
-    line_re = re.compile(r'^\s*([A-Za-z\s\.\'-]+?)\s*->\s*\d+ PTS.*?(\(O/U.*\))', re.MULTILINE)
-    stat_map = {'points': 'POINTS', 'rebounds': 'REBOUNDS', 'assists': 'ASSISTS'}
+    # Split by matchup to help context
+    matchups = re.split(r'={10,}', content)
     
-    for m in line_re.finditer(content):
-        player = m.group(1).strip()
-        props_str = m.group(2)
-        
-        prop_re = re.compile(r'O/U\s+([\d\.]+)\s+(\w+)\s+VALUABLE:\s+(Over|Under)\s+\((\d+)%\s+conf')
-        for pm in prop_re.finditer(props_str):
-            line, stat_raw, direction, conf = pm.groups()
-            stat = stat_map.get(stat_raw.lower(), stat_raw.upper())
+    stat_map = {'points': 'POINTS', 'rebounds': 'REBOUNDS', 'assists': 'ASSISTS'}
+
+    for section in matchups:
+        # Try to find matchup name
+        game_label = ""
+        m_match = re.search(r'MATCHUP:\s*(.+)', section)
+        if m_match:
+            game_label = m_match.group(1).strip()
+
+        # 1. Player Props
+        # Example: Rudy Gobert -> 10 PTS (O/U 12.5 rebounds VALUABLE: Under (94% conf, 43.5% edge))
+        prop_container_re = re.compile(r'^\s*([A-Za-z\s\.\'-]+?)\s*->\s*\d+\s+PTS.*?(\(O/U.*\))', re.MULTILINE)
+        for m in prop_container_re.finditer(section):
+            player = m.group(1).strip()
+            props_str = m.group(2)
+            
+            prop_re = re.compile(r'O/U\s+([\d\.]+)\s+(\w+)\s+VALUABLE:\s+(Over|Under)\s+\((\d+)%\s+conf(?:\s+\(raw:\s+([\d\.]+)%\))?(?:,\s+([\d\.]+)%\s+edge)?\)')
+            for pm in prop_re.finditer(props_str):
+                line, stat_raw, direction, conf, raw_conf, edge = pm.groups()
+                stat = stat_map.get(stat_raw.lower(), stat_raw.upper())
+                records.append({
+                    'player_or_team': player,
+                    'stat_category': stat,
+                    'bet_type': 'prop',
+                    'direction': direction.upper(),
+                    'line': float(line),
+                    'sim_confidence': float(conf),
+                    'raw_sim_freq': float(raw_conf)/100.0 if raw_conf else None,
+                    'blended_confidence': float(conf),
+                    'edge_pct': float(edge) if edge else None,
+                    'game': game_label,
+                })
+
+        # 2. Spreads
+        # -> HOME SPREAD: LAL -11.5 VALUABLE: Cover (95% conf, 45.3% edge)
+        spread_re = re.compile(r'->\s+(?:HOME|AWAY)\s+SPREAD:\s+([A-Za-z\s]+)\s+([+-]?[\d\.]+)\s+VALUABLE:\s+(Cover)\s+\((\d+)%\s+conf(?:\s+\(raw:\s+([\d\.]+)%\))?(?:,\s+([\d\.]+)%\s+edge)?\)', re.IGNORECASE)
+        for m in spread_re.finditer(section):
+            team, line, status, conf, raw_conf, edge = m.groups()
             records.append({
-                'player_or_team': player,
-                'stat_category': stat,
-                'bet_type': 'prop',
+                'player_or_team': team.strip(),
+                'stat_category': 'SPREAD',
+                'bet_type': 'spread',
+                'direction': 'COVER',
+                'line': float(line),
+                'sim_confidence': float(conf),
+                'raw_sim_freq': float(raw_conf)/100.0 if raw_conf else None,
+                'blended_confidence': float(conf),
+                'edge_pct': float(edge) if edge else None,
+                'game': game_label,
+            })
+
+        # 3. Totals
+        # -> GAME TOTAL: O/U 222.5 VALUABLE: Under (79% conf, 28.7% edge)
+        total_re = re.compile(r'->\s+GAME\s+TOTAL:\s+O/U\s+([\d\.]+)\s+VALUABLE:\s+(Over|Under)\s+\((\d+)%\s+conf(?:\s+\(raw:\s+([\d\.]+)%\))?(?:,\s+([\d\.]+)%\s+edge)?\)', re.IGNORECASE)
+        for m in total_re.finditer(section):
+            line, direction, conf, raw_conf, edge = m.groups()
+            records.append({
+                'player_or_team': 'Game Total',
+                'stat_category': 'TOTAL',
+                'bet_type': 'total',
                 'direction': direction.upper(),
                 'line': float(line),
                 'sim_confidence': float(conf),
+                'raw_sim_freq': float(raw_conf)/100.0 if raw_conf else None,
                 'blended_confidence': float(conf),
-                'odds': None,
-                'edge_pct': None,
-                'game': '',
-                'projected_margin': None,
-                'safety_margin': None,
-                'market_spread': None,
+                'edge_pct': float(edge) if edge else None,
+                'game': game_label,
             })
             
     return records
@@ -240,9 +351,9 @@ def ingest_picks(picks: list[dict], game_date: str, source_file: str):
         cur.execute("""
             INSERT INTO daily_picks
                 (date, bet_type, stat_category, player_or_team, game,
-                 direction, line, odds, sim_confidence, blended_confidence, edge_pct,
-                 projected_margin, safety_margin, market_spread, source_file)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                 direction, line, odds, sim_confidence, raw_sim_freq, blended_confidence, edge_pct,
+                 projected_margin, safety_margin, market_spread, source_file, clv, source_mode)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """, (
             game_date,
             p['bet_type'],
@@ -253,12 +364,15 @@ def ingest_picks(picks: list[dict], game_date: str, source_file: str):
             p.get('line'),
             p.get('odds'),
             p.get('sim_confidence'),
+            p.get('raw_sim_freq'),
             p.get('blended_confidence'),
             p.get('edge_pct'),
             p.get('projected_margin'),
             p.get('safety_margin'),
             p.get('market_spread'),
             source_file,
+            p.get('clv'),
+            'synthetic_circular' if 'backtest' in source_file.lower() else 'live'
         ))
         inserted += 1
 
@@ -320,8 +434,47 @@ def ingest_results(pick_outcomes: list[dict], game_date: str):
     return resolved
 
 
-# ── High-level Seed Functions ──────────────────────────────────────────────────
+def ingest_shadow_picks(picks: list[dict]):
+    """Insert a list of shadow picks into the shadow_picks table."""
+    if not picks:
+        return 0
+        
+    conn = _get_conn()
+    cur = conn.cursor()
+    inserted = 0
+    for p in picks:
+        cur.execute("""
+            INSERT INTO shadow_picks 
+                (game_date, player, stat_category, direction, line, projection, sim_confidence, edge_pct, ban_reason)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            p.get('game_date'),
+            p.get('player'),
+            p.get('stat_category'),
+            p.get('direction'),
+            p.get('line'),
+            p.get('projection'),
+            p.get('sim_confidence'),
+            p.get('edge_pct'),
+            p.get('ban_reason')
+        ))
+        inserted += 1
+    conn.commit()
+    conn.close()
+    return inserted
 
+def ingest_shadow_pick(p: dict):
+    """Convenience helper to insert a single shadow pick."""
+    return ingest_shadow_picks([p])
+
+
+# ── High-level Seed Functions ──────────────────────────────────────────────────
+def seed_from_tex(predicts_tex, analyze_tex, results_txt, game_date):
+    """Seed data from analyze.tex + predicts.tex (full enrichment mode)."""
+    print(f"\n[+] Seeding {game_date} from TeX reports...")
+    records = _parse_analyze_tex_full(analyze_tex)
+    records = _enrich_from_predicts_tex(records, predicts_tex)
+    records = _enrich_clv(records, game_date)
 
     n_inserted = ingest_picks(records, game_date, os.path.basename(predicts_tex))
     print(f"    Inserted {n_inserted} new picks into daily_picks (odds enriched)")
@@ -332,6 +485,21 @@ def ingest_results(pick_outcomes: list[dict], game_date: str):
     game_outcomes = _parse_results_txt(results_txt)
     n_games = ingest_game_results(game_outcomes, game_date)
     print(f"    Inserted {n_games} game results")
+
+
+def seed_from_txt(predicts_txt, results_txt, game_date):
+    """Seed data from a .txt prediction file (historical mode / simplified live)."""
+    print(f"\n[+] Seeding {game_date} from .txt report...")
+    records = _parse_txt_valuable_picks(predicts_txt)
+    records = _enrich_clv(records, game_date)
+    
+    n_inserted = ingest_picks(records, game_date, os.path.basename(predicts_txt))
+    print(f"    Inserted {n_inserted} new picks into daily_picks")
+
+    if os.path.exists(results_txt):
+        game_outcomes = _parse_results_txt(results_txt)
+        n_games = ingest_game_results(game_outcomes, game_date)
+        print(f"    Inserted {n_games} game results")
 
 
 def seed_march3():
@@ -382,7 +550,7 @@ def seed_all():
 
 # ── Query Functions ───────────────────────────────────────────────────────────
 
-def query_summary(days: int = None, bet_type: str = None, stat_category: str = None) -> dict:
+def query_summary(days: int = None, bet_type: str = None, stat_category: str = None, verified_only: bool = True) -> dict:
     """
     Return aggregated win rate stats.
 
@@ -390,12 +558,16 @@ def query_summary(days: int = None, bet_type: str = None, stat_category: str = N
         days:          Last N days (None = all time)
         bet_type:      Filter by 'prop' | 'spread' | 'total' (None = all)
         stat_category: Filter by 'POINTS' | 'REBOUNDS' etc. (None = all)
+        verified_only: If True, exclude synthetic backtest projections (where line=0.0 or from bulk_backtest)
     """
     conn = _get_conn()
     cur = conn.cursor()
 
     where_clauses = ["pr.is_win IS NOT NULL"]
     params = []
+
+    if verified_only:
+        where_clauses.append("(dp.line != 0.0 AND dp.source_mode != 'synthetic_circular')")
 
     if days is not None:
         where_clauses.append("dp.date >= date('now', ?)")
@@ -413,7 +585,7 @@ def query_summary(days: int = None, bet_type: str = None, stat_category: str = N
             COUNT(*)              AS total,
             SUM(pr.is_win)        AS wins,
             AVG(pr.is_win)*100    AS win_rate,
-            AVG(dp.blended_confidence) AS avg_conf
+            AVG(NULLIF(dp.blended_confidence, 0)) AS avg_conf
         FROM daily_picks dp
         JOIN pick_results pr ON pr.pick_id = dp.id
         WHERE {where}
@@ -423,11 +595,12 @@ def query_summary(days: int = None, bet_type: str = None, stat_category: str = N
     return dict(row) if row else {}
 
 
-def query_by_type() -> list[dict]:
+def query_by_type(verified_only: bool = True) -> list[dict]:
     """Return win rates broken down by stat_category."""
     conn = _get_conn()
     cur = conn.cursor()
-    cur.execute("""
+    where = "WHERE (dp.line != 0.0 AND dp.source_mode != 'synthetic_circular')" if verified_only else ""
+    cur.execute(f"""
         SELECT
             dp.stat_category,
             COUNT(*)           AS total,
@@ -435,12 +608,23 @@ def query_by_type() -> list[dict]:
             AVG(pr.is_win)*100 AS win_rate
         FROM daily_picks dp
         JOIN pick_results pr ON pr.pick_id = dp.id
+        {where}
         GROUP BY dp.stat_category
         ORDER BY win_rate DESC
     """)
     rows = [dict(r) for r in cur.fetchall()]
     conn.close()
     return rows
+
+
+def get_db_date_range():
+    """Returns (min_date, max_date) from the daily_picks table."""
+    conn = _get_conn()
+    cur = conn.cursor()
+    cur.execute("SELECT MIN(date), MAX(date) FROM daily_picks")
+    row = cur.fetchone()
+    conn.close()
+    return row if row else (None, None)
 
 
 def query_confidence_bands() -> list[dict]:
@@ -469,25 +653,37 @@ def query_confidence_bands() -> list[dict]:
     return rows
 
 
-def print_summary():
+def print_summary(verified_only: bool = True):
     """Pretty-print the current performance summary."""
-    overall = query_summary()
+    overall = query_summary(verified_only=verified_only)
+    d_min, d_max = get_db_date_range()
+
     if not overall or not overall.get('total'):
-        print("[!] No resolved picks in the tracker yet.")
+        label = "verified" if verified_only else "any"
+        print(f"\n[!] No {label} picks found in range {d_min} to {d_max}.")
         return
 
     print("\n" + "="*55)
     print("  📊  AI BET TOOL — HISTORICAL PERFORMANCE TRACKER")
+    if verified_only:
+        print("      (VERIFIED PLAYER PROPS & REAL-TIME REPORTS)")
+    else:
+        print("      (FULL HISTORY: VERIFIED + SYNTHETIC BACKTESTS)")
+    if d_min and d_max:
+        print(f"      Period: {d_min} to {d_max}")
     print("="*55)
-    print(f"  Total Picks Tracked: {int(overall['total'])}  |  "
+    
+    label_picks = "Verified" if verified_only else "Total"
+    print(f"  {label_picks} Picks Tracked: {int(overall['total'])}  |  "
           f"Wins: {int(overall['wins'])}  |  "
           f"Win Rate: {overall['win_rate']:.1f}%")
     avg_conf = overall['avg_conf'] if overall['avg_conf'] is not None else 0.0
-    print(f"  Avg Confidence Declared: {avg_conf:.1f}%")
+    conf_label = "Avg Confidence (Verified)" if verified_only else "Avg Confidence (Overall)"
+    print(f"  {conf_label}: {avg_conf:.1f}%")
     print()
 
-    print("  By Category:")
-    by_type = query_by_type()
+    print(f"  By Category ({'Verified Only' if verified_only else 'Overall'}):")
+    by_type = query_by_type(verified_only=verified_only)
     for row in by_type:
         bar = "█" * int(row['win_rate'] / 5)
         print(f"    {row['stat_category']:<12}  {row['wins']:.0f}/{row['total']}  "
@@ -500,8 +696,156 @@ def print_summary():
         bar = "█" * int(b['win_rate'] / 5)
         print(f"    {b['band']:<8}  {b['wins']:.0f}/{b['total']}  "
               f"({b['win_rate']:.1f}%)  {bar}")
+    print("\n  [!] Projections listed as 'synthetic' are excluded from Win Rate.")
+    print("      Run 'python3 -m etl.bet_tracker lines' for full bias analysis.")
     print()
 
+
+def query_lines_analysis() -> list[dict]:
+    """Return aggregated bias metrics (Actual - Projected) per category and direction."""
+    conn = _get_conn()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT
+            dp.stat_category,
+            dp.direction,
+            COUNT(*)                    AS total,
+            SUM(
+                CASE 
+                    WHEN dp.stat_category = 'SPREAD' AND (pr.actual_value + dp.line = 0) THEN 1
+                    WHEN dp.stat_category != 'SPREAD' AND (pr.actual_value = dp.line) THEN 1
+                    ELSE 0
+                END
+            )                           AS pushes,
+            SUM(
+                CASE 
+                    WHEN dp.stat_category = 'SPREAD' THEN (pr.actual_value + dp.line > 0)
+                    WHEN dp.direction = 'OVER' OR dp.direction = 'COVER' THEN (pr.actual_value > dp.line)
+                    WHEN dp.direction = 'UNDER' THEN (pr.actual_value < dp.line)
+                    ELSE pr.is_win
+                END
+            )                           AS wins,
+            CAST(SUM(
+                CASE 
+                    WHEN dp.stat_category = 'SPREAD' THEN (pr.actual_value + dp.line > 0)
+                    WHEN dp.direction = 'OVER' OR dp.direction = 'COVER' THEN (pr.actual_value > dp.line)
+                    WHEN dp.direction = 'UNDER' THEN (pr.actual_value < dp.line)
+                    ELSE pr.is_win
+                END
+            ) AS FLOAT) * 100.0 / NULLIF(COUNT(*) - SUM(
+                CASE 
+                    WHEN dp.stat_category = 'SPREAD' AND (pr.actual_value + dp.line = 0) THEN 1
+                    WHEN dp.stat_category != 'SPREAD' AND (pr.actual_value = dp.line) THEN 1
+                    ELSE 0
+                END
+            ), 0)                       AS win_rate,
+            AVG(pr.diff_val)            AS mean_bias,
+            AVG(ABS(pr.diff_val))       AS mae
+        FROM daily_picks dp
+        JOIN pick_results pr ON pr.pick_id = dp.id
+        WHERE pr.is_win IS NOT NULL
+          AND dp.source_mode != 'synthetic_circular'
+        GROUP BY dp.stat_category, dp.direction
+        ORDER BY dp.stat_category, dp.direction
+    """)
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
+
+
+def print_lines_summary():
+    """Print the 'Super Analysis' report showing systematic model bias."""
+    rows = query_lines_analysis()
+    if not rows:
+        print("[!] No resolved data found for analysis.")
+        return
+
+    print("\n" + "="*85)
+    print("  🎯  AI BET TOOL — AGGREGATE HISTORICAL BIAS ANALYSIS ('LINES')")
+    print("="*85)
+    print(f"{'CATEGORY':<12} | {'DIR':<6} | {'N':<5} | {'P':<3} | {'WIN %':<8} | {'MEAN BIAS':<12} | {'MAE':<6}")
+    print("-" * 85)
+
+    # We'll group by category for cleaner output
+    current_cat = None
+    for r in rows:
+        if r['stat_category'] != current_cat:
+            if current_cat is not None:
+                print("-" * 85)
+            current_cat = r['stat_category']
+            
+        mb = r['mean_bias']
+        bias_desc = "(PESSIMISTIC)" if mb > 0 else "(OPTIMISTIC)"
+        if abs(mb) < 0.1: bias_desc = "(BALANCED)"
+        
+        # SPREAD bias is trickier to label as pessimistic/optimistic without side context,
+        # but the MB still tells us which way the error leans.
+        if r['stat_category'] in ['SPREAD', 'TOTAL']:
+            bias_desc = ""
+
+        print(f"{r['stat_category']:<12} | {r['direction']:<6} | {r['total']:<5} | {r['pushes']:<3} | "
+              f"{r['win_rate']:>6.1f}% | {mb:>+10.2f} {bias_desc:<13} | {r['mae']:>5.1f}")
+    
+    print("="*85)
+    print("  GUIDE:")
+    print("  - MEAN BIAS > 0: Model is UNDER-PROJECTING (Reality > Model).")
+    print("  - MEAN BIAS < 0: Model is OVER-PROJECTING (Model > Reality).")
+    print("  - MAE: Mean Absolute Error (overall distance from reality).")
+    print("="*85 + "\n")
+
+
+def check_db():
+    """Check record counts in DB by month and stat."""
+    conn = _get_conn()
+    cursor = conn.cursor()
+    
+    print("--- Daily Picks Counts by Month ---")
+    try:
+        cursor.execute("SELECT substr(date, 1, 7) as month, COUNT(*) FROM daily_picks GROUP BY month")
+        for row in cursor.fetchall():
+            print(f"{row[0]}: {row[1]}")
+    except Exception as e:
+        print(f"Error querying daily_picks: {e}")
+    
+    print("\n--- Summary of Stat Categories ---")
+    try:
+        cursor.execute("SELECT stat_category, COUNT(*) FROM daily_picks GROUP BY stat_category")
+        for row in cursor.fetchall():
+            print(f"{row[0]}: {row[1]}")
+    except Exception as e:
+        print(f"Error querying stat_category: {e}")
+        
+    conn.close()
+
+def compare_bias():
+    """Compare bias dynamically split by March and earlier."""
+    conn = _get_conn()
+    cur = conn.cursor()
+    
+    q = """
+    SELECT 
+        dp.stat_category, 
+        dp.direction, 
+        COUNT(*), 
+        AVG(pr.is_win)*100, 
+        AVG(pr.diff_val) 
+    FROM daily_picks dp 
+    JOIN pick_results pr ON pr.pick_id = dp.id 
+    WHERE %s 
+    GROUP BY 1, 2
+    """
+    
+    print("=== MARCH BIAS ANALYSIS ===")
+    cur.execute(q % "dp.date >= '2026-03-01'")
+    for r in cur.fetchall():
+        print(f"{r[0]:<10} | {r[1]:<6} | C: {r[2]:<4} | W%: {r[3]:>5.1f}% | MB: {r[4]:>+5.2f}")
+        
+    print("\n=== JAN/FEB BIAS ANALYSIS ===")
+    cur.execute(q % "dp.date < '2026-03-01'")
+    for r in cur.fetchall():
+        print(f"{r[0]:<10} | {r[1]:<6} | C: {r[2]:<4} | W%: {r[3]:>5.1f}% | MB: {r[4]:>+5.2f}")
+        
+    conn.close()
 
 # ── CLI Entry Point ────────────────────────────────────────────────────────────
 if __name__ == '__main__':
@@ -518,8 +862,13 @@ if __name__ == '__main__':
                              default=os.path.join(MODEL_DIR, 'yesterday_results.txt'))
 
     # summary
-    sub.add_parser('summary', help='Print performance summary')
+    summary_parser = sub.add_parser('summary', help='Print performance summary')
+    summary_parser.add_argument('--all', action='store_true', help='Include synthetic backtest picks in summary')
+    
     sub.add_parser('bands',   help='Print confidence band accuracy')
+    sub.add_parser('lines',   help='Print aggregate bias analysis (combined daily format)')
+    sub.add_parser('check',   help='Check record counts in DB by month and stat')
+    sub.add_parser('bias',    help='Print older bias comparison (Jan/Feb vs March)')
 
     args = parser.parse_args()
 
@@ -532,30 +881,60 @@ if __name__ == '__main__':
             seed_march4()
         else:
             # Dynamic filename detection for historical dates
+            month = get_month_folder(args.date)
             pred_path = args.predicts
             if pred_path == DEFAULT_PREDICTS:
-                specific_pred = os.path.join(MODEL_DIR, f'predicts_report_{args.date}.tex')
-                if os.path.exists(specific_pred):
-                    pred_path = specific_pred
+                # Check root, then check predictions/{month}/
+                specific_options = [
+                    os.path.join(MODEL_DIR, f'predicts_report_{args.date}.tex'),
+                    os.path.join(MODEL_DIR, 'predictions', month, f'predicts_report_{args.date}.tex'),
+                    os.path.join(MODEL_DIR, 'predictions', month, f'predicts_{args.date}.txt') # fallback to txt if needed
+                ]
+                for opt in specific_options:
+                    if os.path.exists(opt):
+                        pred_path = opt
+                        break
                     
             analyze_path = args.analyze
             if analyze_path == DEFAULT_ANALYZE:
-                specific_analyze = os.path.join(MODEL_DIR, f'analyze_{args.date}.tex')
-                if os.path.exists(specific_analyze):
-                    analyze_path = specific_analyze
+                # Check root, then check analyze/{month}/
+                specific_options = [
+                    os.path.join(MODEL_DIR, f'analyze_{args.date}.tex'),
+                    os.path.join(MODEL_DIR, 'analyze', month, f'analyze_{args.date}.tex')
+                ]
+                for opt in specific_options:
+                    if os.path.exists(opt):
+                        analyze_path = opt
+                        break
                     
             res_path = args.results
             if os.path.basename(res_path) == 'yesterday_results.txt':
-                specific_res = os.path.join(MODEL_DIR, f'results_{args.date}.txt')
-                if os.path.exists(specific_res):
-                    res_path = specific_res
+                # Check root, then check results/{month}/
+                specific_options = [
+                    os.path.join(MODEL_DIR, f'results_{args.date}.txt'),
+                    os.path.join(MODEL_DIR, f'yesterday_results_{args.date}.txt'),
+                    os.path.join(MODEL_DIR, 'results', month, f'yesterday_results_{args.date}.txt')
+                ]
+                for opt in specific_options:
+                    if os.path.exists(opt):
+                        res_path = opt
+                        break
                     
-            seed_from_tex(pred_path, analyze_path, res_path, args.date)
+            if pred_path.endswith('.txt'):
+                seed_from_txt(pred_path, res_path, args.date)
+            else:
+                seed_from_tex(pred_path, analyze_path, res_path, args.date)
     elif args.cmd == 'summary':
-        print_summary()
+        print_summary(verified_only=(not args.all))
+    elif args.cmd == 'lines':
+        print_lines_summary()
     elif args.cmd == 'bands':
         bands = query_confidence_bands()
         for b in bands:
             print(f"  {b['band']}: {b['wins']:.0f}/{b['total']} ({b['win_rate']:.1f}%)")
+    elif args.cmd == 'check':
+        check_db()
+    elif args.cmd == 'bias':
+        compare_bias()
     else:
         parser.print_help()

@@ -1,0 +1,81 @@
+NBA MODEL - GENERAL RETROACTIVE ANALYSIS (JAN 1 - MAR 20)
+============================================================
+Analyzed 23317 projection rows.
+Unique game dates covered: 71
+
+1. COVERAGE & INTEGRITY CHECK
+----------------------------------------
+Integrity check (actual - proj == bias): [✓] PASS
+
+Coverage per Category:
+category    n  days  has_line
+ ASSISTS 7501    71      7501
+  POINTS 7668    71      7668
+REBOUNDS 7607    71      7607
+   TOTAL  541    71       541
+
+2. MONTHLY BIAS & MAE DRIFT
+----------------------------------------
+category       month   avg_bias       mae  sample_size
+ ASSISTS  01-January  -0.370208  1.528132         3191
+ ASSISTS 02-February  -0.381149  1.568600         2312
+ ASSISTS    03-March  -0.374332  1.518789         1998
+  POINTS  01-January  -1.574461  4.911044         3256
+  POINTS 02-February  -1.439059  5.068882         2356
+  POINTS    03-March  -1.339186  5.186040         2056
+REBOUNDS  01-January   0.435297  1.953389         3235
+REBOUNDS 02-February   0.380288  1.973647         2338
+REBOUNDS    03-March   0.411775  1.914735         2034
+   TOTAL  01-January -19.362833 22.797991          233
+   TOTAL 02-February -16.067675 20.745675          166
+   TOTAL    03-March -16.306887 20.496099          142
+
+3. TIERED BIAS BREAKDOWN (Starter >= threshold)
+----------------------------------------
+category    tier  mean_bias       mae  samples
+ ASSISTS   bench  -0.227936  1.160936     3799
+ ASSISTS starter  -0.525266  1.925181     3702
+  POINTS   bench  -0.381335  3.836845     2255
+  POINTS starter  -1.923207  5.531694     5413
+REBOUNDS   bench   0.336728  1.574886     3974
+REBOUNDS starter   0.494548  2.358815     3633
+   TOTAL starter -17.549634 21.564067      541
+
+4. WIN RATE VS BOOKMAKER LINES (HOW OFTEN PREDICTION BEATS LINE)
+----------------------------------------
+Category  N_Overs Win%_Over  N_Unders Win%_Under
+  POINTS     5876     50.2%      1789      57.5%
+REBOUNDS     2716     53.0%      4881      55.3%
+ ASSISTS     5918     51.1%      1575      59.1%
+   TOTAL      522     49.4%        19      63.2%
+
+5. TOP 20 OUTLIER ERRORS (ABS BIAS DESC)
+----------------------------------------
+game_date     player category  projected_value  actual_value  model_bias
+    02-22 Game Total    TOTAL          240.444         169.0     -71.444
+    02-26 Game Total    TOTAL          253.286         182.0     -71.286
+    01-21 Game Total    TOTAL          250.494         181.0     -69.494
+    03-01 Game Total    TOTAL          245.148         180.0     -65.148
+    02-25 Game Total    TOTAL          248.724         187.0     -61.724
+    01-10 Game Total    TOTAL          251.366         190.0     -61.366
+    02-24 Game Total    TOTAL          239.216         178.0     -61.216
+    01-07 Game Total    TOTAL          258.406         198.0     -60.406
+    03-16 Game Total    TOTAL          252.220         192.0     -60.220
+    01-21 Game Total    TOTAL          244.246         186.0     -58.246
+    01-09 Game Total    TOTAL          251.888         194.0     -57.888
+    02-01 Game Total    TOTAL          241.782         186.0     -55.782
+    03-02 Game Total    TOTAL          244.172         189.0     -55.172
+    01-10 Game Total    TOTAL          250.122         195.0     -55.122
+    01-27 Game Total    TOTAL          244.522         190.0     -54.522
+    02-06 Game Total    TOTAL          247.540         194.0     -53.540
+    02-22 Game Total    TOTAL          252.770         200.0     -52.770
+    01-18 Game Total    TOTAL          249.228         197.0     -52.228
+    01-07 Game Total    TOTAL          245.010         193.0     -52.010
+    02-24 Game Total    TOTAL          255.010         203.0     -52.010
+
+6. THE 'GAP' ANALYSIS (Line - Prediction)
+------------------------------
+Mean Gap (Line - Proj): -17.16 pts
+Median Gap: -17.66 pts
+Max Line Overestimation: 7.7 pts
+Max Prediction Overestimation: -45.4 pts

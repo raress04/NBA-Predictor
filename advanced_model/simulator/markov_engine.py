@@ -1,5 +1,6 @@
 import random
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Optional
+from scipy.stats import beta as beta_dist
 
 class MarkovSimulator:
     '''
@@ -169,3 +170,23 @@ class MarkovSimulator:
             'away_score': away_score,
             'player_stats': stats_tracker
         }
+
+def compute_posterior_confidence(over_count: int, n_sim: int, prior_mean: float = 0.54, prior_strength: int = 10):
+    """
+    Return (posterior_mean, ci_width) for a Beta posterior.
+    prior_mean: prior probability (e.g., 54% or per-category lookup).
+    prior_strength: pseudo-counts (alpha+beta).
+    """
+    alpha_prior = prior_mean * prior_strength
+    beta_prior = (1 - prior_mean) * prior_strength
+
+    alpha_post = alpha_prior + over_count
+    beta_post  = beta_prior + (n_sim - over_count)
+
+    posterior_mean = alpha_post / (alpha_post + beta_post)
+    
+    # Calculate 90% confidence interval width
+    ci_low, ci_high = beta_dist.interval(0.90, alpha_post, beta_post)
+    ci_width = ci_high - ci_low
+    
+    return posterior_mean, ci_width

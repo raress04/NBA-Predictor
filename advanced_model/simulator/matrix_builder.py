@@ -38,44 +38,44 @@ def get_connection():
     return sqlite3.connect(DB_PATH)
 
 
-def get_player_stats_matrix(player_name: str, limit: int = 82) -> dict:
+def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str = None) -> dict:
     '''
     Retrieves the last N games for a specific player and calculates their
     percentage weights for the Markov Simulation Engine.
-
-    Enhancements:
-      1. Recency Weighting — last 5 games count 2x, linearly decaying to 1x at game 15
-      2. Bayesian Regression — shooting stats are shrunk toward league averages
-         to reduce noise from small samples or hot/cold streaks
     '''
     conn = get_connection()
     
+    date_filter = "AND game_date < ?" if before_date else ""
+    params = [player_name]
+    if before_date: params.append(before_date)
+    params.append(limit)
+
     # Phase 1: Try current + previous season (2024-25 onwards) for fresh data
-    query = '''
+    query = f'''
     SELECT 
         fgm, fga, fg3m, fg3a, ftm, fta, 
         oreb, dreb, ast, stl, blk, tov, pts, minutes
     FROM box_scores
     WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
-    AND season >= '2024-25'
+    AND season >= '2024-25' {date_filter}
     ORDER BY game_date DESC
     LIMIT ?
     '''
-    df = pd.read_sql_query(query, conn, params=(player_name, limit))
+    df = pd.read_sql_query(query, conn, params=params)
     
     # Phase 2: If insufficient data (<10 games), extend to 2023-24
     if len(df) < 10:
-        query_fallback = '''
+        query_fallback = f'''
         SELECT 
             fgm, fga, fg3m, fg3a, ftm, fta, 
             oreb, dreb, ast, stl, blk, tov, pts, minutes
         FROM box_scores
         WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
-        AND season >= '2023-24'
+        AND season >= '2023-24' {date_filter}
         ORDER BY game_date DESC
         LIMIT ?
         '''
-        df = pd.read_sql_query(query_fallback, conn, params=(player_name, limit))
+        df = pd.read_sql_query(query_fallback, conn, params=params)
     
     conn.close()
 
@@ -163,13 +163,18 @@ def get_player_stats_matrix(player_name: str, limit: int = 82) -> dict:
 
     return matrix
 
-def get_team_pace(team_id: int, limit: int = 15) -> float:
+def get_team_pace(team_id: int, limit: int = 15, before_date: str = None) -> float:
     '''
     Calculates the average number of offensive possessions a team uses per game.
     Basic Formula: FGA + 0.44 * FTA + TOV - OREB
     '''
     conn = get_connection()
-    query = '''
+    date_filter = "AND game_date < ?" if before_date else ""
+    params = [team_id]
+    if before_date: params.append(before_date)
+    params.append(limit)
+
+    query = f'''
     SELECT 
         game_id,
         SUM(fga) as fga,
@@ -177,12 +182,12 @@ def get_team_pace(team_id: int, limit: int = 15) -> float:
         SUM(tov) as tov,
         SUM(oreb) as oreb
     FROM box_scores
-    WHERE team_id = ?
+    WHERE team_id = ? {date_filter}
     GROUP BY game_id
     ORDER BY game_date DESC
     LIMIT ?
     '''
-    df = pd.read_sql_query(query, conn, params=(team_id, limit))
+    df = pd.read_sql_query(query, conn, params=params)
     conn.close()
     
     if df.empty:
@@ -192,21 +197,15 @@ def get_team_pace(team_id: int, limit: int = 15) -> float:
     return df['possessions'].mean()
 
 
-def get_team_efficiency(team_id: int, limit: int = 15) -> dict:
-    '''
-    Calculates team offensive and defensive efficiency ratings.
-    
-    Returns multipliers relative to league average (1.0 = average):
-        - off_rating: points scored per 100 possessions vs league avg
-        - def_rating: points allowed per 100 possessions vs league avg
-        
-    A top-5 offense might be 1.08 (8% above avg).
-    A top-5 defense might be 0.93 (7% fewer pts allowed than avg).
-    '''
+def get_team_efficiency(team_id: int, limit: int = 15, before_date: str = None) -> dict:
     conn = get_connection()
+    df_filter = "AND game_date < ?" if before_date else ""
+    params = [team_id]
+    if before_date: params.append(before_date)
+    params.append(limit)
     
     # Get team's points scored and possessions per game
-    off_query = '''
+    off_query = f'''
     SELECT 
         b.game_id,
         SUM(b.pts) as pts_scored,
@@ -216,14 +215,15 @@ def get_team_efficiency(team_id: int, limit: int = 15) -> dict:
         SUM(b.oreb) as oreb
     FROM box_scores b
     WHERE b.team_id = ? AND b.minutes IS NOT NULL AND b.minutes != '0:00'
+    {df_filter}
     GROUP BY b.game_id
     ORDER BY b.game_date DESC
     LIMIT ?
     '''
-    off_df = pd.read_sql_query(off_query, conn, params=(team_id, limit))
+    off_df = pd.read_sql_query(off_query, conn, params=params)
     
     # Get opponent's points scored against this team
-    def_query = '''
+    def_query = f'''
     SELECT 
         b.game_id,
         SUM(b.pts) as pts_allowed,
@@ -234,6 +234,7 @@ def get_team_efficiency(team_id: int, limit: int = 15) -> dict:
     FROM box_scores b
     WHERE b.game_id IN (
         SELECT DISTINCT game_id FROM box_scores WHERE team_id = ?
+        {df_filter}
         ORDER BY game_date DESC LIMIT ?
     )
     AND b.team_id != ?
@@ -241,7 +242,7 @@ def get_team_efficiency(team_id: int, limit: int = 15) -> dict:
     GROUP BY b.game_id
     ORDER BY b.game_date DESC
     '''
-    def_df = pd.read_sql_query(def_query, conn, params=(team_id, limit, team_id))
+    def_df = pd.read_sql_query(def_query, conn, params=(team_id, before_date, limit, team_id) if before_date else (team_id, limit, team_id))
     conn.close()
     
     result = {'off_multiplier': 1.0, 'def_multiplier': 1.0}
@@ -275,14 +276,11 @@ def get_team_efficiency(team_id: int, limit: int = 15) -> dict:
     return result
 
 
-def get_team_rebound_efficiency(team_id: int, limit: int = 15) -> dict:
-    '''
-    Calculates a team's Offensive and Defensive Rebound Percentage over their last N games.
-    Also calculates the league average for these boundaries to yield a specific multiplier.
-    A team giving up a high OREB% or low DREB% will result in a > 1.0 multiplier for opponents.
-    '''
+def get_team_rebound_efficiency(team_id: int, limit: int = 15, before_date: str = None) -> dict:
     conn = get_connection()
-    query = '''
+    df_filter = "AND game_date < ?" if before_date else ""
+    
+    query = f'''
     SELECT 
         b.team_id,
         SUM(b.dreb) * 1.0 / (SUM(b.dreb) + SUM(o.oreb)) as dreb_pct,
@@ -291,12 +289,13 @@ def get_team_rebound_efficiency(team_id: int, limit: int = 15) -> dict:
     JOIN box_scores o ON b.game_id = o.game_id AND b.team_id != o.team_id
     WHERE b.game_id IN (
         SELECT DISTINCT game_id FROM box_scores WHERE team_id = ?
+        {df_filter}
         ORDER BY game_date DESC LIMIT ?
     )
     GROUP BY b.team_id
     '''
-    
-    df = pd.read_sql_query(query, conn, params=(team_id, limit))
+    params = (team_id, before_date, limit) if before_date else (team_id, limit)
+    df = pd.read_sql_query(query, conn, params=params)
     conn.close()
     
     if df.empty:

@@ -6,16 +6,26 @@ ranks edges, applies Masterclass rules, and constructs 2-3 pick and 4-pick parla
 import math
 from typing import Dict, List, Tuple, Optional
 
-# Stat-specific weights for blending Simulation Confidence and Player History DB Confidence.
-# Assists are noisy, so we trust historical hit rate equal to the sim.
-# Points and Totals are more reliable in Sims, so we weight Sim higher.
-SIM_DB_WEIGHTS = {
-    'assists': (0.50, 0.50),
-    'rebounds': (0.60, 0.40),
-    'points': (0.80, 0.20),
-    'totals': (0.80, 0.20),
-    'combo': (0.70, 0.30)
-}
+from config.settings import BANNED_COMBINATIONS, CATEGORY_PRIORS, get_prior, is_allowed, SIM_DB_WEIGHTS
+import config.settings as settings
+from simulator.markov_engine import compute_posterior_confidence
+from etl.bias_corrections import get_tiered_bias
+import json
+import os
+import logging
+from datetime import datetime
+
+# Configure logging for bias corrections
+LOGS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
+if not os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
+
+bias_logger = logging.getLogger('bias_corrections')
+bias_logger.setLevel(logging.INFO)
+if not bias_logger.handlers:
+    fh = logging.FileHandler(os.path.join(LOGS_DIR, 'bias_corrections.log'))
+    fh.setFormatter(logging.Formatter('%(asctime)s | %(message)s'))
+    bias_logger.addHandler(fh)
 
 # Optional DB tracking for live calibration
 try:
@@ -25,6 +35,52 @@ except ImportError:
     _HAS_TRACKER = False
     
 _CALIBRATION_CACHE = None
+_PLATT_PARAMS = None
+
+def load_platt_params():
+    """Load logistic regression coefficients for Platt scaling."""
+    global _PLATT_PARAMS
+    if _PLATT_PARAMS is not None:
+        return _PLATT_PARAMS
+    
+    config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'calibration_params.json')
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, 'r') as f:
+                _PLATT_PARAMS = json.load(f)
+        except Exception:
+            _PLATT_PARAMS = {}
+    else:
+        _PLATT_PARAMS = {}
+    return _PLATT_PARAMS
+
+def calibrated_prob(category: str, direction: str, raw_prob_pct: float) -> float:
+    """
+    Applies Platt scaling (logistic transform) to raw simulation confidence.
+    Falls back to raw_prob_pct if no calibration parameters exist for the category/direction.
+    """
+    params = load_platt_params()
+    key = f"{category.upper()}_{direction.upper()}"
+    
+    if key not in params:
+        return raw_prob_pct
+        
+    p = params[key]
+    coef = p['coef']
+    intercept = p['intercept']
+    
+    # Logistic Transform: 1 / (1 + exp(-(coef * x + intercept)))
+    # X is probability in [0, 1] range
+    x = raw_prob_pct / 100.0
+    z = coef * x + intercept
+    
+    # Guard against overflow
+    if z < -100: return 0.0
+    if z > 100: return 100.0
+    
+    calibrated_p = 1.0 / (1.0 + math.exp(-z))
+    return calibrated_p * 100.0
+
 def get_category_calibration(stat_category: str) -> float:
     """
     Returns a multiplier (<= 1.0) to scale down confidence if a category is underperforming.
@@ -63,41 +119,42 @@ BLOWOUT_SPREAD_THRESHOLD = 12.0
 SPREAD_SAFETY_MARGIN = 3.0
 
 # ── Minimum thresholds & Safety Margins per Category ──
+# ISSUE 4 FIX (Stage 0): Relaxed to restore pick flow. Original values caused
+# zero picks daily due to stacked filter gauntlet.
+# min_prob: 75->65 (points/totals), trigger 2.5->2.0, safety 1.75->1.0
 EDGE_THRESHOLDS = {
-    'totals': {'min_prob': 75.0, 'min_edge': 20.9, 'trigger': 4.5, 'safety': 2.5},
-    'points': {'min_prob': 75.0, 'min_edge': 20.9, 'trigger': 2.5, 'safety': 1.75},
-    'rebounds': {'min_prob': 75.0, 'min_edge': 13.9, 'trigger': 0, 'safety': 0}, # safety is dynamic (std dev)
-    'assists': {'min_prob': 82.0, 'min_edge': 22.0, 'trigger': 0, 'safety': 0},
-    'combo': {'min_prob': 70.0, 'min_edge': 15.9, 'trigger': 0, 'safety': 1.5},
-    'spreads': {'min_prob': 75.0, 'min_edge': 10.0} # Raised from 60.0 to 75.0
+    'totals':   {'min_prob': 65.0, 'min_edge': 15.0, 'trigger': 3.5, 'safety': 1.5},
+    'points':   {'min_prob': 65.0, 'min_edge': 15.0, 'trigger': 2.0, 'safety': 1.0},
+    'rebounds': {'min_prob': 68.0, 'min_edge': 13.9, 'trigger': 0,   'safety': 0},  # safety is dynamic (std dev)
+    'assists':  {'min_prob': 70.0, 'min_edge': 18.0, 'trigger': 0,   'safety': 0},
+    'combo':    {'min_prob': 65.0, 'min_edge': 15.9, 'trigger': 0,   'safety': 1.5},
+    'spreads':  {'min_prob': 65.0, 'min_edge': 10.0},
 }
 
 # ── Line Movement ───────────────────────────────────────────
 LINE_MOVEMENT_BONUS = 5.0   # Max +/-5% confidence adjustment
 
 # ── Kelly Criterion & Calibration ───────────────────────────
+USE_KELLY = False
+FLAT_STAKE_PCT = 0.002       # 0.2% of bankroll per parlay
 KELLY_FRACTION = 0.25        # Fractional Kelly (Quarter Kelly)
-BANKROLL_HARD_CAP = 0.025    # Max 2.5% of bankroll per parlay
-CONFIDENCE_PRIOR_STRENGTH = 20 # Number of sims for Bayesian shrinkage
-CONFIDENCE_PRIOR_P = 0.54    # Conservative prior for a coin-flip + vig
-MAX_PROP_CONFIDENCE = 88.0   # Hard cap for single-leg player props
+BANKROLL_HARD_CAP = 0.01    # Max 2.5% of bankroll per parlay
+# Confidence prior strength (pseudo-counts) - set to 10 for moderate shrinkage
+CONFIDENCE_PRIOR_STRENGTH = 10 
+MAX_PROP_CONFIDENCE = 78.0   # Hard cap for single-leg player props
+MIN_EDGE = 2.0               # ISSUE 4 FIX: Lowered from 3.0 to 2.0 to restore pick flow
 
 
-def calibrate_confidence(raw_prob: float, n_sims: int = 1000) -> float:
-    """
-    Applies Bayesian shrinkage and hard caps to prevent simulation hyperinflation.
-    Pulls raw % toward a conservative prior (54%).
-    """
-    # Convert to 0.0-1.0 scale
-    p = raw_prob / 100.0
-    
-    # Bayesian Shrinkage: p_calib = (p*n + prior_p*k) / (n + k)
-    p_calibrated = (p * n_sims + CONFIDENCE_PRIOR_P * CONFIDENCE_PRIOR_STRENGTH) / (n_sims + CONFIDENCE_PRIOR_STRENGTH)
-    
-    # Convert back to 0-100
-    calib_prob = p_calibrated * 100.0
-    
-    return min(calib_prob, 99.0)
+def decimal_to_implied_prob(decimal_odds: float) -> float:
+    """Convert decimal odds to implied win probability (0.0 to 1.0)."""
+    return 1.0 / decimal_odds if decimal_odds > 0 else 0.0
+
+
+def true_edge_pct(model_confidence_pct: float, decimal_odds: float) -> float:
+    """Compute edge as (model_prob - implied_prob) * 100."""
+    model_prob = model_confidence_pct / 100.0
+    implied_prob = decimal_to_implied_prob(decimal_odds)
+    return (model_prob - implied_prob) * 100.0
 
 
 def compute_kelly_stake(decimal_odds: float, probability: float) -> float:
@@ -109,6 +166,9 @@ def compute_kelly_stake(decimal_odds: float, probability: float) -> float:
       p = probability of winning (0.0 - 1.0)
       q = probability of losing (1 - p)
     """
+    if not USE_KELLY:
+        return FLAT_STAKE_PCT
+
     if decimal_odds <= 1.0 or probability <= 0:
         return 0.0
         
@@ -179,7 +239,7 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
     import statistics
     
     if not sim_distribution or book_line is None:
-        return {'median': 0, 'mean': 0, 'confidence': 0, 'edge_pct': 0, 'valuable': False}
+        return {'median': 0, 'mean': 0, 'confidence': 0, 'edge_pct': 0, 'valuable': False, 'reason': 'MISSING_DATA'}
 
     sorted_vals = sorted(sim_distribution)
     n = len(sorted_vals)
@@ -189,6 +249,17 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
 
     # Determine thresholds
     thresh = EDGE_THRESHOLDS.get(stat_key, EDGE_THRESHOLDS['points'])
+
+    # Phase 4.A: Apply Tiered Bias Correction
+    bias_offset = get_tiered_bias(stat_key, median)
+    if abs(bias_offset) > 0.001:
+        tier = "Starter" if median >= settings.PROJECTION_TIERS.get(stat_key.upper(), 10.0) else "Bench"
+        msg = f"[BIAS CORRECTION] {stat_key.upper()} | {tier} | median={median:.1f} | offset={bias_offset:+.2f} | corrected={median+bias_offset:.1f}"
+        print(f"  {msg}")
+        bias_logger.info(msg)
+    
+    median += bias_offset
+    mean += bias_offset
 
     # Confidence = % of simulations that cleared the line
     over_count = sum(1 for v in sorted_vals if v > book_line)
@@ -203,6 +274,7 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
     abs_edge = abs(edge_pct)
     
     valuable = False
+    reason = None
     
     # Apply category-specific "Value Edge Trigger" and "Safety Margin" rules
     if stat_key == 'points':
@@ -216,6 +288,10 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
         
         if trigger_met and safe_conf >= thresh['min_prob'] and abs_edge >= thresh['min_edge']:
             valuable = True
+        else:
+            if not trigger_met: reason = f"LOW_TRIGGER(diff={abs(median - book_line):.2f}<{thresh['trigger']})"
+            elif safe_conf < thresh['min_prob']: reason = f"LOW_SAFE_CONF({safe_conf:.1f}%<{thresh['min_prob']}%)"
+            elif abs_edge < thresh['min_edge']: reason = f"LOW_EDGE({abs_edge:.1f}%<{thresh['min_edge']}%)"
 
     elif stat_key in ['rebounds', 'assists']:
         # Poisson OVER > 68%, Safety: lambda +- std dev
@@ -226,6 +302,9 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
         if abs_conf >= thresh['min_prob'] and abs_edge >= thresh['min_edge']:
             # If standard deviation is insanely tight, it passes, else check safe conf
             valuable = True 
+        else:
+            if abs_conf < thresh['min_prob']: reason = f"LOW_CONF({abs_conf:.1f}%<{thresh['min_prob']}%)"
+            elif abs_edge < thresh['min_edge']: reason = f"LOW_EDGE({abs_edge:.1f}%<{thresh['min_edge']}%)"
             
     elif stat_key == 'combo':
         safe_line = book_line + thresh['safety'] if direction == "Over" else book_line - thresh['safety']
@@ -234,24 +313,32 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
         
         if abs_conf >= thresh['min_prob'] and abs_edge >= thresh['min_edge']:
             valuable = True
+        else:
+            if abs_conf < thresh['min_prob']: reason = f"LOW_CONF({abs_conf:.1f}%<{thresh['min_prob']}%)"
+            elif abs_edge < thresh['min_edge']: reason = f"LOW_EDGE({abs_edge:.1f}%<{thresh['min_edge']}%)"
 
     # High Volatility Filter: Never include small lines (< 5.5)
     if book_line < 5.5:
         valuable = False
+        reason = "LOW_LINE_VOLATILITY"
 
     returning_ban = False
     if is_returning and median < book_line:
         valuable = False
         returning_ban = True
+        reason = "MINUTES_RESTRICTION"
 
     return {
         'median': median,
         'mean': mean,
         'confidence': confidence,
+        'over_count': over_count,
+        'n_sim': n,
         'edge_pct': edge_pct,
         'valuable': valuable,
         'direction': direction,
-        'returning_ban': returning_ban
+        'returning_ban': returning_ban,
+        'reason': reason
     }
 
 
@@ -264,13 +351,21 @@ def compute_spread_edge(sim_home_scores: list, sim_away_scores: list,
     a coin flip our model gives this pick. Avoids division-by-small-spread blowup.
     """
     if not sim_home_scores or not sim_away_scores:
-        return {'projected_margin': 0, 'safe_spread': 0, 'confidence': 0, 'edge_pct': 0}
+        return {'projected_margin': 0, 'safe_spread': 0, 'confidence': 0, 'edge_pct': 0, 'over_count': 0, 'n_sim': 1}
 
     n = len(sim_home_scores)
     margins = [sim_home_scores[i] - sim_away_scores[i] for i in range(n)]
     margins.sort()
 
     median_margin = margins[n // 2]
+    
+    # Phase 4.A: Apply Tiered Bias Correction (SPREAD)
+    bias_offset = get_tiered_bias('SPREAD', median_margin)
+    if abs(bias_offset) > 0.001:
+        msg = f"[BIAS CORRECTION] SPREAD | Neutral | median={median_margin:.1f} | offset={bias_offset:+.2f} | corrected={median_margin+bias_offset:.1f}"
+        print(f"  {msg}")
+        bias_logger.info(msg)
+    median_margin += bias_offset
 
     # Apply safety margin (for UI calculation only, not confidence probability)
     safe_spread = book_spread + SPREAD_SAFETY_MARGIN if book_spread < 0 else book_spread - SPREAD_SAFETY_MARGIN
@@ -279,12 +374,12 @@ def compute_spread_edge(sim_home_scores: list, sim_away_scores: list,
     if is_home:
         # Issue 5 Fix: Reject contradictory spread picks instantly
         if median_margin < 0: 
-            return {'projected_margin': median_margin, 'safe_spread': safe_spread, 'confidence': 0, 'edge_pct': 0}
+            return {'projected_margin': median_margin, 'safe_spread': safe_spread, 'confidence': 0, 'edge_pct': 0, 'over_count': 0, 'n_sim': n}
         cover_count = sum(1 for m in margins if m > book_spread)
     else:
         # Issue 5 Fix: Reject contradictory spread picks instantly
         if median_margin > 0:
-            return {'projected_margin': -median_margin, 'safe_spread': safe_spread, 'confidence': 0, 'edge_pct': 0}
+            return {'projected_margin': -median_margin, 'safe_spread': safe_spread, 'confidence': 0, 'edge_pct': 0, 'over_count': 0, 'n_sim': n}
         cover_count = sum(1 for m in margins if -m > -book_spread)
 
     confidence = (cover_count / n) * 100
@@ -301,6 +396,8 @@ def compute_spread_edge(sim_home_scores: list, sim_away_scores: list,
         'projected_margin': median_margin if is_home else -median_margin,
         'safe_spread': safe_spread,
         'confidence': confidence,
+        'over_count': cover_count,
+        'n_sim': n,
         'edge_pct': edge_pct,
     }
 
@@ -310,13 +407,22 @@ def compute_total_edge(sim_home_scores: list, sim_away_scores: list, book_total:
     Compute edge for an over/under total bet.
     """
     if not sim_home_scores or not sim_away_scores:
-        return {'projected_total': 0, 'confidence_over': 0, 'confidence_under': 0, 'edge_pct': 0, 'valuable': False}
+        return {'projected_total': 0, 'confidence_over': 0, 'confidence_under': 0, 'edge_pct': 0, 'valuable': False, 'over_count': 0, 'under_count': 0, 'n_sim': 1}
 
     n = len(sim_home_scores)
     totals = [sim_home_scores[i] + sim_away_scores[i] for i in range(n)]
     totals.sort()
 
     median_total = totals[n // 2]
+    
+    # Phase 4.A: Apply Tiered Bias Correction (TOTAL)
+    bias_offset = get_tiered_bias('TOTAL', median_total)
+    if abs(bias_offset) > 0.001:
+        tier = "High" if median_total >= 225.0 else "Low"
+        msg = f"[BIAS CORRECTION] TOTAL | {tier} | median={median_total:.1f} | offset={bias_offset:+.2f} | corrected={median_total+bias_offset:.1f}"
+        print(f"  {msg}")
+        bias_logger.info(msg)
+    median_total += bias_offset
     
     # Determine value based on new thresholds
     thresh = EDGE_THRESHOLDS['totals']
@@ -358,6 +464,9 @@ def compute_total_edge(sim_home_scores: list, sim_away_scores: list, book_total:
         'projected_total': median_total,
         'confidence_over': confidence_over,
         'confidence_under': confidence_under,
+        'over_count': over_count,
+        'under_count': under_count,
+        'n_sim': n,
         'edge_pct': edge_pct if direction == "Over" else -edge_pct,
         'valuable': valuable,
         'direction': direction
@@ -401,6 +510,19 @@ def build_parlays(
         }
     """
     all_picks = []
+    shadow_picks = []
+
+    def log_shadow(player, category, direction, line, projection, sim_conf, edge, reason):
+        shadow_picks.append({
+            'player': player,
+            'stat_category': category.upper(),
+            'direction': direction.upper(),
+            'line': float(line) if line is not None else 0.0,
+            'projection': float(projection) if projection is not None else 0.0,
+            'sim_confidence': float(sim_conf) if sim_conf is not None else 0.0,
+            'edge_pct': float(edge) if edge is not None else 0.0,
+            'ban_reason': str(reason)
+        })
 
     for event_id, game_odds in all_game_odds.items():
         is_blowout = _is_blowout_risk(game_odds)
@@ -432,6 +554,7 @@ def build_parlays(
                 if (expected_margin > 0 and market_margin < 0) or (expected_margin < 0 and market_margin > 0):
                     print(f"  \u26d4  [FATAL: MARKET_INVERSION_DETECTED] {away_name} @ {home_name}. Proj {expected_margin:+.1f} vs Market {market_margin:+.1f}. Spreads skip to avoid trap.")
                     market_inversion = True
+                    log_shadow(home_name, 'SPREAD', 'COVER', market_margin, expected_margin, 0, 0, 'MARKET_INVERSION')
 
         # ── Spread Picks ──────────────────────
         if not market_inversion and game_odds.get('spreads') and event_id in all_score_distributions:
@@ -450,28 +573,42 @@ def build_parlays(
                 spread_data['home_spread'], is_home=True
             )
             
-            # ── CALIBRATION ──
-            raw_conf = home_edge['confidence']
-            calib_conf = calibrate_confidence(raw_conf)
-            
-            spread_thresh = EDGE_THRESHOLDS['spreads']
-            if calib_conf >= spread_thresh['min_prob'] and home_edge['edge_pct'] >= spread_thresh['min_edge']:
-                lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'home')
-                adj_confidence = min(99, calib_conf + lm_bonus)
-                lm_str = f" [Sharp: {'+' if lm_bonus>0 else ''}{lm_bonus:.0f}%]" if lm_bonus != 0 else ""
-                best_spread_pick = {
-                    'type': 'spread',
-                    'event_id': event_id,
-                    'bet_team': home_name,
-                    'spread_val': spread_data['home_spread'],
-                    'game': f"{away_name} @ {home_name}",
-                    'pick': f"{home_name} {spread_data['home_spread']:+.1f} \u2192 {home_edge['safe_spread']:+.1f} (reduced {SPREAD_SAFETY_MARGIN}pts) | Proj margin: {home_edge['projected_margin']:+.1f}pts{lm_str}",
-                    'odds': spread_data['home_odds'],
-                    'book': spread_data['book'],
-                    'edge_pct': home_edge['edge_pct'],
-                    'confidence': adj_confidence,
-                    'score': home_edge['edge_pct'] * adj_confidence / 100,
-                }
+            # Action 2: Bayesian Posterior Confidence
+            if is_allowed('SPREAD', 'COVER'):
+                prior = get_prior('SPREAD', 'COVER')
+                post_mean, ci_width = compute_posterior_confidence(
+                    home_edge['over_count'], home_edge['n_sim'], 
+                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                )
+                calib_conf = post_mean * 100.0
+                
+                # Phase 4.B: Platt-Style Calibration
+                calib_conf = calibrated_prob('SPREAD', 'COVER', calib_conf)
+                
+                # Phase 3.B: True EV-Based Edge
+                ev_edge = true_edge_pct(calib_conf, spread_data['home_odds'])
+                
+                # Optional: reject extremely uncertain or thin-edge picks
+                if ci_width <= 0.25 and ev_edge >= MIN_EDGE:
+                    spread_thresh = EDGE_THRESHOLDS['spreads']
+                    if calib_conf >= spread_thresh['min_prob']:
+                        lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'home')
+                        adj_confidence = min(99, calib_conf + lm_bonus)
+                        lm_str = f" [Sharp: {'+' if lm_bonus>0 else ''}{lm_bonus:.0f}%]" if lm_bonus != 0 else ""
+                        best_spread_pick = {
+                            'type': 'spread',
+                            'event_id': event_id,
+                            'bet_team': home_name,
+                            'spread_val': spread_data['home_spread'],
+                            'game': f"{away_name} @ {home_name}",
+                            'pick': f"{home_name} {spread_data['home_spread']:+.1f} \u2192 {home_edge['safe_spread']:+.1f} (reduced {SPREAD_SAFETY_MARGIN}pts) | Proj margin: {home_edge['projected_margin']:+.1f}pts{lm_str}",
+                            'odds': spread_data['home_odds'],
+                            'book': spread_data['book'],
+                            'edge_pct': ev_edge,
+                            'confidence': adj_confidence,
+                            'raw_sim_freq': home_edge['over_count'] / home_edge['n_sim'],
+                            'score': ev_edge * adj_confidence / 100,
+                        }
 
             # Away spread check
             away_edge = compute_spread_edge(
@@ -479,31 +616,47 @@ def build_parlays(
                 spread_data['away_spread'], is_home=False
             )
             
-            # ── CALIBRATION ──
-            raw_away_conf = away_edge['confidence']
-            calib_away_conf = calibrate_confidence(raw_away_conf)
-            
-            if calib_away_conf >= spread_thresh['min_prob'] and away_edge['edge_pct'] >= spread_thresh['min_edge']:
-                lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'away')
-                adj_confidence = min(99, calib_away_conf + lm_bonus)
-                away_score = away_edge['edge_pct'] * adj_confidence / 100
+            # Action 2: Bayesian Posterior Confidence
+            if not is_allowed('SPREAD', 'COVER'):
+                log_shadow(away_name, 'SPREAD', 'COVER', spread_data['away_spread'], away_edge['projected_margin'], 0, 0, 'BANNED_CATEGORY')
+
+            if is_allowed('SPREAD', 'COVER'):
+                prior = get_prior('SPREAD', 'COVER')
+                post_mean_away, ci_width_away = compute_posterior_confidence(
+                    away_edge['over_count'], away_edge['n_sim'], 
+                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                )
+                calib_away_conf = post_mean_away * 100.0
                 
-                # If away is better OR home didn't pass, assign to away
-                if not best_spread_pick or away_score > best_spread_pick['score']:
-                    lm_str = f" [Sharp: {'+' if lm_bonus>0 else ''}{lm_bonus:.0f}%]" if lm_bonus != 0 else ""
-                    best_spread_pick = {
-                        'type': 'spread',
-                        'event_id': event_id,
-                        'bet_team': away_name,
-                        'spread_val': spread_data['away_spread'],
-                        'game': f"{away_name} @ {home_name}",
-                        'pick': f"{away_name} {spread_data['away_spread']:+.1f} \u2192 {away_edge['safe_spread']:+.1f} (reduced {SPREAD_SAFETY_MARGIN}pts) | Proj margin: {away_edge['projected_margin']:+.1f}pts{lm_str}",
-                        'odds': spread_data['away_odds'],
-                        'book': spread_data['book'],
-                        'edge_pct': away_edge['edge_pct'],
-                        'confidence': adj_confidence,
-                        'score': away_score,
-                    }
+                # Phase 4.B: Platt-Style Calibration
+                calib_away_conf = calibrated_prob('SPREAD', 'COVER', calib_away_conf)
+                
+                # Phase 3.B: True EV-Based Edge
+                ev_edge_away = true_edge_pct(calib_away_conf, spread_data['away_odds'])
+                
+                if ci_width_away <= 0.25 and ev_edge_away >= MIN_EDGE:
+                    if calib_away_conf >= spread_thresh['min_prob']:
+                        lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'away')
+                        adj_confidence = min(99, calib_away_conf + lm_bonus)
+                        away_score = ev_edge_away * adj_confidence / 100
+                        
+                        # If away is better OR home didn't pass, assign to away
+                        if not best_spread_pick or away_score > best_spread_pick['score']:
+                            lm_str = f" [Sharp: {'+' if lm_bonus>0 else ''}{lm_bonus:.0f}%]" if lm_bonus != 0 else ""
+                            best_spread_pick = {
+                                'type': 'spread',
+                                'event_id': event_id,
+                                'bet_team': away_name,
+                                'spread_val': spread_data['away_spread'],
+                                'game': f"{away_name} @ {home_name}",
+                                'pick': f"{away_name} {spread_data['away_spread']:+.1f} \u2192 {away_edge['safe_spread']:+.1f} (reduced {SPREAD_SAFETY_MARGIN}pts) | Proj margin: {away_edge['projected_margin']:+.1f}pts{lm_str}",
+                                'odds': spread_data['away_odds'],
+                                'book': spread_data['book'],
+                                'edge_pct': ev_edge_away,
+                                'confidence': adj_confidence,
+                                'raw_sim_freq': away_edge['over_count'] / away_edge['n_sim'],
+                                'score': away_score,
+                            }
             
             if best_spread_pick:
                 all_picks.append(best_spread_pick)
@@ -518,45 +671,42 @@ def build_parlays(
             )
 
             # Valuable flag internally sets strict thresholds
-            if total_edge['valuable']:
-                # Over
-                if total_edge['direction'] == "Over":
-                    raw_conf = total_edge['confidence_over']
-                    calib_conf = calibrate_confidence(raw_conf)
+            if total_edge['valuable'] and not is_allowed('TOTAL', total_edge['direction']):
+                log_shadow('Game Total', 'TOTAL', total_edge['direction'], totals_data['total'], total_edge['projected_total'], 0, 0, 'BANNED_CATEGORY')
+
+            if total_edge['valuable'] and is_allowed('TOTAL', total_edge['direction']):
+                thresh = EDGE_THRESHOLDS['totals']
+                # Over/Under handling
+                direction = total_edge['direction']
+                prior = get_prior('TOTAL', direction)
+                target_count = total_edge['over_count'] if direction == "Over" else total_edge['under_count']
+                
+                post_mean, ci_width = compute_posterior_confidence(
+                    target_count, total_edge['n_sim'], 
+                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                )
+                calib_conf = post_mean * 100.0
+                
+                # Phase 4.B: Platt-Style Calibration
+                calib_conf = calibrated_prob('TOTAL', direction, calib_conf)
+                
+                if ci_width <= 0.25 and calib_conf >= thresh['min_prob']:
+                    odds = totals_data['over_odds'] if direction == "Over" else totals_data['under_odds']
+                    ev_edge = true_edge_pct(calib_conf, odds)
                     
-                    if calib_conf < thresh['min_prob']:
-                        continue
-                        
-                    all_picks.append({
-                        'type': 'total',
-                        'event_id': event_id,
-                        'game': f"{away_name} @ {home_name}",
-                        'pick': f"Over {totals_data['total']} (Projected: {total_edge['projected_total']:.1f})",
-                        'odds': totals_data['over_odds'],
-                        'book': totals_data['book'],
-                        'edge_pct': abs(total_edge['edge_pct']),
-                        'confidence': calib_conf,
-                        'score': abs(total_edge['edge_pct']) * calib_conf / 100,
-                    })
-                # Under
-                elif total_edge['direction'] == "Under":
-                    raw_conf = total_edge['confidence_under']
-                    calib_conf = calibrate_confidence(raw_conf)
-                    
-                    if calib_conf < thresh['min_prob']:
-                        continue
-                        
-                    all_picks.append({
-                        'type': 'total',
-                        'event_id': event_id,
-                        'game': f"{away_name} @ {home_name}",
-                        'pick': f"Under {totals_data['total']} (Projected: {total_edge['projected_total']:.1f})",
-                        'odds': totals_data['under_odds'],
-                        'book': totals_data['book'],
-                        'edge_pct': abs(total_edge['edge_pct']),
-                        'confidence': calib_conf,
-                        'score': abs(total_edge['edge_pct']) * calib_conf / 100,
-                    })
+                    if ev_edge >= MIN_EDGE:
+                        all_picks.append({
+                            'type': 'total',
+                            'event_id': event_id,
+                            'game': f"{away_name} @ {home_name}",
+                            'pick': f"{direction} {totals_data['total']} (Projected: {total_edge['projected_total']:.1f})",
+                            'odds': odds,
+                            'book': totals_data['book'],
+                            'edge_pct': ev_edge,
+                            'confidence': calib_conf,
+                            'raw_sim_freq': target_count / total_edge['n_sim'],
+                            'score': ev_edge * calib_conf / 100,
+                        })
 
         # ── Player Prop Picks ─────────────────
         if event_id not in all_player_props:
@@ -596,9 +746,11 @@ def build_parlays(
                 edge = compute_prop_edge(sim_dist, line, internal_stat_key, is_returning=is_returning)
                 # BLOWOUT PROTOCOL: ban OVER props for the fav team's top 3 players
                 if is_blowout and edge['direction'] == "Over" and player_name in top_3_fav:
+                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BLOWOUT_RISK')
                     continue
                     
                 if edge.get('returning_ban'):
+                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'MINUTES_RESTRICTION')
                     continue
 
                 # MINUTES RISK PROTOCOL
@@ -606,15 +758,32 @@ def build_parlays(
                 if all_player_minutes and player_name in all_player_minutes:
                     p_min = all_player_minutes[player_name]
                     if p_min.get('std', 0) > 6.5 or p_min.get('mean', 30) < 18.0:
+                        reason = f"MINUTES_RISK(std={p_min.get('std',0):.1f},mean={p_min.get('mean',0):.1f})"
+                        log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], reason)
                         continue
 
                 # Internal evaluation returns True if mathematically sound
-                if edge['valuable']:
+                if not edge['valuable'] and abs(edge.get('edge_pct', 0)) > 10.0:
+                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], edge.get('reason', 'NEAR_MISS'))
+                elif edge['valuable'] and not is_allowed(stat_key, edge['direction']):
+                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BANNED_CATEGORY')
+
+                if edge['valuable'] and is_allowed(stat_key, edge['direction']):
                     direction = edge['direction']
-                    conf = edge['confidence'] if direction == "Over" else (100 - edge['confidence'])
                     
-                    # ── CALIBRATION ──
-                    calib_conf = calibrate_confidence(conf)
+                    # Action 2: Bayesian Posterior Confidence
+                    prior = get_prior(stat_key, direction)
+                    target_count = edge['over_count'] if direction == "Over" else (edge['n_sim'] - edge['over_count'])
+                    post_mean, ci_width = compute_posterior_confidence(
+                        target_count, edge['n_sim'], 
+                        prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                    )
+                    calib_conf = post_mean * 100.0
+                    
+                    if ci_width > 0.25:
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], calib_conf, edge['edge_pct'], f'HIGH_VARIANCE(ci={ci_width:.2f})')
+                        continue
+
                     # For props, apply a harder cap
                     calib_conf = min(calib_conf, MAX_PROP_CONFIDENCE)
 
@@ -671,6 +840,9 @@ def build_parlays(
                     calib = get_category_calibration(internal_stat_key)
                     blended_conf *= calib
 
+                    # Phase 4.B: Platt-Style Calibration
+                    blended_conf = calibrated_prob(stat_key, direction, blended_conf)
+
                     # Determine inclusion threshold
                     thresh = EDGE_THRESHOLDS.get(internal_stat_key, EDGE_THRESHOLDS['combo'])
                     min_prob = thresh['min_prob']
@@ -686,6 +858,15 @@ def build_parlays(
                         min_prob = max(min_prob, 75.0)
                         
                     if blended_conf < min_prob:
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, 0, f'LOW_CONFIDENCE(min={min_prob:.1f})')
+                        continue
+
+                    # Phase 3.B: True EV-Based Edge
+                    odds = prop_info['over_odds'] if direction == "Over" else prop_info.get('under_odds', 1.90)
+                    ev_edge = true_edge_pct(blended_conf, odds)
+
+                    if ev_edge < MIN_EDGE:
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={MIN_EDGE:.1f})')
                         continue
 
                     # Attempt to resolve human-readable stat string
@@ -704,20 +885,19 @@ def build_parlays(
                         elif abs(calib_conf - hist_pct) > 25:
                             trust = " ⚠️"
 
-                    pick_display = f"{pick_label} (Sim: {calib_conf:.0f}%{hist_str}){trust}"
-
                     all_picks.append({
                         'type': 'prop',
                         'event_id': event_id,
                         'team': all_player_minutes.get(player_name, {}).get('team'),
                         'direction': direction,
                         'game': f"{away_name} @ {home_name}",
-                        'pick': pick_display,
-                        'odds': prop_info['over_odds'] if direction == "Over" else prop_info.get('under_odds', 1.90),
+                        'pick': f"{pick_label} (Sim: {calib_conf:.0f}% (raw: {edge['over_count']/edge['n_sim']*100:.1f}%){hist_str}){trust}",
+                        'odds': odds,
                         'book': prop_info['book'],
-                        'edge_pct': abs(edge['edge_pct']),
+                        'edge_pct': ev_edge,
                         'confidence': blended_conf,
-                        'score': abs(edge['edge_pct']) * blended_conf / 100,
+                        'raw_sim_freq': edge['over_count'] / edge['n_sim'],
+                        'score': ev_edge * blended_conf / 100,
                     })
 
     # Sort all picks primarily by CONFIDENCE % to ensure 90%+ picks are prioritized (Issue 4 Fix).
@@ -734,11 +914,69 @@ def build_parlays(
     if len(parlay_system) < 4:
         parlay_system = all_picks[:4]
 
+    game_date = datetime.now().strftime('%Y-%m-%d')
+    parlay_ids = {}
+    for label, legs in [('parlay_2_3', parlay_short[:3]), ('parlay_4', parlay_system[:4])]:
+        if legs:
+            pid = persist_parlay(legs, game_date)
+            parlay_ids[label] = pid
+
     return {
         'parlay_2_3': parlay_short[:3],
         'parlay_4': parlay_system[:4],
         'all_picks': all_picks,
+        'shadow_picks': shadow_picks,
+        'parlay_ids': parlay_ids,
     }
+
+
+def violates_correlation_rules(current_legs: list, new_leg: dict) -> bool:
+    """Returns True if the new leg violates any parlay correlation rules when added to current_legs."""
+    eid = new_leg['event_id']
+    same_game_legs = [l for l in current_legs if l['event_id'] == eid]
+    
+    # Check 1: Total Overload Rule & Check 2: Same-Team OVER Stack
+    overs_in_game = sum(1 for l in same_game_legs if l.get('direction') == 'Over' and l.get('type') == 'prop')
+    has_total_over = any((l.get('type') == 'total' and l.get('direction') == 'Over') for l in same_game_legs)
+    
+    if new_leg['type'] == 'prop' and new_leg.get('direction') == 'Over':
+        # Total Overload: Max 1 player OVER if TOTAL_OVER is present
+        if has_total_over and overs_in_game >= 1:
+            return True
+        # Same-Team OVER Stack: Max 1 OVER prop per team per parlay (protect against team-wide offensive dud)
+        same_team_overs = [l for l in current_legs if l.get('type') == 'prop' and l.get('team') == new_leg.get('team') and l.get('direction') == 'Over']
+        if len(same_team_overs) >= 1:
+            return True
+            
+    if new_leg.get('type') == 'total' and new_leg.get('direction') == 'Over':
+        # Total Overload (reverse check)
+        if overs_in_game > 1:
+            return True
+            
+    # Check 3: Blowout Trap Rule & Existing Opponent OVER ban
+    for leg in current_legs:
+        if leg['event_id'] != eid: continue
+        
+        l1, l2 = leg, new_leg
+        if l1['type'] == 'spread' and l2['type'] == 'prop':
+            pass
+        elif l2['type'] == 'spread' and l1['type'] == 'prop':
+            l1, l2 = l2, l1
+        else:
+            continue
+            
+        spread_val = l1.get('spread_val', 0)
+        # Heavy favorite cover (-7.5 or worse)
+        if spread_val <= -7.5:
+            fav_team = l1.get('bet_team')
+            # Opponent OVER ban (existing)
+            if l2.get('direction') == 'Over' and l2.get('team') != fav_team:
+                return True
+            # Blowout trap: Star/Player on favorite team OVER ban
+            if l2.get('direction') == 'Over' and l2.get('team') == fav_team:
+                return True
+                
+    return False
 
 
 def _select_diverse_picks(picks: list, target_count: int, max_per_game: int) -> list:
@@ -753,29 +991,7 @@ def _select_diverse_picks(picks: list, target_count: int, max_per_game: int) -> 
         if game_count.get(eid, 0) >= max_per_game:
             continue
             
-        conflict = False
-        for existing in selected:
-            if existing['event_id'] != eid: continue
-            
-            p1, p2 = pick, existing
-            spread_pick, prop_pick = None, None
-            
-            if p1['type'] == 'spread' and p2['type'] == 'prop':
-                spread_pick, prop_pick = p1, p2
-            elif p2['type'] == 'spread' and p1['type'] == 'prop':
-                spread_pick, prop_pick = p2, p1
-                
-            if spread_pick and prop_pick:
-                s_val = spread_pick.get('spread_val', 0)
-                # If we are betting a heavy favorite spread (-7.5 or worse)
-                if s_val <= -7.5:
-                    fav_team = spread_pick['bet_team']
-                    # Ban Underdog OVER props in the same parlay
-                    if prop_pick.get('direction') == "Over" and prop_pick.get('team') != fav_team:
-                        conflict = True
-                        break
-
-        if conflict:
+        if violates_correlation_rules(selected, pick):
             continue
 
         selected.append(pick)
@@ -784,6 +1000,61 @@ def _select_diverse_picks(picks: list, target_count: int, max_per_game: int) -> 
             break
 
     return selected
+
+
+def persist_parlay(legs: list, game_date: str) -> int:
+    """Persist a built parlay and its legs to the DB. Returns parlay_id."""
+    try:
+        from etl.bet_tracker import _get_conn
+    except ImportError:
+        from database.bet_tracker_schema import get_connection as _get_conn
+
+    if not legs:
+        return -1
+
+    # Compute combined odds and stake
+    combined_odds = 1.0
+    for leg in legs:
+        combined_odds *= leg.get('odds', 1.0)
+    stake = FLAT_STAKE_PCT
+
+    conn = _get_conn()
+    cur = conn.cursor()
+
+    try:
+        cur.execute("""
+            INSERT INTO parlays (game_date, model_version, combined_odds, stake)
+            VALUES (?, 'ERA_3', ?, ?)
+        """, (game_date, round(combined_odds, 4), stake))
+        parlay_id = cur.lastrowid
+
+        for i, leg in enumerate(legs, start=1):
+            # Parse stat info from pick string if needed
+            pick_str = leg.get('pick', '')
+            cur.execute("""
+                INSERT INTO parlay_legs
+                    (parlay_id, leg_number, player, stat_category, direction, line, odds, sim_confidence, edge_pct)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                parlay_id, i,
+                leg.get('player_name') or pick_str.split(' ')[0],
+                leg.get('stat_category', leg.get('type', 'prop')).upper(),
+                leg.get('direction', ''),
+                leg.get('line'),
+                leg.get('odds'),
+                leg.get('confidence'),
+                leg.get('edge_pct'),
+            ))
+
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"[-] Failed to persist parlay: {e}")
+        parlay_id = -1
+    finally:
+        conn.close()
+
+    return parlay_id
 
 
 def format_parlay_output(parlays: dict) -> str:
@@ -801,7 +1072,7 @@ def format_parlay_output(parlays: dict) -> str:
     for i, pick in enumerate(parlays['parlay_2_3'], 1):
         odds_str = f"@ {pick['odds']:.2f}" if pick['odds'] else ""
         lines.append(f"  Pick {i}: [{pick['game']}] {pick['pick']} {odds_str}")
-        lines.append(f"          Edge: {pick['edge_pct']:+.1f}%  |  Confidence: {pick['confidence']:.0f}%  |  Book: {pick['book']}")
+        lines.append(f"          Edge: {pick['edge_pct']:+.1f}%  |  Confidence: {pick['confidence']:.0f}% (raw: {pick.get('raw_sim_freq', 0)*100:.1f}%)  |  Book: {pick['book']}")
         if pick['odds']:
             combined_odds *= pick['odds']
     
@@ -817,6 +1088,8 @@ def format_parlay_output(parlays: dict) -> str:
         
     stake = compute_kelly_stake(combined_odds, joint_prob)
     lines.append(f"  🔥 RECOMMENDED STAKE: {stake*100:.2f}% of Bankroll")
+    if not USE_KELLY:
+        lines.append(f"  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.")
     lines.append("")
 
     lines.append("=" * 60)
@@ -827,7 +1100,7 @@ def format_parlay_output(parlays: dict) -> str:
     for i, pick in enumerate(parlays['parlay_4'], 1):
         odds_str = f"@ {pick['odds']:.2f}" if pick['odds'] else ""
         lines.append(f"  Pick {i}: [{pick['game']}] {pick['pick']} {odds_str}")
-        lines.append(f"          Edge: {pick['edge_pct']:+.1f}%  |  Confidence: {pick['confidence']:.0f}%  |  Book: {pick['book']}")
+        lines.append(f"          Edge: {pick['edge_pct']:+.1f}%  |  Confidence: {pick['confidence']:.0f}% (raw: {pick.get('raw_sim_freq', 0)*100:.1f}%)  |  Book: {pick['book']}")
         if pick['odds']:
             combined_odds_4 *= pick['odds']
     

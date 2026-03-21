@@ -1,0 +1,101 @@
+============================================================
+ 🎯 AUTOMATED PREDICTION ANALYSIS 🎯
+============================================================
+
+============================================================
+ 🏀 GAME RESULT ACCURACY (TEAM SCORES) 🏀
+============================================================
+MAE - Team Score: 8.0 | Total: 14.8 | Spread (Margin): 11.8
+Moneyline Accuracy: 4/4 (100.0%)
+
+MATCHUP                             | PROJECTED            | ACTUAL          | STATUS
+----------------------------------------------------------------------------------------
+Denver Nuggets @ Utah Jazz          | UTA 117.0 - DEN 128.6 | UTA 125 - DEN 128 | ✅
+Houston Rockets @ Washington Wizards | WAS 104.4 - HOU 119.9 | WAS 118 - HOU 123 | ✅
+Boston Celtics @ Milwaukee Bucks    | MIL 103.7 - BOS 106.0 | MIL 81 - BOS 108 | ✅
+Los Angeles Clippers @ San Francisco Warriors | GSW 106.5 - LAC 122.9 | GSW 101 - LAC 114 | ✅
+
+
+============================================================
+ 🎯 MEDIAN PROJECTION ACCURACY (Outliers Filtered IQR) 🎯
+============================================================
+
+Total Players Evaluated: 72
+MAE (Filtered) - PTS: 4.7 | REB: 1.6 | AST: 0.8
+Direction Accuracy (Filtered) - PTS: 38/71 (53.5%) | REB: 54/70 (77.1%) | AST: 62/62 (100.0%)
+
+PLAYER                 |  PRED  ACT    D     R |  PRED  ACT    D     R |  PRED  ACT    D     R
+                              --- PTS ---             --- REB ---             --- AST ---     
+----------------------------------------------------------------------------------------------------
+Jamal Murray           |    28   45  -17    LOW |     4    2   +2   HIGH |     6    8   -2    LOW
+Nate Williams          |     4   18  -14    LOW |     1    2   -1    LOW |     0    2   -2    LOW
+Keyonte George         |    23   36  -13    LOW |     3    2   +1   HIGH |     4    2   +2   HIGH
+Sharife Cooper         |     8   21  -13    LOW |     2    2   +0  EXACT |     3    3   +0  EXACT
+Alperen Sengun         |    19   32  -13    LOW |     8   13   -5    LOW |     7    2   +5   HIGH
+Bilal Coulibaly        |    11   23  -12    LOW |     3    1   +2   HIGH |     2    0   +2   HIGH
+Ryan Rollins           |    16    5  +11   HIGH |     5    3   +2   HIGH |     5    2   +3   HIGH
+De'Anthony Melton      |    17    7  +10   HIGH |     3    4   -1    LOW |     2    2   +0  EXACT
+Tim Hardaway Jr.       |    16    7   +9   HIGH |     3    6   -3    LOW |     1    1   +0  EXACT
+AJ Green               |     9    0   +9   HIGH |     2    4   -2    LOW |     1    0   +1   HIGH
+Brice Sensabaugh       |    16    8   +8   HIGH |     3    3   +0  EXACT |     2    2   +0  EXACT
+Gui Santos             |    13    5   +8   HIGH |     5   10   -5    LOW |     3    3   +0  EXACT
+Kris Dunn              |     8   16   -8    LOW |     5    7   -2    LOW |     6    7   -1    LOW
+Isaiah Collier         |    17   10   +7   HIGH |     2    2   +0  EXACT |     7    6   +1   HIGH
+Will Riley             |    14    7   +7   HIGH |     3    1   +2   HIGH |     3    1   +2   HIGH
+Kyle Filipowski        |    13   19   -6    LOW |     8    8   +0  EXACT |     2    6   -4    LOW
+Svi Mykhailiuk         |     9   15   -6    LOW |     2    3   -1    LOW |     2    2   +0  EXACT
+Julian Reese           |     8    2   +6   HIGH |    11    4   +7   HIGH |     2    0   +2   HIGH
+Tre Johnson            |    11    5   +6   HIGH |     3    4   -1    LOW |     2    3   -1    LOW
+Josh Okogie            |     6    0   +6   HIGH |     3    0   +3   HIGH |     1    0   +1   HIGH
+Kevin Porter Jr.       |    14    8   +6   HIGH |     4    4   +0  EXACT |     5    2   +3   HIGH
+Ousmane Dieng          |     7   13   -6    LOW |     3    1   +2   HIGH |     1    2   -1    LOW
+Myles Turner           |    11    5   +6   HIGH |     5    4   +1   HIGH |     1    3   -2    LOW
+Brandin Podziemski     |    16   22   -6    LOW |     6    7   -1    LOW |     3    3   +0  EXACT
+Al Horford             |    11   17   -6    LOW |     4    6   -2    LOW |     3    3   +0  EXACT
+Moses Moody            |    16   10   +6   HIGH |     3    3   +0  EXACT |     1    1   +0  EXACT
+Darius Garland         |    18   12   +6   HIGH |     2    2   +0  EXACT |     7    2   +5   HIGH
+Bruce Brown            |     9    4   +5   HIGH |     4    3   +1   HIGH |     2    4   -2    LOW
+Kyshawn George         |    11   16   -5    LOW |     2    1   +1   HIGH |     2    2   +0  EXACT
+Tari Eason             |    14    9   +5   HIGH |     7    6   +1   HIGH |     3    2   +1   HIGH
+Payton Pritchard       |    20   25   -5    LOW |     3    4   -1    LOW |     6    9   -3    LOW
+Derrick White          |    23   18   +5   HIGH |     4    1   +3   HIGH |     7    9   -2    LOW
+Jordan Walsh           |     5    0   +5   HIGH |     4    7   -3    LOW |     0    1   -1    LOW
+Brook Lopez            |    11    6   +5   HIGH |     4    4   +0  EXACT |     2    2   +0  EXACT
+Oscar Tshiebwe         |     4    8   -4    LOW |     6    8   -2    LOW |     1    1   +0  EXACT
+Jaden Hardy            |    10   14   -4    LOW |     1    4   -3    LOW |     1    1   +0  EXACT
+Amen Thompson          |    18   22   -4    LOW |     8   12   -4    LOW |     6    4   +2   HIGH
+Gary Harris            |     2    6   -4    LOW |     1    1   +0  EXACT |     1    1   +0  EXACT
+Draymond Green         |     8    4   +4   HIGH |     4    2   +2   HIGH |     4    6   -2    LOW
+Derrick Jones Jr.      |    13    9   +4   HIGH |     3    6   -3    LOW |     1    1   +0  EXACT
+Elijah Harkless        |     5    2   +3   HIGH |     1    0   +1   HIGH |     2    3   -1    LOW
+John Konchar           |     3    6   -3    LOW |     4    2   +2   HIGH |     2    1   +1   HIGH
+Cody Williams          |     6    3   +3   HIGH |     3    1   +2   HIGH |     2    1   +1   HIGH
+Jalen Pickett          |     5    8   -3    LOW |     2    1   +1   HIGH |     3    1   +2   HIGH
+Bub Carrington         |     8   11   -3    LOW |     3    5   -2    LOW |     4    4   +0  EXACT
+Aaron Holiday          |     5    2   +3   HIGH |     1    0   +1   HIGH |     1    0   +1   HIGH
+Quinten Post           |     6    9   -3    LOW |     4    3   +1   HIGH |     1    1   +0  EXACT
+Malevy Leons           |     3    0   +3   HIGH |     2    1   +1   HIGH |     0    0   +0  EXACT
+Bennedict Mathurin     |    20   17   +3   HIGH |     6    7   -1    LOW |     3    0   +3   HIGH
+Kawhi Leonard          |    26   23   +3   HIGH |     6    8   -2    LOW |     3    4   -1    LOW
+Jordan Miller          |     9   12   -3    LOW |     3    6   -3    LOW |     2    0   +2   HIGH
+Nicolas Batum          |     3    0   +3   HIGH |     3    0   +3   HIGH |     1    0   +1   HIGH
+Ace Bailey             |    16   18   -2    LOW |     5    4   +1   HIGH |     1    0   +1   HIGH
+Christian Braun        |    13   11   +2   HIGH |     5    6   -1    LOW |     4    4   +0  EXACT
+Justin Champagnie      |    10   12   -2    LOW |     5    2   +3   HIGH |     1    2   -1    LOW
+Jamir Watkins          |     9    7   +2   HIGH |     3    3   +0  EXACT |     1    4   -3    LOW
+Kevin Durant           |    28   30   -2    LOW |     5    7   -2    LOW |     4    1   +3   HIGH
+Giannis Antetokounmpo  |    21   19   +2   HIGH |     9   11   -2    LOW |     4    2   +2   HIGH
+Pete Nance             |     4    6   -2    LOW |     2    3   -1    LOW |     1    0   +1   HIGH
+Ron Harper Jr.         |     4    6   -2    LOW |     2    1   +1   HIGH |     1    0   +1   HIGH
+Julian Strawther       |    14   15   -1    LOW |     3    1   +2   HIGH |     2    1   +1   HIGH
+Reed Sheppard          |    20   19   +1   HIGH |     3    7   -4    LOW |     5   10   -5    LOW
+Dorian Finney-Smith    |     4    5   -1    LOW |     2    6   -4    LOW |     1    1   +0  EXACT
+Bobby Portis           |    13   12   +1   HIGH |     5    1   +4   HIGH |     1    1   +0  EXACT
+Jericho Sims           |     4    3   +1   HIGH |     7    6   +1   HIGH |     2    2   +0  EXACT
+Sam Hauser             |    13   14   -1    LOW |     4    4   +0  EXACT |     2    1   +1   HIGH
+Baylor Scheierman      |    11   10   +1   HIGH |     6    6   +0  EXACT |     3    1   +2   HIGH
+Luka Garza             |     6    7   -1    LOW |     3   10   -7    LOW |     1    1   +0  EXACT
+Pat Spencer            |     8    9   -1    LOW |     2    2   +0  EXACT |     4    5   -1    LOW
+Kobe Sanders           |     7    8   -1    LOW |     2    2   +0  EXACT |     2    1   +1   HIGH
+Zeke Nnaji             |     3    3   +0  EXACT |     3    1   +2   HIGH |     0    0   +0  EXACT
+Clint Capela           |     4    4   +0  EXACT |     4    8   -4    LOW |     1    1   +0  EXACT

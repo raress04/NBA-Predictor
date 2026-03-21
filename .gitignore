@@ -1,61 +1,48 @@
+# Databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Plans folder (user-private)
+Plans/
+
+# API keys and secrets
+.env
+*.env
+*.key
+*.pem
+
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
+*.pyo
+*.pyd
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Environment
-.env
-.venv
-env/
+dist/
+build/
+.venv/
 venv/
-ENV/
-env.bak/
-venv.bak/
+env/
 
-# Project Specific
-*.db
-*.db-journal
+# Logs and temp files
 *.log
-advanced_model/.cache/
-advanced_model/predictions/
-advanced_model/results_*.txt
-advanced_model/predicts.txt
-advanced_model/yesterday_results_*.txt
-advanced_model/analyze.txt
-advanced_model/performance_*.txt
-advanced_model/historical_prop_analysis.txt
+tmp/
+advanced_model/tmp_*/
+advanced_model/tmp*/
 
-# LaTeX Output
+# Repaired backups
+*.py_repaired
+
+# LaTeX build artifacts
 *.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.pdf
+*.out
 *.synctex.gz
+advanced_model/predicts_report_*.tex
+advanced_model/predicts_report.tex
 
-# IDEs
-.vscode/
-.idea/
-
-# Large Files
-advanced_model/database/*.sqlite
-advanced_model/database/*.csv
+# OS
+.DS_Store
+Thumbs.db

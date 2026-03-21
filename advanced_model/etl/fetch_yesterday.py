@@ -126,8 +126,13 @@ def fetch_yesterday(target_date_str=None):
         print(f"    -> Successfully inserted {inserted_count} new box scores to SQLite Database.")
         
         # Write results to date-specific file if provided, otherwise default
+        month_name = target_date.strftime('%B').lower()
         filename = f'yesterday_results_{db_date_str}.txt' if target_date_str else 'yesterday_results.txt'
-        results_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), filename)
+        
+        # Always save in results/month_folder
+        results_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', month_name)
+        os.makedirs(results_dir, exist_ok=True)
+        results_path = os.path.join(results_dir, filename)
         with open(results_path, 'w', encoding='utf-8') as f:
             f.write(f"--- YESTERDAY'S RESULTS ({yesterday_str}) ---\n\n")
             if 'MATCHUP' in logs.columns and len(logs) > 0:
@@ -183,7 +188,75 @@ def fetch_yesterday(target_date_str=None):
     # ── Run the automated prediction analysis module (ONLY if not historical) ──
     if not target_date_str:
         print("\n")
-        analyze_predictions.generate_analysis()
+        predict_filename = 'predicts.txt'
+        predict_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), predict_filename)
+        analyze_predictions.generate_analysis(predicts_path=predict_path, results_path=results_path, write_db=True)
+
+    # ── Phase 5.D: Resolve shadow_picks outcomes for this date ────────────────
+    try:
+        import sqlite3 as _sqlite3
+        resolve_date = db_date_str if target_date_str else yesterday_str
+        box_scores = {}  # player -> {POINTS, REBOUNDS, ASSISTS}
+        if logs is not None and len(logs) > 0:
+            for _, row in logs.iterrows():
+                name = row.get('PLAYER_NAME', '')
+                if name:
+                    box_scores[name] = {
+                        'POINTS': int(row.get('PTS', 0)),
+                        'REBOUNDS': int(row.get('REB', 0)),
+                        'ASSISTS': int(row.get('AST', 0)),
+                    }
+
+        if box_scores:
+            db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', 'bet_tracker.db')
+            conn_sp = _sqlite3.connect(db_path)
+            cur_sp = conn_sp.cursor()
+            cur_sp.execute("SELECT id, player, stat_category, direction, line FROM shadow_picks WHERE game_date = ? AND actual_result IS NULL", (resolve_date,))
+            rows = cur_sp.fetchall()
+            updated = 0
+            for sid, player, cat, direction, line in rows:
+                actual = box_scores.get(player)
+                if not actual or line is None:
+                    continue
+                actual_val = actual.get(cat)
+                if actual_val is None:
+                    continue
+                is_win = 1 if (direction == 'OVER' and actual_val > line) or (direction == 'UNDER' and actual_val < line) else 0
+                cur_sp.execute("UPDATE shadow_picks SET actual_value = ?, actual_result = ? WHERE id = ?", (actual_val, is_win, sid))
+                updated += 1
+            conn_sp.commit()
+            conn_sp.close()
+            print(f"[+] Phase 5.D: Resolved {updated} shadow_picks outcomes for {resolve_date}.")
+
+        # ── Phase 5.D: Resolve parlay outcomes for this date ─────────────────
+        db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', 'bet_tracker.db')
+        conn_p = _sqlite3.connect(db_path)
+        cur_p = conn_p.cursor()
+        cur_p.execute("SELECT id, stake, combined_odds FROM parlays WHERE game_date = ? AND result IS NULL", (resolve_date,))
+        parlays_to_resolve = cur_p.fetchall()
+        resolved_parlays = 0
+        for parlay_id, stake, combined_odds in parlays_to_resolve:
+            cur_p.execute("""
+                SELECT pl.id, pr.is_win
+                FROM parlay_legs pl
+                LEFT JOIN pick_results pr ON pr.pick_id = pl.pick_id
+                WHERE pl.parlay_id = ?
+            """, (parlay_id,))
+            legs = cur_p.fetchall()
+            if not legs or any(is_win is None for _, is_win in legs):
+                continue
+            won = all(is_win == 1 for _, is_win in legs)
+            result = 'WIN' if won else 'LOSS'
+            payout = round((stake or 0) * (combined_odds or 1.0), 6) if won else 0.0
+            roi = round((payout - (stake or 0)) / stake, 4) if stake else 0.0
+            cur_p.execute("UPDATE parlays SET result = ?, payout = ?, roi = ? WHERE id = ?", (result, payout, roi, parlay_id))
+            resolved_parlays += 1
+        conn_p.commit()
+        conn_p.close()
+        if resolved_parlays:
+            print(f"[+] Phase 5.D: Resolved {resolved_parlays} parlay outcomes for {resolve_date}.")
+    except Exception as e:
+        print(f"[-] Phase 5.D resolution error: {e}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Fetch box scores for a specific date")

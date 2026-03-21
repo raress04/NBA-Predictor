@@ -193,7 +193,7 @@ class PredictsParser:
                         }
                         # Extract prop evaluations
                         prop_matches = re.findall(
-                            r'O/U ([\d.]+) (\w+) (VALUABLE: (\w+) \((\d+)% conf, ([\d.]+)% edge\)|ignore)',
+                            r'O/U ([\d.]+) (\w+) (VALUABLE: (\w+) \((\d+)% conf(?:\s*\(raw:\s*[\d.]+\%\))?, ([\d.]+)% edge\)|ignore)',
                             props_raw
                         )
                         for pm in prop_matches:
@@ -222,7 +222,7 @@ class PredictsParser:
         text = self.text
         pick_re = re.compile(
             r'Pick\s+\d+:\s+\[(.+?)\]\s+(.+?)\s+@\s+([\d.]+)\s*\n'
-            r'\s+Edge:\s+\+?([\d.]+)%\s+\|.*?Confidence:\s+(\d+)%\s+\|.*?Book:\s+(.+)',
+            r'\s+Edge:\s+\+?([\d.]+)%\s+\|.*?Confidence:\s+(\d+)%(?:\s*\(raw:\s*[\d.]+\%\))?\s+\|.*?Book:\s+(.+)',
             re.MULTILINE
         )
 

@@ -2,6 +2,11 @@
 Backtester — Runs the simulation engine on historical games from the database
 and compares projected outcomes to actual results.
 
+RELATIONSHIP TO BULK_BACKTEST.PY:
+This module is COMPLETELY INDEPENDENT of `bulk_backtest.py`.
+- `backtester.py` is a clean, diagnostic tool measuring fundamental model accuracy (Score MAE, ML hit rate). It does NOT use bookmaker lines and does NOT write to the database.
+- `bulk_backtest.py` (deprecated) is the script that generated synthetic, circular picks.
+
 Measures:
   1. Score accuracy: Mean Absolute Error of projected vs actual scores
   2. Spread calibration: % of games where projected spread direction matched reality

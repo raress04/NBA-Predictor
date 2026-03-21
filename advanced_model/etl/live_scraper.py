@@ -1,5 +1,8 @@
 import sys
 import os
+import io
+import contextlib
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import sqlite3
 import time
 import unicodedata
@@ -19,7 +22,14 @@ from simulator.synergy_tracker import compute_matchup_multiplier
 
 from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
 from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game
-from simulator.parlay_builder import build_parlays, format_parlay_output, compute_prop_edge, compute_total_edge, compute_spread_edge, EDGE_THRESHOLDS
+from config.settings import CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed
+from etl.bias_corrections import get_tiered_bias
+from simulator.parlay_builder import (
+    build_parlays, format_parlay_output, EDGE_THRESHOLDS,
+    compute_spread_edge, compute_total_edge, compute_prop_edge
+)
+from simulator.markov_engine import compute_posterior_confidence
+from etl.bet_tracker import ingest_shadow_picks
 
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'nba_data.db')
 
@@ -60,10 +70,10 @@ TEAM_ID_TO_NAME = {
 }
 
 def normalize_name(name: str) -> str:
-    '''Strip diacriticals: Dončić → Doncic, Schröder → Schroder'''
+    '''Strip diacriticals and lowercase for robust matching.'''
+    if not name: return ""
     nfkd = unicodedata.normalize('NFKD', name)
-    return ''.join(c for c in nfkd if not unicodedata.combining(c)).strip()
-
+    return ''.join(c for c in nfkd if not unicodedata.combining(c)).strip().lower()
 
 # Cache: maps normalized_name -> db_name (built once per run)
 _DB_NAME_MAP = {}
@@ -80,8 +90,8 @@ def _build_db_name_map():
         for (name,) in c.fetchall():
             _DB_NAME_MAP[normalize_name(name)] = name
         conn.close()
-    except:
-        pass
+    except Exception as e:
+        print(f"    [!] Error building DB name map: {e}")
 
 
 def csv_name_to_db_name(csv_name: str) -> str:
@@ -514,6 +524,222 @@ def redistribute_usage(team_matrix: dict, full_roster_usage: dict, team_tricode:
     return team_matrix
 
 
+
+def process_hist_game(game, target_date, injured_normalized):
+    import io, contextlib, time
+    from simulator.markov_engine import MarkovSimulator
+    from simulator.matrix_builder import get_player_stats_matrix, get_team_pace, get_team_efficiency, get_team_rebound_efficiency
+    from simulator.synergy_tracker import compute_matchup_multiplier
+    
+    output_buffer = io.StringIO()
+    payload = {'game_logs': ''}
+    
+    with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(output_buffer):
+        conn = get_connection()
+        try:
+            home_team = game['homeTeam']
+            away_team = game['awayTeam']
+            
+            matchup_str = f"{away_team['teamCity']} {away_team['teamName']} @ {home_team['teamCity']} {home_team['teamName']}"
+            print(f"\n{'='*60}")
+            print(f" MATCHUP: {matchup_str}")
+            print(f"{'='*60}")
+
+            home_team_full = f"{home_team['teamCity']} {home_team['teamName']}"
+            away_team_full = f"{away_team['teamCity']} {away_team['teamName']}"
+
+            # 1. Get actual lineup from box scores (who really played that night)
+            # This is 100% accurate — no live roster or injury guessing needed.
+            home_lineup = get_actual_lineup_from_boxscores(home_team['teamId'], target_date, conn)
+            away_lineup = get_actual_lineup_from_boxscores(away_team['teamId'], target_date, conn)
+
+            if not home_lineup or not away_lineup:
+                print("[-] No box score data found for this game. Run 'py etl/fetch_yesterday.py' first.")
+                return payload
+
+            # 2. Build the Matrices
+            home_matrix = {}
+            away_matrix = {}
+
+            home_b2b = is_back_to_back(home_team['teamId'], conn)
+            away_b2b = is_back_to_back(away_team['teamId'], conn)
+            if home_b2b:
+                print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK")
+            if away_b2b:
+                print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK")
+
+            for hp in home_lineup:
+                try:
+                    matrix = get_player_stats_matrix(hp, limit=15)
+                    modifier = compute_matchup_multiplier(hp, away_team_full)
+                    if modifier != 1.0:
+                        print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
+                    matrix['fg2_pct'] *= modifier
+                    matrix['fg3_pct'] *= modifier
+                    ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
+                    if ret_class:
+                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
+                        print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}.")
+                    if home_b2b:
+                        matrix = apply_b2b_fatigue(matrix)
+                    home_matrix[hp] = matrix
+                except ValueError:
+                    pass
+            
+            for ap in away_lineup:
+                try:
+                    matrix = get_player_stats_matrix(ap, limit=15)
+                    modifier = compute_matchup_multiplier(ap, home_team_full)
+                    if modifier != 1.0:
+                        print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
+                    matrix['fg2_pct'] *= modifier
+                    matrix['fg3_pct'] *= modifier
+                    ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
+                    if ret_class:
+                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
+                        print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}.")
+                    if away_b2b:
+                        matrix = apply_b2b_fatigue(matrix)
+                    away_matrix[ap] = matrix
+                except ValueError:
+                    pass
+
+            if not home_matrix or not away_matrix:
+                print("[-] Could not build player matrices from the database.")
+                return payload
+
+            # Usage Redistribution
+            home_usage = get_team_historical_usage(home_team['teamId'], conn)
+            away_usage = get_team_historical_usage(away_team['teamId'], conn)
+            home_matrix = redistribute_usage(home_matrix, home_usage, home_team['teamTricode'])
+            away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
+
+            # Team Efficiency
+            home_eff = get_team_efficiency(home_team['teamId'])
+            away_eff = get_team_efficiency(away_team['teamId'])
+            home_reb_eff = get_team_rebound_efficiency(home_team['teamId'])
+            away_reb_eff = get_team_rebound_efficiency(away_team['teamId'])
+            
+            # Dynamic Injury Matrix
+            home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
+            away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn)
+            
+            print(f"  ⚡ [TEAM RATINGS] {home_team['teamTricode']}: OffRtg {home_eff.get('off_rtg', 112):.1f} | DefRtg {home_eff.get('def_rtg', 112):.1f}")
+            print(f"  ⚡ [TEAM RATINGS] {away_team['teamTricode']}: OffRtg {away_eff.get('off_rtg', 112):.1f} | DefRtg {away_eff.get('def_rtg', 112):.1f}")
+
+            # Apply defensive efficiency
+            for player in home_matrix:
+                home_matrix[player]['fg2_pct'] *= away_eff['def_multiplier']
+                home_matrix[player]['fg3_pct'] *= away_eff['def_multiplier']
+                if 'avg_reb' in home_matrix[player]:
+                    home_matrix[player]['avg_reb'] *= away_reb_eff['rebound_modifier']
+            for player in away_matrix:
+                away_matrix[player]['fg2_pct'] *= home_eff['def_multiplier']
+                away_matrix[player]['fg3_pct'] *= home_eff['def_multiplier']
+                if 'avg_reb' in away_matrix[player]:
+                    away_matrix[player]['avg_reb'] *= home_reb_eff['rebound_modifier']
+
+            # Pace
+            home_pace = get_team_pace(home_team['teamId'])
+            away_pace = get_team_pace(away_team['teamId'])
+            expected_pace = int((home_pace + away_pace) / 2)
+            print(f"  [Calculated Game Pace: ~{expected_pace} possessions per team]")
+            is_fast_pace = expected_pace > 100.5
+
+            # Run Monte Carlo Simulations
+            engine = MarkovSimulator(home_matrix, away_matrix, is_fast_pace=is_fast_pace)
+            simulations = 5000
+            aggregate_home_score = 0
+            aggregate_away_score = 0
+            
+            prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []} 
+                            for player in list(home_matrix.keys()) + list(away_matrix.keys())}
+            
+            for i in range(simulations):
+                result = engine.run_full_game(pace=expected_pace)
+                aggregate_home_score += result['home_score']
+                aggregate_away_score += result['away_score']
+                
+                for player, stats in result['player_stats'].items():
+                    if player in prop_tracker:
+                        prop_tracker[player]['PTS'].append(stats['PTS'])
+                        prop_tracker[player]['REB'].append(stats['REB'])
+                        prop_tracker[player]['AST'].append(stats['AST'])
+                        prop_tracker[player]['FG3M'].append(stats['FG3M'])
+
+            # Output Projections
+            avg_home = aggregate_home_score / simulations
+            avg_away = aggregate_away_score / simulations
+            
+            print(f"PROJECTED TOTAL: {avg_home + avg_away:.1f}")
+            print(f"PROJECTED SCORE: {home_team['teamTricode']} {avg_home:.1f} - {away_team['teamTricode']} {avg_away:.1f}")
+
+            print("-" * 40)
+            print("   TOP PLAYER PROP PROJECTIONS (MEDIAN)")
+            print("-" * 40)
+
+            # ── Load stale cached prop lines from when this date was originally run ──
+            import json as _json
+            game_props = {}
+            _cache_events_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'odds_api_events.json')
+            _cached_event_ids = {}
+            if os.path.exists(_cache_events_path):
+                try:
+                    with open(_cache_events_path, 'r', encoding='utf-8') as _f:
+                        _cached_event_ids = _json.load(_f)
+                except Exception:
+                    pass
+
+            if _cached_event_ids:
+                _eid = match_event_id_to_game(_cached_event_ids, home_team_full, away_team_full)
+                if _eid:
+                    try:
+                        game_props = fetch_player_props(_eid, force_cache=True)
+                    except Exception as _e:
+                        print(f"    [!] Could not load cached props: {_e}")
+
+            for team, lineup in [("HOME", home_lineup), ("AWAY", away_lineup)]:
+                print(f"[{team} TEAM]")
+                for p in lineup:
+                    if p in prop_tracker:
+                        pts = sorted(prop_tracker[p]['PTS'])
+                        reb = sorted(prop_tracker[p]['REB'])
+                        ast = sorted(prop_tracker[p]['AST'])
+                        median_pts = pts[len(pts)//2]
+                        median_reb = reb[len(reb)//2]
+                        median_ast = ast[len(ast)//2]
+
+                        props_str = ""
+                        if game_props and p in game_props:
+                            p_props = game_props[p]
+                            prop_details = []
+                            base_stats = [
+                                ("points", "PTS", "points"),
+                                ("rebounds", "REB", "rebounds"),
+                                ("assists", "AST", "assists"),
+                            ]
+                            for stat_name, dict_key, stat_key in base_stats:
+                                if stat_name in p_props:
+                                    line = p_props[stat_name]['line']
+                                    dist = sorted(prop_tracker[p][dict_key])
+                                    edge_data = compute_prop_edge(dist, line, stat_key)
+                                    if edge_data['valuable']:
+                                        best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
+                                    else:
+                                        prop_details.append(f"O/U {line} {stat_name} ignore")
+                            if prop_details:
+                                props_str = " (" + ", ".join(prop_details) + ")"
+
+                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
+                print("")
+
+
+        finally:
+            conn.close()
+            payload['game_logs'] = output_buffer.getvalue()
+    return payload
+
 def generate_historical_projections(target_date: str):
     """
     Run the simulation pipeline for a historical date (YYYY-MM-DD).
@@ -600,208 +826,456 @@ def generate_historical_projections(target_date: str):
     for g in games:
         print(f"        {g['awayTeam']['teamTricode']} @ {g['homeTeam']['teamTricode']}")
 
-    for game in games:
-        home_team = game['homeTeam']
-        away_team = game['awayTeam']
+
+    print("\n[+] Commencing Parallel Historical Simulations...")
+    with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
+        futures = [executor.submit(process_hist_game, game, target_date, injured_normalized) for game in games]
         
-        matchup_str = f"{away_team['teamCity']} {away_team['teamName']} @ {home_team['teamCity']} {home_team['teamName']}"
-        print(f"\n{'='*60}")
-        print(f" MATCHUP: {matchup_str}")
-        print(f"{'='*60}")
-
-        home_team_full = f"{home_team['teamCity']} {home_team['teamName']}"
-        away_team_full = f"{away_team['teamCity']} {away_team['teamName']}"
-
-        # 1. Get actual lineup from box scores (who really played that night)
-        # This is 100% accurate — no live roster or injury guessing needed.
-        home_lineup = get_actual_lineup_from_boxscores(home_team['teamId'], target_date, conn)
-        away_lineup = get_actual_lineup_from_boxscores(away_team['teamId'], target_date, conn)
-
-        if not home_lineup or not away_lineup:
-            print("[-] No box score data found for this game. Run 'py etl/fetch_yesterday.py' first.")
-            continue
-
-        # 2. Build the Matrices
-        home_matrix = {}
-        away_matrix = {}
-
-        home_b2b = is_back_to_back(home_team['teamId'], conn)
-        away_b2b = is_back_to_back(away_team['teamId'], conn)
-        if home_b2b:
-            print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK")
-        if away_b2b:
-            print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK")
-
-        for hp in home_lineup:
+        for future in as_completed(futures):
             try:
-                matrix = get_player_stats_matrix(hp, limit=15)
-                modifier = compute_matchup_multiplier(hp, away_team_full)
-                if modifier != 1.0:
-                    print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
-                matrix['fg2_pct'] *= modifier
-                matrix['fg3_pct'] *= modifier
-                ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
-                if ret_class:
-                    matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
-                    print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}.")
-                if home_b2b:
-                    matrix = apply_b2b_fatigue(matrix)
-                home_matrix[hp] = matrix
-            except ValueError:
-                pass
-        
-        for ap in away_lineup:
-            try:
-                matrix = get_player_stats_matrix(ap, limit=15)
-                modifier = compute_matchup_multiplier(ap, home_team_full)
-                if modifier != 1.0:
-                    print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
-                matrix['fg2_pct'] *= modifier
-                matrix['fg3_pct'] *= modifier
-                ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
-                if ret_class:
-                    matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
-                    print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}.")
-                if away_b2b:
-                    matrix = apply_b2b_fatigue(matrix)
-                away_matrix[ap] = matrix
-            except ValueError:
-                pass
-
-        if not home_matrix or not away_matrix:
-            print("[-] Could not build player matrices from the database.")
-            continue
-
-        # Usage Redistribution
-        home_usage = get_team_historical_usage(home_team['teamId'], conn)
-        away_usage = get_team_historical_usage(away_team['teamId'], conn)
-        home_matrix = redistribute_usage(home_matrix, home_usage, home_team['teamTricode'])
-        away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
-
-        # Team Efficiency
-        home_eff = get_team_efficiency(home_team['teamId'])
-        away_eff = get_team_efficiency(away_team['teamId'])
-        home_reb_eff = get_team_rebound_efficiency(home_team['teamId'])
-        away_reb_eff = get_team_rebound_efficiency(away_team['teamId'])
-        
-        # Dynamic Injury Matrix
-        home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
-        away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn)
-        
-        print(f"  ⚡ [TEAM RATINGS] {home_team['teamTricode']}: OffRtg {home_eff.get('off_rtg', 112):.1f} | DefRtg {home_eff.get('def_rtg', 112):.1f}")
-        print(f"  ⚡ [TEAM RATINGS] {away_team['teamTricode']}: OffRtg {away_eff.get('off_rtg', 112):.1f} | DefRtg {away_eff.get('def_rtg', 112):.1f}")
-
-        # Apply defensive efficiency
-        for player in home_matrix:
-            home_matrix[player]['fg2_pct'] *= away_eff['def_multiplier']
-            home_matrix[player]['fg3_pct'] *= away_eff['def_multiplier']
-            if 'avg_reb' in home_matrix[player]:
-                home_matrix[player]['avg_reb'] *= away_reb_eff['rebound_modifier']
-        for player in away_matrix:
-            away_matrix[player]['fg2_pct'] *= home_eff['def_multiplier']
-            away_matrix[player]['fg3_pct'] *= home_eff['def_multiplier']
-            if 'avg_reb' in away_matrix[player]:
-                away_matrix[player]['avg_reb'] *= home_reb_eff['rebound_modifier']
-
-        # Pace
-        home_pace = get_team_pace(home_team['teamId'])
-        away_pace = get_team_pace(away_team['teamId'])
-        expected_pace = int((home_pace + away_pace) / 2)
-        print(f"  [Calculated Game Pace: ~{expected_pace} possessions per team]")
-        is_fast_pace = expected_pace > 100.5
-
-        # Run Monte Carlo Simulations
-        engine = MarkovSimulator(home_matrix, away_matrix, is_fast_pace=is_fast_pace)
-        simulations = 1000
-        aggregate_home_score = 0
-        aggregate_away_score = 0
-        
-        prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []} 
-                        for player in list(home_matrix.keys()) + list(away_matrix.keys())}
-        
-        for i in range(simulations):
-            result = engine.run_full_game(pace=expected_pace)
-            aggregate_home_score += result['home_score']
-            aggregate_away_score += result['away_score']
-            
-            for player, stats in result['player_stats'].items():
-                if player in prop_tracker:
-                    prop_tracker[player]['PTS'].append(stats['PTS'])
-                    prop_tracker[player]['REB'].append(stats['REB'])
-                    prop_tracker[player]['AST'].append(stats['AST'])
-                    prop_tracker[player]['FG3M'].append(stats['FG3M'])
-
-        # Output Projections
-        avg_home = aggregate_home_score / simulations
-        avg_away = aggregate_away_score / simulations
-        
-        print(f"PROJECTED TOTAL: {avg_home + avg_away:.1f}")
-        print(f"PROJECTED SCORE: {home_team['teamTricode']} {avg_home:.1f} - {away_team['teamTricode']} {avg_away:.1f}")
-
-        print("-" * 40)
-        print("   TOP PLAYER PROP PROJECTIONS (MEDIAN)")
-        print("-" * 40)
-
-        # ── Load stale cached prop lines from when this date was originally run ──
-        import json as _json
-        game_props = {}
-        _cache_events_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'odds_api_events.json')
-        _cached_event_ids = {}
-        if os.path.exists(_cache_events_path):
-            try:
-                with open(_cache_events_path, 'r', encoding='utf-8') as _f:
-                    _cached_event_ids = _json.load(_f)
-            except Exception:
-                pass
-
-        if _cached_event_ids:
-            _eid = match_event_id_to_game(_cached_event_ids, home_team_full, away_team_full)
-            if _eid:
-                try:
-                    game_props = fetch_player_props(_eid, force_cache=True)
-                except Exception as _e:
-                    print(f"    [!] Could not load cached props: {_e}")
-
-        for team, lineup in [("HOME", home_lineup), ("AWAY", away_lineup)]:
-            print(f"[{team} TEAM]")
-            for p in lineup:
-                if p in prop_tracker:
-                    pts = sorted(prop_tracker[p]['PTS'])
-                    reb = sorted(prop_tracker[p]['REB'])
-                    ast = sorted(prop_tracker[p]['AST'])
-                    median_pts = pts[len(pts)//2]
-                    median_reb = reb[len(reb)//2]
-                    median_ast = ast[len(ast)//2]
-
-                    props_str = ""
-                    if game_props and p in game_props:
-                        p_props = game_props[p]
-                        prop_details = []
-                        base_stats = [
-                            ("points", "PTS", "points"),
-                            ("rebounds", "REB", "rebounds"),
-                            ("assists", "AST", "assists"),
-                        ]
-                        for stat_name, dict_key, stat_key in base_stats:
-                            if stat_name in p_props:
-                                line = p_props[stat_name]['line']
-                                dist = sorted(prop_tracker[p][dict_key])
-                                edge_data = compute_prop_edge(dist, line, stat_key)
-                                if edge_data['valuable']:
-                                    best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
-                                    prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
-                                else:
-                                    prop_details.append(f"O/U {line} {stat_name} ignore")
-                        if prop_details:
-                            props_str = " (" + ", ".join(prop_details) + ")"
-
-                    print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
-            print("")
+                res = future.result()
+                sys.stdout.write(res['game_logs'])
+            except Exception as e:
+                print(f"[-] Error processing hist game: {e}")
 
     conn.close()
     print(f"\n[+] Historical projections for {target_date} complete.")
     print(f"    Compare these against actual results in yesterday_results.txt")
 
+
+
+def process_live_game(game, odds_available, all_game_odds, odds_api_events, injured_normalized):
+    import io, contextlib, time
+    from simulator.markov_engine import MarkovSimulator
+    from simulator.matrix_builder import get_player_stats_matrix, get_team_pace, get_team_efficiency, get_team_rebound_efficiency
+    from simulator.synergy_tracker import compute_matchup_multiplier
+    from etl.injury_scraper import is_player_injured
+    
+    # We will buffer output to avoid parallel print collisions
+    output_buffer = io.StringIO()
+    payload = {
+        'game_logs': '',
+        'sim_results': None,
+        'cached_props': {},
+        'score_dists': None,
+        'prop_dists': {},
+        'player_minutes': {},
+        'event_id': None,
+        'home_team_full': None,
+        'away_team_full': None,
+        'excluded': False
+    }
+
+    with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(output_buffer):
+        conn = get_connection()
+        try:
+            home_team = game['homeTeam']
+            away_team = game['awayTeam']
+            
+            matchup_str = f"{away_team['teamCity']} {away_team['teamName']} @ {home_team['teamCity']} {home_team['teamName']}"
+            print(f"\n{'='*60}")
+            print(f" MATCHUP: {matchup_str}")
+            print(f"{'='*60}")
+
+            home_team_full = f"{home_team['teamCity']} {home_team['teamName']}"
+            away_team_full = f"{away_team['teamCity']} {away_team['teamName']}"
+
+            # ── Show sportsbook odds if available ──────────────────
+            matched_event = match_espn_odds_to_game(all_game_odds, home_team_full, away_team_full) if odds_available else None
+            event_id = matched_event[0] if matched_event else None
+            game_odds = matched_event[1] if matched_event else None
+            
+            payload['event_id'] = event_id
+            payload['home_team_full'] = home_team_full
+            payload['away_team_full'] = away_team_full
+
+            if game_odds:
+                print(f"  📊 SPORTSBOOK ODDS:")
+                if game_odds.get('h2h'):
+                    h = game_odds['h2h']
+                    print(f"     H2H:    {home_team['teamTricode']} {h['home_odds']:.2f} | {away_team['teamTricode']} {h['away_odds']:.2f}  ({h['book']})")
+                if game_odds.get('spreads'):
+                    s = game_odds['spreads']
+                    print(f"     Spread: {home_team['teamTricode']} {s['home_spread']:+.1f} @ {s['home_odds']:.2f}  ({s['book']})")
+                if game_odds.get('totals'):
+                    t = game_odds['totals']
+                    print(f"     Total:  O/U {t['total']} — Over {t['over_odds']:.2f} / Under {t['under_odds']:.2f}  ({t['book']})")
+
+            # 1. Project Lineups dynamically based on season averages
+            home_lineup = get_expected_lineup(home_team['teamId'], conn, injured_normalized)
+            away_lineup = get_expected_lineup(away_team['teamId'], conn, injured_normalized)
+
+            if not home_lineup or not away_lineup:
+                print("[-] Insufficient historical data in local DB for these teams yet.")
+                return payload  # Exited early
+
+            # 2. Build the Matrices and apply Matchup Defensive Multipliers
+            home_matrix = {}
+            away_matrix = {}
+
+            # ── B2B Fatigue Detection ──────────────────────────
+            home_b2b = is_back_to_back(home_team['teamId'], conn)
+            away_b2b = is_back_to_back(away_team['teamId'], conn)
+            if home_b2b:
+                print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
+            if away_b2b:
+                print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
+
+            for hp in home_lineup:
+                try:
+                    matrix = get_player_stats_matrix(hp, limit=15)
+                    modifier = compute_matchup_multiplier(hp, away_team_full)
+                    if modifier != 1.0:
+                        print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
+                    matrix['fg2_pct'] *= modifier
+                    matrix['fg3_pct'] *= modifier
+                    
+                    # Check Returning Player Restrictions
+                    ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
+                    if ret_class:
+                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
+                        print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}. Stats auto-scaled.")
+
+                    if home_b2b:
+                        matrix = apply_b2b_fatigue(matrix)
+                    home_matrix[hp] = matrix
+                except ValueError:
+                    pass
+            
+            for ap in away_lineup:
+                try:
+                    matrix = get_player_stats_matrix(ap, limit=15)
+                    modifier = compute_matchup_multiplier(ap, home_team_full)
+                    if modifier != 1.0:
+                        print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
+                    matrix['fg2_pct'] *= modifier
+                    matrix['fg3_pct'] *= modifier
+                    
+                    # Check Returning Player Restrictions
+                    ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
+                    if ret_class:
+                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
+                        print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}. Stats auto-scaled.")
+
+                    if away_b2b:
+                        matrix = apply_b2b_fatigue(matrix)
+                    away_matrix[ap] = matrix
+                except ValueError:
+                    pass
+
+            if not home_matrix or not away_matrix:
+                print("[-] Could not build player matrices from the database.")
+                return payload  # Exited early
+
+            # ── Usage Redistribution (when stars are out) ──────────
+            home_usage = get_team_historical_usage(home_team['teamId'], conn)
+            away_usage = get_team_historical_usage(away_team['teamId'], conn)
+            home_matrix = redistribute_usage(home_matrix, home_usage, home_team['teamTricode'])
+            away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
+
+            # ── Team Efficiency Ratings ──────────────────────────
+            home_eff = get_team_efficiency(home_team['teamId'])
+            away_eff = get_team_efficiency(away_team['teamId'])
+            
+            home_reb_eff = get_team_rebound_efficiency(home_team['teamId'])
+            away_reb_eff = get_team_rebound_efficiency(away_team['teamId'])
+            
+            # ── Module 2: Dynamic Injury Matrix ──────────────────
+            home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
+            away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn)
+            
+            print(f"  ⚡ [TEAM RATINGS] {home_team['teamTricode']}: OffRtg {home_eff.get('off_rtg', 112):.1f} | DefRtg {home_eff.get('def_rtg', 112):.1f} | OREB% {home_reb_eff['oreb_pct']*100:.1f} DREB% {home_reb_eff['dreb_pct']*100:.1f}")
+            print(f"  ⚡ [TEAM RATINGS] {away_team['teamTricode']}: OffRtg {away_eff.get('off_rtg', 112):.1f} | DefRtg {away_eff.get('def_rtg', 112):.1f} | OREB% {away_reb_eff['oreb_pct']*100:.1f} DREB% {away_reb_eff['dreb_pct']*100:.1f}")
+
+            # Apply opponent's defensive efficiency to each team's shooting
+            # If opponent has def_multiplier 0.94 (elite defense), our FG% gets scaled down 6%
+            for player in home_matrix:
+                home_matrix[player]['fg2_pct'] *= away_eff['def_multiplier']
+                home_matrix[player]['fg3_pct'] *= away_eff['def_multiplier']
+                if 'avg_reb' in home_matrix[player]:
+                    home_matrix[player]['avg_reb'] *= away_reb_eff['rebound_modifier']
+            for player in away_matrix:
+                away_matrix[player]['fg2_pct'] *= home_eff['def_multiplier']
+                away_matrix[player]['fg3_pct'] *= home_eff['def_multiplier']
+                if 'avg_reb' in away_matrix[player]:
+                    away_matrix[player]['avg_reb'] *= home_reb_eff['rebound_modifier']
+
+            # 3. Calculate dynamic Game Pace
+            home_pace = get_team_pace(home_team['teamId'])
+            away_pace = get_team_pace(away_team['teamId'])
+            expected_pace = int((home_pace + away_pace) / 2)
+            print(f"  [Calculated Game Pace: ~{expected_pace} possessions per team]")
+            is_fast_pace = expected_pace > 100.5
+            
+            # ── Module 1: Garbage Time Rebound Shift (Blowout Protocol) ──
+            # ISSUE 3 FIX (Stage 0): Apply ONLY to the UNDERDOG team.
+            # Favorite starters dominate Q1-Q3 and accumulate stats normally.
+            # Underdog starters sit in garbage time -> bench gets usage.
+            if game_odds and game_odds.get('spreads'):
+                market_spread = abs(float(game_odds['spreads']['home_spread']))
+                if market_spread > 9.5:
+                    home_spread_val = float(game_odds['spreads']['home_spread'])
+                    # Negative home_spread = home team is favorite -> underdog is away
+                    underdog_matrix = away_matrix if home_spread_val < 0 else home_matrix
+                    underdog_name = away_team.get('teamName', 'Away') if home_spread_val < 0 else home_team.get('teamName', 'Home')
+                    print(f"  \U0001f6a8 [BLOWOUT SHIFT] Spread={market_spread:.1f}. Shifting usage/rebounds to {underdog_name} bench only (underdog)...")
+                    sorted_players = sorted(underdog_matrix.keys(), key=lambda p: underdog_matrix[p].get('avg_fga', 0), reverse=True)
+                    if len(sorted_players) >= 6:
+                        starters = sorted_players[:3]
+                        bench = sorted_players[-3:]
+                        fga_pool = 0.0
+                        reb_pool = 0.0
+                        
+                        for s in starters:
+                            if 'avg_fga' in underdog_matrix[s]:
+                                reduction = underdog_matrix[s]['avg_fga'] * 0.15
+                                underdog_matrix[s]['avg_fga'] -= reduction
+                                fga_pool += reduction
+                            if 'avg_reb' in underdog_matrix[s]:
+                                reduction = underdog_matrix[s]['avg_reb'] * 0.15
+                                underdog_matrix[s]['avg_reb'] -= reduction
+                                reb_pool += reduction
+                                
+                        for b in bench:
+                            if 'avg_fga' in underdog_matrix[b]: underdog_matrix[b]['avg_fga'] += fga_pool / len(bench)
+                            if 'avg_reb' in underdog_matrix[b]: underdog_matrix[b]['avg_reb'] += reb_pool / len(bench)
+
+
+            # 4. Feed the expected rosters into the Markov Simulator
+            engine = MarkovSimulator(home_matrix, away_matrix, is_fast_pace=is_fast_pace)
+            # ── Start Monte Carlo Simulations ──────────────
+            simulations = 5000
+            aggregate_home_score = 0
+            aggregate_away_score = 0
+            
+            # Track props for all active players (full distributions for parlay builder)
+            prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []} 
+                            for player in list(home_matrix.keys()) + list(away_matrix.keys())}
+            
+            # Track score distributions for spread/total edge calculation
+            home_scores_list = []
+            away_scores_list = []
+            
+            for i in range(simulations):
+                result = engine.run_full_game(pace=expected_pace)
+                aggregate_home_score += result['home_score']
+                aggregate_away_score += result['away_score']
+                home_scores_list.append(result['home_score'])
+                away_scores_list.append(result['away_score'])
+                
+                for player, stats in result['player_stats'].items():
+                    if player in prop_tracker:
+                        prop_tracker[player]['PTS'].append(stats['PTS'])
+                        prop_tracker[player]['REB'].append(stats['REB'])
+                        prop_tracker[player]['AST'].append(stats['AST'])
+                        prop_tracker[player]['FG3M'].append(stats['FG3M'])
+                        
+            # ── Fetch player props via Odds API (props only) ─────────
+            game_props = {}
+            if event_id and odds_api_events:
+                odds_api_eid = match_event_id_to_game(odds_api_events, home_team_full, away_team_full)
+                if odds_api_eid:
+                    try:
+                        game_props = fetch_player_props(odds_api_eid)
+                        if game_props:
+                            payload['cached_props'] = game_props
+                        time.sleep(0.5)
+                    except Exception as e:
+                        print(f"    [!] Could not fetch player props: {e}")
+
+            # 5. Output Projections
+            avg_home = aggregate_home_score / simulations
+            avg_away = aggregate_away_score / simulations
+            
+            print(f"PROJECTED TOTAL: {avg_home + avg_away:.1f}")
+            print(f"PROJECTED SCORE: {home_team['teamTricode']} {avg_home:.1f} - {away_team['teamTricode']} {avg_away:.1f}")
+            
+            # ── Print Game Spread & Total Evaluation ──
+            if event_id and event_id in all_game_odds:
+                g_odds = all_game_odds[event_id]
+                
+                if g_odds.get('totals'):
+                    t_data = g_odds['totals']
+                    t_edge = compute_total_edge(home_scores_list, away_scores_list, t_data['total'])
+                    if t_edge['valuable']:
+                        raw_conf = t_edge['confidence_over'] if t_edge['direction'] == 'Over' else t_edge['confidence_under']
+                        t_prior = get_prior('TOTAL', t_edge['direction'])
+                        t_target_count = t_edge['over_count'] if t_edge['direction'] == 'Over' else t_edge['under_count']
+                        t_post, _ = compute_posterior_confidence(t_target_count, t_edge['n_sim'], prior_mean=t_prior, prior_strength=10)
+                        best_conf = t_post * 100.0
+                        if not is_allowed('TOTAL', t_edge['direction']):
+                            print(f"  -> GAME TOTAL: O/U {t_data['total']} ⛔ BANNED_CATEGORY")
+                        else:
+                            print(f"  -> GAME TOTAL: O/U {t_data['total']} VALUABLE: {t_edge['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(t_edge['edge_pct']):.1f}% edge)")
+                    else:
+                        print(f"  -> GAME TOTAL: O/U {t_data['total']} ignore")
+                
+                if g_odds.get('spreads'):
+                    s_data = g_odds['spreads']
+                    s_thresh = EDGE_THRESHOLDS['spreads']
+                    
+                    h_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['home_spread'], is_home=True)
+                    h_prior = get_prior('SPREAD', 'COVER')
+                    h_post, _ = compute_posterior_confidence(h_edge['over_count'], h_edge['n_sim'], prior_mean=h_prior, prior_strength=10)
+                    h_conf = h_post * 100.0
+                    if h_conf >= s_thresh['min_prob'] and h_edge['edge_pct'] >= s_thresh['min_edge']:
+                        if not is_allowed('SPREAD', 'COVER'):
+                            print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} ⛔ BANNED_CATEGORY")
+                        else:
+                            print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} VALUABLE: Cover ({h_conf:.0f}% conf (raw: {h_edge['confidence']:.0f}%), {h_edge['edge_pct']:.1f}% edge)")
+                    else:
+                        print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} ignore")
+                        
+                    a_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['away_spread'], is_home=False)
+                    a_prior = get_prior('SPREAD', 'COVER')
+                    a_post, _ = compute_posterior_confidence(a_edge['over_count'], a_edge['n_sim'], prior_mean=a_prior, prior_strength=10)
+                    a_conf = a_post * 100.0
+                    if a_conf >= s_thresh['min_prob'] and a_edge['edge_pct'] >= s_thresh['min_edge']:
+                        if not is_allowed('SPREAD', 'COVER'):
+                            print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} ⛔ BANNED_CATEGORY")
+                        else:
+                            print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} VALUABLE: Cover ({a_conf:.0f}% conf (raw: {a_edge['confidence']:.0f}%), {a_edge['edge_pct']:.1f}% edge)")
+                    else:
+                        print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} ignore")
+
+            print("-" * 40)
+            print("   TOP PLAYER PROP PROJECTIONS (MEDIAN)")
+            print("-" * 40)
+            
+            # Sort and print median projection for all players
+            for team, lineup in [("HOME", home_lineup), ("AWAY", away_lineup)]:
+                print(f"[{team} TEAM]")
+                for p in lineup: 
+                    if p in prop_tracker:
+                        pts = sorted(prop_tracker[p]['PTS'])
+                        reb = sorted(prop_tracker[p]['REB'])
+                        ast = sorted(prop_tracker[p]['AST'])
+                        median_pts = pts[len(pts)//2]
+                        median_reb = reb[len(reb)//2]
+                        median_ast = ast[len(ast)//2]
+
+                        props_str = ""
+                        if game_props and p in game_props:
+                            p_props = game_props[p]
+                            prop_details = []
+                            
+                            # 1. Base Stats
+                            base_stats = [
+                                ("points", "PTS", "points"), 
+                                ("rebounds", "REB", "rebounds"), 
+                                ("assists", "AST", "assists")
+                            ]
+                            
+                            for stat_name, dict_key, stat_key in base_stats:
+                                if stat_name in p_props:
+                                    line = p_props[stat_name]['line']
+                                    dist = sorted(prop_tracker[p][dict_key])
+                                    is_returning = bool(home_matrix.get(p, {}).get('minutes_restriction_flag', False) or away_matrix.get(p, {}).get('minutes_restriction_flag', False))
+                                    edge_data = compute_prop_edge(dist, line, stat_key, is_returning=is_returning)
+                                    
+                                    if edge_data.get('returning_ban'):
+                                        prop_details.append(f"O/U {line} {stat_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
+                                    elif edge_data['valuable']:
+                                        raw_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        p_prior = get_prior(stat_key, edge_data['direction'])
+                                        target_count = edge_data['over_count'] if edge_data['direction'] == "Over" else (edge_data['n_sim'] - edge_data['over_count'])
+                                        p_post, _ = compute_posterior_confidence(target_count, edge_data['n_sim'], prior_mean=p_prior, prior_strength=10)
+                                        best_conf = p_post * 100.0
+                                        prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
+                                    else:
+                                        prop_details.append(f"O/U {line} {stat_name} ignore")
+                                        
+                            # 2. Combo Stats
+                            combo_stats = [
+                                ("points_rebounds", ["PTS", "REB"], "PR"),
+                                ("points_assists", ["PTS", "AST"], "PA"),
+                                ("rebounds_assists", ["REB", "AST"], "RA"),
+                                ("points_rebounds_assists", ["PTS", "REB", "AST"], "PRA")
+                            ]
+                            
+                            for combo_name, components, short_name in combo_stats:
+                                if combo_name in p_props:
+                                    line = p_props[combo_name]['line']
+                                    # Synthesize the combo distribution by summing elements
+                                    dist = [sum(prop_tracker[p][c][i] for c in components) for i in range(len(prop_tracker[p]['PTS']))]
+                                    is_returning = bool(home_matrix.get(p, {}).get('minutes_restriction_flag', False) or away_matrix.get(p, {}).get('minutes_restriction_flag', False))
+                                    edge_data = compute_prop_edge(dist, line, 'combo', is_returning=is_returning)
+                                    
+                                    if edge_data.get('returning_ban'):
+                                        prop_details.append(f"O/U {line} {short_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
+                                    elif edge_data['valuable']:
+                                        best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        prop_details.append(f"O/U {line} {short_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
+                                    else:
+                                        prop_details.append(f"O/U {line} {short_name} ignore")
+                                        
+                            if prop_details:
+                                props_str = " (" + ", ".join(prop_details) + ")"
+                                
+                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
+                print("")
+
+            # ── Issue 3 Fix: Skip unstable games from parlay pool ──────
+            # If either team has a synergy collapse (3+ missing starters), the game is too
+            # unpredictable for parlay inclusion. Projections are still displayed above.
+            if home_collapse or away_collapse:
+                collapse_team = home_team['teamTricode'] if home_collapse else away_team['teamTricode']
+                print(f"  ⛔ [PARLAY EXCLUDED] {matchup_str} — {collapse_team} has Synergy Collapse. Too volatile for parlay picks.")
+                payload['sim_results'] = {
+                    'home_team': home_team_full,
+                    'away_team': away_team_full,
+                    'avg_home': avg_home,
+                    'avg_away': avg_away,
+                    'event_id': event_id,
+                }
+                payload['excluded'] = True
+                return payload  # Exited early
+
+            # ── Collect data for parlay builder ────────────────────
+            if event_id:
+                payload['score_dists'] = {
+                    'home': home_scores_list,
+                    'away': away_scores_list,
+                }
+
+            # Merge player distributions into global tracker
+            for player, dists in prop_tracker.items():
+                if player not in payload['prop_dists']:
+                    payload['prop_dists'][player] = dists
+                
+                # Store minutes risk metrics
+                if player in home_matrix:
+                    payload['player_minutes'][player] = {
+                        'team': home_team_full,
+                        'mean': home_matrix[player].get('min_mean', 0), 
+                        'std': home_matrix[player].get('min_std', 0),
+                        'restriction': home_matrix[player].get('minutes_restriction_flag', None),
+                        'usage': home_matrix[player].get('avg_fga', 0),
+                        'usage_boosted': home_matrix[player].get('usage_boosted', False)
+                    }
+                elif player in away_matrix:
+                    payload['player_minutes'][player] = {
+                        'team': away_team_full,
+                        'mean': away_matrix[player].get('min_mean', 0), 
+                        'std': away_matrix[player].get('min_std', 0),
+                        'restriction': away_matrix[player].get('minutes_restriction_flag', None),
+                        'usage': away_matrix[player].get('avg_fga', 0),
+                        'usage_boosted': away_matrix[player].get('usage_boosted', False)
+                    }
+
+            payload['sim_results'] = {
+                'home_team': home_team_full,
+                'away_team': away_team_full,
+                'avg_home': avg_home,
+                'avg_away': avg_away,
+                'event_id': event_id,
+            }
+
+        finally:
+            conn.close()
+            payload['game_logs'] = output_buffer.getvalue()
+            
+    return payload
 
 def generate_todays_projections():
     print("[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...")
@@ -918,377 +1392,41 @@ def generate_todays_projections():
     all_player_minutes = {}        # player_name -> {'mean': X, 'std': Y}
     event_id_map = {}              # event_id -> game info for display
 
-    for game in games:
-        home_team = game['homeTeam']
-        away_team = game['awayTeam']
+
+    # Run in parallel
+    print("\n[+] Commencing Parallel Matchup Simulations...")
+    with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
+        futures = [executor.submit(process_live_game, game, odds_available, all_game_odds, odds_api_events, injured_normalized) for game in games]
         
-        matchup_str = f"{away_team['teamCity']} {away_team['teamName']} @ {home_team['teamCity']} {home_team['teamName']}"
-        print(f"\n{'='*60}")
-        print(f" MATCHUP: {matchup_str}")
-        print(f"{'='*60}")
-
-        home_team_full = f"{home_team['teamCity']} {home_team['teamName']}"
-        away_team_full = f"{away_team['teamCity']} {away_team['teamName']}"
-
-        # ── Show sportsbook odds if available ──────────────────
-        matched_event = match_espn_odds_to_game(all_game_odds, home_team_full, away_team_full) if odds_available else None
-        event_id = matched_event[0] if matched_event else None
-        game_odds = matched_event[1] if matched_event else None
-
-        if game_odds:
-            print(f"  📊 SPORTSBOOK ODDS:")
-            if game_odds.get('h2h'):
-                h = game_odds['h2h']
-                print(f"     H2H:    {home_team['teamTricode']} {h['home_odds']:.2f} | {away_team['teamTricode']} {h['away_odds']:.2f}  ({h['book']})")
-            if game_odds.get('spreads'):
-                s = game_odds['spreads']
-                print(f"     Spread: {home_team['teamTricode']} {s['home_spread']:+.1f} @ {s['home_odds']:.2f}  ({s['book']})")
-            if game_odds.get('totals'):
-                t = game_odds['totals']
-                print(f"     Total:  O/U {t['total']} — Over {t['over_odds']:.2f} / Under {t['under_odds']:.2f}  ({t['book']})")
-
-        # 1. Project Lineups dynamically based on season averages
-        home_lineup = get_expected_lineup(home_team['teamId'], conn, injured_normalized)
-        away_lineup = get_expected_lineup(away_team['teamId'], conn, injured_normalized)
-
-        if not home_lineup or not away_lineup:
-            print("[-] Insufficient historical data in local DB for these teams yet.")
-            continue
-
-        # 2. Build the Matrices and apply Matchup Defensive Multipliers
-        home_matrix = {}
-        away_matrix = {}
-
-        # ── B2B Fatigue Detection ──────────────────────────
-        home_b2b = is_back_to_back(home_team['teamId'], conn)
-        away_b2b = is_back_to_back(away_team['teamId'], conn)
-        if home_b2b:
-            print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
-        if away_b2b:
-            print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
-
-        for hp in home_lineup:
+        for future in as_completed(futures):
             try:
-                matrix = get_player_stats_matrix(hp, limit=15)
-                modifier = compute_matchup_multiplier(hp, away_team_full)
-                if modifier != 1.0:
-                    print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
-                matrix['fg2_pct'] *= modifier
-                matrix['fg3_pct'] *= modifier
+                res = future.result()
+                # Print the buffered output for this game
+                sys.stdout.write(res['game_logs'])
                 
-                # Check Returning Player Restrictions
-                ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
-                if ret_class:
-                    matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
-                    print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}. Stats auto-scaled.")
-
-                if home_b2b:
-                    matrix = apply_b2b_fatigue(matrix)
-                home_matrix[hp] = matrix
-            except ValueError:
-                pass
-        
-        for ap in away_lineup:
-            try:
-                matrix = get_player_stats_matrix(ap, limit=15)
-                modifier = compute_matchup_multiplier(ap, home_team_full)
-                if modifier != 1.0:
-                    print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
-                matrix['fg2_pct'] *= modifier
-                matrix['fg3_pct'] *= modifier
+                # Merge accumulators
+                if res['sim_results']:
+                    all_sim_results.append(res['sim_results'])
                 
-                # Check Returning Player Restrictions
-                ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
-                if ret_class:
-                    matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
-                    print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}. Stats auto-scaled.")
-
-                if away_b2b:
-                    matrix = apply_b2b_fatigue(matrix)
-                away_matrix[ap] = matrix
-            except ValueError:
-                pass
-
-        if not home_matrix or not away_matrix:
-            print("[-] Could not build player matrices from the database.")
-            continue
-
-        # ── Usage Redistribution (when stars are out) ──────────
-        home_usage = get_team_historical_usage(home_team['teamId'], conn)
-        away_usage = get_team_historical_usage(away_team['teamId'], conn)
-        home_matrix = redistribute_usage(home_matrix, home_usage, home_team['teamTricode'])
-        away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
-
-        # ── Team Efficiency Ratings ──────────────────────────
-        home_eff = get_team_efficiency(home_team['teamId'])
-        away_eff = get_team_efficiency(away_team['teamId'])
-        
-        home_reb_eff = get_team_rebound_efficiency(home_team['teamId'])
-        away_reb_eff = get_team_rebound_efficiency(away_team['teamId'])
-        
-        # ── Module 2: Dynamic Injury Matrix ──────────────────
-        home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
-        away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn)
-        
-        print(f"  ⚡ [TEAM RATINGS] {home_team['teamTricode']}: OffRtg {home_eff.get('off_rtg', 112):.1f} | DefRtg {home_eff.get('def_rtg', 112):.1f} | OREB% {home_reb_eff['oreb_pct']*100:.1f} DREB% {home_reb_eff['dreb_pct']*100:.1f}")
-        print(f"  ⚡ [TEAM RATINGS] {away_team['teamTricode']}: OffRtg {away_eff.get('off_rtg', 112):.1f} | DefRtg {away_eff.get('def_rtg', 112):.1f} | OREB% {away_reb_eff['oreb_pct']*100:.1f} DREB% {away_reb_eff['dreb_pct']*100:.1f}")
-
-        # Apply opponent's defensive efficiency to each team's shooting
-        # If opponent has def_multiplier 0.94 (elite defense), our FG% gets scaled down 6%
-        for player in home_matrix:
-            home_matrix[player]['fg2_pct'] *= away_eff['def_multiplier']
-            home_matrix[player]['fg3_pct'] *= away_eff['def_multiplier']
-            if 'avg_reb' in home_matrix[player]:
-                home_matrix[player]['avg_reb'] *= away_reb_eff['rebound_modifier']
-        for player in away_matrix:
-            away_matrix[player]['fg2_pct'] *= home_eff['def_multiplier']
-            away_matrix[player]['fg3_pct'] *= home_eff['def_multiplier']
-            if 'avg_reb' in away_matrix[player]:
-                away_matrix[player]['avg_reb'] *= home_reb_eff['rebound_modifier']
-
-        # 3. Calculate dynamic Game Pace
-        home_pace = get_team_pace(home_team['teamId'])
-        away_pace = get_team_pace(away_team['teamId'])
-        expected_pace = int((home_pace + away_pace) / 2)
-        print(f"  [Calculated Game Pace: ~{expected_pace} possessions per team]")
-        is_fast_pace = expected_pace > 100.5
-        
-        # ── Module 1: Garbage Time Rebound Shift (Blowout Protocol) ──
-        if game_odds and game_odds.get('spreads'):
-            market_spread = abs(float(game_odds['spreads']['home_spread']))
-            if market_spread > 9.5:
-                print(f"  🚨 [BLOWOUT SHIFT] High spread detected ({market_spread:.1f}). Shifting usage and rebounds to Bench...")
-                for team_mat in [home_matrix, away_matrix]:
-                    sorted_players = sorted(team_mat.keys(), key=lambda p: team_mat[p].get('avg_fga', 0), reverse=True)
-                    if len(sorted_players) >= 6:
-                        starters = sorted_players[:3]
-                        bench = sorted_players[-3:]
-                        fga_pool = 0.0
-                        reb_pool = 0.0
+                if res['event_id']:
+                    event_id_map[res['event_id']] = {
+                        'home_team': res['home_team_full'],
+                        'away_team': res['away_team_full']
+                    }
+                    if res.get('score_dists'):
+                        all_score_distributions[res['event_id']] = res['score_dists']
+                    if res.get('cached_props'):
+                        all_player_props[res['event_id']] = res['cached_props']
                         
-                        for s in starters:
-                            if 'avg_fga' in team_mat[s]:
-                                reduction = team_mat[s]['avg_fga'] * 0.15
-                                team_mat[s]['avg_fga'] -= reduction
-                                fga_pool += reduction
-                            if 'avg_reb' in team_mat[s]:
-                                reduction = team_mat[s]['avg_reb'] * 0.15
-                                team_mat[s]['avg_reb'] -= reduction
-                                reb_pool += reduction
-                                
-                        for b in bench:
-                            if 'avg_fga' in team_mat[b]: team_mat[b]['avg_fga'] += fga_pool / len(bench)
-                            if 'avg_reb' in team_mat[b]: team_mat[b]['avg_reb'] += reb_pool / len(bench)
+                for p, dist in res['prop_dists'].items():
+                    all_prop_distributions[p] = dist
+                for p, min_data in res['player_minutes'].items():
+                    all_player_minutes[p] = min_data
+            except Exception as e:
+                print(f"[-] Error parsing game from thread: {e}")
+                import traceback
+                traceback.print_exc()
 
-        # 4. Feed the expected rosters into the Markov Simulator
-        engine = MarkovSimulator(home_matrix, away_matrix, is_fast_pace=is_fast_pace)
-        # ── Start Monte Carlo Simulations ──────────────
-        simulations = 1000
-        aggregate_home_score = 0
-        aggregate_away_score = 0
-        
-        # Track props for all active players (full distributions for parlay builder)
-        prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []} 
-                        for player in list(home_matrix.keys()) + list(away_matrix.keys())}
-        
-        # Track score distributions for spread/total edge calculation
-        home_scores_list = []
-        away_scores_list = []
-        
-        for i in range(simulations):
-            result = engine.run_full_game(pace=expected_pace)
-            aggregate_home_score += result['home_score']
-            aggregate_away_score += result['away_score']
-            home_scores_list.append(result['home_score'])
-            away_scores_list.append(result['away_score'])
-            
-            for player, stats in result['player_stats'].items():
-                if player in prop_tracker:
-                    prop_tracker[player]['PTS'].append(stats['PTS'])
-                    prop_tracker[player]['REB'].append(stats['REB'])
-                    prop_tracker[player]['AST'].append(stats['AST'])
-                    prop_tracker[player]['FG3M'].append(stats['FG3M'])
-                    
-        # ── Fetch player props via Odds API (props only) ─────────
-        game_props = {}
-        if event_id and odds_api_events:
-            odds_api_eid = match_event_id_to_game(odds_api_events, home_team_full, away_team_full)
-            if odds_api_eid:
-                try:
-                    game_props = fetch_player_props(odds_api_eid)
-                    if game_props:
-                        all_player_props[event_id] = game_props  # Store under ESPN event_id for parlay builder
-                    time.sleep(0.5)
-                except Exception as e:
-                    print(f"    [!] Could not fetch player props: {e}")
-
-        # 5. Output Projections
-        avg_home = aggregate_home_score / simulations
-        avg_away = aggregate_away_score / simulations
-        
-        print(f"PROJECTED TOTAL: {avg_home + avg_away:.1f}")
-        print(f"PROJECTED SCORE: {home_team['teamTricode']} {avg_home:.1f} - {away_team['teamTricode']} {avg_away:.1f}")
-        
-        # ── Print Game Spread & Total Evaluation ──
-        if event_id and event_id in all_game_odds:
-            g_odds = all_game_odds[event_id]
-            
-            if g_odds.get('totals'):
-                t_data = g_odds['totals']
-                t_edge = compute_total_edge(home_scores_list, away_scores_list, t_data['total'])
-                if t_edge['valuable']:
-                    best_conf = t_edge['confidence_over'] if t_edge['direction'] == 'Over' else t_edge['confidence_under']
-                    print(f"  -> GAME TOTAL: O/U {t_data['total']} VALUABLE: {t_edge['direction']} ({best_conf:.0f}% conf, {abs(t_edge['edge_pct']):.1f}% edge)")
-                else:
-                    print(f"  -> GAME TOTAL: O/U {t_data['total']} ignore")
-            
-            if g_odds.get('spreads'):
-                s_data = g_odds['spreads']
-                s_thresh = EDGE_THRESHOLDS['spreads']
-                
-                h_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['home_spread'], is_home=True)
-                if h_edge['confidence'] >= s_thresh['min_prob'] and h_edge['edge_pct'] >= s_thresh['min_edge']:
-                    print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} VALUABLE: Cover ({h_edge['confidence']:.0f}% conf, {h_edge['edge_pct']:.1f}% edge)")
-                else:
-                    print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} ignore")
-                    
-                a_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['away_spread'], is_home=False)
-                if a_edge['confidence'] >= s_thresh['min_prob'] and a_edge['edge_pct'] >= s_thresh['min_edge']:
-                    print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} VALUABLE: Cover ({a_edge['confidence']:.0f}% conf, {a_edge['edge_pct']:.1f}% edge)")
-                else:
-                    print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} ignore")
-
-        print("-" * 40)
-        print("   TOP PLAYER PROP PROJECTIONS (MEDIAN)")
-        print("-" * 40)
-        
-        # Sort and print median projection for all players
-        for team, lineup in [("HOME", home_lineup), ("AWAY", away_lineup)]:
-            print(f"[{team} TEAM]")
-            for p in lineup: 
-                if p in prop_tracker:
-                    pts = sorted(prop_tracker[p]['PTS'])
-                    reb = sorted(prop_tracker[p]['REB'])
-                    ast = sorted(prop_tracker[p]['AST'])
-                    median_pts = pts[len(pts)//2]
-                    median_reb = reb[len(reb)//2]
-                    median_ast = ast[len(ast)//2]
-
-                    props_str = ""
-                    if game_props and p in game_props:
-                        p_props = game_props[p]
-                        prop_details = []
-                        
-                        # 1. Base Stats
-                        base_stats = [
-                            ("points", "PTS", "points"), 
-                            ("rebounds", "REB", "rebounds"), 
-                            ("assists", "AST", "assists")
-                        ]
-                        
-                        for stat_name, dict_key, stat_key in base_stats:
-                            if stat_name in p_props:
-                                line = p_props[stat_name]['line']
-                                dist = sorted(prop_tracker[p][dict_key])
-                                is_returning = bool(all_player_minutes.get(p, {}).get('restriction', False))
-                                edge_data = compute_prop_edge(dist, line, stat_key, is_returning=is_returning)
-                                
-                                if edge_data.get('returning_ban'):
-                                    prop_details.append(f"O/U {line} {stat_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
-                                elif edge_data['valuable']:
-                                    best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
-                                    prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
-                                else:
-                                    prop_details.append(f"O/U {line} {stat_name} ignore")
-                                    
-                        # 2. Combo Stats
-                        combo_stats = [
-                            ("points_rebounds", ["PTS", "REB"], "PR"),
-                            ("points_assists", ["PTS", "AST"], "PA"),
-                            ("rebounds_assists", ["REB", "AST"], "RA"),
-                            ("points_rebounds_assists", ["PTS", "REB", "AST"], "PRA")
-                        ]
-                        
-                        for combo_name, components, short_name in combo_stats:
-                            if combo_name in p_props:
-                                line = p_props[combo_name]['line']
-                                # Synthesize the combo distribution by summing elements
-                                dist = [sum(prop_tracker[p][c][i] for c in components) for i in range(len(prop_tracker[p]['PTS']))]
-                                is_returning = bool(all_player_minutes.get(p, {}).get('restriction', False))
-                                edge_data = compute_prop_edge(dist, line, 'combo', is_returning=is_returning)
-                                
-                                if edge_data.get('returning_ban'):
-                                    prop_details.append(f"O/U {line} {short_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
-                                elif edge_data['valuable']:
-                                    best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
-                                    prop_details.append(f"O/U {line} {short_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
-                                else:
-                                    prop_details.append(f"O/U {line} {short_name} ignore")
-                                    
-                        if prop_details:
-                            props_str = " (" + ", ".join(prop_details) + ")"
-                            
-                    print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
-            print("")
-
-        # ── Issue 3 Fix: Skip unstable games from parlay pool ──────
-        # If either team has a synergy collapse (3+ missing starters), the game is too
-        # unpredictable for parlay inclusion. Projections are still displayed above.
-        if home_collapse or away_collapse:
-            collapse_team = home_team['teamTricode'] if home_collapse else away_team['teamTricode']
-            print(f"  ⛔ [PARLAY EXCLUDED] {matchup_str} — {collapse_team} has Synergy Collapse. Too volatile for parlay picks.")
-            all_sim_results.append({
-                'home_team': home_team_full,
-                'away_team': away_team_full,
-                'avg_home': avg_home,
-                'avg_away': avg_away,
-                'event_id': event_id,
-            })
-            continue
-
-        # ── Collect data for parlay builder ────────────────────
-        if event_id:
-            all_score_distributions[event_id] = {
-                'home': home_scores_list,
-                'away': away_scores_list,
-            }
-            event_id_map[event_id] = {
-                'home_team': home_team_full,
-                'away_team': away_team_full,
-            }
-
-        # Merge player distributions into global tracker
-        for player, dists in prop_tracker.items():
-            if player not in all_prop_distributions:
-                all_prop_distributions[player] = dists
-            
-            # Store minutes risk metrics
-            if player in home_matrix:
-                all_player_minutes[player] = {
-                    'team': home_team_full,
-                    'mean': home_matrix[player].get('min_mean', 0), 
-                    'std': home_matrix[player].get('min_std', 0),
-                    'restriction': home_matrix[player].get('minutes_restriction_flag', None),
-                    'usage': home_matrix[player].get('avg_fga', 0),
-                    'usage_boosted': home_matrix[player].get('usage_boosted', False)
-                }
-            elif player in away_matrix:
-                all_player_minutes[player] = {
-                    'team': away_team_full,
-                    'mean': away_matrix[player].get('min_mean', 0), 
-                    'std': away_matrix[player].get('min_std', 0),
-                    'restriction': away_matrix[player].get('minutes_restriction_flag', None),
-                    'usage': away_matrix[player].get('avg_fga', 0),
-                    'usage_boosted': away_matrix[player].get('usage_boosted', False)
-                }
-
-        all_sim_results.append({
-            'home_team': home_team_full,
-            'away_team': away_team_full,
-            'avg_home': avg_home,
-            'avg_away': avg_away,
-            'event_id': event_id,
-        })
 
     conn.close()
 
@@ -1327,6 +1465,15 @@ def generate_todays_projections():
                 all_player_minutes=all_player_minutes,
             )
 
+            # Ingest shadow picks for research (Gate 4.C)
+            shadow_data = parlays.get('shadow_picks', [])
+            if shadow_data:
+                game_date = datetime.now().strftime("%Y-%m-%d")
+                for sp in shadow_data:
+                    sp['game_date'] = game_date
+                n_shadow = ingest_shadow_picks(shadow_data)
+                print(f"\n[+] Logged {n_shadow} filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.")
+
             output = format_parlay_output(parlays)
             print(output)
 
@@ -1350,13 +1497,37 @@ class TeeLogger:
     def __init__(self, filename):
         self.terminal = sys.stdout
         self.log = open(filename, 'w', encoding='utf-8')
+        self.buffer = ""
+        self.skip_keywords = [
+            "[Synergy]",
+            "[MINUTES RESTRICTION]",
+            "[B2B FATIGUE]",
+            "[TEAM RATINGS]",
+            "[Calculated Game Pace:",
+            "[BLOWOUT SHIFT]",
+            "[CURRENT ROSTER RATING]",
+            "[USAGE BOOST]",
+            "[INJURY MATRIX]",
+            "[SYNERGY COLLAPSE]",
+            "[PARLAY EXCLUDED]"
+        ]
 
     def write(self, message):
         self.terminal.write(message)
-        self.log.write(message)
+        self.buffer += message
+        while '\n' in self.buffer:
+            line, self.buffer = self.buffer.split('\n', 1)
+            line_with_nl = line + '\n'
+            if any(kw in line_with_nl for kw in self.skip_keywords):
+                continue
+            self.log.write(line_with_nl)
 
     def flush(self):
         self.terminal.flush()
+        if self.buffer:
+            if not any(kw in self.buffer for kw in self.skip_keywords):
+                self.log.write(self.buffer)
+            self.buffer = ""
         self.log.flush()
 
 if __name__ == '__main__':
@@ -1387,7 +1558,7 @@ if __name__ == '__main__':
             subprocess.run([
                 sys.executable, 
                 os.path.join(os.path.dirname(os.path.abspath(__file__)), 'predicts_to_pdf.py'),
-                '--input', log_name,
+                '--input', log_path, # Use the absolute path since we saved it in folder_path
                 '--output', f'predicts_report_{args.date}'
             ], check=True)
             print(f"    [+] Successfully generated predicts_report_{args.date}.tex")
@@ -1396,4 +1567,20 @@ if __name__ == '__main__':
             
     else:
         generate_todays_projections()
+        
+        # Archive it automatically
+        import shutil
+        today = datetime.now()
+        month_name = today.strftime('%B').lower()
+        today_str = today.strftime('%Y-%m-%d')
+        
+        archive_dir = os.path.join(MODEL_DIR, 'predictions', month_name)
+        os.makedirs(archive_dir, exist_ok=True)
+        archive_path = os.path.join(archive_dir, f'predicts_{today_str}.txt')
+        
+        try:
+            shutil.copy(log_path, archive_path)
+            print(f"\n[+] Archived live projections to: {archive_path}")
+        except Exception as e:
+            print(f"\n[-] Failed to archive predictions: {e}")
 
