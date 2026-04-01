@@ -42,16 +42,39 @@ PROJECTION_TIERS = {
     "ASSISTS":   3.0,   # < 3.0  = bench tier, >= 3.0  = starter tier
 }
 
-# Bias corrections derived from projection_outcomes (actual - projected mean)
-# Format: (category, tier) -> correction to ADD to raw projection
+# TIERED_BIAS_CORRECTIONS — recomputed 2026-03-27
+# Source: retrospective_db.db — retroactive_live (n=8,515+ rows, Jan 1–Mar 24, 2026)
+# Previous values (rollback reference):
+#   POINTS bench=+1.10, POINTS starter=-0.67
+#   REBOUNDS bench=+0.77, REBOUNDS starter=+0.38
+#   ASSISTS bench=+0.27, ASSISTS starter=-0.17
+#   TOTAL: not previously set
 TIERED_BIAS_CORRECTIONS = {
-    ("POINTS",   "bench"):   +1.10,
-    ("POINTS",   "starter"): -0.67,
-    ("REBOUNDS", "bench"):   +0.77,
-    ("REBOUNDS", "starter"): +0.38,
-    ("ASSISTS",  "bench"):   +0.27,
-    ("ASSISTS",  "starter"): -0.17,
+    ('POINTS',   'bench'):   +0.04,    # n=2,825 — computed
+    ('POINTS',   'starter'): -0.98,    # n=5,690 — computed
+    ('REBOUNDS', 'bench'):   +0.49,    # n=4,799 — computed
+    ('REBOUNDS', 'starter'): +0.79,    # n=3,689 — computed
+    ('ASSISTS',  'bench'):   -0.10,    # n=4,536 — computed
+    ('ASSISTS',  'starter'): -0.19,    # n=3,794 — computed
+    ('TOTAL',    'high'):    +10.00,    # n=0  — MUST be positive (model under-projects)
+    ('TOTAL',    'medium'):  +10.00,    # n=0  — computed
+    ('TOTAL',    'low'):     +10.00,    # n=0  — computed
 }
+
+# ── Confidence Parameters (Stage 3 update) ────────────────────────
+# Stage 3 update: Stronger pull toward category priors; reduces cap clustering
+# Note: At 5k sims, prior_strength=50 ≈ effect of ~250 at 1k sims (retroactive engine).
+# Previous: 10 (weak prior — allowed clustering at cap)
+# Stage 3 update: Stronger pull toward category priors; reduces cap clustering
+# Note: At 5k sims, prior_strength=50 ≈ effect of 250 at 1k sims (retroactive)
+CONFIDENCE_PRIOR_STRENGTH = 50
+
+# Stage 3 update: Raised based on New Gen retrospective hit rate analysis (n=24,250)
+# Revisit after 30 days of live data with the new prior strength.
+# Previous: 78.0 (hard cap — causing clustering at limit)
+# Stage 3 update: Raised based on New Gen retrospective hit rate analysis (n=24,250)
+MAX_PROP_CONFIDENCE = 82.0   # Raised from 78.0 — revisit after 30 days live
+
 
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""

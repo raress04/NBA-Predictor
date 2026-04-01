@@ -1,0 +1,263 @@
+[+] HISTORICAL MODE: Generating projections for 2026-03-02
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 67 players marked Out/GTD.
+    [+] Found 4 games in database for 2026-03-02
+    [+] Parsed 4 unique matchups:
+        DEN @ UTA
+        HOU @ WAS
+        BOS @ MIL
+        LAC @ GSW
+
+============================================================
+ MATCHUP: Denver Nuggets @ Utah Jazz
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  [Synergy] Ace Bailey vs Denver Nuggets: 1.027x Offense Modifier
+  [Synergy] Keyonte George vs Denver Nuggets: 1.029x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Keyonte George classified as RETURNING_MINOR.
+  [Synergy] Kyle Filipowski vs Denver Nuggets: 1.019x Offense Modifier
+  [Synergy] Elijah Harkless vs Denver Nuggets: 1.016x Offense Modifier
+  [Synergy] Svi Mykhailiuk vs Denver Nuggets: 1.024x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Svi Mykhailiuk classified as RETURNING_MINOR.
+  [Synergy] John Konchar vs Denver Nuggets: 1.023x Offense Modifier
+  [Synergy] Brice Sensabaugh vs Denver Nuggets: 1.028x Offense Modifier
+  [Synergy] Isaiah Collier vs Denver Nuggets: 1.034x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Oscar Tshiebwe classified as RETURNING_MINOR.
+  [Synergy] Cody Williams vs Denver Nuggets: 1.022x Offense Modifier
+  [Synergy] Jamal Murray vs Utah Jazz: 1.064x Offense Modifier
+  [Synergy] Nikola Jokić vs Utah Jazz: 1.049x Offense Modifier
+  [Synergy] Christian Braun vs Utah Jazz: 1.045x Offense Modifier
+  [Synergy] Bruce Brown vs Utah Jazz: 1.048x Offense Modifier
+  [Synergy] Tim Hardaway Jr. vs Utah Jazz: 1.052x Offense Modifier
+  [Synergy] Julian Strawther vs Utah Jazz: 1.055x Offense Modifier
+  [Synergy] Jalen Pickett vs Utah Jazz: 1.052x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jalen Pickett classified as RETURNING_MINOR.
+  [Synergy] Jonas Valančiūnas vs Utah Jazz: 1.044x Offense Modifier
+  [Synergy] Zeke Nnaji vs Utah Jazz: 1.037x Offense Modifier
+  📈 [USAGE BOOST] UTA: 57.2 extra FGA redistributed (missing: Lauri Markkanen, Jaren Jackson Jr., Jusuf Nurkić)
+  📈 [USAGE BOOST] DEN: 29.8 extra FGA redistributed (missing: Peyton Watson, Cameron Johnson, Spencer Jones)
+  🚨 [INJURY MATRIX] UTA missing ROTATION: Blake Hinson (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] UTA missing STARTER: Jusuf Nurkić (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] UTA missing ROTATION: Kevin Love (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] UTA missing STAR: Lauri Markkanen (Tier 1 Penalty)
+  🚨 [INJURY MATRIX] UTA missing ROTATION: Vince Williams Jr. (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] UTA Offense collectively scaled to 90.3% capacity.
+  🚨 [INJURY MATRIX] DEN missing STARTER: Cameron Johnson (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] DEN missing STARTER: Peyton Watson (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] DEN missing ROTATION: Spencer Jones (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] DEN Offense collectively scaled to 93.1% capacity.
+  ⚡ [TEAM RATINGS] UTA: OffRtg 111.2 | DefRtg 114.2
+  ⚡ [TEAM RATINGS] DEN: OffRtg 118.2 | DefRtg 114.4
+  [Calculated Game Pace: ~103 possessions per team]
+PROJECTED TOTAL: 245.6
+PROJECTED SCORE: UTA 117.0 - DEN 128.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Ace Bailey           -> 16 PTS, 5 REB, 1 AST
+  Keyonte George       -> 23 PTS, 3 REB, 4 AST
+  Kyle Filipowski      -> 13 PTS, 8 REB, 2 AST
+  Elijah Harkless      -> 5 PTS, 1 REB, 2 AST
+  Svi Mykhailiuk       -> 9 PTS, 2 REB, 2 AST
+  John Konchar         -> 3 PTS, 4 REB, 2 AST
+  Brice Sensabaugh     -> 16 PTS, 3 REB, 2 AST
+  Isaiah Collier       -> 17 PTS, 2 REB, 7 AST
+  Oscar Tshiebwe       -> 4 PTS, 6 REB, 1 AST
+  Cody Williams        -> 6 PTS, 3 REB, 2 AST
+
+[AWAY TEAM]
+  Jamal Murray         -> 28 PTS, 4 REB, 6 AST
+  Nikola Jokić         -> 28 PTS, 11 REB, 8 AST
+  Christian Braun      -> 13 PTS, 5 REB, 4 AST
+  Bruce Brown          -> 9 PTS, 4 REB, 2 AST
+  Tim Hardaway Jr.     -> 16 PTS, 3 REB, 1 AST
+  Julian Strawther     -> 14 PTS, 3 REB, 2 AST
+  Jalen Pickett        -> 5 PTS, 2 REB, 3 AST
+  Jonas Valančiūnas    -> 8 PTS, 5 REB, 1 AST
+  Zeke Nnaji           -> 3 PTS, 3 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Houston Rockets @ Washington Wizards
+============================================================
+  [Synergy] Will Riley vs Houston Rockets: 0.986x Offense Modifier
+  [Synergy] Bub Carrington vs Houston Rockets: 0.983x Offense Modifier
+  [Synergy] Justin Champagnie vs Houston Rockets: 1.000x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Justin Champagnie classified as RETURNING_MINOR.
+  [Synergy] Bilal Coulibaly vs Houston Rockets: 0.989x Offense Modifier
+  [Synergy] Kyshawn George vs Houston Rockets: 0.984x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kyshawn George classified as RETURNING_MINOR.
+  [Synergy] Tre Johnson vs Houston Rockets: 0.988x Offense Modifier
+  [Synergy] Jamir Watkins vs Houston Rockets: 1.004x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jamir Watkins classified as RETURNING_MINOR.
+  [Synergy] Jaden Hardy vs Houston Rockets: 0.993x Offense Modifier
+  [Synergy] Sharife Cooper vs Houston Rockets: 0.971x Offense Modifier
+  [Synergy] Reed Sheppard vs Washington Wizards: 1.052x Offense Modifier
+  [Synergy] Alperen Sengun vs Washington Wizards: 0.999x Offense Modifier
+  [Synergy] Kevin Durant vs Washington Wizards: 1.024x Offense Modifier
+  [Synergy] Amen Thompson vs Washington Wizards: 1.029x Offense Modifier
+  [Synergy] Dorian Finney-Smith vs Washington Wizards: 1.074x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Dorian Finney-Smith classified as RETURNING_MINOR.
+  [Synergy] Tari Eason vs Washington Wizards: 1.060x Offense Modifier
+  [Synergy] Aaron Holiday vs Washington Wizards: 1.046x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Aaron Holiday classified as RETURNING_MINOR.
+  [Synergy] Clint Capela vs Washington Wizards: 1.033x Offense Modifier
+  [Synergy] Josh Okogie vs Washington Wizards: 1.065x Offense Modifier
+  📈 [USAGE BOOST] WAS: 60.1 extra FGA redistributed (missing: Alex Sarr, Trae Young, Tristan Vukcevic)
+  📈 [USAGE BOOST] HOU: 22.5 extra FGA redistributed (missing: Jabari Smith Jr., JD Davison, Jeff Green)
+  🚨 [INJURY MATRIX] WAS missing STARTER: Alondes Williams (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] WAS missing STARTER: Anthony Gill (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] WAS missing ROTATION: Tristan Vukcevic (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] WAS Offense collectively scaled to 93.1% capacity.
+  🚨 [INJURY MATRIX] HOU missing STARTER: Jabari Smith Jr. (Tier 2 Penalty)
+  📉 [CURRENT ROSTER RATING] HOU Offense collectively scaled to 97.0% capacity.
+  ⚡ [TEAM RATINGS] WAS: OffRtg 109.2 | DefRtg 121.4
+  ⚡ [TEAM RATINGS] HOU: OffRtg 112.5 | DefRtg 110.4
+  [Calculated Game Pace: ~100 possessions per team]
+PROJECTED TOTAL: 224.2
+PROJECTED SCORE: WAS 104.4 - HOU 119.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Will Riley           -> 14 PTS, 3 REB, 3 AST
+  Bub Carrington       -> 8 PTS, 3 REB, 4 AST
+  Julian Reese         -> 8 PTS, 11 REB, 2 AST
+  Justin Champagnie    -> 10 PTS, 5 REB, 1 AST
+  Bilal Coulibaly      -> 11 PTS, 3 REB, 2 AST
+  Kyshawn George       -> 11 PTS, 2 REB, 2 AST
+  Tre Johnson          -> 11 PTS, 3 REB, 2 AST
+  Jamir Watkins        -> 9 PTS, 3 REB, 1 AST
+  Jaden Hardy          -> 10 PTS, 1 REB, 1 AST
+  Sharife Cooper       -> 8 PTS, 2 REB, 3 AST
+
+[AWAY TEAM]
+  Reed Sheppard        -> 20 PTS, 3 REB, 5 AST
+  Alperen Sengun       -> 19 PTS, 8 REB, 7 AST
+  Kevin Durant         -> 28 PTS, 5 REB, 4 AST
+  Amen Thompson        -> 18 PTS, 8 REB, 6 AST
+  Dorian Finney-Smith  -> 4 PTS, 2 REB, 1 AST
+  Tari Eason           -> 14 PTS, 7 REB, 3 AST
+  Aaron Holiday        -> 5 PTS, 1 REB, 1 AST
+  Clint Capela         -> 4 PTS, 4 REB, 1 AST
+  Josh Okogie          -> 6 PTS, 3 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Boston Celtics @ Milwaukee Bucks
+============================================================
+  [Synergy] Kevin Porter Jr. vs Boston Celtics: 1.003x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kevin Porter Jr. classified as RETURNING_MINOR.
+  [Synergy] Ousmane Dieng vs Boston Celtics: 0.985x Offense Modifier
+  [Synergy] Giannis Antetokounmpo vs Boston Celtics: 0.992x Offense Modifier
+  [Synergy] Ryan Rollins vs Boston Celtics: 1.001x Offense Modifier
+  [Synergy] Bobby Portis vs Boston Celtics: 0.978x Offense Modifier
+  [Synergy] Myles Turner vs Boston Celtics: 0.977x Offense Modifier
+  [Synergy] AJ Green vs Boston Celtics: 0.988x Offense Modifier
+  [Synergy] Pete Nance vs Boston Celtics: 0.978x Offense Modifier
+  [Synergy] Gary Harris vs Boston Celtics: 0.978x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Gary Harris classified as RETURNING_MINOR.
+  [Synergy] Hugo González vs Milwaukee Bucks: 1.016x Offense Modifier
+  [Synergy] Payton Pritchard vs Milwaukee Bucks: 1.019x Offense Modifier
+  [Synergy] Derrick White vs Milwaukee Bucks: 1.022x Offense Modifier
+  [Synergy] Sam Hauser vs Milwaukee Bucks: 1.022x Offense Modifier
+  [Synergy] Nikola Vučević vs Milwaukee Bucks: 1.005x Offense Modifier
+  [Synergy] Baylor Scheierman vs Milwaukee Bucks: 1.017x Offense Modifier
+  [Synergy] Luka Garza vs Milwaukee Bucks: 1.015x Offense Modifier
+  [Synergy] Jordan Walsh vs Milwaukee Bucks: 1.010x Offense Modifier
+  [Synergy] Ron Harper Jr. vs Milwaukee Bucks: 1.027x Offense Modifier
+  📈 [USAGE BOOST] MIL: 27.3 extra FGA redistributed (missing: Kyle Kuzma, Cam Thomas, Gary Trent Jr.)
+  📈 [USAGE BOOST] BOS: 30.7 extra FGA redistributed (missing: Jaylen Brown, Neemias Queta, Dalano Banton)
+  🚨 [INJURY MATRIX] MIL missing ROTATION: Cam Thomas (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] MIL missing STARTER: Kyle Kuzma (Tier 2 Penalty)
+  📉 [CURRENT ROSTER RATING] MIL Offense collectively scaled to 96.0% capacity.
+  🚨 [INJURY MATRIX] BOS missing STAR: Jaylen Brown (Tier 1 Penalty)
+  🚨 [INJURY MATRIX] BOS missing ROTATION: Neemias Queta (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] BOS Offense collectively scaled to 93.1% capacity.
+  ⚡ [TEAM RATINGS] MIL: OffRtg 111.1 | DefRtg 118.3
+  ⚡ [TEAM RATINGS] BOS: OffRtg 115.3 | DefRtg 105.3
+  [Calculated Game Pace: ~96 possessions per team]
+PROJECTED TOTAL: 209.7
+PROJECTED SCORE: MIL 103.7 - BOS 106.0
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Kevin Porter Jr.     -> 14 PTS, 4 REB, 5 AST
+  Ousmane Dieng        -> 7 PTS, 3 REB, 1 AST
+  Giannis Antetokounmpo -> 21 PTS, 9 REB, 4 AST
+  Ryan Rollins         -> 16 PTS, 5 REB, 5 AST
+  Bobby Portis         -> 13 PTS, 5 REB, 1 AST
+  Jericho Sims         -> 4 PTS, 7 REB, 2 AST
+  Myles Turner         -> 11 PTS, 5 REB, 1 AST
+  AJ Green             -> 9 PTS, 2 REB, 1 AST
+  Pete Nance           -> 4 PTS, 2 REB, 1 AST
+  Gary Harris          -> 2 PTS, 1 REB, 1 AST
+
+[AWAY TEAM]
+  Hugo González        -> 6 PTS, 5 REB, 0 AST
+  Payton Pritchard     -> 20 PTS, 3 REB, 6 AST
+  Derrick White        -> 23 PTS, 4 REB, 7 AST
+  Sam Hauser           -> 13 PTS, 4 REB, 2 AST
+  Nikola Vučević       -> 16 PTS, 8 REB, 3 AST
+  Baylor Scheierman    -> 11 PTS, 6 REB, 3 AST
+  Luka Garza           -> 6 PTS, 3 REB, 1 AST
+  Jordan Walsh         -> 5 PTS, 4 REB, 0 AST
+  Ron Harper Jr.       -> 4 PTS, 2 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Los Angeles Clippers @ San Francisco Warriors
+============================================================
+  ⚠️  [MINUTES RESTRICTION] Moses Moody classified as RETURNING_MINOR.
+  📈 [USAGE BOOST] GSW: 38.0 extra FGA redistributed (missing: Stephen Curry, Kristaps Porziņģis, Gary Payton II)
+  📈 [USAGE BOOST] LAC: 23.1 extra FGA redistributed (missing: John Collins, Bogdan Bogdanović, Cam Christie)
+  🚨 [INJURY MATRIX] GSW missing ROTATION: Buddy Hield (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] GSW missing ROTATION: Gary Payton II (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] GSW missing ROTATION: Will Richard (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] GSW Offense collectively scaled to 97.0% capacity.
+  🚨 [INJURY MATRIX] LAC missing STARTER: John Collins (Tier 2 Penalty)
+  📉 [CURRENT ROSTER RATING] LAC Offense collectively scaled to 97.0% capacity.
+  ⚡ [TEAM RATINGS] GSW: OffRtg 110.0 | DefRtg 115.1
+  ⚡ [TEAM RATINGS] LAC: OffRtg 114.4 | DefRtg 110.8
+  [Calculated Game Pace: ~99 possessions per team]
+PROJECTED TOTAL: 229.4
+PROJECTED SCORE: GSW 106.5 - LAC 122.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [CACHE HIT] Loaded from odds_api_props_cba1963a5da2997abeeecb331594f3d1.json (42min remaining)
+[HOME TEAM]
+  Brandin Podziemski   -> 16 PTS, 6 REB, 3 AST
+  Draymond Green       -> 8 PTS, 4 REB, 4 AST
+  Gui Santos           -> 13 PTS, 5 REB, 3 AST
+  De'Anthony Melton    -> 17 PTS, 3 REB, 2 AST
+  Al Horford           -> 11 PTS, 4 REB, 3 AST
+  Moses Moody          -> 16 PTS, 3 REB, 1 AST
+  Nate Williams        -> 4 PTS, 1 REB, 0 AST
+  Pat Spencer          -> 8 PTS, 2 REB, 4 AST
+  Quinten Post         -> 6 PTS, 4 REB, 1 AST
+  Malevy Leons         -> 3 PTS, 2 REB, 0 AST
+
+[AWAY TEAM]
+  Bennedict Mathurin   -> 20 PTS, 6 REB, 3 AST (O/U 17.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Kawhi Leonard        -> 26 PTS, 6 REB, 3 AST (O/U 26.5 points ignore, O/U 6.5 rebounds ignore, O/U 3.5 assists ignore)
+  Kris Dunn            -> 8 PTS, 5 REB, 6 AST (O/U 8.5 points ignore, O/U 4.5 rebounds ignore, O/U 4.5 assists ignore)
+  Jordan Miller        -> 9 PTS, 3 REB, 2 AST (O/U 9.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  Derrick Jones Jr.    -> 13 PTS, 3 REB, 1 AST
+  Brook Lopez          -> 11 PTS, 4 REB, 2 AST (O/U 9.5 points ignore, O/U 4.5 rebounds ignore)
+  Darius Garland       -> 18 PTS, 2 REB, 7 AST
+  Kobe Sanders         -> 7 PTS, 2 REB, 2 AST (O/U 7.5 points ignore, O/U 2.5 rebounds ignore, O/U 1.5 assists ignore)
+  Yanic Konan Niederhäuser -> 6 PTS, 5 REB, 0 AST
+  Nicolas Batum        -> 3 PTS, 3 REB, 1 AST
+
+
+[+] Historical projections for 2026-03-02 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating historical PDF report for 2026-03-02...
+    [-] Failed to generate PDF report: name 'log_name' is not defined

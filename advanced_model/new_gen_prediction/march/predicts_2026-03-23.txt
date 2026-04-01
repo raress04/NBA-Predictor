@@ -1,0 +1,69 @@
+NBA MODEL PREDICTIONS - 2026-03-23
+============================================================
+
+
+MATCHUP: Utah Jazz vs. Toronto Raptors
+------------------------------
+
+MATCHUP: Houston Rockets vs. Chicago Bulls
+------------------------------
+  Reed Sheppard        | ASSISTS  | Line  5.5 | Proj  3.7 | VALUABLE: Under (77% conf, 30.1% edge)
+  Collin Sexton        | POINTS   | Line 12.5 | Proj 19.1 | VALUABLE: Over (78% conf, 36.5% edge)
+
+MATCHUP: Los Angeles Lakers vs. Detroit Pistons
+------------------------------
+  Daniss Jenkins       | POINTS   | Line 14.5 | Proj 10.7 | VALUABLE: Under (77% conf, 35.4% edge)
+  Daniss Jenkins       | ASSISTS  | Line  6.5 | Proj  4.6 | VALUABLE: Under (75% conf, 28.4% edge)
+  Kevin Huerter        | POINTS   | Line  8.5 | Proj 12.4 | VALUABLE: Over (73% conf, 28.2% edge)
+
+MATCHUP: Portland Trail Blazers vs. Brooklyn Nets
+------------------------------
+  Ziaire Williams      | POINTS   | Line 11.5 | Proj 16.0 | VALUABLE: Over (73% conf, 28.6% edge)
+  Nic Claxton          | POINTS   | Line 10.5 | Proj 15.3 | VALUABLE: Over (78% conf, 35.3% edge)
+
+MATCHUP: Orlando Magic vs. Indiana Pacers
+------------------------------
+  Paolo Banchero       | POINTS   | Line 25.5 | Proj 31.2 | VALUABLE: Over (74% conf, 29.6% edge)
+  Pascal Siakam        | POINTS   | Line 19.5 | Proj 26.6 | VALUABLE: Over (77% conf, 33.9% edge)
+  Aaron Nesmith        | POINTS   | Line 10.5 | Proj 15.5 | VALUABLE: Over (76% conf, 32.1% edge)
+
+MATCHUP: Dallas Mavericks vs. Golden State Warriors
+------------------------------
+
+MATCHUP: San Antonio Spurs vs. Miami Heat
+------------------------------
+  Victor Wembanyama    | POINTS   | Line 26.5 | Proj 19.7 | VALUABLE: Under (75% conf, 33.1% edge)
+  Victor Wembanyama    | REBOUNDS | Line 12.5 | Proj  7.7 | VALUABLE: Under (78% conf, 47.8% edge)
+  Bam Adebayo          | REBOUNDS | Line 10.5 | Proj  7.5 | VALUABLE: Under (78% conf, 39.6% edge)
+
+MATCHUP: Philadelphia 76ers vs. Oklahoma City Thunder
+------------------------------
+
+MATCHUP: LA Clippers vs. Milwaukee Bucks
+------------------------------
+  Jordan Miller        | POINTS   | Line 12.5 | Proj  9.3 | VALUABLE: Under (78% conf, 36.7% edge)
+  AJ Green             | POINTS   | Line  8.5 | Proj 12.8 | VALUABLE: Over (74% conf, 29.6% edge)
+  Ousmane Dieng        | POINTS   | Line 11.5 | Proj  8.9 | VALUABLE: Under (74% conf, 31.0% edge)
+  Myles Turner         | POINTS   | Line 10.5 | Proj 16.9 | VALUABLE: Over (78% conf, 37.8% edge)
+
+MATCHUP: Atlanta Hawks vs. Memphis Grizzlies
+------------------------------
+  Dyson Daniels        | POINTS   | Line 13.5 | Proj 10.9 | VALUABLE: Under (73% conf, 29.5% edge)
+  Mouhamed Gueye       | REBOUNDS | Line  6.5 | Proj  3.8 | VALUABLE: Under (78% conf, 45.6% edge)
+  Jaylen Wells         | POINTS   | Line 12.5 | Proj 18.3 | VALUABLE: Over (76% conf, 32.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Nic Claxton Over 10.5 POINTS (78% conf, 29.2% edge) | Portland Trail Blazers vs. Brooklyn Nets
+  2. Reed Sheppard Under 5.5 ASSISTS (77% conf, 28.3% edge) | Houston Rockets vs. Chicago Bulls
+  3. Mouhamed Gueye Under 6.5 REBOUNDS (78% conf, 24.9% edge) | Atlanta Hawks vs. Memphis Grizzlies
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Nic Claxton Over 10.5 POINTS (78% conf, 29.2% edge) | Portland Trail Blazers vs. Brooklyn Nets
+  2. Reed Sheppard Under 5.5 ASSISTS (77% conf, 28.3% edge) | Houston Rockets vs. Chicago Bulls
+  3. Mouhamed Gueye Under 6.5 REBOUNDS (78% conf, 24.9% edge) | Atlanta Hawks vs. Memphis Grizzlies
+  4. Myles Turner Over 10.5 POINTS (78% conf, 24.1% edge) | LA Clippers vs. Milwaukee Bucks
+
+
+Total VALUABLE picks today: 20

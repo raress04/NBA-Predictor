@@ -1,0 +1,26 @@
+NBA MODEL PREDICTIONS - 2026-03-24
+============================================================
+
+
+MATCHUP: New York Knicks vs. New Orleans Pelicans
+------------------------------
+
+MATCHUP: Orlando Magic vs. Cleveland Cavaliers
+------------------------------
+
+MATCHUP: Denver Nuggets vs. Phoenix Suns
+------------------------------
+
+MATCHUP: Charlotte Hornets vs. Sacramento Kings
+------------------------------
+  Devin Carter         | POINTS   | Line 15.5 | Proj  9.9 | VALUABLE: Under (76% conf, 33.5% edge)
+  DeMar DeRozan        | POINTS   | Line 19.5 | Proj 31.1 | VALUABLE: Over (78% conf, 45.0% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. DeMar DeRozan Over 19.5 POINTS (78% conf, 27.0% edge) | Charlotte Hornets vs. Sacramento Kings
+  2. Devin Carter Under 15.5 POINTS (76% conf, 22.5% edge) | Charlotte Hornets vs. Sacramento Kings
+
+
+Total VALUABLE picks today: 2

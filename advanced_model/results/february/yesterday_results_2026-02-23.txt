@@ -1,0 +1,76 @@
+--- YESTERDAY'S RESULTS (02/23/2026) ---
+
+==================================================
+MATCHUP: DET vs. SAS    103 - 114
+==================================================
+Devin Vassell          | 28 PTS,  2 REB,  4 AST,  7 3PM
+Jalen Duren            | 25 PTS, 14 REB,  1 AST,  0 3PM
+Victor Wembanyama      | 21 PTS, 17 REB,  4 AST,  2 3PM
+Julian Champagnie      | 17 PTS,  6 REB,  1 AST,  5 3PM
+Cade Cunningham        | 16 PTS,  6 REB, 10 AST,  2 3PM
+Stephon Castle         | 16 PTS,  4 REB, 11 AST,  1 3PM
+Ronald Holland II      | 15 PTS, 11 REB,  0 AST,  1 3PM
+Duncan Robinson        | 13 PTS,  3 REB,  5 AST,  3 3PM
+De'Aaron Fox           | 10 PTS,  7 REB,  7 AST,  0 3PM
+Paul Reed              | 10 PTS,  5 REB,  0 AST,  0 3PM
+Keldon Johnson         |  9 PTS,  4 REB,  0 AST,  1 3PM
+Ausar Thompson         |  8 PTS,  4 REB,  2 AST,  0 3PM
+Daniss Jenkins         |  7 PTS,  3 REB,  0 AST,  0 3PM
+Dylan Harper           |  5 PTS,  2 REB,  3 AST,  0 3PM
+Caris LeVert           |  5 PTS,  1 REB,  1 AST,  1 3PM
+Tobias Harris          |  4 PTS,  8 REB,  2 AST,  0 3PM
+Carter Bryant          |  3 PTS,  2 REB,  1 AST,  1 3PM
+Harrison Barnes        |  3 PTS,  2 REB,  1 AST,  1 3PM
+Luke Kornet            |  2 PTS,  4 REB,  0 AST,  0 3PM
+Javonte Green          |  0 PTS,  0 REB,  0 AST,  0 3PM
+
+==================================================
+MATCHUP: MEM vs. SAC    114 - 123
+==================================================
+Russell Westbrook      | 25 PTS,  2 REB,  7 AST,  3 3PM
+Precious Achiuwa       | 22 PTS, 12 REB,  0 AST,  0 3PM
+Javon Small            | 21 PTS,  6 REB,  9 AST,  4 3PM
+DeMar DeRozan          | 19 PTS,  2 REB,  4 AST,  0 3PM
+Daeqwon Plowden        | 19 PTS,  5 REB,  1 AST,  4 3PM
+Olivier-Maxence Prosper | 17 PTS,  3 REB,  1 AST,  0 3PM
+GG Jackson             | 16 PTS,  6 REB,  1 AST,  3 3PM
+Taylor Hendricks       | 12 PTS,  3 REB,  1 AST,  2 3PM
+Jaylen Wells           | 12 PTS,  3 REB,  2 AST,  0 3PM
+Nique Clifford         | 12 PTS,  6 REB,  5 AST,  1 3PM
+Rayan Rupert           | 10 PTS,  9 REB,  1 AST,  0 3PM
+Maxime Raynaud         | 10 PTS, 13 REB,  2 AST,  0 3PM
+Malik Monk             | 10 PTS,  0 REB,  2 AST,  1 3PM
+Walter Clayton Jr.     |  9 PTS,  1 REB,  6 AST,  2 3PM
+Cam Spencer            |  7 PTS,  3 REB,  3 AST,  1 3PM
+Keegan Murray          |  6 PTS,  5 REB,  5 AST,  1 3PM
+Scotty Pippen Jr.      |  6 PTS,  2 REB,  8 AST,  0 3PM
+Jahmai Mashack         |  4 PTS,  1 REB,  1 AST,  0 3PM
+Killian Hayes          |  0 PTS,  0 REB,  4 AST,  0 3PM
+
+==================================================
+MATCHUP: HOU vs. UTA    125 - 105
+==================================================
+Jabari Smith Jr.       | 31 PTS,  9 REB,  0 AST,  6 3PM
+Lauri Markkanen        | 29 PTS,  3 REB,  2 AST,  1 3PM
+Brice Sensabaugh       | 26 PTS,  3 REB,  1 AST,  4 3PM
+Amen Thompson          | 20 PTS,  7 REB,  3 AST,  0 3PM
+Kevin Durant           | 18 PTS,  5 REB, 12 AST,  4 3PM
+Isaiah Collier         | 17 PTS,  1 REB,  3 AST,  0 3PM
+Alperen Sengun         | 16 PTS,  9 REB,  9 AST,  0 3PM
+Reed Sheppard          | 15 PTS,  3 REB,  4 AST,  5 3PM
+Kyle Filipowski        | 13 PTS,  5 REB,  4 AST,  1 3PM
+Tari Eason             | 11 PTS, 10 REB,  4 AST,  1 3PM
+Aaron Holiday          |  7 PTS,  2 REB,  0 AST,  1 3PM
+Kevin Love             |  5 PTS,  9 REB,  5 AST,  1 3PM
+John Konchar           |  5 PTS,  4 REB,  2 AST,  1 3PM
+Ace Bailey             |  4 PTS,  8 REB,  0 AST,  0 3PM
+Dorian Finney-Smith    |  3 PTS,  4 REB,  0 AST,  1 3PM
+Svi Mykhailiuk         |  3 PTS,  0 REB,  1 AST,  0 3PM
+Cody Williams          |  2 PTS,  0 REB,  0 AST,  0 3PM
+Clint Capela           |  2 PTS,  3 REB,  1 AST,  0 3PM
+Josh Okogie            |  2 PTS,  1 REB,  1 AST,  0 3PM
+Vince Williams Jr.     |  1 PTS,  3 REB,  1 AST,  0 3PM
+Elijah Harkless        |  0 PTS,  0 REB,  4 AST,  0 3PM
+Isaiah Crawford        |  0 PTS,  0 REB,  0 AST,  0 3PM
+Jeff Green             |  0 PTS,  0 REB,  0 AST,  0 3PM
+

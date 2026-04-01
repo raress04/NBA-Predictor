@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 
 # Ensure the advanced_model directory is in the path for relative imports
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -9,7 +10,32 @@ if MODEL_DIR not in sys.path:
 import sqlite3
 import pandas as pd
 from functools import lru_cache
+from datetime import date
 from config import settings
+
+CORRECTIONS_METADATA_PATH = os.path.join(MODEL_DIR, 'config', 'bias_corrections_computed.json')
+
+
+def should_recompute_corrections() -> bool:
+    """
+    Returns True if corrections are >30 days old or any tier has n<30.
+    Used by run_pipeline.sh monthly scheduler to decide whether to auto-recompute.
+    """
+    if not os.path.exists(CORRECTIONS_METADATA_PATH):
+        return True
+    try:
+        with open(CORRECTIONS_METADATA_PATH) as f:
+            meta = json.load(f)
+        last_computed_str = meta.get('computed_at', '2000-01-01')
+        last_computed = date.fromisoformat(last_computed_str)
+        if (date.today() - last_computed).days > 30:
+            return True
+        for key, val in meta.get('corrections', {}).items():
+            if isinstance(val, dict) and val.get('n', 999) < 30:
+                return True
+        return False
+    except Exception:
+        return True  # recompute if the file is corrupt or unreadable
 
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'bet_tracker.db')
 

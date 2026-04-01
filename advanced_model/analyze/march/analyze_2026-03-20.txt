@@ -1,0 +1,174 @@
+============================================================
+ 🎯 AUTOMATED PREDICTION ANALYSIS 🎯
+============================================================
+
+============================================================
+ 🏀 GAME RESULT ACCURACY (TEAM SCORES) 🏀
+============================================================
+MAE - Team Score: 10.0 | Total: 17.7 | Spread (Margin): 14.0
+Moneyline Accuracy: 3/6 (50.0%)
+
+MATCHUP                             | PROJECTED            | ACTUAL          | STATUS
+----------------------------------------------------------------------------------------
+New York Knicks @ Brooklyn Nets     | BKN 89.2 - NYK 123.6 | BKN 92 - NYK 93 | ✅
+Boston Celtics @ Memphis Grizzlies  | MEM 112.9 - BOS 122.6 | MEM 112 - BOS 117 | ✅
+San Francisco Warriors @ Detroit Pistons | DET 118.9 - GSW 102.3 | DET 115 - GSW 101 | ✅
+Portland Trail Blazers @ Minnesota Timberwolves | MIN 115.7 - POR 115.7 | MIN 104 - POR 108 | ✅
+Toronto Raptors @ Denver Nuggets    | DEN 128.7 - TOR 129.7 | DEN 121 - TOR 115 | ❌
+Atlanta Hawks @ Houston Rockets     | HOU 113.1 - ATL 123.7 | HOU 117 - ATL 95 | ❌
+
+Total Props Evaluated: 25
+Wins: 13 | Losses: 12 | Win Rate: 52.0%
+
+============================================================
+ 🏀 GAME RESULT ACCURACY (TEAM SCORES) 🏀
+============================================================
+MAE - Team Score: 10.0 | Total: 17.7 | Spread: 14.0
+Moneyline Accuracy: 3/6 (50.0%)
+
+MATCHUP                             | PROJECTED            | ACTUAL          | STATUS
+----------------------------------------------------------------------------------------
+New York Knicks @ Brooklyn Nets     | BKN 89.2 - NYK 123.6 | BKN 92 - NYK 93 | ✅
+Boston Celtics @ Memphis Grizzlies  | MEM 112.9 - BOS 122.6 | MEM 112 - BOS 117 | ✅
+San Francisco Warriors @ Detroit Pistons | DET 118.9 - GSW 102.3 | DET 115 - GSW 101 | ✅
+Portland Trail Blazers @ Minnesota Timberwolves | MIN 115.7 - POR 115.7 | MIN 104 - POR 108 | ✅
+Toronto Raptors @ Denver Nuggets    | DEN 128.7 - TOR 129.7 | DEN 121 - TOR 115 | ❌
+Atlanta Hawks @ Houston Rockets     | HOU 113.1 - ATL 123.7 | HOU 117 - ATL 95 | ❌
+
+PLAYER                 | CONF | BET             | ACTUAL   | DIFF    | DIFF %   | STATUS
+----------------------------------------------------------------------------------------
+Neemias Queta          | 91%  | UNDER 9.5 REB   | 11       | +1.5    | +15.8%   | LOST ❌
+Deni Avdija            | 91%  | UNDER 23.5 POI  | 25       | +1.5    | +6.4%    | LOST ❌
+Alperen Sengun         | 91%  | UNDER 8.5 REB   | 9        | +0.5    | +5.9%    | LOST ❌
+Daniss Jenkins         | 86%  | UNDER 14.5 POI  | 22       | +7.5    | +51.7%   | LOST ❌
+GAME TOTAL             | 86%  | OVER 239.5 TOT  | 236      | -3.5    | -1.5%    | LOST ❌
+Jakob Poeltl           | 86%  | UNDER 8.5 REB   | 11       | +2.5    | +29.4%   | LOST ❌
+Scottie Barnes         | 83%  | UNDER 6.5 REB   | 8        | +1.5    | +23.1%   | LOST ❌
+Jalen Johnson          | 81%  | UNDER 9.5 REB   | 5        | -4.5    | -47.4%   | WON ✅
+OG Anunoby             | 80%  | OVER 16.5 POI   | 16       | -0.5    | -3.0%    | LOST ❌
+Ty Jerome              | 80%  | UNDER 19.5 POI  | 16       | -3.5    | -17.9%   | WON ✅
+Deni Avdija            | 79%  | UNDER 6.5 ASS   | 5        | -1.5    | -23.1%   | WON ✅
+Daniss Jenkins         | 77%  | UNDER 6.5 ASS   | 8        | +1.5    | +23.1%   | LOST ❌
+Jamal Murray           | 75%  | UNDER 6.5 ASS   | 6        | -0.5    | -7.7%    | WON ✅
+Ziaire Williams        | 74%  | OVER 8.5 POI    | 17       | +8.5    | +100.0%  | WON ✅
+Alperen Sengun         | 74%  | UNDER 19.5 POI  | 15       | -4.5    | -23.1%   | WON ✅
+Jalen Johnson          | 74%  | UNDER 22.5 POI  | 14       | -8.5    | -37.8%   | WON ✅
+Brandin Podziemski     | 73%  | OVER 5.5 REB    | 6        | +0.5    | +9.1%    | WON ✅
+Immanuel Quickley      | 73%  | OVER 16.5 POI   | 15       | -1.5    | -9.1%    | LOST ❌
+Karl-Anthony Towns     | 72%  | OVER 18.5 POI   | 26       | +7.5    | +40.5%   | WON ✅
+Jalen Duren            | 70%  | UNDER 11.5 REB  | 6        | -5.5    | -47.8%   | WON ✅
+Christian Braun        | 70%  | UNDER 5.5 REB   | 4        | -1.5    | -27.3%   | WON ✅
+GAME TOTAL             | 70%  | OVER 227.5 TOT  | 212      | -15.5   | -6.8%    | LOST ❌
+Tari Eason             | 70%  | UNDER 6.5 REB   | 10       | +3.5    | +53.8%   | LOST ❌
+Brandon Ingram         | 69%  | UNDER 5.5 REB   | 5        | -0.5    | -9.1%    | WON ✅
+Mitchell Robinson      | 68%  | OVER 8.5 REB    | 10       | +1.5    | +17.6%   | WON ✅
+
+============================================================
+ 🎯 MEDIAN PROJECTION ACCURACY (Outliers Filtered IQR) 🎯
+============================================================
+
+Total Players Evaluated: 98
+MAE (Filtered) - PTS: 4.2 | REB: 1.6 | AST: 1.3
+Direction Accuracy (Filtered) - PTS: 54/97 (55.7%) | REB: 79/97 (81.4%) | AST: 80/95 (84.2%)
+
+PLAYER                 |  PRED  ACT    D     R |  PRED  ACT    D     R |  PRED  ACT    D     R
+                              --- PTS ---             --- REB ---             --- AST ---     
+----------------------------------------------------------------------------------------------------
+Luka Garza             |     5   22  -17    LOW |     2    7   -5    LOW |     0    1   -1    LOW
+Daniss Jenkins         |     9   22  -13    LOW |     2    7   -5    LOW |     5    8   -3    LOW
+Jakob Poeltl           |    10   23  -13    LOW |     6   11   -5    LOW |     2    2   +0  EXACT
+Jayson Tatum           |    25   13  +12   HIGH |     7    9   -2    LOW |     4    0   +4   HIGH
+Deni Avdija            |    15   25  -10    LOW |     5    8   -3    LOW |     5    5   +0  EXACT
+Jerami Grant           |    16   26  -10    LOW |     3    5   -2    LOW |     2    1   +1   HIGH
+Tim Hardaway Jr.       |    13   23  -10    LOW |     2    4   -2    LOW |     1    0   +1   HIGH
+Landry Shamet          |    12    3   +9   HIGH |     2    3   -1    LOW |     2    1   +1   HIGH
+Sam Hauser             |     9    0   +9   HIGH |     3    4   -1    LOW |     1    1   +0  EXACT
+Dyson Daniels          |    12    3   +9   HIGH |     6    3   +3   HIGH |     5    1   +4   HIGH
+Zaccharie Risacher     |     7   16   -9    LOW |     4    6   -2    LOW |     1    2   -1    LOW
+Jaylen Brown           |    22   30   -8    LOW |     5    6   -1    LOW |     5    6   -1    LOW
+Jamal Murray           |    23   31   -8    LOW |     4    5   -1    LOW |     5    6   -1    LOW
+Onyeka Okongwu         |    14    6   +8   HIGH |     6    8   -2    LOW |     3    3   +0  EXACT
+Jalen Brunson          |    24   17   +7   HIGH |     4    5   -1    LOW |     7    8   -1    LOW
+Draymond Green         |     7    0   +7   HIGH |     5    5   +0  EXACT |     5    6   -1    LOW
+Rudy Gobert            |    11   18   -7    LOW |    11   15   -4    LOW |     2    1   +1   HIGH
+Donovan Clingan        |    14   21   -7    LOW |    10   12   -2    LOW |     2    4   -2    LOW
+Sandro Mamukelashvili  |    11    4   +7   HIGH |     4    2   +2   HIGH |     2    2   +0  EXACT
+Corey Kispert          |     9    2   +7   HIGH |     2    2   +0  EXACT |     1    2   -1    LOW
+OG Anunoby             |    22   16   +6   HIGH |     6    3   +3   HIGH |     2    1   +1   HIGH
+Walter Clayton Jr.     |    10    4   +6   HIGH |     2    3   -1    LOW |     5    2   +3   HIGH
+Baylor Scheierman      |     8    2   +6   HIGH |     4    4   +0  EXACT |     2    3   -1    LOW
+Bones Hyland           |    11   17   -6    LOW |     1    0   +1   HIGH |     3    0   +3   HIGH
+Toumani Camara         |    12    6   +6   HIGH |     5    3   +2   HIGH |     2    0   +2   HIGH
+Kris Murray            |     6    0   +6   HIGH |     3    2   +1   HIGH |     1    0   +1   HIGH
+Cameron Johnson        |    12    6   +6   HIGH |     3    5   -2    LOW |     2    2   +0  EXACT
+Immanuel Quickley      |    21   15   +6   HIGH |     3    4   -1    LOW |     6    8   -2    LOW
+Jabari Smith Jr.       |    17   23   -6    LOW |     5    9   -4    LOW |     2    2   +0  EXACT
+Buddy Hield            |     8    2   +6   HIGH |     2    0   +2   HIGH |     1    1   +0  EXACT
+Ziaire Williams        |    12   17   -5    LOW |     3    4   -1    LOW |     1    1   +0  EXACT
+Drake Powell           |     7    2   +5   HIGH |     2    3   -1    LOW |     1    2   -1    LOW
+Chaney Johnson         |     9    4   +5   HIGH |     7    4   +3   HIGH |     1    6   -5    LOW
+Mikal Bridges          |    14    9   +5   HIGH |     5    7   -2    LOW |     4    2   +2   HIGH
+Jose Alvarado          |     7    2   +5   HIGH |     2    1   +1   HIGH |     5    2   +3   HIGH
+Jaylen Wells           |    11    6   +5   HIGH |     2    0   +2   HIGH |     1    0   +1   HIGH
+Paul Reed              |    10   15   -5    LOW |     4    6   -2    LOW |     1    3   -2    LOW
+Will Richard           |     6   11   -5    LOW |     3    1   +2   HIGH |     1    0   +1   HIGH
+Terrence Shannon Jr.   |     5    0   +5   HIGH |     0    1   -1    LOW |     1    1   +0  EXACT
+Jrue Holiday           |    17   12   +5   HIGH |     4    2   +2   HIGH |     5   12   -7    LOW
+Bruce Brown            |     7   12   -5    LOW |     2    3   -1    LOW |     2    0   +2   HIGH
+Spencer Jones          |     5    0   +5   HIGH |     3    3   +0  EXACT |     0    4   -4    LOW
+Ja'Kobe Walter         |     9   14   -5    LOW |     3    2   +1   HIGH |     2    2   +0  EXACT
+Aaron Holiday          |     4    9   -5    LOW |     1    1   +0  EXACT |     1    2   -1    LOW
+Karl-Anthony Towns     |    22   26   -4    LOW |    13   15   -2    LOW |     3    1   +2   HIGH
+Mitchell Robinson      |     7    3   +4   HIGH |    10   10   +0  EXACT |     1    0   +1   HIGH
+Derrick White          |    18   14   +4   HIGH |     3    5   -2    LOW |     5    3   +2   HIGH
+Payton Pritchard       |    15   19   -4    LOW |     2    6   -4    LOW |     5    3   +2   HIGH
+RJ Barrett             |    22   18   +4   HIGH |     5    5   +0  EXACT |     3    2   +1   HIGH
+Jalen Johnson          |    18   14   +4   HIGH |     7    5   +2   HIGH |     6    3   +3   HIGH
+Danny Wolf             |    11    8   +3   HIGH |     6    6   +0  EXACT |     2    2   +0  EXACT
+Olivier-Maxence Prosper |    11   14   -3    LOW |     4    7   -3    LOW |     1    2   -1    LOW
+Neemias Queta          |     9   12   -3    LOW |     6   11   -5    LOW |     2    1   +1   HIGH
+Javonte Green          |     8    5   +3   HIGH |     3    3   +0  EXACT |     0    0   +0  EXACT
+Gary Payton II         |    11   14   -3    LOW |     5    3   +2   HIGH |     2    3   -1    LOW
+Malevy Leons           |     2    5   -3    LOW |     2    1   +1   HIGH |     0    1   -1    LOW
+Sidy Cissoko           |     3    0   +3   HIGH |     2    1   +1   HIGH |     2    1   +1   HIGH
+Christian Braun        |    14   11   +3   HIGH |     4    4   +0  EXACT |     3    2   +1   HIGH
+Amen Thompson          |    17   14   +3   HIGH |     6    7   -1    LOW |     5    4   +1   HIGH
+Gabe Vincent           |     3    6   -3    LOW |     1    3   -2    LOW |     1    1   +0  EXACT
+Nic Claxton            |    10    8   +2   HIGH |     7    7   +0  EXACT |     3    0   +3   HIGH
+Nolan Traore           |     9   11   -2    LOW |     2    2   +0  EXACT |     3    7   -4    LOW
+Ochai Agbaji           |     6    8   -2    LOW |     3    4   -1    LOW |     1    1   +0  EXACT
+Tyler Kolek            |     2    0   +2   HIGH |     1    0   +1   HIGH |     3    0   +3   HIGH
+Ty Jerome              |    14   16   -2    LOW |     2    1   +1   HIGH |     4    7   -3    LOW
+Kyle Anderson          |     6    4   +2   HIGH |     4    2   +2   HIGH |     2    2   +0  EXACT
+Taylor Hendricks       |    10   12   -2    LOW |     5    5   +0  EXACT |     1    2   -1    LOW
+Tobias Harris          |    15   13   +2   HIGH |     6    6   +0  EXACT |     3    5   -2    LOW
+Duncan Robinson        |    13   11   +2   HIGH |     3    1   +2   HIGH |     3    2   +1   HIGH
+Caris LeVert           |     7    5   +2   HIGH |     2    2   +0  EXACT |     3    5   -2    LOW
+Pat Spencer            |     8    6   +2   HIGH |     2    4   -2    LOW |     3    2   +1   HIGH
+Julius Randle          |    21   19   +2   HIGH |     6    5   +1   HIGH |     5    4   +1   HIGH
+Donte DiVincenzo       |    11   13   -2    LOW |     3    4   -1    LOW |     5    2   +3   HIGH
+Ayo Dosunmu            |    15   17   -2    LOW |     3   10   -7    LOW |     4    8   -4    LOW
+Scoot Henderson        |    13   11   +2   HIGH |     2    3   -1    LOW |     3    2   +1   HIGH
+Brandon Ingram         |    21   19   +2   HIGH |     4    5   -1    LOW |     4    2   +2   HIGH
+Jamal Shead            |     6    4   +2   HIGH |     2    2   +0  EXACT |     5    5   +0  EXACT
+Kevin Durant           |    23   25   -2    LOW |     5    3   +2   HIGH |     4    6   -2    LOW
+Tari Eason             |     8   10   -2    LOW |     5   10   -5    LOW |     2    2   +0  EXACT
+CJ McCollum            |    19   17   +2   HIGH |     3    2   +1   HIGH |     4    2   +2   HIGH
+Jock Landale           |     8    6   +2   HIGH |     3    1   +2   HIGH |     1    3   -2    LOW
+Jordan Clarkson        |     8    9   -1    LOW |     2    1   +1   HIGH |     1    2   -1    LOW
+Cam Spencer            |    12   11   +1   HIGH |     3    3   +0  EXACT |     3    5   -2    LOW
+Javon Small            |    12   13   -1    LOW |     4    5   -1    LOW |     3    2   +1   HIGH
+Jalen Duren            |    24   23   +1   HIGH |    10    6   +4   HIGH |     2    1   +1   HIGH
+Ausar Thompson         |     9    8   +1   HIGH |     6    3   +3   HIGH |     5    4   +1   HIGH
+De'Anthony Melton      |    15   14   +1   HIGH |     4    4   +0  EXACT |     2    0   +2   HIGH
+Aaron Gordon           |    15   16   -1    LOW |     4    5   -1    LOW |     3    3   +0  EXACT
+Alperen Sengun         |    16   15   +1   HIGH |     5    9   -4    LOW |     5   10   -5    LOW
+Reed Sheppard          |    15   14   +1   HIGH |     3    4   -1    LOW |     4    4   +0  EXACT
+Josh Okogie            |     3    2   +1   HIGH |     2    3   -1    LOW |     1    0   +1   HIGH
+Clint Capela           |     4    3   +1   HIGH |     4    5   -1    LOW |     1    2   -1    LOW
+Nickeil Alexander-Walker |    20   21   -1    LOW |     3    4   -1    LOW |     3    4   -1    LOW
+Ronald Holland II      |    11   11   +0  EXACT |     4    1   +3   HIGH |     1    0   +1   HIGH
+Brandin Podziemski     |    15   15   +0  EXACT |     7    6   +1   HIGH |     3    3   +0  EXACT
+Gui Santos             |    13   13   +0  EXACT |     6    5   +1   HIGH |     3    5   -2    LOW
+Jaden McDaniels        |    16   16   +0  EXACT |     4    6   -2    LOW |     3    3   +0  EXACT
+Scottie Barnes         |    15   15   +0  EXACT |     4    8   -4    LOW |     4    8   -4    LOW

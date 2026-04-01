@@ -1,0 +1,611 @@
+[+] HISTORICAL MODE: Generating projections for 2026-02-07
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 84 players marked Out/GTD.
+    [+] Found 10 games in database for 2026-02-07
+    [+] Parsed 10 unique matchups:
+        DAL @ SAS
+        DEN @ CHI
+        CHA @ ATL
+        HOU @ OKC
+        CLE @ SAC
+        PHI @ PHX
+        MEM @ POR
+        UTA @ ORL
+        GSW @ LAL
+        WAS @ BKN
+
+============================================================
+ MATCHUP: Dallas Mavericks @ San Antonio Spurs
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  [Synergy] Stephon Castle vs Dallas Mavericks: 0.988x Offense Modifier
+  [Synergy] Devin Vassell vs Dallas Mavericks: 0.975x Offense Modifier
+  [Synergy] Victor Wembanyama vs Dallas Mavericks: 0.987x Offense Modifier
+  [Synergy] De'Aaron Fox vs Dallas Mavericks: 0.993x Offense Modifier
+  [Synergy] Dylan Harper vs Dallas Mavericks: 0.985x Offense Modifier
+  [Synergy] Harrison Barnes vs Dallas Mavericks: 0.971x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Harrison Barnes classified as RETURNING_MINOR.
+  [Synergy] Luke Kornet vs Dallas Mavericks: 0.953x Offense Modifier
+  [Synergy] Keldon Johnson vs Dallas Mavericks: 0.971x Offense Modifier
+  [Synergy] Julian Champagnie vs Dallas Mavericks: 0.961x Offense Modifier
+  [Synergy] Max Christie vs San Antonio Spurs: 0.981x Offense Modifier
+  [Synergy] Cooper Flagg vs San Antonio Spurs: 0.973x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Cooper Flagg classified as RETURNING_MODERATE.
+  [Synergy] Naji Marshall vs San Antonio Spurs: 0.979x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Naji Marshall classified as RETURNING_MINOR.
+  [Synergy] Marvin Bagley III vs San Antonio Spurs: 0.985x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Marvin Bagley III classified as RETURNING_MINOR.
+  [Synergy] Caleb Martin vs San Antonio Spurs: 0.984x Offense Modifier
+  [Synergy] Brandon Williams vs San Antonio Spurs: 0.973x Offense Modifier
+  [Synergy] P.J. Washington vs San Antonio Spurs: 0.984x Offense Modifier
+  [Synergy] Klay Thompson vs San Antonio Spurs: 0.983x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Klay Thompson classified as RETURNING_MINOR.
+  [Synergy] Daniel Gafford vs San Antonio Spurs: 0.973x Offense Modifier
+  [Synergy] Tyus Jones vs San Antonio Spurs: 0.984x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Tyus Jones classified as RETURNING_MINOR.
+  📈 [USAGE BOOST] SAS: 8.6 extra FGA redistributed (missing: Lindy Waters III, Jordan McLaughlin, Kelly Olynyk)
+  ⚡ [TEAM RATINGS] SAS: OffRtg 115.5 | DefRtg 107.5
+  ⚡ [TEAM RATINGS] DAL: OffRtg 112.9 | DefRtg 110.4
+  [Calculated Game Pace: ~98 possessions per team]
+PROJECTED TOTAL: 233.0
+PROJECTED SCORE: SAS 118.6 - DAL 114.3
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Stephon Castle       -> 14 PTS, 4 REB, 5 AST
+  Devin Vassell        -> 16 PTS, 4 REB, 3 AST
+  Victor Wembanyama    -> 18 PTS, 7 REB, 2 AST
+  De'Aaron Fox         -> 13 PTS, 2 REB, 5 AST
+  Dylan Harper         -> 13 PTS, 3 REB, 3 AST
+  Harrison Barnes      -> 9 PTS, 2 REB, 2 AST
+  Carter Bryant        -> 6 PTS, 3 REB, 1 AST
+  Luke Kornet          -> 4 PTS, 4 REB, 1 AST
+  Keldon Johnson       -> 11 PTS, 4 REB, 1 AST
+  Julian Champagnie    -> 10 PTS, 4 REB, 2 AST
+
+[AWAY TEAM]
+  Max Christie         -> 13 PTS, 3 REB, 2 AST
+  Cooper Flagg         -> 17 PTS, 4 REB, 3 AST
+  Naji Marshall        -> 14 PTS, 3 REB, 3 AST
+  Marvin Bagley III    -> 10 PTS, 7 REB, 1 AST
+  Caleb Martin         -> 7 PTS, 3 REB, 2 AST
+  Brandon Williams     -> 14 PTS, 2 REB, 5 AST
+  P.J. Washington      -> 15 PTS, 6 REB, 2 AST
+  Klay Thompson        -> 12 PTS, 2 REB, 1 AST
+  Daniel Gafford       -> 6 PTS, 5 REB, 1 AST
+  Tyus Jones           -> 2 PTS, 1 REB, 4 AST
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ Chicago Bulls
+============================================================
+  [Synergy] Anfernee Simons vs Denver Nuggets: 1.025x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Anfernee Simons classified as RETURNING_MODERATE.
+  [Synergy] Matas Buzelis vs Denver Nuggets: 1.025x Offense Modifier
+  [Synergy] Jaden Ivey vs Denver Nuggets: 1.024x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jaden Ivey classified as RETURNING_MODERATE.
+  [Synergy] Collin Sexton vs Denver Nuggets: 1.025x Offense Modifier
+  [Synergy] Guerschon Yabusele vs Denver Nuggets: 1.006x Offense Modifier
+  [Synergy] Isaac Okoro vs Denver Nuggets: 1.018x Offense Modifier
+  [Synergy] Rob Dillingham vs Denver Nuggets: 1.024x Offense Modifier
+  [Synergy] Patrick Williams vs Denver Nuggets: 1.019x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Patrick Williams classified as RETURNING_MINOR.
+  [Synergy] Nick Richards vs Denver Nuggets: 1.072x Offense Modifier
+  [Synergy] Julian Strawther vs Chicago Bulls: 1.012x Offense Modifier
+  [Synergy] Nikola Jokić vs Chicago Bulls: 1.000x Offense Modifier
+  [Synergy] Christian Braun vs Chicago Bulls: 1.006x Offense Modifier
+  [Synergy] Jamal Murray vs Chicago Bulls: 1.006x Offense Modifier
+  [Synergy] Bruce Brown vs Chicago Bulls: 1.004x Offense Modifier
+  [Synergy] Tim Hardaway Jr. vs Chicago Bulls: 1.012x Offense Modifier
+  [Synergy] Cameron Johnson vs Chicago Bulls: 1.014x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Cameron Johnson classified as RETURNING_MINOR.
+  [Synergy] Jonas Valančiūnas vs Chicago Bulls: 1.009x Offense Modifier
+  [Synergy] Jalen Pickett vs Chicago Bulls: 1.008x Offense Modifier
+  📈 [USAGE BOOST] CHI: 38.9 extra FGA redistributed (missing: Josh Giddey, Tre Jones, Jalen Smith)
+  🚨 [INJURY MATRIX] CHI missing STARTER: Josh Giddey (Tier 2 Penalty)
+  🚨 [INJURY MATRIX] CHI missing STARTER: Tre Jones (Tier 2 Penalty)
+  📉 [CURRENT ROSTER RATING] CHI Offense collectively scaled to 94.1% capacity.
+  ⚡ [TEAM RATINGS] CHI: OffRtg 102.7 | DefRtg 108.7
+  ⚡ [TEAM RATINGS] DEN: OffRtg 107.2 | DefRtg 113.2
+  [Calculated Game Pace: ~100 possessions per team]
+PROJECTED TOTAL: 227.6
+PROJECTED SCORE: CHI 108.7 - DEN 118.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Anfernee Simons      -> 16 PTS, 2 REB, 3 AST
+  Matas Buzelis        -> 16 PTS, 6 REB, 3 AST
+  Jaden Ivey           -> 11 PTS, 4 REB, 3 AST
+  Collin Sexton        -> 16 PTS, 2 REB, 3 AST
+  Guerschon Yabusele   -> 11 PTS, 7 REB, 3 AST
+  Isaac Okoro          -> 8 PTS, 2 REB, 1 AST
+  Rob Dillingham       -> 7 PTS, 3 REB, 5 AST
+  Patrick Williams     -> 11 PTS, 4 REB, 3 AST
+  Nick Richards        -> 8 PTS, 8 REB, 0 AST
+
+[AWAY TEAM]
+  Julian Strawther     -> 5 PTS, 1 REB, 0 AST
+  Nikola Jokić         -> 27 PTS, 12 REB, 7 AST
+  Christian Braun      -> 15 PTS, 7 REB, 3 AST
+  Jamal Murray         -> 24 PTS, 5 REB, 6 AST
+  Bruce Brown          -> 8 PTS, 4 REB, 3 AST
+  Tim Hardaway Jr.     -> 14 PTS, 3 REB, 2 AST
+  Cameron Johnson      -> 12 PTS, 4 REB, 3 AST
+  Jonas Valančiūnas    -> 7 PTS, 4 REB, 1 AST
+  Jalen Pickett        -> 3 PTS, 1 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Charlotte Hornets @ Atlanta Hawks
+============================================================
+  [Synergy] Jalen Johnson vs Charlotte Hornets: 1.003x Offense Modifier
+  [Synergy] Nickeil Alexander-Walker vs Charlotte Hornets: 0.996x Offense Modifier
+  [Synergy] Dyson Daniels vs Charlotte Hornets: 0.996x Offense Modifier
+  [Synergy] Onyeka Okongwu vs Charlotte Hornets: 0.987x Offense Modifier
+  [Synergy] CJ McCollum vs Charlotte Hornets: 1.002x Offense Modifier
+  [Synergy] Zaccharie Risacher vs Charlotte Hornets: 0.987x Offense Modifier
+  [Synergy] Corey Kispert vs Charlotte Hornets: 0.985x Offense Modifier
+  [Synergy] Jock Landale vs Charlotte Hornets: 0.989x Offense Modifier
+  [Synergy] Asa Newell vs Charlotte Hornets: 0.988x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Asa Newell classified as RETURNING_MINOR.
+  [Synergy] Kon Knueppel vs Atlanta Hawks: 0.994x Offense Modifier
+  [Synergy] Brandon Miller vs Atlanta Hawks: 1.009x Offense Modifier
+  [Synergy] Miles Bridges vs Atlanta Hawks: 1.004x Offense Modifier
+  [Synergy] Moussa Diabaté vs Atlanta Hawks: 1.037x Offense Modifier
+  [Synergy] LaMelo Ball vs Atlanta Hawks: 1.011x Offense Modifier
+  [Synergy] Sion James vs Atlanta Hawks: 0.983x Offense Modifier
+  [Synergy] Grant Williams vs Atlanta Hawks: 0.984x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Grant Williams classified as RETURNING_MINOR.
+  [Synergy] Ryan Kalkbrenner vs Atlanta Hawks: 1.037x Offense Modifier
+  [Synergy] Josh Green vs Atlanta Hawks: 0.980x Offense Modifier
+  [Synergy] Tre Mann vs Atlanta Hawks: 1.002x Offense Modifier
+  📈 [USAGE BOOST] CHA: 19.6 extra FGA redistributed (missing: Coby White, PJ Hall, Pat Connaughton)
+  🚨 [INJURY MATRIX] CHA missing ROTATION: Coby White (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] CHA missing ROTATION: PJ Hall (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] CHA missing ROTATION: Tidjane Salaün (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] CHA Offense collectively scaled to 97.0% capacity.
+  ⚡ [TEAM RATINGS] ATL: OffRtg 110.9 | DefRtg 115.1
+  ⚡ [TEAM RATINGS] CHA: OffRtg 117.6 | DefRtg 111.6
+  [Calculated Game Pace: ~99 possessions per team]
+PROJECTED TOTAL: 233.7
+PROJECTED SCORE: ATL 115.6 - CHA 118.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jalen Johnson        -> 17 PTS, 7 REB, 6 AST
+  Nickeil Alexander-Walker -> 9 PTS, 2 REB, 3 AST
+  Dyson Daniels        -> 13 PTS, 7 REB, 6 AST
+  Onyeka Okongwu       -> 17 PTS, 8 REB, 3 AST
+  CJ McCollum          -> 22 PTS, 3 REB, 4 AST
+  Zaccharie Risacher   -> 8 PTS, 3 REB, 1 AST
+  Corey Kispert        -> 12 PTS, 3 REB, 2 AST
+  Jock Landale         -> 10 PTS, 4 REB, 2 AST
+  Asa Newell           -> 5 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Kon Knueppel         -> 20 PTS, 4 REB, 3 AST
+  Brandon Miller       -> 22 PTS, 5 REB, 3 AST
+  Miles Bridges        -> 16 PTS, 4 REB, 4 AST
+  Moussa Diabaté       -> 7 PTS, 7 REB, 3 AST
+  LaMelo Ball          -> 22 PTS, 4 REB, 6 AST
+  Sion James           -> 5 PTS, 3 REB, 2 AST
+  Grant Williams       -> 8 PTS, 4 REB, 2 AST
+  Ryan Kalkbrenner     -> 6 PTS, 4 REB, 1 AST
+  Josh Green           -> 6 PTS, 2 REB, 1 AST
+  Tre Mann             -> 3 PTS, 1 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Houston Rockets @ Oklahoma City Thunder
+============================================================
+  [Synergy] Chet Holmgren vs Houston Rockets: 0.990x Offense Modifier
+  [Synergy] Cason Wallace vs Houston Rockets: 0.990x Offense Modifier
+  [Synergy] Isaiah Joe vs Houston Rockets: 1.006x Offense Modifier
+  [Synergy] Luguentz Dort vs Houston Rockets: 1.002x Offense Modifier
+  [Synergy] Aaron Wiggins vs Houston Rockets: 0.993x Offense Modifier
+  [Synergy] Alex Caruso vs Houston Rockets: 0.996x Offense Modifier
+  [Synergy] Isaiah Hartenstein vs Houston Rockets: 0.998x Offense Modifier
+  [Synergy] Jaylin Williams vs Houston Rockets: 1.005x Offense Modifier
+  [Synergy] Jared McCain vs Houston Rockets: 0.994x Offense Modifier
+  [Synergy] Kenrich Williams vs Houston Rockets: 0.992x Offense Modifier
+  [Synergy] Jabari Smith Jr. vs Oklahoma City Thunder: 0.952x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jabari Smith Jr. classified as RETURNING_MINOR.
+  [Synergy] Kevin Durant vs Oklahoma City Thunder: 0.925x Offense Modifier
+  [Synergy] Alperen Sengun vs Oklahoma City Thunder: 0.923x Offense Modifier
+  [Synergy] Tari Eason vs Oklahoma City Thunder: 0.956x Offense Modifier
+  [Synergy] Reed Sheppard vs Oklahoma City Thunder: 0.938x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] JD Davison classified as RETURNING_MINOR.
+  [Synergy] Dorian Finney-Smith vs Oklahoma City Thunder: 0.979x Offense Modifier
+  [Synergy] Josh Okogie vs Oklahoma City Thunder: 0.960x Offense Modifier
+  [Synergy] Clint Capela vs Oklahoma City Thunder: 0.894x Offense Modifier
+  ⚡ [TEAM RATINGS] OKC: OffRtg 110.2 | DefRtg 109.1
+  ⚡ [TEAM RATINGS] HOU: OffRtg 107.4 | DefRtg 107.5
+  [Calculated Game Pace: ~98 possessions per team]
+PROJECTED TOTAL: 216.4
+PROJECTED SCORE: OKC 111.8 - HOU 104.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Chet Holmgren        -> 24 PTS, 10 REB, 2 AST
+  Cason Wallace        -> 9 PTS, 3 REB, 4 AST
+  Isaiah Joe           -> 8 PTS, 2 REB, 1 AST
+  Luguentz Dort        -> 12 PTS, 5 REB, 2 AST
+  Aaron Wiggins        -> 7 PTS, 2 REB, 2 AST
+  Alex Caruso          -> 14 PTS, 3 REB, 3 AST
+  Isaiah Hartenstein   -> 10 PTS, 8 REB, 4 AST
+  Jaylin Williams      -> 3 PTS, 2 REB, 2 AST
+  Jared McCain         -> 16 PTS, 3 REB, 3 AST
+  Kenrich Williams     -> 3 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Jabari Smith Jr.     -> 14 PTS, 6 REB, 2 AST
+  Kevin Durant         -> 22 PTS, 4 REB, 5 AST
+  Alperen Sengun       -> 23 PTS, 10 REB, 5 AST
+  Tari Eason           -> 11 PTS, 6 REB, 3 AST
+  Reed Sheppard        -> 11 PTS, 2 REB, 3 AST
+  JD Davison           -> 4 PTS, 1 REB, 2 AST
+  Dorian Finney-Smith  -> 6 PTS, 4 REB, 2 AST
+  Josh Okogie          -> 7 PTS, 3 REB, 1 AST
+  Clint Capela         -> 4 PTS, 4 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Cleveland Cavaliers @ Sacramento Kings
+============================================================
+  [Synergy] Nique Clifford vs Cleveland Cavaliers: 0.986x Offense Modifier
+  [Synergy] Daeqwon Plowden vs Cleveland Cavaliers: 1.006x Offense Modifier
+  [Synergy] Russell Westbrook vs Cleveland Cavaliers: 0.980x Offense Modifier
+  [Synergy] DeMar DeRozan vs Cleveland Cavaliers: 0.983x Offense Modifier
+  [Synergy] Devin Carter vs Cleveland Cavaliers: 0.983x Offense Modifier
+  [Synergy] Dylan Cardwell vs Cleveland Cavaliers: 0.990x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Dylan Cardwell classified as RETURNING_MODERATE.
+  [Synergy] Maxime Raynaud vs Cleveland Cavaliers: 1.003x Offense Modifier
+  [Synergy] Precious Achiuwa vs Cleveland Cavaliers: 1.004x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Doug McDermott classified as RETURNING_MODERATE.
+  [Synergy] Donovan Mitchell vs Sacramento Kings: 1.050x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Donovan Mitchell classified as RETURNING_MINOR.
+  [Synergy] Jarrett Allen vs Sacramento Kings: 1.046x Offense Modifier
+  [Synergy] James Harden vs Sacramento Kings: 1.062x Offense Modifier
+  [Synergy] Jaylon Tyson vs Sacramento Kings: 1.028x Offense Modifier
+  [Synergy] Sam Merrill vs Sacramento Kings: 1.025x Offense Modifier
+  [Synergy] Craig Porter Jr. vs Sacramento Kings: 1.039x Offense Modifier
+  [Synergy] Keon Ellis vs Sacramento Kings: 1.029x Offense Modifier
+  [Synergy] Dennis Schröder vs Sacramento Kings: 1.047x Offense Modifier
+  [Synergy] Nae'Qwan Tomlin vs Sacramento Kings: 1.027x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Nae'Qwan Tomlin classified as RETURNING_MINOR.
+  [Synergy] Thomas Bryant vs Sacramento Kings: 1.023x Offense Modifier
+  📈 [USAGE BOOST] SAC: 39.5 extra FGA redistributed (missing: Keegan Murray, Malik Monk, Zach LaVine)
+  🚨 [INJURY MATRIX] SAC missing ROTATION: Malik Monk (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] SAC Offense collectively scaled to 99.0% capacity.
+  ⚡ [TEAM RATINGS] SAC: OffRtg 107.4 | DefRtg 113.9
+  ⚡ [TEAM RATINGS] CLE: OffRtg 116.5 | DefRtg 113.0
+  [Calculated Game Pace: ~100 possessions per team]
+PROJECTED TOTAL: 243.8
+PROJECTED SCORE: SAC 112.1 - CLE 131.7
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Nique Clifford       -> 14 PTS, 4 REB, 5 AST
+  Daeqwon Plowden      -> 11 PTS, 3 REB, 2 AST
+  Russell Westbrook    -> 15 PTS, 3 REB, 4 AST
+  DeMar DeRozan        -> 21 PTS, 3 REB, 5 AST
+  Devin Carter         -> 13 PTS, 3 REB, 4 AST
+  Dylan Cardwell       -> 6 PTS, 7 REB, 2 AST
+  Maxime Raynaud       -> 17 PTS, 8 REB, 2 AST
+  Precious Achiuwa     -> 8 PTS, 4 REB, 0 AST
+  Doug McDermott       -> 5 PTS, 0 REB, 0 AST
+
+[AWAY TEAM]
+  Donovan Mitchell     -> 30 PTS, 4 REB, 3 AST
+  Jarrett Allen        -> 15 PTS, 9 REB, 1 AST
+  James Harden         -> 21 PTS, 6 REB, 8 AST
+  Jaylon Tyson         -> 13 PTS, 5 REB, 2 AST
+  Sam Merrill          -> 11 PTS, 2 REB, 2 AST
+  Craig Porter Jr.     -> 3 PTS, 2 REB, 4 AST
+  Keon Ellis           -> 9 PTS, 3 REB, 2 AST
+  Dennis Schröder      -> 16 PTS, 3 REB, 5 AST
+  Nae'Qwan Tomlin      -> 6 PTS, 3 REB, 1 AST
+  Thomas Bryant        -> 3 PTS, 1 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Philadelphia 76ers @ Phoenix Suns
+============================================================
+  [Synergy] Dillon Brooks vs Philadelphia 76ers: 0.983x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Dillon Brooks classified as RETURNING_MINOR.
+  [Synergy] Royce O'Neale vs Philadelphia 76ers: 0.988x Offense Modifier
+  [Synergy] Devin Booker vs Philadelphia 76ers: 0.979x Offense Modifier
+  [Synergy] Mark Williams vs Philadelphia 76ers: 0.987x Offense Modifier
+  [Synergy] Collin Gillespie vs Philadelphia 76ers: 0.981x Offense Modifier
+  [Synergy] Jordan Goodwin vs Philadelphia 76ers: 0.986x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jordan Goodwin classified as RETURNING_MINOR.
+  [Synergy] Oso Ighodaro vs Philadelphia 76ers: 0.984x Offense Modifier
+  [Synergy] Jalen Green vs Philadelphia 76ers: 0.974x Offense Modifier
+  [Synergy] Ryan Dunn vs Philadelphia 76ers: 0.988x Offense Modifier
+  [Synergy] Jamaree Bouyea vs Philadelphia 76ers: 0.979x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jamaree Bouyea classified as RETURNING_MINOR.
+  [Synergy] Tyrese Maxey vs Phoenix Suns: 0.964x Offense Modifier
+  [Synergy] Kelly Oubre Jr. vs Phoenix Suns: 0.959x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kelly Oubre Jr. classified as RETURNING_MINOR.
+  [Synergy] Joel Embiid vs Phoenix Suns: 0.934x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Joel Embiid classified as RETURNING_MINOR.
+  [Synergy] Quentin Grimes vs Phoenix Suns: 0.962x Offense Modifier
+  [Synergy] Trendon Watford vs Phoenix Suns: 0.962x Offense Modifier
+  [Synergy] VJ Edgecombe vs Phoenix Suns: 0.968x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] VJ Edgecombe classified as RETURNING_MINOR.
+  [Synergy] Dominick Barlow vs Phoenix Suns: 0.963x Offense Modifier
+  [Synergy] Justin Edwards vs Phoenix Suns: 0.969x Offense Modifier
+  [Synergy] Adem Bona vs Phoenix Suns: 0.957x Offense Modifier
+  ⚡ [TEAM RATINGS] PHX: OffRtg 113.6 | DefRtg 118.2
+  ⚡ [TEAM RATINGS] PHI: OffRtg 110.7 | DefRtg 113.2
+  [Calculated Game Pace: ~96 possessions per team]
+PROJECTED TOTAL: 227.7
+PROJECTED SCORE: PHX 106.9 - PHI 120.8
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Dillon Brooks        -> 15 PTS, 3 REB, 1 AST
+  Royce O'Neale        -> 8 PTS, 4 REB, 2 AST
+  Devin Booker         -> 19 PTS, 3 REB, 5 AST
+  Mark Williams        -> 10 PTS, 6 REB, 1 AST
+  Collin Gillespie     -> 13 PTS, 3 REB, 5 AST
+  Jordan Goodwin       -> 8 PTS, 3 REB, 1 AST
+  Oso Ighodaro         -> 6 PTS, 5 REB, 3 AST
+  Jalen Green          -> 16 PTS, 4 REB, 2 AST
+  Ryan Dunn            -> 5 PTS, 3 REB, 1 AST
+  Jamaree Bouyea       -> 5 PTS, 1 REB, 2 AST
+
+[AWAY TEAM]
+  Tyrese Maxey         -> 27 PTS, 3 REB, 6 AST
+  Kelly Oubre Jr.      -> 13 PTS, 4 REB, 3 AST
+  Joel Embiid          -> 27 PTS, 8 REB, 4 AST
+  Quentin Grimes       -> 11 PTS, 3 REB, 4 AST
+  Trendon Watford      -> 6 PTS, 3 REB, 3 AST
+  VJ Edgecombe         -> 17 PTS, 5 REB, 3 AST
+  Dominick Barlow      -> 8 PTS, 4 REB, 1 AST
+  Justin Edwards       -> 4 PTS, 1 REB, 2 AST
+  Adem Bona            -> 5 PTS, 5 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Memphis Grizzlies @ Portland Trail Blazers
+============================================================
+  [Synergy] Donovan Clingan vs Memphis Grizzlies: 0.995x Offense Modifier
+  [Synergy] Toumani Camara vs Memphis Grizzlies: 0.998x Offense Modifier
+  [Synergy] Jerami Grant vs Memphis Grizzlies: 1.000x Offense Modifier
+  [Synergy] Sidy Cissoko vs Memphis Grizzlies: 0.997x Offense Modifier
+  [Synergy] Jrue Holiday vs Memphis Grizzlies: 1.003x Offense Modifier
+  [Synergy] Caleb Love vs Memphis Grizzlies: 0.999x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Caleb Love classified as RETURNING_MODERATE.
+  [Synergy] Vít Krejčí vs Memphis Grizzlies: 0.982x Offense Modifier
+  [Synergy] Rayan Rupert vs Memphis Grizzlies: 0.996x Offense Modifier
+  [Synergy] Blake Wesley vs Memphis Grizzlies: 1.002x Offense Modifier
+  [Synergy] Kentavious Caldwell-Pope vs Portland Trail Blazers: 1.017x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kentavious Caldwell-Pope classified as RETURNING_MODERATE.
+  [Synergy] Jahmai Mashack vs Portland Trail Blazers: 0.997x Offense Modifier
+  [Synergy] GG Jackson vs Portland Trail Blazers: 1.014x Offense Modifier
+  [Synergy] Walter Clayton Jr. vs Portland Trail Blazers: 1.028x Offense Modifier
+  [Synergy] Javon Small vs Portland Trail Blazers: 1.027x Offense Modifier
+  [Synergy] Kyle Anderson vs Portland Trail Blazers: 1.017x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kyle Anderson classified as RETURNING_MINOR.
+  [Synergy] Olivier-Maxence Prosper vs Portland Trail Blazers: 0.997x Offense Modifier
+  [Synergy] Taylor Hendricks vs Portland Trail Blazers: 0.998x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Taylor Hendricks classified as RETURNING_MINOR.
+  [Synergy] Ty Jerome vs Portland Trail Blazers: 1.044x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Ty Jerome classified as RETURNING_MINOR.
+  📈 [USAGE BOOST] POR: 60.0 extra FGA redistributed (missing: Shaedon Sharpe, Deni Avdija, Scoot Henderson)
+  ⚡ [TEAM RATINGS] POR: OffRtg 112.7 | DefRtg 117.7
+  ⚡ [TEAM RATINGS] MEM: OffRtg 103.8 | DefRtg 110.7
+  [Calculated Game Pace: ~103 possessions per team]
+PROJECTED TOTAL: 239.3
+PROJECTED SCORE: POR 111.8 - MEM 127.5
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Donovan Clingan      -> 13 PTS, 10 REB, 3 AST
+  Toumani Camara       -> 14 PTS, 5 REB, 3 AST
+  Jerami Grant         -> 24 PTS, 4 REB, 2 AST
+  Sidy Cissoko         -> 7 PTS, 3 REB, 2 AST
+  Jrue Holiday         -> 15 PTS, 5 REB, 5 AST
+  Caleb Love           -> 13 PTS, 2 REB, 4 AST
+  Vít Krejčí           -> 9 PTS, 3 REB, 2 AST
+  Rayan Rupert         -> 8 PTS, 4 REB, 1 AST
+  Blake Wesley         -> 6 PTS, 1 REB, 3 AST
+
+[AWAY TEAM]
+  Kentavious Caldwell-Pope -> 11 PTS, 4 REB, 3 AST
+  Jahmai Mashack       -> 9 PTS, 3 REB, 2 AST
+  GG Jackson           -> 21 PTS, 8 REB, 2 AST
+  Walter Clayton Jr.   -> 10 PTS, 3 REB, 7 AST
+  Javon Small          -> 17 PTS, 6 REB, 5 AST
+  Kyle Anderson        -> 5 PTS, 3 REB, 3 AST
+  Olivier-Maxence Prosper -> 17 PTS, 6 REB, 2 AST
+  Taylor Hendricks     -> 14 PTS, 6 REB, 2 AST
+  Ty Jerome            -> 21 PTS, 4 REB, 5 AST
+
+
+============================================================
+ MATCHUP: Utah Jazz @ Orlando Magic
+============================================================
+  [Synergy] Paolo Banchero vs Utah Jazz: 1.055x Offense Modifier
+  [Synergy] Anthony Black vs Utah Jazz: 1.051x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Anthony Black classified as RETURNING_MINOR.
+  [Synergy] Desmond Bane vs Utah Jazz: 1.059x Offense Modifier
+  [Synergy] Jalen Suggs vs Utah Jazz: 1.056x Offense Modifier
+  [Synergy] Wendell Carter Jr. vs Utah Jazz: 1.036x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Wendell Carter Jr. classified as RETURNING_MINOR.
+  [Synergy] Tristan da Silva vs Utah Jazz: 1.045x Offense Modifier
+  [Synergy] Moritz Wagner vs Utah Jazz: 1.035x Offense Modifier
+  [Synergy] Jase Richardson vs Utah Jazz: 1.052x Offense Modifier
+  [Synergy] Noah Penda vs Utah Jazz: 1.038x Offense Modifier
+  [Synergy] Isaiah Collier vs Orlando Magic: 1.002x Offense Modifier
+  [Synergy] Ace Bailey vs Orlando Magic: 1.011x Offense Modifier
+  [Synergy] Lauri Markkanen vs Orlando Magic: 1.007x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Lauri Markkanen classified as RETURNING_MINOR.
+  [Synergy] Jaren Jackson Jr. vs Orlando Magic: 1.005x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jaren Jackson Jr. classified as RETURNING_MODERATE.
+  [Synergy] Jusuf Nurkić vs Orlando Magic: 1.000x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jusuf Nurkić classified as RETURNING_MODERATE.
+  [Synergy] Brice Sensabaugh vs Orlando Magic: 1.005x Offense Modifier
+  [Synergy] John Konchar vs Orlando Magic: 0.999x Offense Modifier
+  [Synergy] Cody Williams vs Orlando Magic: 0.999x Offense Modifier
+  [Synergy] Keyonte George vs Orlando Magic: 1.008x Offense Modifier
+  [Synergy] Kevin Love vs Orlando Magic: 1.001x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Kevin Love classified as RETURNING_MINOR.
+  ⚡ [TEAM RATINGS] ORL: OffRtg 103.3 | DefRtg 106.5
+  ⚡ [TEAM RATINGS] UTA: OffRtg 113.5 | DefRtg 118.2
+  [Calculated Game Pace: ~96 possessions per team]
+PROJECTED TOTAL: 234.9
+PROJECTED SCORE: ORL 122.8 - UTA 112.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Paolo Banchero       -> 31 PTS, 7 REB, 5 AST
+  Anthony Black        -> 12 PTS, 3 REB, 3 AST
+  Desmond Bane         -> 26 PTS, 5 REB, 5 AST
+  Jalen Suggs          -> 15 PTS, 3 REB, 8 AST
+  Wendell Carter Jr.   -> 11 PTS, 8 REB, 2 AST
+  Tristan da Silva     -> 8 PTS, 3 REB, 2 AST
+  Moritz Wagner        -> 10 PTS, 3 REB, 1 AST
+  Jase Richardson      -> 3 PTS, 0 REB, 1 AST
+  Noah Penda           -> 4 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Isaiah Collier       -> 13 PTS, 2 REB, 7 AST
+  Ace Bailey           -> 11 PTS, 3 REB, 1 AST
+  Lauri Markkanen      -> 20 PTS, 5 REB, 2 AST
+  Jaren Jackson Jr.    -> 12 PTS, 3 REB, 2 AST
+  Jusuf Nurkić         -> 8 PTS, 7 REB, 4 AST
+  Brice Sensabaugh     -> 12 PTS, 2 REB, 1 AST
+  John Konchar         -> 3 PTS, 3 REB, 1 AST
+  Cody Williams        -> 5 PTS, 2 REB, 1 AST
+  Keyonte George       -> 19 PTS, 2 REB, 3 AST
+  Kevin Love           -> 6 PTS, 5 REB, 2 AST
+
+
+============================================================
+ MATCHUP: San Francisco Warriors @ Los Angeles Lakers
+============================================================
+  ⚠️  [MINUTES RESTRICTION] Maxi Kleber classified as RETURNING_MINOR.
+  ⚠️  [MINUTES RESTRICTION] Jarred Vanderbilt classified as RETURNING_MINOR.
+  [Synergy] Moses Moody vs Los Angeles Lakers: 1.008x Offense Modifier
+  [Synergy] Brandin Podziemski vs Los Angeles Lakers: 1.004x Offense Modifier
+  [Synergy] Draymond Green vs Los Angeles Lakers: 0.998x Offense Modifier
+  [Synergy] Pat Spencer vs Los Angeles Lakers: 1.003x Offense Modifier
+  [Synergy] Gui Santos vs Los Angeles Lakers: 0.998x Offense Modifier
+  [Synergy] De'Anthony Melton vs Los Angeles Lakers: 1.002x Offense Modifier
+  [Synergy] Al Horford vs Los Angeles Lakers: 0.998x Offense Modifier
+  [Synergy] Gary Payton II vs Los Angeles Lakers: 0.998x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Gary Payton II classified as RETURNING_MINOR.
+  [Synergy] Will Richard vs Los Angeles Lakers: 0.997x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Will Richard classified as RETURNING_MINOR.
+  ⚡ [TEAM RATINGS] LAL: OffRtg 109.6 | DefRtg 109.9
+  ⚡ [TEAM RATINGS] GSW: OffRtg 107.1 | DefRtg 112.2
+  [Calculated Game Pace: ~97 possessions per team]
+PROJECTED TOTAL: 223.1
+PROJECTED SCORE: LAL 118.6 - GSW 104.5
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  LeBron James         -> 27 PTS, 8 REB, 7 AST
+  Marcus Smart         -> 16 PTS, 3 REB, 5 AST
+  Rui Hachimura        -> 16 PTS, 4 REB, 1 AST
+  Maxi Kleber          -> 2 PTS, 2 REB, 1 AST
+  Jake LaRavia         -> 11 PTS, 4 REB, 2 AST
+  Luke Kennard         -> 9 PTS, 3 REB, 3 AST
+  Austin Reaves        -> 25 PTS, 6 REB, 5 AST
+  Jaxson Hayes         -> 7 PTS, 5 REB, 1 AST
+  Jarred Vanderbilt    -> 3 PTS, 4 REB, 1 AST
+
+[AWAY TEAM]
+  Moses Moody          -> 12 PTS, 3 REB, 1 AST
+  Brandin Podziemski   -> 16 PTS, 6 REB, 4 AST
+  Draymond Green       -> 12 PTS, 7 REB, 6 AST
+  Pat Spencer          -> 6 PTS, 2 REB, 2 AST
+  Gui Santos           -> 4 PTS, 2 REB, 1 AST
+  De'Anthony Melton    -> 20 PTS, 3 REB, 3 AST
+  Al Horford           -> 14 PTS, 7 REB, 3 AST
+  Gary Payton II       -> 7 PTS, 3 REB, 2 AST
+  Will Richard         -> 9 PTS, 3 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Washington Wizards @ Brooklyn Nets
+============================================================
+  [Synergy] Michael Porter Jr. vs Washington Wizards: 1.069x Offense Modifier
+  [Synergy] Nic Claxton vs Washington Wizards: 1.009x Offense Modifier
+  [Synergy] Noah Clowney vs Washington Wizards: 1.070x Offense Modifier
+  [Synergy] Egor Dëmin vs Washington Wizards: 1.062x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Egor Dëmin classified as RETURNING_MINOR.
+  [Synergy] Ben Saraf vs Washington Wizards: 1.041x Offense Modifier
+  [Synergy] Nolan Traore vs Washington Wizards: 1.046x Offense Modifier
+  [Synergy] Drake Powell vs Washington Wizards: 1.049x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Drake Powell classified as RETURNING_MINOR.
+  [Synergy] Day'Ron Sharpe vs Washington Wizards: 1.024x Offense Modifier
+  [Synergy] Danny Wolf vs Washington Wizards: 1.065x Offense Modifier
+  [Synergy] Terance Mann vs Washington Wizards: 1.053x Offense Modifier
+  [Synergy] Will Riley vs Brooklyn Nets: 1.020x Offense Modifier
+  [Synergy] Jamir Watkins vs Brooklyn Nets: 1.058x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Jamir Watkins classified as RETURNING_MINOR.
+  ⚠️  [MINUTES RESTRICTION] Keshon Gilbert classified as RETURNING_MODERATE.
+  [Synergy] Sharife Cooper vs Brooklyn Nets: 1.026x Offense Modifier
+  [Synergy] Anthony Gill vs Brooklyn Nets: 1.058x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Anthony Gill classified as RETURNING_MINOR.
+  [Synergy] Justin Champagnie vs Brooklyn Nets: 1.041x Offense Modifier
+  [Synergy] Bub Carrington vs Brooklyn Nets: 1.014x Offense Modifier
+  [Synergy] Tristan Vukcevic vs Brooklyn Nets: 1.053x Offense Modifier
+  ⚠️  [MINUTES RESTRICTION] Tristan Vukcevic classified as RETURNING_MINOR.
+  📈 [USAGE BOOST] WAS: 52.2 extra FGA redistributed (missing: Jaden Hardy, Bilal Coulibaly, Kyshawn George)
+  🚨 [INJURY MATRIX] WAS missing ROTATION: Bilal Coulibaly (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] WAS missing ROTATION: Jaden Hardy (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] WAS missing ROTATION: Kyshawn George (Tier 3 Penalty)
+  🚨 [INJURY MATRIX] WAS missing ROTATION: Tre Johnson (Tier 3 Penalty)
+  📉 [CURRENT ROSTER RATING] WAS Offense collectively scaled to 97.0% capacity.
+  ⚡ [TEAM RATINGS] BKN: OffRtg 107.8 | DefRtg 109.8
+  ⚡ [TEAM RATINGS] WAS: OffRtg 109.4 | DefRtg 118.4
+  [Calculated Game Pace: ~98 possessions per team]
+PROJECTED TOTAL: 227.1
+PROJECTED SCORE: BKN 120.7 - WAS 106.4
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Michael Porter Jr.   -> 13 PTS, 5 REB, 1 AST
+  Nic Claxton          -> 15 PTS, 6 REB, 4 AST
+  Noah Clowney         -> 16 PTS, 4 REB, 1 AST
+  Egor Dëmin           -> 10 PTS, 3 REB, 3 AST
+  Ben Saraf            -> 7 PTS, 1 REB, 3 AST
+  Nolan Traore         -> 14 PTS, 2 REB, 5 AST
+  Drake Powell         -> 7 PTS, 2 REB, 1 AST
+  Day'Ron Sharpe       -> 11 PTS, 7 REB, 3 AST
+  Danny Wolf           -> 17 PTS, 5 REB, 3 AST
+  Terance Mann         -> 8 PTS, 2 REB, 3 AST
+
+[AWAY TEAM]
+  Will Riley           -> 20 PTS, 4 REB, 3 AST
+  Jamir Watkins        -> 14 PTS, 5 REB, 2 AST
+  Keshon Gilbert       -> 2 PTS, 1 REB, 1 AST
+  Sharife Cooper       -> 14 PTS, 3 REB, 4 AST
+  Anthony Gill         -> 9 PTS, 5 REB, 3 AST
+  Justin Champagnie    -> 17 PTS, 7 REB, 1 AST
+  Bub Carrington       -> 14 PTS, 4 REB, 6 AST
+  Tristan Vukcevic     -> 15 PTS, 4 REB, 2 AST
+
+
+[+] Historical projections for 2026-02-07 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating historical PDF report for 2026-02-07...
+    [-] Failed to generate PDF report: name 'log_name' is not defined

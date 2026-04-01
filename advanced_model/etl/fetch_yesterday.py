@@ -195,7 +195,8 @@ def fetch_yesterday(target_date_str=None):
     # ── Phase 5.D: Resolve shadow_picks outcomes for this date ────────────────
     try:
         import sqlite3 as _sqlite3
-        resolve_date = db_date_str if target_date_str else yesterday_str
+        # Fix 2: always use YYYY-MM-DD format for DB date comparison
+        resolve_date = db_date_str
         box_scores = {}  # player -> {POINTS, REBOUNDS, ASSISTS}
         if logs is not None and len(logs) > 0:
             for _, row in logs.iterrows():
@@ -211,7 +212,14 @@ def fetch_yesterday(target_date_str=None):
             db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', 'bet_tracker.db')
             conn_sp = _sqlite3.connect(db_path)
             cur_sp = conn_sp.cursor()
-            cur_sp.execute("SELECT id, player, stat_category, direction, line FROM shadow_picks WHERE game_date = ? AND actual_result IS NULL", (resolve_date,))
+            # Fix 1: exclude TOTAL/SPREAD — those use team names, not player names
+            cur_sp.execute("""
+            SELECT id, player, stat_category, direction, line 
+            FROM shadow_picks 
+            WHERE game_date = ? 
+                AND actual_result IS NULL
+                AND stat_category NOT IN ('TOTAL', 'SPREAD')
+            """, (resolve_date,))
             rows = cur_sp.fetchall()
             updated = 0
             for sid, player, cat, direction, line in rows:

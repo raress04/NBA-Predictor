@@ -1,0 +1,8 @@
+[+] HISTORICAL MODE: Generating projections for 2026-02-16
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 84 players marked Out/GTD.
+[!] No games found in database for 2026-02-16.
+    Run 'py etl/fetch_yesterday.py' first to backfill the data.
+
+[+] Generating historical PDF report for 2026-02-16...
+    [-] Failed to generate PDF report: name 'log_name' is not defined

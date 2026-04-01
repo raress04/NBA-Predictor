@@ -1,0 +1,74 @@
+--- YESTERDAY'S RESULTS (01/08/2026) ---
+
+==================================================
+MATCHUP: CHA vs. IND    112 - 114
+==================================================
+LaMelo Ball            | 33 PTS,  3 REB,  8 AST,  7 3PM
+Pascal Siakam          | 30 PTS, 14 REB,  3 AST,  3 3PM
+T.J. McConnell         | 23 PTS,  4 REB,  8 AST,  1 3PM
+Miles Bridges          | 19 PTS,  6 REB,  4 AST,  3 3PM
+Kon Knueppel           | 18 PTS,  8 REB,  3 AST,  2 3PM
+Aaron Nesmith          | 16 PTS,  5 REB,  2 AST,  3 3PM
+Collin Sexton          | 11 PTS,  0 REB,  5 AST,  1 3PM
+Jay Huff               | 10 PTS,  2 REB,  0 AST,  2 3PM
+Moussa Diabaté         | 10 PTS,  5 REB,  1 AST,  0 3PM
+Johnny Furphy          |  7 PTS,  6 REB,  2 AST,  1 3PM
+Ben Sheppard           |  7 PTS,  4 REB,  2 AST,  1 3PM
+Tony Bradley           |  7 PTS,  3 REB,  0 AST,  0 3PM
+Brandon Miller         |  6 PTS,  4 REB,  3 AST,  1 3PM
+Micah Potter           |  5 PTS,  0 REB,  0 AST,  1 3PM
+Quenton Jackson        |  4 PTS,  0 REB,  5 AST,  0 3PM
+Sion James             |  4 PTS,  2 REB,  2 AST,  1 3PM
+Tidjane Salaün         |  4 PTS,  2 REB,  1 AST,  0 3PM
+Ethan Thompson         |  3 PTS,  0 REB,  0 AST,  0 3PM
+Josh Green             |  3 PTS,  0 REB,  0 AST,  1 3PM
+PJ Hall                |  2 PTS,  4 REB,  1 AST,  0 3PM
+Jarace Walker          |  2 PTS,  3 REB,  1 AST,  0 3PM
+Liam McNeeley          |  2 PTS,  1 REB,  1 AST,  0 3PM
+Kam Jones              |  0 PTS,  0 REB,  2 AST,  0 3PM
+
+==================================================
+MATCHUP: MIN vs. CLE    131 - 122
+==================================================
+Donovan Mitchell       | 30 PTS,  7 REB,  8 AST,  2 3PM
+Julius Randle          | 28 PTS, 11 REB,  8 AST,  3 3PM
+Jaden McDaniels        | 26 PTS,  5 REB,  1 AST,  3 3PM
+Anthony Edwards        | 25 PTS,  7 REB,  9 AST,  4 3PM
+Donte DiVincenzo       | 22 PTS,  1 REB,  4 AST,  6 3PM
+Sam Merrill            | 22 PTS,  2 REB,  3 AST,  5 3PM
+Evan Mobley            | 19 PTS,  4 REB,  3 AST,  3 3PM
+Darius Garland         | 16 PTS,  1 REB,  8 AST,  1 3PM
+De'Andre Hunter        | 14 PTS,  7 REB,  4 AST,  0 3PM
+Rudy Gobert            | 11 PTS, 13 REB,  3 AST,  0 3PM
+Jarrett Allen          | 11 PTS, 10 REB,  1 AST,  0 3PM
+Naz Reid               |  9 PTS,  6 REB,  3 AST,  2 3PM
+Jaylen Clark           |  5 PTS,  0 REB,  0 AST,  1 3PM
+Jaylon Tyson           |  4 PTS,  5 REB,  1 AST,  0 3PM
+Craig Porter Jr.       |  4 PTS,  1 REB,  2 AST,  0 3PM
+Mike Conley            |  3 PTS,  1 REB,  2 AST,  1 3PM
+Bones Hyland           |  2 PTS,  1 REB,  3 AST,  0 3PM
+Nae'Qwan Tomlin        |  2 PTS,  1 REB,  1 AST,  0 3PM
+
+==================================================
+MATCHUP: UTA vs. DAL    116 - 114
+==================================================
+Lauri Markkanen        | 33 PTS,  7 REB,  4 AST,  2 3PM
+Cooper Flagg           | 26 PTS, 10 REB,  8 AST,  3 3PM
+Klay Thompson          | 23 PTS,  3 REB,  5 AST,  6 3PM
+Anthony Davis          | 21 PTS, 11 REB,  4 AST,  0 3PM
+Keyonte George         | 19 PTS,  3 REB,  7 AST,  1 3PM
+Naji Marshall          | 17 PTS,  2 REB,  4 AST,  2 3PM
+Max Christie           | 16 PTS,  4 REB,  4 AST,  3 3PM
+Brice Sensabaugh       | 14 PTS,  5 REB,  3 AST,  2 3PM
+Walter Clayton Jr.     | 12 PTS,  0 REB,  3 AST,  4 3PM
+Kevin Love             | 10 PTS, 10 REB,  2 AST,  1 3PM
+Cody Williams          |  8 PTS,  3 REB,  4 AST,  0 3PM
+Kyle Filipowski        |  8 PTS,  4 REB,  1 AST,  1 3PM
+Isaiah Collier         |  7 PTS,  1 REB,  6 AST,  1 3PM
+Ryan Nembhard          |  7 PTS,  2 REB,  4 AST,  1 3PM
+Taylor Hendricks       |  3 PTS,  2 REB,  0 AST,  1 3PM
+Kyle Anderson          |  2 PTS,  7 REB,  2 AST,  0 3PM
+Caleb Martin           |  2 PTS,  5 REB,  0 AST,  0 3PM
+Brandon Williams       |  2 PTS,  3 REB,  1 AST,  0 3PM
+Daniel Gafford         |  0 PTS,  7 REB,  0 AST,  0 3PM
+

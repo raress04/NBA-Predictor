@@ -26,7 +26,7 @@ from config.settings import CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_all
 from etl.bias_corrections import get_tiered_bias
 from simulator.parlay_builder import (
     build_parlays, format_parlay_output, EDGE_THRESHOLDS,
-    compute_spread_edge, compute_total_edge, compute_prop_edge
+    compute_spread_edge, compute_total_edge, compute_prop_edge, MAX_PROP_CONFIDENCE
 )
 from simulator.markov_engine import compute_posterior_confidence
 from etl.bet_tracker import ingest_shadow_picks
@@ -724,7 +724,8 @@ def process_hist_game(game, target_date, injured_normalized):
                                     dist = sorted(prop_tracker[p][dict_key])
                                     edge_data = compute_prop_edge(dist, line, stat_key)
                                     if edge_data['valuable']:
-                                        best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        raw_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        best_conf = min(raw_conf, MAX_PROP_CONFIDENCE)
                                         prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {stat_name} ignore")
@@ -1102,7 +1103,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         t_prior = get_prior('TOTAL', t_edge['direction'])
                         t_target_count = t_edge['over_count'] if t_edge['direction'] == 'Over' else t_edge['under_count']
                         t_post, _ = compute_posterior_confidence(t_target_count, t_edge['n_sim'], prior_mean=t_prior, prior_strength=10)
-                        best_conf = t_post * 100.0
+                        best_conf = min(t_post * 100.0, MAX_PROP_CONFIDENCE)
                         if not is_allowed('TOTAL', t_edge['direction']):
                             print(f"  -> GAME TOTAL: O/U {t_data['total']} ⛔ BANNED_CATEGORY")
                         else:
@@ -1117,7 +1118,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                     h_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['home_spread'], is_home=True)
                     h_prior = get_prior('SPREAD', 'COVER')
                     h_post, _ = compute_posterior_confidence(h_edge['over_count'], h_edge['n_sim'], prior_mean=h_prior, prior_strength=10)
-                    h_conf = h_post * 100.0
+                    h_conf = min(h_post * 100.0, MAX_PROP_CONFIDENCE)
                     if h_conf >= s_thresh['min_prob'] and h_edge['edge_pct'] >= s_thresh['min_edge']:
                         if not is_allowed('SPREAD', 'COVER'):
                             print(f"  -> HOME SPREAD: {home_team['teamTricode']} {s_data['home_spread']:+.1f} ⛔ BANNED_CATEGORY")
@@ -1129,7 +1130,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                     a_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['away_spread'], is_home=False)
                     a_prior = get_prior('SPREAD', 'COVER')
                     a_post, _ = compute_posterior_confidence(a_edge['over_count'], a_edge['n_sim'], prior_mean=a_prior, prior_strength=10)
-                    a_conf = a_post * 100.0
+                    a_conf = min(a_post * 100.0, MAX_PROP_CONFIDENCE)
                     if a_conf >= s_thresh['min_prob'] and a_edge['edge_pct'] >= s_thresh['min_edge']:
                         if not is_allowed('SPREAD', 'COVER'):
                             print(f"  -> AWAY SPREAD: {away_team['teamTricode']} {s_data['away_spread']:+.1f} ⛔ BANNED_CATEGORY")
@@ -1180,7 +1181,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                         p_prior = get_prior(stat_key, edge_data['direction'])
                                         target_count = edge_data['over_count'] if edge_data['direction'] == "Over" else (edge_data['n_sim'] - edge_data['over_count'])
                                         p_post, _ = compute_posterior_confidence(target_count, edge_data['n_sim'], prior_mean=p_prior, prior_strength=10)
-                                        best_conf = p_post * 100.0
+                                        best_conf = min(p_post * 100.0, MAX_PROP_CONFIDENCE)
                                         prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {stat_name} ignore")
@@ -1204,8 +1205,9 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                     if edge_data.get('returning_ban'):
                                         prop_details.append(f"O/U {line} {short_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
                                     elif edge_data['valuable']:
-                                        best_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
-                                        prop_details.append(f"O/U {line} {short_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
+                                        raw_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
+                                        best_conf = min(raw_conf, MAX_PROP_CONFIDENCE)
+                                        prop_details.append(f"O/U {line} {short_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {short_name} ignore")
                                         

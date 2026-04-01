@@ -4,6 +4,14 @@
 cd "$(dirname "$0")/.."
 
 echo "========================================="
+echo "📊 Checking bias corrections staleness..."
+echo "========================================="
+# Monthly: recompute bias corrections if stale (>30 days or insufficient samples)
+python3 -m analysis.compute_retroactive_bias --auto-update
+echo "[Stage 3] Bias correction check complete."
+echo ""
+
+echo "========================================="
 echo "🏀 Running Live Scraper..."
 echo "========================================="
 python3 etl/live_scraper.py

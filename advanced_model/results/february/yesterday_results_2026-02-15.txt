@@ -1,0 +1,81 @@
+--- YESTERDAY'S RESULTS (02/15/2026) ---
+
+==================================================
+MATCHUP: None
+==================================================
+Victor Wembanyama      | 14 PTS,  6 REB,  0 AST,  2 3PM
+Anthony Edwards        | 13 PTS,  2 REB,  0 AST,  3 3PM
+Karl-Anthony Towns     | 10 PTS,  1 REB,  0 AST,  2 3PM
+Devin Booker           |  5 PTS,  1 REB,  4 AST,  1 3PM
+Deni Avdija            |  5 PTS,  0 REB,  2 AST,  1 3PM
+Tyrese Maxey           |  4 PTS,  3 REB,  2 AST,  0 3PM
+Pascal Siakam          |  4 PTS,  1 REB,  1 AST,  0 3PM
+Jalen Johnson          |  4 PTS,  0 REB,  1 AST,  0 3PM
+Cade Cunningham        |  4 PTS,  3 REB,  1 AST,  0 3PM
+Scottie Barnes         |  3 PTS,  5 REB,  2 AST,  1 3PM
+Jalen Duren            |  2 PTS,  4 REB,  3 AST,  0 3PM
+Chet Holmgren          |  2 PTS,  1 REB,  0 AST,  0 3PM
+Luka Dončić            |  2 PTS,  0 REB,  2 AST,  0 3PM
+Jamal Murray           |  0 PTS,  2 REB,  4 AST,  0 3PM
+Alperen Sengun         |  0 PTS,  4 REB,  2 AST,  0 3PM
+Nikola Jokić           |  0 PTS,  2 REB,  0 AST,  0 3PM
+Norman Powell          |  0 PTS,  0 REB,  1 AST,  0 3PM
+
+==================================================
+MATCHUP: None
+==================================================
+Cade Cunningham        | 11 PTS,  3 REB,  4 AST,  1 3PM
+Anthony Edwards        | 11 PTS,  3 REB,  1 AST,  1 3PM
+Jaylen Brown           | 11 PTS,  3 REB,  0 AST,  1 3PM
+LeBron James           |  8 PTS,  1 REB,  1 AST,  2 3PM
+Jalen Duren            |  7 PTS,  3 REB,  0 AST,  0 3PM
+Donovan Mitchell       |  6 PTS,  0 REB,  3 AST,  2 3PM
+Kevin Durant           |  5 PTS,  1 REB,  1 AST,  1 3PM
+Kawhi Leonard          |  5 PTS,  5 REB,  2 AST,  1 3PM
+Jalen Johnson          |  5 PTS,  1 REB,  1 AST,  1 3PM
+De'Aaron Fox           |  5 PTS,  0 REB,  1 AST,  1 3PM
+Devin Booker           |  2 PTS,  5 REB,  2 AST,  0 3PM
+Scottie Barnes         |  2 PTS,  1 REB,  1 AST,  0 3PM
+Jalen Brunson          |  2 PTS,  0 REB,  1 AST,  0 3PM
+Tyrese Maxey           |  2 PTS,  0 REB,  0 AST,  0 3PM
+Chet Holmgren          |  0 PTS,  1 REB,  1 AST,  0 3PM
+Brandon Ingram         |  0 PTS,  2 REB,  1 AST,  0 3PM
+
+==================================================
+MATCHUP: None
+==================================================
+Kawhi Leonard          | 31 PTS,  3 REB,  0 AST,  6 3PM
+Victor Wembanyama      | 19 PTS,  2 REB,  0 AST,  2 3PM
+Jamal Murray           |  8 PTS,  2 REB,  4 AST,  2 3PM
+Jalen Brunson          |  8 PTS,  1 REB,  2 AST,  2 3PM
+Kevin Durant           |  7 PTS,  1 REB,  1 AST,  1 3PM
+Pascal Siakam          |  6 PTS,  3 REB,  1 AST,  0 3PM
+Karl-Anthony Towns     |  6 PTS,  2 REB,  0 AST,  2 3PM
+Norman Powell          |  5 PTS,  2 REB,  1 AST,  0 3PM
+LeBron James           |  2 PTS,  2 REB,  4 AST,  0 3PM
+Alperen Sengun         |  1 PTS,  1 REB,  2 AST,  0 3PM
+Jaylen Brown           |  0 PTS,  0 REB,  1 AST,  0 3PM
+Deni Avdija            |  0 PTS,  1 REB,  2 AST,  0 3PM
+Donovan Mitchell       |  0 PTS,  0 REB,  0 AST,  0 3PM
+Brandon Ingram         |  0 PTS,  1 REB,  0 AST,  0 3PM
+De'Aaron Fox           |  0 PTS,  0 REB,  0 AST,  0 3PM
+
+==================================================
+MATCHUP: None
+==================================================
+Tyrese Maxey           |  9 PTS,  2 REB,  1 AST,  1 3PM
+Anthony Edwards        |  8 PTS,  4 REB,  2 AST,  2 3PM
+Chet Holmgren          |  8 PTS,  2 REB,  0 AST,  1 3PM
+Scottie Barnes         |  6 PTS,  4 REB,  1 AST,  0 3PM
+Jalen Duren            |  6 PTS,  4 REB,  0 AST,  0 3PM
+Donovan Mitchell       |  6 PTS,  1 REB,  0 AST,  2 3PM
+Devin Booker           |  5 PTS,  3 REB,  2 AST,  1 3PM
+LeBron James           |  5 PTS,  4 REB,  0 AST,  1 3PM
+Jalen Johnson          |  5 PTS,  3 REB,  0 AST,  1 3PM
+Jaylen Brown           |  4 PTS,  2 REB,  1 AST,  0 3PM
+Jalen Brunson          |  3 PTS,  2 REB,  1 AST,  1 3PM
+De'Aaron Fox           |  2 PTS,  1 REB,  2 AST,  0 3PM
+Kawhi Leonard          |  1 PTS,  1 REB,  1 AST,  0 3PM
+Cade Cunningham        |  0 PTS,  1 REB,  2 AST,  0 3PM
+Kevin Durant           |  0 PTS,  1 REB,  0 AST,  0 3PM
+

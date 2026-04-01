@@ -1,0 +1,43 @@
+NBA MODEL PREDICTIONS - 2026-03-22
+============================================================
+
+
+MATCHUP: Sacramento Kings vs. Brooklyn Nets
+------------------------------
+  Malik Monk           | POINTS   | Line 12.5 | Proj 17.7 | VALUABLE: Over (74% conf, 30.6% edge)
+  DeMar DeRozan        | POINTS   | Line 18.5 | Proj 25.1 | VALUABLE: Over (78% conf, 35.7% edge)
+  Ziaire Williams      | POINTS   | Line 10.5 | Proj 16.0 | VALUABLE: Over (76% conf, 32.6% edge)
+
+MATCHUP: New York Knicks vs. Washington Wizards
+------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 11.5 | Proj  8.1 | VALUABLE: Under (78% conf, 41.6% edge)
+  Josh Hart            | REBOUNDS | Line  7.5 | Proj  5.5 | VALUABLE: Under (74% conf, 34.8% edge)
+  Mitchell Robinson    | REBOUNDS | Line  8.5 | Proj  6.2 | VALUABLE: Under (77% conf, 37.8% edge)
+  Mohamed Diawara      | POINTS   | Line  7.5 | Proj  4.7 | VALUABLE: Under (78% conf, 37.9% edge)
+  Bilal Coulibaly      | POINTS   | Line 12.5 | Proj 18.2 | VALUABLE: Over (77% conf, 34.4% edge)
+
+MATCHUP: Boston Celtics vs. Minnesota Timberwolves
+------------------------------
+  Neemias Queta        | REBOUNDS | Line  8.5 | Proj  5.9 | VALUABLE: Under (78% conf, 39.5% edge)
+
+MATCHUP: Denver Nuggets vs. Portland Trail Blazers
+------------------------------
+
+MATCHUP: Phoenix Suns vs. Toronto Raptors
+------------------------------
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Neemias Queta Under 8.5 REBOUNDS (78% conf, 28.5% edge) | Boston Celtics vs. Minnesota Timberwolves
+  2. Mohamed Diawara Under 7.5 POINTS (78% conf, 26.1% edge) | New York Knicks vs. Washington Wizards
+  3. Karl-Anthony Towns Under 11.5 REBOUNDS (78% conf, 24.9% edge) | New York Knicks vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Neemias Queta Under 8.5 REBOUNDS (78% conf, 28.5% edge) | Boston Celtics vs. Minnesota Timberwolves
+  2. Mohamed Diawara Under 7.5 POINTS (78% conf, 26.1% edge) | New York Knicks vs. Washington Wizards
+  3. Karl-Anthony Towns Under 11.5 REBOUNDS (78% conf, 24.9% edge) | New York Knicks vs. Washington Wizards
+  4. Ziaire Williams Over 10.5 POINTS (76% conf, 25.0% edge) | Sacramento Kings vs. Brooklyn Nets
+
+
+Total VALUABLE picks today: 9

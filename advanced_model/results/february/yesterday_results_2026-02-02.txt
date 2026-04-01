@@ -1,0 +1,98 @@
+--- YESTERDAY'S RESULTS (02/02/2026) ---
+
+==================================================
+MATCHUP: CHA vs. NOP    102 - 95
+==================================================
+Trey Murphy III        | 27 PTS,  1 REB,  4 AST,  3 3PM
+LaMelo Ball            | 24 PTS,  8 REB,  5 AST,  3 3PM
+Kon Knueppel           | 17 PTS,  9 REB,  2 AST,  4 3PM
+Derik Queen            | 16 PTS,  8 REB,  3 AST,  1 3PM
+Brandon Miller         | 16 PTS,  8 REB,  4 AST,  2 3PM
+Grant Williams         | 16 PTS,  9 REB,  1 AST,  2 3PM
+Zion Williamson        | 14 PTS, 11 REB,  4 AST,  0 3PM
+Herbert Jones          | 12 PTS,  7 REB,  2 AST,  4 3PM
+Ryan Kalkbrenner       | 10 PTS,  7 REB,  1 AST,  0 3PM
+Jeremiah Fears         |  9 PTS,  2 REB,  0 AST,  1 3PM
+Miles Bridges          |  9 PTS,  4 REB,  1 AST,  0 3PM
+Saddiq Bey             |  8 PTS,  3 REB,  5 AST,  1 3PM
+Collin Sexton          |  5 PTS,  0 REB,  0 AST,  1 3PM
+Yves Missi             |  4 PTS,  1 REB,  0 AST,  0 3PM
+Sion James             |  3 PTS,  5 REB,  0 AST,  0 3PM
+Jose Alvarado          |  3 PTS,  0 REB,  3 AST,  1 3PM
+Moussa Diabaté         |  2 PTS,  9 REB,  2 AST,  0 3PM
+Karlo Matković         |  2 PTS,  1 REB,  2 AST,  0 3PM
+Josh Green             |  0 PTS,  0 REB,  0 AST,  0 3PM
+
+==================================================
+MATCHUP: IND vs. HOU    114 - 118
+==================================================
+Alperen Sengun         | 39 PTS, 16 REB,  5 AST,  0 3PM
+Pascal Siakam          | 27 PTS,  4 REB,  5 AST,  2 3PM
+Bennedict Mathurin     | 25 PTS,  4 REB,  5 AST,  0 3PM
+Jabari Smith Jr.       | 19 PTS,  4 REB,  1 AST,  3 3PM
+Aaron Nesmith          | 17 PTS,  6 REB,  2 AST,  3 3PM
+Amen Thompson          | 16 PTS, 11 REB,  7 AST,  0 3PM
+Jarace Walker          | 12 PTS,  4 REB,  1 AST,  2 3PM
+Reed Sheppard          | 11 PTS,  2 REB,  5 AST,  1 3PM
+Tari Eason             |  9 PTS, 10 REB,  0 AST,  1 3PM
+Jae'Sean Tate          |  8 PTS,  3 REB,  0 AST,  0 3PM
+Aaron Holiday          |  8 PTS,  0 REB,  0 AST,  2 3PM
+Andrew Nembhard        |  7 PTS,  1 REB,  8 AST,  1 3PM
+Isaiah Jackson         |  6 PTS,  6 REB,  4 AST,  0 3PM
+Jay Huff               |  6 PTS,  3 REB,  1 AST,  2 3PM
+Micah Potter           |  5 PTS,  1 REB,  2 AST,  1 3PM
+T.J. McConnell         |  5 PTS,  0 REB,  2 AST,  1 3PM
+Clint Capela           |  4 PTS,  7 REB,  3 AST,  0 3PM
+Dorian Finney-Smith    |  4 PTS,  3 REB,  0 AST,  0 3PM
+Johnny Furphy          |  2 PTS,  4 REB,  1 AST,  0 3PM
+Ben Sheppard           |  2 PTS,  0 REB,  2 AST,  0 3PM
+Josh Okogie            |  0 PTS,  0 REB,  0 AST,  0 3PM
+
+==================================================
+MATCHUP: MEM vs. MIN    137 - 128
+==================================================
+Anthony Edwards        | 39 PTS,  7 REB,  3 AST,  3 3PM
+Jaren Jackson Jr.      | 30 PTS,  6 REB,  2 AST,  3 3PM
+Jaden McDaniels        | 29 PTS,  4 REB,  3 AST,  5 3PM
+Donte DiVincenzo       | 21 PTS,  3 REB,  4 AST,  5 3PM
+Julius Randle          | 19 PTS,  8 REB,  8 AST,  1 3PM
+Ty Jerome              | 19 PTS,  6 REB,  8 AST,  2 3PM
+Jaylen Wells           | 18 PTS,  1 REB,  2 AST,  4 3PM
+Vince Williams Jr.     | 16 PTS,  1 REB,  5 AST,  4 3PM
+Cam Spencer            | 16 PTS,  4 REB,  5 AST,  3 3PM
+Cedric Coward          | 14 PTS,  4 REB,  1 AST,  1 3PM
+GG Jackson             | 13 PTS,  8 REB,  1 AST,  1 3PM
+Naz Reid               | 10 PTS,  6 REB,  1 AST,  1 3PM
+Rudy Gobert            |  7 PTS, 10 REB,  0 AST,  0 3PM
+Jock Landale           |  4 PTS,  6 REB,  2 AST,  0 3PM
+Kentavious Caldwell-Pope |  4 PTS,  3 REB,  3 AST,  0 3PM
+Olivier-Maxence Prosper |  3 PTS,  6 REB,  2 AST,  1 3PM
+Bones Hyland           |  3 PTS,  1 REB,  3 AST,  1 3PM
+Mike Conley            |  0 PTS,  1 REB,  2 AST,  0 3PM
+Jaylen Clark           |  0 PTS,  0 REB,  0 AST,  0 3PM
+
+==================================================
+MATCHUP: LAC vs. PHI    113 - 128
+==================================================
+Tyrese Maxey           | 29 PTS,  5 REB,  6 AST,  7 3PM
+Kawhi Leonard          | 29 PTS,  4 REB,  6 AST,  2 3PM
+Dominick Barlow        | 26 PTS, 16 REB,  2 AST,  1 3PM
+Joel Embiid            | 24 PTS,  5 REB,  3 AST,  1 3PM
+Jordan Miller          | 21 PTS,  4 REB,  2 AST,  0 3PM
+Kobe Sanders           | 17 PTS,  3 REB,  3 AST,  2 3PM
+John Collins           | 15 PTS,  7 REB,  2 AST,  2 3PM
+Kelly Oubre Jr.        | 15 PTS,  3 REB,  2 AST,  3 3PM
+Quentin Grimes         | 14 PTS,  2 REB,  4 AST,  2 3PM
+Brook Lopez            | 13 PTS,  1 REB,  1 AST,  3 3PM
+Ivica Zubac            |  8 PTS,  9 REB,  2 AST,  0 3PM
+Adem Bona              |  6 PTS,  3 REB,  1 AST,  0 3PM
+Kris Dunn              |  6 PTS,  2 REB,  6 AST,  0 3PM
+Jared McCain           |  6 PTS,  2 REB,  4 AST,  2 3PM
+VJ Edgecombe           |  5 PTS,  3 REB,  7 AST,  1 3PM
+Trendon Watford        |  3 PTS,  1 REB,  1 AST,  0 3PM
+Yanic Konan Niederhäuser |  2 PTS,  3 REB,  0 AST,  0 3PM
+Cam Christie           |  2 PTS,  0 REB,  0 AST,  0 3PM
+Nicolas Batum          |  0 PTS,  2 REB,  2 AST,  0 3PM
+Jabari Walker          |  0 PTS,  1 REB,  1 AST,  0 3PM
+Kobe Brown             |  0 PTS,  1 REB,  0 AST,  0 3PM
+

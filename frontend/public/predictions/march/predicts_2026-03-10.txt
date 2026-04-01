@@ -1,0 +1,423 @@
+[+] HISTORICAL MODE: Generating projections for 2026-03-10
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 81 players marked Out/GTD.
+    [+] Found 11 games in database for 2026-03-10
+    [+] Parsed 11 unique matchups:
+        WAS @ MIA
+        BOS @ SAS
+        MIN @ LAL
+        MEM @ PHI
+        CHI @ GSW
+        TOR @ HOU
+        PHX @ MIL
+        DAL @ ATL
+        DET @ BKN
+        CHA @ POR
+        IND @ SAC
+
+[+] Commencing Parallel Historical Simulations...
+
+============================================================
+ MATCHUP: Chicago Bulls @ San Francisco Warriors
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 206.7
+PROJECTED SCORE: GSW 107.5 - CHI 99.2
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Gui Santos           -> 14 PTS, 7 REB, 3 AST
+  Al Horford           -> 12 PTS, 6 REB, 3 AST
+  Will Richard         -> 7 PTS, 3 REB, 1 AST
+  Pat Spencer          -> 9 PTS, 3 REB, 4 AST
+  Draymond Green       -> 8 PTS, 6 REB, 4 AST
+  Brandin Podziemski   -> 16 PTS, 8 REB, 4 AST
+  Gary Payton II       -> 9 PTS, 5 REB, 1 AST
+  LJ Cryer             -> 6 PTS, 2 REB, 1 AST
+  Kristaps Porziņģis   -> 18 PTS, 5 REB, 2 AST
+  Nate Williams        -> 5 PTS, 2 REB, 0 AST
+
+[AWAY TEAM]
+  Matas Buzelis        -> 21 PTS, 6 REB, 2 AST
+  Josh Giddey          -> 16 PTS, 7 REB, 7 AST
+  Leonard Miller       -> 6 PTS, 4 REB, 0 AST
+  Jalen Smith          -> 14 PTS, 8 REB, 1 AST
+  Tre Jones            -> 14 PTS, 3 REB, 4 AST
+  Nick Richards        -> 9 PTS, 8 REB, 0 AST
+  Guerschon Yabusele   -> 11 PTS, 6 REB, 2 AST
+  Rob Dillingham       -> 7 PTS, 3 REB, 3 AST
+
+
+============================================================
+ MATCHUP: Minnesota Timberwolves @ Los Angeles Lakers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 240.9
+PROJECTED SCORE: LAL 117.7 - MIN 123.2
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [CACHE HIT (historical)] Loaded from odds_api_props_93eb0e796df39c4bd0667f1bbc5a1cb1.json (979min old)
+[HOME TEAM]
+  Austin Reaves        -> 24 PTS, 5 REB, 5 AST
+  Luka Dončić          -> 33 PTS, 8 REB, 8 AST
+  Deandre Ayton        -> 10 PTS, 8 REB, 1 AST
+  Marcus Smart         -> 11 PTS, 3 REB, 4 AST
+  Luke Kennard         -> 11 PTS, 2 REB, 2 AST
+  Jake LaRavia         -> 9 PTS, 4 REB, 2 AST
+  Rui Hachimura        -> 13 PTS, 3 REB, 1 AST
+  Jarred Vanderbilt    -> 4 PTS, 3 REB, 1 AST
+
+[AWAY TEAM]
+  Donte DiVincenzo     -> 10 PTS, 3 REB, 4 AST (O/U 10.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore)
+  Anthony Edwards      -> 27 PTS, 3 REB, 3 AST (O/U 27.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (84% conf, 34.2% edge), O/U 3.5 assists ignore)
+  Rudy Gobert          -> 9 PTS, 10 REB, 2 AST (O/U 9.5 points ignore, O/U 10.5 rebounds ignore)
+  Jaden McDaniels      -> 13 PTS, 4 REB, 3 AST (O/U 13.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Julius Randle        -> 18 PTS, 6 REB, 4 AST (O/U 17.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  Naz Reid             -> 13 PTS, 5 REB, 2 AST (O/U 11.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Ayo Dosunmu          -> 12 PTS, 2 REB, 3 AST (O/U 9.5 points ignore, O/U 2.5 assists ignore)
+  Bones Hyland         -> 9 PTS, 1 REB, 3 AST
+  Kyle Anderson        -> 5 PTS, 3 REB, 3 AST
+  Terrence Shannon Jr. -> 3 PTS, 0 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Boston Celtics @ San Antonio Spurs
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 228.0
+PROJECTED SCORE: SAS 121.4 - BOS 106.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Victor Wembanyama    -> 25 PTS, 11 REB, 3 AST
+  De'Aaron Fox         -> 16 PTS, 3 REB, 6 AST
+  Stephon Castle       -> 16 PTS, 4 REB, 6 AST
+  Devin Vassell        -> 15 PTS, 4 REB, 3 AST
+  Julian Champagnie    -> 11 PTS, 5 REB, 2 AST
+  Dylan Harper         -> 12 PTS, 3 REB, 4 AST
+  Keldon Johnson       -> 13 PTS, 4 REB, 1 AST
+  Carter Bryant        -> 6 PTS, 3 REB, 1 AST
+  Luke Kornet          -> 4 PTS, 4 REB, 2 AST
+
+[AWAY TEAM]
+  Derrick White        -> 19 PTS, 3 REB, 6 AST
+  Baylor Scheierman    -> 8 PTS, 5 REB, 2 AST
+  Sam Hauser           -> 10 PTS, 3 REB, 2 AST
+  Ron Harper Jr.       -> 4 PTS, 2 REB, 1 AST
+  Jayson Tatum         -> 26 PTS, 7 REB, 4 AST
+  Luka Garza           -> 4 PTS, 2 REB, 0 AST
+  Neemias Queta        -> 7 PTS, 7 REB, 1 AST
+  Jaylen Brown         -> 20 PTS, 5 REB, 5 AST
+  Hugo González        -> 4 PTS, 3 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Phoenix Suns @ Milwaukee Bucks
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 211.5
+PROJECTED SCORE: MIL 102.6 - PHX 108.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Ryan Rollins         -> 15 PTS, 6 REB, 5 AST
+  Kyle Kuzma           -> 16 PTS, 5 REB, 3 AST
+  Ousmane Dieng        -> 8 PTS, 5 REB, 3 AST
+  Myles Turner         -> 10 PTS, 6 REB, 1 AST
+  Giannis Antetokounmpo -> 23 PTS, 11 REB, 4 AST
+  Taurean Prince       -> 5 PTS, 2 REB, 1 AST
+  AJ Green             -> 8 PTS, 2 REB, 1 AST
+  Cam Thomas           -> 12 PTS, 2 REB, 2 AST
+  Pete Nance           -> 4 PTS, 3 REB, 1 AST
+
+[AWAY TEAM]
+  Devin Booker         -> 19 PTS, 4 REB, 4 AST
+  Jalen Green          -> 16 PTS, 3 REB, 2 AST
+  Royce O'Neale        -> 8 PTS, 5 REB, 2 AST
+  Collin Gillespie     -> 14 PTS, 5 REB, 5 AST
+  Grayson Allen        -> 21 PTS, 3 REB, 4 AST
+  Oso Ighodaro         -> 6 PTS, 6 REB, 3 AST
+  Rasheer Fleming      -> 4 PTS, 3 REB, 0 AST
+  Khaman Maluach       -> 2 PTS, 3 REB, 0 AST
+  Jordan Goodwin       -> 9 PTS, 5 REB, 2 AST
+  Haywood Highsmith    -> 6 PTS, 4 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Toronto Raptors @ Houston Rockets
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 226.7
+PROJECTED SCORE: HOU 112.0 - TOR 114.8
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Amen Thompson        -> 16 PTS, 6 REB, 5 AST
+  Jabari Smith Jr.     -> 17 PTS, 6 REB, 2 AST
+  Kevin Durant         -> 23 PTS, 5 REB, 4 AST
+  Tari Eason           -> 10 PTS, 5 REB, 3 AST
+  Alperen Sengun       -> 16 PTS, 6 REB, 5 AST
+  Reed Sheppard        -> 16 PTS, 3 REB, 4 AST
+  Dorian Finney-Smith  -> 3 PTS, 2 REB, 1 AST
+  Clint Capela         -> 4 PTS, 4 REB, 1 AST
+  Josh Okogie          -> 4 PTS, 2 REB, 0 AST
+
+[AWAY TEAM]
+  Scottie Barnes       -> 15 PTS, 6 REB, 4 AST
+  Brandon Ingram       -> 20 PTS, 6 REB, 4 AST
+  Immanuel Quickley    -> 22 PTS, 4 REB, 6 AST
+  RJ Barrett           -> 21 PTS, 7 REB, 3 AST
+  Sandro Mamukelashvili -> 11 PTS, 5 REB, 1 AST
+  Ja'Kobe Walter       -> 8 PTS, 3 REB, 2 AST
+  Jamal Shead          -> 6 PTS, 2 REB, 4 AST
+  Jonathan Mogbo       -> 0 PTS, 2 REB, 0 AST
+  Jamison Battle       -> 2 PTS, 2 REB, 0 AST
+  Gradey Dick          -> 6 PTS, 2 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Washington Wizards @ Miami Heat
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 210.2
+PROJECTED SCORE: MIA 115.2 - WAS 95.0
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Bam Adebayo          -> 36 PTS, 12 REB, 2 AST
+  Kasparas Jakučionis  -> 8 PTS, 5 REB, 3 AST
+  Jaime Jaquez Jr.     -> 18 PTS, 7 REB, 4 AST
+  Myron Gardner        -> 5 PTS, 6 REB, 1 AST
+  Pelle Larsson        -> 15 PTS, 6 REB, 3 AST
+  Davion Mitchell      -> 8 PTS, 4 REB, 5 AST
+  Dru Smith            -> 6 PTS, 4 REB, 2 AST
+  Simone Fontecchio    -> 11 PTS, 5 REB, 1 AST
+  Keshad Johnson       -> 4 PTS, 2 REB, 0 AST
+
+[AWAY TEAM]
+  Will Riley           -> 12 PTS, 4 REB, 2 AST
+  Bub Carrington       -> 6 PTS, 4 REB, 4 AST
+  Bilal Coulibaly      -> 10 PTS, 4 REB, 2 AST
+  Anthony Gill         -> 6 PTS, 5 REB, 2 AST
+  Jaden Hardy          -> 9 PTS, 2 REB, 1 AST
+  Tre Johnson          -> 10 PTS, 4 REB, 1 AST
+  Alex Sarr            -> 14 PTS, 8 REB, 2 AST
+  Justin Champagnie    -> 9 PTS, 6 REB, 1 AST
+  Sharife Cooper       -> 7 PTS, 3 REB, 3 AST
+  Tristan Vukcevic     -> 7 PTS, 4 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Memphis Grizzlies @ Philadelphia 76ers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 233.4
+PROJECTED SCORE: PHI 112.5 - MEM 120.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Kelly Oubre Jr.      -> 23 PTS, 7 REB, 3 AST
+  Quentin Grimes       -> 16 PTS, 4 REB, 3 AST
+  VJ Edgecombe         -> 21 PTS, 7 REB, 3 AST
+  Dominick Barlow      -> 10 PTS, 5 REB, 1 AST
+  Cameron Payne        -> 9 PTS, 1 REB, 4 AST
+  Dalen Terry          -> 5 PTS, 3 REB, 2 AST
+  Adem Bona            -> 6 PTS, 6 REB, 1 AST
+  Trendon Watford      -> 8 PTS, 4 REB, 3 AST
+  Jabari Walker        -> 7 PTS, 4 REB, 1 AST
+  Justin Edwards       -> 5 PTS, 1 REB, 2 AST
+
+[AWAY TEAM]
+  Jahmai Mashack       -> 6 PTS, 2 REB, 1 AST
+  Javon Small          -> 11 PTS, 5 REB, 5 AST
+  Taylor Hendricks     -> 10 PTS, 5 REB, 2 AST
+  GG Jackson           -> 15 PTS, 6 REB, 2 AST
+  Ty Jerome            -> 18 PTS, 3 REB, 5 AST
+  Cedric Coward        -> 12 PTS, 6 REB, 3 AST
+  Cam Spencer          -> 10 PTS, 3 REB, 5 AST
+  Rayan Rupert         -> 7 PTS, 4 REB, 1 AST
+  Jaylen Wells         -> 14 PTS, 3 REB, 1 AST
+  Olivier-Maxence Prosper -> 12 PTS, 5 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Dallas Mavericks @ Atlanta Hawks
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 243.7
+PROJECTED SCORE: ATL 125.2 - DAL 118.5
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jalen Johnson        -> 19 PTS, 7 REB, 6 AST
+  Nickeil Alexander-Walker -> 20 PTS, 3 REB, 4 AST
+  Dyson Daniels        -> 11 PTS, 6 REB, 6 AST
+  Onyeka Okongwu       -> 16 PTS, 6 REB, 3 AST
+  CJ McCollum          -> 20 PTS, 3 REB, 4 AST
+  Zaccharie Risacher   -> 7 PTS, 4 REB, 1 AST
+  Jock Landale         -> 9 PTS, 4 REB, 1 AST
+  Corey Kispert        -> 11 PTS, 2 REB, 2 AST
+  Gabe Vincent         -> 4 PTS, 1 REB, 2 AST
+  Mouhamed Gueye       -> 4 PTS, 4 REB, 0 AST
+
+[AWAY TEAM]
+  Cooper Flagg         -> 21 PTS, 6 REB, 4 AST
+  Naji Marshall        -> 14 PTS, 4 REB, 4 AST
+  P.J. Washington      -> 13 PTS, 5 REB, 2 AST
+  Klay Thompson        -> 11 PTS, 2 REB, 1 AST
+  Daniel Gafford       -> 9 PTS, 6 REB, 1 AST
+  Max Christie         -> 11 PTS, 3 REB, 2 AST
+  Khris Middleton      -> 11 PTS, 3 REB, 3 AST
+  Marvin Bagley III    -> 10 PTS, 6 REB, 1 AST
+  Brandon Williams     -> 13 PTS, 2 REB, 4 AST
+  Ryan Nembhard        -> 3 PTS, 2 REB, 4 AST
+
+
+============================================================
+ MATCHUP: Charlotte Hornets @ Portland Trail Blazers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 233.3
+PROJECTED SCORE: POR 113.2 - CHA 120.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Toumani Camara       -> 12 PTS, 4 REB, 2 AST
+  Jerami Grant         -> 18 PTS, 2 REB, 2 AST
+  Deni Avdija          -> 15 PTS, 4 REB, 5 AST
+  Jrue Holiday         -> 17 PTS, 3 REB, 5 AST
+  Donovan Clingan      -> 11 PTS, 9 REB, 2 AST
+  Robert Williams III  -> 7 PTS, 6 REB, 1 AST
+  Scoot Henderson      -> 12 PTS, 2 REB, 4 AST
+  Kris Murray          -> 6 PTS, 2 REB, 1 AST
+  Vít Krejčí           -> 8 PTS, 2 REB, 2 AST
+  Matisse Thybulle     -> 5 PTS, 1 REB, 1 AST
+
+[AWAY TEAM]
+  Brandon Miller       -> 22 PTS, 4 REB, 3 AST
+  Kon Knueppel         -> 20 PTS, 4 REB, 3 AST
+  Miles Bridges        -> 16 PTS, 4 REB, 3 AST
+  Moussa Diabaté       -> 7 PTS, 7 REB, 3 AST
+  Sion James           -> 5 PTS, 3 REB, 2 AST
+  LaMelo Ball          -> 23 PTS, 4 REB, 6 AST
+  Josh Green           -> 6 PTS, 2 REB, 1 AST
+  Ryan Kalkbrenner     -> 6 PTS, 4 REB, 1 AST
+  Grant Williams       -> 8 PTS, 3 REB, 2 AST
+  Pat Connaughton      -> 3 PTS, 1 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Detroit Pistons @ Brooklyn Nets
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 230.1
+PROJECTED SCORE: BKN 107.2 - DET 122.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Danny Wolf           -> 13 PTS, 6 REB, 3 AST
+  Jalen Wilson         -> 6 PTS, 2 REB, 0 AST
+  Drake Powell         -> 7 PTS, 2 REB, 1 AST
+  Michael Porter Jr.   -> 27 PTS, 9 REB, 2 AST
+  Chaney Johnson       -> 5 PTS, 1 REB, 1 AST
+  Josh Minott          -> 3 PTS, 2 REB, 0 AST
+  Nic Claxton          -> 12 PTS, 8 REB, 3 AST
+  Ben Saraf            -> 6 PTS, 2 REB, 3 AST
+  Noah Clowney         -> 15 PTS, 5 REB, 1 AST
+  Nolan Traore         -> 12 PTS, 2 REB, 5 AST
+
+[AWAY TEAM]
+  Ronald Holland II    -> 11 PTS, 4 REB, 1 AST
+  Cade Cunningham      -> 23 PTS, 5 REB, 10 AST
+  Javonte Green        -> 7 PTS, 3 REB, 0 AST
+  Jalen Duren          -> 20 PTS, 9 REB, 2 AST
+  Isaiah Stewart       -> 10 PTS, 4 REB, 1 AST
+  Daniss Jenkins       -> 8 PTS, 2 REB, 3 AST
+  Tobias Harris        -> 14 PTS, 6 REB, 2 AST
+  Kevin Huerter        -> 7 PTS, 3 REB, 3 AST
+  Marcus Sasser        -> 5 PTS, 1 REB, 2 AST
+  Duncan Robinson      -> 13 PTS, 2 REB, 3 AST
+
+
+============================================================
+ MATCHUP: Indiana Pacers @ Sacramento Kings
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 218.4
+PROJECTED SCORE: SAC 115.7 - IND 102.7
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Nique Clifford       -> 13 PTS, 5 REB, 4 AST
+  Maxime Raynaud       -> 13 PTS, 9 REB, 2 AST
+  Daeqwon Plowden      -> 10 PTS, 4 REB, 1 AST
+  Russell Westbrook    -> 15 PTS, 4 REB, 6 AST
+  DeMar DeRozan        -> 16 PTS, 3 REB, 3 AST
+  Killian Hayes        -> 6 PTS, 2 REB, 3 AST
+  Precious Achiuwa     -> 13 PTS, 8 REB, 2 AST
+  Devin Carter         -> 9 PTS, 4 REB, 3 AST
+  Drew Eubanks         -> 5 PTS, 4 REB, 1 AST
+  Malik Monk           -> 13 PTS, 2 REB, 3 AST
+
+[AWAY TEAM]
+  Jarace Walker        -> 15 PTS, 7 REB, 3 AST
+  Aaron Nesmith        -> 13 PTS, 4 REB, 2 AST
+  Jay Huff             -> 12 PTS, 4 REB, 1 AST
+  Kam Jones            -> 6 PTS, 2 REB, 4 AST
+  Ben Sheppard         -> 8 PTS, 3 REB, 2 AST
+  Kobe Brown           -> 7 PTS, 4 REB, 1 AST
+  Quenton Jackson      -> 11 PTS, 3 REB, 3 AST
+  Micah Potter         -> 13 PTS, 6 REB, 1 AST
+  Obi Toppin           -> 11 PTS, 5 REB, 2 AST
+  Jalen Slawson        -> 2 PTS, 2 REB, 1 AST
+
+
+[+] Historical projections for 2026-03-10 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating historical PDF report for 2026-03-10...
+    [-] Failed to generate PDF report: name 'log_name' is not defined
