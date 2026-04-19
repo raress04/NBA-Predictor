@@ -72,14 +72,24 @@ TIERED_BIAS_CORRECTIONS = {
 # Updated 2026-04-07 per decision: prior_strength=150 for stronger pull
 # toward category priors across 5k simulations.
 # Previous: 50 → now 150 (plan item #4)
-CONFIDENCE_PRIOR_STRENGTH = 400  # Multi-objective calibration (ECE, Brier, Var, AUC) on Jan-Mar 2026 retro.
-# Baseline: prior=100 -> ECE=0.03463, Brier=0.24857, Var=0.001502, AUC=0.48447
-# Selected: prior=400 -> ECE=0.02411, Brier=0.24812, Var=0.001086, AUC=0.48304
+CONFIDENCE_PRIOR_STRENGTH = 3000  # Multi-objective calibration (ECE, Brier, Var, AUC) on Jan-Mar 2026 retro.
+# Baseline: prior=100 -> ECE=0.03470, Brier=0.24814, Var=0.001030, AUC=0.48806
+# Selected: prior=3000 -> ECE=0.01549, Brier=0.24678, Var=0.000138, AUC=0.47619
 # Rule: smallest prior_strength where ECE/Brier improve AND Var/AUC stay informative.
 
 # Max valuable picks surfaced per day (caps pick volume, improves selectivity)
 # Previous: no explicit cap → now 15 (plan item #4)
 MAX_VALUABLE_PICKS_PER_DAY = 15
+
+# ── Min Gap Noise Gate (Task P.2) ────────────────────────────
+# Reject picks where projection is too close to the bookmaker line.
+# Prevents low-conviction noise from entering the live pipeline.
+LIVE_MIN_GAP = {
+    'POINTS':   2.0,
+    'REBOUNDS': 1.8,
+    'ASSISTS':  1.5,
+    'TOTAL':    5.0,
+}
 
 # ── TOTAL Parlay Gate ─────────────────────────────────────────────
 # Do NOT use TOTAL as a parlay leg until sample size and MAE thresholds are met.

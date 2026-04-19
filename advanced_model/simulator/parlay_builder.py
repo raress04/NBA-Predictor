@@ -6,7 +6,7 @@ ranks edges, applies Masterclass rules, and constructs 2-3 pick and 4-pick parla
 import math
 from typing import Dict, List, Tuple, Optional
 
-from config.settings import BANNED_COMBINATIONS, CATEGORY_PRIORS, get_prior, is_allowed, SIM_DB_WEIGHTS
+from config.settings import BANNED_COMBINATIONS, CATEGORY_PRIORS, get_prior, is_allowed, SIM_DB_WEIGHTS, LIVE_MIN_GAP
 import config.settings as settings
 from simulator.markov_engine import compute_posterior_confidence
 from etl.bias_corrections import get_tiered_bias
@@ -139,6 +139,13 @@ USE_KELLY = False
 FLAT_STAKE_PCT = 0.002       # 0.2% of bankroll per parlay
 KELLY_FRACTION = 0.25        # Fractional Kelly (Quarter Kelly)
 BANKROLL_HARD_CAP = 0.01    # Max 2.5% of bankroll per parlay
+
+
+def passes_min_gap(projection: float, line: float, category: str, direction: str) -> bool:
+    """Return False if model projection is too close to the bookmaker line."""
+    threshold = LIVE_MIN_GAP.get(category.upper(), 1.5)
+    gap = projection - line if direction.upper() == 'OVER' else line - projection
+    return gap >= threshold
 
 
 def decimal_to_implied_prob(decimal_odds: float) -> float:
@@ -751,6 +758,15 @@ def build_parlays(
                     is_returning = bool(all_player_minutes[player_name].get('restriction', False))
 
                 edge = compute_prop_edge(sim_dist, line, internal_stat_key, is_returning=is_returning)
+                # ── MIN_GAP Noise Gate (Task P.2) ──────────────────────
+                gap_direction = edge['direction']
+                if not passes_min_gap(edge['median'], line, stat_key, gap_direction):
+                    gap_val = edge['median'] - line if gap_direction == 'Over' else line - edge['median']
+                    log_shadow(player_name, stat_key, gap_direction, line, edge['median'],
+                               edge['confidence'], edge['edge_pct'],
+                               f'MIN_GAP(gap={gap_val:.2f}<{LIVE_MIN_GAP.get(stat_key.upper(), 1.5)})')
+                    continue
+
                 # BLOWOUT PROTOCOL: ban OVER props for the fav team's top 3 players
                 if is_blowout and edge['direction'] == "Over" and player_name in top_3_fav:
                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BLOWOUT_RISK')
@@ -907,13 +923,29 @@ def build_parlays(
                         'score': ev_edge * blended_conf / 100,
                     })
 
-    # Sort all picks primarily by CONFIDENCE % to ensure 90%+ picks are prioritized (Issue 4 Fix).
-    # Secondary sort by 'score' (which factors in the edge amount)
+    # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap (Task P.3) ───────────
+    # Sort by confidence + score, then slice, logging filtered picks as DAILY_CAP.
     all_picks.sort(key=lambda p: (p['confidence'], p['score']), reverse=True)
+    cap_filtered = all_picks[settings.MAX_VALUABLE_PICKS_PER_DAY:]
+    all_picks    = all_picks[:settings.MAX_VALUABLE_PICKS_PER_DAY]
+    for p in cap_filtered:
+        log_shadow(
+            p.get('pick', '?'), p.get('type', 'prop').upper(),
+            p.get('direction', '?'), 0, 0,
+            p.get('confidence', 0), p.get('edge_pct', 0), 'DAILY_CAP'
+        )
 
-    # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap ────────────────────────
-    # Slice to top 15 picks to avoid dilution and improve selectivity.
-    all_picks = all_picks[:settings.MAX_VALUABLE_PICKS_PER_DAY]
+    # Pick volume summary (for monitoring report)
+    ban_counts = {}
+    for sp in shadow_picks:
+        reason_key = sp['ban_reason'].split('(')[0]  # strip detail params
+        ban_counts[reason_key] = ban_counts.get(reason_key, 0) + 1
+    ban_summary = ' | '.join(f"{k}={v}" for k, v in sorted(ban_counts.items()))
+    pick_volume_line = (
+        f"PICK VOLUME: {len(all_picks)} / {settings.MAX_VALUABLE_PICKS_PER_DAY} cap "
+        f"| {len(shadow_picks)} filtered ({ban_summary})"
+    )
+    print(f"  {pick_volume_line}")
 
     # ── Build Parlay #1: Best 2-3 Picks ──────
     parlay_short = _select_diverse_picks(all_picks, target_count=3, max_per_game=2)
@@ -938,6 +970,7 @@ def build_parlays(
         'all_picks': all_picks,
         'shadow_picks': shadow_picks,
         'parlay_ids': parlay_ids,
+        'pick_volume': pick_volume_line,
     }
 
 

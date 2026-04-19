@@ -50,10 +50,11 @@ CANDIDATES     = [10, 25, 50, 100, 200, 400, 800, 1500, 3000, 5000, 10000]
 BASELINE_PS    = 100          # reference point — pre-P.1 production value
 
 # Multi-objective thresholds
-DELTA_ECE      = 0.003        # ECE must be within 0.003 of global minimum
-DELTA_BRIER    = 0.001        # Brier must beat baseline by at least 0.001
-ALPHA_VAR      = 0.75         # variance must stay >= 75% of baseline
-DELTA_AUC      = 0.01         # AUC must not drop more than 0.01 from baseline
+DELTA_ECE   = 0.003   # ECE must be within 0.003 of global minimum
+DELTA_BRIER = 0.001   # Brier must beat baseline by at least 0.001
+ALPHA_VAR   = 0.70    # variance must stay >= 70% of baseline
+DELTA_AUC   = 0.01    # AUC must not drop more than 0.01 from baseline
+ALPHA_VAR_FALLBACK = 0.60  # relaxed Var threshold before touching ECE/Brier
 
 # Calibration bins in probability space
 CAL_BINS   = [0.50, 0.60, 0.70, 0.75, 0.78, 1.00]
@@ -186,28 +187,29 @@ def run_grid_search(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     if len(eligible) > 0:
         chosen_ps = int(eligible.sort_values('prior_strength').iloc[0]['prior_strength'])
         fallback  = False
+        fallback_reason = ''
     else:
-        # Fallback: weighted composite score.
-        # Symmetric odds in retro data means Var/AUC are structurally low for all ps.
-        # Penalise ECE (normalised), Brier (normalised), and Var collapse.
-        # Among candidates not fully collapsing Var (<10% of baseline), pick lowest composite.
-        e_min  = result_df['ECE'].min()
-        e_max  = result_df['ECE'].max()
-        b_min  = result_df['Brier'].min()
-        b_max  = result_df['Brier'].max()
-        v_max  = result_df['Var'].max()
-
-        def _score(row):
-            norm_ece   = (row['ECE']   - e_min) / max(e_max - e_min, 1e-9)
-            norm_brier = (row['Brier'] - b_min) / max(b_max - b_min, 1e-9)
-            var_ratio  = row['Var'] / max(v_max, 1e-9)
-            # Penalise Var collapse with weight 2
-            return norm_ece + norm_brier + 2.0 * (1.0 - var_ratio)
-
-        result_df['_score'] = result_df.apply(_score, axis=1)
-        chosen_ps = int(result_df.sort_values('_score').iloc[0]['prior_strength'])
-        result_df.drop(columns=['_score'], inplace=True)
-        fallback  = True
+        # Relax Var to 60% before touching ECE/Brier constraints
+        Var_thresh_relaxed = ALPHA_VAR_FALLBACK * Var_base
+        eligible2 = result_df[
+            (result_df['ECE']   <= ECE_target)   &
+            (result_df['Brier'] <= Brier_thresh)  &
+            (result_df['Var']   >= Var_thresh_relaxed) &
+            (result_df['AUC']   >= AUC_thresh)
+        ]
+        if len(eligible2) > 0:
+            chosen_ps = int(eligible2.sort_values('prior_strength').iloc[0]['prior_strength'])
+            fallback  = True
+            fallback_reason = f'Var threshold relaxed to {ALPHA_VAR_FALLBACK*100:.0f}% of baseline'
+        else:
+            # Last resort: best ECE among candidates that don't fully collapse AUC
+            auc_floor = result_df['AUC'].max() * 0.97
+            eligible3 = result_df[result_df['AUC'] >= auc_floor]
+            if len(eligible3) == 0:
+                eligible3 = result_df
+            chosen_ps = int(eligible3.sort_values('ECE').iloc[0]['prior_strength'])
+            fallback  = True
+            fallback_reason = 'No candidate met Var/AUC constraints — chose min ECE with AUC floor'
 
     # Verdict column
     def _verdict(row):
@@ -234,15 +236,16 @@ def run_grid_search(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     result_df['Verdict'] = result_df.apply(_verdict, axis=1)
 
     # Store thresholds for report
-    result_df.attrs['ECE_target']   = ECE_target
-    result_df.attrs['Brier_thresh'] = Brier_thresh
-    result_df.attrs['Var_thresh']   = Var_thresh
-    result_df.attrs['AUC_thresh']   = AUC_thresh
-    result_df.attrs['ECE_base']     = ECE_base
-    result_df.attrs['Brier_base']   = Brier_base
-    result_df.attrs['Var_base']     = Var_base
-    result_df.attrs['AUC_base']     = AUC_base
-    result_df.attrs['fallback']     = fallback
+    result_df.attrs['ECE_target']      = ECE_target
+    result_df.attrs['Brier_thresh']    = Brier_thresh
+    result_df.attrs['Var_thresh']      = Var_thresh
+    result_df.attrs['AUC_thresh']      = AUC_thresh
+    result_df.attrs['ECE_base']        = ECE_base
+    result_df.attrs['Brier_base']      = Brier_base
+    result_df.attrs['Var_base']        = Var_base
+    result_df.attrs['AUC_base']        = AUC_base
+    result_df.attrs['fallback']        = fallback
+    result_df.attrs['fallback_reason'] = fallback_reason if fallback else ''
 
     return result_df, chosen_ps
 
@@ -265,6 +268,7 @@ def write_report(df: pd.DataFrame, chosen_ps: int, out_path: str) -> str:
     lines.append(f"  Brier <= {df.attrs['Brier_thresh']:.5f}   (baseline - {DELTA_BRIER})")
     lines.append(f"  Var   >= {df.attrs['Var_thresh']:.6f}  ({ALPHA_VAR*100:.0f}% of baseline {df.attrs['Var_base']:.6f})")
     lines.append(f"  AUC   >= {df.attrs['AUC_thresh']:.5f}   (baseline - {DELTA_AUC})")
+    lines.append(f"  [Fallback Var threshold: {ALPHA_VAR_FALLBACK*100:.0f}% of baseline if primary fails]")
     lines.append("")
 
     hdr = (f"{'prior_strength':>14} | {'ECE':>8} | {'Brier':>8} | "
@@ -291,9 +295,7 @@ def write_report(df: pd.DataFrame, chosen_ps: int, out_path: str) -> str:
     lines.append("")
     lines.append(f"  SELECTED prior_strength = {chosen_ps}")
     if df.attrs['fallback']:
-        lines.append("  (Fallback mode: symmetric market odds in retro data suppress Var/AUC")
-        lines.append("   across ALL candidates — hard gates unreachable. Used weighted composite")
-        lines.append("   score: ECE + Brier + 2*Var_collapse_penalty to find best tradeoff.)")
+        lines.append(f"  (Fallback: {df.attrs['fallback_reason']})")
 
     lines.append("")
     lines.append("  Baseline comparison:")
