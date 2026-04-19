@@ -1,0 +1,44 @@
+=======================================================
+  MONITORING REPORT  2026-04-12
+=======================================================
+
+PICK VOLUME (last 30 days):
+  Total: 122  |  Resolved: 105  |  Pending: 17
+
+WIN RATES BY CATEGORY:
+  ASSISTS UNDER:  64.7% (n=17) [Brier: n/a]
+  POINTS OVER:  33.3% (n=9) [Brier: n/a] ⚠️
+  POINTS UNDER:  52.2% (n=23) [Brier: n/a]
+  REBOUNDS OVER:  66.7% (n=3) [Brier: n/a]
+  REBOUNDS UNDER:  51.4% (n=37) [Brier: 0.358]
+  SPREAD COVER:  33.3% (n=6) [Brier: n/a] ⚠️
+  TOTAL OVER:  57.1% (n=7) [Brier: n/a]
+  TOTAL UNDER:  33.3% (n=3) [Brier: n/a] ⚠️
+
+PARLAY PERFORMANCE:
+  No resolved parlays in last 30 days.
+
+CLV (last 30 days):
+  ASSISTS UNDER: Avg CLV=+0.363  |  Positive rate: 61%  |  [REVIEW]
+  POINTS UNDER: Avg CLV=+0.478  |  Positive rate: 64%  |  [REVIEW]
+  REBOUNDS UNDER: Avg CLV=+0.240  |  Positive rate: 45%  |  [REVIEW]
+  TOTAL OVER: Avg CLV=+1.174  |  Positive rate: 91%  |  [EDGE CONFIRMED]
+
+CALIBRATION STATUS:
+  Platt scaling: PENDING — requires 200+ picks per category
+  Platt params file: EXISTS
+
+KELLY CRITERION:
+  [❌] 500+ resolved picks: 133
+  [❌] 2+ Platt categories: 0
+  [❌] Brier < 0.20 all cats
+  [❌] CLV positive rate > 60%
+  [❌] Parlay hit rate > 20%: 0.0% (n=0)
+  [❌] No category < 40% WR
+  STATUS: 🔴 KELLY DISABLED — USE FLAT 0.2% STAKE
+
+ALERTS:
+  🔴 POINTS OVER win rate 33.3% — below 40% threshold
+  🔴 SPREAD COVER win rate 33.3% — below 40% threshold
+
+=======================================================

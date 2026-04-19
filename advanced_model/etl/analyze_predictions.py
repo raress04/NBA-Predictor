@@ -46,26 +46,9 @@ def write_db_results(target_date, props_results, medians_results, actual_games, 
                     inserted_picks += 1
         print(f"    -> Logged {inserted_picks} evaluated results to pick_results.")
 
-    # 2. Write medians to projection_outcomes (raw accuracy base)
-    if medians_results:
-        inserted_po = 0
-        for m in medians_results:
-            player = m['player']
-            for stat_short, stat_db in [('pts', 'POINTS'), ('reb', 'REBOUNDS'), ('ast', 'ASSISTS')]:
-                pred = m[f'pred_{stat_short}']
-                act = m[f'act_{stat_short}']
-                bias = act - pred # model_bias = actual - projected
-                
-                cur.execute("SELECT id FROM projection_outcomes WHERE game_date = ? AND player = ? AND category = ?", 
-                            (target_date, player, stat_db))
-                if not cur.fetchone():
-                    cur.execute('''
-                        INSERT INTO projection_outcomes 
-                        (game_date, player, category, projected_value, actual_value, model_bias, source_mode, source_file)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                    ''', (target_date, player, stat_db, pred, act, bias, 'live', 'analyze_predictions.py'))
-                    inserted_po += 1
-        print(f"    -> Logged {inserted_po} raw player median records to projection_outcomes.")
+    # NOTE: projection_outcomes is intentionally NOT written here.
+    # analyze_predictions.py is READ-ONLY for that table.
+    # Projections are inserted by the live pipeline (live_scraper.py / fetch_range_box_scores.py).
 
     # 3. Evaluate shadow_picks for this date that are not yet resolved
     cur.execute('''

@@ -1,0 +1,87 @@
+NBA MODEL PREDICTIONS - 2026-01-17
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Washington Wizards
+------------------------------
+  Jamal Murray         | ASSISTS  | Line  9.5 | Proj  7.8 | VALUABLE: Under (78% conf, 28.9% edge)
+  Peyton Watson        | POINTS   | Line 19.5 | Proj 15.8 | VALUABLE: Under (76% conf, 26.5% edge)
+  Jalen Pickett        | POINTS   | Line  9.5 | Proj  6.1 | VALUABLE: Under (78% conf, 34.5% edge)
+  Zeke Nnaji           | POINTS   | Line  7.5 | Proj  5.0 | VALUABLE: Under (78% conf, 33.0% edge)
+  Will Riley           | POINTS   | Line  8.5 | Proj 12.3 | VALUABLE: Over (73% conf, 23.1% edge)
+  PROJECTED TOTAL: 220.3 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (78% conf, 37.4% edge)
+  -> SPREAD: Denver Nuggets -10.5 VALUABLE: Cover (95% conf, 44.9% edge)
+
+MATCHUP: Charlotte Hornets vs. Golden State Warriors
+------------------------------
+  Brandin Podziemski   | POINTS   | Line  9.5 | Proj 13.7 | VALUABLE: Over (75% conf, 24.9% edge)
+  PROJECTED TOTAL: 230.7 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (70% conf, 19.9% edge)
+
+MATCHUP: Miami Heat vs. Oklahoma City Thunder
+------------------------------
+  Bam Adebayo          | POINTS   | Line 16.5 | Proj 22.7 | VALUABLE: Over (78% conf, 30.3% edge)
+  Chet Holmgren        | POINTS   | Line 17.5 | Proj 14.1 | VALUABLE: Under (76% conf, 25.6% edge)
+  PROJECTED TOTAL: 236.4 | O/U 240.5
+
+MATCHUP: New York Knicks vs. Phoenix Suns
+------------------------------
+  Mitchell Robinson    | REBOUNDS | Line 10.5 | Proj  8.4 | VALUABLE: Under (78% conf, 30.1% edge)
+  PROJECTED TOTAL: 234.8 | O/U 240.5
+
+MATCHUP: Minnesota Timberwolves vs. San Antonio Spurs
+------------------------------
+  Naz Reid             | REBOUNDS | Line  8.5 | Proj  6.4 | VALUABLE: Under (78% conf, 32.8% edge)
+  PROJECTED TOTAL: 246.4 | O/U 240.5
+
+MATCHUP: Boston Celtics vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 224.6 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (78% conf, 32.2% edge)
+  -> SPREAD: Atlanta Hawks +3.5 VALUABLE: Cover (69% conf, 18.9% edge)
+
+MATCHUP: Utah Jazz vs. Dallas Mavericks
+------------------------------
+  Kyle Filipowski      | POINTS   | Line 15.5 | Proj 12.8 | VALUABLE: Under (73% conf, 22.6% edge)
+  Dwight Powell        | POINTS   | Line  6.5 | Proj  4.0 | VALUABLE: Under (78% conf, 37.9% edge)
+  PROJECTED TOTAL: 227.6 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (77% conf, 27.0% edge)
+
+MATCHUP: Los Angeles Lakers vs. Portland Trail Blazers
+------------------------------
+  LeBron James         | POINTS   | Line 27.5 | Proj 23.5 | VALUABLE: Under (74% conf, 24.0% edge)
+  Jake LaRavia         | POINTS   | Line 14.5 | Proj 10.3 | VALUABLE: Under (78% conf, 34.1% edge)
+  Jarred Vanderbilt    | POINTS   | Line  7.5 | Proj  5.2 | VALUABLE: Under (78% conf, 32.5% edge)
+  Shaedon Sharpe       | POINTS   | Line 24.5 | Proj 18.3 | VALUABLE: Under (78% conf, 35.2% edge)
+  Toumani Camara       | POINTS   | Line 14.5 | Proj 11.2 | VALUABLE: Under (76% conf, 26.4% edge)
+  PROJECTED TOTAL: 199.3 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (78% conf, 49.2% edge)
+
+MATCHUP: Detroit Pistons vs. Indiana Pacers
+------------------------------
+  Jalen Duren          | REBOUNDS | Line 11.5 | Proj  9.3 | VALUABLE: Under (78% conf, 30.0% edge)
+  Cade Cunningham      | POINTS   | Line 26.5 | Proj 21.6 | VALUABLE: Under (78% conf, 28.7% edge)
+  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  8.0 | VALUABLE: Under (76% conf, 26.3% edge)
+  Jarace Walker        | POINTS   | Line  7.5 | Proj 14.9 | VALUABLE: Over (78% conf, 40.1% edge)
+  Johnny Furphy        | POINTS   | Line  9.5 | Proj  5.0 | VALUABLE: Under (78% conf, 42.4% edge)
+  Johnny Furphy        | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (78% conf, 37.5% edge)
+  PROJECTED TOTAL: 220.5 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (78% conf, 37.8% edge)
+  -> SPREAD: Detroit Pistons -15.5 VALUABLE: Cover (100% conf, 49.9% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Mitchell Robinson Under 10.5 REBOUNDS (78% conf, 28.2% edge) | New York Knicks vs. Phoenix Suns
+  2. Jalen Pickett Under 9.5 POINTS (78% conf, 28.0% edge) | Denver Nuggets vs. Washington Wizards
+  3. Zeke Nnaji Under 7.5 POINTS (78% conf, 28.0% edge) | Denver Nuggets vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Mitchell Robinson Under 10.5 REBOUNDS (78% conf, 28.2% edge) | New York Knicks vs. Phoenix Suns
+  2. Jalen Pickett Under 9.5 POINTS (78% conf, 28.0% edge) | Denver Nuggets vs. Washington Wizards
+  3. Zeke Nnaji Under 7.5 POINTS (78% conf, 28.0% edge) | Denver Nuggets vs. Washington Wizards
+  4. Bam Adebayo Over 16.5 POINTS (78% conf, 28.0% edge) | Miami Heat vs. Oklahoma City Thunder
+
+
+Total VALUABLE picks today: 32

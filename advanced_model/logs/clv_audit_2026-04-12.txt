@@ -1,0 +1,1 @@
+total_live_picks=86, clv_populated=86, coverage_pct=100.0

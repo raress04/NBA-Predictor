@@ -2,61 +2,79 @@ NBA MODEL PREDICTIONS - 2026-01-03
 ============================================================
 
 
-MATCHUP: Minnesota Timberwolves vs. Miami Heat
-------------------------------
-  Bones Hyland         | POINTS   | Line  5.5 | Proj  8.8 | VALUABLE: Over (73% conf, 23.4% edge)
-  Norman Powell        | POINTS   | Line 23.5 | Proj 17.7 | VALUABLE: Under (78% conf, 27.8% edge)
-  Kel'el Ware          | POINTS   | Line 12.5 | Proj  9.7 | VALUABLE: Under (74% conf, 24.5% edge)
-  Kel'el Ware          | REBOUNDS | Line 10.5 | Proj  8.4 | VALUABLE: Under (78% conf, 35.5% edge)
-
-MATCHUP: Chicago Bulls vs. Charlotte Hornets
-------------------------------
-  Tre Jones            | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (78% conf, 31.2% edge)
-
 MATCHUP: Philadelphia 76ers vs. New York Knicks
 ------------------------------
-  Tyrese Maxey         | ASSISTS  | Line  7.5 | Proj  5.5 | VALUABLE: Under (78% conf, 29.6% edge)
-  Jared McCain         | POINTS   | Line  5.5 | Proj  9.7 | VALUABLE: Over (78% conf, 28.1% edge)
-  Jalen Brunson        | POINTS   | Line 28.5 | Proj 23.4 | VALUABLE: Under (72% conf, 22.1% edge)
-  Jalen Brunson        | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (78% conf, 31.1% edge)
+  Jared McCain         | POINTS   | Line  5.5 | Proj 10.0 | VALUABLE: Over (77% conf, 27.4% edge)
+  Jalen Brunson        | POINTS   | Line 28.5 | Proj 24.4 | VALUABLE: Under (74% conf, 23.7% edge)
+  Mitchell Robinson    | REBOUNDS | Line  9.5 | Proj  7.6 | VALUABLE: Under (78% conf, 28.9% edge)
+  PROJECTED TOTAL: 235.8 | O/U 235.5
 
 MATCHUP: Houston Rockets vs. Dallas Mavericks
 ------------------------------
-  Alperen Sengun       | POINTS   | Line 20.5 | Proj 16.1 | VALUABLE: Under (74% conf, 24.0% edge)
-
-MATCHUP: Atlanta Hawks vs. Toronto Raptors
-------------------------------
-  Jalen Johnson        | ASSISTS  | Line  9.5 | Proj  5.6 | VALUABLE: Under (78% conf, 44.2% edge)
-  Brandon Ingram       | POINTS   | Line 23.5 | Proj 18.8 | VALUABLE: Under (72% conf, 22.4% edge)
-  Scottie Barnes       | POINTS   | Line 19.5 | Proj 15.3 | VALUABLE: Under (72% conf, 22.3% edge)
-
-MATCHUP: Boston Celtics vs. LA Clippers
-------------------------------
-  Kawhi Leonard        | POINTS   | Line 28.5 | Proj 22.6 | VALUABLE: Under (76% conf, 26.2% edge)
-  James Harden         | POINTS   | Line 24.5 | Proj 19.4 | VALUABLE: Under (74% conf, 23.9% edge)
-
-MATCHUP: Golden State Warriors vs. Utah Jazz
-------------------------------
-  De'Anthony Melton    | POINTS   | Line  7.5 | Proj 12.2 | VALUABLE: Over (78% conf, 34.8% edge)
-  Keyonte George       | ASSISTS  | Line  6.5 | Proj  4.2 | VALUABLE: Under (78% conf, 35.0% edge)
-  Kevin Love           | POINTS   | Line  9.5 | Proj  6.2 | VALUABLE: Under (78% conf, 31.4% edge)
+  PROJECTED TOTAL: 219.5 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 33.6% edge)
+  -> SPREAD: Houston Rockets -7.5 VALUABLE: Cover (81% conf, 31.2% edge)
 
 MATCHUP: Portland Trail Blazers vs. San Antonio Spurs
 ------------------------------
-  Deni Avdija          | ASSISTS  | Line  8.5 | Proj  6.2 | VALUABLE: Under (78% conf, 30.4% edge)
+  Deni Avdija          | ASSISTS  | Line  8.5 | Proj  6.7 | VALUABLE: Under (78% conf, 31.4% edge)
+  PROJECTED TOTAL: 224.3 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (75% conf, 24.6% edge)
+
+MATCHUP: Boston Celtics vs. LA Clippers
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 28.5 | Proj 23.6 | VALUABLE: Under (78% conf, 27.7% edge)
+  James Harden         | POINTS   | Line 24.5 | Proj 20.6 | VALUABLE: Under (74% conf, 23.7% edge)
+  PROJECTED TOTAL: 223.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (75% conf, 25.4% edge)
+
+MATCHUP: Chicago Bulls vs. Charlotte Hornets
+------------------------------
+  Tre Jones            | ASSISTS  | Line  7.5 | Proj  6.0 | VALUABLE: Under (78% conf, 30.1% edge)
+  PROJECTED TOTAL: 222.0 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (77% conf, 27.5% edge)
+  -> SPREAD: Charlotte Hornets +1.5 VALUABLE: Cover (66% conf, 15.6% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Miami Heat
+------------------------------
+  Bones Hyland         | POINTS   | Line  5.5 | Proj  9.8 | VALUABLE: Over (76% conf, 25.6% edge)
+  Norman Powell        | POINTS   | Line 23.5 | Proj 19.1 | VALUABLE: Under (77% conf, 26.9% edge)
+  Kel'el Ware          | POINTS   | Line 12.5 | Proj 10.3 | VALUABLE: Under (72% conf, 22.1% edge)
+  Kel'el Ware          | REBOUNDS | Line 10.5 | Proj  7.9 | VALUABLE: Under (78% conf, 35.1% edge)
+  PROJECTED TOTAL: 237.5 | O/U 235.5
+  -> SPREAD: Minnesota Timberwolves -2.5 VALUABLE: Cover (79% conf, 29.2% edge)
+
+MATCHUP: Atlanta Hawks vs. Toronto Raptors
+------------------------------
+  Jalen Johnson        | ASSISTS  | Line  9.5 | Proj  6.1 | VALUABLE: Under (78% conf, 43.8% edge)
+  Brandon Ingram       | POINTS   | Line 23.5 | Proj 19.8 | VALUABLE: Under (75% conf, 24.7% edge)
+  Scottie Barnes       | POINTS   | Line 19.5 | Proj 16.0 | VALUABLE: Under (75% conf, 25.5% edge)
+  Scottie Barnes       | REBOUNDS | Line  9.5 | Proj  7.3 | VALUABLE: Under (78% conf, 32.4% edge)
+  PROJECTED TOTAL: 228.8 | O/U 235.5
+  -> SPREAD: Toronto Raptors -5.5 VALUABLE: Cover (77% conf, 27.5% edge)
+
+MATCHUP: Golden State Warriors vs. Utah Jazz
+------------------------------
+  De'Anthony Melton    | POINTS   | Line  7.5 | Proj 12.9 | VALUABLE: Over (78% conf, 32.8% edge)
+  Keyonte George       | ASSISTS  | Line  6.5 | Proj  4.7 | VALUABLE: Under (78% conf, 35.4% edge)
+  Kevin Love           | POINTS   | Line  9.5 | Proj  6.7 | VALUABLE: Under (78% conf, 31.0% edge)
+  Kevin Love           | REBOUNDS | Line  7.5 | Proj  5.5 | VALUABLE: Under (78% conf, 33.5% edge)
+  PROJECTED TOTAL: 243.0 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (67% conf, 16.9% edge)
+  -> SPREAD: Golden State Warriors -12.5 VALUABLE: Cover (88% conf, 38.1% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
   1. Deni Avdija Under 8.5 ASSISTS (78% conf, 29.9% edge) | Portland Trail Blazers vs. San Antonio Spurs
   2. Jalen Johnson Under 9.5 ASSISTS (78% conf, 28.7% edge) | Atlanta Hawks vs. Toronto Raptors
-  3. Jalen Brunson Under 7.5 ASSISTS (78% conf, 28.2% edge) | Philadelphia 76ers vs. New York Knicks
+  3. De'Anthony Melton Over 7.5 POINTS (78% conf, 28.0% edge) | Golden State Warriors vs. Utah Jazz
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
   1. Deni Avdija Under 8.5 ASSISTS (78% conf, 29.9% edge) | Portland Trail Blazers vs. San Antonio Spurs
   2. Jalen Johnson Under 9.5 ASSISTS (78% conf, 28.7% edge) | Atlanta Hawks vs. Toronto Raptors
-  3. Jalen Brunson Under 7.5 ASSISTS (78% conf, 28.2% edge) | Philadelphia 76ers vs. New York Knicks
-  4. Jared McCain Over 5.5 POINTS (78% conf, 28.0% edge) | Philadelphia 76ers vs. New York Knicks
+  3. De'Anthony Melton Over 7.5 POINTS (78% conf, 28.0% edge) | Golden State Warriors vs. Utah Jazz
+  4. Kevin Love Under 9.5 POINTS (78% conf, 28.0% edge) | Golden State Warriors vs. Utah Jazz
 
 
-Total VALUABLE picks today: 19
+Total VALUABLE picks today: 29

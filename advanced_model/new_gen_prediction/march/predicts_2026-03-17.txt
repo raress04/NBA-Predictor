@@ -2,56 +2,78 @@ NBA MODEL PREDICTIONS - 2026-03-17
 ============================================================
 
 
-MATCHUP: Detroit Pistons vs. Washington Wizards
+MATCHUP: Cleveland Cavaliers vs. Milwaukee Bucks
 ------------------------------
-  Jalen Duren          | POINTS   | Line 21.5 | Proj 15.0 | VALUABLE: Under (77% conf, 35.3% edge)
-  Jalen Duren          | REBOUNDS | Line 11.5 | Proj  9.0 | VALUABLE: Under (75% conf, 35.6% edge)
-  Kevin Huerter        | POINTS   | Line  5.5 | Proj 10.4 | VALUABLE: Over (78% conf, 37.0% edge)
-  Cade Cunningham      | ASSISTS  | Line 10.5 | Proj  8.1 | VALUABLE: Under (77% conf, 30.8% edge)
-  Anthony Gill         | POINTS   | Line  9.5 | Proj  6.3 | VALUABLE: Under (78% conf, 39.1% edge)
-
-MATCHUP: Charlotte Hornets vs. Miami Heat
-------------------------------
-  LaMelo Ball          | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (77% conf, 30.9% edge)
-  Kel'el Ware          | REBOUNDS | Line 11.5 | Proj  8.7 | VALUABLE: Under (76% conf, 36.5% edge)
-
-MATCHUP: New York Knicks vs. Indiana Pacers
-------------------------------
-  Ivica Zubac          | POINTS   | Line 11.5 | Proj 17.6 | VALUABLE: Over (78% conf, 37.9% edge)
-  Kobe Brown           | POINTS   | Line  8.5 | Proj  6.1 | VALUABLE: Under (76% conf, 33.9% edge)
-
-MATCHUP: Sacramento Kings vs. San Antonio Spurs
-------------------------------
-  Victor Wembanyama    | REBOUNDS | Line 10.5 | Proj  8.1 | VALUABLE: Under (74% conf, 34.6% edge)
+  James Harden         | POINTS   | Line 19.5 | Proj 24.7 | VALUABLE: Over (73% conf, 23.3% edge)
+  Jaylon Tyson         | POINTS   | Line  7.5 | Proj 12.4 | VALUABLE: Over (78% conf, 29.7% edge)
+  Ryan Rollins         | POINTS   | Line 14.5 | Proj 19.3 | VALUABLE: Over (74% conf, 24.2% edge)
+  PROJECTED TOTAL: 234.7 | O/U 233.5
+  -> SPREAD: Cleveland Cavaliers -12.5 VALUABLE: Cover (95% conf, 45.0% edge)
 
 MATCHUP: Minnesota Timberwolves vs. Phoenix Suns
 ------------------------------
+  PROJECTED TOTAL: 212.8 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (78% conf, 38.6% edge)
+  -> SPREAD: Minnesota Timberwolves -3.5 VALUABLE: Cover (67% conf, 17.1% edge)
 
-MATCHUP: Denver Nuggets vs. Philadelphia 76ers
+MATCHUP: Detroit Pistons vs. Washington Wizards
 ------------------------------
-
-MATCHUP: Cleveland Cavaliers vs. Milwaukee Bucks
-------------------------------
-  Jaylon Tyson         | POINTS   | Line  7.5 | Proj 12.4 | VALUABLE: Over (78% conf, 34.9% edge)
-  Bobby Portis         | POINTS   | Line 13.5 | Proj 18.6 | VALUABLE: Over (74% conf, 29.4% edge)
-  Ryan Rollins         | POINTS   | Line 14.5 | Proj 19.8 | VALUABLE: Over (74% conf, 30.3% edge)
-  Jericho Sims         | REBOUNDS | Line  7.5 | Proj  5.5 | VALUABLE: Under (74% conf, 34.5% edge)
+  Jalen Duren          | POINTS   | Line 21.5 | Proj 15.8 | VALUABLE: Under (78% conf, 36.4% edge)
+  Jalen Duren          | REBOUNDS | Line 11.5 | Proj  9.4 | VALUABLE: Under (78% conf, 28.9% edge)
+  Kevin Huerter        | POINTS   | Line  5.5 | Proj 10.7 | VALUABLE: Over (78% conf, 33.0% edge)
+  Cade Cunningham      | ASSISTS  | Line 10.5 | Proj  8.2 | VALUABLE: Under (78% conf, 34.0% edge)
+  Anthony Gill         | POINTS   | Line  9.5 | Proj  6.5 | VALUABLE: Under (78% conf, 34.3% edge)
+  PROJECTED TOTAL: 232.5 | O/U 233.5
+  -> SPREAD: Detroit Pistons -19.5 VALUABLE: Cover (99% conf, 49.1% edge)
 
 MATCHUP: Oklahoma City Thunder vs. Orlando Magic
 ------------------------------
+  Ajay Mitchell        | POINTS   | Line 14.5 | Proj 11.0 | VALUABLE: Under (78% conf, 28.6% edge)
+  PROJECTED TOTAL: 230.0 | O/U 233.5
+  -> SPREAD: Oklahoma City Thunder -10.0 VALUABLE: Cover (80% conf, 30.4% edge)
+
+MATCHUP: Sacramento Kings vs. San Antonio Spurs
+------------------------------
+  Doug McDermott       | POINTS   | Line  7.5 | Proj  5.5 | VALUABLE: Under (77% conf, 26.7% edge)
+  Precious Achiuwa     | POINTS   | Line 13.5 | Proj 11.0 | VALUABLE: Under (73% conf, 23.5% edge)
+  PROJECTED TOTAL: 232.2 | O/U 233.5
+  -> SPREAD: San Antonio Spurs -13.5 VALUABLE: Cover (76% conf, 25.9% edge)
+
+MATCHUP: Charlotte Hornets vs. Miami Heat
+------------------------------
+  LaMelo Ball          | POINTS   | Line 20.5 | Proj 16.3 | VALUABLE: Under (77% conf, 27.2% edge)
+  LaMelo Ball          | ASSISTS  | Line  7.5 | Proj  5.6 | VALUABLE: Under (78% conf, 33.3% edge)
+  Kon Knueppel         | POINTS   | Line 19.5 | Proj 15.0 | VALUABLE: Under (78% conf, 28.8% edge)
+  Brandon Miller       | POINTS   | Line 21.5 | Proj 16.8 | VALUABLE: Under (78% conf, 28.7% edge)
+  Kel'el Ware          | POINTS   | Line 13.5 | Proj 10.5 | VALUABLE: Under (75% conf, 25.1% edge)
+  Kel'el Ware          | REBOUNDS | Line 11.5 | Proj  9.2 | VALUABLE: Under (78% conf, 30.6% edge)
+  PROJECTED TOTAL: 227.2 | O/U 233.5
+
+MATCHUP: Denver Nuggets vs. Philadelphia 76ers
+------------------------------
+  PROJECTED TOTAL: 238.3 | O/U 233.5
+  -> SPREAD: Denver Nuggets -15.5 VALUABLE: Cover (98% conf, 47.8% edge)
+
+MATCHUP: New York Knicks vs. Indiana Pacers
+------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 11.5 | Proj  9.4 | VALUABLE: Under (78% conf, 28.6% edge)
+  Ivica Zubac          | POINTS   | Line 11.5 | Proj 17.4 | VALUABLE: Over (78% conf, 34.6% edge)
+  Kobe Brown           | POINTS   | Line  8.5 | Proj  6.4 | VALUABLE: Under (77% conf, 27.1% edge)
+  PROJECTED TOTAL: 239.3 | O/U 233.5
+  -> SPREAD: New York Knicks -14.0 VALUABLE: Cover (89% conf, 39.6% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Kevin Huerter Over 5.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
-  2. Anthony Gill Under 9.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
-  3. Ivica Zubac Over 11.5 POINTS (78% conf, 28.0% edge) | New York Knicks vs. Indiana Pacers
+  1. Jaylon Tyson Over 7.5 POINTS (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  2. Game Total Under 233.5 TOTAL (78% conf, 28.0% edge) | Minnesota Timberwolves vs. Phoenix Suns
+  3. Jalen Duren Under 21.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Kevin Huerter Over 5.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
-  2. Anthony Gill Under 9.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
-  3. Ivica Zubac Over 11.5 POINTS (78% conf, 28.0% edge) | New York Knicks vs. Indiana Pacers
-  4. Jaylon Tyson Over 7.5 POINTS (78% conf, 27.8% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  1. Jaylon Tyson Over 7.5 POINTS (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  2. Game Total Under 233.5 TOTAL (78% conf, 28.0% edge) | Minnesota Timberwolves vs. Phoenix Suns
+  3. Jalen Duren Under 21.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
+  4. Jalen Duren Under 11.5 REBOUNDS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
 
 
-Total VALUABLE picks today: 14
+Total VALUABLE picks today: 28

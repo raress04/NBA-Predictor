@@ -14,7 +14,7 @@ from simulator.matrix_builder import get_player_stats_matrix, get_team_pace
 from simulator.markov_engine import MarkovSimulator, compute_posterior_confidence
 from simulator.synergy_tracker import compute_matchup_multiplier
 from simulator.parlay_builder import (
-    EDGE_THRESHOLDS, compute_prop_edge,
+    EDGE_THRESHOLDS, compute_prop_edge, compute_total_edge, compute_spread_edge,
     MAX_PROP_CONFIDENCE, BANNED_COMBINATIONS
 )
 from config.settings import PROJECTION_TIERS, TIERED_BIAS_CORRECTIONS, get_prior
@@ -61,11 +61,17 @@ BLOWOUT_THRESHOLD = 11.5   # spread magnitude triggering blowout shift
 
 
 def get_historical_lines(date_str):
-    """Returns { (player, CAT): {'line': X, 'over_odds': Y, 'under_odds': Z} }"""
+    """
+    Returns:
+      { (player_name, CAT): {'line': X, 'over_odds': Y, 'under_odds': Z} }
+    Player props keyed by (player_name, 'POINTS'/'REBOUNDS'/'ASSISTS').
+    TOTALs keyed as  ('Game Total', 'TOTAL').
+    SPREADs keyed as (team_name,    'SPREAD').
+    """
     conn = sqlite3.connect(ODDS_DB)
     try:
         df = pd.read_sql_query("""
-            SELECT player_name, stat_category, line,
+            SELECT event_id, player_name, stat_category, line,
                    COALESCE(over_odds,  1.909) AS over_odds,
                    COALESCE(under_odds, 1.909) AS under_odds
             FROM historical_odds_cache
@@ -79,12 +85,20 @@ def get_historical_lines(date_str):
     lines = {}
     for _, row in df.iterrows():
         cat = row['stat_category'].upper()
-        if cat in ('POINTS', 'REBOUNDS', 'ASSISTS'):
-            lines[(row['player_name'], cat)] = {
-                'line':       float(row['line']),
-                'over_odds':  float(row['over_odds']),
-                'under_odds': float(row['under_odds']),
-            }
+        payload = {
+            'line':       float(row['line']),
+            'over_odds':  float(row['over_odds']),
+            'under_odds': float(row['under_odds']),
+        }
+        # Use (player_name, cat) as key, but if it's TOTAL, make it unique in the dict
+        # so process_retroactive_game can find it without overwriting other totals
+        unique_key = (row['player_name'], cat)
+        if cat == 'TOTAL' and row['event_id']:
+             unique_key = (f"TOTAL_{row['event_id']}", cat) # Or just the matchup
+             # Also keep the player_name in the payload for easier identification
+             payload['original_name'] = row['player_name']
+        
+        lines[unique_key] = payload
     return lines
 
 # ── Injury Matrix Helpers (C.2 / C.3 / C.4) ──────────────────────────────────
@@ -360,8 +374,12 @@ def process_retroactive_game(gid, iso_date, date_str, t1_id, t1_name,
         sim     = MarkovSimulator(rosters[t1_id], rosters[t2_id])
         N_SIMS  = 5000  # A.2: aligned with live_scraper.py (was 1000)
         agg     = {}
+        home_scores_list = []
+        away_scores_list = []
         for _ in range(N_SIMS):
             r = sim.run_full_game(pace=pace)
+            home_scores_list.append(r['home_score'])
+            away_scores_list.append(r['away_score'])
             for pn, ps in r['player_stats'].items():
                 if pn not in agg:
                     agg[pn] = {'POINTS': [], 'REBOUNDS': [], 'ASSISTS': []}
@@ -373,6 +391,12 @@ def process_retroactive_game(gid, iso_date, date_str, t1_id, t1_name,
         cat_col  = {'POINTS': 'pts', 'REBOUNDS': 'reb', 'ASSISTS': 'ast'}
         stat_key = {'POINTS': 'points', 'REBOUNDS': 'rebounds', 'ASSISTS': 'assists'}
         matchup  = f"{t1_name} vs. {t2_name}"
+
+        # ── Compute actual team scores from box_scores (for outcomes DB) ──────
+        t1_actual_pts = int(g_data[g_data['team_id'] == t1_id]['pts'].sum())
+        t2_actual_pts = int(g_data[g_data['team_id'] == t2_id]['pts'].sum())
+        actual_total  = t1_actual_pts + t2_actual_pts
+        actual_margin = t1_actual_pts - t2_actual_pts  # positive = t1 won
 
         for tid in [t1_id, t2_id]:
             for _, row in g_data[g_data['team_id'] == tid].iterrows():
@@ -453,6 +477,100 @@ def process_retroactive_game(gid, iso_date, date_str, t1_id, t1_name,
                         'under_odds': line_data['under_odds'],
                         'matchup':    matchup,
                     })
+
+        # ── TOTAL evaluation ──────────────────────────────────────────────────
+        total_line_data = None
+        for (p_name, p_cat), p_payload in lines.items():
+            if p_cat == 'TOTAL':
+                # Check original_name from payload OR the key itself
+                orig = p_payload.get('original_name', p_name)
+                if (t1_name in orig and t2_name in orig) or orig == 'Game Total':
+                    total_line_data = p_payload
+                    break
+        if total_line_data and home_scores_list:
+            t_edge = compute_total_edge(home_scores_list, away_scores_list,
+                                        total_line_data['line'])
+            proj_total = sum(home_scores_list) / N_SIMS + sum(away_scores_list) / N_SIMS
+            payload['report'].append(
+                f"  PROJECTED TOTAL: {proj_total:.1f} | O/U {total_line_data['line']}"
+            )
+            # Store for outcome tracking (actual_total vs line)
+            payload['rows'].append((
+                iso_date, 'Game Total', 'TOTAL',
+                round(proj_total, 2), total_line_data['line'],
+                actual_total,
+                total_line_data['over_odds'], total_line_data['under_odds']
+            ))
+            if t_edge['valuable'] and t_edge['direction']:
+                direction = t_edge['direction']
+                t_prior  = get_prior('TOTAL', direction)
+                t_target = (t_edge['over_count'] if direction == 'Over'
+                            else t_edge['under_count'])
+                t_post, _ = compute_posterior_confidence(
+                    t_target, N_SIMS, prior_mean=t_prior, prior_strength=10)
+                conf = min(t_post * 100.0, MAX_PROP_CONFIDENCE)
+                edge_pct = abs(t_edge['edge_pct'])
+                payload['report'].append(
+                    f"  -> GAME TOTAL: O/U {total_line_data['line']} "
+                    f"VALUABLE: {direction} ({conf:.0f}% conf, {edge_pct:.1f}% edge)"
+                )
+                payload['val_count'] += 1
+                payload['picks'].append({
+                    'player':    'Game Total',
+                    'cat':       'TOTAL',
+                    'direction': direction,
+                    'line':      total_line_data['line'],
+                    'proj':      round(proj_total, 2),
+                    'conf':      conf,
+                    'edge_pct':  edge_pct,
+                    'over_odds': total_line_data['over_odds'],
+                    'under_odds':total_line_data['under_odds'],
+                    'matchup':   matchup,
+                })
+
+        # ── SPREAD evaluation ─────────────────────────────────────────────────
+        # t1 is treated as 'home' (first team in the matchup tuple)
+        for is_home, tid, tname in [(True, t1_id, t1_name), (False, t2_id, t2_name)]:
+            spread_data = lines.get((tname, 'SPREAD'))
+            if not spread_data or not home_scores_list:
+                continue
+            s_edge = compute_spread_edge(
+                home_scores_list, away_scores_list,
+                spread_data['line'], is_home=is_home)
+            proj_margin = s_edge['projected_margin']
+            # Store ACTUAL margin (not binary) so analysis can derive cover result
+            # from the margin. Cover = actual_margin > spread_line.
+            # For home team: margin = home - away. For away: margin = away - home.
+            actual_side_margin = actual_margin if is_home else -actual_margin
+            payload['rows'].append((
+                iso_date, tname, 'SPREAD',
+                round(proj_margin, 2), spread_data['line'],
+                round(actual_side_margin, 1),   # actual margin, not binary
+                spread_data['over_odds'], spread_data['under_odds']
+            ))
+            s_prior  = get_prior('SPREAD', 'COVER')
+            s_post, _ = compute_posterior_confidence(
+                s_edge['over_count'], N_SIMS, prior_mean=s_prior, prior_strength=10)
+            conf = s_post * 100.0
+            edge_pct = abs(s_edge['edge_pct'])
+            if conf >= EDGE_THRESHOLDS['spreads']['min_prob'] and edge_pct >= EDGE_THRESHOLDS['spreads']['min_edge']:
+                payload['report'].append(
+                    f"  -> SPREAD: {tname} {spread_data['line']:+.1f} "
+                    f"VALUABLE: Cover ({conf:.0f}% conf, {edge_pct:.1f}% edge)"
+                )
+                payload['val_count'] += 1
+                payload['picks'].append({
+                    'player':    tname,
+                    'cat':       'SPREAD',
+                    'direction': 'Cover',
+                    'line':      spread_data['line'],
+                    'proj':      round(proj_margin, 2),
+                    'conf':      conf,
+                    'edge_pct':  edge_pct,
+                    'over_odds': spread_data['over_odds'],
+                    'under_odds':spread_data['under_odds'],
+                    'matchup':   matchup,
+                })
 
     payload['logs'] = buf.getvalue()
     return payload
@@ -555,7 +673,8 @@ def run_retroactive_day(date_str):
     conn_tracker = sqlite3.connect(TRACKER_DB, timeout=30)
     conn_tracker.execute("PRAGMA journal_mode=WAL")
 
-    with ProcessPoolExecutor(max_workers=min(os.cpu_count(), 8)) as executor:
+    # Use 16 workers instead of 8, there can be max 15 games per night which is optimal
+    with ProcessPoolExecutor(max_workers=min(os.cpu_count(), 16)) as executor:
         futures = {executor.submit(process_retroactive_game, *t): t
                    for t in game_tasks}
         for future in as_completed(futures):

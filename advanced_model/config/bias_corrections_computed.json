@@ -1,64 +1,59 @@
 {
-  "computed_at": "2026-03-27",
-  "source_db": "retrospective_db.db",
-  "source_n_total": 24250,
+  "computed_at": "2026-04-17",
   "corrections": {
     "POINTS_bench": {
-      "correction": 0.04,
-      "n": 2825,
-      "mean_bias": 0.044,
-      "std": 4.839
+      "correction": 0.63,
+      "n": 3811,
+      "mean_bias": 0.631,
+      "std": 5.001
     },
     "POINTS_starter": {
-      "correction": -0.98,
-      "n": 5690,
-      "mean_bias": -0.978,
+      "correction": 0.28,
+      "n": 5889,
+      "mean_bias": 0.28,
       "std": 6.77
     },
     "REBOUNDS_bench": {
-      "correction": 0.49,
-      "n": 4799,
-      "mean_bias": 0.494,
-      "std": 2.053
+      "correction": 0.22,
+      "n": 4654,
+      "mean_bias": 0.219,
+      "std": 2.03
     },
     "REBOUNDS_starter": {
-      "correction": 0.79,
-      "n": 3689,
-      "mean_bias": 0.789,
-      "std": 3.034
+      "correction": 0.18,
+      "n": 5024,
+      "mean_bias": 0.181,
+      "std": 2.92
     },
     "ASSISTS_bench": {
-      "correction": -0.1,
-      "n": 4536,
-      "mean_bias": -0.104,
-      "std": 1.443
+      "correction": 0.13,
+      "n": 5864,
+      "mean_bias": 0.127,
+      "std": 1.52
     },
     "ASSISTS_starter": {
-      "correction": -0.19,
-      "n": 3794,
-      "mean_bias": -0.193,
-      "std": 2.38
-    },
-    "TOTAL_high": {
-      "correction": 10.0,
-      "n": 0,
-      "mean_bias": null,
-      "std": null,
-      "note": "TOTAL_CORRECTION_FALLBACK=+10.0 \u2014 no TOTAL rows in retroactive dataset. Injury data approximation per Stage 3 spec."
-    },
-    "TOTAL_medium": {
-      "correction": 10.0,
-      "n": 0,
-      "mean_bias": null,
-      "std": null,
-      "note": "TOTAL_CORRECTION_FALLBACK=+10.0 \u2014 no TOTAL rows in retroactive dataset. Injury data approximation per Stage 3 spec."
+      "correction": 0.39,
+      "n": 3635,
+      "mean_bias": 0.394,
+      "std": 2.46
     },
     "TOTAL_low": {
       "correction": 10.0,
-      "n": 0,
+      "n": 10,
       "mean_bias": null,
-      "std": null,
-      "note": "TOTAL_CORRECTION_FALLBACK=+10.0 \u2014 no TOTAL rows in retroactive dataset. Injury data approximation per Stage 3 spec."
+      "note": "TOTAL_CORRECTION_FALLBACK \u2014 injury data approximation"
+    },
+    "TOTAL_medium": {
+      "correction": 3.39,
+      "n": 41,
+      "mean_bias": 3.395,
+      "note": "Dynamic computation based on 41 games"
+    },
+    "TOTAL_high": {
+      "correction": -5.51,
+      "n": 32,
+      "mean_bias": -5.509,
+      "note": "Dynamic computation based on 32 games"
     }
   }
 }

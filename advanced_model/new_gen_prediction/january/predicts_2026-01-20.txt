@@ -1,0 +1,78 @@
+NBA MODEL PREDICTIONS - 2026-01-20
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. Denver Nuggets
+------------------------------
+  Rui Hachimura        | POINTS   | Line  8.5 | Proj 12.5 | VALUABLE: Over (74% conf, 24.1% edge)
+  Jamal Murray         | POINTS   | Line 26.5 | Proj 32.5 | VALUABLE: Over (75% conf, 25.0% edge)
+  Jalen Pickett        | POINTS   | Line  8.5 | Proj  6.2 | VALUABLE: Under (78% conf, 28.8% edge)
+  PROJECTED TOTAL: 237.3 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (78% conf, 30.4% edge)
+  -> SPREAD: Los Angeles Lakers -3.5 VALUABLE: Cover (79% conf, 28.9% edge)
+
+MATCHUP: San Antonio Spurs vs. Houston Rockets
+------------------------------
+  Alperen Sengun       | REBOUNDS | Line  9.5 | Proj  7.1 | VALUABLE: Under (78% conf, 34.5% edge)
+  PROJECTED TOTAL: 234.1 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (75% conf, 25.0% edge)
+  -> SPREAD: San Antonio Spurs +4.5 VALUABLE: Cover (74% conf, 24.2% edge)
+
+MATCHUP: Philadelphia 76ers vs. Phoenix Suns
+------------------------------
+  Adem Bona            | REBOUNDS | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 34.2% edge)
+  Jalen Green          | POINTS   | Line 12.5 | Proj 17.7 | VALUABLE: Over (77% conf, 27.4% edge)
+  PROJECTED TOTAL: 229.9 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (66% conf, 15.9% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 236.1 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (77% conf, 27.5% edge)
+  -> SPREAD: Minnesota Timberwolves -12.5 VALUABLE: Cover (98% conf, 48.0% edge)
+
+MATCHUP: Miami Heat vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 235.0 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (76% conf, 26.1% edge)
+  -> SPREAD: Miami Heat -4.5 VALUABLE: Cover (70% conf, 19.8% edge)
+
+MATCHUP: Toronto Raptors vs. Golden State Warriors
+------------------------------
+  Scottie Barnes       | POINTS   | Line 20.5 | Proj 16.9 | VALUABLE: Under (76% conf, 25.8% edge)
+  Stephen Curry        | POINTS   | Line 28.5 | Proj 19.8 | VALUABLE: Under (78% conf, 39.3% edge)
+  Stephen Curry        | ASSISTS  | Line  5.5 | Proj  2.9 | VALUABLE: Under (78% conf, 43.3% edge)
+  Brandin Podziemski   | POINTS   | Line 13.5 | Proj 10.5 | VALUABLE: Under (78% conf, 27.6% edge)
+  Quinten Post         | POINTS   | Line  8.5 | Proj  5.7 | VALUABLE: Under (78% conf, 32.8% edge)
+  Draymond Green       | POINTS   | Line  9.5 | Proj  5.9 | VALUABLE: Under (78% conf, 37.3% edge)
+  Draymond Green       | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (78% conf, 36.7% edge)
+  De'Anthony Melton    | POINTS   | Line 12.5 | Proj  9.4 | VALUABLE: Under (78% conf, 30.1% edge)
+  Moses Moody          | POINTS   | Line 11.5 | Proj  9.2 | VALUABLE: Under (75% conf, 24.8% edge)
+  PROJECTED TOTAL: 211.3 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Under (74% conf, 24.2% edge)
+
+MATCHUP: Chicago Bulls vs. LA Clippers
+------------------------------
+  Jalen Smith          | POINTS   | Line 12.5 | Proj 10.1 | VALUABLE: Under (75% conf, 24.9% edge)
+  Jalen Smith          | REBOUNDS | Line  9.5 | Proj  5.8 | VALUABLE: Under (78% conf, 44.4% edge)
+  Ivica Zubac          | REBOUNDS | Line 11.5 | Proj  9.7 | VALUABLE: Under (76% conf, 26.2% edge)
+  Cam Christie         | POINTS   | Line  6.5 | Proj  4.0 | VALUABLE: Under (78% conf, 36.0% edge)
+  PROJECTED TOTAL: 232.3 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (72% conf, 21.7% edge)
+  -> SPREAD: Chicago Bulls -2.5 VALUABLE: Cover (69% conf, 19.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Alperen Sengun Under 9.5 REBOUNDS (78% conf, 28.0% edge) | San Antonio Spurs vs. Houston Rockets
+  2. Adem Bona Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Phoenix Suns
+  3. Jalen Smith Under 9.5 REBOUNDS (78% conf, 28.0% edge) | Chicago Bulls vs. LA Clippers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Alperen Sengun Under 9.5 REBOUNDS (78% conf, 28.0% edge) | San Antonio Spurs vs. Houston Rockets
+  2. Adem Bona Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Phoenix Suns
+  3. Jalen Smith Under 9.5 REBOUNDS (78% conf, 28.0% edge) | Chicago Bulls vs. LA Clippers
+  4. De'Anthony Melton Under 12.5 POINTS (78% conf, 25.6% edge) | Toronto Raptors vs. Golden State Warriors
+
+
+Total VALUABLE picks today: 31

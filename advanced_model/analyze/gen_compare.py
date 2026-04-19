@@ -1,48 +1,26 @@
 """
 ==============================================================
-  NBA MODEL — Dual Retrospective Analysis
+  NBA MODEL — Dual Retrospective Analysis (Consolidated)
   Writes: newGenPredictions.txt  &  oldGenPredictions.txt
+  Includes support for POINTS, REBOUNDS, ASSISTS, TOTAL, SPREAD.
 ==============================================================
 """
 
 import sqlite3
 import os
 import sys
+import pandas as pd
 from datetime import datetime
 
-MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_DIR = os.path.abspath(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 NEW_DB    = os.path.join(MODEL_DIR, 'database', 'retrospective_db.db')
 OLD_DB    = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
-OUT_DIR   = MODEL_DIR   # write alongside other txt files at model root
+OUT_DIR   = os.path.join(MODEL_DIR, 'analyze')
 
 NEW_OUT   = os.path.join(OUT_DIR, 'newGenPredictions.txt')
 OLD_OUT   = os.path.join(OUT_DIR, 'oldGenPredictions.txt')
 COMP_OUT  = os.path.join(OUT_DIR, 'model_comparison.txt')
-
-# ── Query ─────────────────────────────────────────────────────────────────
-NEW_QUERY = """
-    SELECT game_date, player, category,
-           projected_value, bookmaker_line, actual_value,
-           COALESCE(over_odds,  1.909) AS over_odds,
-           COALESCE(under_odds, 1.909) AS under_odds
-    FROM projection_outcomes
-    WHERE actual_value   IS NOT NULL
-      AND projected_value IS NOT NULL
-      AND bookmaker_line  IS NOT NULL
-"""
-
-OLD_QUERY = """
-    SELECT game_date, player, category,
-           projected_value, bookmaker_line, actual_value,
-           1.909 AS over_odds,
-           1.909 AS under_odds
-    FROM projection_outcomes
-    WHERE actual_value   IS NOT NULL
-      AND projected_value IS NOT NULL
-      AND bookmaker_line  IS NOT NULL
-"""
-
 
 def analyse(rows, label):
     """Return stats dict + formatted report string for a set of rows."""
@@ -50,27 +28,51 @@ def analyse(rows, label):
     if total == 0:
         return None, f"[-] No data found for {label}\n"
 
-    by_cat   = {'POINTS': [], 'REBOUNDS': [], 'ASSISTS': []}
+    # stats holders
+    by_cat   = {
+        'POINTS': [], 'REBOUNDS': [], 'ASSISTS': [], 
+        'TOTAL': [], 'SPREAD': []
+    }
     by_month = {}
     mae_sum = bias_sum = ev_sum = 0.0
     hits = 0
 
     for date, player, cat, proj, line, actual, ov_odds, un_odds in rows:
+        if proj is None or line is None or actual is None:
+            continue
+
+        # Basic MAE/Bias
         error = abs(actual - proj)
         mae_sum  += error
         bias_sum += (actual - proj)
 
-        proj_over   = proj   > line
-        actual_over = actual > line
-        hit = int(proj_over == actual_over)
+        # Hit Logic
+        hit = 0
+        if cat == 'SPREAD':
+            # actual_value is now the point margin (positive = covered)
+            # Cover = actual margin beats the spread line
+            hit = int(actual > line)
+        else:
+            # For stats and TOTAL, use Over/Under logic
+            proj_over = proj > line
+            actual_over = actual > line
+            if proj_over == actual_over:
+                hit = 1
+        
         hits += hit
 
-        odds = ov_odds if proj_over else un_odds
-        odds = odds if (odds and odds > 1) else 1.909
+        # EV calculation (assuming standard odds if missing)
+        odds = ov_odds if (cat != 'SPREAD' and proj > line) else un_odds
+        # If it's spread, we don't have direction easily from the SQL without more columns,
+        # but let's assume we picked the side that the model chose.
+        # For simplicity, 1.909 default odds
+        if not odds or odds < 1:
+            odds = 1.909
+        
         ev = hit * (odds - 1) - (1 - hit)
         ev_sum += ev
 
-        if isinstance(cat, str) and cat in by_cat:
+        if cat in by_cat:
             by_cat[cat].append((error, hit, ev, actual - proj))
 
         month = str(date)[:7]
@@ -80,12 +82,17 @@ def analyse(rows, label):
         by_month[month]['hits'] += hit
         by_month[month]['n']    += 1
 
-    mae   = mae_sum  / total
-    bias  = bias_sum / total
-    hr    = hits     / total * 100
-    roi   = ev_sum   / total * 100
+    # Overall Metrics
+    final_n = sum(len(v) for v in by_cat.values())
+    if final_n == 0: 
+        return None, "[-] Logic error: 0 rows survived filtering."
 
-    stats = dict(total=total, mae=mae, bias=bias, hr=hr,
+    mae   = mae_sum  / final_n
+    bias  = bias_sum / final_n
+    hr    = hits     / final_n * 100
+    roi   = ev_sum   / final_n * 100
+
+    stats = dict(total=final_n, mae=mae, bias=bias, hr=hr,
                  ev=ev_sum, roi=roi, by_cat=by_cat, by_month=by_month)
 
     sep = "=" * 64
@@ -94,17 +101,18 @@ def analyse(rows, label):
         f"  {label}",
         f"  Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
         sep,
-        f"  Total projections  : {total:,}",
-        f"  Overall MAE        : {mae:.3f} stats/game",
-        f"  Average Bias       : {bias:+.3f}  (+ = model under-predicted)",
-        f"  Hit Rate           : {hr:.1f}%  ({hits:,}/{total:,})",
+        f"  Total projections  : {final_n:,}",
+        f"  Overall MAE        : {mae:.3f} units",
+        f"  Average Bias       : {bias:+.3f} (+ = under-projected)",
+        f"  Hit Rate           : {hr:.1f}%  ({hits:,}/{final_n:,})",
         f"  Cumulative EV      : {ev_sum:+.2f} units",
         f"  ROI per pick       : {roi:+.2f}%",
         "",
         f"  {'CATEGORY':<12} {'N':>7} {'MAE':>7} {'BIAS':>7} {'HIT%':>7} {'EV/pick':>9}",
         "  " + "-" * 55,
     ]
-    for cat, data in by_cat.items():
+    for cat in ['POINTS', 'REBOUNDS', 'ASSISTS', 'TOTAL', 'SPREAD']:
+        data = by_cat[cat]
         if not data:
             continue
         n      = len(data)
@@ -137,6 +145,7 @@ def compare(new_s, old_s):
     """Return a side-by-side comparison block."""
     sep = "=" * 64
     lines = [
+        "",
         sep,
         "  MODEL COMPARISON  —  New Gen  vs.  Old Gen",
         sep,
@@ -145,11 +154,11 @@ def compare(new_s, old_s):
     ]
     metrics = [
         ("Total Projections",    'total', "{:,.0f}",  False),
-        ("MAE (lower is better)",'mae',   "{:.3f}",   True),   # True = lower is better
-        ("Bias",                 'bias',  "{:+.3f}",  False),
+        ("MAE (lower better)",   'mae',   "{:.3f}",   True),
+        ("Average Bias",         'bias',  "{:+.3f}",  False),
         ("Hit Rate (%)",         'hr',    "{:.1f}%",  False),
         ("ROI per Pick (%)",     'roi',   "{:+.2f}%", False),
-        ("Cumulative EV",        'ev',    "{:+.2f}",  False),
+        ("Cumulative EV (Units)",'ev',    "{:+.2f}",  False),
     ]
     for name, key, fmt, lower_better in metrics:
         nv = new_s[key]
@@ -166,38 +175,64 @@ def compare(new_s, old_s):
 
 
 def main():
-    # ── New model ──────────────────────────────────────────────────────────
+    new_query = """
+        SELECT game_date, player, category,
+               projected_value, bookmaker_line, actual_value,
+               COALESCE(over_odds, 1.909) AS over_odds,
+               COALESCE(under_odds, 1.909) AS under_odds
+        FROM projection_outcomes
+        WHERE actual_value IS NOT NULL
+          AND projected_value IS NOT NULL
+          AND bookmaker_line IS NOT NULL
+    """
+
+    old_query = """
+        SELECT game_date, player, category,
+               projected_value, bookmaker_line, actual_value,
+               1.909 AS over_odds,
+               1.909 AS under_odds
+        FROM projection_outcomes
+        WHERE actual_value IS NOT NULL
+          AND projected_value IS NOT NULL
+          AND bookmaker_line IS NOT NULL
+    """
+
     print("[*] Analysing NEW GEN model …")
     conn_new = sqlite3.connect(NEW_DB)
-    new_rows = conn_new.execute(NEW_QUERY).fetchall()
-    conn_new.close()
-    new_stats, new_report = analyse(new_rows, "NEW GEN MODEL  (retrospective_db.db)")
+    try:
+        new_rows = conn_new.execute(new_query).fetchall()
+        new_stats, new_report = analyse(new_rows, "NEW GEN MODEL  (retrospective_db.db)")
+    except Exception as e:
+        print(f"    [!] Error reading NEW GEN DB: {e}")
+        new_stats, new_report = None, None
+    finally:
+        conn_new.close()
 
-    with open(NEW_OUT, 'w', encoding='utf-8') as f:
-        f.write(new_report)
-    print(f"[+] Written → {NEW_OUT}")
-    print(new_report)
-
-    # ── Old model ──────────────────────────────────────────────────────────
     print("[*] Analysing OLD GEN model …")
     conn_old = sqlite3.connect(OLD_DB)
-    old_rows = conn_old.execute(OLD_QUERY).fetchall()
-    conn_old.close()
-    old_stats, old_report = analyse(old_rows, "OLD GEN MODEL  (bet_tracker.db)")
+    try:
+        old_rows = conn_old.execute(old_query).fetchall()
+        old_stats, old_report = analyse(old_rows, "OLD GEN MODEL  (bet_tracker.db)")
+    except Exception as e:
+        print(f"    [!] Error reading OLD GEN DB: {e}")
+        old_stats, old_report = None, None
+    finally:
+        conn_old.close()
 
-    with open(OLD_OUT, 'w', encoding='utf-8') as f:
-        f.write(old_report)
-    print(f"[+] Written → {OLD_OUT}")
-    print(old_report)
+    if new_report:
+        with open(NEW_OUT, 'w', encoding='utf-8') as f: f.write(new_report)
+        print(f"[✓] Written → {NEW_OUT}")
 
-    # ── Comparison ─────────────────────────────────────────────────────────
+    if old_report:
+        with open(OLD_OUT, 'w', encoding='utf-8') as f: f.write(old_report)
+        print(f"[✓] Written → {OLD_OUT}")
+
     if new_stats and old_stats:
         comp = compare(new_stats, old_stats)
         with open(COMP_OUT, 'w', encoding='utf-8') as f:
             f.write(new_report + old_report + comp)
-        print(f"[+] Full comparison written → {COMP_OUT}")
+        print(f"[✓] Full comparison written → {COMP_OUT}")
         print(comp)
-
 
 if __name__ == '__main__':
     main()

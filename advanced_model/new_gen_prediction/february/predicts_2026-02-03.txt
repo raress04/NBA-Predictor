@@ -2,57 +2,98 @@ NBA MODEL PREDICTIONS - 2026-02-03
 ============================================================
 
 
-MATCHUP: Denver Nuggets vs. Detroit Pistons
-------------------------------
-  Christian Braun      | POINTS   | Line  6.5 | Proj 12.8 | VALUABLE: Over (78% conf, 39.0% edge)
-
-MATCHUP: Dallas Mavericks vs. Boston Celtics
-------------------------------
-  Derrick White        | POINTS   | Line 16.5 | Proj 22.5 | VALUABLE: Over (74% conf, 29.8% edge)
-
 MATCHUP: Utah Jazz vs. Indiana Pacers
 ------------------------------
-  Lauri Markkanen      | POINTS   | Line 27.5 | Proj 34.9 | VALUABLE: Over (76% conf, 32.7% edge)
-  Johnny Furphy        | POINTS   | Line 11.5 | Proj  8.2 | VALUABLE: Under (78% conf, 36.1% edge)
+  Johnny Furphy        | POINTS   | Line 11.5 | Proj  6.8 | VALUABLE: Under (78% conf, 40.8% edge)
+  Kam Jones            | POINTS   | Line 10.5 | Proj  8.4 | VALUABLE: Under (75% conf, 25.0% edge)
+  PROJECTED TOTAL: 226.2 | O/U 229.5
+  -> SPREAD: Utah Jazz -2.5 VALUABLE: Cover (74% conf, 24.1% edge)
 
-MATCHUP: Milwaukee Bucks vs. Chicago Bulls
+MATCHUP: Denver Nuggets vs. Detroit Pistons
 ------------------------------
-  Coby White           | POINTS   | Line 20.5 | Proj 28.4 | VALUABLE: Over (78% conf, 36.1% edge)
+  Peyton Watson        | POINTS   | Line 15.5 | Proj 12.5 | VALUABLE: Under (75% conf, 25.0% edge)
+  Christian Braun      | POINTS   | Line  6.5 | Proj 12.9 | VALUABLE: Over (78% conf, 38.1% edge)
+  PROJECTED TOTAL: 236.5 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (66% conf, 16.1% edge)
 
 MATCHUP: Phoenix Suns vs. Portland Trail Blazers
 ------------------------------
+  Shaedon Sharpe       | POINTS   | Line 22.5 | Proj 18.5 | VALUABLE: Under (76% conf, 26.1% edge)
+  PROJECTED TOTAL: 204.1 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 43.0% edge)
+  -> SPREAD: Phoenix Suns -3.0 VALUABLE: Cover (74% conf, 23.7% edge)
 
-MATCHUP: Atlanta Hawks vs. Miami Heat
+MATCHUP: Dallas Mavericks vs. Boston Celtics
 ------------------------------
-  Mouhamed Gueye       | POINTS   | Line  8.5 | Proj  6.4 | VALUABLE: Under (75% conf, 32.6% edge)
+  PROJECTED TOTAL: 215.0 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 29.6% edge)
 
-MATCHUP: Philadelphia 76ers vs. Golden State Warriors
+MATCHUP: Milwaukee Bucks vs. Chicago Bulls
 ------------------------------
-  Andre Drummond       | REBOUNDS | Line  9.5 | Proj  7.2 | VALUABLE: Under (75% conf, 35.5% edge)
+  Kyle Kuzma           | POINTS   | Line 18.5 | Proj 14.4 | VALUABLE: Under (78% conf, 28.4% edge)
+  Ryan Rollins         | POINTS   | Line 22.5 | Proj 17.3 | VALUABLE: Under (78% conf, 31.7% edge)
+  Ryan Rollins         | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (78% conf, 38.6% edge)
+  Myles Turner         | POINTS   | Line 17.5 | Proj 14.1 | VALUABLE: Under (75% conf, 24.8% edge)
+  Patrick Williams     | POINTS   | Line 11.5 | Proj  9.0 | VALUABLE: Under (77% conf, 26.7% edge)
+  Dalen Terry          | POINTS   | Line  8.5 | Proj  5.8 | VALUABLE: Under (78% conf, 33.4% edge)
+  PROJECTED TOTAL: 200.0 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 45.3% edge)
+  -> SPREAD: Chicago Bulls -1.5 VALUABLE: Cover (72% conf, 22.1% edge)
 
 MATCHUP: Brooklyn Nets vs. Los Angeles Lakers
 ------------------------------
-  Ziaire Williams      | POINTS   | Line  5.5 | Proj  9.7 | VALUABLE: Over (77% conf, 33.5% edge)
-
-MATCHUP: New York Knicks vs. Washington Wizards
-------------------------------
-  Tyler Kolek          | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (76% conf, 33.8% edge)
+  Ziaire Williams      | POINTS   | Line  5.5 | Proj 10.8 | VALUABLE: Over (78% conf, 33.0% edge)
+  Nic Claxton          | REBOUNDS | Line  7.5 | Proj  5.6 | VALUABLE: Under (78% conf, 31.9% edge)
+  Austin Reaves        | POINTS   | Line 14.5 | Proj 19.2 | VALUABLE: Over (74% conf, 24.5% edge)
+  PROJECTED TOTAL: 241.1 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (76% conf, 25.7% edge)
 
 MATCHUP: Oklahoma City Thunder vs. Orlando Magic
 ------------------------------
+  PROJECTED TOTAL: 230.9 | O/U 229.5
+  -> SPREAD: Oklahoma City Thunder -11.5 VALUABLE: Cover (76% conf, 26.4% edge)
+
+MATCHUP: Philadelphia 76ers vs. Golden State Warriors
+------------------------------
+  Tyrese Maxey         | POINTS   | Line 29.5 | Proj 23.5 | VALUABLE: Under (78% conf, 31.2% edge)
+  De'Anthony Melton    | POINTS   | Line 16.5 | Proj 11.1 | VALUABLE: Under (78% conf, 36.7% edge)
+  Moses Moody          | POINTS   | Line 14.5 | Proj 10.7 | VALUABLE: Under (78% conf, 29.2% edge)
+  Draymond Green       | POINTS   | Line  9.5 | Proj  6.9 | VALUABLE: Under (78% conf, 30.3% edge)
+  Draymond Green       | ASSISTS  | Line  5.5 | Proj  4.0 | VALUABLE: Under (78% conf, 34.3% edge)
+  Brandin Podziemski   | POINTS   | Line 15.5 | Proj 12.4 | VALUABLE: Under (75% conf, 24.8% edge)
+  PROJECTED TOTAL: 194.1 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 48.1% edge)
+  -> SPREAD: Philadelphia 76ers +4.5 VALUABLE: Cover (70% conf, 20.5% edge)
+
+MATCHUP: New York Knicks vs. Washington Wizards
+------------------------------
+  Tyler Kolek          | POINTS   | Line  7.5 | Proj  4.6 | VALUABLE: Under (78% conf, 36.8% edge)
+  Alex Sarr            | POINTS   | Line 17.5 | Proj 14.5 | VALUABLE: Under (73% conf, 23.5% edge)
+  Bub Carrington       | POINTS   | Line 11.5 | Proj  9.1 | VALUABLE: Under (76% conf, 25.9% edge)
+  Kyshawn George       | POINTS   | Line 15.5 | Proj 12.2 | VALUABLE: Under (75% conf, 25.4% edge)
+  PROJECTED TOTAL: 215.9 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 28.5% edge)
+  -> SPREAD: New York Knicks -13.0 VALUABLE: Cover (94% conf, 44.5% edge)
+
+MATCHUP: Atlanta Hawks vs. Miami Heat
+------------------------------
+  Mouhamed Gueye       | POINTS   | Line  8.5 | Proj  5.4 | VALUABLE: Under (78% conf, 36.6% edge)
+  Simone Fontecchio    | POINTS   | Line 12.5 | Proj  9.7 | VALUABLE: Under (78% conf, 27.7% edge)
+  PROJECTED TOTAL: 239.3 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (70% conf, 20.3% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Ziaire Williams Over 5.5 POINTS (77% conf, 26.9% edge) | Brooklyn Nets vs. Los Angeles Lakers
-  2. Coby White Over 20.5 POINTS (78% conf, 25.4% edge) | Milwaukee Bucks vs. Chicago Bulls
-  3. Christian Braun Over 6.5 POINTS (78% conf, 24.5% edge) | Denver Nuggets vs. Detroit Pistons
+  1. Ziaire Williams Over 5.5 POINTS (78% conf, 28.2% edge) | Brooklyn Nets vs. Los Angeles Lakers
+  2. Nic Claxton Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Brooklyn Nets vs. Los Angeles Lakers
+  3. Kyle Kuzma Under 18.5 POINTS (78% conf, 26.8% edge) | Milwaukee Bucks vs. Chicago Bulls
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Ziaire Williams Over 5.5 POINTS (77% conf, 26.9% edge) | Brooklyn Nets vs. Los Angeles Lakers
-  2. Coby White Over 20.5 POINTS (78% conf, 25.4% edge) | Milwaukee Bucks vs. Chicago Bulls
-  3. Christian Braun Over 6.5 POINTS (78% conf, 24.5% edge) | Denver Nuggets vs. Detroit Pistons
-  4. Derrick White Over 16.5 POINTS (74% conf, 24.3% edge) | Dallas Mavericks vs. Boston Celtics
+  1. Ziaire Williams Over 5.5 POINTS (78% conf, 28.2% edge) | Brooklyn Nets vs. Los Angeles Lakers
+  2. Nic Claxton Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Brooklyn Nets vs. Los Angeles Lakers
+  3. Kyle Kuzma Under 18.5 POINTS (78% conf, 26.8% edge) | Milwaukee Bucks vs. Chicago Bulls
+  4. De'Anthony Melton Under 16.5 POINTS (78% conf, 26.8% edge) | Philadelphia 76ers vs. Golden State Warriors
 
 
-Total VALUABLE picks today: 9
+Total VALUABLE picks today: 40

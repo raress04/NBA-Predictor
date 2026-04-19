@@ -2,57 +2,85 @@ NBA MODEL PREDICTIONS - 2026-03-19
 ============================================================
 
 
-MATCHUP: New Orleans Pelicans vs. LA Clippers
-------------------------------
-  John Collins         | POINTS   | Line 15.5 | Proj 23.5 | VALUABLE: Over (78% conf, 39.0% edge)
-  Jordan Miller        | POINTS   | Line 18.5 | Proj 12.6 | VALUABLE: Under (77% conf, 34.5% edge)
-
-MATCHUP: Cleveland Cavaliers vs. Chicago Bulls
-------------------------------
-  Collin Sexton        | POINTS   | Line 14.5 | Proj 19.0 | VALUABLE: Over (73% conf, 28.4% edge)
-
-MATCHUP: Charlotte Hornets vs. Orlando Magic
-------------------------------
-  Goga Bitadze         | REBOUNDS | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 41.5% edge)
-
-MATCHUP: Philadelphia 76ers vs. Sacramento Kings
-------------------------------
-  DeMar DeRozan        | POINTS   | Line 19.5 | Proj 24.4 | VALUABLE: Over (72% conf, 27.6% edge)
-
 MATCHUP: Los Angeles Lakers vs. Miami Heat
 ------------------------------
-  Rui Hachimura        | POINTS   | Line  7.5 | Proj 11.1 | VALUABLE: Over (72% conf, 27.9% edge)
-  Kel'el Ware          | REBOUNDS | Line 10.5 | Proj  8.0 | VALUABLE: Under (76% conf, 36.2% edge)
+  Rui Hachimura        | POINTS   | Line  7.5 | Proj 12.0 | VALUABLE: Over (78% conf, 28.0% edge)
+  Kel'el Ware          | REBOUNDS | Line 10.5 | Proj  8.2 | VALUABLE: Under (78% conf, 31.7% edge)
+  PROJECTED TOTAL: 247.3 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (78% conf, 37.4% edge)
+  -> SPREAD: Los Angeles Lakers +3.5 VALUABLE: Cover (78% conf, 27.6% edge)
+
+MATCHUP: New Orleans Pelicans vs. LA Clippers
+------------------------------
+  John Collins         | POINTS   | Line 15.5 | Proj 22.2 | VALUABLE: Over (78% conf, 33.0% edge)
+  Jordan Miller        | POINTS   | Line 18.5 | Proj 13.1 | VALUABLE: Under (78% conf, 35.0% edge)
+  PROJECTED TOTAL: 229.7 | O/U 227.5
+  -> SPREAD: New Orleans Pelicans -4.0 VALUABLE: Cover (73% conf, 23.4% edge)
 
 MATCHUP: San Antonio Spurs vs. Phoenix Suns
 ------------------------------
+  PROJECTED TOTAL: 223.9 | O/U 227.5
+  -> SPREAD: San Antonio Spurs -9.5 VALUABLE: Cover (97% conf, 47.2% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Chicago Bulls
+------------------------------
+  James Harden         | ASSISTS  | Line  9.5 | Proj  7.9 | VALUABLE: Under (77% conf, 27.4% edge)
+  Evan Mobley          | POINTS   | Line 23.5 | Proj 19.8 | VALUABLE: Under (74% conf, 24.4% edge)
+  Collin Sexton        | POINTS   | Line 14.5 | Proj 19.1 | VALUABLE: Over (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 236.3 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (70% conf, 19.8% edge)
+  -> SPREAD: Cleveland Cavaliers -9.5 VALUABLE: Cover (88% conf, 37.9% edge)
 
 MATCHUP: Utah Jazz vs. Milwaukee Bucks
 ------------------------------
-  Ace Bailey           | POINTS   | Line 19.5 | Proj 25.1 | VALUABLE: Over (73% conf, 29.0% edge)
-  Kyle Filipowski      | POINTS   | Line 14.5 | Proj 19.8 | VALUABLE: Over (74% conf, 30.6% edge)
-  Ousmane Dieng        | POINTS   | Line 12.5 | Proj  7.0 | VALUABLE: Under (78% conf, 44.1% edge)
+  Kyle Filipowski      | POINTS   | Line 14.5 | Proj 19.2 | VALUABLE: Over (75% conf, 24.6% edge)
+  Ryan Rollins         | POINTS   | Line 19.5 | Proj 13.5 | VALUABLE: Under (78% conf, 36.7% edge)
+  Ryan Rollins         | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 41.9% edge)
+  Ousmane Dieng        | POINTS   | Line 12.5 | Proj  6.2 | VALUABLE: Under (78% conf, 45.5% edge)
+  Bobby Portis         | POINTS   | Line 16.5 | Proj 11.6 | VALUABLE: Under (78% conf, 34.4% edge)
+  PROJECTED TOTAL: 217.5 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (72% conf, 21.9% edge)
+
+MATCHUP: Philadelphia 76ers vs. Sacramento Kings
+------------------------------
+  Justin Edwards       | POINTS   | Line 12.5 | Proj  9.6 | VALUABLE: Under (78% conf, 28.1% edge)
+  Quentin Grimes       | POINTS   | Line 22.5 | Proj 18.7 | VALUABLE: Under (74% conf, 24.1% edge)
+  Precious Achiuwa     | POINTS   | Line 13.5 | Proj 10.9 | VALUABLE: Under (74% conf, 24.1% edge)
+  PROJECTED TOTAL: 217.8 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (71% conf, 21.0% edge)
+  -> SPREAD: Philadelphia 76ers -2.5 VALUABLE: Cover (66% conf, 16.3% edge)
 
 MATCHUP: Detroit Pistons vs. Washington Wizards
 ------------------------------
-  Jalen Duren          | POINTS   | Line 24.5 | Proj 17.0 | VALUABLE: Under (78% conf, 38.3% edge)
-  Kevin Huerter        | POINTS   | Line  8.0 | Proj 12.2 | VALUABLE: Over (72% conf, 27.5% edge)
-  Daniss Jenkins       | POINTS   | Line 13.5 | Proj  9.7 | VALUABLE: Under (78% conf, 37.1% edge)
-  Daniss Jenkins       | ASSISTS  | Line  6.5 | Proj  4.1 | VALUABLE: Under (78% conf, 36.4% edge)
-  Alex Sarr            | POINTS   | Line 13.5 | Proj 20.4 | VALUABLE: Over (78% conf, 36.4% edge)
+  Jalen Duren          | POINTS   | Line 24.5 | Proj 17.1 | VALUABLE: Under (78% conf, 41.4% edge)
+  Daniss Jenkins       | POINTS   | Line 13.5 | Proj 10.0 | VALUABLE: Under (78% conf, 31.1% edge)
+  Daniss Jenkins       | ASSISTS  | Line  6.5 | Proj  4.3 | VALUABLE: Under (78% conf, 40.1% edge)
+  Marcus Sasser        | POINTS   | Line  9.5 | Proj  6.8 | VALUABLE: Under (78% conf, 30.2% edge)
+  Alex Sarr            | POINTS   | Line 13.5 | Proj 18.5 | VALUABLE: Over (77% conf, 27.5% edge)
+  PROJECTED TOTAL: 219.4 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (68% conf, 18.3% edge)
+  -> SPREAD: Detroit Pistons -14.0 VALUABLE: Cover (94% conf, 44.4% edge)
+
+MATCHUP: Charlotte Hornets vs. Orlando Magic
+------------------------------
+  LaMelo Ball          | POINTS   | Line 20.5 | Proj 16.6 | VALUABLE: Under (75% conf, 25.4% edge)
+  Kon Knueppel         | POINTS   | Line 18.5 | Proj 15.2 | VALUABLE: Under (73% conf, 23.4% edge)
+  Goga Bitadze         | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (78% conf, 37.2% edge)
+  PROJECTED TOTAL: 226.4 | O/U 227.5
+  -> SPREAD: Charlotte Hornets -5.5 VALUABLE: Cover (73% conf, 23.1% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. John Collins Over 15.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. LA Clippers
-  2. Goga Bitadze Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Charlotte Hornets vs. Orlando Magic
-  3. Ousmane Dieng Under 12.5 POINTS (78% conf, 28.0% edge) | Utah Jazz vs. Milwaukee Bucks
+  1. Kel'el Ware Under 10.5 REBOUNDS (78% conf, 28.0% edge) | Los Angeles Lakers vs. Miami Heat
+  2. Game Total Over 227.5 TOTAL (78% conf, 28.0% edge) | Los Angeles Lakers vs. Miami Heat
+  3. John Collins Over 15.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. LA Clippers
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. John Collins Over 15.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. LA Clippers
-  2. Goga Bitadze Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Charlotte Hornets vs. Orlando Magic
-  3. Ousmane Dieng Under 12.5 POINTS (78% conf, 28.0% edge) | Utah Jazz vs. Milwaukee Bucks
-  4. Jalen Duren Under 24.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Washington Wizards
+  1. Kel'el Ware Under 10.5 REBOUNDS (78% conf, 28.0% edge) | Los Angeles Lakers vs. Miami Heat
+  2. Game Total Over 227.5 TOTAL (78% conf, 28.0% edge) | Los Angeles Lakers vs. Miami Heat
+  3. John Collins Over 15.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. LA Clippers
+  4. Jordan Miller Under 18.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. LA Clippers
 
 
-Total VALUABLE picks today: 15
+Total VALUABLE picks today: 35

@@ -2,56 +2,98 @@ NBA MODEL PREDICTIONS - 2026-02-01
 ============================================================
 
 
-MATCHUP: Boston Celtics vs. Milwaukee Bucks
-------------------------------
-
-MATCHUP: Utah Jazz vs. Toronto Raptors
-------------------------------
-  Collin Murray-Boyles | POINTS   | Line 10.5 | Proj  8.2 | VALUABLE: Under (75% conf, 32.7% edge)
-  Collin Murray-Boyles | REBOUNDS | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 40.6% edge)
-
-MATCHUP: Los Angeles Lakers vs. New York Knicks
-------------------------------
-  Mitchell Robinson    | REBOUNDS | Line  8.5 | Proj  6.3 | VALUABLE: Under (76% conf, 37.4% edge)
-
-MATCHUP: Cleveland Cavaliers vs. Portland Trail Blazers
-------------------------------
-
-MATCHUP: San Antonio Spurs vs. Orlando Magic
-------------------------------
-
 MATCHUP: Oklahoma City Thunder vs. Denver Nuggets
 ------------------------------
-
-MATCHUP: Sacramento Kings vs. Washington Wizards
-------------------------------
-  Will Riley           | POINTS   | Line  8.5 | Proj 12.7 | VALUABLE: Over (74% conf, 30.2% edge)
-
-MATCHUP: Detroit Pistons vs. Brooklyn Nets
-------------------------------
-  Jalen Duren          | REBOUNDS | Line 10.5 | Proj  8.1 | VALUABLE: Under (75% conf, 35.8% edge)
+  Aaron Wiggins        | POINTS   | Line 11.5 | Proj  9.1 | VALUABLE: Under (76% conf, 26.2% edge)
+  PROJECTED TOTAL: 228.0 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Over (72% conf, 22.4% edge)
+  -> SPREAD: Denver Nuggets +7.5 VALUABLE: Cover (75% conf, 25.0% edge)
 
 MATCHUP: Phoenix Suns vs. LA Clippers
 ------------------------------
-  Kawhi Leonard        | POINTS   | Line 25.5 | Proj 32.9 | VALUABLE: Over (77% conf, 33.7% edge)
-  Brook Lopez          | POINTS   | Line  5.5 | Proj  9.7 | VALUABLE: Over (76% conf, 33.1% edge)
+  Grayson Allen        | POINTS   | Line 18.5 | Proj 15.4 | VALUABLE: Under (72% conf, 22.1% edge)
+  Brook Lopez          | POINTS   | Line  5.5 | Proj  9.8 | VALUABLE: Over (77% conf, 26.6% edge)
+  PROJECTED TOTAL: 209.6 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Under (68% conf, 17.6% edge)
+
+MATCHUP: Utah Jazz vs. Toronto Raptors
+------------------------------
+  Isaiah Collier       | ASSISTS  | Line  8.5 | Proj  6.5 | VALUABLE: Under (78% conf, 34.1% edge)
+  Collin Murray-Boyles | REBOUNDS | Line  7.5 | Proj  5.1 | VALUABLE: Under (78% conf, 38.4% edge)
+  PROJECTED TOTAL: 237.9 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Over (78% conf, 37.9% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Portland Trail Blazers
+------------------------------
+  Jaylon Tyson         | POINTS   | Line 16.5 | Proj 12.6 | VALUABLE: Under (78% conf, 29.2% edge)
+  Shaedon Sharpe       | POINTS   | Line 24.5 | Proj 20.0 | VALUABLE: Under (77% conf, 26.9% edge)
+  PROJECTED TOTAL: 208.7 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Under (69% conf, 19.3% edge)
+  -> SPREAD: Cleveland Cavaliers -4.0 VALUABLE: Cover (86% conf, 36.4% edge)
+
+MATCHUP: Sacramento Kings vs. Washington Wizards
+------------------------------
+  Malik Monk           | POINTS   | Line 16.5 | Proj 13.0 | VALUABLE: Under (76% conf, 25.9% edge)
+  Will Riley           | POINTS   | Line  8.5 | Proj 13.4 | VALUABLE: Over (78% conf, 29.9% edge)
+  Bub Carrington       | POINTS   | Line 13.5 | Proj 10.8 | VALUABLE: Under (74% conf, 24.3% edge)
+  Kyshawn George       | POINTS   | Line 18.5 | Proj 14.9 | VALUABLE: Under (76% conf, 25.7% edge)
+  Kyshawn George       | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (78% conf, 37.4% edge)
+  PROJECTED TOTAL: 215.9 | O/U 217.5
+  -> SPREAD: Sacramento Kings -1.5 VALUABLE: Cover (73% conf, 23.1% edge)
+
+MATCHUP: Boston Celtics vs. Milwaukee Bucks
+------------------------------
+  Jaylen Brown         | POINTS   | Line 29.5 | Proj 24.5 | VALUABLE: Under (78% conf, 28.1% edge)
+  Ryan Rollins         | POINTS   | Line 18.5 | Proj 14.9 | VALUABLE: Under (75% conf, 24.9% edge)
+  Ryan Rollins         | ASSISTS  | Line  6.5 | Proj  4.8 | VALUABLE: Under (78% conf, 34.5% edge)
+  Kyle Kuzma           | POINTS   | Line 14.5 | Proj 12.0 | VALUABLE: Under (73% conf, 23.0% edge)
+  Bobby Portis         | POINTS   | Line 16.5 | Proj 12.2 | VALUABLE: Under (78% conf, 31.3% edge)
+  Myles Turner         | POINTS   | Line 14.5 | Proj 11.7 | VALUABLE: Under (73% conf, 23.4% edge)
+  PROJECTED TOTAL: 203.8 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Under (78% conf, 28.7% edge)
+  -> SPREAD: Boston Celtics -13.5 VALUABLE: Cover (98% conf, 48.1% edge)
+
+MATCHUP: Los Angeles Lakers vs. New York Knicks
+------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  8.4 | VALUABLE: Under (78% conf, 29.5% edge)
+  Mitchell Robinson    | REBOUNDS | Line  8.5 | Proj  6.3 | VALUABLE: Under (78% conf, 33.4% edge)
+  PROJECTED TOTAL: 235.3 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Over (78% conf, 35.4% edge)
+
+MATCHUP: Detroit Pistons vs. Brooklyn Nets
+------------------------------
+  Jalen Duren          | REBOUNDS | Line 10.5 | Proj  8.5 | VALUABLE: Under (78% conf, 28.7% edge)
+  Jaden Ivey           | POINTS   | Line  7.5 | Proj 11.3 | VALUABLE: Over (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 222.3 | O/U 217.5
+  -> SPREAD: Detroit Pistons -14.0 VALUABLE: Cover (99% conf, 49.5% edge)
 
 MATCHUP: Miami Heat vs. Chicago Bulls
 ------------------------------
-  Coby White           | POINTS   | Line 20.5 | Proj 26.1 | VALUABLE: Over (72% conf, 27.9% edge)
+  Simone Fontecchio    | POINTS   | Line 12.5 | Proj  9.3 | VALUABLE: Under (78% conf, 29.5% edge)
+  Dalen Terry          | POINTS   | Line  7.5 | Proj  5.4 | VALUABLE: Under (78% conf, 29.4% edge)
+  PROJECTED TOTAL: 224.9 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Over (66% conf, 16.3% edge)
+  -> SPREAD: Miami Heat -5.5 VALUABLE: Cover (80% conf, 30.0% edge)
+
+MATCHUP: San Antonio Spurs vs. Orlando Magic
+------------------------------
+  Anthony Black        | POINTS   | Line 16.5 | Proj 13.7 | VALUABLE: Under (72% conf, 22.5% edge)
+  PROJECTED TOTAL: 245.8 | O/U 217.5
+  -> GAME TOTAL: O/U 217.5 VALUABLE: Over (78% conf, 45.3% edge)
+  -> SPREAD: San Antonio Spurs -4.5 VALUABLE: Cover (72% conf, 22.4% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Collin Murray-Boyles Under 7.5 REBOUNDS (78% conf, 30.4% edge) | Utah Jazz vs. Toronto Raptors
-  2. Jalen Duren Under 10.5 REBOUNDS (75% conf, 27.6% edge) | Detroit Pistons vs. Brooklyn Nets
-  3. Mitchell Robinson Under 8.5 REBOUNDS (76% conf, 26.5% edge) | Los Angeles Lakers vs. New York Knicks
+  1. Kyshawn George Under 5.5 ASSISTS (78% conf, 30.8% edge) | Sacramento Kings vs. Washington Wizards
+  2. Collin Murray-Boyles Under 7.5 REBOUNDS (78% conf, 30.4% edge) | Utah Jazz vs. Toronto Raptors
+  3. Jalen Duren Under 10.5 REBOUNDS (78% conf, 30.4% edge) | Detroit Pistons vs. Brooklyn Nets
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Collin Murray-Boyles Under 7.5 REBOUNDS (78% conf, 30.4% edge) | Utah Jazz vs. Toronto Raptors
-  2. Jalen Duren Under 10.5 REBOUNDS (75% conf, 27.6% edge) | Detroit Pistons vs. Brooklyn Nets
-  3. Mitchell Robinson Under 8.5 REBOUNDS (76% conf, 26.5% edge) | Los Angeles Lakers vs. New York Knicks
-  4. Will Riley Over 8.5 POINTS (74% conf, 25.4% edge) | Sacramento Kings vs. Washington Wizards
+  1. Kyshawn George Under 5.5 ASSISTS (78% conf, 30.8% edge) | Sacramento Kings vs. Washington Wizards
+  2. Collin Murray-Boyles Under 7.5 REBOUNDS (78% conf, 30.4% edge) | Utah Jazz vs. Toronto Raptors
+  3. Jalen Duren Under 10.5 REBOUNDS (78% conf, 30.4% edge) | Detroit Pistons vs. Brooklyn Nets
+  4. Isaiah Collier Under 8.5 ASSISTS (78% conf, 29.2% edge) | Utah Jazz vs. Toronto Raptors
 
 
-Total VALUABLE picks today: 8
+Total VALUABLE picks today: 40

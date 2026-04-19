@@ -1,0 +1,50 @@
+NBA MODEL - RETROACTIVE ANALYSIS - ALL TIME (JAN 1 - NOW)
+============================================================
+Analyzed 29081 projection rows.
+Unique game dates covered: 83
+
+1. COVERAGE & INTEGRITY CHECK
+----------------------------------------
+
+Coverage per Category:
+category    n  days  has_line
+ ASSISTS 9157    83      9157
+  POINTS 9346    83      9346
+REBOUNDS 9291    83      9291
+  SPREAD 1204    83      1204
+   TOTAL   83    83        83
+
+2. WIN RATE VS BOOKMAKER LINES (Jan Analysis)
+----------------------------------------
+Category  Picks  Wins  Win%
+  POINTS   9346  5093 54.5%
+REBOUNDS   9291  5118 55.1%
+ ASSISTS   9157  5093 55.6%
+   TOTAL     83    44 53.0%
+  SPREAD   1204   594 49.3%
+
+OVERALL PERFORMANCE: 15942/29081 (54.8%)
+
+3. TOP 20 ERRORS
+----------------------------------------
+game_date                 player category  projected_value  actual_value  model_bias
+    03-10            Bam Adebayo   POINTS          29.3088          83.0     53.6912
+    03-16             Game Total    TOTAL         236.7600         192.0    -44.7600
+    03-22             Game Total    TOTAL         205.5100         248.0     42.4900
+    03-30             Game Total    TOTAL         196.3800         236.0     39.6200
+    03-21             Game Total    TOTAL         247.5900         209.0    -38.5900
+    01-17         Indiana Pacers   SPREAD         -38.0600           0.0     38.0600
+    01-30     Washington Wizards   SPREAD         -38.0600           0.0     38.0600
+    01-17        Detroit Pistons   SPREAD          38.0600           1.0    -37.0600
+    01-30     Los Angeles Lakers   SPREAD          38.0600           1.0    -37.0600
+    02-05     Washington Wizards   SPREAD         -36.0600           0.0     36.0600
+    01-10             Game Total    TOTAL         225.9800         190.0    -35.9800
+    02-05        Detroit Pistons   SPREAD          36.0600           1.0    -35.0600
+    03-12             Game Total    TOTAL         236.9500         272.0     35.0500
+    02-25             Game Total    TOTAL         210.5900         245.0     34.4100
+    02-26           Phoenix Suns   SPREAD         -34.0600           0.0     34.0600
+    03-02             Game Total    TOTAL         207.8100         241.0     33.1900
+    02-26     Los Angeles Lakers   SPREAD          34.0600           1.0    -33.0600
+    02-24 Portland Trail Blazers   SPREAD         -32.0600           0.0     32.0600
+    02-24 Minnesota Timberwolves   SPREAD          32.0600           1.0    -31.0600
+    03-01       Sacramento Kings   SPREAD         -31.0600           0.0     31.0600

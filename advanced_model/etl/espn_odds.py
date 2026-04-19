@@ -56,6 +56,8 @@ def _american_to_decimal(american_str: str) -> float:
         return 1.91  # default vig line
 
 
+from datetime import datetime
+
 def fetch_espn_odds() -> Dict:
     """
     Fetch moneyline, spreads, and totals for all today's NBA games from ESPN.
@@ -67,7 +69,9 @@ def fetch_espn_odds() -> Dict:
         return cached
     
     try:
-        resp = requests.get(ESPN_SCOREBOARD_URL, timeout=15)
+        today_date = datetime.now().strftime('%Y%m%d')
+        url = f"{ESPN_SCOREBOARD_URL}?dates={today_date}"
+        resp = requests.get(url, timeout=15)
         resp.raise_for_status()
         data = resp.json()
     except Exception as e:

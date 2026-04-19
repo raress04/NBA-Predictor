@@ -4,33 +4,52 @@ NBA MODEL PREDICTIONS - 2026-02-27
 
 MATCHUP: Detroit Pistons vs. Cleveland Cavaliers
 ------------------------------
-  Evan Mobley          | POINTS   | Line 15.5 | Proj 24.1 | VALUABLE: Over (78% conf, 41.8% edge)
-
-MATCHUP: New York Knicks vs. Milwaukee Bucks
-------------------------------
-  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  8.2 | VALUABLE: Under (74% conf, 34.4% edge)
-  Jericho Sims         | REBOUNDS | Line  6.5 | Proj  4.5 | VALUABLE: Under (75% conf, 35.6% edge)
+  Evan Mobley          | POINTS   | Line 15.5 | Proj 22.2 | VALUABLE: Over (78% conf, 33.6% edge)
+  PROJECTED TOTAL: 228.3 | O/U 226.5
+  -> SPREAD: Detroit Pistons -8.5 VALUABLE: Cover (89% conf, 38.9% edge)
 
 MATCHUP: Memphis Grizzlies vs. Dallas Mavericks
 ------------------------------
-
-MATCHUP: Boston Celtics vs. Brooklyn Nets
-------------------------------
+  Taylor Hendricks     | POINTS   | Line 11.5 | Proj  8.7 | VALUABLE: Under (78% conf, 29.3% edge)
+  GG Jackson           | POINTS   | Line 16.5 | Proj 12.7 | VALUABLE: Under (78% conf, 28.3% edge)
+  AJ Johnson           | POINTS   | Line 10.5 | Proj  6.8 | VALUABLE: Under (78% conf, 36.4% edge)
+  PROJECTED TOTAL: 206.3 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (78% conf, 38.5% edge)
 
 MATCHUP: Denver Nuggets vs. Oklahoma City Thunder
 ------------------------------
+  Jamal Murray         | POINTS   | Line 20.5 | Proj 25.5 | VALUABLE: Over (73% conf, 23.2% edge)
+  Julian Strawther     | POINTS   | Line  9.5 | Proj  7.2 | VALUABLE: Under (77% conf, 27.5% edge)
+  PROJECTED TOTAL: 235.1 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (69% conf, 19.0% edge)
+
+MATCHUP: Boston Celtics vs. Brooklyn Nets
+------------------------------
+  Baylor Scheierman    | POINTS   | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 32.0% edge)
+  Nolan Traore         | POINTS   | Line 10.5 | Proj  8.4 | VALUABLE: Under (75% conf, 25.1% edge)
+  PROJECTED TOTAL: 221.3 | O/U 226.5
+  -> SPREAD: Brooklyn Nets +16.5 VALUABLE: Cover (88% conf, 38.6% edge)
+
+MATCHUP: New York Knicks vs. Milwaukee Bucks
+------------------------------
+  Jalen Brunson        | POINTS   | Line 26.5 | Proj 21.5 | VALUABLE: Under (78% conf, 27.9% edge)
+  Ryan Rollins         | POINTS   | Line 17.5 | Proj 12.4 | VALUABLE: Under (78% conf, 34.2% edge)
+  PROJECTED TOTAL: 213.7 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (77% conf, 27.3% edge)
+  -> SPREAD: New York Knicks -8.5 VALUABLE: Cover (92% conf, 42.1% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
   1. Evan Mobley Over 15.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Cleveland Cavaliers
-  2. Jericho Sims Under 6.5 REBOUNDS (75% conf, 25.1% edge) | New York Knicks vs. Milwaukee Bucks
-  3. Karl-Anthony Towns Under 10.5 REBOUNDS (74% conf, 24.2% edge) | New York Knicks vs. Milwaukee Bucks
+  2. Taylor Hendricks Under 11.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Dallas Mavericks
+  3. GG Jackson Under 16.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Dallas Mavericks
 
-=== SYSTEM PARLAY (3 PICKS, 3/3) ===
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
   1. Evan Mobley Over 15.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Cleveland Cavaliers
-  2. Jericho Sims Under 6.5 REBOUNDS (75% conf, 25.1% edge) | New York Knicks vs. Milwaukee Bucks
-  3. Karl-Anthony Towns Under 10.5 REBOUNDS (74% conf, 24.2% edge) | New York Knicks vs. Milwaukee Bucks
+  2. Taylor Hendricks Under 11.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Dallas Mavericks
+  3. GG Jackson Under 16.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Dallas Mavericks
+  4. AJ Johnson Under 10.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Dallas Mavericks
 
 
-Total VALUABLE picks today: 3
+Total VALUABLE picks today: 16

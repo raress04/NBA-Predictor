@@ -38,7 +38,8 @@ def get_connection():
     return sqlite3.connect(DB_PATH)
 
 
-def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str = None) -> dict:
+def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str = None,
+                             current_team_id: int = None) -> dict:
     '''
     Retrieves the last N games for a specific player and calculates their
     percentage weights for the Markov Simulation Engine.
@@ -54,7 +55,8 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
     query = f'''
     SELECT 
         fgm, fga, fg3m, fg3a, ftm, fta, 
-        oreb, dreb, ast, stl, blk, tov, pts, minutes
+        oreb, dreb, ast, stl, blk, tov, pts, minutes,
+        team_id, game_date
     FROM box_scores
     WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
     AND season >= '2024-25' {date_filter}
@@ -68,7 +70,8 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
         query_fallback = f'''
         SELECT 
             fgm, fga, fg3m, fg3a, ftm, fta, 
-            oreb, dreb, ast, stl, blk, tov, pts, minutes
+            oreb, dreb, ast, stl, blk, tov, pts, minutes,
+            team_id, game_date
         FROM box_scores
         WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
         AND season >= '2023-24' {date_filter}
@@ -82,23 +85,64 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
     if df.empty:
         raise ValueError(f"No stats found for {player_name} in the local database. Ensure backfiller has run.")
 
+    from config.settings import TRADE_CONTEXT_MIN_GAMES, TRADE_CONTEXT_BLEND_GAMES, EWMA_SPAN
+
+    # Sort ascending so EWMA sees oldest → newest
+    df = df.sort_values('game_date').reset_index(drop=True)
+
+    # ── Trade Context ─────────────────────────────────────────────
+    # If current_team_id is provided, filter to post-trade games when possible.
+    high_uncertainty = False
+    if current_team_id is not None and 'team_id' in df.columns:
+        post_trade = df[df['team_id'] == current_team_id]
+        n_post = len(post_trade)
+        if n_post >= TRADE_CONTEXT_MIN_GAMES:
+            df = post_trade.reset_index(drop=True)
+            high_uncertainty = (n_post < TRADE_CONTEXT_BLEND_GAMES)
+        else:
+            # Insufficient post-trade data — use full log but flag it
+            high_uncertainty = True
+
     n_games = len(df)
 
-    # ── Recency Weighting ─────────────────────────────────────
-    # Most recent game (index 0) gets weight 2.0, linearly decaying
-    # to 1.0 at the oldest game. Recent form matters more.
-    weights = np.array([2.0 - (1.0 * i / max(n_games - 1, 1)) for i in range(n_games)])
+    # ── EWMA Recency Weighting ────────────────────────────────────
+    # Exponential weights replace the old linear 2.0→1.0 scheme.
+    # span=EWMA_SPAN means the last ~10 games carry ~63% of total weight.
+    # Values are per-game means from the EWMA tail (iloc[-1]).
+    ewma_kw = dict(span=EWMA_SPAN, adjust=False)
+    ewma_fgm  = df['fgm'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_fga  = df['fga'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_fg3m = df['fg3m'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_fg3a = df['fg3a'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_ftm  = df['ftm'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_fta  = df['fta'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_oreb = df['oreb'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_dreb = df['dreb'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_ast  = df['ast'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_stl  = df['stl'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_blk  = df['blk'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_tov  = df['tov'].ewm(**ewma_kw).mean().iloc[-1]
+    ewma_pts  = df['pts'].ewm(**ewma_kw).mean().iloc[-1]
 
-    # Compute weighted totals for all numeric columns
-    numeric_cols = ['fgm', 'fga', 'fg3m', 'fg3a', 'ftm', 'fta',
-                    'oreb', 'dreb', 'ast', 'stl', 'blk', 'tov', 'pts']
-    totals = {}
-    weight_sum = weights.sum()
-    for col in numeric_cols:
-        totals[col] = (df[col].values * weights).sum()
+    # Reconstruct totals dict scaled to n_games for Bayesian shrinkage downstream
+    # (shrinkage uses n_games as the effective count, so totals = mean * n_games)
+    totals = {
+        'fgm':  ewma_fgm  * n_games,
+        'fga':  ewma_fga  * n_games,
+        'fg3m': ewma_fg3m * n_games,
+        'fg3a': ewma_fg3a * n_games,
+        'ftm':  ewma_ftm  * n_games,
+        'fta':  ewma_fta  * n_games,
+        'oreb': ewma_oreb * n_games,
+        'dreb': ewma_dreb * n_games,
+        'ast':  ewma_ast  * n_games,
+        'stl':  ewma_stl  * n_games,
+        'blk':  ewma_blk  * n_games,
+        'tov':  ewma_tov  * n_games,
+        'pts':  ewma_pts  * n_games,
+    }
+    weight_sum = n_games  # used downstream for avg_* division
 
-    # Effective games played (accounts for weighting — used in Bayesian shrinkage)
-    effective_games = weight_sum  # ~= 1.5 * n_games for full 15-game sample
 
     # Base Metrics (avoid divide by zero)
     total_fga = totals['fga'] if totals['fga'] > 0 else 1
@@ -135,13 +179,13 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
     raw_tov_rate = totals['tov'] / possessions_used
     matrix['tov_rate'] = _bayesian_shrink(raw_tov_rate, LEAGUE_PRIORS['tov_rate'], n_games)
 
-    # 5. Weighted per-game averages (recency-weighted, NOT Bayesian)
-    matrix['avg_reb'] = (totals['oreb'] + totals['dreb']) / weight_sum
-    matrix['avg_ast'] = totals['ast'] / weight_sum
-    matrix['avg_stl'] = totals['stl'] / weight_sum
-    matrix['avg_blk'] = totals['blk'] / weight_sum
-    matrix['avg_pts'] = totals['pts'] / weight_sum
-    matrix['avg_fga'] = total_fga / weight_sum
+    # 5. Per-game averages from EWMA (directly, not divided from totals)
+    matrix['avg_reb'] = ewma_oreb + ewma_dreb
+    matrix['avg_ast'] = ewma_ast
+    matrix['avg_stl'] = ewma_stl
+    matrix['avg_blk'] = ewma_blk
+    matrix['avg_pts'] = ewma_pts
+    matrix['avg_fga'] = ewma_fga
 
     # 6. Minutes variance
     def parse_minutes(m):
@@ -159,7 +203,8 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
     matrix['min_mean'] = df['min_float'].mean()
 
     # Store metadata for downstream usage rate adjustment
-    matrix['_n_games'] = n_games
+    matrix['_n_games']           = n_games
+    matrix['_high_uncertainty']  = high_uncertainty
 
     return matrix
 

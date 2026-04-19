@@ -2,42 +2,58 @@ NBA MODEL PREDICTIONS - 2026-02-06
 ============================================================
 
 
-MATCHUP: Portland Trail Blazers vs. Memphis Grizzlies
-------------------------------
-  Donovan Clingan      | REBOUNDS | Line 13.5 | Proj 10.2 | VALUABLE: Under (78% conf, 39.1% edge)
-  Taylor Hendricks     | POINTS   | Line  6.5 | Proj  9.9 | VALUABLE: Over (72% conf, 27.6% edge)
-
-MATCHUP: Milwaukee Bucks vs. Indiana Pacers
-------------------------------
-
-MATCHUP: Detroit Pistons vs. New York Knicks
-------------------------------
-  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  6.8 | VALUABLE: Under (78% conf, 34.4% edge)
-
 MATCHUP: Minnesota Timberwolves vs. New Orleans Pelicans
 ------------------------------
+  PROJECTED TOTAL: 240.3 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (77% conf, 27.4% edge)
+  -> SPREAD: Minnesota Timberwolves -8.5 VALUABLE: Cover (76% conf, 25.6% edge)
 
 MATCHUP: LA Clippers vs. Sacramento Kings
 ------------------------------
-  Kawhi Leonard        | POINTS   | Line 29.5 | Proj 37.3 | VALUABLE: Over (76% conf, 33.1% edge)
-  Derrick Jones Jr.    | POINTS   | Line  8.5 | Proj 14.1 | VALUABLE: Over (78% conf, 38.0% edge)
-  Dylan Cardwell       | REBOUNDS | Line  8.5 | Proj  6.0 | VALUABLE: Under (77% conf, 38.4% edge)
+  Russell Westbrook    | POINTS   | Line 14.5 | Proj 11.7 | VALUABLE: Under (74% conf, 24.1% edge)
+  PROJECTED TOTAL: 219.2 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (69% conf, 18.7% edge)
+
+MATCHUP: Portland Trail Blazers vs. Memphis Grizzlies
+------------------------------
+  Donovan Clingan      | REBOUNDS | Line 13.5 | Proj 11.6 | VALUABLE: Under (75% conf, 25.0% edge)
+  Shaedon Sharpe       | POINTS   | Line 24.5 | Proj 20.8 | VALUABLE: Under (74% conf, 23.9% edge)
+  GG Jackson           | POINTS   | Line 15.5 | Proj 12.1 | VALUABLE: Under (77% conf, 27.4% edge)
+  PROJECTED TOTAL: 211.6 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (78% conf, 32.4% edge)
+  -> SPREAD: Portland Trail Blazers -8.5 VALUABLE: Cover (77% conf, 27.5% edge)
+
+MATCHUP: Milwaukee Bucks vs. Indiana Pacers
+------------------------------
+  Johnny Furphy        | POINTS   | Line  6.5 | Proj  4.2 | VALUABLE: Under (78% conf, 34.2% edge)
+  PROJECTED TOTAL: 220.0 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (67% conf, 17.1% edge)
 
 MATCHUP: Boston Celtics vs. Miami Heat
 ------------------------------
+  PROJECTED TOTAL: 227.0 | O/U 227.5
+  -> SPREAD: Miami Heat +5.5 VALUABLE: Cover (68% conf, 17.7% edge)
+
+MATCHUP: Detroit Pistons vs. New York Knicks
+------------------------------
+  Cade Cunningham      | POINTS   | Line 25.5 | Proj 21.1 | VALUABLE: Under (77% conf, 26.6% edge)
+  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  7.2 | VALUABLE: Under (78% conf, 36.1% edge)
+  Isaiah Stewart       | REBOUNDS | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 34.5% edge)
+  PROJECTED TOTAL: 227.3 | O/U 227.5
+  -> SPREAD: Detroit Pistons -5.5 VALUABLE: Cover (82% conf, 31.8% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Derrick Jones Jr. Over 8.5 POINTS (78% conf, 25.6% edge) | LA Clippers vs. Sacramento Kings
-  2. Donovan Clingan Under 13.5 REBOUNDS (78% conf, 24.3% edge) | Portland Trail Blazers vs. Memphis Grizzlies
-  3. Kawhi Leonard Over 29.5 POINTS (76% conf, 23.6% edge) | LA Clippers vs. Sacramento Kings
+  1. Johnny Furphy Under 6.5 POINTS (78% conf, 28.5% edge) | Milwaukee Bucks vs. Indiana Pacers
+  2. Game Total Under 227.5 TOTAL (78% conf, 25.6% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  3. Game Total Over 227.5 TOTAL (77% conf, 25.1% edge) | Minnesota Timberwolves vs. New Orleans Pelicans
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Derrick Jones Jr. Over 8.5 POINTS (78% conf, 25.6% edge) | LA Clippers vs. Sacramento Kings
-  2. Donovan Clingan Under 13.5 REBOUNDS (78% conf, 24.3% edge) | Portland Trail Blazers vs. Memphis Grizzlies
-  3. Kawhi Leonard Over 29.5 POINTS (76% conf, 23.6% edge) | LA Clippers vs. Sacramento Kings
-  4. Dylan Cardwell Under 8.5 REBOUNDS (77% conf, 22.7% edge) | LA Clippers vs. Sacramento Kings
+  1. Johnny Furphy Under 6.5 POINTS (78% conf, 28.5% edge) | Milwaukee Bucks vs. Indiana Pacers
+  2. Game Total Under 227.5 TOTAL (78% conf, 25.6% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  3. Game Total Over 227.5 TOTAL (77% conf, 25.1% edge) | Minnesota Timberwolves vs. New Orleans Pelicans
+  4. GG Jackson Under 15.5 POINTS (77% conf, 23.4% edge) | Portland Trail Blazers vs. Memphis Grizzlies
 
 
-Total VALUABLE picks today: 6
+Total VALUABLE picks today: 16

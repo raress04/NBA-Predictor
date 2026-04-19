@@ -4,37 +4,61 @@ NBA MODEL PREDICTIONS - 2026-02-28
 
 MATCHUP: New Orleans Pelicans vs. Utah Jazz
 ------------------------------
-  DeAndre Jordan       | REBOUNDS | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 39.7% edge)
-  Keyonte George       | POINTS   | Line 19.5 | Proj 25.2 | VALUABLE: Over (74% conf, 29.8% edge)
-
-MATCHUP: Toronto Raptors vs. Washington Wizards
-------------------------------
-  Anthony Gill         | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (77% conf, 35.3% edge)
-
-MATCHUP: Charlotte Hornets vs. Portland Trail Blazers
-------------------------------
-  Coby White           | POINTS   | Line 11.5 | Proj 16.2 | VALUABLE: Over (74% conf, 29.7% edge)
-  Donovan Clingan      | REBOUNDS | Line 12.5 | Proj  9.5 | VALUABLE: Under (77% conf, 37.6% edge)
-
-MATCHUP: Los Angeles Lakers vs. Golden State Warriors
-------------------------------
-  Gui Santos           | POINTS   | Line 13.5 | Proj  9.4 | VALUABLE: Under (78% conf, 37.0% edge)
+  Bryce McGowens       | POINTS   | Line 10.5 | Proj  7.5 | VALUABLE: Under (78% conf, 32.2% edge)
+  DeAndre Jordan       | REBOUNDS | Line  6.5 | Proj  4.7 | VALUABLE: Under (78% conf, 34.3% edge)
+  Zion Williamson      | POINTS   | Line 24.5 | Proj 19.2 | VALUABLE: Under (78% conf, 33.2% edge)
+  Isaiah Collier       | ASSISTS  | Line  8.5 | Proj  6.8 | VALUABLE: Under (78% conf, 31.4% edge)
+  PROJECTED TOTAL: 233.5 | O/U 229.5
+  -> SPREAD: New Orleans Pelicans -5.5 VALUABLE: Cover (65% conf, 15.3% edge)
 
 MATCHUP: Houston Rockets vs. Miami Heat
 ------------------------------
+  Tari Eason           | POINTS   | Line 13.5 | Proj 10.2 | VALUABLE: Under (78% conf, 30.3% edge)
+  Reed Sheppard        | POINTS   | Line 15.5 | Proj 12.6 | VALUABLE: Under (73% conf, 23.0% edge)
+  PROJECTED TOTAL: 216.9 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (77% conf, 27.0% edge)
+  -> SPREAD: Miami Heat +2.5 VALUABLE: Cover (78% conf, 28.4% edge)
+
+MATCHUP: Toronto Raptors vs. Washington Wizards
+------------------------------
+  Anthony Gill         | POINTS   | Line  7.5 | Proj  5.2 | VALUABLE: Under (78% conf, 32.6% edge)
+  PROJECTED TOTAL: 235.6 | O/U 229.5
+  -> SPREAD: Toronto Raptors -13.5 VALUABLE: Cover (97% conf, 47.2% edge)
+
+MATCHUP: Los Angeles Lakers vs. Golden State Warriors
+------------------------------
+  Gui Santos           | POINTS   | Line 13.5 | Proj  9.4 | VALUABLE: Under (78% conf, 34.5% edge)
+  Gui Santos           | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (78% conf, 37.1% edge)
+  De'Anthony Melton    | POINTS   | Line 16.5 | Proj 13.2 | VALUABLE: Under (75% conf, 25.5% edge)
+  PROJECTED TOTAL: 231.6 | O/U 229.5
+  -> SPREAD: Los Angeles Lakers -4.0 VALUABLE: Cover (96% conf, 46.0% edge)
+
+MATCHUP: Charlotte Hornets vs. Portland Trail Blazers
+------------------------------
+  Brandon Miller       | POINTS   | Line 22.5 | Proj 17.6 | VALUABLE: Under (78% conf, 30.0% edge)
+  Kon Knueppel         | POINTS   | Line 19.5 | Proj 15.5 | VALUABLE: Under (77% conf, 26.7% edge)
+  Coby White           | POINTS   | Line 11.5 | Proj 16.8 | VALUABLE: Over (78% conf, 28.4% edge)
+  Jrue Holiday         | POINTS   | Line 18.5 | Proj 13.2 | VALUABLE: Under (78% conf, 33.8% edge)
+  Jrue Holiday         | ASSISTS  | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 36.8% edge)
+  Donovan Clingan      | POINTS   | Line 13.5 | Proj 11.1 | VALUABLE: Under (73% conf, 22.6% edge)
+  Donovan Clingan      | REBOUNDS | Line 12.5 | Proj 10.1 | VALUABLE: Under (78% conf, 30.9% edge)
+  Scoot Henderson      | POINTS   | Line 15.5 | Proj 12.8 | VALUABLE: Under (72% conf, 22.2% edge)
+  PROJECTED TOTAL: 219.6 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (71% conf, 21.2% edge)
+  -> SPREAD: Charlotte Hornets -7.0 VALUABLE: Cover (87% conf, 37.0% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. DeAndre Jordan Under 6.5 REBOUNDS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
-  2. Gui Santos Under 13.5 POINTS (78% conf, 28.0% edge) | Los Angeles Lakers vs. Golden State Warriors
-  3. Anthony Gill Under 7.5 POINTS (77% conf, 27.2% edge) | Toronto Raptors vs. Washington Wizards
+  1. Bryce McGowens Under 10.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
+  2. DeAndre Jordan Under 6.5 REBOUNDS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
+  3. Zion Williamson Under 24.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. DeAndre Jordan Under 6.5 REBOUNDS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
-  2. Gui Santos Under 13.5 POINTS (78% conf, 28.0% edge) | Los Angeles Lakers vs. Golden State Warriors
-  3. Anthony Gill Under 7.5 POINTS (77% conf, 27.2% edge) | Toronto Raptors vs. Washington Wizards
-  4. Donovan Clingan Under 12.5 REBOUNDS (77% conf, 26.6% edge) | Charlotte Hornets vs. Portland Trail Blazers
+  1. Bryce McGowens Under 10.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
+  2. DeAndre Jordan Under 6.5 REBOUNDS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
+  3. Zion Williamson Under 24.5 POINTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
+  4. Isaiah Collier Under 8.5 ASSISTS (78% conf, 28.0% edge) | New Orleans Pelicans vs. Utah Jazz
 
 
-Total VALUABLE picks today: 6
+Total VALUABLE picks today: 25

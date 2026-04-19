@@ -1,35 +1,37 @@
 ================================================================
   NEW GEN MODEL  (retrospective_db.db)
-  Generated: 2026-03-26 01:07
+  Generated: 2026-04-07 12:33
 ================================================================
-  Total projections  : 24,250
-  Overall MAE        : 2.788 stats/game
-  Average Bias       : -0.089  (+ = model under-predicted)
-  Hit Rate           : 53.8%  (13,044/24,250)
-  Cumulative EV      : +485.55 units
-  ROI per pick       : +2.00%
+  Total projections  : 29,081
+  Overall MAE        : 3.065 units
+  Average Bias       : +0.280 (+ = under-projected)
+  Hit Rate           : 54.8%  (15,950/29,081)
+  Cumulative EV      : +1169.78 units
+  ROI per pick       : +4.02%
 
   CATEGORY           N     MAE    BIAS    HIT%   EV/pick
   -------------------------------------------------------
-  POINTS         8,161   4.871  -0.727   53.1%   +0.0018
-  REBOUNDS       8,101   1.966  +0.633   54.1%   +0.0257
-  ASSISTS        7,988   1.493  -0.169   54.2%   +0.0328
+  POINTS         9,346   4.756  +0.381   54.5%   +0.0268
+  REBOUNDS       9,291   1.950  +0.191   55.1%   +0.0455
+  ASSISTS        9,157   1.465  +0.222   55.7%   +0.0618
+  TOTAL             83  15.213  +1.294   53.0%   +0.0120
+  SPREAD         1,204   9.871  +0.554   49.3%   -0.0582
 
   MONTH            N     MAE    HIT%
   ------------------------------------
-  2026-01      9,679   2.745   54.1%
-  2026-02      7,002   2.805   53.6%
-  2026-03      7,569   2.827   53.6%
+  2026-01     11,401   2.951   55.0%
+  2026-02      7,345   3.136   54.2%
+  2026-03     10,335   3.141   55.1%
 
   Verdict: 🟡  MARGINAL EDGE — above baseline
 ================================================================
 ================================================================
   OLD GEN MODEL  (bet_tracker.db)
-  Generated: 2026-03-26 01:07
+  Generated: 2026-04-07 12:33
 ================================================================
   Total projections  : 4,167
-  Overall MAE        : 3.036 stats/game
-  Average Bias       : -0.149  (+ = model under-predicted)
+  Overall MAE        : 3.036 units
+  Average Bias       : -0.149 (+ = under-projected)
   Hit Rate           : 56.7%  (2,361/4,167)
   Cumulative EV      : +340.15 units
   ROI per pick       : +8.16%
@@ -39,6 +41,7 @@
   POINTS         1,370   4.912  -0.227   56.1%   +0.0715
   REBOUNDS       1,395   1.945  +0.596   57.9%   +0.1057
   ASSISTS        1,342   1.464  -0.036   56.5%   +0.0783
+  TOTAL             60  20.719 -18.246   43.3%   -0.1728
 
   MONTH            N     MAE    HIT%
   ------------------------------------
@@ -48,15 +51,16 @@
 
   Verdict: ✅  POSITIVE EDGE — beats 50/50 baseline
 ================================================================
+
 ================================================================
   MODEL COMPARISON  —  New Gen  vs.  Old Gen
 ================================================================
   Metric                            NEW GEN      OLD GEN      DELTA
   ----------------------------------------------------------------
-  Total Projections                  24,250        4,167    +20,083  NEW
-  MAE (lower is better)               2.788        3.036     -0.248  NEW
-  Bias                               -0.089       -0.149     +0.060  NEW
-  Hit Rate (%)                        53.8%        56.7%     -2.870  OLD
-  ROI per Pick (%)                   +2.00%       +8.16%     -6.161  OLD
-  Cumulative EV                     +485.55      +340.15   +145.398  NEW
+  Total Projections                  29,081        4,167    +24,914  NEW
+  MAE (lower better)                  3.065        3.036     +0.029  OLD
+  Average Bias                       +0.280       -0.149     +0.429  NEW
+  Hit Rate (%)                        54.8%        56.7%     -1.813  OLD
+  ROI per Pick (%)                   +4.02%       +8.16%     -4.140  OLD
+  Cumulative EV (Units)            +1169.78      +340.15   +829.626  NEW
 ================================================================

@@ -4,47 +4,55 @@ NBA MODEL PREDICTIONS - 2026-03-09
 
 MATCHUP: Memphis Grizzlies vs. Brooklyn Nets
 ------------------------------
-  Jaylen Wells         | POINTS   | Line 16.5 | Proj 23.9 | VALUABLE: Over (78% conf, 34.7% edge)
-  Danny Wolf           | REBOUNDS | Line  7.5 | Proj  5.0 | VALUABLE: Under (78% conf, 40.5% edge)
+  Danny Wolf           | POINTS   | Line 14.5 | Proj 10.5 | VALUABLE: Under (78% conf, 33.1% edge)
+  Nolan Traore         | POINTS   | Line 12.5 | Proj  9.7 | VALUABLE: Under (78% conf, 27.9% edge)
+  PROJECTED TOTAL: 212.8 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (78% conf, 28.6% edge)
+  -> SPREAD: Brooklyn Nets -1.0 VALUABLE: Cover (66% conf, 16.3% edge)
 
 MATCHUP: New York Knicks vs. LA Clippers
 ------------------------------
-  Karl-Anthony Towns   | REBOUNDS | Line 12.5 | Proj 10.0 | VALUABLE: Under (74% conf, 34.6% edge)
-  Darius Garland       | POINTS   | Line 15.5 | Proj 22.0 | VALUABLE: Over (76% conf, 33.2% edge)
-  Darius Garland       | ASSISTS  | Line  5.5 | Proj  8.2 | VALUABLE: Over (78% conf, 35.4% edge)
-
-MATCHUP: Cleveland Cavaliers vs. Philadelphia 76ers
-------------------------------
-  Donovan Mitchell     | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (77% conf, 30.0% edge)
-  Evan Mobley          | REBOUNDS | Line  9.5 | Proj  7.2 | VALUABLE: Under (75% conf, 36.0% edge)
-  Adem Bona            | REBOUNDS | Line  6.5 | Proj  4.7 | VALUABLE: Under (75% conf, 35.6% edge)
-  Jabari Walker        | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (78% conf, 42.7% edge)
-
-MATCHUP: Utah Jazz vs. Golden State Warriors
-------------------------------
-  Keyonte George       | POINTS   | Line 22.5 | Proj 32.4 | VALUABLE: Over (78% conf, 39.4% edge)
-  Gui Santos           | POINTS   | Line 15.5 | Proj  9.4 | VALUABLE: Under (78% conf, 37.5% edge)
-  Gui Santos           | REBOUNDS | Line  6.5 | Proj  4.6 | VALUABLE: Under (76% conf, 36.9% edge)
+  Darius Garland       | POINTS   | Line 15.5 | Proj 20.4 | VALUABLE: Over (74% conf, 23.6% edge)
+  PROJECTED TOTAL: 233.4 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (66% conf, 15.5% edge)
 
 MATCHUP: Oklahoma City Thunder vs. Denver Nuggets
 ------------------------------
-  Shai Gilgeous-Alexander | POINTS   | Line 32.5 | Proj 38.9 | VALUABLE: Over (74% conf, 29.5% edge)
-  Jaylin Williams      | REBOUNDS | Line  9.5 | Proj  6.5 | VALUABLE: Under (78% conf, 41.3% edge)
-  Jared McCain         | POINTS   | Line  8.5 | Proj 13.0 | VALUABLE: Over (74% conf, 30.6% edge)
-  Cameron Johnson      | POINTS   | Line  8.5 | Proj 13.2 | VALUABLE: Over (76% conf, 33.0% edge)
+  Jaylin Williams      | POINTS   | Line 11.5 | Proj  8.2 | VALUABLE: Under (78% conf, 31.3% edge)
+  Jaylin Williams      | REBOUNDS | Line  9.5 | Proj  7.1 | VALUABLE: Under (78% conf, 34.2% edge)
+  Cameron Johnson      | POINTS   | Line  8.5 | Proj 13.4 | VALUABLE: Over (78% conf, 29.3% edge)
+  PROJECTED TOTAL: 240.8 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (78% conf, 29.2% edge)
+  -> SPREAD: Denver Nuggets +3.5 VALUABLE: Cover (82% conf, 31.7% edge)
+
+MATCHUP: Utah Jazz vs. Golden State Warriors
+------------------------------
+  Keyonte George       | POINTS   | Line 22.5 | Proj 29.2 | VALUABLE: Over (78% conf, 28.4% edge)
+  Gui Santos           | POINTS   | Line 15.5 | Proj 10.5 | VALUABLE: Under (78% conf, 36.0% edge)
+  PROJECTED TOTAL: 223.2 | O/U 226.5
+
+MATCHUP: Cleveland Cavaliers vs. Philadelphia 76ers
+------------------------------
+  Donovan Mitchell     | POINTS   | Line 26.5 | Proj 22.6 | VALUABLE: Under (74% conf, 23.6% edge)
+  Donovan Mitchell     | ASSISTS  | Line  5.5 | Proj  3.9 | VALUABLE: Under (78% conf, 35.8% edge)
+  Cameron Payne        | POINTS   | Line 11.5 | Proj  8.3 | VALUABLE: Under (78% conf, 31.4% edge)
+  Jabari Walker        | POINTS   | Line  9.5 | Proj  6.9 | VALUABLE: Under (78% conf, 30.7% edge)
+  Jabari Walker        | REBOUNDS | Line  5.5 | Proj  3.4 | VALUABLE: Under (78% conf, 39.2% edge)
+  PROJECTED TOTAL: 224.5 | O/U 226.5
+  -> SPREAD: Cleveland Cavaliers -14.0 VALUABLE: Cover (91% conf, 41.1% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Danny Wolf Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
-  2. Darius Garland Over 5.5 ASSISTS (78% conf, 28.0% edge) | New York Knicks vs. LA Clippers
-  3. Jabari Walker Under 5.5 REBOUNDS (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Philadelphia 76ers
+  1. Danny Wolf Under 14.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
+  2. Game Total Under 226.5 TOTAL (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
+  3. Jaylin Williams Under 11.5 POINTS (78% conf, 28.0% edge) | Oklahoma City Thunder vs. Denver Nuggets
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Danny Wolf Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
-  2. Darius Garland Over 5.5 ASSISTS (78% conf, 28.0% edge) | New York Knicks vs. LA Clippers
-  3. Jabari Walker Under 5.5 REBOUNDS (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Philadelphia 76ers
-  4. Keyonte George Over 22.5 POINTS (78% conf, 28.0% edge) | Utah Jazz vs. Golden State Warriors
+  1. Danny Wolf Under 14.5 POINTS (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
+  2. Game Total Under 226.5 TOTAL (78% conf, 28.0% edge) | Memphis Grizzlies vs. Brooklyn Nets
+  3. Jaylin Williams Under 11.5 POINTS (78% conf, 28.0% edge) | Oklahoma City Thunder vs. Denver Nuggets
+  4. Jaylin Williams Under 9.5 REBOUNDS (78% conf, 28.0% edge) | Oklahoma City Thunder vs. Denver Nuggets
 
 
-Total VALUABLE picks today: 16
+Total VALUABLE picks today: 19

@@ -2,57 +2,90 @@ NBA MODEL PREDICTIONS - 2026-01-30
 ============================================================
 
 
-MATCHUP: Brooklyn Nets vs. Denver Nuggets
+MATCHUP: Toronto Raptors vs. Orlando Magic
 ------------------------------
-  Peyton Watson        | POINTS   | Line 18.5 | Proj 14.4 | VALUABLE: Under (72% conf, 22.2% edge)
+  RJ Barrett           | POINTS   | Line 14.5 | Proj 19.6 | VALUABLE: Over (77% conf, 27.0% edge)
+  Tristan da Silva     | POINTS   | Line  6.5 | Proj 10.9 | VALUABLE: Over (78% conf, 28.0% edge)
+  PROJECTED TOTAL: 241.4 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (75% conf, 24.6% edge)
 
-MATCHUP: Philadelphia 76ers vs. Sacramento Kings
+MATCHUP: Brooklyn Nets vs. Utah Jazz
 ------------------------------
-  Zach LaVine          | POINTS   | Line 16.5 | Proj 19.8 | VALUABLE: Over (72% conf, 22.1% edge)
-  Maxime Raynaud       | POINTS   | Line  6.5 | Proj 11.0 | VALUABLE: Over (78% conf, 36.4% edge)
+  Keyonte George       | POINTS   | Line 24.5 | Proj 21.1 | VALUABLE: Under (72% conf, 22.1% edge)
+  Keyonte George       | ASSISTS  | Line  6.5 | Proj  4.0 | VALUABLE: Under (78% conf, 42.4% edge)
+  Kyle Filipowski      | POINTS   | Line 14.5 | Proj 11.0 | VALUABLE: Under (78% conf, 28.9% edge)
+  Ace Bailey           | POINTS   | Line 15.5 | Proj 12.2 | VALUABLE: Under (76% conf, 25.6% edge)
+  PROJECTED TOTAL: 210.0 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 37.6% edge)
 
-MATCHUP: Milwaukee Bucks vs. Washington Wizards
+MATCHUP: Denver Nuggets vs. LA Clippers
 ------------------------------
-  Ryan Rollins         | POINTS   | Line 22.5 | Proj 15.3 | VALUABLE: Under (78% conf, 34.2% edge)
-  Ryan Rollins         | ASSISTS  | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 31.0% edge)
-  Bobby Portis         | POINTS   | Line 18.5 | Proj 13.6 | VALUABLE: Under (75% conf, 25.2% edge)
-  Alex Sarr            | POINTS   | Line 20.5 | Proj 14.4 | VALUABLE: Under (78% conf, 31.6% edge)
-  Kyshawn George       | POINTS   | Line 16.5 | Proj 11.6 | VALUABLE: Under (77% conf, 27.4% edge)
-  Kyshawn George       | ASSISTS  | Line  5.5 | Proj  3.3 | VALUABLE: Under (78% conf, 36.3% edge)
-  Tre Johnson          | POINTS   | Line 17.5 | Proj 11.0 | VALUABLE: Under (78% conf, 34.0% edge)
+  Peyton Watson        | POINTS   | Line 18.5 | Proj 12.8 | VALUABLE: Under (78% conf, 37.1% edge)
+  Ivica Zubac          | REBOUNDS | Line 10.5 | Proj  8.6 | VALUABLE: Under (77% conf, 27.0% edge)
+  PROJECTED TOTAL: 233.1 | O/U 229.5
 
-MATCHUP: Dallas Mavericks vs. Charlotte Hornets
+MATCHUP: Memphis Grizzlies vs. New Orleans Pelicans
 ------------------------------
+  Cam Spencer          | ASSISTS  | Line  8.5 | Proj  5.4 | VALUABLE: Under (78% conf, 43.3% edge)
+  Jock Landale         | POINTS   | Line 13.5 | Proj 10.4 | VALUABLE: Under (78% conf, 29.8% edge)
+  Jock Landale         | REBOUNDS | Line  8.5 | Proj  6.1 | VALUABLE: Under (78% conf, 36.6% edge)
+  Jeremiah Fears       | POINTS   | Line  9.5 | Proj 13.6 | VALUABLE: Over (75% conf, 24.9% edge)
+  PROJECTED TOTAL: 225.6 | O/U 229.5
+  -> SPREAD: New Orleans Pelicans -3.5 VALUABLE: Cover (74% conf, 24.0% edge)
 
-MATCHUP: Houston Rockets vs. Atlanta Hawks
+MATCHUP: Boston Celtics vs. Sacramento Kings
 ------------------------------
-  Alperen Sengun       | POINTS   | Line 20.5 | Proj 16.1 | VALUABLE: Under (74% conf, 23.6% edge)
-  CJ McCollum          | POINTS   | Line 17.5 | Proj 21.1 | VALUABLE: Over (73% conf, 23.2% edge)
+  Payton Pritchard     | POINTS   | Line 21.5 | Proj 17.0 | VALUABLE: Under (78% conf, 27.9% edge)
+  Neemias Queta        | POINTS   | Line 11.5 | Proj  9.3 | VALUABLE: Under (76% conf, 25.9% edge)
+  Derrick White        | POINTS   | Line 22.5 | Proj 18.0 | VALUABLE: Under (78% conf, 28.0% edge)
+  PROJECTED TOTAL: 210.1 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 37.1% edge)
+  -> SPREAD: Sacramento Kings +11.5 VALUABLE: Cover (83% conf, 32.6% edge)
 
-MATCHUP: Miami Heat vs. Chicago Bulls
+MATCHUP: Detroit Pistons vs. Golden State Warriors
 ------------------------------
+  Stephen Curry        | POINTS   | Line 28.5 | Proj 23.6 | VALUABLE: Under (76% conf, 26.0% edge)
+  PROJECTED TOTAL: 227.0 | O/U 229.5
+  -> SPREAD: Detroit Pistons +2.5 VALUABLE: Cover (90% conf, 40.4% edge)
 
-MATCHUP: Phoenix Suns vs. Detroit Pistons
+MATCHUP: New York Knicks vs. Portland Trail Blazers
 ------------------------------
-  Collin Gillespie     | POINTS   | Line 14.5 | Proj 10.6 | VALUABLE: Under (72% conf, 22.5% edge)
-  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  7.3 | VALUABLE: Under (78% conf, 29.0% edge)
+  Mitchell Robinson    | REBOUNDS | Line  9.5 | Proj  7.2 | VALUABLE: Under (78% conf, 33.6% edge)
+  Shaedon Sharpe       | POINTS   | Line 21.5 | Proj 16.5 | VALUABLE: Under (78% conf, 31.9% edge)
+  PROJECTED TOTAL: 223.5 | O/U 229.5
+  -> SPREAD: New York Knicks -6.5 VALUABLE: Cover (89% conf, 39.5% edge)
 
-MATCHUP: Oklahoma City Thunder vs. Minnesota Timberwolves
+MATCHUP: Los Angeles Lakers vs. Washington Wizards
 ------------------------------
-  Aaron Wiggins        | POINTS   | Line 12.5 | Proj  8.7 | VALUABLE: Under (78% conf, 31.3% edge)
+  Kyshawn George       | POINTS   | Line 18.5 | Proj 13.1 | VALUABLE: Under (78% conf, 34.8% edge)
+  Kyshawn George       | ASSISTS  | Line  5.5 | Proj  3.7 | VALUABLE: Under (78% conf, 38.7% edge)
+  Bub Carrington       | POINTS   | Line 13.5 | Proj  9.8 | VALUABLE: Under (78% conf, 32.7% edge)
+  Alex Sarr            | POINTS   | Line 19.5 | Proj 15.7 | VALUABLE: Under (78% conf, 27.8% edge)
+  PROJECTED TOTAL: 227.8 | O/U 229.5
+  -> SPREAD: Los Angeles Lakers -10.5 VALUABLE: Cover (100% conf, 49.7% edge)
+
+MATCHUP: Phoenix Suns vs. Cleveland Cavaliers
+------------------------------
+  Dillon Brooks        | POINTS   | Line 21.5 | Proj 16.6 | VALUABLE: Under (78% conf, 30.6% edge)
+  Collin Gillespie     | POINTS   | Line 13.5 | Proj 10.7 | VALUABLE: Under (73% conf, 23.0% edge)
+  Grayson Allen        | POINTS   | Line 17.5 | Proj 13.4 | VALUABLE: Under (78% conf, 28.7% edge)
+  Jalen Green          | POINTS   | Line 12.5 | Proj 16.8 | VALUABLE: Over (73% conf, 22.7% edge)
+  Jaylon Tyson         | POINTS   | Line 16.5 | Proj 11.4 | VALUABLE: Under (78% conf, 34.9% edge)
+  PROJECTED TOTAL: 212.6 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 33.2% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Maxime Raynaud Over 6.5 POINTS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Sacramento Kings
-  2. Ryan Rollins Under 22.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
-  3. Alex Sarr Under 20.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  1. Keyonte George Under 6.5 ASSISTS (78% conf, 31.3% edge) | Brooklyn Nets vs. Utah Jazz
+  2. Mitchell Robinson Under 9.5 REBOUNDS (78% conf, 29.0% edge) | New York Knicks vs. Portland Trail Blazers
+  3. Jock Landale Under 13.5 POINTS (78% conf, 25.6% edge) | Memphis Grizzlies vs. New Orleans Pelicans
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Maxime Raynaud Over 6.5 POINTS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Sacramento Kings
-  2. Ryan Rollins Under 22.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
-  3. Alex Sarr Under 20.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
-  4. Tre Johnson Under 17.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  1. Keyonte George Under 6.5 ASSISTS (78% conf, 31.3% edge) | Brooklyn Nets vs. Utah Jazz
+  2. Mitchell Robinson Under 9.5 REBOUNDS (78% conf, 29.0% edge) | New York Knicks vs. Portland Trail Blazers
+  3. Jock Landale Under 13.5 POINTS (78% conf, 25.6% edge) | Memphis Grizzlies vs. New Orleans Pelicans
+  4. Game Total Under 229.5 TOTAL (78% conf, 25.6% edge) | Brooklyn Nets vs. Utah Jazz
 
 
-Total VALUABLE picks today: 15
+Total VALUABLE picks today: 36

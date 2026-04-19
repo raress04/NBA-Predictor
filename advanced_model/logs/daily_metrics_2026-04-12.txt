@@ -1,0 +1,49 @@
+CALIBRATION CURVES (last 90 days)
+REBOUNDS OVER:
+REBOUNDS UNDER:
+  Bin 60-70%: predicted=65.0% | actual=75.0% | n=4
+  Bin 70-80%: predicted=75.0% | actual=50.0% | n=34
+  Bin 80%+: predicted=85.0% | actual=25.0% | n=8
+REBOUNDS OVER:
+  Bin 60-70%: predicted=65.0% | actual=100.0% | n=1
+  Bin 70-80%: predicted=75.0% | actual=50.0% | n=2
+ASSISTS OVER:
+ASSISTS UNDER:
+  Bin 70-80%: predicted=75.0% | actual=62.5% | n=16
+  Bin 80%+: predicted=85.0% | actual=66.7% | n=3
+TOTAL OVER:
+TOTAL OVER:
+  Bin 70-80%: predicted=75.0% | actual=66.7% | n=9
+  Bin 80%+: predicted=85.0% | actual=0.0% | n=1
+TOTAL UNDER:
+  Bin 70-80%: predicted=75.0% | actual=33.3% | n=3
+  Bin 80%+: predicted=85.0% | actual=0.0% | n=1
+POINTS OVER:
+POINTS UNDER:
+  Bin 70-80%: predicted=75.0% | actual=54.5% | n=22
+  Bin 80%+: predicted=85.0% | actual=42.9% | n=7
+POINTS OVER:
+  Bin 70-80%: predicted=75.0% | actual=37.5% | n=8
+  Bin 80%+: predicted=85.0% | actual=0.0% | n=1
+SPREAD OVER:
+SPREAD COVER:
+  Bin 70-80%: predicted=75.0% | actual=38.5% | n=13
+
+BRIER SCORES (last 90 days)
+ASSISTS UNDER: 0.2646 [n=19] 🔴 ALERT
+POINTS OVER: 0.3892 [n=9] 🔴 ALERT
+POINTS UNDER: 0.3282 [n=29] 🔴 ALERT
+REBOUNDS OVER: 0.2510 [n=3] 🔴 ALERT
+REBOUNDS UNDER: 0.3585 [n=46] 🔴 ALERT
+SPREAD COVER: 0.3930 [n=13] 🔴 ALERT
+TOTAL OVER: 0.2779 [n=10] 🔴 ALERT
+TOTAL UNDER: 0.5174 [n=4] 🔴 ALERT
+
+ROI ANALYSIS (last 30 days)
+Singles (flat stake, positive-EV legs): -1.77% [n=105]
+Parlays: hit_rate=0.0% [n=0], ROI=+0.00%
+
+CLV REPORT (last 30 days)
+Average CLV: +0.483 [n=122]
+Positive CLV rate: 62.3%
+Status: REVIEW

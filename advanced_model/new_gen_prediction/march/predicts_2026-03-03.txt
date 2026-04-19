@@ -2,63 +2,92 @@ NBA MODEL PREDICTIONS - 2026-03-03
 ============================================================
 
 
-MATCHUP: Oklahoma City Thunder vs. Chicago Bulls
+MATCHUP: Sacramento Kings vs. Phoenix Suns
 ------------------------------
-  Leonard Miller       | POINTS   | Line  9.5 | Proj  7.5 | VALUABLE: Under (73% conf, 29.7% edge)
-
-MATCHUP: Orlando Magic vs. Washington Wizards
-------------------------------
-  Goga Bitadze         | REBOUNDS | Line  7.5 | Proj  4.7 | VALUABLE: Under (78% conf, 43.2% edge)
-  Bilal Coulibaly      | POINTS   | Line 10.5 | Proj 16.3 | VALUABLE: Over (78% conf, 35.8% edge)
-  Tre Johnson          | POINTS   | Line 12.5 | Proj 17.4 | VALUABLE: Over (74% conf, 29.8% edge)
-
-MATCHUP: New York Knicks vs. Toronto Raptors
-------------------------------
-
-MATCHUP: Los Angeles Lakers vs. New Orleans Pelicans
-------------------------------
-
-MATCHUP: Charlotte Hornets vs. Dallas Mavericks
-------------------------------
-  Daniel Gafford       | POINTS   | Line  8.5 | Proj 12.2 | VALUABLE: Over (73% conf, 29.1% edge)
-  P.J. Washington      | POINTS   | Line 13.5 | Proj 20.7 | VALUABLE: Over (78% conf, 39.5% edge)
-
-MATCHUP: Minnesota Timberwolves vs. Memphis Grizzlies
-------------------------------
-  Rudy Gobert          | REBOUNDS | Line 12.5 | Proj  9.9 | VALUABLE: Under (74% conf, 34.4% edge)
-  Jaylen Wells         | POINTS   | Line 10.5 | Proj 16.3 | VALUABLE: Over (77% conf, 33.8% edge)
-  Cedric Coward        | POINTS   | Line 10.5 | Proj 15.9 | VALUABLE: Over (78% conf, 35.5% edge)
-
-MATCHUP: Miami Heat vs. Brooklyn Nets
-------------------------------
+  Precious Achiuwa     | POINTS   | Line 11.5 | Proj  9.4 | VALUABLE: Under (76% conf, 25.6% edge)
+  Nique Clifford       | POINTS   | Line 13.5 | Proj  8.8 | VALUABLE: Under (78% conf, 38.6% edge)
+  DeMar DeRozan        | POINTS   | Line 13.5 | Proj 18.8 | VALUABLE: Over (78% conf, 28.8% edge)
+  PROJECTED TOTAL: 214.9 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (78% conf, 29.4% edge)
 
 MATCHUP: Detroit Pistons vs. Cleveland Cavaliers
 ------------------------------
-  James Harden         | POINTS   | Line 20.5 | Proj 27.9 | VALUABLE: Over (78% conf, 35.3% edge)
+  Daniss Jenkins       | POINTS   | Line  5.5 | Proj 10.4 | VALUABLE: Over (78% conf, 31.5% edge)
+  James Harden         | POINTS   | Line 20.5 | Proj 27.0 | VALUABLE: Over (78% conf, 28.2% edge)
+  PROJECTED TOTAL: 238.9 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (73% conf, 22.9% edge)
+  -> SPREAD: Detroit Pistons -2.5 VALUABLE: Cover (78% conf, 28.6% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Memphis Grizzlies
+------------------------------
+  PROJECTED TOTAL: 230.9 | O/U 228.5
+  -> SPREAD: Minnesota Timberwolves -14.5 VALUABLE: Cover (99% conf, 48.8% edge)
+
+MATCHUP: Charlotte Hornets vs. Dallas Mavericks
+------------------------------
+  P.J. Washington      | POINTS   | Line 13.5 | Proj 18.6 | VALUABLE: Over (77% conf, 27.2% edge)
+  AJ Johnson           | POINTS   | Line  9.5 | Proj  6.4 | VALUABLE: Under (78% conf, 34.7% edge)
+  PROJECTED TOTAL: 217.9 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (73% conf, 23.4% edge)
+  -> SPREAD: Charlotte Hornets -13.5 VALUABLE: Cover (92% conf, 41.6% edge)
+
+MATCHUP: Los Angeles Lakers vs. New Orleans Pelicans
+------------------------------
+  Rui Hachimura        | POINTS   | Line  8.5 | Proj 12.4 | VALUABLE: Over (75% conf, 24.9% edge)
+  PROJECTED TOTAL: 256.5 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (78% conf, 45.2% edge)
+  -> SPREAD: Los Angeles Lakers -8.0 VALUABLE: Cover (87% conf, 37.5% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Chicago Bulls
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 14.5 | Proj 11.7 | VALUABLE: Under (74% conf, 23.7% edge)
+  Cason Wallace        | POINTS   | Line 14.5 | Proj 11.8 | VALUABLE: Under (73% conf, 22.6% edge)
+  PROJECTED TOTAL: 221.6 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (66% conf, 16.3% edge)
+  -> SPREAD: Oklahoma City Thunder -9.5 VALUABLE: Cover (77% conf, 26.8% edge)
+
+MATCHUP: Orlando Magic vs. Washington Wizards
+------------------------------
+  Goga Bitadze         | REBOUNDS | Line  7.5 | Proj  5.1 | VALUABLE: Under (78% conf, 38.1% edge)
+  Jaden Hardy          | POINTS   | Line 15.5 | Proj 11.5 | VALUABLE: Under (78% conf, 29.3% edge)
+  Julian Reese         | POINTS   | Line  7.5 | Proj 12.3 | VALUABLE: Over (78% conf, 33.3% edge)
+  Bilal Coulibaly      | POINTS   | Line 10.5 | Proj 14.7 | VALUABLE: Over (75% conf, 24.8% edge)
+  PROJECTED TOTAL: 228.2 | O/U 228.5
+  -> SPREAD: Orlando Magic -16.0 VALUABLE: Cover (97% conf, 47.0% edge)
+
+MATCHUP: Miami Heat vs. Brooklyn Nets
+------------------------------
+  PROJECTED TOTAL: 230.0 | O/U 228.5
+  -> SPREAD: Miami Heat -13.0 VALUABLE: Cover (81% conf, 30.8% edge)
 
 MATCHUP: San Antonio Spurs vs. Philadelphia 76ers
 ------------------------------
-  Victor Wembanyama    | REBOUNDS | Line 11.5 | Proj  8.1 | VALUABLE: Under (78% conf, 42.1% edge)
-  Andre Drummond       | REBOUNDS | Line  9.5 | Proj  7.1 | VALUABLE: Under (75% conf, 35.7% edge)
+  Victor Wembanyama    | REBOUNDS | Line 11.5 | Proj  9.1 | VALUABLE: Under (78% conf, 31.7% edge)
+  Tyrese Maxey         | POINTS   | Line 31.5 | Proj 26.2 | VALUABLE: Under (78% conf, 27.9% edge)
+  Tyrese Maxey         | ASSISTS  | Line  6.5 | Proj  5.0 | VALUABLE: Under (78% conf, 31.3% edge)
+  VJ Edgecombe         | POINTS   | Line 18.5 | Proj 15.4 | VALUABLE: Under (73% conf, 22.6% edge)
+  Andre Drummond       | REBOUNDS | Line  9.5 | Proj  7.1 | VALUABLE: Under (78% conf, 34.8% edge)
+  PROJECTED TOTAL: 231.3 | O/U 228.5
+  -> SPREAD: San Antonio Spurs -7.5 VALUABLE: Cover (91% conf, 41.5% edge)
 
-MATCHUP: Sacramento Kings vs. Phoenix Suns
+MATCHUP: New York Knicks vs. Toronto Raptors
 ------------------------------
-  Nique Clifford       | POINTS   | Line 13.5 | Proj 10.5 | VALUABLE: Under (74% conf, 31.1% edge)
-  Malik Monk           | POINTS   | Line 10.5 | Proj 14.4 | VALUABLE: Over (72% conf, 27.4% edge)
-  DeMar DeRozan        | POINTS   | Line 13.5 | Proj 20.3 | VALUABLE: Over (78% conf, 38.0% edge)
+  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  8.3 | VALUABLE: Under (78% conf, 30.4% edge)
+  PROJECTED TOTAL: 232.6 | O/U 228.5
+  -> SPREAD: Toronto Raptors +3.0 VALUABLE: Cover (69% conf, 19.0% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Goga Bitadze Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Orlando Magic vs. Washington Wizards
-  2. Bilal Coulibaly Over 10.5 POINTS (78% conf, 28.0% edge) | Orlando Magic vs. Washington Wizards
-  3. P.J. Washington Over 13.5 POINTS (78% conf, 28.0% edge) | Charlotte Hornets vs. Dallas Mavericks
+  1. Nique Clifford Under 13.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
+  2. DeMar DeRozan Over 13.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
+  3. Game Total Under 228.5 TOTAL (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Goga Bitadze Under 7.5 REBOUNDS (78% conf, 28.0% edge) | Orlando Magic vs. Washington Wizards
-  2. Bilal Coulibaly Over 10.5 POINTS (78% conf, 28.0% edge) | Orlando Magic vs. Washington Wizards
-  3. P.J. Washington Over 13.5 POINTS (78% conf, 28.0% edge) | Charlotte Hornets vs. Dallas Mavericks
-  4. Cedric Coward Over 10.5 POINTS (78% conf, 28.0% edge) | Minnesota Timberwolves vs. Memphis Grizzlies
+  1. Nique Clifford Under 13.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
+  2. DeMar DeRozan Over 13.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
+  3. Game Total Under 228.5 TOTAL (78% conf, 28.0% edge) | Sacramento Kings vs. Phoenix Suns
+  4. Daniss Jenkins Over 5.5 POINTS (78% conf, 28.0% edge) | Detroit Pistons vs. Cleveland Cavaliers
 
 
-Total VALUABLE picks today: 15
+Total VALUABLE picks today: 34

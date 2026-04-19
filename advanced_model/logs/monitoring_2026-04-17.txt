@@ -1,0 +1,41 @@
+=======================================================
+  MONITORING REPORT  2026-04-17
+=======================================================
+
+PICK VOLUME (last 30 days):
+  Total: 166  |  Resolved: 69  |  Pending: 97
+
+WIN RATES BY CATEGORY:
+  ASSISTS UNDER:  60.0% (n=10) [Brier: n/a]
+  POINTS OVER:  33.3% (n=9) [Brier: n/a] ⚠️
+  POINTS UNDER:  52.9% (n=17) [Brier: n/a]
+  REBOUNDS OVER:  66.7% (n=3) [Brier: n/a]
+  REBOUNDS UNDER:  53.8% (n=26) [Brier: 0.358]
+  TOTAL OVER:  0.0% (n=2) [Brier: n/a] ⚠️
+  TOTAL UNDER:  50.0% (n=2) [Brier: n/a]
+
+PARLAY PERFORMANCE:
+  No resolved parlays in last 30 days.
+
+CLV (last 30 days):
+  ASSISTS UNDER: Avg CLV=+0.413  |  Positive rate: 64%  |  [REVIEW]
+  POINTS UNDER: Avg CLV=+0.402  |  Positive rate: 58%  |  [REVIEW]
+  REBOUNDS UNDER: Avg CLV=+0.396  |  Positive rate: 55%  |  [REVIEW]
+
+CALIBRATION STATUS:
+  Platt scaling: PENDING — requires 200+ picks per category
+  Platt params file: EXISTS
+
+KELLY CRITERION:
+  [❌] 500+ resolved picks: 133
+  [❌] 2+ Platt categories: 0
+  [❌] Brier < 0.20 all cats
+  [❌] CLV positive rate > 60%
+  [❌] Parlay hit rate > 20%: 0.0% (n=0)
+  [❌] No category < 40% WR
+  STATUS: 🔴 KELLY DISABLED — USE FLAT 0.2% STAKE
+
+ALERTS:
+  🔴 POINTS OVER win rate 33.3% — below 40% threshold
+
+=======================================================

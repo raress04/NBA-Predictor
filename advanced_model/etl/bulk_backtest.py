@@ -408,7 +408,7 @@ def main():
     print(f"🚀 STARTING PARALLEL BACKTEST ({len(dates)} days, {args.workers} workers)")
     
     scraper_script = os.path.join(MODEL_DIR, 'etl', 'live_scraper.py')
-    fetch_script = os.path.join(MODEL_DIR, 'etl', 'fetch_yesterday.py')
+    fetch_script = os.path.join(MODEL_DIR, 'etl', 'fetch_range_box_scores.py')
     
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as executor:
         futures = {executor.submit(process_single_date, d, scraper_script, fetch_script): d for d in dates}

@@ -46,3 +46,15 @@ advanced_model/predicts_report.tex
 # OS
 .DS_Store
 Thumbs.db
+GEMINI.md
+
+# Application cache
+.cache/
+advanced_model/.cache/
+frontend/node_modules/
+
+# Local build outputs
+*.pdf
+advanced_model/*.pdf
+advanced_model/*.tex
+!advanced_model/predicts_report.tex

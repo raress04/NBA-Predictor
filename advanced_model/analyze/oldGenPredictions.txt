@@ -1,10 +1,10 @@
 ================================================================
   OLD GEN MODEL  (bet_tracker.db)
-  Generated: 2026-03-26 01:07
+  Generated: 2026-04-07 12:33
 ================================================================
   Total projections  : 4,167
-  Overall MAE        : 3.036 stats/game
-  Average Bias       : -0.149  (+ = model under-predicted)
+  Overall MAE        : 3.036 units
+  Average Bias       : -0.149 (+ = under-projected)
   Hit Rate           : 56.7%  (2,361/4,167)
   Cumulative EV      : +340.15 units
   ROI per pick       : +8.16%
@@ -14,6 +14,7 @@
   POINTS         1,370   4.912  -0.227   56.1%   +0.0715
   REBOUNDS       1,395   1.945  +0.596   57.9%   +0.1057
   ASSISTS        1,342   1.464  -0.036   56.5%   +0.0783
+  TOTAL             60  20.719 -18.246   43.3%   -0.1728
 
   MONTH            N     MAE    HIT%
   ------------------------------------

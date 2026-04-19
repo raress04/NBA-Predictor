@@ -139,10 +139,6 @@ USE_KELLY = False
 FLAT_STAKE_PCT = 0.002       # 0.2% of bankroll per parlay
 KELLY_FRACTION = 0.25        # Fractional Kelly (Quarter Kelly)
 BANKROLL_HARD_CAP = 0.01    # Max 2.5% of bankroll per parlay
-# Confidence prior strength (pseudo-counts) - set to 10 for moderate shrinkage
-CONFIDENCE_PRIOR_STRENGTH = 10 
-MAX_PROP_CONFIDENCE = 78.0   # Hard cap for single-leg player props
-MIN_EDGE = 2.0               # ISSUE 4 FIX: Lowered from 3.0 to 2.0 to restore pick flow
 
 
 def decimal_to_implied_prob(decimal_odds: float) -> float:
@@ -578,7 +574,7 @@ def build_parlays(
                 prior = get_prior('SPREAD', 'COVER')
                 post_mean, ci_width = compute_posterior_confidence(
                     home_edge['over_count'], home_edge['n_sim'], 
-                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                    prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                 )
                 calib_conf = post_mean * 100.0
                 
@@ -589,7 +585,7 @@ def build_parlays(
                 ev_edge = true_edge_pct(calib_conf, spread_data['home_odds'])
                 
                 # Optional: reject extremely uncertain or thin-edge picks
-                if ci_width <= 0.25 and ev_edge >= MIN_EDGE:
+                if ci_width <= 0.25 and ev_edge >= settings.MIN_EDGE:
                     spread_thresh = EDGE_THRESHOLDS['spreads']
                     if calib_conf >= spread_thresh['min_prob']:
                         lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'home')
@@ -624,7 +620,7 @@ def build_parlays(
                 prior = get_prior('SPREAD', 'COVER')
                 post_mean_away, ci_width_away = compute_posterior_confidence(
                     away_edge['over_count'], away_edge['n_sim'], 
-                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                    prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                 )
                 calib_away_conf = post_mean_away * 100.0
                 
@@ -634,7 +630,8 @@ def build_parlays(
                 # Phase 3.B: True EV-Based Edge
                 ev_edge_away = true_edge_pct(calib_away_conf, spread_data['away_odds'])
                 
-                if ci_width_away <= 0.25 and ev_edge_away >= MIN_EDGE:
+                if ci_width_away <= 0.25 and ev_edge_away >= settings.MIN_EDGE:
+                    spread_thresh = EDGE_THRESHOLDS['spreads']
                     if calib_away_conf >= spread_thresh['min_prob']:
                         lm_bonus = compute_line_movement_bonus(game_odds, 'spread', 'away')
                         adj_confidence = min(99, calib_away_conf + lm_bonus)
@@ -683,7 +680,7 @@ def build_parlays(
                 
                 post_mean, ci_width = compute_posterior_confidence(
                     target_count, total_edge['n_sim'], 
-                    prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                    prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                 )
                 calib_conf = post_mean * 100.0
                 
@@ -694,8 +691,13 @@ def build_parlays(
                     odds = totals_data['over_odds'] if direction == "Over" else totals_data['under_odds']
                     ev_edge = true_edge_pct(calib_conf, odds)
                     
-                    if ev_edge >= MIN_EDGE:
-                        all_picks.append({
+                    if ev_edge >= settings.MIN_EDGE:
+                        # ── Decision 5: TOTAL Parlay Gate ─────────────────────
+                        # Only enter all_picks (and thus parlays) if gate criteria met.
+                        # Rule: n > 200 AND MAE < 8.0. Currently gate is CLOSED.
+                        is_gate_open = False # Static for now, as n=83 and MAE=15.2 per analysis
+                        
+                        pick_obj = {
                             'type': 'total',
                             'event_id': event_id,
                             'game': f"{away_name} @ {home_name}",
@@ -706,7 +708,12 @@ def build_parlays(
                             'confidence': calib_conf,
                             'raw_sim_freq': target_count / total_edge['n_sim'],
                             'score': ev_edge * calib_conf / 100,
-                        })
+                        }
+
+                        if is_gate_open:
+                            all_picks.append(pick_obj)
+                        else:
+                            log_shadow('Game Total', 'TOTAL', direction, totals_data['total'], total_edge['projected_total'], calib_conf, ev_edge, 'PARLAY_GATE_CLOSED (n<200 or MAE>8)')
 
         # ── Player Prop Picks ─────────────────
         if event_id not in all_player_props:
@@ -776,7 +783,7 @@ def build_parlays(
                     target_count = edge['over_count'] if direction == "Over" else (edge['n_sim'] - edge['over_count'])
                     post_mean, ci_width = compute_posterior_confidence(
                         target_count, edge['n_sim'], 
-                        prior_mean=prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH
+                        prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                     )
                     calib_conf = post_mean * 100.0
                     
@@ -785,7 +792,7 @@ def build_parlays(
                         continue
 
                     # For props, apply a harder cap
-                    calib_conf = min(calib_conf, MAX_PROP_CONFIDENCE)
+                    calib_conf = min(calib_conf, settings.MAX_PROP_CONFIDENCE)
 
                     # ── Module 5: DB Historical Hit Rate Validation ──
                     hist_str = ""
@@ -865,8 +872,8 @@ def build_parlays(
                     odds = prop_info['over_odds'] if direction == "Over" else prop_info.get('under_odds', 1.90)
                     ev_edge = true_edge_pct(blended_conf, odds)
 
-                    if ev_edge < MIN_EDGE:
-                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={MIN_EDGE:.1f})')
+                    if ev_edge < settings.MIN_EDGE:
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={settings.MIN_EDGE:.1f})')
                         continue
 
                     # Attempt to resolve human-readable stat string
@@ -903,6 +910,10 @@ def build_parlays(
     # Sort all picks primarily by CONFIDENCE % to ensure 90%+ picks are prioritized (Issue 4 Fix).
     # Secondary sort by 'score' (which factors in the edge amount)
     all_picks.sort(key=lambda p: (p['confidence'], p['score']), reverse=True)
+
+    # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap ────────────────────────
+    # Slice to top 15 picks to avoid dilution and improve selectivity.
+    all_picks = all_picks[:settings.MAX_VALUABLE_PICKS_PER_DAY]
 
     # ── Build Parlay #1: Best 2-3 Picks ──────
     parlay_short = _select_diverse_picks(all_picks, target_count=3, max_per_game=2)

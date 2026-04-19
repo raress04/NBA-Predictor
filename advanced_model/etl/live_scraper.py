@@ -22,11 +22,14 @@ from simulator.synergy_tracker import compute_matchup_multiplier
 
 from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
 from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game
-from config.settings import CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed
+from config.settings import (
+    CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed,
+    MAX_PROP_CONFIDENCE
+)
 from etl.bias_corrections import get_tiered_bias
 from simulator.parlay_builder import (
     build_parlays, format_parlay_output, EDGE_THRESHOLDS,
-    compute_spread_edge, compute_total_edge, compute_prop_edge, MAX_PROP_CONFIDENCE
+    compute_spread_edge, compute_total_edge, compute_prop_edge
 )
 from simulator.markov_engine import compute_posterior_confidence
 from etl.bet_tracker import ingest_shadow_picks
@@ -35,6 +38,31 @@ DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', '
 
 def get_connection():
     return sqlite3.connect(DB_PATH)
+
+BET_TRACKER_DB = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'bet_tracker.db')
+
+def log_live_projection(player: str, category: str, projected_value: float, bookmaker_line: float,
+                        over_odds: float = 1.91, under_odds: float = 1.91):
+    """
+    Log today's live projection to bet_tracker.db/projection_outcomes for Step 3.4 bias verification.
+    actual_value and model_bias are set to 0.0 as placeholders — game not yet resolved.
+    source_mode='live_pending' distinguishes these from retroactive resolved picks.
+    """
+    from datetime import datetime
+    game_date = datetime.now().strftime('%Y-%m-%d')
+    try:
+        conn = sqlite3.connect(BET_TRACKER_DB)
+        conn.execute("""
+            INSERT OR IGNORE INTO projection_outcomes
+                (game_date, player, category, projected_value, bookmaker_line,
+                 actual_value, model_bias, source_mode, source_file)
+            VALUES (?, ?, ?, ?, ?, 0.0, 0.0, 'live_pending', ?)
+        """, (game_date, player, category, round(projected_value, 2),
+              bookmaker_line, f"predicts_{game_date}.txt"))
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass  # Non-critical — don't crash the scraper over logging
 
 def get_latest_season(conn) -> str:
     '''Auto-detect the latest season available in the database.'''
@@ -554,7 +582,7 @@ def process_hist_game(game, target_date, injured_normalized):
             away_lineup = get_actual_lineup_from_boxscores(away_team['teamId'], target_date, conn)
 
             if not home_lineup or not away_lineup:
-                print("[-] No box score data found for this game. Run 'py etl/fetch_yesterday.py' first.")
+                print("[-] No box score data found for this game. Run 'py etl/fetch_range_box_scores.py' first.")
                 return payload
 
             # 2. Build the Matrices
@@ -570,7 +598,7 @@ def process_hist_game(game, target_date, injured_normalized):
 
             for hp in home_lineup:
                 try:
-                    matrix = get_player_stats_matrix(hp, limit=15)
+                    matrix = get_player_stats_matrix(hp, limit=15, current_team_id=home_team['teamId'])
                     modifier = compute_matchup_multiplier(hp, away_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
@@ -588,7 +616,7 @@ def process_hist_game(game, target_date, injured_normalized):
             
             for ap in away_lineup:
                 try:
-                    matrix = get_player_stats_matrix(ap, limit=15)
+                    matrix = get_player_stats_matrix(ap, limit=15, current_team_id=away_team['teamId'])
                     modifier = compute_matchup_multiplier(ap, home_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
@@ -732,7 +760,12 @@ def process_hist_game(game, target_date, injured_normalized):
                             if prop_details:
                                 props_str = " (" + ", ".join(prop_details) + ")"
 
-                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
+                        # Check if this player has high trade uncertainty
+                        _matrix_dict = home_matrix if team == "HOME" else away_matrix
+                        _uncertain = _matrix_dict.get(p, {}).get('_high_uncertainty', False)
+                        _uncertain_tag = " [HIGH_UNCERTAINTY]" if _uncertain else ""
+
+                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}{_uncertain_tag}")
                 print("")
 
 
@@ -769,7 +802,7 @@ def generate_historical_projections(target_date: str):
     
     if not db_games:
         print(f"[!] No games found in database for {target_date}.")
-        print(f"    Run 'py etl/fetch_yesterday.py' first to backfill the data.")
+        print(f"    Run 'py etl/fetch_range_box_scores.py' first to backfill the data.")
         conn.close()
         return
 
@@ -924,7 +957,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
 
             for hp in home_lineup:
                 try:
-                    matrix = get_player_stats_matrix(hp, limit=15)
+                    matrix = get_player_stats_matrix(hp, limit=15, current_team_id=home_team['teamId'])
                     modifier = compute_matchup_multiplier(hp, away_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
@@ -945,7 +978,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             
             for ap in away_lineup:
                 try:
-                    matrix = get_player_stats_matrix(ap, limit=15)
+                    matrix = get_player_stats_matrix(ap, limit=15, current_team_id=away_team['teamId'])
                     modifier = compute_matchup_multiplier(ap, home_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
@@ -1097,6 +1130,9 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                 
                 if g_odds.get('totals'):
                     t_data = g_odds['totals']
+                    log_live_projection('Game Total', 'TOTAL', avg_home + avg_away, t_data['total'],
+                                        over_odds=t_data.get('over_odds', 1.91),
+                                        under_odds=t_data.get('under_odds', 1.91))
                     t_edge = compute_total_edge(home_scores_list, away_scores_list, t_data['total'])
                     if t_edge['valuable']:
                         raw_conf = t_edge['confidence_over'] if t_edge['direction'] == 'Over' else t_edge['confidence_under']
@@ -1171,8 +1207,12 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                 if stat_name in p_props:
                                     line = p_props[stat_name]['line']
                                     dist = sorted(prop_tracker[p][dict_key])
+                                    median_proj = dist[len(dist)//2]
                                     is_returning = bool(home_matrix.get(p, {}).get('minutes_restriction_flag', False) or away_matrix.get(p, {}).get('minutes_restriction_flag', False))
                                     edge_data = compute_prop_edge(dist, line, stat_key, is_returning=is_returning)
+                                    
+                                    # Log for Step 3.4 verification (POINTS/REBOUNDS/ASSISTS vs bookmaker line)
+                                    log_live_projection(p, stat_key.upper(), median_proj, line)
                                     
                                     if edge_data.get('returning_ban'):
                                         prop_details.append(f"O/U {line} {stat_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
@@ -1185,6 +1225,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                         prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {stat_name} ignore")
+
                                         
                             # 2. Combo Stats
                             combo_stats = [

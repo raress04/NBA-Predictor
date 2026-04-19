@@ -173,6 +173,13 @@ def init_db():
         except Exception:
             pass  # column already exists
 
+    # Add resolved_at to shadow_picks (idempotent)
+    try:
+        cur.execute("ALTER TABLE shadow_picks ADD COLUMN resolved_at TEXT")
+    except Exception:
+        pass  # column already exists
+
+
     conn.commit()
     conn.close()
     print(f"[+] bet_tracker.db initialised at: {DB_PATH}")

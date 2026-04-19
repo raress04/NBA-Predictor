@@ -2,78 +2,120 @@ NBA MODEL PREDICTIONS - 2026-02-11
 ============================================================
 
 
-MATCHUP: Orlando Magic vs. Milwaukee Bucks
-------------------------------
-  Franz Wagner         | POINTS   | Line 13.5 | Proj 20.8 | VALUABLE: Over (78% conf, 40.0% edge)
-  Cam Thomas           | POINTS   | Line 11.5 | Proj 21.2 | VALUABLE: Over (78% conf, 42.9% edge)
-  Bobby Portis         | POINTS   | Line 12.5 | Proj 17.4 | VALUABLE: Over (75% conf, 31.2% edge)
-
 MATCHUP: Miami Heat vs. New Orleans Pelicans
 ------------------------------
-  Bam Adebayo          | POINTS   | Line 22.5 | Proj 29.8 | VALUABLE: Over (78% conf, 35.0% edge)
+  Bam Adebayo          | POINTS   | Line 22.5 | Proj 27.8 | VALUABLE: Over (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 231.9 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (65% conf, 15.4% edge)
 
 MATCHUP: Denver Nuggets vs. Memphis Grizzlies
 ------------------------------
-  Julian Strawther     | POINTS   | Line 13.5 | Proj  8.9 | VALUABLE: Under (78% conf, 39.3% edge)
-
-MATCHUP: Charlotte Hornets vs. Atlanta Hawks
-------------------------------
-
-MATCHUP: Minnesota Timberwolves vs. Portland Trail Blazers
-------------------------------
-  Julius Randle        | REBOUNDS | Line  7.5 | Proj  5.4 | VALUABLE: Under (77% conf, 37.6% edge)
-  Rudy Gobert          | REBOUNDS | Line 11.5 | Proj  8.7 | VALUABLE: Under (77% conf, 37.8% edge)
-
-MATCHUP: New York Knicks vs. Philadelphia 76ers
-------------------------------
-
-MATCHUP: Detroit Pistons vs. Toronto Raptors
-------------------------------
-  Paul Reed            | POINTS   | Line 11.5 | Proj  7.2 | VALUABLE: Under (78% conf, 41.9% edge)
-  Paul Reed            | REBOUNDS | Line  8.5 | Proj  4.6 | VALUABLE: Under (78% conf, 47.4% edge)
-  Kevin Huerter        | POINTS   | Line  5.5 | Proj 10.9 | VALUABLE: Over (78% conf, 36.1% edge)
-  Jakob Poeltl         | POINTS   | Line  5.5 | Proj  9.4 | VALUABLE: Over (78% conf, 36.2% edge)
-
-MATCHUP: LA Clippers vs. Houston Rockets
-------------------------------
-  Kawhi Leonard        | POINTS   | Line 26.5 | Proj 33.3 | VALUABLE: Over (75% conf, 31.4% edge)
-  Bennedict Mathurin   | POINTS   | Line 12.5 | Proj 21.0 | VALUABLE: Over (78% conf, 40.5% edge)
-  Derrick Jones Jr.    | POINTS   | Line  7.5 | Proj 12.5 | VALUABLE: Over (78% conf, 34.6% edge)
-
-MATCHUP: Cleveland Cavaliers vs. Washington Wizards
-------------------------------
-  Jarrett Allen        | REBOUNDS | Line 10.5 | Proj  7.9 | VALUABLE: Under (75% conf, 35.0% edge)
-  Anthony Gill         | POINTS   | Line  7.5 | Proj  5.5 | VALUABLE: Under (77% conf, 34.6% edge)
-  Anthony Gill         | REBOUNDS | Line  5.5 | Proj  3.0 | VALUABLE: Under (78% conf, 46.7% edge)
-
-MATCHUP: Brooklyn Nets vs. Indiana Pacers
-------------------------------
-  Day'Ron Sharpe       | POINTS   | Line 15.5 | Proj 10.1 | VALUABLE: Under (76% conf, 33.2% edge)
-  Day'Ron Sharpe       | REBOUNDS | Line 12.5 | Proj  9.5 | VALUABLE: Under (77% conf, 38.6% edge)
-  Micah Potter         | POINTS   | Line  8.5 | Proj 12.7 | VALUABLE: Over (75% conf, 31.4% edge)
-  Jay Huff             | POINTS   | Line 12.5 | Proj 18.1 | VALUABLE: Over (75% conf, 31.8% edge)
-
-MATCHUP: Utah Jazz vs. Sacramento Kings
-------------------------------
-  Lauri Markkanen      | POINTS   | Line 17.5 | Proj 23.5 | VALUABLE: Over (75% conf, 31.7% edge)
-  Isaiah Collier       | POINTS   | Line 14.5 | Proj  9.9 | VALUABLE: Under (74% conf, 30.6% edge)
-  Isaiah Collier       | ASSISTS  | Line 10.5 | Proj  7.3 | VALUABLE: Under (78% conf, 37.6% edge)
-  Devin Carter         | POINTS   | Line 15.5 | Proj  9.4 | VALUABLE: Under (78% conf, 38.2% edge)
-  Devin Carter         | ASSISTS  | Line  5.5 | Proj  3.6 | VALUABLE: Under (78% conf, 31.3% edge)
-  DeMar DeRozan        | POINTS   | Line 15.5 | Proj 30.9 | VALUABLE: Over (78% conf, 48.7% edge)
-  Precious Achiuwa     | POINTS   | Line  8.5 | Proj 14.0 | VALUABLE: Over (78% conf, 37.2% edge)
-
-MATCHUP: San Antonio Spurs vs. Golden State Warriors
-------------------------------
-  Pat Spencer          | POINTS   | Line 13.5 | Proj  9.2 | VALUABLE: Under (78% conf, 37.3% edge)
-  Pat Spencer          | ASSISTS  | Line  5.5 | Proj  3.3 | VALUABLE: Under (78% conf, 36.6% edge)
-
-MATCHUP: Boston Celtics vs. Chicago Bulls
-------------------------------
+  Julian Strawther     | POINTS   | Line 13.5 | Proj  7.6 | VALUABLE: Under (78% conf, 43.2% edge)
+  PROJECTED TOTAL: 229.0 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (71% conf, 21.1% edge)
+  -> SPREAD: Denver Nuggets -14.5 VALUABLE: Cover (97% conf, 46.6% edge)
 
 MATCHUP: Oklahoma City Thunder vs. Phoenix Suns
 ------------------------------
-  Jared McCain         | POINTS   | Line  6.5 | Proj 10.4 | VALUABLE: Over (74% conf, 29.5% edge)
+  Chet Holmgren        | POINTS   | Line 18.5 | Proj 15.3 | VALUABLE: Under (74% conf, 24.3% edge)
+  PROJECTED TOTAL: 206.4 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 46.8% edge)
+  -> SPREAD: Oklahoma City Thunder -8.0 VALUABLE: Cover (75% conf, 25.4% edge)
+
+MATCHUP: LA Clippers vs. Houston Rockets
+------------------------------
+  Bennedict Mathurin   | POINTS   | Line 12.5 | Proj 20.0 | VALUABLE: Over (78% conf, 37.5% edge)
+  PROJECTED TOTAL: 218.8 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 38.2% edge)
+
+MATCHUP: Charlotte Hornets vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 228.0 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (72% conf, 22.3% edge)
+  -> SPREAD: Atlanta Hawks +2.5 VALUABLE: Cover (79% conf, 28.6% edge)
+
+MATCHUP: Utah Jazz vs. Sacramento Kings
+------------------------------
+  Lauri Markkanen      | POINTS   | Line 17.5 | Proj 22.7 | VALUABLE: Over (75% conf, 24.9% edge)
+  Isaiah Collier       | POINTS   | Line 14.5 | Proj 10.2 | VALUABLE: Under (78% conf, 36.0% edge)
+  Isaiah Collier       | ASSISTS  | Line 10.5 | Proj  6.9 | VALUABLE: Under (78% conf, 44.0% edge)
+  Ace Bailey           | POINTS   | Line 15.5 | Proj 12.5 | VALUABLE: Under (74% conf, 24.5% edge)
+  Devin Carter         | POINTS   | Line 15.5 | Proj 10.5 | VALUABLE: Under (78% conf, 36.4% edge)
+  Devin Carter         | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (78% conf, 36.4% edge)
+  DeMar DeRozan        | POINTS   | Line 15.5 | Proj 27.8 | VALUABLE: Over (78% conf, 45.7% edge)
+  Nique Clifford       | POINTS   | Line 16.5 | Proj 12.5 | VALUABLE: Under (78% conf, 28.9% edge)
+  Precious Achiuwa     | POINTS   | Line  8.5 | Proj 13.7 | VALUABLE: Over (78% conf, 33.1% edge)
+  PROJECTED TOTAL: 228.6 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (71% conf, 21.5% edge)
+  -> SPREAD: Utah Jazz -6.0 VALUABLE: Cover (73% conf, 22.6% edge)
+
+MATCHUP: Detroit Pistons vs. Toronto Raptors
+------------------------------
+  Cade Cunningham      | ASSISTS  | Line  8.5 | Proj  6.9 | VALUABLE: Under (78% conf, 28.4% edge)
+  Paul Reed            | POINTS   | Line 11.5 | Proj  6.9 | VALUABLE: Under (78% conf, 41.6% edge)
+  Paul Reed            | REBOUNDS | Line  8.5 | Proj  4.8 | VALUABLE: Under (78% conf, 45.7% edge)
+  Kevin Huerter        | POINTS   | Line  5.5 | Proj 10.4 | VALUABLE: Over (78% conf, 31.6% edge)
+  Scottie Barnes       | POINTS   | Line 18.5 | Proj 14.1 | VALUABLE: Under (78% conf, 31.0% edge)
+  Jakob Poeltl         | POINTS   | Line  5.5 | Proj  9.6 | VALUABLE: Over (78% conf, 31.0% edge)
+  PROJECTED TOTAL: 222.4 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 32.7% edge)
+
+MATCHUP: Orlando Magic vs. Milwaukee Bucks
+------------------------------
+  Franz Wagner         | POINTS   | Line 13.5 | Proj 21.5 | VALUABLE: Over (78% conf, 37.4% edge)
+  Cam Thomas           | POINTS   | Line 11.5 | Proj 19.0 | VALUABLE: Over (78% conf, 37.2% edge)
+  PROJECTED TOTAL: 227.3 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (75% conf, 25.1% edge)
+  -> SPREAD: Orlando Magic -10.5 VALUABLE: Cover (98% conf, 47.8% edge)
+
+MATCHUP: Brooklyn Nets vs. Indiana Pacers
+------------------------------
+  Day'Ron Sharpe       | POINTS   | Line 15.5 | Proj 10.5 | VALUABLE: Under (78% conf, 37.0% edge)
+  Day'Ron Sharpe       | REBOUNDS | Line 12.5 | Proj 10.0 | VALUABLE: Under (78% conf, 31.7% edge)
+  Micah Potter         | POINTS   | Line  8.5 | Proj 13.0 | VALUABLE: Over (76% conf, 25.9% edge)
+  Kam Jones            | POINTS   | Line 11.5 | Proj  7.7 | VALUABLE: Under (78% conf, 34.7% edge)
+  PROJECTED TOTAL: 217.6 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 38.6% edge)
+  -> SPREAD: Brooklyn Nets -6.5 VALUABLE: Cover (77% conf, 27.5% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 234.6 | O/U 238.5
+  -> SPREAD: Minnesota Timberwolves -7.5 VALUABLE: Cover (90% conf, 39.9% edge)
+
+MATCHUP: San Antonio Spurs vs. Golden State Warriors
+------------------------------
+  Pat Spencer          | POINTS   | Line 13.5 | Proj  8.3 | VALUABLE: Under (78% conf, 40.1% edge)
+  Pat Spencer          | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (78% conf, 40.7% edge)
+  PROJECTED TOTAL: 230.9 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (67% conf, 17.4% edge)
+  -> SPREAD: San Antonio Spurs -7.5 VALUABLE: Cover (97% conf, 47.3% edge)
+
+MATCHUP: New York Knicks vs. Philadelphia 76ers
+------------------------------
+  Josh Hart            | ASSISTS  | Line  5.5 | Proj  4.0 | VALUABLE: Under (78% conf, 34.9% edge)
+  Landry Shamet        | POINTS   | Line 11.5 | Proj  8.6 | VALUABLE: Under (78% conf, 28.7% edge)
+  PROJECTED TOTAL: 211.2 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 44.8% edge)
+  -> SPREAD: Philadelphia 76ers +2.5 VALUABLE: Cover (66% conf, 16.2% edge)
+
+MATCHUP: Boston Celtics vs. Chicago Bulls
+------------------------------
+  Jaylen Brown         | POINTS   | Line 29.5 | Proj 25.6 | VALUABLE: Under (73% conf, 22.8% edge)
+  PROJECTED TOTAL: 227.6 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (73% conf, 23.0% edge)
+  -> SPREAD: Chicago Bulls +13.5 VALUABLE: Cover (84% conf, 34.5% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Washington Wizards
+------------------------------
+  Jarrett Allen        | POINTS   | Line 16.5 | Proj 12.6 | VALUABLE: Under (78% conf, 30.2% edge)
+  Jarrett Allen        | REBOUNDS | Line 10.5 | Proj  8.6 | VALUABLE: Under (78% conf, 28.1% edge)
+  Jaylon Tyson         | POINTS   | Line 13.5 | Proj 11.0 | VALUABLE: Under (73% conf, 23.1% edge)
+  Anthony Gill         | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 32.0% edge)
+  Anthony Gill         | REBOUNDS | Line  5.5 | Proj  3.0 | VALUABLE: Under (78% conf, 43.8% edge)
+  PROJECTED TOTAL: 230.1 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (69% conf, 18.9% edge)
+  -> SPREAD: Cleveland Cavaliers -17.5 VALUABLE: Cover (97% conf, 47.0% edge)
 
 ============================================================
 
@@ -89,4 +131,4 @@ MATCHUP: Oklahoma City Thunder vs. Phoenix Suns
   4. Pat Spencer Under 5.5 ASSISTS (78% conf, 28.0% edge) | San Antonio Spurs vs. Golden State Warriors
 
 
-Total VALUABLE picks today: 31
+Total VALUABLE picks today: 59

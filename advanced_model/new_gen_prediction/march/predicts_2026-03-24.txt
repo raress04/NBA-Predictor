@@ -2,25 +2,45 @@ NBA MODEL PREDICTIONS - 2026-03-24
 ============================================================
 
 
+MATCHUP: Denver Nuggets vs. Phoenix Suns
+------------------------------
+  Devin Booker         | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 32.9% edge)
+  PROJECTED TOTAL: 234.1 | O/U 232.5
+  -> SPREAD: Denver Nuggets -6.0 VALUABLE: Cover (95% conf, 44.7% edge)
+
 MATCHUP: New York Knicks vs. New Orleans Pelicans
 ------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 11.5 | Proj  9.7 | VALUABLE: Under (76% conf, 25.6% edge)
+  Jeremiah Fears       | POINTS   | Line  8.5 | Proj 12.9 | VALUABLE: Over (77% conf, 27.4% edge)
+  Derik Queen          | POINTS   | Line  6.5 | Proj 10.4 | VALUABLE: Over (75% conf, 24.8% edge)
+  PROJECTED TOTAL: 238.1 | O/U 232.5
+  -> SPREAD: New York Knicks -8.5 VALUABLE: Cover (69% conf, 18.9% edge)
 
 MATCHUP: Orlando Magic vs. Cleveland Cavaliers
 ------------------------------
-
-MATCHUP: Denver Nuggets vs. Phoenix Suns
-------------------------------
+  PROJECTED TOTAL: 238.4 | O/U 232.5
 
 MATCHUP: Charlotte Hornets vs. Sacramento Kings
 ------------------------------
-  Devin Carter         | POINTS   | Line 15.5 | Proj  9.9 | VALUABLE: Under (76% conf, 33.5% edge)
-  DeMar DeRozan        | POINTS   | Line 19.5 | Proj 31.1 | VALUABLE: Over (78% conf, 45.0% edge)
+  LaMelo Ball          | POINTS   | Line 21.5 | Proj 17.1 | VALUABLE: Under (78% conf, 27.7% edge)
+  Devin Carter         | POINTS   | Line 15.5 | Proj 11.1 | VALUABLE: Under (78% conf, 33.4% edge)
+  DeMar DeRozan        | POINTS   | Line 19.5 | Proj 29.0 | VALUABLE: Over (78% conf, 40.1% edge)
+  Doug McDermott       | POINTS   | Line  9.5 | Proj  6.8 | VALUABLE: Under (78% conf, 31.0% edge)
+  PROJECTED TOTAL: 229.6 | O/U 232.5
+  -> SPREAD: Charlotte Hornets -18.5 VALUABLE: Cover (94% conf, 44.0% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. DeMar DeRozan Over 19.5 POINTS (78% conf, 27.0% edge) | Charlotte Hornets vs. Sacramento Kings
-  2. Devin Carter Under 15.5 POINTS (76% conf, 22.5% edge) | Charlotte Hornets vs. Sacramento Kings
+  1. Devin Booker Under 6.5 ASSISTS (78% conf, 29.2% edge) | Denver Nuggets vs. Phoenix Suns
+  2. Jeremiah Fears Over 8.5 POINTS (77% conf, 27.6% edge) | New York Knicks vs. New Orleans Pelicans
+  3. DeMar DeRozan Over 19.5 POINTS (78% conf, 27.0% edge) | Charlotte Hornets vs. Sacramento Kings
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Devin Booker Under 6.5 ASSISTS (78% conf, 29.2% edge) | Denver Nuggets vs. Phoenix Suns
+  2. Jeremiah Fears Over 8.5 POINTS (77% conf, 27.6% edge) | New York Knicks vs. New Orleans Pelicans
+  3. DeMar DeRozan Over 19.5 POINTS (78% conf, 27.0% edge) | Charlotte Hornets vs. Sacramento Kings
+  4. Devin Carter Under 15.5 POINTS (78% conf, 24.7% edge) | Charlotte Hornets vs. Sacramento Kings
 
 
-Total VALUABLE picks today: 2
+Total VALUABLE picks today: 11

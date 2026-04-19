@@ -1,0 +1,96 @@
+NBA MODEL PREDICTIONS - 2026-01-11
+============================================================
+
+
+MATCHUP: Memphis Grizzlies vs. Brooklyn Nets
+------------------------------
+  PROJECTED TOTAL: 212.0 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 41.3% edge)
+
+MATCHUP: Philadelphia 76ers vs. Toronto Raptors
+------------------------------
+  Andre Drummond       | REBOUNDS | Line 10.5 | Proj  8.1 | VALUABLE: Under (78% conf, 33.1% edge)
+  PROJECTED TOTAL: 217.5 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 35.6% edge)
+  -> SPREAD: Philadelphia 76ers -1.0 VALUABLE: Cover (73% conf, 23.0% edge)
+
+MATCHUP: Milwaukee Bucks vs. Denver Nuggets
+------------------------------
+  Aaron Gordon         | POINTS   | Line 17.5 | Proj 25.8 | VALUABLE: Over (78% conf, 36.7% edge)
+  Jalen Pickett        | POINTS   | Line 11.5 | Proj  7.6 | VALUABLE: Under (78% conf, 35.4% edge)
+  Jalen Pickett        | ASSISTS  | Line  6.5 | Proj  4.8 | VALUABLE: Under (78% conf, 33.0% edge)
+  Bruce Brown          | POINTS   | Line  8.5 | Proj 12.1 | VALUABLE: Over (73% conf, 23.0% edge)
+  Hunter Tyson         | POINTS   | Line  9.5 | Proj  5.1 | VALUABLE: Under (78% conf, 41.7% edge)
+  PROJECTED TOTAL: 232.0 | O/U 235.5
+
+MATCHUP: New York Knicks vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 220.5 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 30.8% edge)
+
+MATCHUP: Houston Rockets vs. Sacramento Kings
+------------------------------
+  Precious Achiuwa     | POINTS   | Line  5.5 | Proj  9.2 | VALUABLE: Over (77% conf, 26.8% edge)
+  PROJECTED TOTAL: 224.4 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (74% conf, 24.5% edge)
+  -> SPREAD: Houston Rockets -14.5 VALUABLE: Cover (93% conf, 42.7% edge)
+
+MATCHUP: Orlando Magic vs. New Orleans Pelicans
+------------------------------
+  Paolo Banchero       | POINTS   | Line 24.5 | Proj 29.7 | VALUABLE: Over (74% conf, 24.3% edge)
+  Desmond Bane         | POINTS   | Line 21.5 | Proj 26.9 | VALUABLE: Over (74% conf, 23.6% edge)
+  Goga Bitadze         | POINTS   | Line  9.5 | Proj  6.6 | VALUABLE: Under (78% conf, 33.4% edge)
+  Noah Penda           | POINTS   | Line  8.5 | Proj  5.6 | VALUABLE: Under (78% conf, 34.6% edge)
+  Noah Penda           | REBOUNDS | Line  6.5 | Proj  4.1 | VALUABLE: Under (78% conf, 40.7% edge)
+  Tristan da Silva     | POINTS   | Line  8.5 | Proj 13.2 | VALUABLE: Over (77% conf, 27.5% edge)
+  Jordan Poole         | POINTS   | Line 12.5 | Proj 18.0 | VALUABLE: Over (78% conf, 28.1% edge)
+  Derik Queen          | POINTS   | Line 13.5 | Proj 10.9 | VALUABLE: Under (73% conf, 23.5% edge)
+  PROJECTED TOTAL: 236.8 | O/U 235.5
+  -> SPREAD: Orlando Magic -7.5 VALUABLE: Cover (75% conf, 24.7% edge)
+
+MATCHUP: Minnesota Timberwolves vs. San Antonio Spurs
+------------------------------
+  PROJECTED TOTAL: 252.2 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (78% conf, 32.8% edge)
+  -> SPREAD: San Antonio Spurs +2.5 VALUABLE: Cover (65% conf, 15.5% edge)
+
+MATCHUP: Golden State Warriors vs. Atlanta Hawks
+------------------------------
+  Stephen Curry        | POINTS   | Line 28.5 | Proj 24.2 | VALUABLE: Under (73% conf, 23.0% edge)
+  Draymond Green       | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 32.9% edge)
+  Jalen Johnson        | ASSISTS  | Line  8.5 | Proj  6.5 | VALUABLE: Under (78% conf, 33.5% edge)
+  CJ McCollum          | POINTS   | Line 14.5 | Proj 19.1 | VALUABLE: Over (73% conf, 23.4% edge)
+  Corey Kispert        | POINTS   | Line  6.5 | Proj 10.4 | VALUABLE: Over (73% conf, 23.0% edge)
+  PROJECTED TOTAL: 250.9 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (78% conf, 30.2% edge)
+  -> SPREAD: Golden State Warriors -7.5 VALUABLE: Cover (70% conf, 19.8% edge)
+
+MATCHUP: Washington Wizards vs. Phoenix Suns
+------------------------------
+  Alex Sarr            | POINTS   | Line 16.5 | Proj 12.9 | VALUABLE: Under (78% conf, 27.9% edge)
+  Tre Johnson          | POINTS   | Line 12.5 | Proj 10.4 | VALUABLE: Under (73% conf, 22.9% edge)
+  PROJECTED TOTAL: 221.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 29.4% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Miami Heat
+------------------------------
+  Chet Holmgren        | POINTS   | Line 17.5 | Proj 13.6 | VALUABLE: Under (78% conf, 28.3% edge)
+  Ajay Mitchell        | POINTS   | Line 12.5 | Proj 10.3 | VALUABLE: Under (72% conf, 22.4% edge)
+  PROJECTED TOTAL: 237.0 | O/U 235.5
+  -> SPREAD: Oklahoma City Thunder -15.0 VALUABLE: Cover (78% conf, 28.2% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jalen Johnson Under 8.5 ASSISTS (78% conf, 29.9% edge) | Golden State Warriors vs. Atlanta Hawks
+  2. Draymond Green Under 6.5 ASSISTS (78% conf, 28.5% edge) | Golden State Warriors vs. Atlanta Hawks
+  3. Game Total Under 235.5 TOTAL (78% conf, 25.6% edge) | Memphis Grizzlies vs. Brooklyn Nets
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jalen Johnson Under 8.5 ASSISTS (78% conf, 29.9% edge) | Golden State Warriors vs. Atlanta Hawks
+  2. Draymond Green Under 6.5 ASSISTS (78% conf, 28.5% edge) | Golden State Warriors vs. Atlanta Hawks
+  3. Game Total Under 235.5 TOTAL (78% conf, 25.6% edge) | Memphis Grizzlies vs. Brooklyn Nets
+  4. Game Total Under 235.5 TOTAL (78% conf, 25.6% edge) | Philadelphia 76ers vs. Toronto Raptors
+
+
+Total VALUABLE picks today: 37

@@ -1,0 +1,88 @@
+NBA MODEL PREDICTIONS - 2026-01-15
+============================================================
+
+
+MATCHUP: Charlotte Hornets vs. Los Angeles Lakers
+------------------------------
+  LeBron James         | POINTS   | Line 23.5 | Proj 17.7 | VALUABLE: Under (78% conf, 34.8% edge)
+  Jake LaRavia         | POINTS   | Line 10.5 | Proj  7.9 | VALUABLE: Under (78% conf, 29.4% edge)
+  Deandre Ayton        | POINTS   | Line 13.5 | Proj 10.4 | VALUABLE: Under (78% conf, 29.6% edge)
+  Deandre Ayton        | REBOUNDS | Line  9.5 | Proj  7.6 | VALUABLE: Under (78% conf, 29.5% edge)
+  PROJECTED TOTAL: 234.1 | O/U 227.5
+
+MATCHUP: Boston Celtics vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 229.3 | O/U 227.5
+  -> SPREAD: Miami Heat +2.5 VALUABLE: Cover (66% conf, 15.9% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Houston Rockets
+------------------------------
+  Chet Holmgren        | POINTS   | Line 15.5 | Proj 12.7 | VALUABLE: Under (73% conf, 23.1% edge)
+  Shai Gilgeous-Alexander | POINTS   | Line 30.5 | Proj 24.5 | VALUABLE: Under (78% conf, 31.4% edge)
+  Alperen Sengun       | POINTS   | Line 20.5 | Proj 17.3 | VALUABLE: Under (73% conf, 23.3% edge)
+  PROJECTED TOTAL: 218.0 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (71% conf, 21.1% edge)
+  -> SPREAD: Oklahoma City Thunder -4.5 VALUABLE: Cover (78% conf, 27.6% edge)
+
+MATCHUP: Orlando Magic vs. Memphis Grizzlies
+------------------------------
+  Franz Wagner         | POINTS   | Line 16.5 | Proj 24.3 | VALUABLE: Over (78% conf, 35.4% edge)
+  Cam Spencer          | POINTS   | Line 13.5 | Proj 10.6 | VALUABLE: Under (75% conf, 24.8% edge)
+  Cam Spencer          | ASSISTS  | Line  7.5 | Proj  5.0 | VALUABLE: Under (78% conf, 40.4% edge)
+  PROJECTED TOTAL: 234.4 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (65% conf, 15.5% edge)
+  -> SPREAD: Orlando Magic -5.5 VALUABLE: Cover (96% conf, 46.6% edge)
+
+MATCHUP: Phoenix Suns vs. Detroit Pistons
+------------------------------
+  Jaden Ivey           | POINTS   | Line  7.5 | Proj 11.4 | VALUABLE: Over (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 220.0 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (67% conf, 16.6% edge)
+  -> SPREAD: Detroit Pistons -6.5 VALUABLE: Cover (86% conf, 36.1% edge)
+
+MATCHUP: Atlanta Hawks vs. Portland Trail Blazers
+------------------------------
+  Shaedon Sharpe       | POINTS   | Line 24.5 | Proj 20.0 | VALUABLE: Under (77% conf, 27.3% edge)
+  Jerami Grant         | POINTS   | Line 12.5 | Proj 18.7 | VALUABLE: Over (78% conf, 31.4% edge)
+  PROJECTED TOTAL: 222.3 | O/U 227.5
+  -> SPREAD: Atlanta Hawks -4.0 VALUABLE: Cover (88% conf, 38.1% edge)
+
+MATCHUP: Golden State Warriors vs. New York Knicks
+------------------------------
+  Stephen Curry        | POINTS   | Line 28.5 | Proj 24.0 | VALUABLE: Under (74% conf, 24.3% edge)
+  Brandin Podziemski   | POINTS   | Line  8.5 | Proj 12.3 | VALUABLE: Over (74% conf, 23.7% edge)
+  Karl-Anthony Towns   | POINTS   | Line 23.5 | Proj 19.3 | VALUABLE: Under (77% conf, 26.6% edge)
+  Landry Shamet        | POINTS   | Line  5.5 | Proj  9.7 | VALUABLE: Over (75% conf, 25.2% edge)
+  PROJECTED TOTAL: 233.8 | O/U 227.5
+  -> SPREAD: Golden State Warriors -7.5 VALUABLE: Cover (85% conf, 35.2% edge)
+
+MATCHUP: Dallas Mavericks vs. Utah Jazz
+------------------------------
+  Jaden Hardy          | POINTS   | Line 17.5 | Proj 14.3 | VALUABLE: Under (73% conf, 23.3% edge)
+  PROJECTED TOTAL: 228.7 | O/U 227.5
+
+MATCHUP: San Antonio Spurs vs. Milwaukee Bucks
+------------------------------
+  Victor Wembanyama    | REBOUNDS | Line 10.5 | Proj  8.6 | VALUABLE: Under (78% conf, 27.7% edge)
+  Julian Champagnie    | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (78% conf, 36.7% edge)
+  Giannis Antetokounmpo | POINTS   | Line 28.5 | Proj 20.8 | VALUABLE: Under (78% conf, 39.9% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 10.5 | Proj  7.6 | VALUABLE: Under (78% conf, 36.8% edge)
+  PROJECTED TOTAL: 236.9 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (70% conf, 20.5% edge)
+  -> SPREAD: San Antonio Spurs -7.5 VALUABLE: Cover (89% conf, 39.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Giannis Antetokounmpo Under 10.5 REBOUNDS (78% conf, 28.5% edge) | San Antonio Spurs vs. Milwaukee Bucks
+  2. Deandre Ayton Under 13.5 POINTS (78% conf, 28.0% edge) | Charlotte Hornets vs. Los Angeles Lakers
+  3. Jerami Grant Over 12.5 POINTS (78% conf, 27.0% edge) | Atlanta Hawks vs. Portland Trail Blazers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Giannis Antetokounmpo Under 10.5 REBOUNDS (78% conf, 28.5% edge) | San Antonio Spurs vs. Milwaukee Bucks
+  2. Deandre Ayton Under 13.5 POINTS (78% conf, 28.0% edge) | Charlotte Hornets vs. Los Angeles Lakers
+  3. Jerami Grant Over 12.5 POINTS (78% conf, 27.0% edge) | Atlanta Hawks vs. Portland Trail Blazers
+  4. Victor Wembanyama Under 10.5 REBOUNDS (78% conf, 25.5% edge) | San Antonio Spurs vs. Milwaukee Bucks
+
+
+Total VALUABLE picks today: 33

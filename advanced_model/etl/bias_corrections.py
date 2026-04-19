@@ -127,9 +127,4 @@ if __name__ == "__main__":
     for (cat, tier), bias in bias_map.items():
         print(f"    {cat} [{tier}]: {bias:+.2f}")
 
-if __name__ == "__main__":
-    # Diagnostic run
-    print("[+] Loading dynamic bias corrections...")
-    bias_map = load_all_bias_corrections(DB_PATH, min_samples=1) # low threshold for test
-    for (cat, tier), bias in bias_map.items():
-        print(f"    {cat} [{tier}]: {bias:+.2f}")
+

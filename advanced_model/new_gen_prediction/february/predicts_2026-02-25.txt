@@ -2,44 +2,61 @@ NBA MODEL PREDICTIONS - 2026-02-25
 ============================================================
 
 
-MATCHUP: San Antonio Spurs vs. Toronto Raptors
+MATCHUP: Detroit Pistons vs. Oklahoma City Thunder
 ------------------------------
-  Victor Wembanyama    | REBOUNDS | Line 11.5 | Proj  8.6 | VALUABLE: Under (76% conf, 36.7% edge)
-  Sandro Mamukelashvili | POINTS   | Line  6.5 | Proj 10.0 | VALUABLE: Over (73% conf, 28.7% edge)
+  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  7.6 | VALUABLE: Under (78% conf, 31.7% edge)
+  Aaron Wiggins        | POINTS   | Line 15.5 | Proj 12.1 | VALUABLE: Under (76% conf, 25.9% edge)
+  PROJECTED TOTAL: 215.5 | O/U 220.5
+  -> SPREAD: Detroit Pistons -10.5 VALUABLE: Cover (92% conf, 42.4% edge)
 
 MATCHUP: Cleveland Cavaliers vs. Milwaukee Bucks
 ------------------------------
-  Bobby Portis         | POINTS   | Line 10.5 | Proj 15.4 | VALUABLE: Over (76% conf, 33.0% edge)
-  Cam Thomas           | POINTS   | Line 14.5 | Proj 18.9 | VALUABLE: Over (72% conf, 27.7% edge)
+  Ryan Rollins         | POINTS   | Line 18.5 | Proj 14.8 | VALUABLE: Under (76% conf, 25.9% edge)
+  PROJECTED TOTAL: 205.6 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Under (78% conf, 30.6% edge)
+  -> SPREAD: Cleveland Cavaliers -3.0 VALUABLE: Cover (66% conf, 16.1% edge)
 
 MATCHUP: Memphis Grizzlies vs. Golden State Warriors
 ------------------------------
-  Jaylen Wells         | POINTS   | Line 12.5 | Proj 16.9 | VALUABLE: Over (73% conf, 29.3% edge)
-  Cam Spencer          | POINTS   | Line  8.5 | Proj 13.5 | VALUABLE: Over (76% conf, 32.3% edge)
-  Gui Santos           | POINTS   | Line 16.5 | Proj 11.1 | VALUABLE: Under (76% conf, 33.4% edge)
-
-MATCHUP: Detroit Pistons vs. Oklahoma City Thunder
-------------------------------
-
-MATCHUP: Denver Nuggets vs. Boston Celtics
-------------------------------
+  Gui Santos           | POINTS   | Line 16.5 | Proj 12.9 | VALUABLE: Under (77% conf, 26.7% edge)
+  PROJECTED TOTAL: 212.9 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Under (67% conf, 16.9% edge)
 
 MATCHUP: Houston Rockets vs. Sacramento Kings
 ------------------------------
-  DeMar DeRozan        | POINTS   | Line 14.5 | Proj 18.7 | VALUABLE: Over (72% conf, 27.4% edge)
+  Tari Eason           | POINTS   | Line 15.5 | Proj 10.3 | VALUABLE: Under (78% conf, 37.0% edge)
+  PROJECTED TOTAL: 207.2 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Under (78% conf, 29.6% edge)
+  -> SPREAD: Houston Rockets -14.0 VALUABLE: Cover (82% conf, 32.3% edge)
+
+MATCHUP: San Antonio Spurs vs. Toronto Raptors
+------------------------------
+  Victor Wembanyama    | REBOUNDS | Line 11.5 | Proj  9.0 | VALUABLE: Under (78% conf, 32.4% edge)
+  Sandro Mamukelashvili | POINTS   | Line  6.5 | Proj 11.1 | VALUABLE: Over (78% conf, 29.4% edge)
+  PROJECTED TOTAL: 247.1 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (78% conf, 44.7% edge)
+  -> SPREAD: San Antonio Spurs -6.0 VALUABLE: Cover (76% conf, 25.7% edge)
+
+MATCHUP: Denver Nuggets vs. Boston Celtics
+------------------------------
+  Julian Strawther     | POINTS   | Line  9.5 | Proj  6.7 | VALUABLE: Under (78% conf, 30.3% edge)
+  Jaylen Brown         | POINTS   | Line 29.5 | Proj 23.7 | VALUABLE: Under (78% conf, 31.2% edge)
+  PROJECTED TOTAL: 230.2 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (72% conf, 21.6% edge)
+  -> SPREAD: Denver Nuggets -3.5 VALUABLE: Cover (78% conf, 27.9% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Bobby Portis Over 10.5 POINTS (76% conf, 26.3% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
-  2. Victor Wembanyama Under 11.5 REBOUNDS (76% conf, 25.9% edge) | San Antonio Spurs vs. Toronto Raptors
-  3. Cam Spencer Over 8.5 POINTS (76% conf, 25.8% edge) | Memphis Grizzlies vs. Golden State Warriors
+  1. Cade Cunningham Under 9.5 ASSISTS (78% conf, 28.0% edge) | Detroit Pistons vs. Oklahoma City Thunder
+  2. Game Total Under 220.5 TOTAL (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  3. Tari Eason Under 15.5 POINTS (78% conf, 28.0% edge) | Houston Rockets vs. Sacramento Kings
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Bobby Portis Over 10.5 POINTS (76% conf, 26.3% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
-  2. Victor Wembanyama Under 11.5 REBOUNDS (76% conf, 25.9% edge) | San Antonio Spurs vs. Toronto Raptors
-  3. Cam Spencer Over 8.5 POINTS (76% conf, 25.8% edge) | Memphis Grizzlies vs. Golden State Warriors
-  4. Gui Santos Under 16.5 POINTS (76% conf, 25.7% edge) | Memphis Grizzlies vs. Golden State Warriors
+  1. Cade Cunningham Under 9.5 ASSISTS (78% conf, 28.0% edge) | Detroit Pistons vs. Oklahoma City Thunder
+  2. Game Total Under 220.5 TOTAL (78% conf, 28.0% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  3. Tari Eason Under 15.5 POINTS (78% conf, 28.0% edge) | Houston Rockets vs. Sacramento Kings
+  4. Game Total Under 220.5 TOTAL (78% conf, 28.0% edge) | Houston Rockets vs. Sacramento Kings
 
 
-Total VALUABLE picks today: 8
+Total VALUABLE picks today: 19

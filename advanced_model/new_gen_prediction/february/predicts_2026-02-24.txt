@@ -4,68 +4,120 @@ NBA MODEL PREDICTIONS - 2026-02-24
 
 MATCHUP: Minnesota Timberwolves vs. Portland Trail Blazers
 ------------------------------
+  Bones Hyland         | POINTS   | Line  5.5 | Proj  9.5 | VALUABLE: Over (74% conf, 23.9% edge)
+  Jrue Holiday         | POINTS   | Line 18.5 | Proj 14.6 | VALUABLE: Under (78% conf, 27.7% edge)
+  PROJECTED TOTAL: 229.9 | O/U 234.5
+  -> SPREAD: Minnesota Timberwolves -6.5 VALUABLE: Cover (98% conf, 47.9% edge)
 
 MATCHUP: Orlando Magic vs. Los Angeles Lakers
 ------------------------------
+  Tristan da Silva     | POINTS   | Line  7.5 | Proj 11.6 | VALUABLE: Over (75% conf, 25.5% edge)
+  PROJECTED TOTAL: 253.8 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Over (78% conf, 36.5% edge)
 
 MATCHUP: Oklahoma City Thunder vs. Toronto Raptors
 ------------------------------
-
-MATCHUP: Philadelphia 76ers vs. Indiana Pacers
-------------------------------
-  Andrew Nembhard      | POINTS   | Line 16.5 | Proj 24.0 | VALUABLE: Over (78% conf, 38.1% edge)
-  Kobe Brown           | REBOUNDS | Line  6.5 | Proj  4.0 | VALUABLE: Under (78% conf, 44.9% edge)
-  T.J. McConnell       | POINTS   | Line  9.5 | Proj 13.0 | VALUABLE: Over (74% conf, 29.6% edge)
-
-MATCHUP: Boston Celtics vs. Phoenix Suns
-------------------------------
-
-MATCHUP: Atlanta Hawks vs. Washington Wizards
-------------------------------
-  Jalen Johnson        | POINTS   | Line 22.5 | Proj 16.9 | VALUABLE: Under (73% conf, 29.9% edge)
-  Jalen Johnson        | REBOUNDS | Line 11.5 | Proj  7.7 | VALUABLE: Under (78% conf, 43.8% edge)
-  Jalen Johnson        | ASSISTS  | Line  8.5 | Proj  5.9 | VALUABLE: Under (78% conf, 34.5% edge)
-  Justin Champagnie    | POINTS   | Line  6.5 | Proj 10.9 | VALUABLE: Over (76% conf, 32.8% edge)
-
-MATCHUP: Milwaukee Bucks vs. Miami Heat
-------------------------------
-  Bobby Portis         | POINTS   | Line 10.5 | Proj 15.5 | VALUABLE: Over (74% conf, 30.4% edge)
-
-MATCHUP: Chicago Bulls vs. Charlotte Hornets
-------------------------------
-  Guerschon Yabusele   | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (78% conf, 41.9% edge)
-  Rob Dillingham       | POINTS   | Line  9.5 | Proj  7.2 | VALUABLE: Under (75% conf, 32.8% edge)
-  LaMelo Ball          | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (77% conf, 30.2% edge)
+  Aaron Wiggins        | POINTS   | Line 12.5 | Proj 10.4 | VALUABLE: Under (73% conf, 23.0% edge)
+  PROJECTED TOTAL: 218.3 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (78% conf, 32.8% edge)
 
 MATCHUP: Golden State Warriors vs. New Orleans Pelicans
 ------------------------------
-  Pat Spencer          | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (78% conf, 33.5% edge)
-  Saddiq Bey           | POINTS   | Line 17.5 | Proj 22.8 | VALUABLE: Over (73% conf, 28.9% edge)
-  DeAndre Jordan       | REBOUNDS | Line  8.5 | Proj  5.6 | VALUABLE: Under (78% conf, 41.7% edge)
+  Gui Santos           | POINTS   | Line 13.5 | Proj 10.9 | VALUABLE: Under (73% conf, 22.9% edge)
+  Pat Spencer          | ASSISTS  | Line  5.5 | Proj  3.6 | VALUABLE: Under (78% conf, 39.4% edge)
+  Saddiq Bey           | POINTS   | Line 17.5 | Proj 22.3 | VALUABLE: Over (73% conf, 22.8% edge)
+  DeAndre Jordan       | REBOUNDS | Line  8.5 | Proj  6.1 | VALUABLE: Under (78% conf, 36.4% edge)
+  PROJECTED TOTAL: 220.6 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (78% conf, 29.2% edge)
+  -> SPREAD: New Orleans Pelicans +1.5 VALUABLE: Cover (79% conf, 29.0% edge)
 
-MATCHUP: Cleveland Cavaliers vs. New York Knicks
+MATCHUP: Milwaukee Bucks vs. Miami Heat
 ------------------------------
-  Donovan Mitchell     | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (76% conf, 29.1% edge)
-  James Harden         | ASSISTS  | Line  8.5 | Proj  6.2 | VALUABLE: Under (78% conf, 32.0% edge)
-  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  7.7 | VALUABLE: Under (78% conf, 39.0% edge)
-  Jalen Brunson        | ASSISTS  | Line  6.5 | Proj  4.6 | VALUABLE: Under (76% conf, 28.9% edge)
-  Josh Hart            | REBOUNDS | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 39.1% edge)
+  PROJECTED TOTAL: 220.6 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (78% conf, 28.8% edge)
+  -> SPREAD: Miami Heat -6.5 VALUABLE: Cover (70% conf, 20.4% edge)
+
+MATCHUP: Chicago Bulls vs. Charlotte Hornets
+------------------------------
+  Guerschon Yabusele   | POINTS   | Line 10.5 | Proj  7.8 | VALUABLE: Under (78% conf, 29.2% edge)
+  Guerschon Yabusele   | REBOUNDS | Line  6.5 | Proj  4.1 | VALUABLE: Under (78% conf, 40.5% edge)
+  Rob Dillingham       | POINTS   | Line  9.5 | Proj  6.2 | VALUABLE: Under (78% conf, 36.0% edge)
+  Tre Jones            | POINTS   | Line 10.5 | Proj 14.3 | VALUABLE: Over (73% conf, 22.7% edge)
+  Brandon Miller       | POINTS   | Line 21.5 | Proj 17.1 | VALUABLE: Under (77% conf, 27.0% edge)
+  LaMelo Ball          | POINTS   | Line 20.5 | Proj 16.6 | VALUABLE: Under (75% conf, 24.6% edge)
+  LaMelo Ball          | ASSISTS  | Line  7.5 | Proj  5.7 | VALUABLE: Under (78% conf, 33.8% edge)
+  Kon Knueppel         | POINTS   | Line 18.5 | Proj 15.3 | VALUABLE: Under (73% conf, 23.4% edge)
+  Coby White           | POINTS   | Line 12.5 | Proj 16.6 | VALUABLE: Over (72% conf, 22.1% edge)
+  PROJECTED TOTAL: 227.3 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (66% conf, 16.2% edge)
 
 MATCHUP: Dallas Mavericks vs. Brooklyn Nets
 ------------------------------
+  Max Christie         | POINTS   | Line 14.5 | Proj 11.4 | VALUABLE: Under (74% conf, 24.5% edge)
+  Khris Middleton      | POINTS   | Line 14.5 | Proj 10.4 | VALUABLE: Under (78% conf, 33.9% edge)
+  PROJECTED TOTAL: 223.5 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (74% conf, 24.5% edge)
+  -> SPREAD: Brooklyn Nets +1.5 VALUABLE: Cover (75% conf, 25.2% edge)
+
+MATCHUP: Boston Celtics vs. Phoenix Suns
+------------------------------
+  Derrick White        | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 32.4% edge)
+  Baylor Scheierman    | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 28.1% edge)
+  Payton Pritchard     | POINTS   | Line 22.5 | Proj 16.1 | VALUABLE: Under (78% conf, 36.6% edge)
+  Payton Pritchard     | ASSISTS  | Line  6.5 | Proj  4.5 | VALUABLE: Under (78% conf, 37.5% edge)
+  Collin Gillespie     | POINTS   | Line 15.5 | Proj 11.4 | VALUABLE: Under (78% conf, 29.6% edge)
+  PROJECTED TOTAL: 185.7 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (78% conf, 49.8% edge)
+  -> SPREAD: Boston Celtics -5.5 VALUABLE: Cover (69% conf, 19.3% edge)
+
+MATCHUP: Philadelphia 76ers vs. Indiana Pacers
+------------------------------
+  Tyrese Maxey         | POINTS   | Line 27.5 | Proj 22.7 | VALUABLE: Under (77% conf, 27.4% edge)
+  Joel Embiid          | POINTS   | Line 26.5 | Proj 21.7 | VALUABLE: Under (78% conf, 28.6% edge)
+  Andrew Nembhard      | POINTS   | Line 16.5 | Proj 22.4 | VALUABLE: Over (78% conf, 29.2% edge)
+  Kam Jones            | POINTS   | Line  9.5 | Proj  6.4 | VALUABLE: Under (78% conf, 34.1% edge)
+  Kobe Brown           | POINTS   | Line  9.5 | Proj  7.4 | VALUABLE: Under (75% conf, 25.0% edge)
+  Kobe Brown           | REBOUNDS | Line  6.5 | Proj  4.2 | VALUABLE: Under (78% conf, 38.3% edge)
+  PROJECTED TOTAL: 226.1 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (69% conf, 18.9% edge)
+  -> SPREAD: Philadelphia 76ers -11.0 VALUABLE: Cover (92% conf, 42.5% edge)
+
+MATCHUP: Atlanta Hawks vs. Washington Wizards
+------------------------------
+  Jalen Johnson        | POINTS   | Line 22.5 | Proj 18.4 | VALUABLE: Under (77% conf, 27.1% edge)
+  Jalen Johnson        | REBOUNDS | Line 11.5 | Proj  8.0 | VALUABLE: Under (78% conf, 40.1% edge)
+  Jalen Johnson        | ASSISTS  | Line  8.5 | Proj  6.5 | VALUABLE: Under (78% conf, 33.2% edge)
+  Bilal Coulibaly      | POINTS   | Line  9.5 | Proj 13.3 | VALUABLE: Over (73% conf, 22.8% edge)
+  Justin Champagnie    | POINTS   | Line  6.5 | Proj 10.5 | VALUABLE: Over (77% conf, 26.9% edge)
+  Anthony Gill         | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 31.2% edge)
+  Tristan Vukcevic     | REBOUNDS | Line  5.5 | Proj  3.7 | VALUABLE: Under (78% conf, 36.0% edge)
+  PROJECTED TOTAL: 239.0 | O/U 234.5
+  -> SPREAD: Atlanta Hawks -12.5 VALUABLE: Cover (96% conf, 46.6% edge)
+
+MATCHUP: Cleveland Cavaliers vs. New York Knicks
+------------------------------
+  Donovan Mitchell     | POINTS   | Line 27.5 | Proj 23.0 | VALUABLE: Under (76% conf, 26.2% edge)
+  Jarrett Allen        | REBOUNDS | Line  8.5 | Proj  6.6 | VALUABLE: Under (78% conf, 30.0% edge)
+  James Harden         | ASSISTS  | Line  8.5 | Proj  6.7 | VALUABLE: Under (78% conf, 31.4% edge)
+  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  7.9 | VALUABLE: Under (78% conf, 34.9% edge)
+  Jalen Brunson        | POINTS   | Line 25.5 | Proj 21.0 | VALUABLE: Under (77% conf, 26.9% edge)
+  Jalen Brunson        | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 32.8% edge)
+  Josh Hart            | REBOUNDS | Line  7.5 | Proj  5.3 | VALUABLE: Under (78% conf, 36.1% edge)
+  PROJECTED TOTAL: 238.0 | O/U 234.5
+  -> SPREAD: Cleveland Cavaliers -4.5 VALUABLE: Cover (83% conf, 32.8% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
-  1. Andrew Nembhard Over 16.5 POINTS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Indiana Pacers
-  2. Kobe Brown Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Indiana Pacers
-  3. Jalen Johnson Under 11.5 REBOUNDS (78% conf, 28.0% edge) | Atlanta Hawks vs. Washington Wizards
+  1. Pat Spencer Under 5.5 ASSISTS (78% conf, 28.0% edge) | Golden State Warriors vs. New Orleans Pelicans
+  2. DeAndre Jordan Under 8.5 REBOUNDS (78% conf, 28.0% edge) | Golden State Warriors vs. New Orleans Pelicans
+  3. Guerschon Yabusele Under 10.5 POINTS (78% conf, 28.0% edge) | Chicago Bulls vs. Charlotte Hornets
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
-  1. Andrew Nembhard Over 16.5 POINTS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Indiana Pacers
-  2. Kobe Brown Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Philadelphia 76ers vs. Indiana Pacers
-  3. Jalen Johnson Under 11.5 REBOUNDS (78% conf, 28.0% edge) | Atlanta Hawks vs. Washington Wizards
-  4. Jalen Johnson Under 8.5 ASSISTS (78% conf, 28.0% edge) | Atlanta Hawks vs. Washington Wizards
+  1. Pat Spencer Under 5.5 ASSISTS (78% conf, 28.0% edge) | Golden State Warriors vs. New Orleans Pelicans
+  2. DeAndre Jordan Under 8.5 REBOUNDS (78% conf, 28.0% edge) | Golden State Warriors vs. New Orleans Pelicans
+  3. Guerschon Yabusele Under 10.5 POINTS (78% conf, 28.0% edge) | Chicago Bulls vs. Charlotte Hornets
+  4. Guerschon Yabusele Under 6.5 REBOUNDS (78% conf, 28.0% edge) | Chicago Bulls vs. Charlotte Hornets
 
 
-Total VALUABLE picks today: 19
+Total VALUABLE picks today: 60

@@ -137,7 +137,12 @@ def fetch_game_odds(date_str, results):
                     otype = m.get('type', '').lower()
                     if val is None:
                         continue
-                    k = ("TOTAL", "Game Total")
+                    
+                    # Store matchup in player_name for TOTAL uniqueness
+                    t_names = list(teams.values())
+                    matchup = " vs. ".join(sorted(t_names)) if len(t_names) >= 2 else "Unknown TOTAL"
+                    
+                    k = ("TOTAL", matchup)
                     if k not in local:
                         local[k] = {'lines': [], 'over_odds': [], 'under_odds': []}
                     local[k]['lines'].append(float(val))

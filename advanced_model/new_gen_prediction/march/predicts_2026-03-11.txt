@@ -2,44 +2,57 @@ NBA MODEL PREDICTIONS - 2026-03-11
 ============================================================
 
 
-MATCHUP: New York Knicks vs. Utah Jazz
-------------------------------
-  Karl-Anthony Towns   | REBOUNDS | Line 12.5 | Proj  9.4 | VALUABLE: Under (76% conf, 36.8% edge)
-  Landry Shamet        | POINTS   | Line 12.5 | Proj  9.8 | VALUABLE: Under (72% conf, 28.8% edge)
-  Mohamed Diawara      | POINTS   | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 36.1% edge)
-  Keyonte George       | POINTS   | Line 20.5 | Proj 27.1 | VALUABLE: Over (75% conf, 31.6% edge)
-
 MATCHUP: Sacramento Kings vs. Charlotte Hornets
 ------------------------------
-  DeMar DeRozan        | POINTS   | Line 16.5 | Proj 31.1 | VALUABLE: Over (78% conf, 48.5% edge)
-  Coby White           | POINTS   | Line 12.5 | Proj 20.2 | VALUABLE: Over (78% conf, 39.8% edge)
+  DeMar DeRozan        | POINTS   | Line 16.5 | Proj 28.2 | VALUABLE: Over (78% conf, 45.1% edge)
+  Coby White           | POINTS   | Line 12.5 | Proj 19.7 | VALUABLE: Over (78% conf, 35.5% edge)
+  PROJECTED TOTAL: 225.0 | O/U 226.5
 
 MATCHUP: Orlando Magic vs. Cleveland Cavaliers
 ------------------------------
-  James Harden         | POINTS   | Line 19.5 | Proj 24.9 | VALUABLE: Over (73% conf, 28.1% edge)
+  PROJECTED TOTAL: 237.6 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (73% conf, 23.1% edge)
 
-MATCHUP: Denver Nuggets vs. Houston Rockets
+MATCHUP: New York Knicks vs. Utah Jazz
 ------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 12.5 | Proj 10.3 | VALUABLE: Under (78% conf, 29.1% edge)
+  Landry Shamet        | POINTS   | Line 12.5 | Proj  9.5 | VALUABLE: Under (78% conf, 28.1% edge)
+  Mohamed Diawara      | POINTS   | Line  7.5 | Proj  4.3 | VALUABLE: Under (78% conf, 37.9% edge)
+  PROJECTED TOTAL: 235.9 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (71% conf, 20.7% edge)
+  -> SPREAD: New York Knicks -14.0 VALUABLE: Cover (93% conf, 43.4% edge)
 
 MATCHUP: LA Clippers vs. Minnesota Timberwolves
 ------------------------------
-  Rudy Gobert          | REBOUNDS | Line 11.5 | Proj  8.1 | VALUABLE: Under (78% conf, 40.6% edge)
+  Rudy Gobert          | REBOUNDS | Line 11.5 | Proj  8.9 | VALUABLE: Under (78% conf, 33.4% edge)
+  PROJECTED TOTAL: 239.7 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (77% conf, 27.3% edge)
+  -> SPREAD: Minnesota Timberwolves +1.5 VALUABLE: Cover (75% conf, 24.6% edge)
+
+MATCHUP: Denver Nuggets vs. Houston Rockets
+------------------------------
+  PROJECTED TOTAL: 233.1 | O/U 226.5
+  -> SPREAD: Denver Nuggets -7.0 VALUABLE: Cover (93% conf, 43.1% edge)
 
 MATCHUP: New Orleans Pelicans vs. Toronto Raptors
 ------------------------------
+  Zion Williamson      | POINTS   | Line 21.5 | Proj 17.3 | VALUABLE: Under (78% conf, 28.7% edge)
+  Jakob Poeltl         | REBOUNDS | Line  8.5 | Proj  6.4 | VALUABLE: Under (78% conf, 32.5% edge)
+  PROJECTED TOTAL: 241.5 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (78% conf, 30.6% edge)
 
 ============================================================
 
 === TOP 3-LEG PARLAY ===
   1. DeMar DeRozan Over 16.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Charlotte Hornets
   2. Coby White Over 12.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Charlotte Hornets
-  3. Rudy Gobert Under 11.5 REBOUNDS (78% conf, 28.0% edge) | LA Clippers vs. Minnesota Timberwolves
+  3. Karl-Anthony Towns Under 12.5 REBOUNDS (78% conf, 28.0% edge) | New York Knicks vs. Utah Jazz
 
 === SYSTEM PARLAY (4 PICKS, 3/4) ===
   1. DeMar DeRozan Over 16.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Charlotte Hornets
   2. Coby White Over 12.5 POINTS (78% conf, 28.0% edge) | Sacramento Kings vs. Charlotte Hornets
-  3. Rudy Gobert Under 11.5 REBOUNDS (78% conf, 28.0% edge) | LA Clippers vs. Minnesota Timberwolves
-  4. Mohamed Diawara Under 7.5 POINTS (78% conf, 27.8% edge) | New York Knicks vs. Utah Jazz
+  3. Karl-Anthony Towns Under 12.5 REBOUNDS (78% conf, 28.0% edge) | New York Knicks vs. Utah Jazz
+  4. Landry Shamet Under 12.5 POINTS (78% conf, 28.0% edge) | New York Knicks vs. Utah Jazz
 
 
-Total VALUABLE picks today: 8
+Total VALUABLE picks today: 15
