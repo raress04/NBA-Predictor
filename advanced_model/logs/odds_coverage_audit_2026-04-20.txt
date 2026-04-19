@@ -1,0 +1,15 @@
+============================================================
+  HISTORICAL ODDS CACHE COVERAGE AUDIT
+  Generated: 2026-04-20 02:25:29
+============================================================
+
+stat_category earliest   latest     n  game_days
+      ASSISTS 20251021 20260419 19095        167
+       POINTS 20251021 20260419 17412        153
+     REBOUNDS 20251021 20260419 17379        155
+       SPREAD 20251021 20260419  2403        169
+        TOTAL 20251021 20260419  1202        169
+
+
+VERDICT:
+• Data found before 2026-01-01. Earliest is 20251021.

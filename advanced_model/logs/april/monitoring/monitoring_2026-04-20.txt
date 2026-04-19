@@ -1,9 +1,9 @@
 =======================================================
-  MONITORING REPORT  2026-04-17
+  MONITORING REPORT  2026-04-20
 =======================================================
 
 PICK VOLUME (last 30 days):
-  Total: 166  |  Resolved: 69  |  Pending: 97
+  Total: 133  |  Resolved: 69  |  Pending: 64
 
 WIN RATES BY CATEGORY:
   ASSISTS UNDER:  60.0% (n=10) [Brier: n/a]
@@ -18,9 +18,9 @@ PARLAY PERFORMANCE:
   No resolved parlays in last 30 days.
 
 CLV (last 30 days):
-  ASSISTS UNDER: Avg CLV=+0.413  |  Positive rate: 64%  |  [REVIEW]
-  POINTS UNDER: Avg CLV=+0.402  |  Positive rate: 58%  |  [REVIEW]
-  REBOUNDS UNDER: Avg CLV=+0.396  |  Positive rate: 55%  |  [REVIEW]
+  ASSISTS UNDER: Avg CLV=+0.543  |  Positive rate: 70%  |  [EDGE CONFIRMED]
+  POINTS UNDER: Avg CLV=+0.288  |  Positive rate: 53%  |  [REVIEW]
+  REBOUNDS UNDER: Avg CLV=+0.336  |  Positive rate: 54%  |  [REVIEW]
 
 CALIBRATION STATUS:
   Platt scaling: PENDING — requires 200+ picks per category

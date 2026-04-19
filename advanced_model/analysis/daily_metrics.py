@@ -160,9 +160,15 @@ def generate_daily_metrics() -> str:
     return '\n'.join(lines)
 
 def main():
-    report = generate_daily_metrics()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--out', default=None, help='Override output file path')
+    args = ap.parse_args()
+
+    report   = generate_daily_metrics()
     date_str = datetime.now().strftime('%Y-%m-%d')
-    out_path = os.path.join(LOGS_DIR, f'daily_metrics_{date_str}.txt')
+    out_path = args.out if args.out else os.path.join(LOGS_DIR, f'daily_metrics_{date_str}.txt')
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(report)
     try:
@@ -172,3 +178,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

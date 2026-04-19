@@ -197,7 +197,7 @@ def save_daily_results_file(date_dt, logs_df):
             f.write("No box score data found.\n")
     return filepath
 
-def sync_range(start_date_str, end_date_str, run_analysis=True):
+def sync_range(start_date_str, end_date_str, run_analysis=False):
     start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
     end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
     

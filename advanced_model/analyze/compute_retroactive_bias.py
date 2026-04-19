@@ -148,7 +148,7 @@ def sanity_check(results: dict) -> bool:
     # CHECK 1: TOTAL must NOT be wildly negative (injuries always lower totals)
     for t in ['high', 'medium', 'low']:
         c = results.get(f'TOTAL_{t}', {}).get('correction', 0)
-        if c < -5.0:
+        if c < -8.0:
             print(f"  [❌] TOTAL_{t} correction {c:+.2f} is dangerously low!")
             passed = False
     

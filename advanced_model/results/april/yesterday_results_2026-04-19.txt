@@ -1,0 +1,61 @@
+--- RESULTS FOR 2026-04-19 ---
+
+==================================================
+MATCHUP: BOS @ PHI | 123 - 91
+==================================================
+Jaylen Brown              | 26 PTS,  4 REB,  3 AST
+Jayson Tatum              | 25 PTS, 11 REB,  7 AST
+Tyrese Maxey              | 21 PTS,  1 REB,  8 AST
+Paul George               | 17 PTS,  4 REB,  1 AST
+VJ Edgecombe              | 13 PTS,  3 REB,  3 AST
+Neemias Queta             | 13 PTS,  2 REB,  1 AST
+Payton Pritchard          | 12 PTS,  3 REB,  6 AST
+Sam Hauser                | 12 PTS,  7 REB,  2 AST
+Derrick White             | 10 PTS,  3 REB,  6 AST
+Kelly Oubre Jr.           | 10 PTS,  7 REB,  2 AST
+Justin Edwards            |  7 PTS,  6 REB,  0 AST
+Quentin Grimes            |  7 PTS,  4 REB,  2 AST
+Luka Garza                |  7 PTS,  2 REB,  1 AST
+Trendon Watford           |  6 PTS,  1 REB,  0 AST
+Baylor Scheierman         |  5 PTS,  2 REB,  0 AST
+Jordan Walsh              |  5 PTS,  2 REB,  2 AST
+Ron Harper Jr.            |  5 PTS,  0 REB,  0 AST
+Dominick Barlow           |  4 PTS,  3 REB,  0 AST
+Adem Bona                 |  3 PTS,  3 REB,  0 AST
+Nikola Vučević            |  3 PTS,  6 REB,  3 AST
+Andre Drummond            |  2 PTS,  5 REB,  2 AST
+Dalen Terry               |  1 PTS,  2 REB,  2 AST
+Hugo González             |  0 PTS,  1 REB,  0 AST
+Jabari Walker             |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: OKC @ PHX | 119 - 84
+==================================================
+Shai Gilgeous-Alexander   | 25 PTS,  4 REB,  7 AST
+Devin Booker              | 23 PTS,  6 REB,  2 AST
+Jalen Williams            | 22 PTS,  7 REB,  6 AST
+Dillon Brooks             | 18 PTS,  7 REB,  2 AST
+Jalen Green               | 17 PTS,  5 REB,  1 AST
+Chet Holmgren             | 16 PTS,  7 REB,  0 AST
+Ajay Mitchell             |  9 PTS,  5 REB,  2 AST
+Isaiah Joe                |  9 PTS,  2 REB,  1 AST
+Rasheer Fleming           |  9 PTS,  0 REB,  0 AST
+Luguentz Dort             |  8 PTS,  2 REB,  2 AST
+Isaiah Hartenstein        |  8 PTS,  8 REB,  2 AST
+Collin Gillespie          |  8 PTS,  2 REB,  2 AST
+Cason Wallace             |  6 PTS,  4 REB,  2 AST
+Jaylin Williams           |  5 PTS,  4 REB,  2 AST
+Jared McCain              |  5 PTS,  0 REB,  0 AST
+Royce O'Neale             |  4 PTS,  3 REB,  3 AST
+Jamaree Bouyea            |  3 PTS,  3 REB,  1 AST
+Kenrich Williams          |  2 PTS,  4 REB,  1 AST
+Alex Caruso               |  2 PTS,  5 REB,  1 AST
+Jordan Goodwin            |  2 PTS,  0 REB,  0 AST
+Aaron Wiggins             |  2 PTS,  2 REB,  1 AST
+Oso Ighodaro              |  0 PTS,  9 REB,  3 AST
+Ryan Dunn                 |  0 PTS,  5 REB,  1 AST
+Haywood Highsmith         |  0 PTS,  2 REB,  1 AST
+Khaman Maluach            |  0 PTS,  3 REB,  0 AST
+Nikola Topić              |  0 PTS,  0 REB,  1 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+

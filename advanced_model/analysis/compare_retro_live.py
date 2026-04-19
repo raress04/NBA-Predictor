@@ -273,15 +273,25 @@ def write_report(daily_results: list[dict], retro: pd.DataFrame, live: pd.DataFr
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    today = datetime.now().strftime('%Y-%m-%d')
-    out_path = os.path.join(LOGS_DIR, f'retro_live_alignment_{today}.txt')
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--start', default=START_DATE)
+    ap.add_argument('--end',   default=END_DATE)
+    ap.add_argument('--out',   default=None, help='Override output file path')
+    args = ap.parse_args()
 
-    print('[*] Loading retro picks...')
-    retro = load_retro(START_DATE, END_DATE)
+    start_d  = args.start
+    end_d    = args.end
+    date_str = datetime.now().strftime('%Y-%m-%d')
+    out_path = args.out if args.out else os.path.join(LOGS_DIR, f'retro_live_alignment_{date_str}.txt')
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
+    print(f'[*] Loading retro picks for {start_d} to {end_d}...')
+    retro = load_retro(start_d, end_d)
     print(f'    {len(retro):,} valuable retro picks after min_gap + ban filters')
 
     print('[*] Loading live picks...')
-    live  = load_live(START_DATE, END_DATE)
+    live  = load_live(start_d, end_d)
     print(f'    {len(live):,} live picks')
 
     all_dates = sorted(set(retro['date'].unique()) | set(live['date'].unique()))
@@ -294,19 +304,7 @@ def main():
         daily_results.append(compare_day(d, r_day, l_day))
 
     report = write_report(daily_results, retro, live, out_path)
-    try:
-        print(report)
-    except UnicodeEncodeError:
-        print(report.encode('ascii', 'replace').decode('ascii'))
-    print(f'\n[+] Report saved: {out_path}')
-
 
 if __name__ == '__main__':
-    import argparse
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--start', default=START_DATE)
-    ap.add_argument('--end',   default=END_DATE)
-    args = ap.parse_args()
-    START_DATE = args.start
-    END_DATE   = args.end
     main()
+

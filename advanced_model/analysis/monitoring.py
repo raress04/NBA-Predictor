@@ -497,6 +497,7 @@ def main():
     parser.add_argument('--date',   type=str, default=None,  help='Date YYYY-MM-DD (default: today)')
     parser.add_argument('--season', action='store_true',     help='Generate 2025-26 season summary instead')
     parser.add_argument('--no-save',action='store_true',     help='Print only, do not save to file')
+    parser.add_argument('--out',    type=str, default=None,  help='Override output file path')
     args = parser.parse_args()
 
     if args.season:
@@ -517,10 +518,12 @@ def main():
 
     if not args.no_save:
         date_str = args.date or datetime.now().strftime('%Y-%m-%d')
-        out_path = os.path.join(LOGS_DIR, f'monitoring_{date_str}.txt')
+        out_path = args.out if args.out else os.path.join(LOGS_DIR, f'monitoring_{date_str}.txt')
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(report)
         print(f"\n[+] Report saved to: {out_path}")
+
 
 
 if __name__ == '__main__':

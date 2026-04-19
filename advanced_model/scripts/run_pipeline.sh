@@ -4,6 +4,15 @@
 cd "$(dirname "$0")/.."
 export PYTHONPATH=$PYTHONPATH:$(pwd)/..:$(pwd)
 
+# ── Log directory structure ──────────────────────────────────
+MONTH=$(date +%B | tr '[:upper:]' '[:lower:]')
+LOG_BASE="logs/${MONTH}"
+mkdir -p "${LOG_BASE}/daily_metrics"
+mkdir -p "${LOG_BASE}/monitoring"
+mkdir -p "${LOG_BASE}/retro_live_alignment"
+mkdir -p "${LOG_BASE}/odds_coverage_audit"
+DATE=$(date +%Y-%m-%d)
+
 echo "========================================="
 echo "📊 Checking bias corrections staleness..."
 echo "========================================="
@@ -98,6 +107,10 @@ echo ""
 echo "========================================="
 echo "📊 Phase 7 — Daily Metrics & Health Report..."
 echo "========================================="
-python3 -m analysis.daily_metrics
-python3 -m analysis.monitoring
+python3 -m analysis.daily_metrics   --out "${LOG_BASE}/daily_metrics/daily_metrics_${DATE}.txt"
+python3 -m analysis.monitoring       --out "${LOG_BASE}/monitoring/monitoring_${DATE}.txt"
+python3 -m analysis.compare_retro_live --out "${LOG_BASE}/retro_live_alignment/retro_live_alignment_${DATE}.txt"
+python3 -m scripts.audit_odds          --out "${LOG_BASE}/odds_coverage_audit/odds_coverage_audit_${DATE}.txt"
 echo ""
+echo "✅ All logs generated in ${LOG_BASE}"
+

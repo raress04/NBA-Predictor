@@ -69,7 +69,12 @@ def fetch_espn_odds() -> Dict:
         return cached
     
     try:
-        today_date = datetime.now().strftime('%Y%m%d')
+        from datetime import timezone, timedelta
+        # ESPN/NBA schedules use US Eastern Time (UTC-4 EDT / UTC-5 EST)
+        # Always use ET date regardless of local timezone
+        et_offset = timedelta(hours=-4)  # EDT (Mar-Nov); adjust to -5 for EST if needed
+        et_now = datetime.now(timezone.utc) + et_offset
+        today_date = et_now.strftime('%Y%m%d')
         url = f"{ESPN_SCOREBOARD_URL}?dates={today_date}"
         resp = requests.get(url, timeout=15)
         resp.raise_for_status()

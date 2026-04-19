@@ -40,10 +40,10 @@ TOTAL OVER: 0.2779 [n=10] 🔴 ALERT
 TOTAL UNDER: 0.5174 [n=4] 🔴 ALERT
 
 ROI ANALYSIS (last 30 days)
-Singles (flat stake, positive-EV legs): -1.77% [n=105]
+Singles (flat stake, positive-EV legs): -3.12% [n=69]
 Parlays: hit_rate=0.0% [n=0], ROI=+0.00%
 
 CLV REPORT (last 30 days)
-Average CLV: +0.483 [n=122]
-Positive CLV rate: 62.3%
+Average CLV: +0.515 [n=74]
+Positive CLV rate: 64.9%
 Status: REVIEW
