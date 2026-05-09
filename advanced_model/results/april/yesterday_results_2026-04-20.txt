@@ -1,0 +1,72 @@
+--- RESULTS FOR 2026-04-20 ---
+
+==================================================
+MATCHUP: ATL @ NYK | 107 - 106
+==================================================
+CJ McCollum               | 32 PTS,  3 REB,  6 AST
+Jalen Brunson             | 29 PTS,  2 REB,  7 AST
+Jonathan Kuminga          | 19 PTS,  4 REB,  1 AST
+Karl-Anthony Towns        | 18 PTS,  8 REB,  2 AST
+Jalen Johnson             | 17 PTS,  8 REB,  3 AST
+Josh Hart                 | 15 PTS, 13 REB,  6 AST
+Onyeka Okongwu            | 15 PTS,  8 REB,  1 AST
+OG Anunoby                | 14 PTS,  8 REB,  2 AST
+Mitchell Robinson         | 13 PTS,  7 REB,  0 AST
+Mikal Bridges             | 10 PTS,  1 REB,  2 AST
+Nickeil Alexander-Walker  |  9 PTS,  5 REB,  6 AST
+Jordan Clarkson           |  7 PTS,  5 REB,  0 AST
+Dyson Daniels             |  6 PTS,  4 REB,  2 AST
+Corey Kispert             |  4 PTS,  2 REB,  1 AST
+Gabe Vincent              |  3 PTS,  1 REB,  1 AST
+Tony Bradley              |  2 PTS,  1 REB,  1 AST
+Jose Alvarado             |  0 PTS,  2 REB,  3 AST
+Miles McBride             |  0 PTS,  1 REB,  0 AST
+Mouhamed Gueye            |  0 PTS,  0 REB,  0 AST
+Landry Shamet             |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: CLE @ TOR | 115 - 105
+==================================================
+Donovan Mitchell          | 30 PTS,  7 REB,  5 AST
+James Harden              | 28 PTS,  5 REB,  4 AST
+Scottie Barnes            | 26 PTS,  4 REB,  5 AST
+Evan Mobley               | 25 PTS,  8 REB,  2 AST
+RJ Barrett                | 22 PTS,  9 REB,  5 AST
+Collin Murray-Boyles      | 17 PTS,  7 REB,  1 AST
+Ja'Kobe Walter            | 14 PTS,  1 REB,  1 AST
+Sandro Mamukelashvili     | 12 PTS, 10 REB,  2 AST
+Jarrett Allen             | 10 PTS,  3 REB,  1 AST
+Brandon Ingram            |  7 PTS,  4 REB,  3 AST
+Max Strus                 |  6 PTS,  3 REB,  3 AST
+Sam Merrill               |  5 PTS,  1 REB,  1 AST
+Dennis Schröder           |  5 PTS,  1 REB,  4 AST
+Jamal Shead               |  3 PTS,  3 REB,  4 AST
+Dean Wade                 |  3 PTS,  5 REB,  1 AST
+Jaylon Tyson              |  3 PTS,  2 REB,  1 AST
+Jakob Poeltl              |  2 PTS,  4 REB,  1 AST
+A.J. Lawson               |  2 PTS,  0 REB,  1 AST
+Keon Ellis                |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: DEN @ MIN | 114 - 119
+==================================================
+Jamal Murray              | 30 PTS,  7 REB,  7 AST
+Anthony Edwards           | 30 PTS, 10 REB,  2 AST
+Nikola Jokić              | 24 PTS, 15 REB,  8 AST
+Julius Randle             | 24 PTS,  9 REB,  6 AST
+Donte DiVincenzo          | 16 PTS,  7 REB,  6 AST
+Christian Braun           | 16 PTS,  3 REB,  5 AST
+Tim Hardaway Jr.          | 16 PTS,  3 REB,  0 AST
+Jaden McDaniels           | 14 PTS,  2 REB,  3 AST
+Bones Hyland              | 13 PTS,  0 REB,  2 AST
+Cameron Johnson           | 13 PTS,  1 REB,  2 AST
+Naz Reid                  | 11 PTS,  9 REB,  1 AST
+Ayo Dosunmu               |  9 PTS,  4 REB,  5 AST
+Aaron Gordon              |  8 PTS,  7 REB,  4 AST
+Bruce Brown               |  7 PTS,  3 REB,  2 AST
+Rudy Gobert               |  2 PTS,  7 REB,  1 AST
+Kyle Anderson             |  0 PTS,  1 REB,  2 AST
+Mike Conley               |  0 PTS,  0 REB,  2 AST
+Jonas Valančiūnas         |  0 PTS,  2 REB,  0 AST
+Spencer Jones             |  0 PTS,  2 REB,  0 AST
+

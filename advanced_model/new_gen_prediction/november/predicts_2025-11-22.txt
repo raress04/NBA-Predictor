@@ -1,0 +1,54 @@
+NBA MODEL PREDICTIONS - 2025-11-22
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Sacramento Kings
+------------------------------
+  Drew Eubanks         | POINTS   | Line  8.0 | Proj  3.8 | VALUABLE: Under (81% conf, 47.2% edge)
+  PROJECTED TOTAL: 242.8 | O/U 240.5
+  -> SPREAD: Denver Nuggets -11.5 VALUABLE: Cover (72% conf, 42.4% edge)
+
+MATCHUP: Atlanta Hawks vs. New Orleans Pelicans
+------------------------------
+
+MATCHUP: Chicago Bulls vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 248.8 | O/U 246.5
+  -> SPREAD: Chicago Bulls -12.5 VALUABLE: Cover (74% conf, 45.4% edge)
+
+MATCHUP: Memphis Grizzlies vs. Dallas Mavericks
+------------------------------
+  Daniel Gafford       | POINTS   | Line 10.5 | Proj  7.7 | VALUABLE: Under (73% conf, 33.4% edge)
+  PROJECTED TOTAL: 223.7 | O/U 229.5
+
+MATCHUP: LA Clippers vs. Charlotte Hornets
+------------------------------
+
+MATCHUP: Orlando Magic vs. New York Knicks
+------------------------------
+  Anthony Black        | POINTS   | Line 11.5 | Proj 19.0 | VALUABLE: Over (76% conf, 37.8% edge)
+  Tristan da Silva     | POINTS   | Line 12.5 | Proj  6.6 | VALUABLE: Under (80% conf, 44.9% edge)
+  PROJECTED TOTAL: 238.0 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Over (62% conf, 16.8% edge)
+
+MATCHUP: Detroit Pistons vs. Milwaukee Bucks
+------------------------------
+  Cole Anthony         | POINTS   | Line  9.5 | Proj  3.3 | VALUABLE: Under (82% conf, 48.5% edge)
+  PROJECTED TOTAL: 222.6 | O/U 226.5
+  -> SPREAD: Detroit Pistons -8.5 VALUABLE: Cover (76% conf, 48.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Drew Eubanks Under 8.0 POINTS (81% conf, 30.9% edge) | Denver Nuggets vs. Sacramento Kings
+  2. Tristan da Silva Under 12.5 POINTS (80% conf, 28.7% edge) | Orlando Magic vs. New York Knicks
+  3. Cole Anthony Under 9.5 POINTS (82% conf, 26.6% edge) | Detroit Pistons vs. Milwaukee Bucks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Drew Eubanks Under 8.0 POINTS (81% conf, 30.9% edge) | Denver Nuggets vs. Sacramento Kings
+  2. Tristan da Silva Under 12.5 POINTS (80% conf, 28.7% edge) | Orlando Magic vs. New York Knicks
+  3. Cole Anthony Under 9.5 POINTS (82% conf, 26.6% edge) | Detroit Pistons vs. Milwaukee Bucks
+  4. Anthony Black Over 11.5 POINTS (76% conf, 22.0% edge) | Orlando Magic vs. New York Knicks
+
+
+Total VALUABLE picks today: 9

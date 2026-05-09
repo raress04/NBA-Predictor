@@ -1,0 +1,60 @@
+NBA MODEL PREDICTIONS - 2025-10-25
+============================================================
+
+
+MATCHUP: Orlando Magic vs. Chicago Bulls
+------------------------------
+  Paolo Banchero       | POINTS   | Line 25.5 | Proj 19.2 | VALUABLE: Under (74% conf, 35.8% edge)
+  Anthony Black        | POINTS   | Line  8.5 | Proj 20.1 | VALUABLE: Over (81% conf, 47.2% edge)
+  PROJECTED TOTAL: 238.1 | O/U 233.5
+
+MATCHUP: Denver Nuggets vs. Phoenix Suns
+------------------------------
+  Ryan Dunn            | POINTS   | Line  8.5 | Proj  5.7 | VALUABLE: Under (73% conf, 33.3% edge)
+  Collin Gillespie     | POINTS   | Line  8.5 | Proj 15.1 | VALUABLE: Over (73% conf, 34.0% edge)
+  Oso Ighodaro         | POINTS   | Line  7.5 | Proj  4.5 | VALUABLE: Under (76% conf, 38.6% edge)
+  PROJECTED TOTAL: 241.3 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (62% conf, 17.2% edge)
+  -> SPREAD: Denver Nuggets -13.0 VALUABLE: Cover (75% conf, 47.8% edge)
+
+MATCHUP: Memphis Grizzlies vs. Indiana Pacers
+------------------------------
+  Ja Morant            | POINTS   | Line 25.5 | Proj 17.5 | VALUABLE: Under (77% conf, 40.4% edge)
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  5.0 | VALUABLE: Under (78% conf, 41.5% edge)
+  James Wiseman        | POINTS   | Line  7.5 | Proj  4.6 | VALUABLE: Under (76% conf, 38.2% edge)
+  James Wiseman        | REBOUNDS | Line  5.5 | Proj  2.6 | VALUABLE: Under (81% conf, 46.6% edge)
+  PROJECTED TOTAL: 229.4 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (66% conf, 23.5% edge)
+
+MATCHUP: Charlotte Hornets vs. Philadelphia 76ers
+------------------------------
+  Ryan Kalkbrenner     | REBOUNDS | Line  7.5 | Proj  5.3 | VALUABLE: Under (74% conf, 36.2% edge)
+  Kon Knueppel         | POINTS   | Line  8.5 | Proj 18.3 | VALUABLE: Over (79% conf, 43.7% edge)
+  Tre Mann             | POINTS   | Line  7.5 | Proj  5.0 | VALUABLE: Under (72% conf, 32.3% edge)
+  Joel Embiid          | POINTS   | Line 15.5 | Proj 24.9 | VALUABLE: Over (77% conf, 40.8% edge)
+  PROJECTED TOTAL: 231.8 | O/U 236.5
+
+MATCHUP: Oklahoma City Thunder vs. Atlanta Hawks
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 13.5 | Proj  7.9 | VALUABLE: Under (78% conf, 42.3% edge)
+  Trae Young           | ASSISTS  | Line  9.5 | Proj  7.1 | VALUABLE: Under (76% conf, 37.4% edge)
+  Mouhamed Gueye       | POINTS   | Line 11.5 | Proj  3.3 | VALUABLE: Under (82% conf, 49.8% edge)
+  Mouhamed Gueye       | REBOUNDS | Line  7.5 | Proj  3.2 | VALUABLE: Under (82% conf, 49.0% edge)
+  PROJECTED TOTAL: 235.7 | O/U 236.5
+  -> SPREAD: Oklahoma City Thunder -8.5 VALUABLE: Cover (70% conf, 39.8% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Mouhamed Gueye Under 7.5 REBOUNDS (82% conf, 25.9% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+  2. James Wiseman Under 5.5 REBOUNDS (81% conf, 26.0% edge) | Memphis Grizzlies vs. Indiana Pacers
+  3. Mouhamed Gueye Under 11.5 POINTS (82% conf, 25.5% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Mouhamed Gueye Under 7.5 REBOUNDS (82% conf, 25.9% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+  2. James Wiseman Under 5.5 REBOUNDS (81% conf, 26.0% edge) | Memphis Grizzlies vs. Indiana Pacers
+  3. Mouhamed Gueye Under 11.5 POINTS (82% conf, 25.5% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+  4. Anthony Black Over 8.5 POINTS (81% conf, 24.9% edge) | Orlando Magic vs. Chicago Bulls
+
+
+Total VALUABLE picks today: 21

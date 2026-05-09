@@ -1,0 +1,25 @@
+NBA MODEL PREDICTIONS - 2025-12-16
+============================================================
+
+
+MATCHUP: New York Knicks vs. San Antonio Spurs
+------------------------------
+  Stephon Castle       | REBOUNDS | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 43.6% edge)
+  Keldon Johnson       | POINTS   | Line  7.5 | Proj 15.1 | VALUABLE: Over (77% conf, 40.1% edge)
+  PROJECTED TOTAL: 244.2 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (66% conf, 23.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Stephon Castle Under 5.5 REBOUNDS (79% conf, 21.1% edge) | New York Knicks vs. San Antonio Spurs
+  2. Keldon Johnson Over 7.5 POINTS (77% conf, 21.6% edge) | New York Knicks vs. San Antonio Spurs
+  3. Game Total Over 233.5 TOTAL (66% conf, 13.2% edge) | New York Knicks vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (3 PICKS, 3/3) ===
+  1. Stephon Castle Under 5.5 REBOUNDS (79% conf, 21.1% edge) | New York Knicks vs. San Antonio Spurs
+  2. Keldon Johnson Over 7.5 POINTS (77% conf, 21.6% edge) | New York Knicks vs. San Antonio Spurs
+  3. Game Total Over 233.5 TOTAL (66% conf, 13.2% edge) | New York Knicks vs. San Antonio Spurs
+
+
+Total VALUABLE picks today: 3

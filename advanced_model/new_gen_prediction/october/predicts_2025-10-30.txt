@@ -1,0 +1,48 @@
+NBA MODEL PREDICTIONS - 2025-10-30
+============================================================
+
+
+MATCHUP: Oklahoma City Thunder vs. Washington Wizards
+------------------------------
+
+MATCHUP: Orlando Magic vs. Charlotte Hornets
+------------------------------
+  Paolo Banchero       | POINTS   | Line 26.5 | Proj 18.1 | VALUABLE: Under (78% conf, 42.4% edge)
+  Anthony Black        | POINTS   | Line 12.5 | Proj 18.9 | VALUABLE: Over (73% conf, 33.2% edge)
+  Tre Mann             | POINTS   | Line  9.5 | Proj  5.4 | VALUABLE: Under (77% conf, 39.9% edge)
+  Kon Knueppel         | POINTS   | Line 12.5 | Proj 20.5 | VALUABLE: Over (75% conf, 36.4% edge)
+  PROJECTED TOTAL: 234.6 | O/U 238.5
+
+MATCHUP: Milwaukee Bucks vs. Golden State Warriors
+------------------------------
+  Ryan Rollins         | POINTS   | Line 11.5 | Proj 21.8 | VALUABLE: Over (79% conf, 42.9% edge)
+  Cole Anthony         | POINTS   | Line 12.5 | Proj  4.2 | VALUABLE: Under (82% conf, 49.2% edge)
+  Cole Anthony         | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (78% conf, 42.0% edge)
+  Bobby Portis         | POINTS   | Line 14.5 | Proj 24.2 | VALUABLE: Over (77% conf, 40.3% edge)
+  Stephen Curry        | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (76% conf, 37.3% edge)
+  Jonathan Kuminga     | POINTS   | Line 16.5 | Proj  8.0 | VALUABLE: Under (82% conf, 48.3% edge)
+  PROJECTED TOTAL: 243.3 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (69% conf, 29.1% edge)
+
+MATCHUP: San Antonio Spurs vs. Miami Heat
+------------------------------
+  Keldon Johnson       | POINTS   | Line 10.5 | Proj 17.6 | VALUABLE: Over (75% conf, 37.0% edge)
+  Bam Adebayo          | POINTS   | Line 20.5 | Proj 15.8 | VALUABLE: Under (72% conf, 32.4% edge)
+  Davion Mitchell      | POINTS   | Line 10.5 | Proj  7.4 | VALUABLE: Under (72% conf, 32.7% edge)
+  PROJECTED TOTAL: 227.2 | O/U 228.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jonathan Kuminga Under 16.5 POINTS (82% conf, 30.5% edge) | Milwaukee Bucks vs. Golden State Warriors
+  2. Cole Anthony Under 12.5 POINTS (82% conf, 28.7% edge) | Milwaukee Bucks vs. Golden State Warriors
+  3. Stephen Curry Under 5.5 ASSISTS (76% conf, 28.0% edge) | Milwaukee Bucks vs. Golden State Warriors
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jonathan Kuminga Under 16.5 POINTS (82% conf, 30.5% edge) | Milwaukee Bucks vs. Golden State Warriors
+  2. Cole Anthony Under 12.5 POINTS (82% conf, 28.7% edge) | Milwaukee Bucks vs. Golden State Warriors
+  3. Stephen Curry Under 5.5 ASSISTS (76% conf, 28.0% edge) | Milwaukee Bucks vs. Golden State Warriors
+  4. Paolo Banchero Under 26.5 POINTS (78% conf, 24.9% edge) | Orlando Magic vs. Charlotte Hornets
+
+
+Total VALUABLE picks today: 14

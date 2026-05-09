@@ -1,0 +1,46 @@
+NBA MODEL PREDICTIONS - 2025-12-15
+============================================================
+
+
+MATCHUP: Utah Jazz vs. Dallas Mavericks
+------------------------------
+  Keyonte George       | POINTS   | Line 22.5 | Proj 31.8 | VALUABLE: Over (74% conf, 35.5% edge)
+  PROJECTED TOTAL: 241.9 | O/U 240.5
+
+MATCHUP: Toronto Raptors vs. Miami Heat
+------------------------------
+  Bam Adebayo          | POINTS   | Line 19.5 | Proj 14.3 | VALUABLE: Under (74% conf, 34.6% edge)
+  Kel'el Ware          | POINTS   | Line  8.5 | Proj 14.6 | VALUABLE: Over (74% conf, 34.8% edge)
+  PROJECTED TOTAL: 234.3 | O/U 233.5
+
+MATCHUP: Denver Nuggets vs. Houston Rockets
+------------------------------
+  Aaron Holiday        | POINTS   | Line  8.5 | Proj  4.4 | VALUABLE: Under (78% conf, 41.5% edge)
+  PROJECTED TOTAL: 236.6 | O/U 237.5
+
+MATCHUP: Memphis Grizzlies vs. LA Clippers
+------------------------------
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  4.6 | VALUABLE: Under (79% conf, 43.3% edge)
+  Kawhi Leonard        | POINTS   | Line 26.5 | Proj 35.8 | VALUABLE: Over (74% conf, 35.7% edge)
+  Ivica Zubac          | POINTS   | Line 17.5 | Proj 12.0 | VALUABLE: Under (76% conf, 38.1% edge)
+
+MATCHUP: Boston Celtics vs. Detroit Pistons
+------------------------------
+  Neemias Queta        | REBOUNDS | Line  8.5 | Proj  6.0 | VALUABLE: Under (75% conf, 36.4% edge)
+  PROJECTED TOTAL: 233.9 | O/U 231.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Neemias Queta Under 8.5 REBOUNDS (75% conf, 25.6% edge) | Boston Celtics vs. Detroit Pistons
+  2. Aaron Holiday Under 8.5 POINTS (78% conf, 23.5% edge) | Denver Nuggets vs. Houston Rockets
+  3. Ivica Zubac Under 17.5 POINTS (76% conf, 22.2% edge) | Memphis Grizzlies vs. LA Clippers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Neemias Queta Under 8.5 REBOUNDS (75% conf, 25.6% edge) | Boston Celtics vs. Detroit Pistons
+  2. Aaron Holiday Under 8.5 POINTS (78% conf, 23.5% edge) | Denver Nuggets vs. Houston Rockets
+  3. Ivica Zubac Under 17.5 POINTS (76% conf, 22.2% edge) | Memphis Grizzlies vs. LA Clippers
+  4. Ja Morant Under 7.5 ASSISTS (79% conf, 19.8% edge) | Memphis Grizzlies vs. LA Clippers
+
+
+Total VALUABLE picks today: 8

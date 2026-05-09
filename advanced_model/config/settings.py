@@ -100,7 +100,7 @@ TOTAL_MAX_MAE_FOR_PARLAY   = 8.0   # current: ~15.2 MAE — gate CLOSED
 # Minimum edge percentage required to consider a pick "valuable"
 MIN_EDGE = 2.0
 
-# Max prop confidence cap — raised from 78.0 based on n=29,081 retroactive analysis.
+# Max prop confidence cap — raised from 78.0 based on n=29,081 retroactive ml.
 MAX_PROP_CONFIDENCE = 82.0
 
 # ── Trade Context + EWMA (Issue 5) ───────────────────────────────
@@ -114,7 +114,10 @@ TRADE_CONTEXT_BLEND_GAMES = 25
 # span=10 means the 10 most recent games carry ~63% of total weight.
 EWMA_SPAN = 10
 
-
+# ── ML Integration Flags (Phase 8 - ML.5) ─────────────────────────
+USE_ML_RESIDUAL_CORRECTION = False
+USE_ML_CALIBRATION = False
+ML_MODEL_PATH = 'models/'
 
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""

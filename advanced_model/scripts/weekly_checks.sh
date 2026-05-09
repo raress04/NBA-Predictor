@@ -7,4 +7,4 @@ cd "$(dirname "$0")/.."
 echo "========================================="
 echo "🏆 Weekly Promotion Gate Check"
 echo "========================================="
-python3 -m analysis.check_promotion
+python3 -m ml.check_promotion

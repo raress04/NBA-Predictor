@@ -1,0 +1,74 @@
+NBA MODEL PREDICTIONS - 2025-11-29
+============================================================
+
+
+MATCHUP: LA Clippers vs. Dallas Mavericks
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 21.5 | Proj 38.3 | VALUABLE: Over (81% conf, 47.4% edge)
+  Ivica Zubac          | POINTS   | Line 18.5 | Proj 12.7 | VALUABLE: Under (76% conf, 39.3% edge)
+  Cooper Flagg         | POINTS   | Line 16.5 | Proj 26.6 | VALUABLE: Over (78% conf, 41.5% edge)
+  Naji Marshall        | POINTS   | Line 11.5 | Proj 17.6 | VALUABLE: Over (73% conf, 33.9% edge)
+  Brandon Williams     | POINTS   | Line 11.5 | Proj 17.4 | VALUABLE: Over (73% conf, 33.0% edge)
+
+MATCHUP: Milwaukee Bucks vs. Brooklyn Nets
+------------------------------
+  Giannis Antetokounmpo | POINTS   | Line 27.5 | Proj 21.1 | VALUABLE: Under (74% conf, 35.6% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 10.5 | Proj  7.4 | VALUABLE: Under (77% conf, 39.5% edge)
+  Giannis Antetokounmpo | ASSISTS  | Line  6.5 | Proj  3.9 | VALUABLE: Under (79% conf, 43.0% edge)
+  Bobby Portis         | POINTS   | Line  8.5 | Proj 15.8 | VALUABLE: Over (76% conf, 38.3% edge)
+  Tyrese Martin        | POINTS   | Line 12.5 | Proj  8.9 | VALUABLE: Under (72% conf, 33.0% edge)
+  PROJECTED TOTAL: 222.8 | O/U 218.5
+  -> SPREAD: Milwaukee Bucks -11.5 VALUABLE: Cover (70% conf, 38.5% edge)
+
+MATCHUP: Toronto Raptors vs. Charlotte Hornets
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 12.5 | Proj  6.6 | VALUABLE: Under (81% conf, 46.1% edge)
+  Miles Bridges        | POINTS   | Line 19.5 | Proj 14.4 | VALUABLE: Under (73% conf, 33.2% edge)
+  LaMelo Ball          | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (75% conf, 36.7% edge)
+  PROJECTED TOTAL: 216.7 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (73% conf, 34.5% edge)
+
+MATCHUP: Miami Heat vs. Detroit Pistons
+------------------------------
+  Paul Reed            | REBOUNDS | Line  5.5 | Proj  3.4 | VALUABLE: Under (77% conf, 39.7% edge)
+  PROJECTED TOTAL: 239.5 | O/U 239.5
+
+MATCHUP: Indiana Pacers vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 231.8 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (64% conf, 19.4% edge)
+
+MATCHUP: Denver Nuggets vs. Phoenix Suns
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  4.6 | VALUABLE: Under (80% conf, 43.7% edge)
+  Nick Richards        | POINTS   | Line  8.5 | Proj  2.2 | VALUABLE: Under (82% conf, 49.7% edge)
+  Nick Richards        | REBOUNDS | Line  7.5 | Proj  4.2 | VALUABLE: Under (80% conf, 44.6% edge)
+  PROJECTED TOTAL: 225.5 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (63% conf, 17.7% edge)
+
+MATCHUP: Golden State Warriors vs. New Orleans Pelicans
+------------------------------
+  Jonathan Kuminga     | POINTS   | Line 14.5 | Proj  9.4 | VALUABLE: Under (77% conf, 40.3% edge)
+  Saddiq Bey           | POINTS   | Line 14.5 | Proj 25.1 | VALUABLE: Over (79% conf, 43.2% edge)
+  PROJECTED TOTAL: 217.8 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (67% conf, 24.1% edge)
+  -> SPREAD: New Orleans Pelicans +9.5 VALUABLE: Cover (68% conf, 36.0% edge)
+
+MATCHUP: Boston Celtics vs. Minnesota Timberwolves
+------------------------------
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Nick Richards Under 8.5 POINTS (82% conf, 33.7% edge) | Denver Nuggets vs. Phoenix Suns
+  2. Kawhi Leonard Over 21.5 POINTS (81% conf, 30.5% edge) | LA Clippers vs. Dallas Mavericks
+  3. Devin Booker Under 7.5 ASSISTS (80% conf, 30.1% edge) | Denver Nuggets vs. Phoenix Suns
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Nick Richards Under 8.5 POINTS (82% conf, 33.7% edge) | Denver Nuggets vs. Phoenix Suns
+  2. Kawhi Leonard Over 21.5 POINTS (81% conf, 30.5% edge) | LA Clippers vs. Dallas Mavericks
+  3. Devin Booker Under 7.5 ASSISTS (80% conf, 30.1% edge) | Denver Nuggets vs. Phoenix Suns
+  4. Jakob Poeltl Under 12.5 POINTS (81% conf, 26.2% edge) | Toronto Raptors vs. Charlotte Hornets
+
+
+Total VALUABLE picks today: 25

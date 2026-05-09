@@ -1,0 +1,32 @@
+=======================================================
+  MONITORING REPORT  2026-04-23
+=======================================================
+
+PICK VOLUME (last 30 days):
+  Total: 13  |  Resolved: 0  |  Pending: 13
+
+WIN RATES BY CATEGORY:
+
+PARLAY PERFORMANCE:
+  No resolved parlays in last 30 days.
+
+CLV (last 30 days):
+  No CLV data (needs closing line tracking).
+
+CALIBRATION STATUS:
+  Platt scaling: PENDING — requires 200+ picks per category
+  Platt params file: EXISTS
+
+KELLY CRITERION:
+  [❌] 500+ resolved picks: 133
+  [❌] 2+ Platt categories: 0
+  [❌] Brier < 0.20 all cats
+  [❌] CLV positive rate > 60%
+  [❌] Parlay hit rate > 20%: 0.0% (n=0)
+  [✅] No category < 40% WR
+  STATUS: 🔴 KELLY DISABLED — USE FLAT 0.2% STAKE
+
+ALERTS:
+  🟢 All systems nominal
+
+=======================================================

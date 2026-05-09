@@ -1,0 +1,35 @@
+NBA MODEL PREDICTIONS - 2025-12-08
+============================================================
+
+
+MATCHUP: Sacramento Kings vs. Indiana Pacers
+------------------------------
+
+MATCHUP: New Orleans Pelicans vs. San Antonio Spurs
+------------------------------
+  Jeremiah Fears       | POINTS   | Line 16.5 | Proj 10.5 | VALUABLE: Under (77% conf, 40.7% edge)
+  Yves Missi           | POINTS   | Line  6.5 | Proj  4.1 | VALUABLE: Under (76% conf, 38.0% edge)
+  Jeremy Sochan        | POINTS   | Line  6.5 | Proj  3.1 | VALUABLE: Under (80% conf, 44.4% edge)
+  PROJECTED TOTAL: 217.0 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (76% conf, 39.1% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Phoenix Suns
+------------------------------
+  PROJECTED TOTAL: 224.9 | O/U 225.5
+  -> SPREAD: Minnesota Timberwolves -8.5 VALUABLE: Cover (76% conf, 48.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jeremy Sochan Under 6.5 POINTS (80% conf, 25.5% edge) | New Orleans Pelicans vs. San Antonio Spurs
+  2. Yves Missi Under 6.5 POINTS (76% conf, 26.1% edge) | New Orleans Pelicans vs. San Antonio Spurs
+  3. Jeremiah Fears Under 16.5 POINTS (77% conf, 23.6% edge) | New Orleans Pelicans vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jeremy Sochan Under 6.5 POINTS (80% conf, 25.5% edge) | New Orleans Pelicans vs. San Antonio Spurs
+  2. Yves Missi Under 6.5 POINTS (76% conf, 26.1% edge) | New Orleans Pelicans vs. San Antonio Spurs
+  3. Jeremiah Fears Under 16.5 POINTS (77% conf, 23.6% edge) | New Orleans Pelicans vs. San Antonio Spurs
+  4. Game Total Under 238.5 TOTAL (76% conf, 23.6% edge) | New Orleans Pelicans vs. San Antonio Spurs
+
+
+Total VALUABLE picks today: 5

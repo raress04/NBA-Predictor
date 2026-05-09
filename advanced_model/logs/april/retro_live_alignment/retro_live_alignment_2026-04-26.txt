@@ -1,0 +1,94 @@
+====================================================================
+  RETRO / LIVE ALIGNMENT VALIDATION REPORT
+  Window    : 2026-02-01 → 2026-02-28
+  Generated : 2026-04-26 02:28
+  Retro DB  : retrospective_db.db  | Live DB: bet_tracker.db
+  Match key : (player, category, direction) + line ±0.5
+====================================================================
+
+── PER-DAY BREAKDOWN ────────────────────────────────────────────
+Date          Retro   Live    R→L%    L→R%
+--------------------------------------------------------------------
+2026-02-01       80    813    8.8%    0.9%
+2026-02-02       30    299    6.7%    0.7%
+2026-02-03       85    740   12.9%    1.5%
+2026-02-04       49    501    4.1%    0.4%
+2026-02-05       60    603   11.7%    1.2%
+2026-02-06       34    420    8.8%    0.7%
+2026-02-07       98    725   12.2%    1.7%
+2026-02-08       29    283   17.2%    1.8%
+2026-02-09       82    711   13.4%    1.5%
+2026-02-10       23    323   17.4%    1.2%
+2026-02-11      112   1004    9.8%    1.1%
+2026-02-12       29    205    6.9%    1.0%
+2026-02-19       90    747   11.1%    1.3%
+2026-02-20       71    622   12.7%    1.4%
+2026-02-21       54    444   11.1%    1.4%
+2026-02-22      102    797   12.7%    1.6%
+2026-02-23       29    226    6.9%    0.9%
+2026-02-24      123    785   16.3%    2.5%
+2026-02-25       48    443   18.8%    2.0%
+2026-02-26       88    733   11.4%    1.4%
+2026-02-27       39    354   12.8%    1.4%
+2026-02-28       49    377   10.2%    1.3%
+--------------------------------------------------------------------
+AGGREGATE      1404  12155   11.8%    1.4%
+
+── AGGREGATE VERDICT ────────────────────────────────────────────
+  Retro → Live overlap : 11.8%  (target ≥80% — ✗ NOT MET)
+  Live → Retro overlap : 1.4%
+  Total retro picks    : 1404
+  Total live picks     : 12155
+
+── DIVERGENCE ANALYSIS ──────────────────────────────────────────
+  • ASSISTS OVER: retro=18% vs live=57% — live skews more
+  • ASSISTS UNDER: retro=82% vs live=43% — retro skews more
+  • SPREAD OVER: retro=51% vs live=0% — retro skews more
+  • SPREAD UNDER: retro=49% vs live=0% — retro skews more
+  • Live volume 8.7x higher than retro — live may include low-confidence picks absent from retro filter
+
+── RETRO-ONLY PICKS (sample, max 20) ───────────────────────────
+  milwaukee bucks|SPREAD|UNDER  (missed on 12 day(s))
+  los angeles lakers|SPREAD|OVER  (missed on 11 day(s))
+  san antonio spurs|SPREAD|OVER  (missed on 11 day(s))
+  washington wizards|SPREAD|UNDER  (missed on 10 day(s))
+  memphis grizzlies|SPREAD|UNDER  (missed on 10 day(s))
+  minnesota timberwolves|SPREAD|OVER  (missed on 10 day(s))
+  brooklyn nets|SPREAD|UNDER  (missed on 9 day(s))
+  cleveland cavaliers|SPREAD|OVER  (missed on 9 day(s))
+  detroit pistons|SPREAD|OVER  (missed on 9 day(s))
+  harrison barnes|POINTS|OVER  (missed on 9 day(s))
+  isaiah collier|ASSISTS|UNDER  (missed on 9 day(s))
+  ryan rollins|POINTS|UNDER  (missed on 9 day(s))
+  gui santos|POINTS|UNDER  (missed on 9 day(s))
+  indiana pacers|SPREAD|UNDER  (missed on 9 day(s))
+  gg jackson|POINTS|UNDER  (missed on 9 day(s))
+  aaron wiggins|POINTS|UNDER  (missed on 8 day(s))
+  chicago bulls|SPREAD|UNDER  (missed on 8 day(s))
+  jaylen brown|POINTS|UNDER  (missed on 8 day(s))
+  phoenix suns|SPREAD|UNDER  (missed on 8 day(s))
+  utah jazz|SPREAD|UNDER  (missed on 8 day(s))
+
+── LIVE-ONLY PICKS (sample, max 20) ────────────────────────────
+  game|TOTAL|UNDER  (extra on 85 day(s))
+  game|TOTAL|OVER  (extra on 65 day(s))
+  day'ron sharpe|ASSISTS|OVER  (extra on 24 day(s))
+  clint capela|REBOUNDS|UNDER  (extra on 24 day(s))
+  mikal bridges|ASSISTS|OVER  (extra on 23 day(s))
+  alperen sengun|POINTS|OVER  (extra on 23 day(s))
+  karl-anthony towns|ASSISTS|UNDER  (extra on 22 day(s))
+  jarred vanderbilt|REBOUNDS|UNDER  (extra on 22 day(s))
+  keldon johnson|ASSISTS|UNDER  (extra on 22 day(s))
+  collin gillespie|ASSISTS|OVER  (extra on 22 day(s))
+  jaime jaquez jr.|ASSISTS|UNDER  (extra on 22 day(s))
+  jabari smith jr.|REBOUNDS|UNDER  (extra on 22 day(s))
+  kevin durant|REBOUNDS|UNDER  (extra on 22 day(s))
+  toumani camara|ASSISTS|OVER  (extra on 21 day(s))
+  jay huff|ASSISTS|OVER  (extra on 21 day(s))
+  julian strawther|REBOUNDS|UNDER  (extra on 20 day(s))
+  daniss jenkins|ASSISTS|UNDER  (extra on 20 day(s))
+  kawhi leonard|ASSISTS|OVER  (extra on 20 day(s))
+  lebron james|ASSISTS|UNDER  (extra on 20 day(s))
+  micah potter|ASSISTS|OVER  (extra on 20 day(s))
+
+====================================================================

@@ -1,0 +1,55 @@
+NBA MODEL PREDICTIONS - 2025-11-15
+============================================================
+
+
+MATCHUP: Cleveland Cavaliers vs. Memphis Grizzlies
+------------------------------
+
+MATCHUP: Indiana Pacers vs. Toronto Raptors
+------------------------------
+  Tony Bradley         | POINTS   | Line  6.5 | Proj  2.8 | VALUABLE: Under (81% conf, 46.7% edge)
+  Jakob Poeltl         | POINTS   | Line 10.5 | Proj  6.8 | VALUABLE: Under (76% conf, 38.7% edge)
+  PROJECTED TOTAL: 220.9 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (70% conf, 30.2% edge)
+  -> SPREAD: Toronto Raptors -6.0 VALUABLE: Cover (66% conf, 33.3% edge)
+
+MATCHUP: Denver Nuggets vs. Minnesota Timberwolves
+------------------------------
+  Peyton Watson        | POINTS   | Line  8.5 | Proj 14.6 | VALUABLE: Over (74% conf, 35.3% edge)
+  Naz Reid             | POINTS   | Line 11.5 | Proj 17.8 | VALUABLE: Over (72% conf, 32.3% edge)
+  PROJECTED TOTAL: 260.4 | O/U 236.5
+  -> GAME TOTAL: O/U 236.5 VALUABLE: Over (77% conf, 41.6% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Charlotte Hornets
+------------------------------
+  Isaiah Joe           | POINTS   | Line 12.5 | Proj  8.8 | VALUABLE: Under (73% conf, 33.4% edge)
+  Tre Mann             | POINTS   | Line 12.5 | Proj  6.1 | VALUABLE: Under (80% conf, 45.6% edge)
+  PROJECTED TOTAL: 235.0 | O/U 224.5
+  -> GAME TOTAL: O/U 224.5 VALUABLE: Over (65% conf, 22.7% edge)
+  -> SPREAD: Oklahoma City Thunder -17.5 VALUABLE: Cover (74% conf, 46.4% edge)
+
+MATCHUP: Los Angeles Lakers vs. Milwaukee Bucks
+------------------------------
+  Dalton Knecht        | POINTS   | Line  9.5 | Proj  6.1 | VALUABLE: Under (74% conf, 35.4% edge)
+  Bronny James         | POINTS   | Line  6.5 | Proj  1.9 | VALUABLE: Under (82% conf, 48.8% edge)
+  Giannis Antetokounmpo | POINTS   | Line 30.5 | Proj 23.6 | VALUABLE: Under (74% conf, 35.7% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 10.5 | Proj  7.8 | VALUABLE: Under (74% conf, 35.7% edge)
+  Cole Anthony         | POINTS   | Line  8.5 | Proj  3.2 | VALUABLE: Under (82% conf, 47.8% edge)
+  Bobby Portis         | POINTS   | Line  8.5 | Proj 17.3 | VALUABLE: Over (78% conf, 42.0% edge)
+  PROJECTED TOTAL: 235.8 | O/U 229.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Tony Bradley Under 6.5 POINTS (81% conf, 29.9% edge) | Indiana Pacers vs. Toronto Raptors
+  2. Bronny James Under 6.5 POINTS (82% conf, 27.5% edge) | Los Angeles Lakers vs. Milwaukee Bucks
+  3. Cole Anthony Under 8.5 POINTS (82% conf, 27.2% edge) | Los Angeles Lakers vs. Milwaukee Bucks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Tony Bradley Under 6.5 POINTS (81% conf, 29.9% edge) | Indiana Pacers vs. Toronto Raptors
+  2. Bronny James Under 6.5 POINTS (82% conf, 27.5% edge) | Los Angeles Lakers vs. Milwaukee Bucks
+  3. Cole Anthony Under 8.5 POINTS (82% conf, 27.2% edge) | Los Angeles Lakers vs. Milwaukee Bucks
+  4. Tre Mann Under 12.5 POINTS (80% conf, 27.3% edge) | Oklahoma City Thunder vs. Charlotte Hornets
+
+
+Total VALUABLE picks today: 17

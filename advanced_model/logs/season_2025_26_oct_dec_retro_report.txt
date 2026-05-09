@@ -1,0 +1,24 @@
+============================================================
+  OCT-DEC 2025 RETROSPECTIVE PIPELINE SUMMARY
+  Window : 2025-11-26  →  2025-12-31
+  DB     : database/retrospective_2025_26_oct_dec.db
+  Generated : 2026-04-24 02:34
+============================================================
+
+── ROW COUNTS PER CATEGORY ──────────────────────────────
+  ASSISTS        6,172 rows
+  POINTS         4,476 rows
+  REBOUNDS       4,683 rows
+  SPREAD           892 rows
+  TOTAL             68 rows
+  TOTAL         16,291 rows
+
+── HIT RATES (OVER direction, lines with actual values) ──
+  ASSISTS       48.6%  (n=6,172)  ✅
+  POINTS        49.0%  (n=4,476)  ✅
+  REBOUNDS      49.7%  (n=4,683)  ✅
+
+── AVG MODEL BIAS (actual − projected) ──────────────────
+  ASSISTS      avg_bias=+0.076  (n=6,172)
+  POINTS       avg_bias=+0.142  (n=4,476)
+  REBOUNDS     avg_bias=+0.209  (n=4,683)

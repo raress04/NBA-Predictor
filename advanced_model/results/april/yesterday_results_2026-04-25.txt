@@ -1,0 +1,55 @@
+--- RESULTS FOR 2026-04-25 ---
+
+==================================================
+MATCHUP: DET @ ORL | 105 - 113
+==================================================
+Cade Cunningham           | 27 PTS,  5 REB,  9 AST
+Paolo Banchero            | 25 PTS, 12 REB,  9 AST
+Desmond Bane              | 25 PTS,  7 REB,  0 AST
+Tobias Harris             | 23 PTS,  7 REB,  2 AST
+Ausar Thompson            | 17 PTS,  8 REB,  3 AST
+Franz Wagner              | 17 PTS,  5 REB,  6 AST
+Jalen Suggs               | 15 PTS,  3 REB,  3 AST
+Wendell Carter Jr.        | 14 PTS, 17 REB,  3 AST
+Duncan Robinson           | 10 PTS,  0 REB,  3 AST
+Jalen Duren               |  8 PTS,  9 REB,  1 AST
+Anthony Black             |  8 PTS,  1 REB,  1 AST
+Jamal Cain                |  7 PTS,  1 REB,  0 AST
+Javonte Green             |  6 PTS,  1 REB,  1 AST
+Daniss Jenkins            |  5 PTS,  2 REB,  0 AST
+Paul Reed                 |  4 PTS,  5 REB,  0 AST
+Isaiah Stewart            |  3 PTS,  3 REB,  0 AST
+Caris LeVert              |  2 PTS,  1 REB,  0 AST
+Goga Bitadze              |  2 PTS,  2 REB,  0 AST
+Kevin Huerter             |  0 PTS,  1 REB,  5 AST
+Tristan da Silva          |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: OKC @ PHX | 121 - 109
+==================================================
+Shai Gilgeous-Alexander   | 42 PTS,  4 REB,  8 AST
+Dillon Brooks             | 33 PTS,  7 REB,  1 AST
+Jalen Green               | 26 PTS,  5 REB,  6 AST
+Devin Booker              | 16 PTS,  4 REB,  7 AST
+Ajay Mitchell             | 15 PTS,  6 REB,  2 AST
+Oso Ighodaro              | 15 PTS,  3 REB,  4 AST
+Alex Caruso               | 13 PTS,  5 REB,  1 AST
+Chet Holmgren             | 10 PTS,  7 REB,  2 AST
+Luguentz Dort             |  9 PTS,  6 REB,  3 AST
+Isaiah Hartenstein        |  9 PTS,  3 REB,  1 AST
+Jaylin Williams           |  8 PTS,  6 REB,  1 AST
+Collin Gillespie          |  7 PTS, 10 REB,  5 AST
+Jared McCain              |  7 PTS,  4 REB,  1 AST
+Grayson Allen             |  7 PTS,  1 REB,  1 AST
+Cason Wallace             |  6 PTS,  1 REB,  2 AST
+Royce O'Neale             |  3 PTS,  6 REB,  0 AST
+Aaron Wiggins             |  2 PTS,  1 REB,  2 AST
+Khaman Maluach            |  2 PTS,  2 REB,  0 AST
+Ryan Dunn                 |  0 PTS,  0 REB,  1 AST
+Haywood Highsmith         |  0 PTS,  1 REB,  0 AST
+Rasheer Fleming           |  0 PTS,  0 REB,  0 AST
+Jamaree Bouyea            |  0 PTS,  0 REB,  0 AST
+Kenrich Williams          |  0 PTS,  0 REB,  0 AST
+Nikola Topić              |  0 PTS,  0 REB,  0 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+

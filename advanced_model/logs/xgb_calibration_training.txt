@@ -1,0 +1,115 @@
+============================================================
+  XGBoost CALIBRATION MODEL — TRAINING RESULTS
+============================================================
+
+── POINTS ─────────────────────────────────────────────
+   Train rows  : 8,153  (OVER rate: 48.2%)
+   Val rows    : 3,930  (OVER rate: 49.5%)
+   Features    : 31
+
+   Baseline 1 — Raw sim confidence Brier : 0.25109
+   Baseline 2 — Platt scaled Brier       : 0.25020
+
+   XGBoost Brier (val)            : 0.24780
+   Δ vs raw sim conf              : +0.00329
+   Δ vs Platt                     : +0.00240
+   Gate (≥0.005 improvement both) : FAIL
+   Best n_estimators              : 23
+
+   Reliability curve (XGBoost, 5 bins):
+     predicted=0.427  actual=0.448  diff=+0.021
+     predicted=0.459  actual=0.457  diff=-0.002
+     predicted=0.469  actual=0.463  diff=-0.006
+     predicted=0.510  actual=0.546  diff=+0.036
+     predicted=0.548  actual=0.564  diff=+0.016
+
+   Top 10 feature importances:
+     direction_bin                       0.1960
+     gap                                 0.0894
+     projected_value                     0.0427
+     over_implied                        0.0378
+     roll10_pts                          0.0369
+     roll5_std_ast                       0.0351
+     opp_def_reb_30                      0.0349
+     roll10_ast                          0.0339
+     roll5_ast                           0.0338
+     roll5_pts                           0.0336
+
+   [⚠️]  GATE FAILED — no calibration model for POINTS
+
+── REBOUNDS ─────────────────────────────────────────────
+   Train rows  : 8,336  (OVER rate: 48.5%)
+   Val rows    : 3,895  (OVER rate: 47.4%)
+   Features    : 31
+
+   Baseline 1 — Raw sim confidence Brier : 0.25429
+   Baseline 2 — Platt scaled Brier       : 0.24952
+
+   XGBoost Brier (val)            : 0.24732
+   Δ vs raw sim conf              : +0.00697
+   Δ vs Platt                     : +0.00220
+   Gate (≥0.005 improvement both) : FAIL
+   Best n_estimators              : 18
+
+   Reliability curve (XGBoost, 5 bins):
+     predicted=0.423  actual=0.390  diff=-0.033
+     predicted=0.450  actual=0.465  diff=+0.015
+     predicted=0.475  actual=0.475  diff=+0.000
+     predicted=0.518  actual=0.528  diff=+0.010
+     predicted=0.546  actual=0.515  diff=-0.031
+
+   Top 10 feature importances:
+     direction_bin                       0.2272
+     gap                                 0.0965
+     bookmaker_line                      0.0469
+     projected_value                     0.0355
+     roll10_min                          0.0353
+     roll10_reb                          0.0347
+     last_game_reb                       0.0337
+     roll5_std_pts                       0.0320
+     games_played_season                 0.0320
+     roll10_pts                          0.0315
+
+   [⚠️]  GATE FAILED — no calibration model for REBOUNDS
+
+── ASSISTS ─────────────────────────────────────────────
+   Train rows  : 9,773  (OVER rate: 49.0%)
+   Val rows    : 3,848  (OVER rate: 48.1%)
+   Features    : 31
+
+   Baseline 1 — Raw sim confidence Brier : 0.25422
+   Baseline 2 — Platt scaled Brier       : 0.24972
+
+   XGBoost Brier (val)            : 0.24320
+   Δ vs raw sim conf              : +0.01102
+   Δ vs Platt                     : +0.00652
+   Gate (≥0.005 improvement both) : PASS
+   Best n_estimators              : 53
+
+   Reliability curve (XGBoost, 5 bins):
+     predicted=0.387  actual=0.377  diff=-0.010
+     predicted=0.443  actual=0.421  diff=-0.022
+     predicted=0.482  actual=0.469  diff=-0.013
+     predicted=0.525  actual=0.527  diff=+0.001
+     predicted=0.577  actual=0.609  diff=+0.032
+
+   Top 10 feature importances:
+     direction_bin                       0.2280
+     gap                                 0.0817
+     projected_value                     0.0401
+     bookmaker_line                      0.0383
+     roll5_min                           0.0382
+     last_game_ast                       0.0312
+     roll5_std_reb                       0.0291
+     roll10_pts                          0.0283
+     opp_def_ast_30                      0.0282
+     roll10_min                          0.0281
+
+   [✅] GATE PASSED — model saved → /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/models/xgb_calibration_ASSISTS.json
+
+============================================================
+  SUMMARY
+============================================================
+  POINTS       → NO_CALIBRATION
+  REBOUNDS     → NO_CALIBRATION
+  ASSISTS      → SAVED

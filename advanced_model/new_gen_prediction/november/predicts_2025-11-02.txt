@@ -1,0 +1,82 @@
+NBA MODEL PREDICTIONS - 2025-11-02
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. Miami Heat
+------------------------------
+  Bam Adebayo          | POINTS   | Line 21.5 | Proj 16.1 | VALUABLE: Under (73% conf, 34.4% edge)
+  Kel'el Ware          | POINTS   | Line  9.5 | Proj 16.0 | VALUABLE: Over (74% conf, 34.7% edge)
+  PROJECTED TOTAL: 227.9 | O/U 232.5
+
+MATCHUP: Phoenix Suns vs. San Antonio Spurs
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  4.4 | VALUABLE: Under (80% conf, 44.8% edge)
+  Ryan Dunn            | POINTS   | Line  9.5 | Proj  5.8 | VALUABLE: Under (76% conf, 37.9% edge)
+  Dylan Harper         | POINTS   | Line 13.5 | Proj  9.3 | VALUABLE: Under (75% conf, 37.0% edge)
+  PROJECTED TOTAL: 216.8 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (66% conf, 23.7% edge)
+
+MATCHUP: Toronto Raptors vs. Memphis Grizzlies
+------------------------------
+  Collin Murray-Boyles | POINTS   | Line  9.5 | Proj  6.5 | VALUABLE: Under (73% conf, 34.4% edge)
+  PROJECTED TOTAL: 228.9 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (65% conf, 21.2% edge)
+  -> SPREAD: Toronto Raptors -4.5 VALUABLE: Cover (67% conf, 34.6% edge)
+
+MATCHUP: Charlotte Hornets vs. Utah Jazz
+------------------------------
+  Miles Bridges        | POINTS   | Line 23.5 | Proj 18.1 | VALUABLE: Under (72% conf, 32.3% edge)
+  Ryan Kalkbrenner     | POINTS   | Line 10.5 | Proj  7.7 | VALUABLE: Under (72% conf, 32.4% edge)
+  Tre Mann             | POINTS   | Line 13.5 | Proj  5.5 | VALUABLE: Under (82% conf, 48.4% edge)
+  PROJECTED TOTAL: 238.1 | O/U 232.5
+  -> SPREAD: Utah Jazz -1.5 VALUABLE: Cover (69% conf, 38.3% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Atlanta Hawks
+------------------------------
+  De'Andre Hunter      | POINTS   | Line 19.5 | Proj 14.4 | VALUABLE: Under (72% conf, 32.2% edge)
+  Jaylon Tyson         | POINTS   | Line  9.5 | Proj 16.0 | VALUABLE: Over (73% conf, 34.5% edge)
+  Lonzo Ball           | POINTS   | Line  8.5 | Proj  5.4 | VALUABLE: Under (74% conf, 35.2% edge)
+  Mouhamed Gueye       | POINTS   | Line  5.5 | Proj  3.1 | VALUABLE: Under (77% conf, 40.0% edge)
+  PROJECTED TOTAL: 228.1 | O/U 230.0
+
+MATCHUP: Chicago Bulls vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 245.1 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (64% conf, 20.5% edge)
+
+MATCHUP: Philadelphia 76ers vs. Brooklyn Nets
+------------------------------
+  Quentin Grimes       | POINTS   | Line 16.5 | Proj 11.7 | VALUABLE: Under (72% conf, 32.9% edge)
+  Tyrese Maxey         | ASSISTS  | Line  7.5 | Proj  5.3 | VALUABLE: Under (76% conf, 37.6% edge)
+  Adem Bona            | POINTS   | Line  8.5 | Proj  5.2 | VALUABLE: Under (76% conf, 39.2% edge)
+  Terance Mann         | POINTS   | Line  9.5 | Proj  6.5 | VALUABLE: Under (73% conf, 33.1% edge)
+  Noah Clowney         | POINTS   | Line  7.5 | Proj 15.4 | VALUABLE: Over (77% conf, 40.0% edge)
+  PROJECTED TOTAL: 229.7 | O/U 232.5
+  -> SPREAD: Brooklyn Nets +4.5 VALUABLE: Cover (74% conf, 45.8% edge)
+
+MATCHUP: Oklahoma City Thunder vs. New Orleans Pelicans
+------------------------------
+  Jaylin Williams      | REBOUNDS | Line  7.5 | Proj  5.3 | VALUABLE: Under (74% conf, 35.4% edge)
+  Aaron Wiggins        | POINTS   | Line 15.5 | Proj  8.4 | VALUABLE: Under (80% conf, 44.7% edge)
+  Yves Missi           | POINTS   | Line  6.5 | Proj  3.7 | VALUABLE: Under (78% conf, 41.6% edge)
+  Yves Missi           | REBOUNDS | Line  6.5 | Proj  4.1 | VALUABLE: Under (78% conf, 41.0% edge)
+  Derik Queen          | POINTS   | Line  5.5 | Proj 10.7 | VALUABLE: Over (74% conf, 36.2% edge)
+  Saddiq Bey           | POINTS   | Line  7.5 | Proj 16.3 | VALUABLE: Over (79% conf, 43.5% edge)
+  PROJECTED TOTAL: 244.5 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (71% conf, 31.7% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Tre Mann Under 13.5 POINTS (82% conf, 31.3% edge) | Charlotte Hornets vs. Utah Jazz
+  2. Devin Booker Under 7.5 ASSISTS (80% conf, 30.8% edge) | Phoenix Suns vs. San Antonio Spurs
+  3. Aaron Wiggins Under 15.5 POINTS (80% conf, 27.7% edge) | Oklahoma City Thunder vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Tre Mann Under 13.5 POINTS (82% conf, 31.3% edge) | Charlotte Hornets vs. Utah Jazz
+  2. Devin Booker Under 7.5 ASSISTS (80% conf, 30.8% edge) | Phoenix Suns vs. San Antonio Spurs
+  3. Aaron Wiggins Under 15.5 POINTS (80% conf, 27.7% edge) | Oklahoma City Thunder vs. New Orleans Pelicans
+  4. Saddiq Bey Over 7.5 POINTS (79% conf, 27.9% edge) | Oklahoma City Thunder vs. New Orleans Pelicans
+
+
+Total VALUABLE picks today: 31

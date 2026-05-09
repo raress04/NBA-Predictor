@@ -9,11 +9,12 @@ from typing import Dict, List, Tuple, Optional
 from config.settings import BANNED_COMBINATIONS, CATEGORY_PRIORS, get_prior, is_allowed, SIM_DB_WEIGHTS, LIVE_MIN_GAP
 import config.settings as settings
 from simulator.markov_engine import compute_posterior_confidence
-from etl.bias_corrections import get_tiered_bias
+from utils.bias import get_tiered_bias
 import json
 import os
 import logging
 from datetime import datetime
+from ml.inference import apply_ml_corrections
 
 # Configure logging for bias corrections
 LOGS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
@@ -884,8 +885,26 @@ def build_parlays(
                         log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, 0, f'LOW_CONFIDENCE(min={min_prob:.1f})')
                         continue
 
+                    # ── Phase 8: ML Layer (ML.5) ──────────────────────────────
+                    game_date = datetime.now().strftime("%Y-%m-%d")
+                    p_team = all_player_minutes.get(player_name, {}).get('team')
+                    is_home_for_ml = (p_team == home_name)
+                    opp_team_name = away_name if is_home_for_ml else home_name
+                    
+                    over_o = prop_info.get('over_odds', 1.90)
+                    under_o = prop_info.get('under_odds', 1.90)
+                    
+                    ml_res = apply_ml_corrections(
+                        player_name, stat_key, game_date, opp_team_name, is_home_for_ml,
+                        edge['median'], line, edge['edge_pct'], blended_conf,
+                        over_o, under_o
+                    )
+                    blended_conf = ml_res['confidence']
+                    edge['median'] = ml_res['projected']
+                    ml_applied = ml_res['ml_correction_applied']
+
                     # Phase 3.B: True EV-Based Edge
-                    odds = prop_info['over_odds'] if direction == "Over" else prop_info.get('under_odds', 1.90)
+                    odds = over_o if direction == "Over" else under_o
                     ev_edge = true_edge_pct(blended_conf, odds)
 
                     if ev_edge < settings.MIN_EDGE:
@@ -921,6 +940,11 @@ def build_parlays(
                         'confidence': blended_conf,
                         'raw_sim_freq': edge['over_count'] / edge['n_sim'],
                         'score': ev_edge * blended_conf / 100,
+                        'ml_correction_applied': ml_applied,
+                        'player': player_name,
+                        'stat_category': stat_key,
+                        'line': line,
+                        'projection': edge['median']
                     })
 
     # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap (Task P.3) ───────────

@@ -1,0 +1,74 @@
+NBA MODEL PREDICTIONS - 2025-12-29
+============================================================
+
+
+MATCHUP: Orlando Magic vs. Toronto Raptors
+------------------------------
+  PROJECTED TOTAL: 229.3 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (63% conf, 18.7% edge)
+
+MATCHUP: New Orleans Pelicans vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 236.3 | O/U 247.5
+  -> GAME TOTAL: O/U 247.5 VALUABLE: Under (67% conf, 24.1% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 219.1 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (69% conf, 27.5% edge)
+  -> SPREAD: Oklahoma City Thunder -17.0 VALUABLE: Cover (73% conf, 43.9% edge)
+
+MATCHUP: Phoenix Suns vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 212.1 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (76% conf, 39.2% edge)
+  -> SPREAD: Washington Wizards +10.5 VALUABLE: Cover (67% conf, 34.5% edge)
+
+MATCHUP: Miami Heat vs. Denver Nuggets
+------------------------------
+  PROJECTED TOTAL: 239.5 | O/U 244.5
+
+MATCHUP: Charlotte Hornets vs. Milwaukee Bucks
+------------------------------
+  PROJECTED TOTAL: 220.2 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (62% conf, 16.6% edge)
+
+MATCHUP: San Antonio Spurs vs. Cleveland Cavaliers
+------------------------------
+  PROJECTED TOTAL: 252.7 | O/U 243.5
+  -> GAME TOTAL: O/U 243.5 VALUABLE: Over (64% conf, 20.0% edge)
+
+MATCHUP: Portland Trail Blazers vs. Dallas Mavericks
+------------------------------
+  PROJECTED TOTAL: 216.2 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (72% conf, 32.5% edge)
+
+MATCHUP: Brooklyn Nets vs. Golden State Warriors
+------------------------------
+  PROJECTED TOTAL: 239.9 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (68% conf, 27.1% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 251.6 | O/U 243.5
+  -> GAME TOTAL: O/U 243.5 VALUABLE: Over (62% conf, 17.0% edge)
+
+MATCHUP: Houston Rockets vs. Indiana Pacers
+------------------------------
+  PROJECTED TOTAL: 222.3 | O/U 223.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 233.5 TOTAL (76% conf, 23.6% edge) | Phoenix Suns vs. Washington Wizards
+  2. Game Total Under 232.5 TOTAL (72% conf, 19.5% edge) | Portland Trail Blazers vs. Dallas Mavericks
+  3. Game Total Under 232.5 TOTAL (69% conf, 16.3% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 233.5 TOTAL (76% conf, 23.6% edge) | Phoenix Suns vs. Washington Wizards
+  2. Game Total Under 232.5 TOTAL (72% conf, 19.5% edge) | Portland Trail Blazers vs. Dallas Mavericks
+  3. Game Total Under 232.5 TOTAL (69% conf, 16.3% edge) | Oklahoma City Thunder vs. Atlanta Hawks
+  4. Game Total Over 226.5 TOTAL (68% conf, 15.7% edge) | Brooklyn Nets vs. Golden State Warriors
+
+
+Total VALUABLE picks today: 11

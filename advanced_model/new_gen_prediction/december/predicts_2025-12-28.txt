@@ -1,0 +1,54 @@
+NBA MODEL PREDICTIONS - 2025-12-28
+============================================================
+
+
+MATCHUP: Portland Trail Blazers vs. Boston Celtics
+------------------------------
+  PROJECTED TOTAL: 219.7 | O/U 231.5
+  -> GAME TOTAL: O/U 231.5 VALUABLE: Under (67% conf, 25.3% edge)
+
+MATCHUP: LA Clippers vs. Detroit Pistons
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 28.5 | Proj 41.3 | VALUABLE: Over (78% conf, 41.4% edge)
+
+MATCHUP: Memphis Grizzlies vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 233.8 | O/U 241.5
+  -> GAME TOTAL: O/U 241.5 VALUABLE: Under (62% conf, 17.1% edge)
+
+MATCHUP: Toronto Raptors vs. Golden State Warriors
+------------------------------
+  PROJECTED TOTAL: 241.7 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (69% conf, 29.2% edge)
+
+MATCHUP: Los Angeles Lakers vs. Sacramento Kings
+------------------------------
+  LeBron James         | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (75% conf, 36.2% edge)
+  Deandre Ayton        | POINTS   | Line 15.5 | Proj 11.0 | VALUABLE: Under (74% conf, 34.7% edge)
+  Keon Ellis           | POINTS   | Line  9.5 | Proj  5.7 | VALUABLE: Under (76% conf, 37.8% edge)
+  PROJECTED TOTAL: 217.7 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (71% conf, 31.0% edge)
+  -> SPREAD: Los Angeles Lakers -12.5 VALUABLE: Cover (72% conf, 42.5% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Philadelphia 76ers
+------------------------------
+  Isaiah Hartenstein   | POINTS   | Line 10.5 | Proj  7.0 | VALUABLE: Under (76% conf, 37.9% edge)
+  PROJECTED TOTAL: 213.9 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (68% conf, 27.1% edge)
+  -> SPREAD: Oklahoma City Thunder -14.5 VALUABLE: Cover (73% conf, 43.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Kawhi Leonard Over 28.5 POINTS (78% conf, 24.3% edge) | LA Clippers vs. Detroit Pistons
+  2. LeBron James Under 6.5 REBOUNDS (75% conf, 25.0% edge) | Los Angeles Lakers vs. Sacramento Kings
+  3. Keon Ellis Under 9.5 POINTS (76% conf, 21.4% edge) | Los Angeles Lakers vs. Sacramento Kings
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Kawhi Leonard Over 28.5 POINTS (78% conf, 24.3% edge) | LA Clippers vs. Detroit Pistons
+  2. LeBron James Under 6.5 REBOUNDS (75% conf, 25.0% edge) | Los Angeles Lakers vs. Sacramento Kings
+  3. Keon Ellis Under 9.5 POINTS (76% conf, 21.4% edge) | Los Angeles Lakers vs. Sacramento Kings
+  4. Isaiah Hartenstein Under 10.5 POINTS (76% conf, 19.4% edge) | Oklahoma City Thunder vs. Philadelphia 76ers
+
+
+Total VALUABLE picks today: 12

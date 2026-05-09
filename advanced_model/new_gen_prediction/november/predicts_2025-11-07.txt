@@ -1,0 +1,99 @@
+NBA MODEL PREDICTIONS - 2025-11-07
+============================================================
+
+
+MATCHUP: Charlotte Hornets vs. Miami Heat
+------------------------------
+  Kon Knueppel         | POINTS   | Line 17.5 | Proj 29.1 | VALUABLE: Over (78% conf, 41.9% edge)
+  Tre Mann             | POINTS   | Line 16.5 | Proj  7.5 | VALUABLE: Under (82% conf, 47.6% edge)
+  PROJECTED TOTAL: 232.3 | O/U 235.5
+
+MATCHUP: Boston Celtics vs. Orlando Magic
+------------------------------
+
+MATCHUP: Houston Rockets vs. San Antonio Spurs
+------------------------------
+  Reed Sheppard        | POINTS   | Line  7.5 | Proj 14.1 | VALUABLE: Over (75% conf, 36.2% edge)
+  Josh Okogie          | POINTS   | Line  7.5 | Proj  4.8 | VALUABLE: Under (73% conf, 33.8% edge)
+  Stephon Castle       | ASSISTS  | Line  5.5 | Proj  9.4 | VALUABLE: Over (77% conf, 39.6% edge)
+  Keldon Johnson       | POINTS   | Line 11.5 | Proj 18.3 | VALUABLE: Over (73% conf, 34.5% edge)
+  Jeremy Sochan        | POINTS   | Line  8.5 | Proj  3.4 | VALUABLE: Under (82% conf, 48.0% edge)
+  PROJECTED TOTAL: 231.3 | O/U 224.5
+  -> GAME TOTAL: O/U 224.5 VALUABLE: Over (60% conf, 15.0% edge)
+
+MATCHUP: Memphis Grizzlies vs. Dallas Mavericks
+------------------------------
+  Ja Morant            | POINTS   | Line 24.5 | Proj 17.0 | VALUABLE: Under (77% conf, 40.4% edge)
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  4.7 | VALUABLE: Under (79% conf, 43.2% edge)
+  P.J. Washington      | POINTS   | Line 17.5 | Proj 12.7 | VALUABLE: Under (73% conf, 33.5% edge)
+  Brandon Williams     | POINTS   | Line  7.5 | Proj 13.7 | VALUABLE: Over (75% conf, 37.5% edge)
+  D'Angelo Russell     | POINTS   | Line 14.5 | Proj  6.7 | VALUABLE: Under (81% conf, 46.6% edge)
+  D'Angelo Russell     | ASSISTS  | Line  5.5 | Proj  2.8 | VALUABLE: Under (80% conf, 45.0% edge)
+  Daniel Gafford       | POINTS   | Line 12.5 | Proj  6.4 | VALUABLE: Under (81% conf, 46.4% edge)
+  PROJECTED TOTAL: 230.9 | O/U 232.5
+
+MATCHUP: Milwaukee Bucks vs. Chicago Bulls
+------------------------------
+  Giannis Antetokounmpo | POINTS   | Line 32.0 | Proj 26.1 | VALUABLE: Under (73% conf, 33.6% edge)
+  Cole Anthony         | POINTS   | Line  9.5 | Proj  3.5 | VALUABLE: Under (82% conf, 48.1% edge)
+  Bobby Portis         | POINTS   | Line  9.5 | Proj 19.0 | VALUABLE: Over (78% conf, 42.6% edge)
+  Josh Giddey          | POINTS   | Line 22.5 | Proj 16.3 | VALUABLE: Under (74% conf, 35.1% edge)
+  PROJECTED TOTAL: 235.6 | O/U 240.5
+
+MATCHUP: Oklahoma City Thunder vs. Sacramento Kings
+------------------------------
+  Malik Monk           | POINTS   | Line 12.5 | Proj  8.1 | VALUABLE: Under (75% conf, 37.1% edge)
+  Drew Eubanks         | POINTS   | Line  7.5 | Proj  3.6 | VALUABLE: Under (80% conf, 44.4% edge)
+  PROJECTED TOTAL: 232.3 | O/U 234.5
+  -> SPREAD: Oklahoma City Thunder -11.5 VALUABLE: Cover (74% conf, 45.5% edge)
+
+MATCHUP: Denver Nuggets vs. Golden State Warriors
+------------------------------
+  Jonathan Kuminga     | POINTS   | Line 19.5 | Proj  9.3 | VALUABLE: Under (82% conf, 48.8% edge)
+  PROJECTED TOTAL: 248.2 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Over (73% conf, 34.3% edge)
+  -> SPREAD: Denver Nuggets -9.5 VALUABLE: Cover (75% conf, 47.3% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 257.3 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (77% conf, 41.1% edge)
+  -> SPREAD: Utah Jazz +15.5 VALUABLE: Cover (69% conf, 37.0% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Washington Wizards
+------------------------------
+  Evan Mobley          | POINTS   | Line 19.5 | Proj 13.4 | VALUABLE: Under (76% conf, 38.6% edge)
+  De'Andre Hunter      | POINTS   | Line 16.5 | Proj 10.8 | VALUABLE: Under (75% conf, 37.7% edge)
+  PROJECTED TOTAL: 236.1 | O/U 240.5
+  -> SPREAD: Washington Wizards +13.5 VALUABLE: Cover (68% conf, 35.4% edge)
+
+MATCHUP: Detroit Pistons vs. Brooklyn Nets
+------------------------------
+  Ausar Thompson       | POINTS   | Line 14.5 | Proj 10.8 | VALUABLE: Under (72% conf, 32.2% edge)
+  Terance Mann         | POINTS   | Line 11.5 | Proj  7.3 | VALUABLE: Under (76% conf, 37.9% edge)
+  PROJECTED TOTAL: 229.5 | O/U 227.5
+  -> SPREAD: Brooklyn Nets +10.5 VALUABLE: Cover (71% conf, 40.8% edge)
+
+MATCHUP: Toronto Raptors vs. Atlanta Hawks
+------------------------------
+  Zaccharie Risacher   | POINTS   | Line 13.5 | Proj  9.4 | VALUABLE: Under (74% conf, 35.1% edge)
+  Keaton Wallace       | POINTS   | Line  5.5 | Proj  3.0 | VALUABLE: Under (75% conf, 36.9% edge)
+  Onyeka Okongwu       | POINTS   | Line 12.5 | Proj 19.0 | VALUABLE: Over (73% conf, 33.1% edge)
+  Mouhamed Gueye       | POINTS   | Line  5.5 | Proj  3.1 | VALUABLE: Under (77% conf, 40.0% edge)
+  PROJECTED TOTAL: 238.3 | O/U 235.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Drew Eubanks Under 7.5 POINTS (80% conf, 30.6% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  2. Daniel Gafford Under 12.5 POINTS (81% conf, 29.2% edge) | Memphis Grizzlies vs. Dallas Mavericks
+  3. Jeremy Sochan Under 8.5 POINTS (82% conf, 27.3% edge) | Houston Rockets vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Drew Eubanks Under 7.5 POINTS (80% conf, 30.6% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  2. Daniel Gafford Under 12.5 POINTS (81% conf, 29.2% edge) | Memphis Grizzlies vs. Dallas Mavericks
+  3. Jeremy Sochan Under 8.5 POINTS (82% conf, 27.3% edge) | Houston Rockets vs. San Antonio Spurs
+  4. Jonathan Kuminga Under 19.5 POINTS (82% conf, 26.6% edge) | Denver Nuggets vs. Golden State Warriors
+
+
+Total VALUABLE picks today: 37

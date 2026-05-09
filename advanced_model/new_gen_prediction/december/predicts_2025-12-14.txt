@@ -1,0 +1,69 @@
+NBA MODEL PREDICTIONS - 2025-12-14
+============================================================
+
+
+MATCHUP: Philadelphia 76ers vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 215.7 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (67% conf, 24.2% edge)
+
+MATCHUP: Washington Wizards vs. Indiana Pacers
+------------------------------
+  Justin Champagnie    | REBOUNDS | Line  6.5 | Proj  9.9 | VALUABLE: Over (74% conf, 35.5% edge)
+  Tre Johnson          | POINTS   | Line  9.5 | Proj 15.6 | VALUABLE: Over (72% conf, 32.2% edge)
+  Jay Huff             | POINTS   | Line 11.5 | Proj  8.2 | VALUABLE: Under (72% conf, 32.6% edge)
+  PROJECTED TOTAL: 214.5 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (75% conf, 36.9% edge)
+
+MATCHUP: Charlotte Hornets vs. Cleveland Cavaliers
+------------------------------
+  Miles Bridges        | POINTS   | Line 22.5 | Proj 16.0 | VALUABLE: Under (75% conf, 37.0% edge)
+  PROJECTED TOTAL: 209.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (77% conf, 40.9% edge)
+
+MATCHUP: Brooklyn Nets vs. Milwaukee Bucks
+------------------------------
+  Kyle Kuzma           | POINTS   | Line 15.5 | Proj 11.1 | VALUABLE: Under (73% conf, 33.3% edge)
+  PROJECTED TOTAL: 214.7 | O/U 215.5
+
+MATCHUP: Golden State Warriors vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 231.2 | O/U 236.5
+  -> SPREAD: Golden State Warriors -5.0 VALUABLE: Cover (72% conf, 41.7% edge)
+
+MATCHUP: Chicago Bulls vs. New Orleans Pelicans
+------------------------------
+  Coby White           | POINTS   | Line 22.5 | Proj 15.8 | VALUABLE: Under (75% conf, 37.5% edge)
+  Josh Giddey          | REBOUNDS | Line  8.5 | Proj  6.0 | VALUABLE: Under (75% conf, 36.4% edge)
+  Isaac Okoro          | POINTS   | Line  6.5 | Proj 12.2 | VALUABLE: Over (74% conf, 35.0% edge)
+  Saddiq Bey           | POINTS   | Line 12.5 | Proj 18.7 | VALUABLE: Over (72% conf, 32.8% edge)
+  PROJECTED TOTAL: 257.2 | O/U 247.5
+  -> GAME TOTAL: O/U 247.5 VALUABLE: Over (64% conf, 21.3% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Sacramento Kings
+------------------------------
+  Maxime Raynaud       | REBOUNDS | Line  6.5 | Proj 10.5 | VALUABLE: Over (77% conf, 40.3% edge)
+  PROJECTED TOTAL: 220.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (71% conf, 30.8% edge)
+
+MATCHUP: Phoenix Suns vs. Los Angeles Lakers
+------------------------------
+  Devin Booker         | ASSISTS  | Line  6.5 | Proj  4.5 | VALUABLE: Under (76% conf, 38.3% edge)
+  PROJECTED TOTAL: 225.5 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (61% conf, 15.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Devin Booker Under 6.5 ASSISTS (76% conf, 29.9% edge) | Phoenix Suns vs. Los Angeles Lakers
+  2. Maxime Raynaud Over 6.5 REBOUNDS (77% conf, 28.0% edge) | Minnesota Timberwolves vs. Sacramento Kings
+  3. Game Total Under 232.5 TOTAL (77% conf, 24.7% edge) | Charlotte Hornets vs. Cleveland Cavaliers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Devin Booker Under 6.5 ASSISTS (76% conf, 29.9% edge) | Phoenix Suns vs. Los Angeles Lakers
+  2. Maxime Raynaud Over 6.5 REBOUNDS (77% conf, 28.0% edge) | Minnesota Timberwolves vs. Sacramento Kings
+  3. Game Total Under 232.5 TOTAL (77% conf, 24.7% edge) | Charlotte Hornets vs. Cleveland Cavaliers
+  4. Isaac Okoro Over 6.5 POINTS (74% conf, 24.3% edge) | Chicago Bulls vs. New Orleans Pelicans
+
+
+Total VALUABLE picks today: 18

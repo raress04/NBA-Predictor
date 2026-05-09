@@ -1,0 +1,70 @@
+NBA MODEL PREDICTIONS - 2025-11-21
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Houston Rockets
+------------------------------
+  PROJECTED TOTAL: 242.2 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (63% conf, 19.0% edge)
+
+MATCHUP: Golden State Warriors vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 237.4 | O/U 237.0
+  -> SPREAD: Golden State Warriors -10.5 VALUABLE: Cover (76% conf, 48.6% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Indiana Pacers
+------------------------------
+
+MATCHUP: Minnesota Timberwolves vs. Phoenix Suns
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.1 | VALUABLE: Under (77% conf, 39.5% edge)
+  PROJECTED TOTAL: 225.5 | O/U 230.5
+  -> SPREAD: Minnesota Timberwolves -4.5 VALUABLE: Cover (67% conf, 35.2% edge)
+
+MATCHUP: Brooklyn Nets vs. Boston Celtics
+------------------------------
+  Josh Minott          | POINTS   | Line  6.5 | Proj  4.3 | VALUABLE: Under (73% conf, 33.2% edge)
+  PROJECTED TOTAL: 233.6 | O/U 221.5
+  -> GAME TOTAL: O/U 221.5 VALUABLE: Over (67% conf, 25.4% edge)
+
+MATCHUP: Dallas Mavericks vs. New Orleans Pelicans
+------------------------------
+  Daniel Gafford       | POINTS   | Line 12.5 | Proj  7.5 | VALUABLE: Under (79% conf, 42.6% edge)
+  Saddiq Bey           | POINTS   | Line  8.5 | Proj 20.0 | VALUABLE: Over (81% conf, 47.0% edge)
+  PROJECTED TOTAL: 228.0 | O/U 234.5
+
+MATCHUP: Oklahoma City Thunder vs. Utah Jazz
+------------------------------
+  Isaiah Hartenstein   | POINTS   | Line 11.5 | Proj  8.5 | VALUABLE: Under (72% conf, 32.8% edge)
+  Keyonte George       | POINTS   | Line 17.5 | Proj 25.5 | VALUABLE: Over (74% conf, 34.8% edge)
+  PROJECTED TOTAL: 252.5 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Over (73% conf, 34.8% edge)
+  -> SPREAD: Oklahoma City Thunder -16.5 VALUABLE: Cover (66% conf, 32.2% edge)
+
+MATCHUP: Toronto Raptors vs. Washington Wizards
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 13.5 | Proj  6.5 | VALUABLE: Under (82% conf, 47.6% edge)
+  PROJECTED TOTAL: 232.2 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (62% conf, 16.7% edge)
+  -> SPREAD: Toronto Raptors -14.5 VALUABLE: Cover (65% conf, 31.9% edge)
+
+MATCHUP: Miami Heat vs. Chicago Bulls
+------------------------------
+  Bam Adebayo          | POINTS   | Line 21.5 | Proj 16.0 | VALUABLE: Under (73% conf, 34.4% edge)
+  PROJECTED TOTAL: 245.7 | O/U 250.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jakob Poeltl Under 13.5 POINTS (82% conf, 32.4% edge) | Toronto Raptors vs. Washington Wizards
+  2. Saddiq Bey Over 8.5 POINTS (81% conf, 25.3% edge) | Dallas Mavericks vs. New Orleans Pelicans
+  3. Daniel Gafford Under 12.5 POINTS (79% conf, 24.0% edge) | Dallas Mavericks vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jakob Poeltl Under 13.5 POINTS (82% conf, 32.4% edge) | Toronto Raptors vs. Washington Wizards
+  2. Saddiq Bey Over 8.5 POINTS (81% conf, 25.3% edge) | Dallas Mavericks vs. New Orleans Pelicans
+  3. Daniel Gafford Under 12.5 POINTS (79% conf, 24.0% edge) | Dallas Mavericks vs. New Orleans Pelicans
+  4. Devin Booker Under 7.5 ASSISTS (77% conf, 21.8% edge) | Minnesota Timberwolves vs. Phoenix Suns
+
+
+Total VALUABLE picks today: 16

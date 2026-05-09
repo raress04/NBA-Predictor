@@ -1,0 +1,80 @@
+NBA MODEL PREDICTIONS - 2025-11-12
+============================================================
+
+
+MATCHUP: Golden State Warriors vs. San Antonio Spurs
+------------------------------
+  PROJECTED TOTAL: 257.6 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (77% conf, 41.4% edge)
+
+MATCHUP: Atlanta Hawks vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 222.8 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (61% conf, 15.6% edge)
+  -> SPREAD: Atlanta Hawks -4.5 VALUABLE: Cover (69% conf, 37.1% edge)
+
+MATCHUP: Boston Celtics vs. Memphis Grizzlies
+------------------------------
+  PROJECTED TOTAL: 238.2 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (66% conf, 23.0% edge)
+
+MATCHUP: Portland Trail Blazers vs. New Orleans Pelicans
+------------------------------
+  PROJECTED TOTAL: 207.7 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (78% conf, 42.8% edge)
+  -> SPREAD: Portland Trail Blazers -8.5 VALUABLE: Cover (68% conf, 35.7% edge)
+
+MATCHUP: Detroit Pistons vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 215.8 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Under (70% conf, 30.4% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Los Angeles Lakers
+------------------------------
+  PROJECTED TOTAL: 238.8 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (64% conf, 20.6% edge)
+  -> SPREAD: Oklahoma City Thunder -8.5 VALUABLE: Cover (67% conf, 34.5% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 235.0 | O/U 239.5
+
+MATCHUP: Orlando Magic vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 254.3 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (78% conf, 43.5% edge)
+
+MATCHUP: Milwaukee Bucks vs. Charlotte Hornets
+------------------------------
+  PROJECTED TOTAL: 220.0 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (62% conf, 16.4% edge)
+
+MATCHUP: Denver Nuggets vs. LA Clippers
+------------------------------
+  James Harden         | ASSISTS  | Line  9.5 | Proj  6.3 | VALUABLE: Under (79% conf, 43.0% edge)
+  -> SPREAD: Denver Nuggets -4.5 VALUABLE: Cover (67% conf, 35.1% edge)
+
+MATCHUP: Phoenix Suns vs. Dallas Mavericks
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.1 | VALUABLE: Under (77% conf, 39.6% edge)
+  PROJECTED TOTAL: 227.0 | O/U 227.5
+
+MATCHUP: Washington Wizards vs. Houston Rockets
+------------------------------
+  PROJECTED TOTAL: 233.7 | O/U 236.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. James Harden Under 9.5 ASSISTS (79% conf, 27.7% edge) | Denver Nuggets vs. LA Clippers
+  2. Game Total Over 227.5 TOTAL (78% conf, 25.9% edge) | Orlando Magic vs. New York Knicks
+  3. Game Total Under 232.5 TOTAL (78% conf, 25.9% edge) | Portland Trail Blazers vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. James Harden Under 9.5 ASSISTS (79% conf, 27.7% edge) | Denver Nuggets vs. LA Clippers
+  2. Game Total Over 227.5 TOTAL (78% conf, 25.9% edge) | Orlando Magic vs. New York Knicks
+  3. Game Total Under 232.5 TOTAL (78% conf, 25.9% edge) | Portland Trail Blazers vs. New Orleans Pelicans
+  4. Game Total Over 233.5 TOTAL (77% conf, 24.6% edge) | Golden State Warriors vs. San Antonio Spurs
+
+
+Total VALUABLE picks today: 14

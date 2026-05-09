@@ -1,0 +1,80 @@
+NBA MODEL PREDICTIONS - 2025-11-19
+============================================================
+
+
+MATCHUP: New York Knicks vs. Dallas Mavericks
+------------------------------
+  Naji Marshall        | POINTS   | Line 12.5 | Proj 18.9 | VALUABLE: Over (73% conf, 34.3% edge)
+  PROJECTED TOTAL: 248.4 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (70% conf, 30.3% edge)
+  -> SPREAD: New York Knicks -8.5 VALUABLE: Cover (69% conf, 38.4% edge)
+
+MATCHUP: Houston Rockets vs. Cleveland Cavaliers
+------------------------------
+  Steven Adams         | REBOUNDS | Line  9.5 | Proj  6.7 | VALUABLE: Under (76% conf, 38.0% edge)
+  PROJECTED TOTAL: 230.6 | O/U 233.5
+
+MATCHUP: Oklahoma City Thunder vs. Sacramento Kings
+------------------------------
+  Isaiah Hartenstein   | POINTS   | Line 12.5 | Proj  8.9 | VALUABLE: Under (74% conf, 35.3% edge)
+  Malik Monk           | POINTS   | Line 11.5 | Proj  7.9 | VALUABLE: Under (73% conf, 34.4% edge)
+  Drew Eubanks         | POINTS   | Line  8.5 | Proj  3.6 | VALUABLE: Under (81% conf, 47.1% edge)
+  Drew Eubanks         | REBOUNDS | Line  5.5 | Proj  2.7 | VALUABLE: Under (80% conf, 45.8% edge)
+  PROJECTED TOTAL: 226.9 | O/U 232.5
+  -> SPREAD: Oklahoma City Thunder -18.5 VALUABLE: Cover (76% conf, 49.0% edge)
+
+MATCHUP: Portland Trail Blazers vs. Chicago Bulls
+------------------------------
+  Isaac Okoro          | POINTS   | Line  6.5 | Proj 11.8 | VALUABLE: Over (73% conf, 33.5% edge)
+  PROJECTED TOTAL: 230.3 | O/U 244.5
+  -> GAME TOTAL: O/U 244.5 VALUABLE: Under (70% conf, 28.9% edge)
+
+MATCHUP: Charlotte Hornets vs. Indiana Pacers
+------------------------------
+
+MATCHUP: Denver Nuggets vs. New Orleans Pelicans
+------------------------------
+  Zeke Nnaji           | POINTS   | Line  6.5 | Proj  2.8 | VALUABLE: Under (81% conf, 46.0% edge)
+  Jeremiah Fears       | POINTS   | Line 14.5 | Proj 10.2 | VALUABLE: Under (74% conf, 35.8% edge)
+  Yves Missi           | POINTS   | Line  6.5 | Proj  3.9 | VALUABLE: Under (77% conf, 40.0% edge)
+  Saddiq Bey           | POINTS   | Line  9.5 | Proj 18.6 | VALUABLE: Over (79% conf, 42.9% edge)
+  PROJECTED TOTAL: 238.7 | O/U 233.5
+  -> SPREAD: Denver Nuggets -10.5 VALUABLE: Cover (75% conf, 47.6% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Washington Wizards
+------------------------------
+  Bub Carrington       | POINTS   | Line  7.5 | Proj 13.3 | VALUABLE: Over (72% conf, 32.5% edge)
+  PROJECTED TOTAL: 247.8 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Over (62% conf, 17.8% edge)
+  -> SPREAD: Minnesota Timberwolves -16.5 VALUABLE: Cover (65% conf, 31.8% edge)
+
+MATCHUP: Miami Heat vs. Golden State Warriors
+------------------------------
+  Bam Adebayo          | REBOUNDS | Line  7.5 | Proj 11.2 | VALUABLE: Over (75% conf, 36.6% edge)
+  PROJECTED TOTAL: 229.7 | O/U 234.5
+  -> SPREAD: Miami Heat -10.5 VALUABLE: Cover (68% conf, 35.9% edge)
+
+MATCHUP: Philadelphia 76ers vs. Toronto Raptors
+------------------------------
+  Andre Drummond       | POINTS   | Line 11.5 | Proj  7.1 | VALUABLE: Under (77% conf, 40.7% edge)
+  Andre Drummond       | REBOUNDS | Line 13.5 | Proj  9.6 | VALUABLE: Under (78% conf, 41.1% edge)
+  Justin Edwards       | POINTS   | Line  9.5 | Proj  5.1 | VALUABLE: Under (78% conf, 41.7% edge)
+  Scottie Barnes       | REBOUNDS | Line  7.5 | Proj 11.2 | VALUABLE: Over (75% conf, 37.7% edge)
+  Jakob Poeltl         | POINTS   | Line 11.5 | Proj  7.0 | VALUABLE: Under (77% conf, 40.6% edge)
+  PROJECTED TOTAL: 231.6 | O/U 233.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Drew Eubanks Under 8.5 POINTS (81% conf, 31.3% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  2. Drew Eubanks Under 5.5 REBOUNDS (80% conf, 30.7% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  3. Scottie Barnes Over 7.5 REBOUNDS (75% conf, 26.4% edge) | Philadelphia 76ers vs. Toronto Raptors
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Drew Eubanks Under 8.5 POINTS (81% conf, 31.3% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  2. Drew Eubanks Under 5.5 REBOUNDS (80% conf, 30.7% edge) | Oklahoma City Thunder vs. Sacramento Kings
+  3. Scottie Barnes Over 7.5 REBOUNDS (75% conf, 26.4% edge) | Philadelphia 76ers vs. Toronto Raptors
+  4. Justin Edwards Under 9.5 POINTS (78% conf, 24.5% edge) | Philadelphia 76ers vs. Toronto Raptors
+
+
+Total VALUABLE picks today: 26

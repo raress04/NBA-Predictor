@@ -1,0 +1,77 @@
+NBA MODEL PREDICTIONS - 2025-12-03
+============================================================
+
+
+MATCHUP: LA Clippers vs. Atlanta Hawks
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 23.5 | Proj 38.2 | VALUABLE: Over (80% conf, 45.2% edge)
+  Kawhi Leonard        | REBOUNDS | Line  5.5 | Proj  9.4 | VALUABLE: Over (77% conf, 40.2% edge)
+  Zaccharie Risacher   | POINTS   | Line 14.5 | Proj 10.0 | VALUABLE: Under (75% conf, 36.3% edge)
+  Mouhamed Gueye       | POINTS   | Line 10.5 | Proj  3.6 | VALUABLE: Under (82% conf, 49.1% edge)
+  Mouhamed Gueye       | REBOUNDS | Line  6.5 | Proj  3.2 | VALUABLE: Under (81% conf, 46.5% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 214.2 | O/U 243.5
+  -> GAME TOTAL: O/U 243.5 VALUABLE: Under (80% conf, 45.6% edge)
+  -> SPREAD: Cleveland Cavaliers -10.5 VALUABLE: Cover (70% conf, 38.7% edge)
+
+MATCHUP: Dallas Mavericks vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 226.7 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (67% conf, 25.2% edge)
+
+MATCHUP: Denver Nuggets vs. Indiana Pacers
+------------------------------
+  T.J. McConnell       | POINTS   | Line 11.5 | Proj  8.0 | VALUABLE: Under (74% conf, 35.2% edge)
+  Isaiah Jackson       | POINTS   | Line  7.5 | Proj  4.7 | VALUABLE: Under (76% conf, 38.0% edge)
+  Jay Huff             | POINTS   | Line 10.5 | Proj  7.2 | VALUABLE: Under (72% conf, 32.9% edge)
+  PROJECTED TOTAL: 227.7 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (66% conf, 23.1% edge)
+  -> SPREAD: Denver Nuggets -8.5 VALUABLE: Cover (69% conf, 37.6% edge)
+
+MATCHUP: Milwaukee Bucks vs. Detroit Pistons
+------------------------------
+  Bobby Portis         | POINTS   | Line  8.5 | Proj 16.1 | VALUABLE: Over (76% conf, 39.0% edge)
+  Giannis Antetokounmpo | POINTS   | Line 29.5 | Proj 22.4 | VALUABLE: Under (76% conf, 37.9% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 10.5 | Proj  7.2 | VALUABLE: Under (78% conf, 41.1% edge)
+  PROJECTED TOTAL: 234.8 | O/U 228.5
+
+MATCHUP: New York Knicks vs. Charlotte Hornets
+------------------------------
+  Miles Bridges        | POINTS   | Line 21.5 | Proj 15.7 | VALUABLE: Under (74% conf, 34.9% edge)
+  PROJECTED TOTAL: 227.0 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (63% conf, 17.8% edge)
+  -> SPREAD: New York Knicks -9.0 VALUABLE: Cover (67% conf, 34.5% edge)
+
+MATCHUP: San Antonio Spurs vs. Orlando Magic
+------------------------------
+
+MATCHUP: Houston Rockets vs. Sacramento Kings
+------------------------------
+  Aaron Holiday        | POINTS   | Line  9.5 | Proj  4.2 | VALUABLE: Under (80% conf, 45.6% edge)
+  Malik Monk           | POINTS   | Line 12.5 | Proj  8.5 | VALUABLE: Under (74% conf, 35.2% edge)
+  Maxime Raynaud       | POINTS   | Line  6.5 | Proj 13.4 | VALUABLE: Over (77% conf, 40.4% edge)
+  PROJECTED TOTAL: 219.8 | O/U 231.5
+  -> GAME TOTAL: O/U 231.5 VALUABLE: Under (67% conf, 25.5% edge)
+  -> SPREAD: Houston Rockets -15.5 VALUABLE: Cover (67% conf, 33.9% edge)
+
+MATCHUP: Brooklyn Nets vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 225.6 | O/U 231.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Mouhamed Gueye Under 6.5 REBOUNDS (81% conf, 28.1% edge) | LA Clippers vs. Atlanta Hawks
+  2. Game Total Under 243.5 TOTAL (80% conf, 27.6% edge) | Cleveland Cavaliers vs. Portland Trail Blazers
+  3. Aaron Holiday Under 9.5 POINTS (80% conf, 26.9% edge) | Houston Rockets vs. Sacramento Kings
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Mouhamed Gueye Under 6.5 REBOUNDS (81% conf, 28.1% edge) | LA Clippers vs. Atlanta Hawks
+  2. Game Total Under 243.5 TOTAL (80% conf, 27.6% edge) | Cleveland Cavaliers vs. Portland Trail Blazers
+  3. Aaron Holiday Under 9.5 POINTS (80% conf, 26.9% edge) | Houston Rockets vs. Sacramento Kings
+  4. Giannis Antetokounmpo Under 10.5 REBOUNDS (78% conf, 27.8% edge) | Milwaukee Bucks vs. Detroit Pistons
+
+
+Total VALUABLE picks today: 24

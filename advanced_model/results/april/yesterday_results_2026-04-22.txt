@@ -1,0 +1,59 @@
+--- RESULTS FOR 2026-04-22 ---
+
+==================================================
+MATCHUP: DET @ ORL | 98 - 83
+==================================================
+Cade Cunningham           | 27 PTS,  6 REB, 11 AST
+Jalen Suggs               | 19 PTS,  6 REB,  4 AST
+Paolo Banchero            | 18 PTS,  6 REB,  8 AST
+Tobias Harris             | 16 PTS, 11 REB,  1 AST
+Franz Wagner              | 12 PTS,  7 REB,  1 AST
+Desmond Bane              | 12 PTS,  4 REB,  2 AST
+Ausar Thompson            | 11 PTS,  8 REB,  1 AST
+Jalen Duren               | 11 PTS,  9 REB,  4 AST
+Duncan Robinson           | 10 PTS,  6 REB,  3 AST
+Isaiah Stewart            | 10 PTS,  5 REB,  0 AST
+Jase Richardson           |  6 PTS,  0 REB,  0 AST
+Anthony Black             |  5 PTS,  3 REB,  1 AST
+Caris LeVert              |  4 PTS,  1 REB,  0 AST
+Daniss Jenkins            |  4 PTS,  2 REB,  2 AST
+Goga Bitadze              |  3 PTS,  5 REB,  0 AST
+Tristan da Silva          |  3 PTS,  3 REB,  0 AST
+Wendell Carter Jr.        |  3 PTS,  5 REB,  0 AST
+Kevin Huerter             |  3 PTS,  1 REB,  0 AST
+Javonte Green             |  2 PTS,  5 REB,  0 AST
+Jamal Cain                |  2 PTS,  1 REB,  0 AST
+Jevon Carter              |  0 PTS,  0 REB,  1 AST
+Ronald Holland II         |  0 PTS,  3 REB,  0 AST
+Noah Penda                |  0 PTS,  1 REB,  0 AST
+Moritz Wagner             |  0 PTS,  1 REB,  0 AST
+Jett Howard               |  0 PTS,  0 REB,  0 AST
+Paul Reed                 |  0 PTS,  0 REB,  0 AST
+Marcus Sasser             |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: OKC @ PHX | 120 - 107
+==================================================
+Shai Gilgeous-Alexander   | 37 PTS,  5 REB,  9 AST
+Dillon Brooks             | 30 PTS,  6 REB,  1 AST
+Devin Booker              | 22 PTS,  7 REB,  4 AST
+Jalen Green               | 21 PTS,  5 REB,  3 AST
+Chet Holmgren             | 19 PTS,  8 REB,  0 AST
+Jalen Williams            | 19 PTS,  1 REB,  4 AST
+Royce O'Neale             | 16 PTS,  9 REB,  4 AST
+Ajay Mitchell             | 14 PTS,  5 REB,  5 AST
+Isaiah Hartenstein        |  9 PTS, 10 REB,  2 AST
+Luguentz Dort             |  9 PTS,  1 REB,  0 AST
+Collin Gillespie          |  7 PTS,  6 REB,  6 AST
+Oso Ighodaro              |  7 PTS,  8 REB,  5 AST
+Alex Caruso               |  7 PTS,  2 REB,  1 AST
+Isaiah Joe                |  6 PTS,  1 REB,  0 AST
+Khaman Maluach            |  4 PTS,  2 REB,  0 AST
+Cason Wallace             |  0 PTS,  6 REB,  2 AST
+Jaylin Williams           |  0 PTS,  1 REB,  1 AST
+Ryan Dunn                 |  0 PTS,  1 REB,  0 AST
+Rasheer Fleming           |  0 PTS,  0 REB,  0 AST
+Jamaree Bouyea            |  0 PTS,  0 REB,  0 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+Jared McCain              |  0 PTS,  0 REB,  0 AST
+

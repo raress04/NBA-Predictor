@@ -1,0 +1,77 @@
+NBA MODEL PREDICTIONS - 2025-10-22
+============================================================
+
+
+MATCHUP: Sacramento Kings vs. Phoenix Suns
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (75% conf, 36.7% edge)
+  PROJECTED TOTAL: 217.7 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (66% conf, 23.5% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 237.2 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (70% conf, 29.9% edge)
+  -> SPREAD: Minnesota Timberwolves -5.0 VALUABLE: Cover (73% conf, 43.6% edge)
+
+MATCHUP: Philadelphia 76ers vs. Boston Celtics
+------------------------------
+  PROJECTED TOTAL: 227.1 | O/U 230.5
+
+MATCHUP: New Orleans Pelicans vs. Memphis Grizzlies
+------------------------------
+  Zion Williamson      | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (78% conf, 41.0% edge)
+  PROJECTED TOTAL: 234.7 | O/U 236.5
+
+MATCHUP: Chicago Bulls vs. Detroit Pistons
+------------------------------
+  PROJECTED TOTAL: 240.6 | O/U 236.5
+
+MATCHUP: New York Knicks vs. Cleveland Cavaliers
+------------------------------
+  PROJECTED TOTAL: 237.2 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (61% conf, 16.3% edge)
+
+MATCHUP: San Antonio Spurs vs. Dallas Mavericks
+------------------------------
+  PROJECTED TOTAL: 220.1 | O/U 224.0
+
+MATCHUP: Milwaukee Bucks vs. Washington Wizards
+------------------------------
+  Giannis Antetokounmpo | ASSISTS  | Line  7.5 | Proj  4.2 | VALUABLE: Under (81% conf, 46.4% edge)
+  PROJECTED TOTAL: 239.2 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (64% conf, 21.1% edge)
+  -> SPREAD: Milwaukee Bucks -10.5 VALUABLE: Cover (68% conf, 36.5% edge)
+
+MATCHUP: Miami Heat vs. Orlando Magic
+------------------------------
+
+MATCHUP: Utah Jazz vs. LA Clippers
+------------------------------
+
+MATCHUP: Charlotte Hornets vs. Brooklyn Nets
+------------------------------
+  PROJECTED TOTAL: 245.3 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (71% conf, 31.7% edge)
+
+MATCHUP: Toronto Raptors vs. Atlanta Hawks
+------------------------------
+  Trae Young           | ASSISTS  | Line 10.5 | Proj  7.6 | VALUABLE: Under (77% conf, 39.2% edge)
+  PROJECTED TOTAL: 249.2 | O/U 237.5
+  -> GAME TOTAL: O/U 237.5 VALUABLE: Over (66% conf, 24.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Giannis Antetokounmpo Under 7.5 ASSISTS (81% conf, 31.7% edge) | Milwaukee Bucks vs. Washington Wizards
+  2. Devin Booker Under 7.5 ASSISTS (75% conf, 28.7% edge) | Sacramento Kings vs. Phoenix Suns
+  3. Trae Young Under 10.5 ASSISTS (77% conf, 23.7% edge) | Toronto Raptors vs. Atlanta Hawks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Giannis Antetokounmpo Under 7.5 ASSISTS (81% conf, 31.7% edge) | Milwaukee Bucks vs. Washington Wizards
+  2. Devin Booker Under 7.5 ASSISTS (75% conf, 28.7% edge) | Sacramento Kings vs. Phoenix Suns
+  3. Trae Young Under 10.5 ASSISTS (77% conf, 23.7% edge) | Toronto Raptors vs. Atlanta Hawks
+  4. Zion Williamson Under 5.5 ASSISTS (78% conf, 21.9% edge) | New Orleans Pelicans vs. Memphis Grizzlies
+
+
+Total VALUABLE picks today: 12

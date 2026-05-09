@@ -1,0 +1,78 @@
+NBA MODEL PREDICTIONS - 2025-10-29
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 228.4 | O/U 224.5
+
+MATCHUP: Detroit Pistons vs. Orlando Magic
+------------------------------
+  Tobias Harris        | REBOUNDS | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 43.5% edge)
+  PROJECTED TOTAL: 239.2 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (69% conf, 28.2% edge)
+
+MATCHUP: Memphis Grizzlies vs. Phoenix Suns
+------------------------------
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (77% conf, 38.9% edge)
+  Devin Booker         | ASSISTS  | Line  8.5 | Proj  5.2 | VALUABLE: Under (80% conf, 44.7% edge)
+  PROJECTED TOTAL: 227.1 | O/U 242.5
+  -> GAME TOTAL: O/U 242.5 VALUABLE: Under (71% conf, 31.1% edge)
+
+MATCHUP: Boston Celtics vs. Cleveland Cavaliers
+------------------------------
+  PROJECTED TOTAL: 232.6 | O/U 233.5
+
+MATCHUP: Denver Nuggets vs. New Orleans Pelicans
+------------------------------
+  Yves Missi           | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (75% conf, 36.9% edge)
+  Zion Williamson      | REBOUNDS | Line  6.5 | Proj  4.2 | VALUABLE: Under (76% conf, 39.2% edge)
+  Zion Williamson      | ASSISTS  | Line  5.5 | Proj  2.5 | VALUABLE: Under (81% conf, 46.3% edge)
+  PROJECTED TOTAL: 260.9 | O/U 237.5
+  -> GAME TOTAL: O/U 237.5 VALUABLE: Over (77% conf, 41.1% edge)
+  -> SPREAD: Denver Nuggets -11.5 VALUABLE: Cover (73% conf, 43.7% edge)
+
+MATCHUP: Chicago Bulls vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 232.5 | O/U 238.5
+  -> SPREAD: Chicago Bulls -4.5 VALUABLE: Cover (66% conf, 32.8% edge)
+
+MATCHUP: Indiana Pacers vs. Dallas Mavericks
+------------------------------
+  Tony Bradley         | REBOUNDS | Line  6.5 | Proj  4.3 | VALUABLE: Under (76% conf, 38.4% edge)
+  D'Angelo Russell     | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (78% conf, 40.7% edge)
+  PROJECTED TOTAL: 214.0 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (72% conf, 32.3% edge)
+
+MATCHUP: Toronto Raptors vs. Houston Rockets
+------------------------------
+  PROJECTED TOTAL: 231.9 | O/U 233.5
+
+MATCHUP: Brooklyn Nets vs. Atlanta Hawks
+------------------------------
+  Kristaps Porziņģis   | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (75% conf, 37.6% edge)
+  Trae Young           | ASSISTS  | Line 10.5 | Proj  7.6 | VALUABLE: Under (77% conf, 39.3% edge)
+  PROJECTED TOTAL: 254.4 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Over (69% conf, 29.1% edge)
+
+MATCHUP: Utah Jazz vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 243.7 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (62% conf, 17.1% edge)
+  -> SPREAD: Utah Jazz +3.0 VALUABLE: Cover (71% conf, 41.3% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Tony Bradley Under 6.5 REBOUNDS (76% conf, 27.8% edge) | Indiana Pacers vs. Dallas Mavericks
+  2. Ja Morant Under 7.5 ASSISTS (77% conf, 26.8% edge) | Memphis Grizzlies vs. Phoenix Suns
+  3. Devin Booker Under 8.5 ASSISTS (80% conf, 24.6% edge) | Memphis Grizzlies vs. Phoenix Suns
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Tony Bradley Under 6.5 REBOUNDS (76% conf, 27.8% edge) | Indiana Pacers vs. Dallas Mavericks
+  2. Ja Morant Under 7.5 ASSISTS (77% conf, 26.8% edge) | Memphis Grizzlies vs. Phoenix Suns
+  3. Devin Booker Under 8.5 ASSISTS (80% conf, 24.6% edge) | Memphis Grizzlies vs. Phoenix Suns
+  4. Zion Williamson Under 5.5 ASSISTS (81% conf, 23.8% edge) | Denver Nuggets vs. New Orleans Pelicans
+
+
+Total VALUABLE picks today: 19

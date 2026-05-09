@@ -1,0 +1,41 @@
+NBA MODEL PREDICTIONS - 2025-12-30
+============================================================
+
+
+MATCHUP: Utah Jazz vs. Boston Celtics
+------------------------------
+  Keyonte George       | POINTS   | Line 22.5 | Proj 32.7 | VALUABLE: Over (75% conf, 37.6% edge)
+  Neemias Queta        | REBOUNDS | Line  8.5 | Proj  6.0 | VALUABLE: Under (76% conf, 38.0% edge)
+  PROJECTED TOTAL: 247.8 | O/U 243.5
+
+MATCHUP: LA Clippers vs. Sacramento Kings
+------------------------------
+  Russell Westbrook    | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (77% conf, 39.2% edge)
+
+MATCHUP: Philadelphia 76ers vs. Memphis Grizzlies
+------------------------------
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (79% conf, 42.6% edge)
+  GG Jackson           | POINTS   | Line  9.5 | Proj  6.6 | VALUABLE: Under (72% conf, 32.8% edge)
+  PROJECTED TOTAL: 227.0 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (63% conf, 18.6% edge)
+  -> SPREAD: Philadelphia 76ers -1.5 VALUABLE: Cover (66% conf, 33.0% edge)
+
+MATCHUP: Los Angeles Lakers vs. Detroit Pistons
+------------------------------
+  PROJECTED TOTAL: 233.1 | O/U 233.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Ja Morant Under 7.5 ASSISTS (79% conf, 30.1% edge) | Philadelphia 76ers vs. Memphis Grizzlies
+  2. Russell Westbrook Under 7.5 ASSISTS (77% conf, 29.2% edge) | LA Clippers vs. Sacramento Kings
+  3. Keyonte George Over 22.5 POINTS (75% conf, 21.9% edge) | Utah Jazz vs. Boston Celtics
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Ja Morant Under 7.5 ASSISTS (79% conf, 30.1% edge) | Philadelphia 76ers vs. Memphis Grizzlies
+  2. Russell Westbrook Under 7.5 ASSISTS (77% conf, 29.2% edge) | LA Clippers vs. Sacramento Kings
+  3. Keyonte George Over 22.5 POINTS (75% conf, 21.9% edge) | Utah Jazz vs. Boston Celtics
+  4. Neemias Queta Under 8.5 REBOUNDS (76% conf, 21.5% edge) | Utah Jazz vs. Boston Celtics
+
+
+Total VALUABLE picks today: 7

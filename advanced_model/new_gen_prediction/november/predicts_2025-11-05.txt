@@ -1,0 +1,82 @@
+NBA MODEL PREDICTIONS - 2025-11-05
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. San Antonio Spurs
+------------------------------
+  Stephon Castle       | ASSISTS  | Line  5.5 | Proj 10.8 | VALUABLE: Over (80% conf, 44.8% edge)
+  PROJECTED TOTAL: 235.9 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (63% conf, 18.9% edge)
+
+MATCHUP: Portland Trail Blazers vs. Oklahoma City Thunder
+------------------------------
+  PROJECTED TOTAL: 240.7 | O/U 231.5
+  -> GAME TOTAL: O/U 231.5 VALUABLE: Over (64% conf, 19.8% edge)
+
+MATCHUP: Sacramento Kings vs. Golden State Warriors
+------------------------------
+  Drew Eubanks         | REBOUNDS | Line  6.5 | Proj  3.0 | VALUABLE: Under (82% conf, 47.8% edge)
+  PROJECTED TOTAL: 207.0 | O/U 225.5
+  -> GAME TOTAL: O/U 225.5 VALUABLE: Under (74% conf, 35.6% edge)
+
+MATCHUP: Brooklyn Nets vs. Indiana Pacers
+------------------------------
+
+MATCHUP: Denver Nuggets vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 257.8 | O/U 241.5
+  -> GAME TOTAL: O/U 241.5 VALUABLE: Over (72% conf, 32.8% edge)
+  -> SPREAD: Denver Nuggets -9.5 VALUABLE: Cover (75% conf, 46.4% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Philadelphia 76ers
+------------------------------
+  PROJECTED TOTAL: 229.7 | O/U 235.0
+  -> SPREAD: Cleveland Cavaliers -11.5 VALUABLE: Cover (74% conf, 45.8% edge)
+
+MATCHUP: Houston Rockets vs. Memphis Grizzlies
+------------------------------
+  Clint Capela         | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (74% conf, 36.0% edge)
+  Ja Morant            | ASSISTS  | Line  6.5 | Proj  4.4 | VALUABLE: Under (77% conf, 39.0% edge)
+  PROJECTED TOTAL: 228.6 | O/U 232.5
+
+MATCHUP: Washington Wizards vs. Boston Celtics
+------------------------------
+  Kyshawn George       | REBOUNDS | Line  6.5 | Proj  4.1 | VALUABLE: Under (77% conf, 40.4% edge)
+  Josh Minott          | REBOUNDS | Line  5.5 | Proj  2.2 | VALUABLE: Under (82% conf, 48.4% edge)
+  PROJECTED TOTAL: 237.6 | O/U 232.5
+
+MATCHUP: Detroit Pistons vs. Utah Jazz
+------------------------------
+  Isaiah Stewart       | REBOUNDS | Line  7.5 | Proj  4.6 | VALUABLE: Under (78% conf, 42.2% edge)
+  PROJECTED TOTAL: 247.3 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (69% conf, 28.3% edge)
+  -> SPREAD: Utah Jazz +9.5 VALUABLE: Cover (75% conf, 46.6% edge)
+
+MATCHUP: Minnesota Timberwolves vs. New York Knicks
+------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 10.5 | Proj  7.6 | VALUABLE: Under (75% conf, 37.1% edge)
+  PROJECTED TOTAL: 257.1 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (79% conf, 44.6% edge)
+
+MATCHUP: Dallas Mavericks vs. New Orleans Pelicans
+------------------------------
+  D'Angelo Russell     | ASSISTS  | Line  6.5 | Proj  3.8 | VALUABLE: Under (80% conf, 44.3% edge)
+  PROJECTED TOTAL: 213.0 | O/U 225.5
+  -> GAME TOTAL: O/U 225.5 VALUABLE: Under (68% conf, 26.6% edge)
+  -> SPREAD: Dallas Mavericks -7.5 VALUABLE: Cover (72% conf, 41.7% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Josh Minott Under 5.5 REBOUNDS (82% conf, 28.7% edge) | Washington Wizards vs. Boston Celtics
+  2. Kyshawn George Under 6.5 REBOUNDS (77% conf, 29.5% edge) | Washington Wizards vs. Boston Celtics
+  3. Stephon Castle Over 5.5 ASSISTS (80% conf, 27.9% edge) | Los Angeles Lakers vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Josh Minott Under 5.5 REBOUNDS (82% conf, 28.7% edge) | Washington Wizards vs. Boston Celtics
+  2. Kyshawn George Under 6.5 REBOUNDS (77% conf, 29.5% edge) | Washington Wizards vs. Boston Celtics
+  3. Stephon Castle Over 5.5 ASSISTS (80% conf, 27.9% edge) | Los Angeles Lakers vs. San Antonio Spurs
+  4. Ja Morant Under 6.5 ASSISTS (77% conf, 29.0% edge) | Houston Rockets vs. Memphis Grizzlies
+
+
+Total VALUABLE picks today: 20

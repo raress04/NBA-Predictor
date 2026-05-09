@@ -1,0 +1,79 @@
+NBA MODEL PREDICTIONS - 2025-11-26
+============================================================
+
+
+MATCHUP: Detroit Pistons vs. Boston Celtics
+------------------------------
+
+MATCHUP: San Antonio Spurs vs. Portland Trail Blazers
+------------------------------
+  Jeremy Sochan        | POINTS   | Line  8.5 | Proj  3.3 | VALUABLE: Under (82% conf, 48.2% edge)
+  Jeremy Sochan        | REBOUNDS | Line  5.5 | Proj  3.0 | VALUABLE: Under (79% conf, 44.0% edge)
+  Deni Avdija          | POINTS   | Line 25.5 | Proj 19.4 | VALUABLE: Under (74% conf, 35.1% edge)
+  PROJECTED TOTAL: 218.6 | O/U 240.0
+  -> GAME TOTAL: O/U 240.0 VALUABLE: Under (75% conf, 37.8% edge)
+
+MATCHUP: Phoenix Suns vs. Sacramento Kings
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (75% conf, 37.1% edge)
+  Malik Monk           | POINTS   | Line 13.5 | Proj  8.0 | VALUABLE: Under (78% conf, 41.3% edge)
+  Drew Eubanks         | POINTS   | Line  6.5 | Proj  3.8 | VALUABLE: Under (77% conf, 40.1% edge)
+  Maxime Raynaud       | POINTS   | Line  6.5 | Proj 13.5 | VALUABLE: Over (78% conf, 41.1% edge)
+  PROJECTED TOTAL: 216.7 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (73% conf, 33.8% edge)
+
+MATCHUP: Miami Heat vs. Milwaukee Bucks
+------------------------------
+  Bam Adebayo          | POINTS   | Line 17.5 | Proj 12.8 | VALUABLE: Under (73% conf, 34.0% edge)
+  Myles Turner         | POINTS   | Line 14.5 | Proj 22.1 | VALUABLE: Over (74% conf, 34.8% edge)
+  Bobby Portis         | POINTS   | Line 14.5 | Proj 23.3 | VALUABLE: Over (76% conf, 38.1% edge)
+  Cole Anthony         | POINTS   | Line 10.5 | Proj  4.1 | VALUABLE: Under (82% conf, 47.6% edge)
+  PROJECTED TOTAL: 236.9 | O/U 236.5
+  -> SPREAD: Miami Heat -10.5 VALUABLE: Cover (67% conf, 34.8% edge)
+
+MATCHUP: Memphis Grizzlies vs. New Orleans Pelicans
+------------------------------
+  Saddiq Bey           | POINTS   | Line 12.5 | Proj 20.1 | VALUABLE: Over (75% conf, 36.9% edge)
+  Jeremiah Fears       | POINTS   | Line 15.5 | Proj 10.7 | VALUABLE: Under (74% conf, 35.6% edge)
+  PROJECTED TOTAL: 215.0 | O/U 236.5
+  -> GAME TOTAL: O/U 236.5 VALUABLE: Under (77% conf, 40.7% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 247.7 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Over (75% conf, 38.7% edge)
+
+MATCHUP: Houston Rockets vs. Golden State Warriors
+------------------------------
+  Aaron Holiday        | POINTS   | Line  9.5 | Proj  5.2 | VALUABLE: Under (78% conf, 41.3% edge)
+  Josh Okogie          | POINTS   | Line  9.5 | Proj  6.4 | VALUABLE: Under (73% conf, 33.8% edge)
+  PROJECTED TOTAL: 226.1 | O/U 224.5
+
+MATCHUP: New York Knicks vs. Charlotte Hornets
+------------------------------
+  PROJECTED TOTAL: 229.8 | O/U 242.5
+  -> GAME TOTAL: O/U 242.5 VALUABLE: Under (68% conf, 26.2% edge)
+  -> SPREAD: New York Knicks -6.5 VALUABLE: Cover (66% conf, 33.2% edge)
+
+MATCHUP: Toronto Raptors vs. Indiana Pacers
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 12.5 | Proj  6.8 | VALUABLE: Under (81% conf, 45.8% edge)
+  Jakob Poeltl         | REBOUNDS | Line  9.5 | Proj  6.4 | VALUABLE: Under (77% conf, 40.8% edge)
+  PROJECTED TOTAL: 219.7 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (70% conf, 30.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jeremy Sochan Under 5.5 REBOUNDS (79% conf, 29.9% edge) | San Antonio Spurs vs. Portland Trail Blazers
+  2. Jeremy Sochan Under 8.5 POINTS (82% conf, 28.5% edge) | San Antonio Spurs vs. Portland Trail Blazers
+  3. Jakob Poeltl Under 12.5 POINTS (81% conf, 27.3% edge) | Toronto Raptors vs. Indiana Pacers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jeremy Sochan Under 5.5 REBOUNDS (79% conf, 29.9% edge) | San Antonio Spurs vs. Portland Trail Blazers
+  2. Jeremy Sochan Under 8.5 POINTS (82% conf, 28.5% edge) | San Antonio Spurs vs. Portland Trail Blazers
+  3. Jakob Poeltl Under 12.5 POINTS (81% conf, 27.3% edge) | Toronto Raptors vs. Indiana Pacers
+  4. Cole Anthony Under 10.5 POINTS (82% conf, 26.1% edge) | Miami Heat vs. Milwaukee Bucks
+
+
+Total VALUABLE picks today: 25

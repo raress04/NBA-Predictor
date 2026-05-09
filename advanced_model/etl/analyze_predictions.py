@@ -248,7 +248,7 @@ def parse_results(filepath):
             
     return actual_games, actual_props
 
-def generate_analysis(predicts_path=None, results_path=None, output_dir=None, write_db=False):
+def generate_ml.predicts_path=None, results_path=None, output_dir=None, write_db=False):
     # Auto-resolve paths if only filename provided or specific date needed
     if predicts_path and not os.path.exists(predicts_path):
         # Check if it matches predicts_YYYY-MM-DD.txt
@@ -281,7 +281,7 @@ def generate_analysis(predicts_path=None, results_path=None, output_dir=None, wr
     output_dir = os.path.join(MODEL_DIR, 'analyze', month)
     os.makedirs(output_dir, exist_ok=True)
 
-    print(f"[+] Running automated prediction analysis for {date_str}...")
+    print(f"[+] Running automated prediction ml.for {date_str}...")
     print(f"    -> Output directory: {output_dir}")
     
     games, props, medians = parse_predicts(predicts_path)
@@ -306,12 +306,12 @@ def generate_analysis(predicts_path=None, results_path=None, output_dir=None, wr
     analyze_games(games, actual_games, output_dir=output_dir, date_str=date_str)
 
     props_results = []
-    # Run props analysis (VALUABLE bets WIN/LOSS) whenever prop data exists
+    # Run props ml.(VALUABLE bets WIN/LOSS) whenever prop data exists
     if props:
         print(f"    -> Running Pick Analysis ({len(props)} valuable props).")
         props_results = analyze_props(props, games, actual_games, actual_props, is_only_props=(not medians), output_dir=output_dir, date_str=date_str)
         
-    # Always run median accuracy analysis if medians exist (runs alongside props if both available)
+    # Always run median accuracy ml.if medians exist (runs alongside props if both available)
     medians_results = []
     if medians:
         print(f"    -> Running Median Accuracy Analysis ({len(medians)} player projections).")
@@ -385,7 +385,7 @@ def analyze_games(games, actual_games, output_dir=None, date_str=None):
     ml_pct = (ml_correct / ml_total * 100) if ml_total > 0 else 0
     
     txt_out = os.path.join(output_dir, f'{base_name}.txt')
-    # Mode 'a' if file exists, but we want it at the top, so we handle creation in generate_analysis
+    # Mode 'a' if file exists, but we want it at the top, so we handle creation in generate_ml.
     with open(txt_out, 'a', encoding='utf-8') as f:
         f.write("="*60 + "\n")
         f.write(" 🎯 AUTOMATED PREDICTION ANALYSIS 🎯\n")
@@ -404,7 +404,7 @@ def analyze_games(games, actual_games, output_dir=None, date_str=None):
                 f.write(f"{gr['matchup']:<35} | {gr['proj']:<20} | {gr['actual']:<15} | {gr['status']}\n")
             f.write("\n")
         else:
-            f.write("[-] No game result data matched for analysis.\n\n")
+            f.write("[-] No game result data matched for ml.\n\n")
 
 def analyze_props(props, games, actual_games, actual_props, is_only_props=True, output_dir=None, date_str=None):
     output_dir = output_dir or MODEL_DIR
@@ -687,4 +687,4 @@ if __name__ == "__main__":
     parser.add_argument('--output-dir', type=str, help='Directory to output analyze.txt and analyze.tex')
     parser.add_argument('--write-db', action='store_true', help='Write evaluations to bet_tracker.db')
     args = parser.parse_args()
-    generate_analysis(predicts_path=args.input, results_path=args.actuals, output_dir=args.output_dir, write_db=args.write_db)
+    generate_ml.predicts_path=args.input, results_path=args.actuals, output_dir=args.output_dir, write_db=args.write_db)

@@ -1,0 +1,22 @@
+================================================
+      ML SHADOW PROMOTION DECISION REPORT       
+      Date: 2026-05-05                           
+================================================
+
+BASELINE PIPELINE (ML OFF)
+  Total Picks: 30922
+  Hit Rate:    58.3%
+  Brier Score: 0.5822
+  Est. ROI:    +11.42%
+
+ML SHADOW PIPELINE (ML CALIBRATION ON)
+  Total Picks: 0
+  Hit Rate:    0.0%
+  Brier Score: 0.0000
+  Est. ROI:    +0.00%
+
+================================================
+DECISION GUIDELINES:
+- If ML Brier Score is lower AND ROI is higher: PROMOTED
+- If N < 500: MORE DATA NEEDED
+================================================

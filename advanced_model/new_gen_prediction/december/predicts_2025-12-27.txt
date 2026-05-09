@@ -1,0 +1,62 @@
+NBA MODEL PREDICTIONS - 2025-12-27
+============================================================
+
+
+MATCHUP: New York Knicks vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 244.4 | O/U 244.5
+
+MATCHUP: Milwaukee Bucks vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 248.0 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (70% conf, 30.3% edge)
+
+MATCHUP: Houston Rockets vs. Cleveland Cavaliers
+------------------------------
+  PROJECTED TOTAL: 236.6 | O/U 231.5
+
+MATCHUP: Indiana Pacers vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 226.9 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (61% conf, 15.1% edge)
+
+MATCHUP: New Orleans Pelicans vs. Phoenix Suns
+------------------------------
+  PROJECTED TOTAL: 234.7 | O/U 240.5
+
+MATCHUP: Denver Nuggets vs. Orlando Magic
+------------------------------
+  PROJECTED TOTAL: 242.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (61% conf, 15.6% edge)
+
+MATCHUP: Brooklyn Nets vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 248.9 | O/U 224.5
+  -> GAME TOTAL: O/U 224.5 VALUABLE: Over (77% conf, 42.1% edge)
+
+MATCHUP: Sacramento Kings vs. Dallas Mavericks
+------------------------------
+  PROJECTED TOTAL: 214.2 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (75% conf, 38.0% edge)
+
+MATCHUP: San Antonio Spurs vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 251.8 | O/U 244.5
+  -> GAME TOTAL: O/U 244.5 VALUABLE: Over (61% conf, 16.0% edge)
+  -> SPREAD: Utah Jazz +14.5 VALUABLE: Cover (70% conf, 38.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Over 224.5 TOTAL (77% conf, 25.0% edge) | Brooklyn Nets vs. Minnesota Timberwolves
+  2. Game Total Under 233.5 TOTAL (75% conf, 22.9% edge) | Sacramento Kings vs. Dallas Mavericks
+  3. Game Total Over 233.5 TOTAL (70% conf, 17.7% edge) | Milwaukee Bucks vs. Chicago Bulls
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Over 224.5 TOTAL (77% conf, 25.0% edge) | Brooklyn Nets vs. Minnesota Timberwolves
+  2. Game Total Under 233.5 TOTAL (75% conf, 22.9% edge) | Sacramento Kings vs. Dallas Mavericks
+  3. Game Total Over 233.5 TOTAL (70% conf, 17.7% edge) | Milwaukee Bucks vs. Chicago Bulls
+  4. Game Total Over 244.5 TOTAL (61% conf, 8.7% edge) | San Antonio Spurs vs. Utah Jazz
+
+
+Total VALUABLE picks today: 7

@@ -1,0 +1,68 @@
+NBA MODEL PREDICTIONS - 2025-11-17
+============================================================
+
+
+MATCHUP: Philadelphia 76ers vs. LA Clippers
+------------------------------
+  Andre Drummond       | POINTS   | Line 10.5 | Proj  6.6 | VALUABLE: Under (76% conf, 39.0% edge)
+  James Harden         | POINTS   | Line 25.5 | Proj 35.2 | VALUABLE: Over (74% conf, 36.0% edge)
+  James Harden         | ASSISTS  | Line  8.5 | Proj  5.4 | VALUABLE: Under (80% conf, 43.8% edge)
+
+MATCHUP: New York Knicks vs. Miami Heat
+------------------------------
+  Davion Mitchell      | POINTS   | Line 10.5 | Proj  7.3 | VALUABLE: Under (72% conf, 32.8% edge)
+  PROJECTED TOTAL: 242.5 | O/U 244.5
+
+MATCHUP: Toronto Raptors vs. Charlotte Hornets
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 11.5 | Proj  7.0 | VALUABLE: Under (78% conf, 41.6% edge)
+  Tre Mann             | POINTS   | Line 11.5 | Proj  5.6 | VALUABLE: Under (80% conf, 45.1% edge)
+  PROJECTED TOTAL: 231.1 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (64% conf, 20.5% edge)
+  -> SPREAD: Toronto Raptors -7.5 VALUABLE: Cover (68% conf, 35.9% edge)
+
+MATCHUP: Oklahoma City Thunder vs. New Orleans Pelicans
+------------------------------
+  Isaiah Joe           | POINTS   | Line 12.5 | Proj  8.9 | VALUABLE: Under (72% conf, 32.9% edge)
+  PROJECTED TOTAL: 229.1 | O/U 222.5
+  -> SPREAD: Oklahoma City Thunder -18.5 VALUABLE: Cover (75% conf, 47.4% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Dallas Mavericks
+------------------------------
+  Cooper Flagg         | POINTS   | Line 15.5 | Proj 22.9 | VALUABLE: Over (74% conf, 35.2% edge)
+  D'Angelo Russell     | POINTS   | Line 11.5 | Proj  7.6 | VALUABLE: Under (74% conf, 35.5% edge)
+  Naji Marshall        | POINTS   | Line  9.5 | Proj 15.3 | VALUABLE: Over (73% conf, 34.3% edge)
+  PROJECTED TOTAL: 244.7 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Over (67% conf, 26.0% edge)
+  -> SPREAD: Minnesota Timberwolves -14.5 VALUABLE: Cover (73% conf, 43.8% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Milwaukee Bucks
+------------------------------
+  Bobby Portis         | POINTS   | Line  8.5 | Proj 19.0 | VALUABLE: Over (80% conf, 44.4% edge)
+  Cole Anthony         | POINTS   | Line  7.5 | Proj  3.5 | VALUABLE: Under (80% conf, 44.4% edge)
+  PROJECTED TOTAL: 239.0 | O/U 234.5
+
+MATCHUP: Denver Nuggets vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 250.8 | O/U 241.5
+  -> GAME TOTAL: O/U 241.5 VALUABLE: Over (64% conf, 20.0% edge)
+  -> SPREAD: Denver Nuggets -12.5 VALUABLE: Cover (75% conf, 47.3% edge)
+
+MATCHUP: Detroit Pistons vs. Indiana Pacers
+------------------------------
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Tre Mann Under 11.5 POINTS (80% conf, 26.6% edge) | Toronto Raptors vs. Charlotte Hornets
+  2. Bobby Portis Over 8.5 POINTS (80% conf, 26.2% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  3. Cole Anthony Under 7.5 POINTS (80% conf, 24.1% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Tre Mann Under 11.5 POINTS (80% conf, 26.6% edge) | Toronto Raptors vs. Charlotte Hornets
+  2. Bobby Portis Over 8.5 POINTS (80% conf, 26.2% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  3. Cole Anthony Under 7.5 POINTS (80% conf, 24.1% edge) | Cleveland Cavaliers vs. Milwaukee Bucks
+  4. James Harden Under 8.5 ASSISTS (80% conf, 24.1% edge) | Philadelphia 76ers vs. LA Clippers
+
+
+Total VALUABLE picks today: 19

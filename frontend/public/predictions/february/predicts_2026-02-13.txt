@@ -1,4 +1,0 @@
-[+] HISTORICAL MODE: Generating projections for 2026-02-13
-    (No live odds/props — simulation-only)
-[+] Loaded live Injury Report: 84 players marked Out/GTD.
-    [+] Found 4 games in database for 2026-02-13

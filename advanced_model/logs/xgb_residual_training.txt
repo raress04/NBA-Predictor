@@ -1,0 +1,82 @@
+============================================================
+  XGBoost RESIDUAL MODEL — TRAINING RESULTS
+============================================================
+
+── POINTS ─────────────────────────────────────────────
+   Train rows : 8,153
+   Val rows   : 3,930
+   Features   : 31
+   Baseline MAE (zero correction) : 4.8193
+   Model MAE (val)                : 4.7097
+   Gate threshold (97% baseline)  : 4.6748
+   Improvement                    : +2.28%
+   Best n_estimators              : 72
+   [⚠️]  GATE FAILED — no ML correction for POINTS
+         model_mae=4.7097 > gate=4.6748
+
+   Top 10 feature importances:
+     direction_bin                       0.3043
+     gap                                 0.0879
+     roll10_min                          0.0290
+     roll5_min                           0.0277
+     roll5_pts                           0.0270
+     roll10_pts                          0.0267
+     roll5_ast                           0.0263
+     roll10_ast                          0.0261
+     games_played_season                 0.0257
+     roll5_reb                           0.0256
+
+── REBOUNDS ─────────────────────────────────────────────
+   Train rows : 8,336
+   Val rows   : 3,895
+   Features   : 31
+   Baseline MAE (zero correction) : 1.9552
+   Model MAE (val)                : 1.9093
+   Gate threshold (97% baseline)  : 1.8966
+   Improvement                    : +2.35%
+   Best n_estimators              : 78
+   [⚠️]  GATE FAILED — no ML correction for REBOUNDS
+         model_mae=1.9093 > gate=1.8966
+
+   Top 10 feature importances:
+     direction_bin                       0.2574
+     gap                                 0.0772
+     home_flag                           0.0414
+     games_played_season                 0.0363
+     roll10_reb                          0.0301
+     bookmaker_line                      0.0297
+     roll10_pts                          0.0295
+     roll5_std_pts                       0.0288
+     opp_def_reb_30                      0.0283
+     last_game_pts                       0.0282
+
+── ASSISTS ─────────────────────────────────────────────
+   Train rows : 9,773
+   Val rows   : 3,848
+   Features   : 31
+   Baseline MAE (zero correction) : 1.4619
+   Model MAE (val)                : 1.4475
+   Gate threshold (97% baseline)  : 1.4180
+   Improvement                    : +0.98%
+   Best n_estimators              : 31
+   [⚠️]  GATE FAILED — no ML correction for ASSISTS
+         model_mae=1.4475 > gate=1.4180
+
+   Top 10 feature importances:
+     direction_bin                       0.2009
+     bookmaker_line                      0.0840
+     gap                                 0.0828
+     is_starter                          0.0362
+     days_rest                           0.0342
+     roll10_reb                          0.0338
+     roll10_ast                          0.0336
+     games_played_season                 0.0290
+     roll5_ast                           0.0287
+     roll5_min                           0.0286
+
+============================================================
+  SUMMARY
+============================================================
+  POINTS       → NO_ML_CORRECTION
+  REBOUNDS     → NO_ML_CORRECTION
+  ASSISTS      → NO_ML_CORRECTION

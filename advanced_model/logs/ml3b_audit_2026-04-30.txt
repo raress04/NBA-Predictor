@@ -1,0 +1,51 @@
+ML.3b-0 — DB AUDIT REPORT
+Generated: 2026-04-30
+============================================================
+
+1. projection_outcomes IN bet_tracker.db
+-----------------------------------------
+historical     | 2026-01-01 → 2026-01-08 |  8 days |  2,554 rows (POINTS+REB+AST+TOTAL)
+live           | 2026-03-08 → 2026-03-22 | 12 days |  7,806 rows
+live_pending   | 2026-04-07 → 2026-04-30 |  9 days |    963 rows
+retroactive_live| 2026-01-01 → 2026-01-10|  2 days |    470 rows
+TOTAL: ~11,793 rows across only 31 distinct days (100% have actuals)
+
+GAP: Jan 09 – Feb 28, Mar 23 – Apr 06 NOT in projection_outcomes.
+The /predictions files cover ~90 days → ~30-50k rows missing.
+
+2. daily_picks IN bet_tracker.db
+-----------------------------------------
+live | POINTS   | 2026-03-17 → 2026-03-25 | 8 days | 51 rows
+live | REBOUNDS | 2026-03-17 → 2026-03-25 | 8 days | 70 rows
+live | ASSISTS  | 2026-03-17 → 2026-03-23 | 6 days | 18 rows
+TOTAL: 166 filtered picks only. Confirmed selection-biased — NOT useful for ML training.
+
+3. box_scores IN nba_data.db
+-----------------------------------------
+2026-01-01 → 2026-04-25 | 94 game_days | 14,836 rows | 573 unique players
+STATUS: ADEQUATE. No backfill needed for Jan-Apr 2026.
+
+4. /predictions raw files
+-----------------------------------------
+january  : 31 files
+february : 28 files
+march    : 25 files
+april    :  6 files
+TOTAL    : 90 files
+
+5. Existing parser
+-----------------------------------------
+etl/parse_historical_reports.py EXISTS.
+- Handles ONE directory at a time (CLI arg)
+- Does NOT write to DB (prints only)
+- Regex: player -> N PTS, N REB, N AST — COMPATIBLE with both old and new file format
+- Does NOT extract bookmaker_line, confidence, or is_valuable
+- Needs: multi-dir support, DB write, line/confidence extraction
+
+DECISION
+-----------------------------------------
+ML.3b-1 IS NEEDED.
+projection_outcomes is 31 days only vs 90 files available.
+Estimated new rows: ~90 files × ~50 players × 3 stats = ~13,500 unique rows
+(after dedup with existing 11,793 rows)
+Box scores 2026: COMPLETE (94 days) — resolution will be high.

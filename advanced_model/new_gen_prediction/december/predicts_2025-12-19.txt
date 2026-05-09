@@ -1,0 +1,50 @@
+NBA MODEL PREDICTIONS - 2025-12-19
+============================================================
+
+
+MATCHUP: Boston Celtics vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 229.9 | O/U 233.5
+
+MATCHUP: Oklahoma City Thunder vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 233.0 | O/U 232.5
+
+MATCHUP: Philadelphia 76ers vs. New York Knicks
+------------------------------
+  Andre Drummond       | POINTS   | Line  8.5 | Proj  6.0 | VALUABLE: Under (72% conf, 32.9% edge)
+  Andre Drummond       | REBOUNDS | Line 11.5 | Proj  8.7 | VALUABLE: Under (74% conf, 35.5% edge)
+  PROJECTED TOTAL: 215.2 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Under (71% conf, 31.2% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Chicago Bulls
+------------------------------
+  Tyrese Proctor       | POINTS   | Line 11.5 | Proj  6.5 | VALUABLE: Under (78% conf, 41.8% edge)
+  Coby White           | POINTS   | Line 21.5 | Proj 14.7 | VALUABLE: Under (76% conf, 38.5% edge)
+  Zach Collins         | POINTS   | Line  5.5 | Proj 10.3 | VALUABLE: Over (73% conf, 33.6% edge)
+  PROJECTED TOTAL: 241.6 | O/U 237.5
+  -> SPREAD: Chicago Bulls +4.5 VALUABLE: Cover (72% conf, 42.4% edge)
+
+MATCHUP: San Antonio Spurs vs. Atlanta Hawks
+------------------------------
+  Stephon Castle       | REBOUNDS | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 42.8% edge)
+  Dylan Harper         | POINTS   | Line 13.5 | Proj  8.4 | VALUABLE: Under (77% conf, 40.6% edge)
+  PROJECTED TOTAL: 230.6 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (63% conf, 17.7% edge)
+  -> SPREAD: San Antonio Spurs -3.5 VALUABLE: Cover (72% conf, 41.7% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Dylan Harper Under 13.5 POINTS (77% conf, 26.0% edge) | San Antonio Spurs vs. Atlanta Hawks
+  2. Stephon Castle Under 5.5 REBOUNDS (79% conf, 24.9% edge) | San Antonio Spurs vs. Atlanta Hawks
+  3. Andre Drummond Under 11.5 REBOUNDS (74% conf, 24.5% edge) | Philadelphia 76ers vs. New York Knicks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Dylan Harper Under 13.5 POINTS (77% conf, 26.0% edge) | San Antonio Spurs vs. Atlanta Hawks
+  2. Stephon Castle Under 5.5 REBOUNDS (79% conf, 24.9% edge) | San Antonio Spurs vs. Atlanta Hawks
+  3. Andre Drummond Under 11.5 REBOUNDS (74% conf, 24.5% edge) | Philadelphia 76ers vs. New York Knicks
+  4. Tyrese Proctor Under 11.5 POINTS (78% conf, 23.2% edge) | Cleveland Cavaliers vs. Chicago Bulls
+
+
+Total VALUABLE picks today: 11

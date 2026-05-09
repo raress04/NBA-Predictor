@@ -1,0 +1,47 @@
+NBA MODEL PREDICTIONS - 2025-12-04
+============================================================
+
+
+MATCHUP: Boston Celtics vs. Washington Wizards
+------------------------------
+
+MATCHUP: Los Angeles Lakers vs. Toronto Raptors
+------------------------------
+  PROJECTED TOTAL: 223.4 | O/U 228.5
+
+MATCHUP: Utah Jazz vs. Brooklyn Nets
+------------------------------
+  Keyonte George       | POINTS   | Line 20.5 | Proj 29.0 | VALUABLE: Over (73% conf, 34.4% edge)
+  PROJECTED TOTAL: 232.4 | O/U 231.5
+  -> SPREAD: Utah Jazz -5.5 VALUABLE: Cover (70% conf, 39.1% edge)
+
+MATCHUP: Philadelphia 76ers vs. Golden State Warriors
+------------------------------
+  Joel Embiid          | POINTS   | Line 18.5 | Proj 25.9 | VALUABLE: Over (73% conf, 33.7% edge)
+  Justin Edwards       | POINTS   | Line  6.5 | Proj  4.1 | VALUABLE: Under (74% conf, 35.2% edge)
+  Jared McCain         | POINTS   | Line 12.5 | Proj  7.4 | VALUABLE: Under (77% conf, 40.9% edge)
+  Jonathan Kuminga     | POINTS   | Line 15.5 | Proj  9.1 | VALUABLE: Under (79% conf, 44.0% edge)
+  PROJECTED TOTAL: 217.2 | O/U 224.5
+  -> GAME TOTAL: O/U 224.5 VALUABLE: Under (62% conf, 16.2% edge)
+
+MATCHUP: Minnesota Timberwolves vs. New Orleans Pelicans
+------------------------------
+  Saddiq Bey           | POINTS   | Line 14.5 | Proj 23.5 | VALUABLE: Over (76% conf, 39.3% edge)
+  PROJECTED TOTAL: 234.0 | O/U 232.5
+  -> SPREAD: Minnesota Timberwolves -11.5 VALUABLE: Cover (74% conf, 46.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jonathan Kuminga Under 15.5 POINTS (79% conf, 29.4% edge) | Philadelphia 76ers vs. Golden State Warriors
+  2. Jared McCain Under 12.5 POINTS (77% conf, 27.4% edge) | Philadelphia 76ers vs. Golden State Warriors
+  3. Saddiq Bey Over 14.5 POINTS (76% conf, 21.1% edge) | Minnesota Timberwolves vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jonathan Kuminga Under 15.5 POINTS (79% conf, 29.4% edge) | Philadelphia 76ers vs. Golden State Warriors
+  2. Jared McCain Under 12.5 POINTS (77% conf, 27.4% edge) | Philadelphia 76ers vs. Golden State Warriors
+  3. Saddiq Bey Over 14.5 POINTS (76% conf, 21.1% edge) | Minnesota Timberwolves vs. New Orleans Pelicans
+  4. Justin Edwards Under 6.5 POINTS (74% conf, 20.8% edge) | Philadelphia 76ers vs. Golden State Warriors
+
+
+Total VALUABLE picks today: 9

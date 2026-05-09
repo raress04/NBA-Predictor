@@ -1,0 +1,77 @@
+NBA MODEL PREDICTIONS - 2025-11-08
+============================================================
+
+
+MATCHUP: New Orleans Pelicans vs. San Antonio Spurs
+------------------------------
+  Saddiq Bey           | POINTS   | Line 12.5 | Proj 20.5 | VALUABLE: Over (76% conf, 38.6% edge)
+  Jordan Hawkins       | POINTS   | Line  8.5 | Proj  5.1 | VALUABLE: Under (75% conf, 37.5% edge)
+  Stephon Castle       | ASSISTS  | Line  5.5 | Proj 11.9 | VALUABLE: Over (82% conf, 48.2% edge)
+  Keldon Johnson       | POINTS   | Line 10.5 | Proj 20.4 | VALUABLE: Over (79% conf, 43.4% edge)
+  Jeremy Sochan        | POINTS   | Line  7.5 | Proj  3.8 | VALUABLE: Under (79% conf, 43.7% edge)
+  Julian Champagnie    | POINTS   | Line  8.0 | Proj 16.4 | VALUABLE: Over (75% conf, 37.7% edge)
+  PROJECTED TOTAL: 222.7 | O/U 223.5
+  -> SPREAD: San Antonio Spurs -11.5 VALUABLE: Cover (71% conf, 41.4% edge)
+
+MATCHUP: Philadelphia 76ers vs. Toronto Raptors
+------------------------------
+  PROJECTED TOTAL: 240.5 | O/U 236.5
+
+MATCHUP: LA Clippers vs. Phoenix Suns
+------------------------------
+  Ivica Zubac          | POINTS   | Line 18.5 | Proj 14.2 | VALUABLE: Under (72% conf, 32.2% edge)
+  James Harden         | POINTS   | Line 23.5 | Proj 34.6 | VALUABLE: Over (77% conf, 39.6% edge)
+  Mark Williams        | REBOUNDS | Line  9.5 | Proj  6.9 | VALUABLE: Under (74% conf, 35.8% edge)
+  Dillon Brooks        | POINTS   | Line 12.5 | Proj 19.5 | VALUABLE: Over (74% conf, 35.2% edge)
+
+MATCHUP: Dallas Mavericks vs. Washington Wizards
+------------------------------
+
+MATCHUP: Atlanta Hawks vs. Los Angeles Lakers
+------------------------------
+  Mouhamed Gueye       | POINTS   | Line 11.5 | Proj  4.5 | VALUABLE: Under (82% conf, 48.8% edge)
+  Mouhamed Gueye       | REBOUNDS | Line  6.5 | Proj  3.6 | VALUABLE: Under (80% conf, 45.1% edge)
+  Onyeka Okongwu       | POINTS   | Line 18.5 | Proj 28.0 | VALUABLE: Over (76% conf, 38.3% edge)
+  Dyson Daniels        | REBOUNDS | Line  5.5 | Proj  9.7 | VALUABLE: Over (78% conf, 42.0% edge)
+  Zaccharie Risacher   | POINTS   | Line 18.5 | Proj 12.9 | VALUABLE: Under (74% conf, 35.9% edge)
+  Keaton Wallace       | POINTS   | Line 13.5 | Proj  4.1 | VALUABLE: Under (82% conf, 49.4% edge)
+  Keaton Wallace       | ASSISTS  | Line  7.5 | Proj  2.7 | VALUABLE: Under (82% conf, 49.7% edge)
+  PROJECTED TOTAL: 218.3 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (65% conf, 22.3% edge)
+
+MATCHUP: Portland Trail Blazers vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 238.2 | O/U 241.5
+
+MATCHUP: Cleveland Cavaliers vs. Chicago Bulls
+------------------------------
+  Jaylon Tyson         | POINTS   | Line  9.5 | Proj 15.4 | VALUABLE: Over (73% conf, 33.1% edge)
+  Isaac Okoro          | POINTS   | Line  6.5 | Proj 12.8 | VALUABLE: Over (75% conf, 37.2% edge)
+  PROJECTED TOTAL: 241.7 | O/U 238.5
+
+MATCHUP: Denver Nuggets vs. Indiana Pacers
+------------------------------
+  Peyton Watson        | POINTS   | Line  9.5 | Proj 16.5 | VALUABLE: Over (76% conf, 38.2% edge)
+  Jalen Pickett        | POINTS   | Line  8.5 | Proj  5.5 | VALUABLE: Under (74% conf, 35.3% edge)
+  Andrew Nembhard      | POINTS   | Line 10.5 | Proj 17.0 | VALUABLE: Over (73% conf, 34.3% edge)
+  Isaiah Jackson       | POINTS   | Line  9.5 | Proj  5.6 | VALUABLE: Under (78% conf, 41.9% edge)
+  Jarace Walker        | POINTS   | Line 12.5 | Proj  8.8 | VALUABLE: Under (73% conf, 33.8% edge)
+  Jarace Walker        | REBOUNDS | Line  5.5 | Proj  3.4 | VALUABLE: Under (77% conf, 40.1% edge)
+  PROJECTED TOTAL: 236.9 | O/U 234.5
+  -> SPREAD: Denver Nuggets -9.5 VALUABLE: Cover (77% conf, 49.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Keaton Wallace Under 7.5 ASSISTS (82% conf, 31.5% edge) | Atlanta Hawks vs. Los Angeles Lakers
+  2. Keaton Wallace Under 13.5 POINTS (82% conf, 27.7% edge) | Atlanta Hawks vs. Los Angeles Lakers
+  3. Mouhamed Gueye Under 11.5 POINTS (82% conf, 26.8% edge) | Atlanta Hawks vs. Los Angeles Lakers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Keaton Wallace Under 7.5 ASSISTS (82% conf, 31.5% edge) | Atlanta Hawks vs. Los Angeles Lakers
+  2. Keaton Wallace Under 13.5 POINTS (82% conf, 27.7% edge) | Atlanta Hawks vs. Los Angeles Lakers
+  3. Mouhamed Gueye Under 11.5 POINTS (82% conf, 26.8% edge) | Atlanta Hawks vs. Los Angeles Lakers
+  4. Stephon Castle Over 5.5 ASSISTS (82% conf, 26.1% edge) | New Orleans Pelicans vs. San Antonio Spurs
+
+
+Total VALUABLE picks today: 28

@@ -8,7 +8,7 @@ from datetime import datetime
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
 PREDICTIONS_DIR = os.path.join(MODEL_DIR, 'predictions')
-MATCH_MONTHS = ["march"] # and any later months
+MATCH_MONTHS = ["march", "april", "may"]  # extended to cover full live season
 
 def get_date_from_filename(filename):
     """Extracts YYYY-MM-DD from predicts_YYYY-MM-DD.txt."""
@@ -58,8 +58,9 @@ def main():
             
             print(f"  [+] Seeding {date_str} from {os.path.basename(f)}...")
             # Call: python -m advanced_model.etl.bet_tracker seed --date <date_str>
-            cmd = ["python3", "-m", "advanced_model.etl.bet_tracker", "seed", "--date", date_str]
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            cmd = ["python3", "-m", "advanced_model.etl.db_manager", "seed", "--date", date_str]
+            parent_dir = os.path.dirname(MODEL_DIR)
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=parent_dir)
             
             if result.returncode == 0:
                 print(f"      Successfully seeded.")

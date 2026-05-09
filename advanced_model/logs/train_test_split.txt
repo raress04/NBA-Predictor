@@ -1,0 +1,32 @@
+============================================================
+  TRAIN / VAL / TEST SPLIT SUMMARY
+  Feature matrix : /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/database/feature_matrix.parquet
+  Total rows     : 43,125
+============================================================
+
+── TRAIN (26,262 rows) [2025-10-21 → 2026-01-31]
+   POINTS    :  8,153 rows
+   REBOUNDS  :  8,336 rows
+   ASSISTS   :  9,773 rows
+   Unique players: 363
+
+── VAL (11,673 rows) [2026-02-01 → 2026-03-14]
+   POINTS    :  3,930 rows
+   REBOUNDS  :  3,895 rows
+   ASSISTS   :  3,848 rows
+   Unique players: 344
+
+── TEST (5,190 rows) [2026-03-16 → 2026-03-31]
+   POINTS    :  1,739 rows
+   REBOUNDS  :  1,743 rows
+   ASSISTS   :  1,708 rows
+   Unique players: 297
+
+── PLAYER COVERAGE CHECK
+   Players in train only (not val/test) : 43
+   Players in test only (not train/val) : 5
+   [!] Players exclusively in test (data sparsity): Jamal Cain, Jamir Watkins, Killian Hayes, Max Strus, Pete Nance
+       → Noted as a limitation; model will fall back to zero-correction for these.
+
+── VERDICT
+   [✅] All splits have non-trivial counts per category.

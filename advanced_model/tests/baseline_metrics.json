@@ -1,0 +1,37 @@
+{
+    "table_counts": {
+        "daily_picks_live": 293,
+        "pick_results": 31686,
+        "projection_outcomes_clean": 2885,
+        "parlays": 26,
+        "parlay_legs": 62
+    },
+    "summary_metrics": {
+        "hit_rate_per_category": {
+            "ASSISTS": 60.0,
+            "POINTS": 46.15,
+            "REBOUNDS": 55.17,
+            "TOTAL": 25.0
+        },
+        "avg_edge_per_category": {
+            "ASSISTS": 29.0762,
+            "POINTS": 28.9018,
+            "REBOUNDS": 28.0177,
+            "SPREAD": 40.0667,
+            "TOTAL": 32.2209
+        },
+        "avg_clv_per_category": {
+            "ASSISTS": 0.4127,
+            "POINTS": 0.4632,
+            "REBOUNDS": 0.4447,
+            "SPREAD": 1.0733,
+            "TOTAL": 1.231
+        },
+        "calibration_bins": {
+            "0.65+": {
+                "n": 69,
+                "hit_rate": 50.72
+            }
+        }
+    }
+}
