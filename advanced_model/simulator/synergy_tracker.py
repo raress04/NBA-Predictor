@@ -1,3 +1,2 @@
-# simulator/synergy_tracker.py — SHIM
-# DEPRECATED: Canonical module is simulator/context_builder.py
+# DEPRECATED – see simulator.context_builder. Kept for backward compatibility until 2026-08-01.
 from simulator.context_builder import *

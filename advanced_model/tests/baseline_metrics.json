@@ -28,7 +28,7 @@
             "TOTAL": 1.231
         },
         "calibration_bins": {
-            "0.65+": {
+            "65+": {
                 "n": 69,
                 "hit_rate": 50.72
             }

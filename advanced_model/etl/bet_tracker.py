@@ -1,7 +1,4 @@
-# etl/bet_tracker.py — SHIM
-# DEPRECATED: Canonical module is etl/db_manager.py
-# This shim exists so that existing imports and scripts (e.g. seed_all_live) keep working.
-
+# DEPRECATED – see etl.db_manager. Kept for backward compatibility until 2026-08-01.
 from etl.db_manager import (
     _get_conn, query_by_type, query_summary, query_confidence_bands,
     ingest_shadow_picks, ingest_shadow_pick, seed_all, seed_march3, seed_march4,
