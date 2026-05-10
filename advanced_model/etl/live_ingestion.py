@@ -24,7 +24,7 @@ from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
 from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game
 from config.settings import (
     CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed,
-    MAX_PROP_CONFIDENCE
+    MAX_PROP_CONFIDENCE, B2B_SHOOTING_PENALTY, B2B_TOV_BOOST
 )
 from utils.bias import get_tiered_bias
 from simulator.parlay_builder import (
@@ -352,8 +352,7 @@ def apply_returning_restrictions(matrix: dict, classification: str, is_b2b: bool
 
 
 # ── B2B Fatigue Detection ────────────────────────────────────────
-B2B_SHOOTING_PENALTY = 0.96   # 4% drop in FG%
-B2B_TOV_BOOST = 1.02          # 2% increase in turnovers
+# Constants sourced from config.settings (B2B_SHOOTING_PENALTY, B2B_TOV_BOOST)
 
 def is_back_to_back(team_id: int, conn) -> bool:
     '''

@@ -171,7 +171,7 @@ class MarkovSimulator:
             'player_stats': stats_tracker
         }
 
-def compute_posterior_confidence(over_count: int, n_sim: int, prior_mean: float = 0.54, prior_strength: int = 10):
+def compute_posterior_confidence(over_count: int, n_sim: int, prior_mean: float = 0.54, prior_strength: int = 3000):
     """
     Return (posterior_mean, ci_width) for a Beta posterior.
     prior_mean: prior probability (e.g., 54% or per-category lookup).

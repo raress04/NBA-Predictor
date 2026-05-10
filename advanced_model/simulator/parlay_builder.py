@@ -113,11 +113,11 @@ def get_category_calibration(stat_category: str) -> float:
 
 # ── Blowout Protocol ──────────────────────────────────────────
 # If a team's market spread is > this threshold, ban player OVER props on the favorite
-BLOWOUT_SPREAD_THRESHOLD = 12.0
+BLOWOUT_SPREAD_THRESHOLD = settings.BLOWOUT_SPREAD_THRESHOLD
 
 # ── Safety Margin ───────────────────────────────────────────
 # Reduce spreads by this many points (the Masterclass 2-3 pt reduction)
-SPREAD_SAFETY_MARGIN = 3.0
+SPREAD_SAFETY_MARGIN = settings.SPREAD_SAFETY_MARGIN
 
 # ── Minimum thresholds & Safety Margins per Category ──
 # ISSUE 4 FIX (Stage 0): Relaxed to restore pick flow. Original values caused
@@ -133,13 +133,13 @@ EDGE_THRESHOLDS = {
 }
 
 # ── Line Movement ───────────────────────────────────────────
-LINE_MOVEMENT_BONUS = 5.0   # Max +/-5% confidence adjustment
+LINE_MOVEMENT_BONUS = settings.LINE_MOVEMENT_BONUS   # Max +/-5% confidence adjustment
 
 # ── Kelly Criterion & Calibration ───────────────────────────
-USE_KELLY = False
-FLAT_STAKE_PCT = 0.002       # 0.2% of bankroll per parlay
-KELLY_FRACTION = 0.25        # Fractional Kelly (Quarter Kelly)
-BANKROLL_HARD_CAP = 0.01    # Max 2.5% of bankroll per parlay
+USE_KELLY         = settings.USE_KELLY
+FLAT_STAKE_PCT    = settings.FLAT_STAKE_PCT    # 0.2% of bankroll per parlay
+KELLY_FRACTION    = settings.KELLY_FRACTION    # Fractional Kelly (Quarter Kelly)
+BANKROLL_HARD_CAP = settings.BANKROLL_HARD_CAP # Max 1% of bankroll per parlay
 
 
 def passes_min_gap(projection: float, line: float, category: str, direction: str) -> bool:

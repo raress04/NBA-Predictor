@@ -7,6 +7,7 @@ import sqlite3
 import pandas as pd
 import numpy as np
 import os
+from config import settings
 
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'nba_data.db')
 
@@ -24,10 +25,10 @@ LEAGUE_PRIORS = {
     'fta_per_fga': 0.27,   # league-avg FTA / FGA ratio
 }
 
-# Prior strength: how many "virtual games" the league average represents.
-# Lower = trust the player's own data more. With 15 games and prior=5,
-# the player's own stats carry 75% weight vs 25% league average.
-PRIOR_STRENGTH = 5
+# Prior strength: pulled from settings.CONFIDENCE_PRIOR_STRENGTH (currently 3000).
+# Calibrated via multi-objective optimization (ECE, Brier, Var, AUC) on Jan-Mar 2026 retro.
+# DO NOT hardcode here — change settings.py instead.
+PRIOR_STRENGTH = settings.CONFIDENCE_PRIOR_STRENGTH
 
 
 def _bayesian_shrink(player_value: float, league_mean: float, n_games: int) -> float:
@@ -600,8 +601,8 @@ def _get_best_defender_ppp(opponent_team_name, play_type, player_defense):
     return best_ppp
 
 
-TEAM_WEIGHT = 0.70   # Weight for team-level defense
-PLAYER_WEIGHT = 0.30  # Weight for individual defender
+TEAM_WEIGHT = settings.TEAM_WEIGHT     # Weight for team-level defense
+PLAYER_WEIGHT = settings.PLAYER_WEIGHT  # Weight for individual defender
 
 @lru_cache(maxsize=500)
 def compute_matchup_multiplier(player_name, opponent_team_name, season='2025-26'):

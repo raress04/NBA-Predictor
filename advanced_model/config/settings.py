@@ -97,8 +97,14 @@ LIVE_MIN_GAP = {
 TOTAL_MIN_PICKS_FOR_PARLAY = 200   # current: ~83 picks — gate CLOSED
 TOTAL_MAX_MAE_FOR_PARLAY   = 8.0   # current: ~15.2 MAE — gate CLOSED
 
-# Minimum edge percentage required to consider a pick "valuable"
-MIN_EDGE = 2.0
+# Minimum edge percentage required per category to consider a pick valuable
+# (replaces the old flat MIN_EDGE = 2.0 which was not granular enough)
+EDGE_THRESHOLDS = {
+    'POINTS':   3.0,
+    'REBOUNDS': 2.5,
+    'ASSISTS':  2.0,
+    'TOTAL':    3.0,
+}
 
 # Max prop confidence cap — raised from 78.0 based on n=29,081 retroactive ml.
 MAX_PROP_CONFIDENCE = 82.0
@@ -118,6 +124,23 @@ EWMA_SPAN = 10
 USE_ML_RESIDUAL_CORRECTION = False
 USE_ML_CALIBRATION = False
 ML_MODEL_PATH = 'models/'
+
+# ── Parlay / Bankroll Management ─────────────────────────────────
+BLOWOUT_SPREAD_THRESHOLD = 12.0  # Ignore picks when estimated spread > 12 (garbage time risk)
+SPREAD_SAFETY_MARGIN = 3.0       # Safety margin added/subtracted to bookmaker line
+LINE_MOVEMENT_BONUS = 5.0        # Max +/-5% confidence adjustment for line movement
+USE_KELLY = False                 # Use Kelly criterion for stake sizing
+FLAT_STAKE_PCT = 0.002           # 0.2% of bankroll per parlay (used when USE_KELLY=False)
+KELLY_FRACTION = 0.25            # Quarter Kelly (fractional)
+BANKROLL_HARD_CAP = 0.01         # Max 1% of bankroll per parlay
+
+# ── Synergy Matchup Weighting ────────────────────────────────────
+TEAM_WEIGHT = 0.70    # Weight for team-level defense in matchup multiplier
+PLAYER_WEIGHT = 0.30  # Weight for individual defender in matchup multiplier
+
+# ── Back-to-Back Fatigue Adjustments ─────────────────────────────
+B2B_SHOOTING_PENALTY = 0.96  # 4% drop in FG% on B2B second game
+B2B_TOV_BOOST = 1.02         # 2% increase in turnovers on B2B second game
 
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""
