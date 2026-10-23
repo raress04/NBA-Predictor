@@ -180,6 +180,32 @@ def init_db():
         pass  # column already exists
 
 
+
+    # -- ml_shadow_picks (P1-3: Shadow ML Pipeline) --
+    # ml_shadow_picks already patched
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS ml_shadow_picks (
+            id                INTEGER  PRIMARY KEY AUTOINCREMENT,
+            game_date         TEXT     NOT NULL,
+            player            TEXT     NOT NULL,
+            stat_category     TEXT     NOT NULL,
+            direction         TEXT     NOT NULL,
+            line              REAL,
+            projection        REAL,
+            sim_confidence    REAL,
+            xgb_confidence    REAL,
+            edge_pct          REAL,
+            model_version     TEXT     DEFAULT 'ERA3',
+            cohort            TEXT     DEFAULT 'selected',
+            created_at        TEXT     DEFAULT CURRENT_TIMESTAMP,
+            actual_value      REAL,
+            is_win            INTEGER,
+            resolved_at       TEXT
+        )
+    """)
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_msp_date ON ml_shadow_picks(game_date)")
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_msp_player ON ml_shadow_picks(player, stat_category)")
+
     conn.commit()
     conn.close()
     print(f"[+] bet_tracker.db initialised at: {DB_PATH}")

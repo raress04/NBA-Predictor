@@ -1,0 +1,55 @@
+--- RESULTS FOR 2026-05-08 ---
+
+==================================================
+MATCHUP: NYK @ PHI | 108 - 94
+==================================================
+Jalen Brunson             | 33 PTS,  5 REB,  9 AST
+Mikal Bridges             | 23 PTS,  3 REB,  1 AST
+Kelly Oubre Jr.           | 22 PTS,  8 REB,  1 AST
+Joel Embiid               | 18 PTS,  6 REB,  5 AST
+Tyrese Maxey              | 17 PTS,  2 REB,  7 AST
+Paul George               | 15 PTS,  5 REB,  3 AST
+Landry Shamet             | 15 PTS,  3 REB,  0 AST
+Josh Hart                 | 12 PTS, 11 REB,  3 AST
+VJ Edgecombe              | 11 PTS,  7 REB,  4 AST
+Karl-Anthony Towns        |  8 PTS, 12 REB,  7 AST
+Mitchell Robinson         |  6 PTS,  6 REB,  0 AST
+Quentin Grimes            |  6 PTS,  2 REB,  2 AST
+Jordan Clarkson           |  4 PTS,  5 REB,  3 AST
+Miles McBride             |  3 PTS,  0 REB,  2 AST
+Jose Alvarado             |  3 PTS,  0 REB,  0 AST
+Trendon Watford           |  3 PTS,  0 REB,  0 AST
+Dominick Barlow           |  2 PTS,  1 REB,  0 AST
+Jeremy Sochan             |  1 PTS,  2 REB,  0 AST
+Dalen Terry               |  0 PTS,  1 REB,  1 AST
+Andre Drummond            |  0 PTS,  1 REB,  0 AST
+Ariel Hukporti            |  0 PTS,  1 REB,  0 AST
+Pacôme Dadiet             |  0 PTS,  1 REB,  0 AST
+Jabari Walker             |  0 PTS,  0 REB,  0 AST
+Justin Edwards            |  0 PTS,  0 REB,  0 AST
+Tyler Kolek               |  0 PTS,  0 REB,  0 AST
+Adem Bona                 |  0 PTS,  0 REB,  0 AST
+Mohamed Diawara           |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: MIN @ SAS | 108 - 115
+==================================================
+Victor Wembanyama         | 39 PTS, 15 REB,  1 AST
+Anthony Edwards           | 32 PTS, 14 REB,  6 AST
+Naz Reid                  | 18 PTS,  9 REB,  5 AST
+Jaden McDaniels           | 17 PTS,  7 REB,  2 AST
+De'Aaron Fox              | 17 PTS,  3 REB,  5 AST
+Stephon Castle            | 13 PTS,  4 REB, 12 AST
+Rudy Gobert               | 13 PTS,  7 REB,  2 AST
+Devin Vassell             | 13 PTS,  6 REB,  3 AST
+Julius Randle             | 12 PTS,  6 REB,  0 AST
+Ayo Dosunmu               | 11 PTS,  7 REB,  5 AST
+Keldon Johnson            | 11 PTS,  2 REB,  1 AST
+Dylan Harper              |  8 PTS,  4 REB,  1 AST
+Julian Champagnie         |  6 PTS, 12 REB,  3 AST
+Carter Bryant             |  6 PTS,  0 REB,  0 AST
+Terrence Shannon Jr.      |  5 PTS,  2 REB,  2 AST
+Luke Kornet               |  2 PTS,  1 REB,  0 AST
+Harrison Barnes           |  0 PTS,  1 REB,  0 AST
+Mike Conley               |  0 PTS,  2 REB,  0 AST
+

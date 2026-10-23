@@ -1,0 +1,64 @@
+--- RESULTS FOR 2026-04-17 ---
+
+==================================================
+MATCHUP: CHA @ ORL | 90 - 121
+==================================================
+Paolo Banchero            | 25 PTS,  5 REB,  6 AST
+LaMelo Ball               | 23 PTS,  2 REB,  5 AST
+Franz Wagner              | 18 PTS,  7 REB,  6 AST
+Wendell Carter Jr.        | 16 PTS,  6 REB,  1 AST
+Miles Bridges             | 15 PTS,  2 REB,  1 AST
+Brandon Miller            | 14 PTS,  3 REB,  1 AST
+Desmond Bane              | 13 PTS,  7 REB,  0 AST
+Jalen Suggs               | 12 PTS,  5 REB,  6 AST
+Kon Knueppel              | 11 PTS,  3 REB,  1 AST
+Jamal Cain                |  9 PTS,  1 REB,  0 AST
+Goga Bitadze              |  7 PTS,  4 REB,  2 AST
+Anthony Black             |  7 PTS,  5 REB,  3 AST
+Sion James                |  6 PTS,  2 REB,  2 AST
+Tristan da Silva          |  5 PTS,  3 REB,  1 AST
+Coby White                |  4 PTS,  0 REB,  0 AST
+Noah Penda                |  4 PTS,  0 REB,  0 AST
+Tidjane Salaün            |  4 PTS,  2 REB,  2 AST
+Jett Howard               |  3 PTS,  1 REB,  0 AST
+Moussa Diabaté            |  2 PTS,  8 REB,  2 AST
+Ryan Kalkbrenner          |  2 PTS,  3 REB,  1 AST
+Jase Richardson           |  2 PTS,  2 REB,  2 AST
+Tre Mann                  |  2 PTS,  0 REB,  1 AST
+Pat Connaughton           |  2 PTS,  3 REB,  1 AST
+Xavier Tillman            |  2 PTS,  2 REB,  0 AST
+Liam McNeeley             |  2 PTS,  0 REB,  0 AST
+Grant Williams            |  1 PTS,  2 REB,  0 AST
+Moritz Wagner             |  0 PTS,  3 REB,  0 AST
+Josh Green                |  0 PTS,  2 REB,  0 AST
+Jevon Carter              |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: GSW @ PHX | 96 - 111
+==================================================
+Jalen Green               | 36 PTS,  6 REB,  4 AST
+Brandin Podziemski        | 23 PTS, 10 REB,  0 AST
+Devin Booker              | 20 PTS,  6 REB,  8 AST
+Jordan Goodwin            | 19 PTS,  9 REB,  2 AST
+Stephen Curry             | 17 PTS,  4 REB,  4 AST
+De'Anthony Melton         | 16 PTS,  8 REB,  3 AST
+Dillon Brooks             | 13 PTS,  1 REB,  4 AST
+Kristaps Porziņģis        | 11 PTS,  1 REB,  0 AST
+Royce O'Neale             | 11 PTS,  2 REB,  1 AST
+Oso Ighodaro              | 10 PTS,  6 REB,  1 AST
+Gui Santos                |  9 PTS,  6 REB,  4 AST
+Al Horford                |  9 PTS,  5 REB,  2 AST
+Draymond Green            |  5 PTS,  2 REB,  6 AST
+Gary Payton II            |  4 PTS,  3 REB,  3 AST
+Collin Gillespie          |  2 PTS,  2 REB,  2 AST
+Pat Spencer               |  2 PTS,  0 REB,  0 AST
+Haywood Highsmith         |  0 PTS,  1 REB,  1 AST
+Ryan Dunn                 |  0 PTS,  0 REB,  0 AST
+Khaman Maluach            |  0 PTS,  2 REB,  0 AST
+Jamaree Bouyea            |  0 PTS,  1 REB,  0 AST
+Will Richard              |  0 PTS,  0 REB,  0 AST
+Charles Bassey            |  0 PTS,  0 REB,  0 AST
+Seth Curry                |  0 PTS,  0 REB,  0 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+Rasheer Fleming           |  0 PTS,  0 REB,  0 AST
+

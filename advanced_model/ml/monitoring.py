@@ -268,16 +268,17 @@ def generate_monitoring_report(date_str: str = None) -> str:
     else:
         lines.append("  No resolved parlays in last 30 days.")
 
-    # CLV
-    lines.append("\nCLV (last 30 days):")
+    # Line Movement (CLV proxy — informational only, not a gate)
+    # This is open-vs-close line movement for SPREAD/TOTAL, not probability CLV.
+    # "EDGE CONFIRMED" label removed — proxy value does not reliably reflect model edge.
+    lines.append("\nLINE MOVEMENT (SPREAD/TOTAL proxy, informational):")
     clv_rows = compute_clv_stats(conn)
     if clv_rows:
         for cat, direction, avg_clv, pos_n, n in clv_rows:
             pos_rate = (pos_n / n * 100) if n > 0 else 0
-            status = "EDGE CONFIRMED" if pos_rate >= 65 else "REVIEW"
-            lines.append(f"  {cat} {direction}: Avg CLV={avg_clv:+.3f}  |  Positive rate: {pos_rate:.0f}%  |  [{status}]")
+            lines.append(f"  {cat} {direction}: Avg line move={avg_clv:+.3f}  |  Positive rate: {pos_rate:.0f}%  (n={n})  [INFORMATIONAL]")
     else:
-        lines.append("  No CLV data (needs closing line tracking).")
+        lines.append("  No line-movement data (SPREAD/TOTAL only).")
 
     # Calibration status
     platt_ready = check_calibration_readiness(conn)

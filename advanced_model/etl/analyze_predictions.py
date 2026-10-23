@@ -248,15 +248,25 @@ def parse_results(filepath):
             
     return actual_games, actual_props
 
-def generate_ml.predicts_path=None, results_path=None, output_dir=None, write_db=False):
+def generate_evaluate(predicts_path=None, results_path=None, output_dir=None, write_db=False, generate_pdf=True, clean_txt=True):
     # Auto-resolve paths if only filename provided or specific date needed
     if predicts_path and not os.path.exists(predicts_path):
-        # Check if it matches predicts_YYYY-MM-DD.txt
         match = re.search(r'predicts_(\d{4}-\d{2}-\d{2})\.txt', predicts_path)
         if match:
             date_str = match.group(1)
-            month = get_month_folder(date_str)
-            predicts_path = os.path.join(MODEL_DIR, 'predictions', month, predicts_path)
+            try:
+                from utils.prediction_paths import resolve_prediction_file
+                resolved = resolve_prediction_file(date_str, mode='live', base_dir=MODEL_DIR, allow_legacy=True)
+                if not resolved:
+                    resolved = resolve_prediction_file(date_str, mode='backtest', base_dir=MODEL_DIR, allow_legacy=True)
+                if resolved:
+                    predicts_path = resolved
+                else:
+                    month = get_month_folder(date_str)
+                    predicts_path = os.path.join(MODEL_DIR, 'predictions', month, predicts_path)
+            except Exception:
+                month = get_month_folder(date_str)
+                predicts_path = os.path.join(MODEL_DIR, 'predictions', month, predicts_path)
             
     if results_path and not os.path.exists(results_path):
         match = re.search(r'yesterday_results_(\d{4}-\d{2}-\d{2})\.txt', results_path)
@@ -276,9 +286,14 @@ def generate_ml.predicts_path=None, results_path=None, output_dir=None, write_db
     else:
         date_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
-    # Force output directory to analyze/month
-    month = get_month_folder(date_str)
-    output_dir = os.path.join(MODEL_DIR, 'analyze', month)
+    if not output_dir:
+        mode = 'backtest' if 'backtest' in str(predicts_path).lower() else 'live'
+        try:
+            from utils.prediction_paths import get_analyze_dir
+            output_dir = get_analyze_dir(date_str, mode=mode, base_dir=MODEL_DIR)
+        except Exception:
+            month = get_month_folder(date_str)
+            output_dir = os.path.join(MODEL_DIR, 'analyze', month)
     os.makedirs(output_dir, exist_ok=True)
 
     print(f"[+] Running automated prediction ml.for {date_str}...")
@@ -320,7 +335,7 @@ def generate_ml.predicts_path=None, results_path=None, output_dir=None, write_db
     if write_db:
         # We need the target date, try to extract from paths or use yesterday
         date_str = None
-        match = re.search(r'(\d{4}-\d{2}-\d{2})', os.path.basename(predicts_path))
+        match = re.search(r'(\d{4}-\d{2}-\d{2})', os.path.basename(predicts_path) + os.path.basename(results_path))
         if match:
             date_str = match.group(1)
         else:
@@ -328,6 +343,15 @@ def generate_ml.predicts_path=None, results_path=None, output_dir=None, write_db
         
         print(f"\n[+] Writing evaluated outcomes to DB for {date_str}...")
         write_db_results(date_str, props_results, medians_results, actual_games, actual_props)
+
+    if generate_pdf and os.path.exists(txt_out_path):
+        try:
+            from etl.analyze_to_pdf import convert_txt_to_pdf
+            pdf_path = convert_txt_to_pdf(txt_out_path, clean_txt=clean_txt)
+            if pdf_path:
+                print(f"[+] PDF report generated at: {pdf_path}")
+        except Exception as e:
+            print(f"[-] Failed to generate PDF report: {e}")
 
 def analyze_games(games, actual_games, output_dir=None, date_str=None):
     output_dir = output_dir or MODEL_DIR
@@ -385,7 +409,7 @@ def analyze_games(games, actual_games, output_dir=None, date_str=None):
     ml_pct = (ml_correct / ml_total * 100) if ml_total > 0 else 0
     
     txt_out = os.path.join(output_dir, f'{base_name}.txt')
-    # Mode 'a' if file exists, but we want it at the top, so we handle creation in generate_ml.
+    # Mode 'a' if file exists, but we want it at the top, so we handle creation in generate_evaluate.
     with open(txt_out, 'a', encoding='utf-8') as f:
         f.write("="*60 + "\n")
         f.write(" 🎯 AUTOMATED PREDICTION ANALYSIS 🎯\n")
@@ -494,76 +518,12 @@ def analyze_props(props, games, actual_games, actual_props, is_only_props=True, 
         
     total = wins + losses
     win_rate = (wins / total * 100) if total > 0 else 0
-    
-    # ── Game Result Analysis ──
-    game_results = []
-    team_errors = []
-    total_errors = []
-    spread_errors = []
-    ml_correct = 0
-    ml_total = 0
-    
-    for game_label, game_data in games.items():
-        tricodes = game_data.get('tricodes')
-        proj_scores = game_data.get('proj_scores')
-        if not tricodes or not proj_scores or tricodes not in actual_games:
-            continue
-            
-        act_scores = actual_games[tricodes]
-        t1, t2 = tricodes
-        
-        p1, p2 = proj_scores[t1], proj_scores[t2]
-        a1, a2 = act_scores[t1], act_scores[t2]
-        
-        # Errors
-        err1 = abs(p1 - a1)
-        err2 = abs(p2 - a2)
-        team_errors.extend([err1, err2])
-        
-        proj_total = p1 + p2
-        act_total = a1 + a2
-        total_errors.append(abs(proj_total - act_total))
-        
-        proj_spread = p1 - p2 # Margin for team 1
-        act_spread = a1 - a2
-        spread_errors.append(abs(proj_spread - act_spread))
-        
-        # Moneyline Accuracy
-        if (p1 > p2 and a1 > a2) or (p1 < p2 and a1 < a2):
-            ml_correct += 1
-        ml_total += 1
-        
-        game_results.append({
-            'matchup': game_label,
-            'proj': f"{t1} {p1:.1f} - {t2} {p2:.1f}",
-            'actual': f"{t1} {a1} - {t2} {a2}",
-            'err_total': abs(proj_total - act_total),
-            'status': "✅" if (p1 > p2) == (a1 > a2) else "❌"
-        })
-        
-    game_mae_team = np.mean(team_errors) if team_errors else 0
-    game_mae_total = np.mean(total_errors) if total_errors else 0
-    game_mae_spread = np.mean(spread_errors) if spread_errors else 0
-    ml_pct = (ml_correct / ml_total * 100) if ml_total > 0 else 0
             
     # Text Generation
     txt_out = os.path.join(output_dir, f'{base_name}.txt')
     with open(txt_out, 'a', encoding='utf-8') as f:
         f.write(f"Total Props Evaluated: {total}\n")
         f.write(f"Wins: {wins} | Losses: {losses} | Win Rate: {win_rate:.1f}%\n\n")
-
-        if ml_total > 0:
-            f.write("="*60 + "\n")
-            f.write(" 🏀 GAME RESULT ACCURACY (TEAM SCORES) 🏀\n")
-            f.write("="*60 + "\n")
-            f.write(f"MAE - Team Score: {game_mae_team:.1f} | Total: {game_mae_total:.1f} | Spread: {game_mae_spread:.1f}\n")
-            f.write(f"Moneyline Accuracy: {ml_correct}/{ml_total} ({ml_pct:.1f}%)\n\n")
-            
-            f.write(f"{'MATCHUP':<35} | {'PROJECTED':<20} | {'ACTUAL':<15} | {'STATUS'}\n")
-            f.write("-" * 88 + "\n")
-            for gr in game_results:
-                f.write(f"{gr['matchup']:<35} | {gr['proj']:<20} | {gr['actual']:<15} | {gr['status']}\n")
-            f.write("\n")
         
         f.write(f"{'PLAYER':<22} | {'CONF':<4} | {'BET':<15} | {'ACTUAL':<8} | {'DIFF':<7} | {'DIFF %':<8} | {'STATUS'}\n")
         f.write("-" * 88 + "\n")
@@ -686,5 +646,14 @@ if __name__ == "__main__":
     parser.add_argument('--actuals', type=str, help='Path to actual results file (default: yesterday_results.txt)')
     parser.add_argument('--output-dir', type=str, help='Directory to output analyze.txt and analyze.tex')
     parser.add_argument('--write-db', action='store_true', help='Write evaluations to bet_tracker.db')
+    parser.add_argument('--no-pdf', action='store_true', help='Skip compiling PDF report')
+    parser.add_argument('--keep-txt', action='store_true', help='Keep intermediate analyze text file')
     args = parser.parse_args()
-    generate_ml.predicts_path=args.input, results_path=args.actuals, output_dir=args.output_dir, write_db=args.write_db)
+    generate_evaluate(
+        predicts_path=args.input,
+        results_path=args.actuals,
+        output_dir=args.output_dir,
+        write_db=args.write_db,
+        generate_pdf=not args.no_pdf,
+        clean_txt=not args.keep_txt
+    )

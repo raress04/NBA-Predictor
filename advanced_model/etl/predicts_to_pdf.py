@@ -14,7 +14,7 @@ import re
 import os
 import sys
 import argparse
-from datetime import date
+from datetime import date, datetime
 from typing import List, Dict, Optional
 
 # Optional: bet_tracker for historical performance section
@@ -71,151 +71,152 @@ def conf_color(conf: int) -> str:
 # ── Parser ────────────────────────────────────────────────────────────────────
 
 class PredictsParser:
-    def __init__(self, text: str):
+    def __init__(self, text: str, game_date: Optional[str] = None):
         self.text = text
         self.games: List[Dict] = []
         self.parlays: List[Dict] = []
         self.honorable_mentions: List[Dict] = []
-        self.run_date = date.today().strftime('%B %d, %Y')
+
+        parsed_dt = None
+        if game_date:
+            try:
+                parsed_dt = datetime.strptime(game_date.strip(), '%Y-%m-%d')
+            except Exception:
+                pass
+
+        if not parsed_dt:
+            # Check for patterns like "Generating projections for 2026-10-20" or "predicts_2026-10-20"
+            m = re.search(r'projections\s+for\s+(\d{4}-\d{2}-\d{2})', text, re.IGNORECASE)
+            if not m:
+                m = re.search(r'predicts_(\d{4}-\d{2}-\d{2})', text, re.IGNORECASE)
+            if not m:
+                m = re.search(r'(\d{4}-\d{2}-\d{2})', text)
+            if m:
+                try:
+                    parsed_dt = datetime.strptime(m.group(1), '%Y-%m-%d')
+                except Exception:
+                    pass
+
+        if parsed_dt:
+            self.run_date = parsed_dt.strftime('%B %d, %Y')
+        else:
+            self.run_date = date.today().strftime('%B %d, %Y')
+
         self._parse()
 
-    def _parse(self):
-        lines = self.text.splitlines()
+    def _parse_game_block(self, block: str, game: dict):
+        import re as _re
+        for pat, key in [
+            (r'H2H:\s+(.+)', 'odds_h2h'),
+            (r'Spread:\s+(.+)', 'odds_spread'),
+            (r'Total:\s+(.+)', 'odds_total'),
+        ]:
+            m = _re.search(pat, block)
+            if m:
+                game[key] = m.group(1).strip()
 
-        # ── Game blocks ──
-        game_blocks = re.split(r'={50,}', self.text)
+        for tcode, off, dfn in _re.findall(r'\[TEAM RATINGS\] (\w+): OffRtg ([\d.]+) \| DefRtg ([\d.]+)', block):
+            if not game.get('_rtg1'):
+                game['_rtg1'] = (tcode, off, dfn)
+            else:
+                game['_rtg2'] = (tcode, off, dfn)
+
+        m = _re.search(r'Calculated Game Pace: ~(\d+)', block)
+        if m:
+            game['pace'] = m.group(1)
+
+        m = _re.search(r'PROJECTED TOTAL: ([\d.]+)', block)
+        if m:
+            game['proj_total'] = m.group(1)
+
+        m = _re.search(r'PROJECTED SCORE: (\w+ [\d.]+ - \w+ [\d.]+)', block)
+        if m:
+            game['proj_score'] = m.group(1)
+
+        m = _re.search(r'-> GAME TOTAL: (.+)', block)
+        if m:
+            game['game_total'] = m.group(1).strip()
+
+        spread_evals = _re.findall(r'-> (?:HOME|AWAY) SPREAD: (.+)', block)
+        valuable = [s for s in spread_evals if 'VALUABLE' in s]
+        if valuable:
+            game['spread'] = valuable[0]
+        elif spread_evals:
+            game['spread'] = spread_evals[0]
+
+        home_sec = _re.search(r'\[HOME TEAM\](.*?)(?:\[AWAY TEAM\]|$)', block, _re.DOTALL)
+        away_sec = _re.search(r'\[AWAY TEAM\](.*?)$', block, _re.DOTALL)
+
+        for section, key in [(home_sec, 'home_players'), (away_sec, 'away_players')]:
+            if not section:
+                continue
+            player_lines = _re.findall(
+                r"^\s{2}([A-Z][A-Za-z'.\-][\w\s'.\-]+?)\s+->\s+(\d+ PTS, \d+ REB, \d+ AST)(.*?)$",
+                section.group(1),
+                _re.MULTILINE,
+            )
+            for pname, stats, props_raw in player_lines:
+                is_uncertain = '[HIGH_UNCERTAINTY]' in props_raw
+                player = {
+                    'name': pname.strip(),
+                    'stats': stats.strip(),
+                    'props': [],
+                    'high_uncertainty': is_uncertain
+                }
+                prop_matches = _re.findall(
+                    r'O/U ([\d.]+) (\w+) (VALUABLE: (\w+) \((\d+)% conf(?:\s*\(raw:\s*[\d.]+\%\))?, ([\d.]+)% edge\)|ignore)',
+                    props_raw,
+                )
+                for line_val, stat_name, full, direction, conf, edge in prop_matches:
+                    if 'VALUABLE' in full and direction:
+                        player['props'].append({
+                            'line': line_val,
+                            'stat': stat_name,
+                            'direction': direction,
+                            'conf': int(conf),
+                            'edge': edge,
+                        })
+                game[key].append(player)
+
+    def _parse(self):
+        import re as _re
+        # The txt wraps each MATCHUP header between its own pair of ====... separator lines.
+        # Splitting yields: [junk, MATCHUP-only, data-block, MATCHUP-only, data-block, ...]
+        # When we see a MATCHUP block we create the game record; the following non-empty,
+        # non-MATCHUP block contains all the player data.
+        raw_blocks = _re.split(r'={50,}', self.text)
         current_game = None
 
-        for block in game_blocks:
+        for block in raw_blocks:
             block = block.strip()
             if not block:
                 continue
 
-            # Detect matchup header
-            matchup_m = re.search(r'MATCHUP:\s+(.+)', block)
+            matchup_m = _re.search(r'MATCHUP:\s+(.+)', block)
             if matchup_m:
                 current_game = {
                     'matchup': matchup_m.group(1).strip(),
-                    'away': '',
-                    'home': '',
-                    'odds_h2h': '',
-                    'odds_spread': '',
-                    'odds_total': '',
-                    'proj_total': '',
-                    'proj_score': '',
-                    'game_total': '',
-                    'spread': '',
-                    'home_players': [],
-                    'away_players': [],
-                    'off_rtg_home': '',
-                    'def_rtg_home': '',
-                    'off_rtg_away': '',
-                    'def_rtg_away': '',
+                    'away': '', 'home': '',
+                    'odds_h2h': '', 'odds_spread': '', 'odds_total': '',
+                    'proj_total': '', 'proj_score': '',
+                    'game_total': '', 'spread': '',
+                    'home_players': [], 'away_players': [],
+                    'off_rtg_home': '', 'def_rtg_home': '',
+                    'off_rtg_away': '', 'def_rtg_away': '',
                     'pace': '',
                 }
                 parts = matchup_m.group(1).strip().split(' @ ')
                 if len(parts) == 2:
                     current_game['away'] = parts[0].strip()
                     current_game['home'] = parts[1].strip()
-
-                # Sportsbook odds
-                h2h_m = re.search(r'H2H:\s+(.+)', block)
-                if h2h_m:
-                    current_game['odds_h2h'] = h2h_m.group(1).strip()
-
-                spread_m = re.search(r'Spread:\s+(.+)', block)
-                if spread_m:
-                    current_game['odds_spread'] = spread_m.group(1).strip()
-
-                total_m = re.search(r'Total:\s+(.+)', block)
-                if total_m:
-                    current_game['odds_total'] = total_m.group(1).strip()
-
-                # Team ratings
-                home_rtg_m = re.search(r'\[TEAM RATINGS\] (\w+): OffRtg ([\d.]+) \| DefRtg ([\d.]+)', block)
-                if home_rtg_m:
-                    current_game['off_rtg_home'] = home_rtg_m.group(2)
-                    current_game['def_rtg_home'] = home_rtg_m.group(3)
-                    # try to get both
-                matches = re.findall(r'\[TEAM RATINGS\] (\w+): OffRtg ([\d.]+) \| DefRtg ([\d.]+)', block)
-                for m in matches:
-                    tcode, off, dfn = m
-                    # Associate by home/away tricode order
-                    if not current_game.get('_rtg1'):
-                        current_game['_rtg1'] = (tcode, off, dfn)
-                    else:
-                        current_game['_rtg2'] = (tcode, off, dfn)
-
-                # Pace
-                pace_m = re.search(r'Calculated Game Pace: ~(\d+)', block)
-                if pace_m:
-                    current_game['pace'] = pace_m.group(1)
-
-                # Projected totals
-                pt_m = re.search(r'PROJECTED TOTAL: ([\d.]+)', block)
-                if pt_m:
-                    current_game['proj_total'] = pt_m.group(1)
-
-                ps_m = re.search(r'PROJECTED SCORE: (\w+ [\d.]+ - \w+ [\d.]+)', block)
-                if ps_m:
-                    current_game['proj_score'] = ps_m.group(1)
-
-                # Game total evaluation
-                gt_m = re.search(r'-> GAME TOTAL: (.+)', block)
-                if gt_m:
-                    current_game['game_total'] = gt_m.group(1).strip()
-
-                # Spread evaluation — pick the VALUABLE one if any
-                spread_evals = re.findall(r'-> (?:HOME|AWAY) SPREAD: (.+)', block)
-                valuable_spreads = [s for s in spread_evals if 'VALUABLE' in s]
-                if valuable_spreads:
-                    current_game['spread'] = valuable_spreads[0]
-                elif spread_evals:
-                    current_game['spread'] = spread_evals[0]
-
-                # Player props
-                home_section = re.search(r'\[HOME TEAM\](.*?)(?:\[AWAY TEAM\]|$)', block, re.DOTALL)
-                away_section = re.search(r'\[AWAY TEAM\](.*?)$', block, re.DOTALL)
-
-                for section, key in [(home_section, 'home_players'), (away_section, 'away_players')]:
-                    if not section:
-                        continue
-                    player_lines = re.findall(
-                        r'(\w[\w\s\'.]+?)\s+->\s+(\d+ PTS, \d+ REB, \d+ AST)(.*?)$',
-                        section.group(1),
-                        re.MULTILINE
-                    )
-                    for pname, stats, props_raw in player_lines:
-                        player = {
-                            'name': pname.strip(),
-                            'stats': stats.strip(),
-                            'props': [],
-                        }
-                        # Extract prop evaluations
-                        prop_matches = re.findall(
-                            r'O/U ([\d.]+) (\w+) (VALUABLE: (\w+) \((\d+)% conf(?:\s*\(raw:\s*[\d.]+\%\))?, ([\d.]+)% edge\)|ignore)',
-                            props_raw
-                        )
-                        for pm in prop_matches:
-                            line_val, stat_name, full, direction, conf, edge = pm
-                            if 'VALUABLE' in full and direction:
-                                player['props'].append({
-                                    'line': line_val,
-                                    'stat': stat_name,
-                                    'direction': direction,
-                                    'conf': int(conf),
-                                    'edge': edge,
-                                })
-                        current_game[key].append(player)
-
+                # Parse anything that may already be in this same block
+                self._parse_game_block(block, current_game)
                 self.games.append(current_game)
-                continue
+            elif current_game is not None:
+                # Data block immediately following a MATCHUP header block
+                self._parse_game_block(block, current_game)
+                current_game = None  # consumed
 
-            # ── Parlays & Honorable Mentions block ──
-            # (Already handled after main loop below)
-            continue
-
-        # ── Parse Parlays and Honorable Mentions from full text ──
         self._parse_parlays()
 
     def _parse_parlays(self):
@@ -340,11 +341,14 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
     w(r'\vspace{6pt}')
     w()
 
+    has_frontpage_content = False
+
     # ── Historical Performance Section (from DB) ──
     if _HAS_TRACKER:
         overall = query_summary()
         total_picks = int(overall.get('total') or 0)
         if total_picks >= 10:
+            has_frontpage_content = True
             wins = int(overall.get('wins') or 0)
             win_rate = overall.get('win_rate') or 0.0
             avg_conf = overall.get('avg_conf') or 0.0
@@ -392,6 +396,7 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
     p2_picks = [p for tag, p in parsed.parlays if tag == 'p2']
 
     if p1_picks:
+        has_frontpage_content = True
         w(r'\begin{mdframed}[linecolor=accentgold,linewidth=1.5pt,backgroundcolor=lightgray,')
         w(r'  innertopmargin=8pt,innerbottommargin=8pt,innerrightmargin=8pt,innerleftmargin=8pt]')
         w(r'{\large\bfseries\textcolor{accentgold}{$\bigstar$ Parlay Recommendation \#1 — Best 2-3 Picks}}\\[4pt]')
@@ -419,6 +424,7 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
 
     # ── Parlay 2 (compact) ──
     if p2_picks:
+        has_frontpage_content = True
         w(r'\begin{mdframed}[linecolor=accent,linewidth=1pt,backgroundcolor=lightgray,')
         w(r'  innertopmargin=6pt,innerbottommargin=6pt,innerrightmargin=6pt,innerleftmargin=6pt]')
         w(r'{\bfseries\textcolor{accent}{Parlay \#2 — 3/4 System (4 Picks)}}\\[3pt]')
@@ -437,6 +443,7 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
 
     # ── Honorable Mentions ──
     if parsed.honorable_mentions:
+        has_frontpage_content = True
         w(r'\begin{mdframed}[linecolor=midgray,linewidth=0.7pt,innertopmargin=5pt,innerbottommargin=5pt,')
         w(r'  innerrightmargin=5pt,innerleftmargin=5pt]')
         w(r'{\bfseries Honorable Mentions}\\[2pt]')
@@ -452,7 +459,8 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
         w(r'\end{mdframed}')
         w()
 
-    w(r'\newpage')
+    if has_frontpage_content:
+        w(r'\newpage')
     w()
 
     # ── Per-Game Sections ──
@@ -531,6 +539,8 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
 
             for player in players:
                 name = tex_escape(player['name'])
+                if player.get('high_uncertainty'):
+                    name += r' \textcolor{accentgold}{\scriptsize\textbf{[UNCERTAIN]}}'
                 # Parse stats
                 pts_m = re.search(r'(\d+) PTS', player['stats'])
                 reb_m = re.search(r'(\d+) REB', player['stats'])
@@ -577,6 +587,9 @@ def main():
     parser = argparse.ArgumentParser(description='Convert predicts.txt to a LaTeX PDF report')
     parser.add_argument('--input', default='predicts.txt', help='Input predicts file (default: predicts.txt)')
     parser.add_argument('--output', default='predicts_report', help='Output filename stem (without extension)')
+    parser.add_argument('--date', default=None, help='Game date in YYYY-MM-DD format')
+    parser.add_argument('--compile', action='store_true', help='Compile LaTeX to PDF using pdflatex')
+    parser.add_argument('--clean', action='store_true', help='Clean up auxiliary files (.aux, .log, .tex) after compiling PDF')
     args = parser.parse_args()
 
     input_path = args.input if os.path.isabs(args.input) else os.path.join(MODEL_DIR, args.input)
@@ -588,18 +601,56 @@ def main():
         raw = f.read()
 
     print(f'[+] Parsing {os.path.basename(input_path)}...')
-    parsed = PredictsParser(raw)
+
+    # Infer date from --date, filename, or raw content
+    game_date = args.date
+    if not game_date:
+        m = re.search(r'(\d{4}-\d{2}-\d{2})', os.path.basename(input_path))
+        if m:
+            game_date = m.group(1)
+
+    parsed = PredictsParser(raw, game_date=game_date)
+    print(f'    Report Date: {parsed.run_date}')
     print(f'    Found {len(parsed.games)} games, {len(parsed.parlays)} parlay picks, {len(parsed.honorable_mentions)} honorable mentions.')
 
     latex = generate_latex(parsed, args.output)
 
-    output_tex = os.path.join(MODEL_DIR, args.output + '.tex')
+    output_tex = args.output + '.tex' if os.path.isabs(args.output) else os.path.join(MODEL_DIR, args.output + '.tex')
     with open(output_tex, 'w', encoding='utf-8') as f:
         f.write(latex)
 
     print(f'[+] LaTeX written to: {output_tex}')
-    print(f'    Run: pdflatex {args.output}.tex')
-    print(f'    Run twice for correct page references.')
+
+    if args.compile:
+        import subprocess
+        out_dir = os.path.dirname(os.path.abspath(output_tex))
+        stem = os.path.splitext(os.path.basename(output_tex))[0]
+        pdf_path = os.path.join(out_dir, stem + '.pdf')
+
+        pdflatex_ok = subprocess.run(['pdflatex', '--version'], capture_output=True).returncode == 0
+        if pdflatex_ok:
+            for _ in range(2):
+                subprocess.run([
+                    'pdflatex',
+                    '-interaction=nonstopmode',
+                    f'-output-directory={out_dir}',
+                    output_tex,
+                ], check=False, capture_output=True)
+            if os.path.exists(pdf_path):
+                print(f'[+] PDF compiled: {pdf_path}')
+                if args.clean:
+                    for ext in ['.aux', '.log', '.tex']:
+                        clean_f = os.path.join(out_dir, stem + ext)
+                        if os.path.exists(clean_f):
+                            try:
+                                os.remove(clean_f)
+                            except OSError:
+                                pass
+                    print(f'[+] Cleaned up auxiliary files ({stem}.aux, .log, .tex)')
+            else:
+                print('[-] pdflatex ran but PDF not found')
+        else:
+            print('[!] pdflatex not found')
 
 
 if __name__ == '__main__':

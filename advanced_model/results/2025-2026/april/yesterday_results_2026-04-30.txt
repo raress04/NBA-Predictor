@@ -1,0 +1,77 @@
+MATCHUP: BOS vs. PHI    93 - 106
+Tyrese Maxey           | 30 PTS, 2 REB,  5 AST
+Paul George            | 23 PTS, 4 REB,  3 AST
+Joel Embiid            | 19 PTS, 10 REB,  8 AST
+Jaylen Brown           | 18 PTS, 1 REB,  2 AST
+Jayson Tatum           | 17 PTS, 11 REB,  3 AST
+Kelly Oubre Jr.        | 14 PTS, 9 REB,  1 AST
+VJ Edgecombe           | 14 PTS, 8 REB,  3 AST
+Payton Pritchard       | 14 PTS, 3 REB,  5 AST
+Derrick White          | 11 PTS, 1 REB,  1 AST
+Luka Garza             | 9 PTS, 2 REB,  1 AST
+Sam Hauser             | 5 PTS, 4 REB,  1 AST
+Baylor Scheierman      | 5 PTS, 3 REB,  1 AST
+Neemias Queta          | 4 PTS, 11 REB,  0 AST
+Jordan Walsh           | 3 PTS, 5 REB,  3 AST
+Ron Harper Jr.         | 3 PTS, 3 REB,  0 AST
+Andre Drummond         | 2 PTS, 7 REB,  0 AST
+Nikola Vučević         | 2 PTS, 2 REB,  1 AST
+Quentin Grimes         | 2 PTS, 3 REB,  2 AST
+Justin Edwards         | 2 PTS, 5 REB,  0 AST
+Dalano Banton          | 2 PTS, 0 REB,  0 AST
+Trendon Watford        | 0 PTS, 0 REB,  0 AST
+Dalen Terry            | 0 PTS, 0 REB,  0 AST
+Adem Bona              | 0 PTS, 0 REB,  0 AST
+Kyle Lowry             | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: NYK vs. ATL    140 - 89
+OG Anunoby             | 29 PTS, 7 REB,  2 AST
+Mikal Bridges          | 24 PTS, 5 REB,  3 AST
+Jalen Johnson          | 21 PTS, 8 REB,  6 AST
+Jalen Brunson          | 17 PTS, 2 REB,  8 AST
+Josh Hart              | 14 PTS, 5 REB,  2 AST
+Karl-Anthony Towns     | 12 PTS, 11 REB,  10 AST
+Jonathan Kuminga       | 11 PTS, 2 REB,  3 AST
+Nickeil Alexander-Walker | 11 PTS, 1 REB,  2 AST
+CJ McCollum            | 11 PTS, 3 REB,  0 AST
+Zaccharie Risacher     | 8 PTS, 3 REB,  0 AST
+Jordan Clarkson        | 7 PTS, 0 REB,  1 AST
+Mitchell Robinson      | 6 PTS, 3 REB,  0 AST
+Tyler Kolek            | 6 PTS, 1 REB,  3 AST
+Landry Shamet          | 5 PTS, 1 REB,  0 AST
+Pacôme Dadiet          | 5 PTS, 1 REB,  0 AST
+Tony Bradley           | 5 PTS, 3 REB,  1 AST
+Buddy Hield            | 5 PTS, 2 REB,  0 AST
+Keaton Wallace         | 4 PTS, 3 REB,  2 AST
+Onyeka Okongwu         | 4 PTS, 6 REB,  5 AST
+Jeremy Sochan          | 4 PTS, 0 REB,  0 AST
+Corey Kispert          | 4 PTS, 2 REB,  1 AST
+Dyson Daniels          | 3 PTS, 0 REB,  0 AST
+Ariel Hukporti         | 3 PTS, 4 REB,  0 AST
+Jose Alvarado          | 3 PTS, 1 REB,  2 AST
+Miles McBride          | 3 PTS, 1 REB,  0 AST
+Mohamed Diawara        | 2 PTS, 4 REB,  2 AST
+Mouhamed Gueye         | 2 PTS, 2 REB,  2 AST
+Gabe Vincent           | 0 PTS, 0 REB,  0 AST
+Asa Newell             | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: DEN vs. MIN    98 - 110
+Jaden McDaniels        | 32 PTS, 10 REB,  3 AST
+Nikola Jokić           | 28 PTS, 9 REB,  10 AST
+Cameron Johnson        | 27 PTS, 8 REB,  3 AST
+Terrence Shannon Jr.   | 24 PTS, 6 REB,  1 AST
+Julius Randle          | 18 PTS, 4 REB,  5 AST
+Naz Reid               | 15 PTS, 7 REB,  4 AST
+Tim Hardaway Jr.       | 13 PTS, 4 REB,  2 AST
+Jamal Murray           | 12 PTS, 6 REB,  4 AST
+Rudy Gobert            | 10 PTS, 13 REB,  8 AST
+Spencer Jones          | 8 PTS, 2 REB,  1 AST
+Mike Conley            | 7 PTS, 6 REB,  3 AST
+Tyus Jones             | 4 PTS, 0 REB,  3 AST
+Christian Braun        | 3 PTS, 1 REB,  0 AST
+Jaylen Clark           | 3 PTS, 2 REB,  1 AST
+Jonas Valančiūnas      | 2 PTS, 2 REB,  0 AST
+Bruce Brown            | 1 PTS, 1 REB,  1 AST
+Bones Hyland           | 1 PTS, 2 REB,  1 AST
+Zeke Nnaji             | 0 PTS, 0 REB,  0 AST
+

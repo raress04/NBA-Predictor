@@ -1,0 +1,55 @@
+--- RESULTS FOR 2026-05-09 ---
+
+==================================================
+MATCHUP: CLE @ DET | 116 - 109
+==================================================
+Donovan Mitchell          | 35 PTS, 10 REB,  4 AST
+Cade Cunningham           | 27 PTS, 10 REB, 10 AST
+Tobias Harris             | 21 PTS,  5 REB,  0 AST
+James Harden              | 19 PTS,  2 REB,  7 AST
+Jarrett Allen             | 18 PTS,  4 REB,  1 AST
+Duncan Robinson           | 15 PTS,  3 REB,  4 AST
+Evan Mobley               | 13 PTS,  8 REB,  4 AST
+Dennis Schröder           | 11 PTS,  1 REB,  2 AST
+Jalen Duren               | 11 PTS,  4 REB,  1 AST
+Paul Reed                 | 11 PTS,  3 REB,  0 AST
+Ausar Thompson            |  9 PTS,  7 REB,  5 AST
+Max Strus                 |  7 PTS,  5 REB,  2 AST
+Sam Merrill               |  7 PTS,  0 REB,  0 AST
+Caris LeVert              |  6 PTS,  2 REB,  0 AST
+Isaiah Stewart            |  4 PTS,  2 REB,  0 AST
+Jaylon Tyson              |  3 PTS,  2 REB,  2 AST
+Dean Wade                 |  3 PTS,  1 REB,  0 AST
+Javonte Green             |  3 PTS,  2 REB,  0 AST
+Daniss Jenkins            |  2 PTS,  1 REB,  3 AST
+Ronald Holland II         |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: LAL @ OKC | 108 - 131
+==================================================
+Ajay Mitchell             | 24 PTS,  4 REB, 10 AST
+Shai Gilgeous-Alexander   | 23 PTS,  4 REB,  9 AST
+Rui Hachimura             | 21 PTS,  5 REB,  4 AST
+LeBron James              | 19 PTS,  6 REB,  8 AST
+Chet Holmgren             | 18 PTS,  9 REB,  1 AST
+Luke Kennard              | 18 PTS,  2 REB,  2 AST
+Austin Reaves             | 17 PTS,  3 REB,  9 AST
+Cason Wallace             | 16 PTS,  1 REB,  1 AST
+Isaiah Hartenstein        | 12 PTS,  9 REB,  2 AST
+Isaiah Joe                | 12 PTS,  5 REB,  2 AST
+Deandre Ayton             | 10 PTS,  6 REB,  0 AST
+Marcus Smart              | 10 PTS,  3 REB,  3 AST
+Luguentz Dort             | 10 PTS,  3 REB,  0 AST
+Alex Caruso               |  6 PTS,  2 REB,  2 AST
+Nick Smith Jr.            |  6 PTS,  0 REB,  0 AST
+Adou Thiero               |  4 PTS,  8 REB,  1 AST
+Aaron Wiggins             |  4 PTS,  0 REB,  0 AST
+Jaylin Williams           |  3 PTS,  4 REB,  2 AST
+Jared McCain              |  3 PTS,  0 REB,  1 AST
+Bronny James              |  2 PTS,  0 REB,  0 AST
+Jaxson Hayes              |  1 PTS,  2 REB,  0 AST
+Nikola Topić              |  0 PTS,  2 REB,  0 AST
+Dalton Knecht             |  0 PTS,  1 REB,  3 AST
+Maxi Kleber               |  0 PTS,  1 REB,  1 AST
+Kenrich Williams          |  0 PTS,  0 REB,  0 AST
+

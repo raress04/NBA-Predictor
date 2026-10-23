@@ -1,0 +1,25 @@
+--- RESULTS FOR 2026-05-02 ---
+
+==================================================
+MATCHUP: BOS @ PHI | 100 - 109
+==================================================
+Joel Embiid               | 34 PTS, 12 REB,  6 AST
+Jaylen Brown              | 33 PTS,  9 REB,  4 AST
+Tyrese Maxey              | 30 PTS, 11 REB,  7 AST
+Derrick White             | 26 PTS,  6 REB,  4 AST
+VJ Edgecombe              | 23 PTS,  6 REB,  4 AST
+Neemias Queta             | 17 PTS, 12 REB,  1 AST
+Payton Pritchard          | 13 PTS,  5 REB,  7 AST
+Paul George               | 13 PTS,  3 REB,  1 AST
+Sam Hauser                | 11 PTS,  3 REB,  1 AST
+Kelly Oubre Jr.           |  6 PTS,  5 REB,  2 AST
+Quentin Grimes            |  3 PTS,  6 REB,  4 AST
+Baylor Scheierman         |  0 PTS,  6 REB,  2 AST
+Ron Harper Jr.            |  0 PTS,  0 REB,  0 AST
+Hugo González             |  0 PTS,  3 REB,  0 AST
+Andre Drummond            |  0 PTS,  1 REB,  1 AST
+Luka Garza                |  0 PTS,  0 REB,  0 AST
+Jordan Walsh              |  0 PTS,  0 REB,  0 AST
+Dominick Barlow           |  0 PTS,  0 REB,  0 AST
+Justin Edwards            |  0 PTS,  0 REB,  0 AST
+

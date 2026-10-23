@@ -1,0 +1,48 @@
+--- RESULTS FOR 2026-04-14 ---
+
+==================================================
+MATCHUP: CHA @ MIA | 127 - 126
+==================================================
+LaMelo Ball               | 30 PTS,  5 REB, 10 AST
+Miles Bridges             | 28 PTS,  9 REB,  2 AST
+Davion Mitchell           | 28 PTS,  4 REB,  6 AST
+Andrew Wiggins            | 27 PTS,  7 REB,  3 AST
+Brandon Miller            | 23 PTS,  5 REB,  5 AST
+Tyler Herro               | 23 PTS,  3 REB,  6 AST
+Coby White                | 19 PTS,  5 REB,  3 AST
+Jaime Jaquez Jr.          | 13 PTS,  6 REB,  8 AST
+Kel'el Ware               | 12 PTS, 19 REB,  4 AST
+Norman Powell             | 11 PTS,  2 REB,  1 AST
+Moussa Diabaté            |  8 PTS, 14 REB,  1 AST
+Pelle Larsson             |  6 PTS,  3 REB,  3 AST
+Bam Adebayo               |  6 PTS,  3 REB,  1 AST
+Ryan Kalkbrenner          |  6 PTS,  5 REB,  1 AST
+Kon Knueppel              |  6 PTS,  5 REB,  1 AST
+Grant Williams            |  5 PTS,  2 REB,  0 AST
+Sion James                |  2 PTS,  3 REB,  3 AST
+Simone Fontecchio         |  0 PTS,  1 REB,  0 AST
+Josh Green                |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: PHX @ POR | 110 - 114
+==================================================
+Deni Avdija               | 41 PTS,  7 REB, 12 AST
+Jalen Green               | 35 PTS,  5 REB,  2 AST
+Devin Booker              | 22 PTS,  1 REB,  4 AST
+Jrue Holiday              | 21 PTS,  4 REB,  4 AST
+Dillon Brooks             | 20 PTS,  7 REB,  2 AST
+Jerami Grant              | 16 PTS,  2 REB,  0 AST
+Jordan Goodwin            | 12 PTS,  4 REB,  0 AST
+Shaedon Sharpe            | 12 PTS,  1 REB,  1 AST
+Scoot Henderson           |  9 PTS,  3 REB,  2 AST
+Toumani Camara            |  8 PTS,  4 REB,  0 AST
+Royce O'Neale             |  7 PTS,  8 REB,  3 AST
+Collin Gillespie          |  5 PTS,  4 REB,  0 AST
+Mark Williams             |  4 PTS,  4 REB,  2 AST
+Matisse Thybulle          |  3 PTS,  0 REB,  0 AST
+Oso Ighodaro              |  3 PTS,  1 REB,  6 AST
+Donovan Clingan           |  2 PTS, 11 REB,  4 AST
+Robert Williams III       |  2 PTS,  7 REB,  1 AST
+Ryan Dunn                 |  2 PTS,  4 REB,  1 AST
+Kris Murray               |  0 PTS,  3 REB,  3 AST
+

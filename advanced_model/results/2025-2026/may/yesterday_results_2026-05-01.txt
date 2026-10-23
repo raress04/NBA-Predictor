@@ -1,0 +1,67 @@
+MATCHUP: DET vs. ORL    93 - 79
+Cade Cunningham        | 32 PTS, 10 REB,  3 AST
+Tobias Harris          | 22 PTS, 10 REB,  0 AST
+Paolo Banchero         | 17 PTS, 10 REB,  6 AST
+Desmond Bane           | 17 PTS, 3 REB,  1 AST
+Duncan Robinson        | 14 PTS, 5 REB,  3 AST
+Tristan da Silva       | 10 PTS, 6 REB,  0 AST
+Wendell Carter Jr.     | 9 PTS, 0 REB,  2 AST
+Jalen Duren            | 8 PTS, 9 REB,  1 AST
+Anthony Black          | 8 PTS, 3 REB,  1 AST
+Daniss Jenkins         | 7 PTS, 1 REB,  3 AST
+Jalen Suggs            | 7 PTS, 7 REB,  7 AST
+Goga Bitadze           | 6 PTS, 4 REB,  1 AST
+Paul Reed              | 6 PTS, 6 REB,  0 AST
+Ausar Thompson         | 4 PTS, 10 REB,  6 AST
+Jamal Cain             | 3 PTS, 4 REB,  2 AST
+Jevon Carter           | 2 PTS, 1 REB,  0 AST
+Javonte Green          | 0 PTS, 1 REB,  0 AST
+Caris LeVert           | 0 PTS, 0 REB,  0 AST
+Isaiah Stewart         | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: CLE vs. TOR    110 - 112
+Evan Mobley            | 26 PTS, 14 REB,  3 AST
+Scottie Barnes         | 25 PTS, 7 REB,  14 AST
+RJ Barrett             | 24 PTS, 9 REB,  3 AST
+Ja'Kobe Walter         | 24 PTS, 5 REB,  0 AST
+Donovan Mitchell       | 24 PTS, 5 REB,  2 AST
+Collin Murray-Boyles   | 17 PTS, 7 REB,  2 AST
+James Harden           | 16 PTS, 9 REB,  9 AST
+Jarrett Allen          | 14 PTS, 7 REB,  1 AST
+Dean Wade              | 10 PTS, 5 REB,  0 AST
+Jamal Shead            | 7 PTS, 1 REB,  6 AST
+Dennis Schröder        | 7 PTS, 0 REB,  1 AST
+Max Strus              | 6 PTS, 5 REB,  3 AST
+A.J. Lawson            | 6 PTS, 1 REB,  0 AST
+Jamison Battle         | 5 PTS, 0 REB,  0 AST
+Jaylon Tyson           | 5 PTS, 4 REB,  3 AST
+Sandro Mamukelashvili  | 2 PTS, 4 REB,  1 AST
+Jakob Poeltl           | 2 PTS, 4 REB,  1 AST
+Sam Merrill            | 2 PTS, 1 REB,  1 AST
+Thomas Bryant          | 0 PTS, 2 REB,  0 AST
+
+MATCHUP: LAL vs. HOU    98 - 78
+LeBron James           | 28 PTS, 7 REB,  8 AST
+Rui Hachimura          | 21 PTS, 6 REB,  2 AST
+Amen Thompson          | 18 PTS, 8 REB,  3 AST
+Alperen Sengun         | 17 PTS, 11 REB,  1 AST
+Austin Reaves          | 15 PTS, 3 REB,  2 AST
+Tari Eason             | 14 PTS, 5 REB,  2 AST
+Reed Sheppard          | 10 PTS, 0 REB,  1 AST
+Jabari Smith Jr.       | 9 PTS, 12 REB,  3 AST
+Deandre Ayton          | 7 PTS, 16 REB,  1 AST
+Marcus Smart           | 7 PTS, 7 REB,  1 AST
+Jake LaRavia           | 7 PTS, 5 REB,  0 AST
+Jaxson Hayes           | 5 PTS, 4 REB,  1 AST
+Luke Kennard           | 3 PTS, 3 REB,  3 AST
+Josh Okogie            | 3 PTS, 4 REB,  1 AST
+Jae'Sean Tate          | 3 PTS, 3 REB,  0 AST
+Nick Smith Jr.         | 3 PTS, 0 REB,  0 AST
+Aaron Holiday          | 2 PTS, 1 REB,  2 AST
+Clint Capela           | 2 PTS, 1 REB,  0 AST
+Adou Thiero            | 2 PTS, 1 REB,  0 AST
+Bronny James           | 0 PTS, 1 REB,  1 AST
+Dalton Knecht          | 0 PTS, 1 REB,  0 AST
+JD Davison             | 0 PTS, 0 REB,  0 AST
+Dorian Finney-Smith    | 0 PTS, 0 REB,  0 AST
+

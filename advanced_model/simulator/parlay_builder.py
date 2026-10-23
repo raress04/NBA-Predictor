@@ -53,6 +53,10 @@ def load_platt_params():
             _PLATT_PARAMS = {}
     else:
         _PLATT_PARAMS = {}
+    if not _PLATT_PARAMS:
+        print("  [PLATT] calibration_params.json is empty or missing.")
+        print("  Platt scaling is INACTIVE. Confidences use raw posterior values.")
+        print("  Will activate after ~200 resolved picks are logged.")
     return _PLATT_PARAMS
 
 def calibrated_prob(category: str, direction: str, raw_prob_pct: float) -> float:
@@ -970,6 +974,38 @@ def build_parlays(
         f"| {len(shadow_picks)} filtered ({ban_summary})"
     )
     print(f"  {pick_volume_line}")
+
+    # ── Gate Funnel Diagnostic ──────────────────────────────────────────────
+    # Per-stage rejection counts for transparency in the report.
+    min_gap_n     = ban_counts.get('MIN_GAP', 0)
+    min_risk_n    = ban_counts.get('MINUTES_RISK', 0)
+    low_line_n    = ban_counts.get('LOW_LINE_VOLATILITY', 0)
+    low_conf_n    = ban_counts.get('LOW_CONFIDENCE', 0)
+    low_safe_n    = ban_counts.get('LOW_SAFE_CONF', 0)
+    banned_cat_n  = ban_counts.get('BANNED_CATEGORY', 0)
+    gate_closed_n = ban_counts.get('PARLAY_GATE_CLOSED', 0)
+    high_var_n    = ban_counts.get('HIGH_VARIANCE', 0)
+    print(
+        f"  [GATE FUNNEL] total_evaluated={len(shadow_picks) + len(all_picks)} "
+        f"| min_gap_fail={min_gap_n} | minutes_risk={min_risk_n} "
+        f"| low_line={low_line_n} | low_conf={low_conf_n} "
+        f"| low_safe_conf={low_safe_n} | banned={banned_cat_n} "
+        f"| gate_closed={gate_closed_n} | high_variance={high_var_n} "
+        f"-> passed={len(all_picks)}"
+    )
+
+    # ── Early-Season Advisory ───────────────────────────────────────────────
+    # When 0 picks pass and root cause is the elevated 75% sim-only threshold
+    # (no DB history, < 5 games into season), print an explicit note.
+    if len(all_picks) == 0 and (low_conf_n > 0 or low_safe_n > 0):
+        print(
+            f"\n  [EARLY_SEASON] 0 picks passed the confidence gate.\n"
+            f"  Likely cause: DB hit-rate validation requires 5+ games per player\n"
+            f"  (Rule 5.1). When DB history is absent, min_prob is raised to 75%%\n"
+            f"  from the base 65-70%% threshold (sim-only safety mode).\n"
+            f"  Expected to clear automatically once players log 5+ regular-season\n"
+            f"  games (~Oct 28-30). Do NOT lower thresholds to compensate.\n"
+        )
 
     # ── Build Parlay #1: Best 2-3 Picks ──────
     parlay_short = _select_diverse_picks(all_picks, target_count=3, max_per_game=2)

@@ -1,0 +1,58 @@
+--- RESULTS FOR 2026-05-06 ---
+
+==================================================
+MATCHUP: NYK @ PHI | 108 - 102
+==================================================
+Tyrese Maxey              | 26 PTS,  3 REB,  6 AST
+Jalen Brunson             | 26 PTS,  1 REB,  6 AST
+OG Anunoby                | 24 PTS,  5 REB,  2 AST
+Karl-Anthony Towns        | 20 PTS, 10 REB,  7 AST
+Paul George               | 19 PTS,  6 REB,  4 AST
+Kelly Oubre Jr.           | 19 PTS,  5 REB,  2 AST
+Mikal Bridges             | 18 PTS,  5 REB,  2 AST
+VJ Edgecombe              | 17 PTS,  5 REB,  3 AST
+Quentin Grimes            |  7 PTS,  3 REB,  3 AST
+Andre Drummond            |  6 PTS,  8 REB,  1 AST
+Dominick Barlow           |  6 PTS,  2 REB,  0 AST
+Jordan Clarkson           |  6 PTS,  5 REB,  0 AST
+Josh Hart                 |  5 PTS,  7 REB,  6 AST
+Miles McBride             |  4 PTS,  1 REB,  1 AST
+Jose Alvarado             |  3 PTS,  0 REB,  1 AST
+Adem Bona                 |  2 PTS,  7 REB,  1 AST
+Ariel Hukporti            |  2 PTS,  3 REB,  0 AST
+Landry Shamet             |  0 PTS,  0 REB,  0 AST
+Jeremy Sochan             |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: MIN @ SAS | 95 - 133
+==================================================
+Stephon Castle            | 21 PTS,  4 REB,  4 AST
+Victor Wembanyama         | 19 PTS, 15 REB,  2 AST
+De'Aaron Fox              | 16 PTS,  0 REB,  2 AST
+Julian Champagnie         | 12 PTS,  3 REB,  2 AST
+Julius Randle             | 12 PTS,  5 REB,  2 AST
+Terrence Shannon Jr.      | 12 PTS,  5 REB,  1 AST
+Jaden McDaniels           | 12 PTS,  3 REB,  4 AST
+Anthony Edwards           | 12 PTS,  3 REB,  0 AST
+Harrison Barnes           | 12 PTS,  2 REB,  0 AST
+Dylan Harper              | 11 PTS,  7 REB,  5 AST
+Naz Reid                  | 11 PTS,  7 REB,  0 AST
+Devin Vassell             | 10 PTS,  5 REB,  4 AST
+Keldon Johnson            |  9 PTS, 10 REB,  1 AST
+Kyle Anderson             |  8 PTS,  3 REB,  4 AST
+Lindy Waters III          |  8 PTS,  4 REB,  1 AST
+Joe Ingles                |  7 PTS,  2 REB,  0 AST
+Joan Beringer             |  7 PTS,  3 REB,  0 AST
+Kelly Olynyk              |  5 PTS,  1 REB,  2 AST
+Rudy Gobert               |  5 PTS, 10 REB,  1 AST
+Luke Kornet               |  4 PTS,  2 REB,  1 AST
+Mike Conley               |  3 PTS,  1 REB,  3 AST
+Jaylen Clark              |  3 PTS,  0 REB,  1 AST
+Julian Phillips           |  3 PTS,  0 REB,  1 AST
+Carter Bryant             |  2 PTS,  2 REB,  2 AST
+Jordan McLaughlin         |  2 PTS,  0 REB,  2 AST
+Bismack Biyombo           |  2 PTS,  0 REB,  0 AST
+Mason Plumlee             |  0 PTS,  0 REB,  1 AST
+Ayo Dosunmu               |  0 PTS,  0 REB,  0 AST
+Bones Hyland              |  0 PTS,  1 REB,  2 AST
+

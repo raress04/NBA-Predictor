@@ -1,0 +1,144 @@
+[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...
+[+] Loaded live Injury Report: 127 players marked Out/GTD.
+[+] ESPN: Fetched odds for 1 upcoming NBA games (source: Draft Kings)
+    [+] ESPN odds loaded for 1 events:
+        Denver Nuggets @ Minnesota Timberwolves
+    [+] Odds API: Found 8 events. Credits remaining: 306
+
+[+] Commencing Parallel Matchup Simulations...
+
+============================================================
+ MATCHUP: Denver Nuggets @ Minnesota Timberwolves
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    MIN 1.91 | DEN 1.91  (Draft Kings)
+     Spread: MIN -1.5 @ 1.98  (Draft Kings)
+     Total:  O/U 228.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event b24e970fd53c...
+        Found props for 14 players. Credits remaining: 300
+PROJECTED TOTAL: 255.6
+PROJECTED SCORE: MIN 125.5 - DEN 130.2
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Over (82% conf (raw: 94%), 44.3% edge)
+  [BIAS CORRECTION] SPREAD | Neutral | median=-5.0 | offset=+1.06 | corrected=-3.9
+  -> HOME SPREAD: MIN -1.5 ignore
+  [BIAS CORRECTION] SPREAD | Neutral | median=-5.0 | offset=+1.06 | corrected=-3.9
+  -> AWAY SPREAD: DEN +1.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=25.0 | offset=+0.47 | corrected=25.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  Anthony Edwards      -> 25 PTS, 4 REB, 4 AST (O/U 26.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (73% conf (raw: 73%), 23.2% edge), O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.47 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.19 | corrected=5.2
+  Julius Randle        -> 19 PTS, 6 REB, 5 AST (O/U 19.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=15.0 | offset=+0.47 | corrected=15.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Jaden McDaniels      -> 15 PTS, 3 REB, 3 AST (O/U 15.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.60 | corrected=8.6
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.28 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.24 | corrected=1.2
+  Rudy Gobert          -> 8 PTS, 8 REB, 1 AST (O/U 10.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (77% conf (raw: 78%), 27.5% edge), O/U 1.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.47 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  Donte DiVincenzo     -> 10 PTS, 3 REB, 4 AST (O/U 10.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Ayo Dosunmu          -> 13 PTS, 5 REB, 6 AST (O/U 11.5 points ignore, O/U 2.5 rebounds ignore, O/U 3.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.47 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  Naz Reid             -> 11 PTS, 6 REB, 1 AST (O/U 9.5 points ignore, O/U 4.5 rebounds ignore)
+  Bones Hyland         -> 13 PTS, 2 REB, 4 AST
+  Terrence Shannon Jr. -> 2 PTS, 1 REB, 1 AST
+  Jaylen Clark         -> 4 PTS, 1 REB, 1 AST
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=29.0 | offset=+0.47 | corrected=29.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  Jamal Murray         -> 29 PTS, 5 REB, 7 AST (O/U 25.5 points ignore, O/U 4.5 rebounds ignore, O/U 6.5 assists ignore)
+  Nikola Jokić         -> 27 PTS, 12 REB, 10 AST
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Christian Braun      -> 17 PTS, 5 REB, 3 AST (O/U 11.5 points VALUABLE: Over (81% conf (raw: 81%), 31.1% edge), O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.47 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  Cameron Johnson      -> 16 PTS, 4 REB, 2 AST (O/U 11.5 points VALUABLE: Over (76% conf (raw: 76%), 25.6% edge), O/U 2.5 rebounds ignore, O/U 1.5 assists ignore)
+  Tim Hardaway Jr.     -> 15 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS | Bench | median=9.0 | offset=+0.60 | corrected=9.6
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  Bruce Brown          -> 9 PTS, 3 REB, 1 AST (O/U 6.5 points ignore, O/U 3.5 rebounds ignore)
+  Spencer Jones        -> 2 PTS, 3 REB, 0 AST
+  Jalen Pickett        -> 1 PTS, 1 REB, 0 AST
+  Julian Strawther     -> 5 PTS, 1 REB, 1 AST
+  Jonas Valančiūnas    -> 5 PTS, 3 REB, 0 AST
+
+
+============================================================
+  🎯 GENERATING OPTIMAL PARLAYS...
+============================================================
+  ⚠️  [MARKET DISCREPANCY] Denver Nuggets @ Minnesota Timberwolves: Proj Margin -5.0, Market Margin +1.5
+  ⛔  [FATAL: MARKET_INVERSION_DETECTED] Denver Nuggets @ Minnesota Timberwolves. Proj -5.0 vs Market +1.5. Spreads skip to avoid trap.
+  [BIAS CORRECTION] POINTS | Starter | median=15.0 | offset=+0.47 | corrected=15.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  [BIAS CORRECTION] POINTS | Starter | median=25.0 | offset=+0.47 | corrected=25.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.47 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.19 | corrected=5.2
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.47 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  [BIAS CORRECTION] POINTS | Starter | median=29.0 | offset=+0.47 | corrected=29.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.60 | corrected=8.6
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.28 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.24 | corrected=1.2
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.47 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] POINTS | Bench | median=9.0 | offset=+0.60 | corrected=9.6
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.47 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  PICK VOLUME: 0 / 15 cap | 33 filtered (LOW_CONFIDENCE=3 | LOW_LINE_VOLATILITY=2 | LOW_SAFE_CONF=2 | MARKET_INVERSION=1 | MIN_GAP=24 | PARLAY_GATE_CLOSED =1)
+
+[+] Logged 33 filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)
+============================================================
+  ─────────────────────────────────────────
+  Combined Odds: 1.00x
+  🔥 RECOMMENDED STAKE: 0.20% of Bankroll
+  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)
+============================================================
+  ─────────────────────────────────────────
+  Combined Odds: 1.00x
+============================================================
+
+[+] Archived live projections to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/april/predicts_2026-04-26.txt

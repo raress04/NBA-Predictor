@@ -1,0 +1,74 @@
+MATCHUP: BOS vs. DET    113 - 121
+Paul George            | 38 PTS, 5 REB,  3 AST
+Cade Cunningham        | 22 PTS, 4 REB,  8 AST
+Jalen Duren            | 22 PTS, 9 REB,  1 AST
+Duncan Robinson        | 21 PTS, 2 REB,  2 AST
+Javonte Green          | 19 PTS, 4 REB,  0 AST
+Derrick White          | 17 PTS, 1 REB,  8 AST
+Payton Pritchard       | 17 PTS, 4 REB,  1 AST
+Jayson Tatum           | 13 PTS, 4 REB,  11 AST
+Ausar Thompson         | 11 PTS, 11 REB,  5 AST
+Sam Hauser             | 11 PTS, 4 REB,  1 AST
+Baylor Scheierman      | 8 PTS, 3 REB,  0 AST
+Isaiah Joe             | 8 PTS, 2 REB,  2 AST
+John Collins           | 6 PTS, 5 REB,  1 AST
+Paul Reed              | 6 PTS, 6 REB,  2 AST
+Mitchell Robinson      | 4 PTS, 3 REB,  1 AST
+Neemias Queta          | 3 PTS, 4 REB,  2 AST
+Daniss Jenkins         | 3 PTS, 2 REB,  3 AST
+Kevin Huerter          | 3 PTS, 3 REB,  2 AST
+Luka Garza             | 2 PTS, 2 REB,  0 AST
+Jordan Walsh           | 0 PTS, 6 REB,  1 AST
+Ronald Holland II      | 0 PTS, 1 REB,  1 AST
+Hugo González          | 0 PTS, 3 REB,  0 AST
+
+MATCHUP: PHI vs. NYK    106 - 100
+Tyrese Maxey           | 28 PTS, 4 REB,  5 AST
+Jalen Brunson          | 21 PTS, 5 REB,  3 AST
+Jaylen Brown           | 19 PTS, 8 REB,  6 AST
+Karl-Anthony Towns     | 19 PTS, 12 REB,  1 AST
+Josh Hart              | 14 PTS, 7 REB,  3 AST
+LeBron James           | 14 PTS, 9 REB,  7 AST
+Joel Embiid            | 13 PTS, 11 REB,  6 AST
+Anfernee Simons        | 13 PTS, 2 REB,  0 AST
+Andre Drummond         | 12 PTS, 14 REB,  4 AST
+Kentavious Caldwell-Pope | 10 PTS, 4 REB,  1 AST
+OG Anunoby             | 10 PTS, 5 REB,  0 AST
+VJ Edgecombe           | 9 PTS, 4 REB,  1 AST
+Jose Alvarado          | 8 PTS, 3 REB,  3 AST
+Landry Shamet          | 5 PTS, 2 REB,  4 AST
+Mikal Bridges          | 4 PTS, 3 REB,  1 AST
+Jordan Clarkson        | 4 PTS, 1 REB,  1 AST
+Miles McBride          | 3 PTS, 1 REB,  1 AST
+Adem Bona              | 0 PTS, 3 REB,  1 AST
+Jabari Walker          | 0 PTS, 0 REB,  1 AST
+
+MATCHUP: OKC vs. SAS    116 - 104
+Shai Gilgeous-Alexander | 32 PTS, 6 REB,  4 AST
+Stephon Castle         | 24 PTS, 7 REB,  1 AST
+Jared McCain           | 20 PTS, 2 REB,  2 AST
+Dylan Harper           | 18 PTS, 7 REB,  5 AST
+De'Aaron Fox           | 14 PTS, 7 REB,  7 AST
+Chet Holmgren          | 14 PTS, 7 REB,  2 AST
+Victor Wembanyama      | 12 PTS, 13 REB,  3 AST
+Jalen Williams         | 12 PTS, 7 REB,  2 AST
+Keldon Johnson         | 10 PTS, 4 REB,  1 AST
+Alex Caruso            | 9 PTS, 6 REB,  1 AST
+Julian Champagnie      | 8 PTS, 3 REB,  1 AST
+Devin Vassell          | 7 PTS, 3 REB,  1 AST
+Aday Mara              | 7 PTS, 2 REB,  1 AST
+Cason Wallace          | 6 PTS, 3 REB,  2 AST
+Jaylin Williams        | 5 PTS, 4 REB,  1 AST
+Ajay Mitchell          | 4 PTS, 5 REB,  6 AST
+Isaiah Hartenstein     | 4 PTS, 3 REB,  3 AST
+Luke Kornet            | 4 PTS, 1 REB,  0 AST
+Harrison Barnes        | 3 PTS, 0 REB,  0 AST
+Kenrich Williams       | 3 PTS, 2 REB,  0 AST
+David Jones Garcia     | 2 PTS, 0 REB,  0 AST
+Ja'Kobi Gillespie      | 2 PTS, 0 REB,  0 AST
+Maliq Brown            | 0 PTS, 0 REB,  1 AST
+Carter Bryant          | 0 PTS, 0 REB,  1 AST
+Tarris Reed Jr.        | 0 PTS, 0 REB,  0 AST
+Bennett Stirtz         | 0 PTS, 0 REB,  0 AST
+Brooks Barnhizer       | 0 PTS, 0 REB,  0 AST
+

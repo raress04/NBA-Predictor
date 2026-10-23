@@ -1,0 +1,56 @@
+--- RESULTS FOR 2026-05-10 ---
+
+==================================================
+MATCHUP: NYK @ PHI | 144 - 114
+==================================================
+Miles McBride             | 25 PTS,  4 REB,  0 AST
+Joel Embiid               | 24 PTS,  5 REB,  4 AST
+Jalen Brunson             | 22 PTS,  4 REB,  6 AST
+Karl-Anthony Towns        | 17 PTS,  4 REB, 10 AST
+Josh Hart                 | 17 PTS,  9 REB,  1 AST
+Tyrese Maxey              | 17 PTS,  2 REB,  4 AST
+Mikal Bridges             | 12 PTS,  4 REB,  6 AST
+Landry Shamet             | 12 PTS,  0 REB,  0 AST
+Kelly Oubre Jr.           | 10 PTS,  4 REB,  0 AST
+Dalen Terry               |  9 PTS,  1 REB,  3 AST
+VJ Edgecombe              |  8 PTS,  6 REB,  7 AST
+Justin Edwards            |  8 PTS,  1 REB,  1 AST
+Jose Alvarado             |  7 PTS,  3 REB,  1 AST
+Jordan Clarkson           |  7 PTS,  1 REB,  3 AST
+Paul George               |  7 PTS,  1 REB,  2 AST
+Adem Bona                 |  7 PTS,  2 REB,  0 AST
+Johni Broome              |  7 PTS,  1 REB,  1 AST
+Mitchell Robinson         |  6 PTS,  6 REB,  0 AST
+Quentin Grimes            |  6 PTS,  0 REB,  0 AST
+Jeremy Sochan             |  5 PTS,  2 REB,  2 AST
+Ariel Hukporti            |  5 PTS,  4 REB,  1 AST
+Pacôme Dadiet             |  5 PTS,  3 REB,  1 AST
+Dominick Barlow           |  5 PTS,  1 REB,  1 AST
+Tyler Kolek               |  4 PTS,  3 REB,  2 AST
+Andre Drummond            |  4 PTS,  4 REB,  0 AST
+Trendon Watford           |  2 PTS,  0 REB,  1 AST
+Jabari Walker             |  0 PTS,  2 REB,  0 AST
+Mohamed Diawara           |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: MIN @ SAS | 114 - 109
+==================================================
+Anthony Edwards           | 36 PTS,  6 REB,  2 AST
+Dylan Harper              | 24 PTS,  7 REB,  1 AST
+De'Aaron Fox              | 24 PTS,  4 REB,  3 AST
+Stephon Castle            | 20 PTS,  6 REB,  4 AST
+Naz Reid                  | 15 PTS,  9 REB,  4 AST
+Devin Vassell             | 14 PTS,  1 REB,  3 AST
+Jaden McDaniels           | 14 PTS,  6 REB,  0 AST
+Julius Randle             | 12 PTS,  8 REB,  3 AST
+Rudy Gobert               | 11 PTS, 13 REB,  4 AST
+Ayo Dosunmu               | 10 PTS,  5 REB,  3 AST
+Terrence Shannon Jr.      |  8 PTS,  2 REB,  2 AST
+Julian Champagnie         |  8 PTS,  5 REB,  3 AST
+Mike Conley               |  8 PTS,  0 REB,  2 AST
+Luke Kornet               |  7 PTS,  9 REB,  1 AST
+Keldon Johnson            |  4 PTS,  3 REB,  1 AST
+Victor Wembanyama         |  4 PTS,  4 REB,  1 AST
+Harrison Barnes           |  2 PTS,  1 REB,  0 AST
+Carter Bryant             |  2 PTS,  1 REB,  0 AST
+

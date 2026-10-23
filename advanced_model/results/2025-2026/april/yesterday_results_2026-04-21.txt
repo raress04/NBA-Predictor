@@ -1,0 +1,66 @@
+MATCHUP: PHI vs. BOS    111 - 97
+Jaylen Brown           | 36 PTS, 7 REB,  4 AST
+VJ Edgecombe           | 30 PTS, 10 REB,  2 AST
+Tyrese Maxey           | 29 PTS, 4 REB,  9 AST
+Jayson Tatum           | 19 PTS, 14 REB,  9 AST
+Paul George            | 19 PTS, 4 REB,  3 AST
+Kelly Oubre Jr.        | 12 PTS, 5 REB,  0 AST
+Andre Drummond         | 10 PTS, 8 REB,  2 AST
+Nikola Vučević         | 9 PTS, 5 REB,  1 AST
+Derrick White          | 8 PTS, 2 REB,  3 AST
+Neemias Queta          | 8 PTS, 6 REB,  0 AST
+Sam Hauser             | 6 PTS, 4 REB,  1 AST
+Quentin Grimes         | 6 PTS, 3 REB,  1 AST
+Justin Edwards         | 5 PTS, 4 REB,  1 AST
+Baylor Scheierman      | 5 PTS, 1 REB,  0 AST
+Payton Pritchard       | 4 PTS, 5 REB,  5 AST
+Luka Garza             | 2 PTS, 3 REB,  0 AST
+Adem Bona              | 0 PTS, 3 REB,  0 AST
+Jordan Walsh           | 0 PTS, 3 REB,  0 AST
+Ron Harper Jr.         | 0 PTS, 0 REB,  1 AST
+Dominick Barlow        | 0 PTS, 1 REB,  0 AST
+Max Shulga             | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: POR vs. SAS    106 - 103
+Scoot Henderson        | 31 PTS, 1 REB,  0 AST
+Stephon Castle         | 18 PTS, 7 REB,  5 AST
+De'Aaron Fox           | 17 PTS, 2 REB,  4 AST
+Devin Vassell          | 16 PTS, 12 REB,  2 AST
+Jrue Holiday           | 16 PTS, 5 REB,  9 AST
+Deni Avdija            | 14 PTS, 4 REB,  3 AST
+Robert Williams III    | 11 PTS, 9 REB,  4 AST
+Toumani Camara         | 10 PTS, 9 REB,  1 AST
+Luke Kornet            | 10 PTS, 9 REB,  2 AST
+Dylan Harper           | 10 PTS, 0 REB,  2 AST
+Julian Champagnie      | 9 PTS, 4 REB,  0 AST
+Donovan Clingan        | 9 PTS, 10 REB,  2 AST
+Shaedon Sharpe         | 9 PTS, 1 REB,  0 AST
+Keldon Johnson         | 7 PTS, 4 REB,  1 AST
+Carter Bryant          | 7 PTS, 2 REB,  2 AST
+Victor Wembanyama      | 5 PTS, 4 REB,  1 AST
+Jerami Grant           | 5 PTS, 1 REB,  0 AST
+Harrison Barnes        | 4 PTS, 1 REB,  0 AST
+Kris Murray            | 1 PTS, 2 REB,  0 AST
+Matisse Thybulle       | 0 PTS, 1 REB,  1 AST
+
+MATCHUP: HOU vs. LAL    94 - 101
+LeBron James           | 28 PTS, 8 REB,  7 AST
+Marcus Smart           | 25 PTS, 2 REB,  7 AST
+Luke Kennard           | 23 PTS, 6 REB,  2 AST
+Kevin Durant           | 23 PTS, 6 REB,  4 AST
+Alperen Sengun         | 20 PTS, 11 REB,  5 AST
+Jabari Smith Jr.       | 18 PTS, 6 REB,  1 AST
+Amen Thompson          | 16 PTS, 5 REB,  9 AST
+Rui Hachimura          | 13 PTS, 5 REB,  2 AST
+Tari Eason             | 10 PTS, 8 REB,  1 AST
+Josh Okogie            | 7 PTS, 2 REB,  0 AST
+Jaxson Hayes           | 6 PTS, 4 REB,  1 AST
+Deandre Ayton          | 6 PTS, 5 REB,  1 AST
+Jarred Vanderbilt      | 0 PTS, 5 REB,  1 AST
+Reed Sheppard          | 0 PTS, 0 REB,  3 AST
+Clint Capela           | 0 PTS, 2 REB,  0 AST
+Jake LaRavia           | 0 PTS, 2 REB,  0 AST
+Aaron Holiday          | 0 PTS, 1 REB,  0 AST
+Jae'Sean Tate          | 0 PTS, 1 REB,  0 AST
+Bronny James           | 0 PTS, 0 REB,  0 AST
+

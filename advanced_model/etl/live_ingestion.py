@@ -24,7 +24,8 @@ from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
 from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game
 from config.settings import (
     CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed,
-    MAX_PROP_CONFIDENCE, B2B_SHOOTING_PENALTY, B2B_TOV_BOOST
+    MAX_PROP_CONFIDENCE, B2B_SHOOTING_PENALTY, B2B_TOV_BOOST,
+    CONFIDENCE_PRIOR_STRENGTH, BLOWOUT_SPREAD_THRESHOLD
 )
 from utils.bias import get_tiered_bias
 from simulator.parlay_builder import (
@@ -33,6 +34,7 @@ from simulator.parlay_builder import (
 )
 from simulator.markov_engine import compute_posterior_confidence
 from etl.bet_tracker import ingest_shadow_picks
+from ml.shadow_logger import log_ml_shadow_pick  # P1-3: ML shadow pipeline
 
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'nba_data.db')
 
@@ -75,6 +77,45 @@ def get_latest_season(conn) -> str:
     except:
         pass
     return '2025-26'  # fallback
+
+# Regular season start dates per season — used to exclude preseason games from baselines.
+# Preseason games use irregular rotations and limited starters minutes, which would skew
+# usage weights, pace, and shooting% baselines if included.
+REGULAR_SEASON_STARTS = {
+    '2026-27': '2026-10-20',
+    '2025-26': '2025-10-22',
+    '2024-25': '2024-10-22',
+    '2023-24': '2023-10-24',
+    '2022-23': '2022-10-18',
+    '2021-22': '2021-10-19',
+    '2020-21': '2020-12-22',
+    '2019-20': '2019-10-22',
+}
+
+def get_season_start(season: str) -> str:
+    '''Return the regular season start date for a given season string.
+    Falls back to October 1 of the start year if season not in map.'''
+    if season in REGULAR_SEASON_STARTS:
+        return REGULAR_SEASON_STARTS[season]
+    # Generic fallback: use Oct 1 of the first year in "YYYY-YY" format
+    try:
+        year = int(season.split('-')[0])
+        return f'{year}-10-01'
+    except Exception:
+        return '2000-01-01'
+
+def get_latest_season_before(conn, current_season: str) -> str:
+    '''Return the most recent season in the DB that is before current_season.
+    Used as fallback baseline when current season has too few regular season games.'''
+    try:
+        c = conn.cursor()
+        c.execute("SELECT MAX(season) FROM box_scores WHERE season < ?", (current_season,))
+        row = c.fetchone()
+        if row and row[0]:
+            return row[0]
+    except:
+        pass
+    return '2025-26'  # hard fallback
 
 ROSTER_CSV = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'rosters.csv')
 
@@ -187,12 +228,30 @@ def get_expected_lineup(team_id: int, conn, injured_normalized: dict = None) -> 
     if not healthy_roster:
         return []
 
-    # Get the average minutes for these healthy players across their most recent games
+    # Get the average minutes for these healthy players across their most recent games.
+    # Exclude preseason games (irregular rotations/limited minutes skew baselines).
+    # If current season has < 5 regular season games, fall back to previous season for baselines.
     latest_season = get_latest_season(conn)
+    season_start = get_season_start(latest_season)
     placeholders = ','.join(['?'] * len(healthy_roster))
-    query = f"SELECT player_name, minutes FROM box_scores WHERE player_name IN ({placeholders}) AND season = ?"
-    
-    df = pd.read_sql_query(query, conn, params=healthy_roster + [latest_season])
+
+    reg_season_count = conn.execute(
+        "SELECT COUNT(DISTINCT game_id) FROM box_scores WHERE season = ? AND game_date >= ?",
+        (latest_season, season_start)
+    ).fetchone()[0]
+
+    if reg_season_count >= 5:
+        # Enough regular season data — use current season, exclude preseason
+        query = f"""SELECT player_name, minutes FROM box_scores
+                    WHERE player_name IN ({placeholders})
+                    AND season = ? AND game_date >= ?"""
+        df = pd.read_sql_query(query, conn, params=healthy_roster + [latest_season, season_start])
+    else:
+        # Early season fallback: use previous season data for baselines
+        prev_season = get_latest_season_before(conn, latest_season)
+        query = f"""SELECT player_name, minutes FROM box_scores
+                    WHERE player_name IN ({placeholders}) AND season = ?"""
+        df = pd.read_sql_query(query, conn, params=healthy_roster + [prev_season])
     
     def parse_minutes(m):
         if pd.isna(m): return 0.0
@@ -553,7 +612,7 @@ def redistribute_usage(team_matrix: dict, full_roster_usage: dict, team_tricode:
 
 
 def process_hist_game(game, target_date, injured_normalized):
-    import io, contextlib, time
+    import io, contextlib, time, sqlite3 as _sqlite3
     from simulator.markov_engine import MarkovSimulator
     from simulator.matrix_builder import get_player_stats_matrix, get_team_pace, get_team_efficiency, get_team_rebound_efficiency
     from simulator.synergy_tracker import compute_matchup_multiplier
@@ -705,25 +764,37 @@ def process_hist_game(game, target_date, injured_normalized):
             print("   TOP PLAYER PROP PROJECTIONS (MEDIAN)")
             print("-" * 40)
 
-            # ── Load stale cached prop lines from when this date was originally run ──
-            import json as _json
+            # ── Load prop lines from historical_odds_cache (Action Network scrape) ──
+            # Option A patch: replaced stale .cache/odds_api_events.json fallback
+            # with a direct DB query so --date backtests use scraped odds.
             game_props = {}
-            _cache_events_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.cache', 'odds_api_events.json')
-            _cached_event_ids = {}
-            if os.path.exists(_cache_events_path):
-                try:
-                    with open(_cache_events_path, 'r', encoding='utf-8') as _f:
-                        _cached_event_ids = _json.load(_f)
-                except Exception:
-                    pass
-
-            if _cached_event_ids:
-                _eid = match_event_id_to_game(_cached_event_ids, home_team_full, away_team_full)
-                if _eid:
-                    try:
-                        game_props = fetch_player_props(_eid, force_cache=True)
-                    except Exception as _e:
-                        print(f"    [!] Could not load cached props: {_e}")
+            try:
+                _cat_map = {'POINTS': 'points', 'REBOUNDS': 'rebounds', 'ASSISTS': 'assists'}
+                _bt_db = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', 'bet_tracker.db')
+                _bt_conn = _sqlite3.connect(_bt_db)
+                _rows = _bt_conn.execute(
+                    "SELECT player_name, stat_category, line, over_odds, under_odds "
+                    "FROM historical_odds_cache WHERE date = ? "
+                    "AND stat_category IN ('POINTS','REBOUNDS','ASSISTS')",
+                    (target_date,)
+                ).fetchall()
+                _bt_conn.close()
+                for _pname, _cat, _line, _over, _under in _rows:
+                    if _pname not in game_props:
+                        game_props[_pname] = {}
+                    _sk = _cat_map.get(_cat)
+                    if _sk:
+                        game_props[_pname][_sk] = {
+                            'line':       float(_line),
+                            'over_odds':  float(_over  or 1.909),
+                            'under_odds': float(_under or 1.909),
+                        }
+                if game_props:
+                    print(f"    [+] Loaded {len(game_props)} player prop lines from historical_odds_cache for {target_date}")
+                else:
+                    print(f"    [!] No prop lines found in historical_odds_cache for {target_date} — projection-only mode")
+            except Exception as _e:
+                print(f"    [!] Could not load historical odds: {_e}")
 
             for team, lineup in [("HOME", home_lineup), ("AWAY", away_lineup)]:
                 print(f"[{team} TEAM]")
@@ -753,7 +824,7 @@ def process_hist_game(game, target_date, injured_normalized):
                                     if edge_data['valuable']:
                                         raw_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
                                         best_conf = min(raw_conf, MAX_PROP_CONFIDENCE)
-                                        prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf, {abs(edge_data['edge_pct']):.1f}% edge)")
+                                        prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {stat_name} ignore")
                             if prop_details:
@@ -1046,7 +1117,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             # Underdog starters sit in garbage time -> bench gets usage.
             if game_odds and game_odds.get('spreads'):
                 market_spread = abs(float(game_odds['spreads']['home_spread']))
-                if market_spread > 9.5:
+                if market_spread > BLOWOUT_SPREAD_THRESHOLD:
                     home_spread_val = float(game_odds['spreads']['home_spread'])
                     # Negative home_spread = home team is favorite -> underdog is away
                     underdog_matrix = away_matrix if home_spread_val < 0 else home_matrix
@@ -1137,7 +1208,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         raw_conf = t_edge['confidence_over'] if t_edge['direction'] == 'Over' else t_edge['confidence_under']
                         t_prior = get_prior('TOTAL', t_edge['direction'])
                         t_target_count = t_edge['over_count'] if t_edge['direction'] == 'Over' else t_edge['under_count']
-                        t_post, _ = compute_posterior_confidence(t_target_count, t_edge['n_sim'], prior_mean=t_prior, prior_strength=10)
+                        t_post, _ = compute_posterior_confidence(t_target_count, t_edge['n_sim'], prior_mean=t_prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH)
                         best_conf = min(t_post * 100.0, MAX_PROP_CONFIDENCE)
                         if not is_allowed('TOTAL', t_edge['direction']):
                             print(f"  -> GAME TOTAL: O/U {t_data['total']} ⛔ BANNED_CATEGORY")
@@ -1152,7 +1223,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                     
                     h_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['home_spread'], is_home=True)
                     h_prior = get_prior('SPREAD', 'COVER')
-                    h_post, _ = compute_posterior_confidence(h_edge['over_count'], h_edge['n_sim'], prior_mean=h_prior, prior_strength=10)
+                    h_post, _ = compute_posterior_confidence(h_edge['over_count'], h_edge['n_sim'], prior_mean=h_prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH)
                     h_conf = min(h_post * 100.0, MAX_PROP_CONFIDENCE)
                     if h_conf >= s_thresh['min_prob'] and h_edge['edge_pct'] >= s_thresh['min_edge']:
                         if not is_allowed('SPREAD', 'COVER'):
@@ -1164,7 +1235,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         
                     a_edge = compute_spread_edge(home_scores_list, away_scores_list, s_data['away_spread'], is_home=False)
                     a_prior = get_prior('SPREAD', 'COVER')
-                    a_post, _ = compute_posterior_confidence(a_edge['over_count'], a_edge['n_sim'], prior_mean=a_prior, prior_strength=10)
+                    a_post, _ = compute_posterior_confidence(a_edge['over_count'], a_edge['n_sim'], prior_mean=a_prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH)
                     a_conf = min(a_post * 100.0, MAX_PROP_CONFIDENCE)
                     if a_conf >= s_thresh['min_prob'] and a_edge['edge_pct'] >= s_thresh['min_edge']:
                         if not is_allowed('SPREAD', 'COVER'):
@@ -1219,7 +1290,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                         raw_conf = edge_data['confidence'] if edge_data['direction'] == "Over" else (100 - edge_data['confidence'])
                                         p_prior = get_prior(stat_key, edge_data['direction'])
                                         target_count = edge_data['over_count'] if edge_data['direction'] == "Over" else (edge_data['n_sim'] - edge_data['over_count'])
-                                        p_post, _ = compute_posterior_confidence(target_count, edge_data['n_sim'], prior_mean=p_prior, prior_strength=10)
+                                        p_post, _ = compute_posterior_confidence(target_count, edge_data['n_sim'], prior_mean=p_prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH)
                                         best_conf = min(p_post * 100.0, MAX_PROP_CONFIDENCE)
                                         prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
@@ -1253,8 +1324,13 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                         
                             if prop_details:
                                 props_str = " (" + ", ".join(prop_details) + ")"
+
+                        # Check if this player has high trade uncertainty
+                        _matrix_dict = home_matrix if team == "HOME" else away_matrix
+                        _uncertain = _matrix_dict.get(p, {}).get('_high_uncertainty', False)
+                        _uncertain_tag = " [HIGH_UNCERTAINTY]" if _uncertain else ""
                                 
-                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}")
+                        print(f"  {p:20} -> {median_pts} PTS, {median_reb} REB, {median_ast} AST{props_str}{_uncertain_tag}")
                 print("")
 
             # ── Issue 3 Fix: Skip unstable games from parlay pool ──────
@@ -1319,7 +1395,7 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             
     return payload
 
-def generate_todays_projections():
+def generate_todays_projections(is_shadow=False):
     print("[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...")
     
     # Pre-fetch live injuries — returns (raw_set, normalized_dict)
@@ -1516,7 +1592,29 @@ def generate_todays_projections():
                 n_shadow = ingest_shadow_picks(shadow_data)
                 print(f"\n[+] Logged {n_shadow} filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.")
 
-            if getattr(args, 'shadow', False):
+            # P1-3: ML Shadow Pipeline — log XGB inference on every accepted prop pick
+            # Runs always (no --shadow flag needed). USE_ML_CALIBRATION stays False.
+            _ml_log_date = datetime.now().strftime("%Y-%m-%d")
+            _ml_logged = 0
+            for _p in parlays.get('all_picks', []):
+                if _p.get('type') == 'prop' and _p.get('player') and _p.get('stat_category'):
+                    _logged = log_ml_shadow_pick(
+                        game_date     = _ml_log_date,
+                        player        = _p.get('player'),
+                        stat_category = _p.get('stat_category'),
+                        direction     = _p.get('direction', 'OVER'),
+                        line          = _p.get('line'),
+                        projection    = _p.get('projection'),
+                        sim_confidence= _p.get('confidence'),
+                        edge_pct      = _p.get('edge_pct'),
+                        base_features = None,  # feature query done inside shadow_logger
+                    )
+                    if _logged:
+                        _ml_logged += 1
+            if _ml_logged:
+                print(f"\n[P1-3] ML shadow: logged {_ml_logged} picks to ml_shadow_picks.")
+
+            if is_shadow:
                 game_date = datetime.now().strftime("%Y-%m-%d")
                 ml_shadows = []
                 for p in parlays.get('all_picks', []):
@@ -1575,7 +1673,12 @@ class TeeLogger:
         ]
 
     def write(self, message):
-        self.terminal.write(message)
+        try:
+            self.terminal.write(message)
+        except UnicodeEncodeError:
+            encoding = getattr(self.terminal, 'encoding', 'cp1252') or 'cp1252'
+            safe_msg = message.encode(encoding, errors='replace').decode(encoding, errors='replace')
+            self.terminal.write(safe_msg)
         self.buffer += message
         while '\n' in self.buffer:
             line, self.buffer = self.buffer.split('\n', 1)
@@ -1592,12 +1695,63 @@ class TeeLogger:
             self.buffer = ""
         self.log.flush()
 
-if __name__ == '__main__':
+def compile_latex_to_pdf(tex_path: str, out_dir: str) -> bool:
+    import subprocess
+    import shutil
+    tex_path = os.path.abspath(tex_path)
+    out_dir = os.path.abspath(out_dir)
+    stem = os.path.splitext(os.path.basename(tex_path))[0]
+    pdf_path = os.path.join(out_dir, stem + '.pdf')
+
+    cmd = None
+    if shutil.which('pdflatex') is not None:
+        cmd = ['pdflatex', '-interaction=nonstopmode', f'-output-directory={out_dir}', tex_path]
+    else:
+        try:
+            wsl_check = subprocess.run(['wsl', 'which', 'pdflatex'], capture_output=True, text=True)
+            if wsl_check.returncode == 0 and '/pdflatex' in wsl_check.stdout:
+                def win_to_wsl(p):
+                    drive, rest = os.path.splitdrive(p)
+                    drive_letter = drive.replace(':', '').lower()
+                    return f"/mnt/{drive_letter}" + rest.replace('\\', '/')
+                cmd = ['wsl', 'pdflatex', '-interaction=nonstopmode',
+                       f'-output-directory={win_to_wsl(out_dir)}', win_to_wsl(tex_path)]
+        except Exception:
+            pass
+
+    if not cmd:
+        print("    [!] pdflatex not found on Windows or WSL.")
+        return False
+
+    for _ in range(2):
+        subprocess.run(cmd, check=False, capture_output=True)
+
+    if os.path.exists(pdf_path):
+        print(f"    [+] PDF compiled: {pdf_path}")
+        for ext in ['.aux', '.log', '.tex']:
+            f_clean = os.path.join(out_dir, stem + ext)
+            if os.path.exists(f_clean):
+                try:
+                    os.remove(f_clean)
+                except OSError:
+                    pass
+        print(f"    [+] Cleaned up auxiliary files ({stem}.aux, .log, .tex)")
+        return True
+    else:
+        print(f"    [-] pdflatex ran but PDF not found: {pdf_path}")
+        return False
+
+def main():
     import argparse
     import config.settings as cfg_settings
+    from utils.prediction_paths import get_prediction_filepath, get_prediction_dir
+    import shutil
+    import subprocess
     
     parser = argparse.ArgumentParser(description='NBA Projection Engine')
-    parser.add_argument('--date', type=str, help='Historical date to simulate (YYYY-MM-DD). Omit for today\'s live projections.')
+    parser.add_argument('--date', type=str, help='Date to simulate (YYYY-MM-DD).')
+    parser.add_argument('--mode', choices=['live', 'backtest'], default=None,
+                        help='Explicit mode: live or backtest. Required if --date is specified.')
     parser.add_argument('--shadow', action='store_true', help='Run in ML shadow mode, modifying confidences and saving as shadow picks.')
     args = parser.parse_args()
 
@@ -1607,50 +1761,49 @@ if __name__ == '__main__':
         print("\n[!] RUNNING IN SHADOW MODE: ML Calibration ENABLED.")
 
     if args.date:
-        date_obj = datetime.strptime(args.date, '%Y-%m-%d')
-        month_name = date_obj.strftime('%B').lower()
-        folder_path = os.path.join(MODEL_DIR, 'predictions', month_name)
-        os.makedirs(folder_path, exist_ok=True)
-        log_path = os.path.join(folder_path, f'predicts_{args.date}.txt')
+        if not args.mode:
+            parser.error("--date requires explicit --mode live or --mode backtest to prevent ambiguous report routing.")
+        exec_mode = args.mode
+        date_str = args.date
     else:
-        log_name = 'shadow_predicts.txt' if getattr(args, 'shadow', False) else 'predicts.txt'
-        log_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), log_name)
+        exec_mode = args.mode or 'live'
+        date_str = datetime.now().strftime('%Y-%m-%d')
+
+    log_path = get_prediction_filepath(date_str, mode=exec_mode, ext='txt', base_dir=MODEL_DIR)
+    out_dir  = get_prediction_dir(date_str, mode=exec_mode, base_dir=MODEL_DIR)
+    os.makedirs(out_dir, exist_ok=True)
         
-    sys.stdout = TeeLogger(log_path)    
-    if args.date:
-        generate_historical_projections(args.date)
-        
-        # Automatically generate the PDF/TeX report for the historical date
-        print(f"\n[+] Generating historical PDF report for {args.date}...")
-        try:
-            import subprocess
-            # call predicts_to_pdf.py --input predicts_{args.date}.txt --output predicts_report_{args.date}
-            subprocess.run([
-                sys.executable, 
-                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'predicts_to_pdf.py'),
-                '--input', log_path, # Use the absolute path since we saved it in folder_path
-                '--output', f'predicts_report_{args.date}'
-            ], check=True)
-            print(f"    [+] Successfully generated predicts_report_{args.date}.tex")
-        except Exception as e:
-            print(f"    [-] Failed to generate PDF report: {e}")
-            
+    sys.stdout = TeeLogger(log_path)
+    print(f"[+] Execution mode: {exec_mode.upper()} | Date: {date_str}")
+    print(f"[+] Routing log to: {log_path}")
+
+    if exec_mode == 'backtest':
+        generate_historical_projections(date_str)
     else:
-        generate_todays_projections()
-        
-        # Archive it automatically
-        import shutil
-        today = datetime.now()
-        month_name = today.strftime('%B').lower()
-        today_str = today.strftime('%Y-%m-%d')
-        
-        archive_dir = os.path.join(MODEL_DIR, 'predictions', month_name)
-        os.makedirs(archive_dir, exist_ok=True)
-        archive_path = os.path.join(archive_dir, f'predicts_{today_str}.txt')
-        
-        try:
-            shutil.copy(log_path, archive_path)
-            print(f"\n[+] Archived live projections to: {archive_path}")
-        except Exception as e:
-            print(f"\n[-] Failed to archive predictions: {e}")
+        generate_todays_projections(is_shadow=getattr(args, 'shadow', False))
+
+
+
+    # Automatically generate the PDF/TeX report in the mode-isolated directory
+    print(f"\n[+] Generating {exec_mode} PDF report for {date_str}...")
+    try:
+        _tex_stem = f'predicts_report_{date_str}'
+        _tex_path = os.path.join(out_dir, _tex_stem + '.tex')
+
+        subprocess.run([
+            sys.executable,
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), 'predicts_to_pdf.py'),
+            '--input', log_path,
+            '--output', _tex_path.replace('.tex', ''),
+            '--date', date_str,
+        ], check=True)
+        print(f"    [+] LaTeX written to: {_tex_path}")
+
+        compile_latex_to_pdf(_tex_path, out_dir)
+    except Exception as e:
+        print(f"    [-] Failed to generate PDF report: {e}")
+
+
+if __name__ == '__main__':
+    main()
 

@@ -1,3 +1,8 @@
+import sys
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 import requests
 import sqlite3
 import time
@@ -190,6 +195,10 @@ def store_day(date_str, data):
     data: { (eid, name): {stat: {'line': X, 'over_odds': Y, 'under_odds': Z}} }
     Backwards-compatible: also accepts old {stat: line} float format.
     """
+    if len(date_str) == 8 and '-' not in date_str:
+        formatted_date = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:8]}"
+    else:
+        formatted_date = date_str
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     upserts = 0
@@ -242,7 +251,7 @@ def main(start_date, end_date=None):
 
         if day_results:
             n = store_day(ds, day_results)
-            print(f"  [✓] Stored {n} lines (with odds).")
+            print(f"  [+] Stored {n} lines (with odds).")
         else:
             print(f"  [!] No data found for {ds}.")
 

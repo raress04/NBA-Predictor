@@ -1,0 +1,56 @@
+--- RESULTS FOR 2026-05-04 ---
+
+==================================================
+MATCHUP: NYK @ PHI | 137 - 98
+==================================================
+Jalen Brunson             | 35 PTS,  1 REB,  3 AST
+OG Anunoby                | 18 PTS,  3 REB,  1 AST
+Mikal Bridges             | 17 PTS,  2 REB,  5 AST
+Karl-Anthony Towns        | 17 PTS,  6 REB,  6 AST
+Paul George               | 17 PTS,  3 REB,  3 AST
+Joel Embiid               | 14 PTS,  4 REB,  1 AST
+Tyrese Maxey              | 13 PTS,  3 REB,  2 AST
+Kelly Oubre Jr.           | 12 PTS,  5 REB,  1 AST
+VJ Edgecombe              | 12 PTS,  1 REB,  2 AST
+Josh Hart                 |  8 PTS,  8 REB,  6 AST
+Tyler Kolek               |  8 PTS,  0 REB,  4 AST
+Miles McBride             |  8 PTS,  0 REB,  2 AST
+Justin Edwards            |  8 PTS,  0 REB,  0 AST
+Dominick Barlow           |  7 PTS,  3 REB,  0 AST
+Ariel Hukporti            |  5 PTS,  9 REB,  0 AST
+Quentin Grimes            |  5 PTS,  1 REB,  4 AST
+Jose Alvarado             |  5 PTS,  1 REB,  1 AST
+Mohamed Diawara           |  5 PTS,  2 REB,  1 AST
+Trendon Watford           |  5 PTS,  1 REB,  1 AST
+Pacôme Dadiet             |  4 PTS,  1 REB,  2 AST
+Landry Shamet             |  3 PTS,  0 REB,  2 AST
+Dalen Terry               |  3 PTS,  0 REB,  1 AST
+Mitchell Robinson         |  2 PTS,  4 REB,  1 AST
+Jordan Clarkson           |  2 PTS,  2 REB,  0 AST
+Jabari Walker             |  2 PTS,  2 REB,  0 AST
+Andre Drummond            |  0 PTS,  3 REB,  0 AST
+Johni Broome              |  0 PTS,  1 REB,  0 AST
+Adem Bona                 |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: MIN @ SAS | 104 - 102
+==================================================
+Julius Randle             | 21 PTS, 10 REB,  2 AST
+Anthony Edwards           | 18 PTS,  3 REB,  3 AST
+Dylan Harper              | 18 PTS,  4 REB,  4 AST
+Julian Champagnie         | 17 PTS,  7 REB,  0 AST
+Stephon Castle            | 17 PTS,  5 REB,  5 AST
+Jaden McDaniels           | 16 PTS,  5 REB,  2 AST
+Terrence Shannon Jr.      | 16 PTS,  5 REB,  1 AST
+Devin Vassell             | 14 PTS,  5 REB,  3 AST
+Mike Conley               | 12 PTS,  2 REB,  6 AST
+Naz Reid                  | 12 PTS,  9 REB,  1 AST
+Victor Wembanyama         | 11 PTS, 15 REB,  5 AST
+Keldon Johnson            | 11 PTS,  2 REB,  1 AST
+De'Aaron Fox              | 10 PTS,  3 REB,  6 AST
+Rudy Gobert               |  7 PTS, 10 REB,  3 AST
+Harrison Barnes           |  2 PTS,  4 REB,  0 AST
+Luke Kornet               |  2 PTS,  2 REB,  0 AST
+Jaylen Clark              |  2 PTS,  1 REB,  0 AST
+Bones Hyland              |  0 PTS,  1 REB,  2 AST
+

@@ -1,0 +1,4169 @@
+{
+  "tables": [
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "daily_picks",
+      "db": "bet_tracker",
+      "row_count": 31922
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "game_results",
+      "db": "bet_tracker",
+      "row_count": 211
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "historical_odds_cache",
+      "db": "bet_tracker",
+      "row_count": 57491
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "parlay_legs",
+      "db": "bet_tracker",
+      "row_count": 62
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "parlays",
+      "db": "bet_tracker",
+      "row_count": 26
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "pick_results",
+      "db": "bet_tracker",
+      "row_count": 31686
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "projection_outcomes",
+      "db": "bet_tracker",
+      "row_count": 9938
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "projection_outcomes_raw",
+      "db": "bet_tracker",
+      "row_count": 32382
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "shadow_picks",
+      "db": "bet_tracker",
+      "row_count": 2844
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "sqlite_sequence",
+      "db": "bet_tracker",
+      "row_count": 8
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "box_scores",
+      "db": "nba_data",
+      "row_count": 201899
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "games",
+      "db": "nba_data",
+      "row_count": 9318
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "historical_injuries",
+      "db": "nba_data",
+      "row_count": 19712
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "sqlite_sequence",
+      "db": "nba_data",
+      "row_count": 1
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "teams",
+      "db": "nba_data",
+      "row_count": 30
+    },
+    {
+      "type": "table",
+      "schema": "main",
+      "table": "projection_outcomes",
+      "db": "master_training",
+      "row_count": 76068
+    },
+    {
+      "type": "view",
+      "schema": "main",
+      "table": "training_clean",
+      "db": "master_training",
+      "row_count": 65787
+    }
+  ],
+  "core_tables": [
+    {
+      "db": "bet_tracker",
+      "table": "daily_picks",
+      "role": "picks"
+    },
+    {
+      "db": "bet_tracker",
+      "table": "pick_results",
+      "role": "results"
+    },
+    {
+      "db": "bet_tracker",
+      "table": "parlays",
+      "role": "parlays"
+    },
+    {
+      "db": "bet_tracker",
+      "table": "parlay_legs",
+      "role": "parlay_legs"
+    },
+    {
+      "db": "bet_tracker",
+      "table": "projection_outcomes",
+      "role": "outcomes_tracker"
+    },
+    {
+      "db": "nba_data",
+      "table": "box_scores",
+      "role": "box_scores"
+    },
+    {
+      "db": "nba_data",
+      "table": "games",
+      "role": "games"
+    },
+    {
+      "db": "nba_data",
+      "table": "teams",
+      "role": "teams"
+    },
+    {
+      "db": "master_training",
+      "table": "projection_outcomes",
+      "role": "training_data"
+    }
+  ],
+  "schemas": {
+    "bet_tracker": {
+      "daily_picks": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "bet_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "stat_category",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "player_or_team",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "game",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "sim_confidence",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "blended_confidence",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "edge_pct",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "projected_margin",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "safety_margin",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "market_spread",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "raw_sim_freq",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "clv",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'live'",
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "model_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'ERA_5_REFORMS'",
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "synthetic_flag",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 21,
+          "name": "ml_correction_applied",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'NONE'",
+          "pk": false
+        }
+      ],
+      "game_results": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "home_team",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "away_team",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "home_score",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "away_score",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "historical_odds_cache": [
+        {
+          "cid": 0,
+          "name": "event_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "player_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "stat_category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "over_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "-110",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "under_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "-110",
+          "pk": false
+        }
+      ],
+      "parlay_legs": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "parlay_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "leg_number",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "pick_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "stat_category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "sim_confidence",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "edge_pct",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "parlays": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "model_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'ERA_5_REFORMS'",
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "combined_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "stake",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "payout",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "result",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "roi",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        }
+      ],
+      "pick_results": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "pick_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "is_win",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "diff_val",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "diff_pct",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "resolved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "projection_outcomes": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "projected_value",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "bookmaker_line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "model_bias",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "synthetic_flag",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "model_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "projection_outcomes_raw": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "matchup",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "projected_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "bookmaker_line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "model_bias",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "confidence",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "edge_pct",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "is_valuable",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "shadow_picks": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "stat_category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "projection",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "sim_confidence",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "edge_pct",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "ban_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "actual_result",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "clv",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "model_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'ERA_5_REFORMS'",
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "resolved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "sqlite_sequence": [
+        {
+          "cid": 0,
+          "name": "name",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "seq",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ]
+    },
+    "nba_data": {
+      "box_scores": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "season",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "game_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "team_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "player_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "player_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "minutes",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "fgm",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "fga",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "fg3m",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "fg3a",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "ftm",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "fta",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "oreb",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "dreb",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "reb",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "ast",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "stl",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "blk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "tov",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 21,
+          "name": "pf",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 22,
+          "name": "pts",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 23,
+          "name": "plus_minus",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "games": [
+        {
+          "cid": 0,
+          "name": "game_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "matchup",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "season",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "historical_injuries": [
+        {
+          "cid": 0,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 2,
+          "name": "team",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 3,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "sqlite_sequence": [
+        {
+          "cid": 0,
+          "name": "name",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "seq",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "teams": [
+        {
+          "cid": 0,
+          "name": "team_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "abbreviation",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "city",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "nickname",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ]
+    },
+    "master_training": {
+      "projection_outcomes": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "projected_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "bookmaker_line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "over_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "under_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "model_bias",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "season",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "edge_pct",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "conf",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "is_default_odds",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "ml_usable_classification",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "ml_usable_regression",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "1",
+          "pk": false
+        }
+      ],
+      "training_clean": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "game_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "player",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "projected_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "bookmaker_line",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "over_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "under_odds",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "model_bias",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "season",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "edge_pct",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "conf",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "direction",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "is_default_odds",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "ml_usable_classification",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "ml_usable_regression",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "implied_spread",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "direction_implied",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ]
+    }
+  },
+  "feature_matrix_meta": {
+    "path": "C:\\Users\\balca\\OneDrive\\Projects\\AiBetTool\\advanced_model\\database\\feature_matrix_v2.parquet",
+    "n_rows": 73821,
+    "n_cols": 42,
+    "column_names": [
+      "game_date",
+      "player",
+      "category",
+      "projected_value",
+      "bookmaker_line",
+      "over_odds",
+      "under_odds",
+      "edge_pct",
+      "conf",
+      "season",
+      "gap",
+      "over_implied",
+      "under_implied",
+      "vig",
+      "odds_skew",
+      "direction_bin",
+      "roll5_pts",
+      "roll10_pts",
+      "roll5_std_pts",
+      "roll5_reb",
+      "roll10_reb",
+      "roll5_std_reb",
+      "roll5_ast",
+      "roll10_ast",
+      "roll5_std_ast",
+      "roll5_min",
+      "roll10_min",
+      "last_game_pts",
+      "last_game_reb",
+      "last_game_ast",
+      "days_rest",
+      "games_played_season",
+      "is_starter",
+      "home_flag",
+      "opp_team_id",
+      "opp_def_pts_30",
+      "opp_def_reb_30",
+      "opp_def_ast_30",
+      "cat_points",
+      "cat_rebounds",
+      "cat_assists",
+      "model_bias"
+    ],
+    "dtypes": {
+      "game_date": "categorical",
+      "player": "categorical",
+      "category": "categorical",
+      "projected_value": "numeric",
+      "bookmaker_line": "numeric",
+      "over_odds": "numeric",
+      "under_odds": "numeric",
+      "edge_pct": "numeric",
+      "conf": "numeric",
+      "season": "categorical",
+      "gap": "numeric",
+      "over_implied": "numeric",
+      "under_implied": "numeric",
+      "vig": "numeric",
+      "odds_skew": "numeric",
+      "direction_bin": "numeric",
+      "roll5_pts": "numeric",
+      "roll10_pts": "numeric",
+      "roll5_std_pts": "numeric",
+      "roll5_reb": "numeric",
+      "roll10_reb": "numeric",
+      "roll5_std_reb": "numeric",
+      "roll5_ast": "numeric",
+      "roll10_ast": "numeric",
+      "roll5_std_ast": "numeric",
+      "roll5_min": "numeric",
+      "roll10_min": "numeric",
+      "last_game_pts": "numeric",
+      "last_game_reb": "numeric",
+      "last_game_ast": "numeric",
+      "days_rest": "numeric",
+      "games_played_season": "numeric",
+      "is_starter": "numeric",
+      "home_flag": "numeric",
+      "opp_team_id": "numeric",
+      "opp_def_pts_30": "numeric",
+      "opp_def_reb_30": "numeric",
+      "opp_def_ast_30": "numeric",
+      "cat_points": "numeric",
+      "cat_rebounds": "numeric",
+      "cat_assists": "numeric",
+      "model_bias": "numeric"
+    },
+    "labels": [
+      "model_bias"
+    ]
+  },
+  "row_counts": {
+    "bet_tracker": {
+      "daily_picks": {
+        "row_count": 31922,
+        "min_date": "2026-01-01",
+        "max_date": "2026-05-05"
+      },
+      "game_results": {
+        "row_count": 211,
+        "min_date": "2026-03-01",
+        "max_date": "2026-03-23"
+      },
+      "historical_odds_cache": {
+        "row_count": 57491,
+        "min_date": "2025-10-21",
+        "max_date": "2026-04-19"
+      },
+      "parlay_legs": {
+        "row_count": 62
+      },
+      "parlays": {
+        "row_count": 26,
+        "min_date": "2026-03-21",
+        "max_date": "2026-05-01"
+      },
+      "pick_results": {
+        "row_count": 31686
+      },
+      "projection_outcomes": {
+        "row_count": 9938,
+        "min_date": "2026-01-01",
+        "max_date": "20260108"
+      },
+      "projection_outcomes_raw": {
+        "row_count": 32382,
+        "min_date": "2026-01-01",
+        "max_date": "2026-04-30"
+      },
+      "shadow_picks": {
+        "row_count": 2844,
+        "min_date": "2026-03-17",
+        "max_date": "2026-05-11"
+      },
+      "sqlite_sequence": {
+        "row_count": 8
+      }
+    },
+    "nba_data": {
+      "box_scores": {
+        "row_count": 201899,
+        "min_date": "2019-09-30T00:00:00",
+        "max_date": "2026-04-25T00:00:00"
+      },
+      "games": {
+        "row_count": 9318,
+        "min_date": "2019-09-30T00:00:00",
+        "max_date": "2026-04-25T00:00:00"
+      },
+      "historical_injuries": {
+        "row_count": 19712,
+        "min_date": "2025-10-21",
+        "max_date": "2026-04-06"
+      },
+      "sqlite_sequence": {
+        "row_count": 1
+      },
+      "teams": {
+        "row_count": 30
+      }
+    },
+    "master_training": {
+      "projection_outcomes": {
+        "row_count": 76068,
+        "min_date": "2025-10-21",
+        "max_date": "2026-03-31"
+      },
+      "training_clean": {
+        "row_count": 65787,
+        "min_date": "2025-10-21",
+        "max_date": "2026-03-31"
+      }
+    }
+  },
+  "sampling_info": {
+    "source": "C:\\Users\\balca\\OneDrive\\Projects\\AiBetTool\\advanced_model\\database\\feature_matrix_v2.parquet",
+    "total_rows": 73821,
+    "sampled_rows": 73821,
+    "sample_ratio": 1.0,
+    "was_sampled": false,
+    "max_feature_rows": 200000
+  },
+  "numeric_features": [
+    "projected_value",
+    "bookmaker_line",
+    "over_odds",
+    "under_odds",
+    "edge_pct",
+    "conf",
+    "gap",
+    "over_implied",
+    "under_implied",
+    "vig",
+    "odds_skew",
+    "direction_bin",
+    "roll5_pts",
+    "roll10_pts",
+    "roll5_std_pts",
+    "roll5_reb",
+    "roll10_reb",
+    "roll5_std_reb",
+    "roll5_ast",
+    "roll10_ast",
+    "roll5_std_ast",
+    "roll5_min",
+    "roll10_min",
+    "last_game_pts",
+    "last_game_reb",
+    "last_game_ast",
+    "days_rest",
+    "games_played_season",
+    "is_starter",
+    "home_flag",
+    "opp_team_id",
+    "opp_def_pts_30",
+    "opp_def_reb_30",
+    "opp_def_ast_30",
+    "cat_points",
+    "cat_rebounds",
+    "cat_assists",
+    "model_bias"
+  ],
+  "categorical_features": [
+    "game_date",
+    "player",
+    "category",
+    "season"
+  ],
+  "missingness": {
+    "feature_matrix": [
+      {
+        "name": "game_date",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "player",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "category",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "projected_value",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "bookmaker_line",
+        "n_total": 73821,
+        "n_null": 28082,
+        "pct_null": 0.380407,
+        "high_missing": true
+      },
+      {
+        "name": "over_odds",
+        "n_total": 73821,
+        "n_null": 30696,
+        "pct_null": 0.415817,
+        "high_missing": true
+      },
+      {
+        "name": "under_odds",
+        "n_total": 73821,
+        "n_null": 30696,
+        "pct_null": 0.415817,
+        "high_missing": true
+      },
+      {
+        "name": "edge_pct",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "conf",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "season",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "gap",
+        "n_total": 73821,
+        "n_null": 28082,
+        "pct_null": 0.380407,
+        "high_missing": true
+      },
+      {
+        "name": "over_implied",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "under_implied",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "vig",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "odds_skew",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "direction_bin",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_pts",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll10_pts",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_std_pts",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_reb",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll10_reb",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_std_reb",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_ast",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll10_ast",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_std_ast",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "roll5_min",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "roll10_min",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "last_game_pts",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "last_game_reb",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "last_game_ast",
+        "n_total": 73821,
+        "n_null": 1037,
+        "pct_null": 0.014047,
+        "high_missing": false
+      },
+      {
+        "name": "days_rest",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "games_played_season",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "is_starter",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "home_flag",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "opp_team_id",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "opp_def_pts_30",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "opp_def_reb_30",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "opp_def_ast_30",
+        "n_total": 73821,
+        "n_null": 1028,
+        "pct_null": 0.013926,
+        "high_missing": false
+      },
+      {
+        "name": "cat_points",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "cat_rebounds",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "cat_assists",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "model_bias",
+        "n_total": 73821,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      }
+    ],
+    "training_data": [
+      {
+        "name": "id",
+        "n_total": 15211,
+        "n_null": 6070,
+        "pct_null": 0.399053,
+        "high_missing": true
+      },
+      {
+        "name": "game_date",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "player",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "category",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "projected_value",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "bookmaker_line",
+        "n_total": 15211,
+        "n_null": 1503,
+        "pct_null": 0.09881,
+        "high_missing": false
+      },
+      {
+        "name": "actual_value",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "over_odds",
+        "n_total": 15211,
+        "n_null": 2025,
+        "pct_null": 0.133127,
+        "high_missing": false
+      },
+      {
+        "name": "under_odds",
+        "n_total": 15211,
+        "n_null": 2025,
+        "pct_null": 0.133127,
+        "high_missing": false
+      },
+      {
+        "name": "model_bias",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "source_mode",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "source_file",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "season",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "edge_pct",
+        "n_total": 15211,
+        "n_null": 15105,
+        "pct_null": 0.993031,
+        "high_missing": true
+      },
+      {
+        "name": "conf",
+        "n_total": 15211,
+        "n_null": 15105,
+        "pct_null": 0.993031,
+        "high_missing": true
+      },
+      {
+        "name": "direction",
+        "n_total": 15211,
+        "n_null": 15105,
+        "pct_null": 0.993031,
+        "high_missing": true
+      },
+      {
+        "name": "is_default_odds",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "ml_usable_classification",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      },
+      {
+        "name": "ml_usable_regression",
+        "n_total": 15211,
+        "n_null": 0,
+        "pct_null": 0.0,
+        "high_missing": false
+      }
+    ]
+  },
+  "issues": {
+    "missing_critical_fields": [
+      {
+        "column": "bookmaker_line",
+        "pct_null": 0.09881,
+        "n_null": 1503,
+        "pattern": "bookmaker_line"
+      },
+      {
+        "column": "over_odds",
+        "pct_null": 0.133127,
+        "n_null": 2025,
+        "pattern": "over_odds"
+      },
+      {
+        "column": "under_odds",
+        "pct_null": 0.133127,
+        "n_null": 2025,
+        "pattern": "under_odds"
+      }
+    ],
+    "odds_integrity": [],
+    "potential_leakage": []
+  },
+  "descriptives": {
+    "feature_matrix": {
+      "projected_value": {
+        "n": 73821,
+        "mean": 6.34247,
+        "median": 4.258,
+        "std": 5.731292,
+        "min": 0.0,
+        "max": 49.0,
+        "p25": 2.4258,
+        "p75": 8.0
+      },
+      "bookmaker_line": {
+        "n": 45739,
+        "mean": 6.676327,
+        "median": 4.5,
+        "std": 5.77727,
+        "min": 0.5,
+        "max": 33.5,
+        "p25": 2.5,
+        "p75": 8.5
+      },
+      "over_odds": {
+        "n": 43125,
+        "mean": 1.892475,
+        "median": 1.9009,
+        "std": 0.186214,
+        "min": 1.1923,
+        "max": 3.0,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "under_odds": {
+        "n": 43125,
+        "mean": 1.892475,
+        "median": 1.9009,
+        "std": 0.186214,
+        "min": 1.1923,
+        "max": 3.0,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "edge_pct": {
+        "n": 73821,
+        "mean": 0.239473,
+        "median": 0.0,
+        "std": 2.821594,
+        "min": 0.0,
+        "max": 49.6,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "conf": {
+        "n": 73821,
+        "mean": 52.177385,
+        "median": 50.0,
+        "std": 4.899539,
+        "min": 33.333333,
+        "max": 100.0,
+        "p25": 50.0,
+        "p75": 53.487377
+      },
+      "gap": {
+        "n": 45739,
+        "mean": -0.065743,
+        "median": -0.0608,
+        "std": 1.676923,
+        "min": -11.5,
+        "max": 16.5396,
+        "p25": -0.7672,
+        "p75": 0.6192
+      },
+      "over_implied": {
+        "n": 73821,
+        "mean": 0.519411,
+        "median": 0.5,
+        "std": 0.041424,
+        "min": 0.333333,
+        "max": 0.838715,
+        "p25": 0.5,
+        "p75": 0.534874
+      },
+      "under_implied": {
+        "n": 73821,
+        "mean": 0.519411,
+        "median": 0.5,
+        "std": 0.041424,
+        "min": 0.333333,
+        "max": 0.838715,
+        "p25": 0.5,
+        "p75": 0.534874
+      },
+      "vig": {
+        "n": 73821,
+        "mean": 0.047252,
+        "median": 0.0,
+        "std": 0.070719,
+        "min": 0.0,
+        "max": 0.67743,
+        "p25": 0.0,
+        "p75": 0.069748
+      },
+      "odds_skew": {
+        "n": 73821,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "direction_bin": {
+        "n": 73821,
+        "mean": 0.294848,
+        "median": 0.0,
+        "std": 0.455978,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 1.0
+      },
+      "roll5_pts": {
+        "n": 72784,
+        "mean": 12.215598,
+        "median": 11.2,
+        "std": 6.51954,
+        "min": 0.0,
+        "max": 40.4,
+        "p25": 7.2,
+        "p75": 16.0
+      },
+      "roll10_pts": {
+        "n": 72784,
+        "mean": 12.115566,
+        "median": 11.1,
+        "std": 6.20186,
+        "min": 0.2,
+        "max": 33.8,
+        "p25": 7.4,
+        "p75": 15.8
+      },
+      "roll5_std_pts": {
+        "n": 72793,
+        "mean": 5.460734,
+        "median": 5.128353,
+        "std": 2.527142,
+        "min": 0.0,
+        "max": 27.226825,
+        "p25": 3.63318,
+        "p75": 6.841053
+      },
+      "roll5_reb": {
+        "n": 72784,
+        "mean": 4.490486,
+        "median": 4.0,
+        "std": 2.427472,
+        "min": 0.0,
+        "max": 16.4,
+        "p25": 2.8,
+        "p75": 5.8
+      },
+      "roll10_reb": {
+        "n": 72784,
+        "mean": 4.469914,
+        "median": 4.0,
+        "std": 2.284142,
+        "min": 0.0,
+        "max": 14.5,
+        "p25": 2.8,
+        "p75": 5.6
+      },
+      "roll5_std_reb": {
+        "n": 72793,
+        "mean": 2.195127,
+        "median": 2.04939,
+        "std": 1.064171,
+        "min": 0.0,
+        "max": 8.899438,
+        "p25": 1.414214,
+        "p75": 2.774887
+      },
+      "roll5_ast": {
+        "n": 72784,
+        "mean": 2.807628,
+        "median": 2.4,
+        "std": 1.983602,
+        "min": 0.0,
+        "max": 13.2,
+        "p25": 1.4,
+        "p75": 3.8
+      },
+      "roll10_ast": {
+        "n": 72784,
+        "mean": 2.783162,
+        "median": 2.3,
+        "std": 1.8784,
+        "min": 0.0,
+        "max": 12.3,
+        "p25": 1.4,
+        "p75": 3.7
+      },
+      "roll5_std_ast": {
+        "n": 72793,
+        "mean": 1.596818,
+        "median": 1.48324,
+        "std": 0.86539,
+        "min": 0.0,
+        "max": 6.685806,
+        "p25": 1.0,
+        "p75": 2.04939
+      },
+      "roll5_min": {
+        "n": 72784,
+        "mean": 24.960053,
+        "median": 25.438333,
+        "std": 7.067845,
+        "min": 2.332333,
+        "max": 43.143667,
+        "p25": 20.149,
+        "p75": 30.477
+      },
+      "roll10_min": {
+        "n": 72784,
+        "mean": 24.797362,
+        "median": 25.350667,
+        "std": 6.836358,
+        "min": 2.647167,
+        "max": 41.103333,
+        "p25": 20.246667,
+        "p75": 30.038667
+      },
+      "last_game_pts": {
+        "n": 72784,
+        "mean": 12.35299,
+        "median": 11.0,
+        "std": 8.414836,
+        "min": 0.0,
+        "max": 83.0,
+        "p25": 6.0,
+        "p75": 17.0
+      },
+      "last_game_reb": {
+        "n": 72784,
+        "mean": 4.532947,
+        "median": 4.0,
+        "std": 3.256906,
+        "min": 0.0,
+        "max": 25.0,
+        "p25": 2.0,
+        "p75": 6.0
+      },
+      "last_game_ast": {
+        "n": 72784,
+        "mean": 2.852138,
+        "median": 2.0,
+        "std": 2.577581,
+        "min": 0.0,
+        "max": 22.0,
+        "p25": 1.0,
+        "p75": 4.0
+      },
+      "days_rest": {
+        "n": 72793,
+        "mean": 2.640144,
+        "median": 2.0,
+        "std": 2.794404,
+        "min": 1.0,
+        "max": 30.0,
+        "p25": 2.0,
+        "p75": 3.0
+      },
+      "games_played_season": {
+        "n": 72793,
+        "mean": 38.880126,
+        "median": 40.0,
+        "std": 17.560751,
+        "min": 0.0,
+        "max": 81.0,
+        "p25": 26.0,
+        "p75": 52.0
+      },
+      "is_starter": {
+        "n": 72793,
+        "mean": 0.759427,
+        "median": 1.0,
+        "std": 0.427434,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      },
+      "home_flag": {
+        "n": 72793,
+        "mean": 0.501051,
+        "median": 1.0,
+        "std": 0.500002,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 1.0
+      },
+      "opp_team_id": {
+        "n": 72793,
+        "mean": 1610612751.492698,
+        "median": 1610612751.0,
+        "std": 8.619323,
+        "min": 1610612737.0,
+        "max": 1610612766.0,
+        "p25": 1610612744.0,
+        "p75": 1610612759.0
+      },
+      "opp_def_pts_30": {
+        "n": 72793,
+        "mean": 114.838126,
+        "median": 115.142857,
+        "std": 5.687861,
+        "min": 96.692308,
+        "max": 130.461538,
+        "p25": 110.583333,
+        "p75": 118.6875
+      },
+      "opp_def_reb_30": {
+        "n": 72793,
+        "mean": 43.962286,
+        "median": 44.142857,
+        "std": 2.731329,
+        "min": 35.0,
+        "max": 53.333333,
+        "p25": 42.076923,
+        "p75": 45.923077
+      },
+      "opp_def_ast_30": {
+        "n": 72793,
+        "mean": 26.571699,
+        "median": 26.666667,
+        "std": 2.05412,
+        "min": 21.071429,
+        "max": 32.625,
+        "p25": 25.076923,
+        "p75": 27.916667
+      },
+      "cat_points": {
+        "n": 73821,
+        "mean": 0.325842,
+        "median": 0.0,
+        "std": 0.468692,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 1.0
+      },
+      "cat_rebounds": {
+        "n": 73821,
+        "mean": 0.327901,
+        "median": 0.0,
+        "std": 0.469452,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 1.0
+      },
+      "cat_assists": {
+        "n": 73821,
+        "mean": 0.346256,
+        "median": 0.0,
+        "std": 0.475779,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 1.0
+      },
+      "model_bias": {
+        "n": 73821,
+        "mean": 0.23896,
+        "median": 0.0,
+        "std": 3.930192,
+        "min": -28.737,
+        "max": 53.6912,
+        "p25": -1.6078,
+        "p75": 1.935
+      }
+    },
+    "training_data": {
+      "id": {
+        "n": 9141,
+        "mean": 22666.96554,
+        "median": 22561.0,
+        "std": 13006.794753,
+        "min": 54.0,
+        "max": 45368.0,
+        "p25": 11388.0,
+        "p75": 33995.0
+      },
+      "projected_value": {
+        "n": 15211,
+        "mean": 6.575886,
+        "median": 4.1838,
+        "std": 11.601702,
+        "min": -38.06,
+        "max": 253.88,
+        "p25": 2.3267,
+        "p75": 8.0794
+      },
+      "bookmaker_line": {
+        "n": 13708,
+        "mean": 6.927232,
+        "median": 4.5,
+        "std": 12.019071,
+        "min": -21.5,
+        "max": 244.5,
+        "p25": 2.5,
+        "p75": 8.5
+      },
+      "actual_value": {
+        "n": 15211,
+        "mean": 6.876734,
+        "median": 4.0,
+        "std": 12.373302,
+        "min": -41.0,
+        "max": 272.0,
+        "p25": 2.0,
+        "p75": 9.0
+      },
+      "over_odds": {
+        "n": 13186,
+        "mean": 1.893046,
+        "median": 1.909,
+        "std": 0.179922,
+        "min": 1.4,
+        "max": 2.8,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "under_odds": {
+        "n": 13186,
+        "mean": 1.893193,
+        "median": 1.909,
+        "std": 0.179866,
+        "min": 1.4,
+        "max": 2.8,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "model_bias": {
+        "n": 15211,
+        "mean": 0.300848,
+        "median": 0.0,
+        "std": 4.821933,
+        "min": -43.94,
+        "max": 53.6912,
+        "p25": -1.7522,
+        "p75": 2.0
+      },
+      "is_default_odds": {
+        "n": 15211,
+        "mean": 0.034317,
+        "median": 0.0,
+        "std": 0.182049,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "ml_usable_classification": {
+        "n": 15211,
+        "mean": 0.866873,
+        "median": 1.0,
+        "std": 0.339723,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      },
+      "ml_usable_regression": {
+        "n": 15211,
+        "mean": 1.0,
+        "median": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      }
+    },
+    "projections": {
+      "id": {
+        "n": 9141,
+        "mean": 22666.96554,
+        "median": 22561.0,
+        "std": 13006.794753,
+        "min": 54.0,
+        "max": 45368.0,
+        "p25": 11388.0,
+        "p75": 33995.0
+      },
+      "projected_value": {
+        "n": 15211,
+        "mean": 6.575886,
+        "median": 4.1838,
+        "std": 11.601702,
+        "min": -38.06,
+        "max": 253.88,
+        "p25": 2.3267,
+        "p75": 8.0794
+      },
+      "bookmaker_line": {
+        "n": 13708,
+        "mean": 6.927232,
+        "median": 4.5,
+        "std": 12.019071,
+        "min": -21.5,
+        "max": 244.5,
+        "p25": 2.5,
+        "p75": 8.5
+      },
+      "actual_value": {
+        "n": 15211,
+        "mean": 6.876734,
+        "median": 4.0,
+        "std": 12.373302,
+        "min": -41.0,
+        "max": 272.0,
+        "p25": 2.0,
+        "p75": 9.0
+      },
+      "over_odds": {
+        "n": 13186,
+        "mean": 1.893046,
+        "median": 1.909,
+        "std": 0.179922,
+        "min": 1.4,
+        "max": 2.8,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "under_odds": {
+        "n": 13186,
+        "mean": 1.893193,
+        "median": 1.909,
+        "std": 0.179866,
+        "min": 1.4,
+        "max": 2.8,
+        "p25": 1.8,
+        "p75": 1.9091
+      },
+      "model_bias": {
+        "n": 15211,
+        "mean": 0.300848,
+        "median": 0.0,
+        "std": 4.821933,
+        "min": -43.94,
+        "max": 53.6912,
+        "p25": -1.7522,
+        "p75": 2.0
+      },
+      "is_default_odds": {
+        "n": 15211,
+        "mean": 0.034317,
+        "median": 0.0,
+        "std": 0.182049,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "ml_usable_classification": {
+        "n": 15211,
+        "mean": 0.866873,
+        "median": 1.0,
+        "std": 0.339723,
+        "min": 0.0,
+        "max": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      },
+      "ml_usable_regression": {
+        "n": 15211,
+        "mean": 1.0,
+        "median": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      }
+    }
+  },
+  "categorical_distributions": {
+    "category": [
+      {
+        "value": "ASSISTS",
+        "count": 25561,
+        "pct": 0.346256
+      },
+      {
+        "value": "REBOUNDS",
+        "count": 24206,
+        "pct": 0.327901
+      },
+      {
+        "value": "POINTS",
+        "count": 24054,
+        "pct": 0.325842
+      }
+    ],
+    "source_mode": [
+      {
+        "value": "retroactive_live",
+        "count": 9141,
+        "pct": 0.600947
+      },
+      {
+        "value": "historical",
+        "count": 4597,
+        "pct": 0.302216
+      },
+      {
+        "value": "live",
+        "count": 1473,
+        "pct": 0.096838
+      }
+    ],
+    "direction": [
+      {
+        "value": "nan",
+        "count": 15105,
+        "pct": 0.993031
+      },
+      {
+        "value": "UNDER",
+        "count": 91,
+        "pct": 0.005983
+      },
+      {
+        "value": "OVER",
+        "count": 15,
+        "pct": 0.000986
+      }
+    ],
+    "season": [
+      {
+        "value": "2025_26_live_raw",
+        "count": 30696,
+        "pct": 0.415817
+      },
+      {
+        "value": "2025_26_jan_apr",
+        "count": 27794,
+        "pct": 0.376505
+      },
+      {
+        "value": "2025_26_oct_dec",
+        "count": 15331,
+        "pct": 0.207678
+      }
+    ]
+  },
+  "outliers": {
+    "feature_matrix": {
+      "projected_value": {
+        "q1": 2.4258,
+        "q3": 8.0,
+        "iqr": 5.5742,
+        "lower_bound": -5.9355,
+        "upper_bound": 16.3613,
+        "n_outliers": 5453,
+        "pct_outliers": 0.073868,
+        "example_values": [
+          49.0,
+          48.0,
+          48.0,
+          47.0,
+          47.0,
+          45.0,
+          42.0,
+          41.823,
+          41.0272,
+          41.0
+        ]
+      },
+      "bookmaker_line": {
+        "q1": 2.5,
+        "q3": 8.5,
+        "iqr": 6.0,
+        "lower_bound": -6.5,
+        "upper_bound": 17.5,
+        "n_outliers": 2886,
+        "pct_outliers": 0.063097,
+        "example_values": [
+          33.5,
+          33.5,
+          33.5,
+          33.5,
+          32.5,
+          32.5,
+          32.5,
+          32.5,
+          32.5,
+          32.5
+        ]
+      },
+      "over_odds": {
+        "q1": 1.8,
+        "q3": 1.9091,
+        "iqr": 0.1091,
+        "lower_bound": 1.63635,
+        "upper_bound": 2.07275,
+        "n_outliers": 8298,
+        "pct_outliers": 0.192417,
+        "example_values": [
+          3.0,
+          2.94,
+          2.94,
+          2.9,
+          2.9,
+          2.9,
+          2.85,
+          2.85,
+          2.85,
+          2.85
+        ]
+      },
+      "under_odds": {
+        "q1": 1.8,
+        "q3": 1.9091,
+        "iqr": 0.1091,
+        "lower_bound": 1.63635,
+        "upper_bound": 2.07275,
+        "n_outliers": 8298,
+        "pct_outliers": 0.192417,
+        "example_values": [
+          3.0,
+          2.94,
+          2.94,
+          2.9,
+          2.9,
+          2.9,
+          2.85,
+          2.85,
+          2.85,
+          2.85
+        ]
+      },
+      "edge_pct": {
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "n_outliers": 558,
+        "pct_outliers": 0.007559,
+        "example_values": [
+          49.6,
+          49.6,
+          49.6,
+          49.4,
+          49.4,
+          49.4,
+          46.5,
+          46.5,
+          46.5,
+          45.8
+        ]
+      },
+      "conf": {
+        "q1": 50.0,
+        "q3": 53.487377,
+        "iqr": 3.487377,
+        "lower_bound": 44.768935,
+        "upper_bound": 58.718442,
+        "n_outliers": 8759,
+        "pct_outliers": 0.118652,
+        "example_values": [
+          100.0,
+          100.0,
+          100.0,
+          99.0,
+          99.0,
+          99.0,
+          96.0,
+          96.0,
+          96.0,
+          96.0
+        ]
+      },
+      "gap": {
+        "q1": -0.7672,
+        "q3": 0.6192,
+        "iqr": 1.3864,
+        "lower_bound": -2.8468,
+        "upper_bound": 2.6988,
+        "n_outliers": 3990,
+        "pct_outliers": 0.087234,
+        "example_values": [
+          16.5396,
+          16.3478,
+          15.178,
+          14.6266,
+          14.4182,
+          13.9316,
+          13.5,
+          13.4406,
+          13.1094,
+          12.5938
+        ]
+      },
+      "over_implied": {
+        "q1": 0.5,
+        "q3": 0.534874,
+        "iqr": 0.034874,
+        "lower_bound": 0.447689,
+        "upper_bound": 0.587184,
+        "n_outliers": 8201,
+        "pct_outliers": 0.111093,
+        "example_values": [
+          0.8387,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7101,
+          0.7093,
+          0.7059,
+          0.7059
+        ]
+      },
+      "under_implied": {
+        "q1": 0.5,
+        "q3": 0.534874,
+        "iqr": 0.034874,
+        "lower_bound": 0.447689,
+        "upper_bound": 0.587184,
+        "n_outliers": 8201,
+        "pct_outliers": 0.111093,
+        "example_values": [
+          0.8387,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7143,
+          0.7101,
+          0.7093,
+          0.7059,
+          0.7059
+        ]
+      },
+      "vig": {
+        "q1": 0.0,
+        "q3": 0.069748,
+        "iqr": 0.069748,
+        "lower_bound": -0.104621,
+        "upper_bound": 0.174369,
+        "n_outliers": 5738,
+        "pct_outliers": 0.077729,
+        "example_values": [
+          0.6774,
+          0.4286,
+          0.4286,
+          0.4286,
+          0.4286,
+          0.4286,
+          0.4203,
+          0.4186,
+          0.4117,
+          0.4117
+        ]
+      },
+      "odds_skew": {
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "direction_bin": {
+        "q1": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "roll5_pts": {
+        "q1": 7.2,
+        "q3": 16.0,
+        "iqr": 8.8,
+        "lower_bound": -6.0,
+        "upper_bound": 29.2,
+        "n_outliers": 1180,
+        "pct_outliers": 0.016212,
+        "example_values": [
+          40.4,
+          40.4,
+          40.4,
+          40.4,
+          40.4,
+          40.4,
+          37.8,
+          37.8,
+          37.8,
+          37.8
+        ]
+      },
+      "roll10_pts": {
+        "q1": 7.4,
+        "q3": 15.8,
+        "iqr": 8.4,
+        "lower_bound": -5.2,
+        "upper_bound": 28.4,
+        "n_outliers": 1134,
+        "pct_outliers": 0.01558,
+        "example_values": [
+          33.8,
+          33.8,
+          33.8,
+          33.8,
+          33.8,
+          33.8,
+          33.5,
+          33.5,
+          33.5,
+          33.4
+        ]
+      },
+      "roll5_std_pts": {
+        "q1": 3.63318,
+        "q3": 6.841053,
+        "iqr": 3.207872,
+        "lower_bound": -1.178628,
+        "upper_bound": 11.652861,
+        "n_outliers": 1593,
+        "pct_outliers": 0.021884,
+        "example_values": [
+          27.2268,
+          27.2268,
+          27.2268,
+          27.2268,
+          27.2268,
+          27.2268,
+          27.098,
+          27.098,
+          27.098,
+          26.9017
+        ]
+      },
+      "roll5_reb": {
+        "q1": 2.8,
+        "q3": 5.8,
+        "iqr": 3.0,
+        "lower_bound": -1.7,
+        "upper_bound": 10.3,
+        "n_outliers": 2104,
+        "pct_outliers": 0.028907,
+        "example_values": [
+          16.4,
+          16.4,
+          16.4,
+          16.4,
+          16.4,
+          16.4,
+          16.2,
+          16.2,
+          16.2,
+          16.2
+        ]
+      },
+      "roll10_reb": {
+        "q1": 2.8,
+        "q3": 5.6,
+        "iqr": 2.8,
+        "lower_bound": -1.4,
+        "upper_bound": 9.8,
+        "n_outliers": 2338,
+        "pct_outliers": 0.032122,
+        "example_values": [
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.4,
+          14.4,
+          14.4,
+          14.4
+        ]
+      },
+      "roll5_std_reb": {
+        "q1": 1.414214,
+        "q3": 2.774887,
+        "iqr": 1.360674,
+        "lower_bound": -0.626797,
+        "upper_bound": 4.815898,
+        "n_outliers": 1723,
+        "pct_outliers": 0.02367,
+        "example_values": [
+          8.8994,
+          8.8994,
+          8.8994,
+          8.3845,
+          8.3487,
+          8.3487,
+          8.3267,
+          8.3267,
+          8.3267,
+          8.1056
+        ]
+      },
+      "roll5_ast": {
+        "q1": 1.4,
+        "q3": 3.8,
+        "iqr": 2.4,
+        "lower_bound": -2.2,
+        "upper_bound": 7.4,
+        "n_outliers": 2566,
+        "pct_outliers": 0.035255,
+        "example_values": [
+          13.2,
+          13.2,
+          13.2,
+          13.2,
+          13.2,
+          13.2,
+          13.0,
+          13.0,
+          13.0,
+          13.0
+        ]
+      },
+      "roll10_ast": {
+        "q1": 1.4,
+        "q3": 3.7,
+        "iqr": 2.3,
+        "lower_bound": -2.05,
+        "upper_bound": 7.15,
+        "n_outliers": 2273,
+        "pct_outliers": 0.031229,
+        "example_values": [
+          12.3,
+          12.3,
+          12.3,
+          12.3,
+          12.3,
+          12.3,
+          12.1,
+          12.1,
+          12.1,
+          11.9
+        ]
+      },
+      "roll5_std_ast": {
+        "q1": 1.0,
+        "q3": 2.04939,
+        "iqr": 1.04939,
+        "lower_bound": -0.574085,
+        "upper_bound": 3.623475,
+        "n_outliers": 2227,
+        "pct_outliers": 0.030594,
+        "example_values": [
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6858,
+          6.6558
+        ]
+      },
+      "roll5_min": {
+        "q1": 20.149,
+        "q3": 30.477,
+        "iqr": 10.328,
+        "lower_bound": 4.657,
+        "upper_bound": 45.969,
+        "n_outliers": 228,
+        "pct_outliers": 0.003133,
+        "example_values": [
+          4.6287,
+          4.6287,
+          4.6287,
+          4.6167,
+          4.6167,
+          4.6167,
+          4.6167,
+          4.6167,
+          4.6133,
+          4.6133
+        ]
+      },
+      "roll10_min": {
+        "q1": 20.246667,
+        "q3": 30.038667,
+        "iqr": 9.792,
+        "lower_bound": 5.558667,
+        "upper_bound": 44.726667,
+        "n_outliers": 217,
+        "pct_outliers": 0.002981,
+        "example_values": [
+          5.5538,
+          5.5538,
+          5.5538,
+          5.5008,
+          5.5008,
+          5.5008,
+          5.4883,
+          5.4883,
+          5.4883,
+          5.4633
+        ]
+      },
+      "last_game_pts": {
+        "q1": 6.0,
+        "q3": 17.0,
+        "iqr": 11.0,
+        "lower_bound": -10.5,
+        "upper_bound": 33.5,
+        "n_outliers": 1261,
+        "pct_outliers": 0.017325,
+        "example_values": [
+          83.0,
+          83.0,
+          83.0,
+          83.0,
+          83.0,
+          83.0,
+          55.0,
+          55.0,
+          55.0,
+          55.0
+        ]
+      },
+      "last_game_reb": {
+        "q1": 2.0,
+        "q3": 6.0,
+        "iqr": 4.0,
+        "lower_bound": -4.0,
+        "upper_bound": 12.0,
+        "n_outliers": 1870,
+        "pct_outliers": 0.025692,
+        "example_values": [
+          25.0,
+          24.0,
+          24.0,
+          24.0,
+          22.0,
+          22.0,
+          22.0,
+          22.0,
+          22.0,
+          22.0
+        ]
+      },
+      "last_game_ast": {
+        "q1": 1.0,
+        "q3": 4.0,
+        "iqr": 3.0,
+        "lower_bound": -3.5,
+        "upper_bound": 8.5,
+        "n_outliers": 2715,
+        "pct_outliers": 0.037302,
+        "example_values": [
+          22.0,
+          22.0,
+          22.0,
+          22.0,
+          22.0,
+          22.0,
+          19.0,
+          19.0,
+          19.0,
+          19.0
+        ]
+      },
+      "days_rest": {
+        "q1": 2.0,
+        "q3": 3.0,
+        "iqr": 1.0,
+        "lower_bound": 0.5,
+        "upper_bound": 4.5,
+        "n_outliers": 5295,
+        "pct_outliers": 0.072741,
+        "example_values": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ]
+      },
+      "games_played_season": {
+        "q1": 26.0,
+        "q3": 52.0,
+        "iqr": 26.0,
+        "lower_bound": -13.0,
+        "upper_bound": 91.0,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "is_starter": {
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "lower_bound": 1.0,
+        "upper_bound": 1.0,
+        "n_outliers": 17512,
+        "pct_outliers": 0.240573,
+        "example_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "home_flag": {
+        "q1": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "opp_team_id": {
+        "q1": 1610612744.0,
+        "q3": 1610612759.0,
+        "iqr": 15.0,
+        "lower_bound": 1610612721.5,
+        "upper_bound": 1610612781.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "opp_def_pts_30": {
+        "q1": 110.583333,
+        "q3": 118.6875,
+        "iqr": 8.104167,
+        "lower_bound": 98.427083,
+        "upper_bound": 130.84375,
+        "n_outliers": 236,
+        "pct_outliers": 0.003242,
+        "example_values": [
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833,
+          98.0833
+        ]
+      },
+      "opp_def_reb_30": {
+        "q1": 42.076923,
+        "q3": 45.923077,
+        "iqr": 3.846154,
+        "lower_bound": 36.307692,
+        "upper_bound": 51.692308,
+        "n_outliers": 142,
+        "pct_outliers": 0.001951,
+        "example_values": [
+          53.3333,
+          53.3333,
+          53.3333,
+          53.3333,
+          53.3333,
+          53.3333,
+          53.3333,
+          53.3333,
+          53.2,
+          53.2
+        ]
+      },
+      "opp_def_ast_30": {
+        "q1": 25.076923,
+        "q3": 27.916667,
+        "iqr": 2.839744,
+        "lower_bound": 20.817308,
+        "upper_bound": 32.176282,
+        "n_outliers": 130,
+        "pct_outliers": 0.001786,
+        "example_values": [
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625,
+          32.625
+        ]
+      },
+      "cat_points": {
+        "q1": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "cat_rebounds": {
+        "q1": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "cat_assists": {
+        "q1": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "model_bias": {
+        "q1": -1.6078,
+        "q3": 1.935,
+        "iqr": 3.5428,
+        "lower_bound": -6.922,
+        "upper_bound": 7.2492,
+        "n_outliers": 5752,
+        "pct_outliers": 0.077918,
+        "example_values": [
+          53.6912,
+          53.6912,
+          34.9586,
+          29.2464,
+          28.9018,
+          -28.737,
+          28.2974,
+          28.2602,
+          28.2602,
+          28.1156
+        ]
+      }
+    },
+    "projections": {
+      "id": {
+        "q1": 11388.0,
+        "q3": 33995.0,
+        "iqr": 22607.0,
+        "lower_bound": -22522.5,
+        "upper_bound": 67905.5,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      },
+      "projected_value": {
+        "q1": 2.3267,
+        "q3": 8.0794,
+        "iqr": 5.7527,
+        "lower_bound": -6.30235,
+        "upper_bound": 16.70845,
+        "n_outliers": 1227,
+        "pct_outliers": 0.080665,
+        "example_values": [
+          253.88,
+          242.94,
+          242.75,
+          242.49,
+          242.17,
+          239.77,
+          237.31,
+          236.95,
+          236.35,
+          234.54
+        ]
+      },
+      "bookmaker_line": {
+        "q1": 2.5,
+        "q3": 8.5,
+        "iqr": 6.0,
+        "lower_bound": -6.5,
+        "upper_bound": 17.5,
+        "n_outliers": 949,
+        "pct_outliers": 0.06923,
+        "example_values": [
+          244.5,
+          240.5,
+          238.5,
+          236.5,
+          235.5,
+          235.5,
+          233.5,
+          233.5,
+          233.5,
+          233.5
+        ]
+      },
+      "actual_value": {
+        "q1": 2.0,
+        "q3": 9.0,
+        "iqr": 7.0,
+        "lower_bound": -8.5,
+        "upper_bound": 19.5,
+        "n_outliers": 1008,
+        "pct_outliers": 0.066268,
+        "example_values": [
+          272.0,
+          272.0,
+          267.0,
+          261.0,
+          254.0,
+          251.0,
+          250.0,
+          245.0,
+          245.0,
+          242.0
+        ]
+      },
+      "over_odds": {
+        "q1": 1.8,
+        "q3": 1.9091,
+        "iqr": 0.1091,
+        "lower_bound": 1.63635,
+        "upper_bound": 2.07275,
+        "n_outliers": 2343,
+        "pct_outliers": 0.177688,
+        "example_values": [
+          2.8,
+          2.8,
+          2.8,
+          2.8,
+          2.79,
+          2.78,
+          2.78,
+          2.77,
+          2.76,
+          2.76
+        ]
+      },
+      "under_odds": {
+        "q1": 1.8,
+        "q3": 1.9091,
+        "iqr": 0.1091,
+        "lower_bound": 1.63635,
+        "upper_bound": 2.07275,
+        "n_outliers": 2343,
+        "pct_outliers": 0.177688,
+        "example_values": [
+          2.8,
+          2.8,
+          2.8,
+          2.8,
+          2.79,
+          2.78,
+          2.78,
+          2.77,
+          2.76,
+          2.76
+        ]
+      },
+      "model_bias": {
+        "q1": -1.7522,
+        "q3": 2.0,
+        "iqr": 3.7522,
+        "lower_bound": -7.3805,
+        "upper_bound": 7.6283,
+        "n_outliers": 1348,
+        "pct_outliers": 0.08862,
+        "example_values": [
+          53.6912,
+          49.96,
+          48.94,
+          47.0,
+          45.92,
+          -43.94,
+          41.94,
+          -41.94,
+          -41.94,
+          38.06
+        ]
+      },
+      "is_default_odds": {
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "n_outliers": 522,
+        "pct_outliers": 0.034317,
+        "example_values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "ml_usable_classification": {
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "lower_bound": 1.0,
+        "upper_bound": 1.0,
+        "n_outliers": 2025,
+        "pct_outliers": 0.133127,
+        "example_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "ml_usable_regression": {
+        "q1": 1.0,
+        "q3": 1.0,
+        "iqr": 0.0,
+        "lower_bound": 1.0,
+        "upper_bound": 1.0,
+        "n_outliers": 0,
+        "pct_outliers": 0.0,
+        "example_values": []
+      }
+    }
+  },
+  "high_corr_pairs": [
+    {
+      "col_a": "over_odds",
+      "col_b": "under_odds",
+      "correlation": 1.0
+    },
+    {
+      "col_a": "over_implied",
+      "col_b": "under_implied",
+      "correlation": 1.0
+    },
+    {
+      "col_a": "over_odds",
+      "col_b": "conf",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "over_odds",
+      "col_b": "over_implied",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "over_odds",
+      "col_b": "under_implied",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "under_odds",
+      "col_b": "conf",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "under_odds",
+      "col_b": "over_implied",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "under_odds",
+      "col_b": "under_implied",
+      "correlation": -0.983732
+    },
+    {
+      "col_a": "projected_value",
+      "col_b": "bookmaker_line",
+      "correlation": 0.957766
+    },
+    {
+      "col_a": "roll5_ast",
+      "col_b": "roll10_ast",
+      "correlation": 0.947522
+    },
+    {
+      "col_a": "roll5_pts",
+      "col_b": "roll10_pts",
+      "correlation": 0.946041
+    },
+    {
+      "col_a": "roll5_min",
+      "col_b": "roll10_min",
+      "correlation": 0.937537
+    },
+    {
+      "col_a": "roll5_reb",
+      "col_b": "roll10_reb",
+      "correlation": 0.935863
+    },
+    {
+      "col_a": "over_implied",
+      "col_b": "vig",
+      "correlation": 0.921594
+    },
+    {
+      "col_a": "under_implied",
+      "col_b": "vig",
+      "correlation": 0.921594
+    }
+  ],
+  "feature_target_importance_regression": {
+    "gap": -0.229107,
+    "direction_bin": -0.105333,
+    "roll5_reb": 0.047662,
+    "bookmaker_line": 0.045348,
+    "roll10_reb": 0.041419,
+    "last_game_reb": 0.041013,
+    "last_game_ast": 0.034452,
+    "last_game_pts": 0.03339,
+    "roll5_ast": 0.032726,
+    "opp_def_ast_30": 0.031485,
+    "roll5_pts": 0.030891,
+    "roll5_std_reb": 0.030295,
+    "opp_def_pts_30": 0.028834,
+    "roll5_min": 0.028047,
+    "roll5_std_ast": 0.027237,
+    "opp_def_reb_30": 0.027008,
+    "roll10_pts": 0.026964,
+    "roll10_ast": 0.025329,
+    "days_rest": -0.018807,
+    "roll10_min": 0.015672,
+    "games_played_season": 0.01444,
+    "cat_points": 0.013735,
+    "roll5_std_pts": 0.01353,
+    "cat_assists": -0.013341,
+    "projected_value": -0.013125,
+    "home_flag": 0.011257,
+    "is_starter": 0.009903,
+    "over_odds": -0.008295,
+    "under_odds": -0.008295,
+    "opp_team_id": -0.004781,
+    "vig": -0.004631,
+    "edge_pct": 0.003448,
+    "conf": 0.002603,
+    "over_implied": 0.001243,
+    "under_implied": 0.001243,
+    "cat_rebounds": -0.000192,
+    "odds_skew": 0.0
+  },
+  "temporal_drift": {
+    "period_stats": [
+      {
+        "period": "2025-10",
+        "row_count": 443,
+        "mean_conf": null,
+        "mean_edge_pct": null
+      },
+      {
+        "period": "2025-11",
+        "row_count": 1519,
+        "mean_conf": null,
+        "mean_edge_pct": null
+      },
+      {
+        "period": "2025-12",
+        "row_count": 1341,
+        "mean_conf": null,
+        "mean_edge_pct": null
+      },
+      {
+        "period": "2026-01",
+        "row_count": 4823,
+        "mean_conf": null,
+        "mean_edge_pct": null
+      },
+      {
+        "period": "2026-02",
+        "row_count": 3373,
+        "mean_conf": null,
+        "mean_edge_pct": null
+      },
+      {
+        "period": "2026-03",
+        "row_count": 3712,
+        "mean_conf": 80.896226,
+        "mean_edge_pct": 31.321698
+      }
+    ]
+  },
+  "source_mode_drift": {
+    "historical": {
+      "n": 4597,
+      "mean_conf": null,
+      "mean_edge_pct": null
+    },
+    "live": {
+      "n": 1473,
+      "mean_conf": 80.896226,
+      "mean_edge_pct": 31.321698
+    },
+    "retroactive_live": {
+      "n": 9141,
+      "mean_conf": null,
+      "mean_edge_pct": null
+    }
+  },
+  "selection_bias": {
+    "training_vs_full": {
+      "conf": {
+        "full_mean": 80.896226,
+        "train_mean": 52.177385,
+        "full_std": 7.882385,
+        "train_std": 4.899539,
+        "full_n": 106,
+        "train_n": 73821
+      },
+      "edge_pct": {
+        "full_mean": 31.321698,
+        "train_mean": 0.239473,
+        "full_std": 7.910331,
+        "train_std": 2.821594,
+        "full_n": 106,
+        "train_n": 73821
+      },
+      "over_odds": {
+        "full_mean": 1.893046,
+        "train_mean": 1.892475,
+        "full_std": 0.179922,
+        "train_std": 0.186214,
+        "full_n": 13186,
+        "train_n": 43125
+      },
+      "under_odds": {
+        "full_mean": 1.893193,
+        "train_mean": 1.892475,
+        "full_std": 0.179866,
+        "train_std": 0.186214,
+        "full_n": 13186,
+        "train_n": 43125
+      }
+    }
+  }
+}

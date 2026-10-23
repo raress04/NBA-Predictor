@@ -1,0 +1,60 @@
+MATCHUP: ORL vs. DET    109 - 116
+Paolo Banchero         | 45 PTS, 9 REB,  7 AST
+Cade Cunningham        | 45 PTS, 4 REB,  5 AST
+Tobias Harris          | 23 PTS, 8 REB,  1 AST
+Anthony Black          | 19 PTS, 5 REB,  3 AST
+Desmond Bane           | 18 PTS, 5 REB,  1 AST
+Jalen Duren            | 12 PTS, 9 REB,  2 AST
+Duncan Robinson        | 12 PTS, 3 REB,  1 AST
+Jalen Suggs            | 10 PTS, 2 REB,  5 AST
+Wendell Carter Jr.     | 9 PTS, 4 REB,  4 AST
+Ausar Thompson         | 6 PTS, 15 REB,  6 AST
+Daniss Jenkins         | 6 PTS, 0 REB,  2 AST
+Isaiah Stewart         | 5 PTS, 5 REB,  0 AST
+Javonte Green          | 5 PTS, 2 REB,  1 AST
+Jamal Cain             | 5 PTS, 4 REB,  1 AST
+Tristan da Silva       | 3 PTS, 3 REB,  0 AST
+Caris LeVert           | 2 PTS, 3 REB,  2 AST
+Goga Bitadze           | 0 PTS, 1 REB,  0 AST
+
+MATCHUP: TOR vs. CLE    120 - 125
+RJ Barrett             | 25 PTS, 12 REB,  5 AST
+James Harden           | 23 PTS, 9 REB,  5 AST
+Evan Mobley            | 23 PTS, 9 REB,  1 AST
+Ja'Kobe Walter         | 20 PTS, 3 REB,  2 AST
+Dennis Schröder        | 19 PTS, 0 REB,  2 AST
+Donovan Mitchell       | 19 PTS, 5 REB,  3 AST
+Jamal Shead            | 18 PTS, 1 REB,  7 AST
+Scottie Barnes         | 17 PTS, 8 REB,  11 AST
+Jakob Poeltl           | 14 PTS, 9 REB,  3 AST
+Sandro Mamukelashvili  | 10 PTS, 3 REB,  0 AST
+Jarrett Allen          | 9 PTS, 3 REB,  1 AST
+Sam Merrill            | 9 PTS, 1 REB,  2 AST
+Collin Murray-Boyles   | 8 PTS, 5 REB,  2 AST
+Max Strus              | 8 PTS, 4 REB,  2 AST
+Jaylon Tyson           | 8 PTS, 1 REB,  2 AST
+Dean Wade              | 7 PTS, 3 REB,  1 AST
+Jamison Battle         | 7 PTS, 6 REB,  0 AST
+Brandon Ingram         | 1 PTS, 1 REB,  2 AST
+Thomas Bryant          | 0 PTS, 0 REB,  1 AST
+A.J. Lawson            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: HOU vs. LAL    99 - 93
+LeBron James           | 25 PTS, 3 REB,  7 AST
+Jabari Smith Jr.       | 22 PTS, 7 REB,  3 AST
+Austin Reaves          | 22 PTS, 4 REB,  6 AST
+Tari Eason             | 18 PTS, 5 REB,  1 AST
+Deandre Ayton          | 18 PTS, 17 REB,  0 AST
+Amen Thompson          | 15 PTS, 7 REB,  4 AST
+Alperen Sengun         | 14 PTS, 9 REB,  8 AST
+Reed Sheppard          | 12 PTS, 0 REB,  6 AST
+Rui Hachimura          | 12 PTS, 4 REB,  0 AST
+Marcus Smart           | 11 PTS, 5 REB,  2 AST
+Josh Okogie            | 7 PTS, 3 REB,  2 AST
+Dorian Finney-Smith    | 6 PTS, 3 REB,  1 AST
+Aaron Holiday          | 5 PTS, 0 REB,  0 AST
+Jarred Vanderbilt      | 2 PTS, 2 REB,  0 AST
+Jake LaRavia           | 2 PTS, 2 REB,  1 AST
+Luke Kennard           | 1 PTS, 3 REB,  2 AST
+Jaxson Hayes           | 0 PTS, 1 REB,  1 AST
+

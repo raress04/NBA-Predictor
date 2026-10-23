@@ -1,0 +1,94 @@
+--- RESULTS FOR 2026-04-28 ---
+
+==================================================
+MATCHUP: BOS @ PHI | 97 - 113
+==================================================
+Joel Embiid               | 33 PTS,  4 REB,  8 AST
+Tyrese Maxey              | 25 PTS, 10 REB,  5 AST
+Jayson Tatum              | 24 PTS, 16 REB,  4 AST
+Jaylen Brown              | 22 PTS,  5 REB,  5 AST
+Quentin Grimes            | 18 PTS,  2 REB,  0 AST
+Paul George               | 16 PTS,  9 REB,  7 AST
+Payton Pritchard          | 12 PTS,  2 REB,  6 AST
+VJ Edgecombe              | 10 PTS,  7 REB,  3 AST
+Neemias Queta             |  8 PTS, 14 REB,  1 AST
+Nikola Vučević            |  8 PTS,  2 REB,  3 AST
+Sam Hauser                |  8 PTS,  5 REB,  0 AST
+Derrick White             |  6 PTS,  1 REB,  3 AST
+Andre Drummond            |  5 PTS,  4 REB,  0 AST
+Kelly Oubre Jr.           |  4 PTS,  6 REB,  1 AST
+Luka Garza                |  4 PTS,  0 REB,  1 AST
+Baylor Scheierman         |  3 PTS,  0 REB,  0 AST
+Dominick Barlow           |  2 PTS,  3 REB,  0 AST
+Jordan Walsh              |  1 PTS,  3 REB,  2 AST
+Amari Williams            |  1 PTS,  1 REB,  0 AST
+Trendon Watford           |  0 PTS,  1 REB,  0 AST
+Kyle Lowry                |  0 PTS,  1 REB,  0 AST
+Jabari Walker             |  0 PTS,  0 REB,  0 AST
+Dalen Terry               |  0 PTS,  0 REB,  0 AST
+Adem Bona                 |  0 PTS,  0 REB,  0 AST
+Ron Harper Jr.            |  0 PTS,  0 REB,  0 AST
+Hugo González             |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: ATL @ NYK | 97 - 126
+==================================================
+Jalen Brunson             | 39 PTS,  3 REB,  8 AST
+Jalen Johnson             | 18 PTS, 10 REB,  6 AST
+Dyson Daniels             | 17 PTS,  2 REB,  5 AST
+OG Anunoby                | 17 PTS, 10 REB,  1 AST
+Karl-Anthony Towns        | 16 PTS, 14 REB,  6 AST
+Onyeka Okongwu            | 16 PTS,  5 REB,  4 AST
+Nickeil Alexander-Walker  | 16 PTS,  0 REB,  3 AST
+Jonathan Kuminga          | 13 PTS,  4 REB,  1 AST
+Jose Alvarado             | 12 PTS,  2 REB,  1 AST
+Jeremy Sochan             | 10 PTS,  1 REB,  0 AST
+Josh Hart                 |  9 PTS,  5 REB,  4 AST
+Jordan Clarkson           |  9 PTS,  0 REB,  1 AST
+Mikal Bridges             |  7 PTS,  1 REB,  1 AST
+Mitchell Robinson         |  7 PTS,  6 REB,  0 AST
+CJ McCollum               |  6 PTS,  3 REB,  1 AST
+Gabe Vincent              |  6 PTS,  0 REB,  1 AST
+Buddy Hield               |  5 PTS,  0 REB,  0 AST
+Ariel Hukporti            |  0 PTS,  2 REB,  0 AST
+Corey Kispert             |  0 PTS,  1 REB,  2 AST
+Tony Bradley              |  0 PTS,  2 REB,  1 AST
+Miles McBride             |  0 PTS,  3 REB,  1 AST
+Tyler Kolek               |  0 PTS,  1 REB,  2 AST
+Landry Shamet             |  0 PTS,  0 REB,  1 AST
+Keaton Wallace            |  0 PTS,  0 REB,  1 AST
+Pacôme Dadiet             |  0 PTS,  0 REB,  0 AST
+Mouhamed Gueye            |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: POR @ SAS | 95 - 114
+==================================================
+Deni Avdija               | 22 PTS,  3 REB,  3 AST
+De'Aaron Fox              | 21 PTS,  3 REB,  9 AST
+Julian Champagnie         | 19 PTS,  7 REB,  3 AST
+Victor Wembanyama         | 17 PTS, 14 REB,  3 AST
+Dylan Harper              | 17 PTS,  3 REB,  1 AST
+Stephon Castle            | 15 PTS,  3 REB,  5 AST
+Jerami Grant              | 12 PTS,  1 REB,  1 AST
+Sidy Cissoko              | 11 PTS,  4 REB,  0 AST
+Robert Williams III       | 11 PTS,  7 REB,  1 AST
+Donovan Clingan           | 10 PTS,  5 REB,  6 AST
+Devin Vassell             | 10 PTS,  1 REB,  2 AST
+Jrue Holiday              |  8 PTS,  6 REB,  7 AST
+Toumani Camara            |  7 PTS,  8 REB,  2 AST
+Keldon Johnson            |  7 PTS,  5 REB,  1 AST
+Luke Kornet               |  5 PTS,  3 REB,  3 AST
+Scoot Henderson           |  5 PTS,  2 REB,  0 AST
+Shaedon Sharpe            |  5 PTS,  0 REB,  0 AST
+Harrison Barnes           |  3 PTS,  1 REB,  0 AST
+Matisse Thybulle          |  2 PTS,  1 REB,  2 AST
+Vít Krejčí                |  2 PTS,  1 REB,  2 AST
+Lindy Waters III          |  0 PTS,  1 REB,  0 AST
+Bismack Biyombo           |  0 PTS,  1 REB,  0 AST
+Kelly Olynyk              |  0 PTS,  0 REB,  0 AST
+Yang Hansen               |  0 PTS,  0 REB,  0 AST
+Jordan McLaughlin         |  0 PTS,  0 REB,  0 AST
+Carter Bryant             |  0 PTS,  0 REB,  0 AST
+Blake Wesley              |  0 PTS,  0 REB,  0 AST
+Kris Murray               |  0 PTS,  0 REB,  0 AST
+

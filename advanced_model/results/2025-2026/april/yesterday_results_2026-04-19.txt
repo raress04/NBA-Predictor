@@ -1,0 +1,116 @@
+--- RESULTS FOR 2026-04-19 ---
+
+==================================================
+MATCHUP: DET @ ORL | 101 - 112
+==================================================
+Cade Cunningham           | 39 PTS,  5 REB,  4 AST
+Paolo Banchero            | 23 PTS,  9 REB,  4 AST
+Franz Wagner              | 19 PTS,  5 REB,  4 AST
+Wendell Carter Jr.        | 17 PTS,  7 REB,  5 AST
+Tobias Harris             | 17 PTS,  6 REB,  3 AST
+Desmond Bane              | 17 PTS,  6 REB,  5 AST
+Jalen Suggs               | 16 PTS,  4 REB,  4 AST
+Duncan Robinson           |  9 PTS,  0 REB,  4 AST
+Ausar Thompson            |  8 PTS,  7 REB,  1 AST
+Jalen Duren               |  8 PTS,  7 REB,  1 AST
+Anthony Black             |  7 PTS,  3 REB,  3 AST
+Tristan da Silva          |  7 PTS,  4 REB,  0 AST
+Daniss Jenkins            |  6 PTS,  2 REB,  2 AST
+Goga Bitadze              |  4 PTS,  6 REB,  1 AST
+Isaiah Stewart            |  3 PTS,  4 REB,  0 AST
+Caris LeVert              |  3 PTS,  3 REB,  1 AST
+Javonte Green             |  3 PTS,  1 REB,  1 AST
+Kevin Huerter             |  3 PTS,  2 REB,  1 AST
+Ronald Holland II         |  2 PTS,  2 REB,  1 AST
+Jamal Cain                |  2 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: BOS @ PHI | 123 - 91
+==================================================
+Jaylen Brown              | 26 PTS,  4 REB,  3 AST
+Jayson Tatum              | 25 PTS, 11 REB,  7 AST
+Tyrese Maxey              | 21 PTS,  1 REB,  8 AST
+Paul George               | 17 PTS,  4 REB,  1 AST
+VJ Edgecombe              | 13 PTS,  3 REB,  3 AST
+Neemias Queta             | 13 PTS,  2 REB,  1 AST
+Payton Pritchard          | 12 PTS,  3 REB,  6 AST
+Sam Hauser                | 12 PTS,  7 REB,  2 AST
+Derrick White             | 10 PTS,  3 REB,  6 AST
+Kelly Oubre Jr.           | 10 PTS,  7 REB,  2 AST
+Justin Edwards            |  7 PTS,  6 REB,  0 AST
+Quentin Grimes            |  7 PTS,  4 REB,  2 AST
+Luka Garza                |  7 PTS,  2 REB,  1 AST
+Trendon Watford           |  6 PTS,  1 REB,  0 AST
+Baylor Scheierman         |  5 PTS,  2 REB,  0 AST
+Jordan Walsh              |  5 PTS,  2 REB,  2 AST
+Ron Harper Jr.            |  5 PTS,  0 REB,  0 AST
+Dominick Barlow           |  4 PTS,  3 REB,  0 AST
+Adem Bona                 |  3 PTS,  3 REB,  0 AST
+Nikola Vučević            |  3 PTS,  6 REB,  3 AST
+Andre Drummond            |  2 PTS,  5 REB,  2 AST
+Dalen Terry               |  1 PTS,  2 REB,  2 AST
+Hugo González             |  0 PTS,  1 REB,  0 AST
+Jabari Walker             |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: OKC @ PHX | 119 - 84
+==================================================
+Shai Gilgeous-Alexander   | 25 PTS,  4 REB,  7 AST
+Devin Booker              | 23 PTS,  6 REB,  2 AST
+Jalen Williams            | 22 PTS,  7 REB,  6 AST
+Dillon Brooks             | 18 PTS,  7 REB,  2 AST
+Jalen Green               | 17 PTS,  5 REB,  1 AST
+Chet Holmgren             | 16 PTS,  7 REB,  0 AST
+Ajay Mitchell             |  9 PTS,  5 REB,  2 AST
+Isaiah Joe                |  9 PTS,  2 REB,  1 AST
+Rasheer Fleming           |  9 PTS,  0 REB,  0 AST
+Luguentz Dort             |  8 PTS,  2 REB,  2 AST
+Isaiah Hartenstein        |  8 PTS,  8 REB,  2 AST
+Collin Gillespie          |  8 PTS,  2 REB,  2 AST
+Cason Wallace             |  6 PTS,  4 REB,  2 AST
+Jaylin Williams           |  5 PTS,  4 REB,  2 AST
+Jared McCain              |  5 PTS,  0 REB,  0 AST
+Royce O'Neale             |  4 PTS,  3 REB,  3 AST
+Jamaree Bouyea            |  3 PTS,  3 REB,  1 AST
+Kenrich Williams          |  2 PTS,  4 REB,  1 AST
+Alex Caruso               |  2 PTS,  5 REB,  1 AST
+Jordan Goodwin            |  2 PTS,  0 REB,  0 AST
+Aaron Wiggins             |  2 PTS,  2 REB,  1 AST
+Oso Ighodaro              |  0 PTS,  9 REB,  3 AST
+Ryan Dunn                 |  0 PTS,  5 REB,  1 AST
+Haywood Highsmith         |  0 PTS,  2 REB,  1 AST
+Khaman Maluach            |  0 PTS,  3 REB,  0 AST
+Nikola Topić              |  0 PTS,  0 REB,  1 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: POR @ SAS | 98 - 111
+==================================================
+Victor Wembanyama         | 35 PTS,  5 REB,  1 AST
+Deni Avdija               | 30 PTS, 10 REB,  5 AST
+Scoot Henderson           | 18 PTS,  3 REB,  3 AST
+De'Aaron Fox              | 17 PTS,  5 REB,  8 AST
+Stephon Castle            | 17 PTS,  7 REB,  7 AST
+Devin Vassell             | 15 PTS,  3 REB,  2 AST
+Robert Williams III       | 11 PTS,  6 REB,  4 AST
+Luke Kornet               | 10 PTS,  6 REB,  1 AST
+Shaedon Sharpe            | 10 PTS,  1 REB,  2 AST
+Jrue Holiday              |  9 PTS,  4 REB, 11 AST
+Toumani Camara            |  8 PTS,  2 REB,  1 AST
+Julian Champagnie         |  6 PTS,  5 REB,  2 AST
+Dylan Harper              |  6 PTS,  4 REB,  2 AST
+Jerami Grant              |  5 PTS,  0 REB,  0 AST
+Donovan Clingan           |  4 PTS,  7 REB,  1 AST
+Keldon Johnson            |  3 PTS,  7 REB,  1 AST
+Matisse Thybulle          |  3 PTS,  4 REB,  1 AST
+Harrison Barnes           |  2 PTS,  1 REB,  0 AST
+Carter Bryant             |  0 PTS,  2 REB,  0 AST
+Sidy Cissoko              |  0 PTS,  1 REB,  0 AST
+Kelly Olynyk              |  0 PTS,  0 REB,  0 AST
+Lindy Waters III          |  0 PTS,  0 REB,  0 AST
+Bismack Biyombo           |  0 PTS,  0 REB,  0 AST
+Vít Krejčí                |  0 PTS,  0 REB,  0 AST
+Blake Wesley              |  0 PTS,  0 REB,  0 AST
+Yang Hansen               |  0 PTS,  0 REB,  0 AST
+Kris Murray               |  0 PTS,  0 REB,  0 AST
+

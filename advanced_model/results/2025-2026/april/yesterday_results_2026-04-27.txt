@@ -1,0 +1,81 @@
+--- RESULTS FOR 2026-04-27 ---
+
+==================================================
+MATCHUP: DET @ ORL | 88 - 94
+==================================================
+Cade Cunningham           | 25 PTS,  9 REB,  6 AST
+Desmond Bane              | 22 PTS,  5 REB,  1 AST
+Tobias Harris             | 20 PTS,  6 REB,  0 AST
+Franz Wagner              | 19 PTS,  5 REB,  3 AST
+Paolo Banchero            | 18 PTS,  8 REB,  4 AST
+Wendell Carter Jr.        | 12 PTS, 11 REB,  4 AST
+Jalen Duren               | 12 PTS,  8 REB,  3 AST
+Isaiah Stewart            |  8 PTS,  3 REB,  1 AST
+Jamal Cain                |  8 PTS,  9 REB,  0 AST
+Duncan Robinson           |  7 PTS,  1 REB,  0 AST
+Ausar Thompson            |  6 PTS,  9 REB,  1 AST
+Tristan da Silva          |  6 PTS,  4 REB,  1 AST
+Javonte Green             |  5 PTS,  5 REB,  0 AST
+Jalen Suggs               |  5 PTS,  2 REB,  2 AST
+Daniss Jenkins            |  3 PTS,  2 REB,  4 AST
+Goga Bitadze              |  2 PTS,  6 REB,  0 AST
+Caris LeVert              |  2 PTS,  5 REB,  3 AST
+Anthony Black             |  2 PTS,  2 REB,  0 AST
+Kevin Huerter             |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: OKC @ PHX | 131 - 122
+==================================================
+Shai Gilgeous-Alexander   | 31 PTS,  2 REB,  8 AST
+Chet Holmgren             | 24 PTS, 12 REB,  3 AST
+Devin Booker              | 24 PTS,  0 REB,  6 AST
+Dillon Brooks             | 23 PTS,  4 REB,  3 AST
+Jalen Green               | 23 PTS,  6 REB,  4 AST
+Ajay Mitchell             | 22 PTS,  4 REB,  6 AST
+Collin Gillespie          | 20 PTS,  2 REB,  2 AST
+Isaiah Hartenstein        | 18 PTS, 12 REB,  3 AST
+Alex Caruso               | 14 PTS,  4 REB,  1 AST
+Grayson Allen             | 12 PTS,  3 REB,  3 AST
+Cason Wallace             | 10 PTS,  4 REB,  4 AST
+Oso Ighodaro              |  8 PTS,  8 REB,  4 AST
+Royce O'Neale             |  8 PTS,  7 REB,  2 AST
+Isaiah Joe                |  6 PTS,  0 REB,  0 AST
+Jaylin Williams           |  3 PTS,  0 REB,  1 AST
+Khaman Maluach            |  2 PTS,  2 REB,  0 AST
+Aaron Wiggins             |  2 PTS,  0 REB,  2 AST
+Jamaree Bouyea            |  2 PTS,  0 REB,  0 AST
+Luguentz Dort             |  1 PTS,  1 REB,  0 AST
+Rasheer Fleming           |  0 PTS,  1 REB,  0 AST
+Ryan Dunn                 |  0 PTS,  0 REB,  0 AST
+Amir Coffey               |  0 PTS,  0 REB,  0 AST
+Nikola Topić              |  0 PTS,  0 REB,  0 AST
+Kenrich Williams          |  0 PTS,  0 REB,  0 AST
+Jared McCain              |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: DEN @ MIN | 125 - 113
+==================================================
+Nikola Jokić              | 27 PTS, 12 REB, 16 AST
+Julius Randle             | 27 PTS,  9 REB,  6 AST
+Jamal Murray              | 24 PTS,  4 REB,  7 AST
+Spencer Jones             | 20 PTS,  3 REB,  1 AST
+Cameron Johnson           | 18 PTS,  6 REB,  5 AST
+Ayo Dosunmu               | 18 PTS,  3 REB,  4 AST
+Bones Hyland              | 15 PTS,  1 REB,  1 AST
+Terrence Shannon Jr.      | 15 PTS,  1 REB,  0 AST
+Jaden McDaniels           | 13 PTS,  3 REB,  1 AST
+Naz Reid                  | 12 PTS,  8 REB,  1 AST
+Christian Braun           |  9 PTS,  2 REB,  3 AST
+Jonas Valančiūnas         |  9 PTS,  2 REB,  1 AST
+Tim Hardaway Jr.          |  8 PTS,  0 REB,  0 AST
+Bruce Brown               |  7 PTS,  0 REB,  0 AST
+Kyle Anderson             |  4 PTS,  3 REB,  6 AST
+Mike Conley               |  4 PTS,  1 REB,  4 AST
+Rudy Gobert               |  3 PTS,  7 REB,  2 AST
+Tyus Jones                |  3 PTS,  0 REB,  2 AST
+Joan Beringer             |  2 PTS,  1 REB,  0 AST
+Jaylen Clark              |  0 PTS,  1 REB,  1 AST
+Joe Ingles                |  0 PTS,  0 REB,  0 AST
+Julian Phillips           |  0 PTS,  0 REB,  0 AST
+Julian Strawther          |  0 PTS,  0 REB,  0 AST
+

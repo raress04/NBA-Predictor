@@ -1,0 +1,196 @@
+[+] HISTORICAL MODE: Generating projections for 2026-03-09
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 69 players marked Out/GTD.
+    [+] Found 5 games in database for 2026-03-09
+    [+] Parsed 5 unique matchups:
+        DEN @ OKC
+        NYK @ LAC
+        GSW @ UTA
+        MEM @ BKN
+        PHI @ CLE
+
+[+] Commencing Parallel Historical Simulations...
+
+============================================================
+ MATCHUP: Memphis Grizzlies @ Brooklyn Nets
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 230.2
+PROJECTED SCORE: BKN 109.0 - MEM 121.2
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Danny Wolf           -> 13 PTS, 6 REB, 3 AST
+  Drake Powell         -> 8 PTS, 2 REB, 1 AST
+  Ben Saraf            -> 8 PTS, 2 REB, 4 AST
+  Nolan Traore         -> 12 PTS, 2 REB, 4 AST
+  Jalen Wilson         -> 7 PTS, 3 REB, 1 AST
+  Ochai Agbaji         -> 8 PTS, 3 REB, 1 AST
+  Nic Claxton          -> 13 PTS, 7 REB, 3 AST
+  Noah Clowney         -> 14 PTS, 5 REB, 1 AST
+  Ziaire Williams      -> 13 PTS, 3 REB, 2 AST
+  Day'Ron Sharpe       -> 10 PTS, 7 REB, 3 AST
+
+[AWAY TEAM]
+  Rayan Rupert         -> 11 PTS, 6 REB, 1 AST
+  Javon Small          -> 17 PTS, 6 REB, 5 AST
+  Olivier-Maxence Prosper -> 16 PTS, 6 REB, 1 AST
+  Jahmai Mashack       -> 8 PTS, 4 REB, 2 AST
+  Walter Clayton Jr.   -> 11 PTS, 3 REB, 7 AST
+  Jaylen Wells         -> 20 PTS, 4 REB, 2 AST
+  Cam Spencer          -> 14 PTS, 4 REB, 5 AST
+  GG Jackson           -> 21 PTS, 8 REB, 2 AST
+
+
+============================================================
+ MATCHUP: New York Knicks @ Los Angeles Clippers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 236.2
+PROJECTED SCORE: LAC 116.8 - NYK 119.3
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Bennedict Mathurin   -> 21 PTS, 6 REB, 2 AST
+  Kawhi Leonard        -> 27 PTS, 6 REB, 3 AST
+  Derrick Jones Jr.    -> 12 PTS, 4 REB, 2 AST
+  Darius Garland       -> 18 PTS, 2 REB, 6 AST
+  Brook Lopez          -> 10 PTS, 4 REB, 2 AST
+  Kris Dunn            -> 6 PTS, 5 REB, 4 AST
+  Jordan Miller        -> 11 PTS, 3 REB, 3 AST
+  Isaiah Jackson       -> 6 PTS, 5 REB, 1 AST
+  Nicolas Batum        -> 2 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Jalen Brunson        -> 22 PTS, 3 REB, 7 AST
+  OG Anunoby           -> 21 PTS, 5 REB, 2 AST
+  Josh Hart            -> 14 PTS, 7 REB, 5 AST
+  Karl-Anthony Towns   -> 21 PTS, 10 REB, 3 AST
+  Mikal Bridges        -> 13 PTS, 4 REB, 3 AST
+  Landry Shamet        -> 11 PTS, 2 REB, 2 AST
+  Mohamed Diawara      -> 7 PTS, 2 REB, 1 AST
+  Ariel Hukporti       -> 2 PTS, 2 REB, 0 AST
+  Jose Alvarado        -> 6 PTS, 2 REB, 5 AST
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ Oklahoma City Thunder
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 241.8
+PROJECTED SCORE: OKC 120.2 - DEN 121.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jaylin Williams      -> 10 PTS, 8 REB, 3 AST
+  Shai Gilgeous-Alexander -> 30 PTS, 6 REB, 7 AST
+  Isaiah Joe           -> 13 PTS, 4 REB, 2 AST
+  Luguentz Dort        -> 9 PTS, 4 REB, 1 AST
+  Ajay Mitchell        -> 15 PTS, 4 REB, 4 AST
+  Jared McCain         -> 13 PTS, 3 REB, 1 AST
+  Aaron Wiggins        -> 9 PTS, 4 REB, 2 AST
+  Cason Wallace        -> 10 PTS, 4 REB, 5 AST
+  Kenrich Williams     -> 6 PTS, 4 REB, 1 AST
+
+[AWAY TEAM]
+  Nikola Jokić         -> 24 PTS, 10 REB, 8 AST
+  Christian Braun      -> 14 PTS, 5 REB, 3 AST
+  Jamal Murray         -> 23 PTS, 4 REB, 5 AST
+  Tim Hardaway Jr.     -> 13 PTS, 2 REB, 1 AST
+  Aaron Gordon         -> 15 PTS, 5 REB, 3 AST
+  Cameron Johnson      -> 12 PTS, 4 REB, 2 AST
+  Bruce Brown          -> 7 PTS, 3 REB, 2 AST
+  Spencer Jones        -> 5 PTS, 4 REB, 0 AST
+  Jonas Valančiūnas    -> 5 PTS, 3 REB, 1 AST
+
+
+============================================================
+ MATCHUP: San Francisco Warriors @ Utah Jazz
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 202.7
+PROJECTED SCORE: UTA 105.5 - GSW 97.2
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Cody Williams        -> 11 PTS, 6 REB, 3 AST
+  John Konchar         -> 3 PTS, 5 REB, 2 AST
+  Brice Sensabaugh     -> 21 PTS, 4 REB, 2 AST
+  Blake Hinson         -> 9 PTS, 3 REB, 1 AST
+  Kyle Filipowski      -> 14 PTS, 10 REB, 3 AST
+  Keyonte George       -> 25 PTS, 3 REB, 3 AST
+  Elijah Harkless      -> 10 PTS, 3 REB, 3 AST
+  Oscar Tshiebwe       -> 4 PTS, 6 REB, 1 AST
+  Kevin Love           -> 6 PTS, 7 REB, 2 AST
+
+[AWAY TEAM]
+  Brandin Podziemski   -> 16 PTS, 8 REB, 3 AST
+  Gui Santos           -> 14 PTS, 7 REB, 3 AST
+  Draymond Green       -> 8 PTS, 6 REB, 4 AST
+  Gary Payton II       -> 11 PTS, 6 REB, 1 AST
+  Quinten Post         -> 6 PTS, 5 REB, 1 AST
+  De'Anthony Melton    -> 16 PTS, 4 REB, 2 AST
+  LJ Cryer             -> 7 PTS, 2 REB, 1 AST
+  Malevy Leons         -> 2 PTS, 2 REB, 0 AST
+  Nate Williams        -> 4 PTS, 2 REB, 0 AST
+  Pat Spencer          -> 8 PTS, 3 REB, 3 AST
+
+
+============================================================
+ MATCHUP: Philadelphia 76ers @ Cleveland Cavaliers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 227.6
+PROJECTED SCORE: CLE 125.0 - PHI 102.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Donovan Mitchell     -> 22 PTS, 4 REB, 4 AST
+  James Harden         -> 21 PTS, 6 REB, 7 AST
+  Evan Mobley          -> 21 PTS, 10 REB, 2 AST
+  Keon Ellis           -> 9 PTS, 3 REB, 1 AST
+  Dennis Schröder      -> 8 PTS, 2 REB, 4 AST
+  Jaylon Tyson         -> 11 PTS, 4 REB, 2 AST
+  Sam Merrill          -> 13 PTS, 3 REB, 2 AST
+  Dean Wade            -> 5 PTS, 5 REB, 1 AST
+  Craig Porter Jr.     -> 3 PTS, 3 REB, 3 AST
+  Thomas Bryant        -> 8 PTS, 4 REB, 0 AST
+
+[AWAY TEAM]
+  Quentin Grimes       -> 20 PTS, 4 REB, 3 AST
+  Justin Edwards       -> 11 PTS, 2 REB, 2 AST
+  Cameron Payne        -> 10 PTS, 2 REB, 3 AST
+  Adem Bona            -> 6 PTS, 6 REB, 1 AST
+  Trendon Watford      -> 7 PTS, 3 REB, 3 AST
+  Dominick Barlow      -> 9 PTS, 5 REB, 1 AST
+  Dalen Terry          -> 6 PTS, 2 REB, 2 AST
+  Tyrese Martin        -> 5 PTS, 2 REB, 1 AST
+  Andre Drummond       -> 7 PTS, 8 REB, 2 AST
+  Kelly Oubre Jr.      -> 18 PTS, 5 REB, 2 AST
+
+
+[+] Historical projections for 2026-03-09 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating historical PDF report for 2026-03-09...
+    [+] Successfully generated predicts_report_2026-03-09.tex

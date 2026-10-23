@@ -1,0 +1,54 @@
+--- RESULTS FOR 2026-05-07 ---
+
+==================================================
+MATCHUP: CLE @ DET | 97 - 107
+==================================================
+Donovan Mitchell          | 31 PTS,  6 REB,  3 AST
+Cade Cunningham           | 25 PTS,  3 REB, 10 AST
+Jarrett Allen             | 22 PTS,  7 REB,  3 AST
+Tobias Harris             | 21 PTS,  7 REB,  0 AST
+Duncan Robinson           | 17 PTS,  3 REB,  3 AST
+Daniss Jenkins            | 14 PTS,  6 REB,  4 AST
+Ausar Thompson            | 10 PTS,  7 REB,  2 AST
+James Harden              | 10 PTS,  6 REB,  3 AST
+Evan Mobley               |  9 PTS,  1 REB,  4 AST
+Jalen Duren               |  8 PTS, 10 REB,  1 AST
+Dean Wade                 |  8 PTS,  5 REB,  0 AST
+Caris LeVert              |  8 PTS,  2 REB,  1 AST
+Jaylon Tyson              |  7 PTS,  5 REB,  1 AST
+Dennis Schröder           |  4 PTS,  3 REB,  5 AST
+Max Strus                 |  3 PTS,  3 REB,  1 AST
+Keon Ellis                |  3 PTS,  0 REB,  0 AST
+Ronald Holland II         |  2 PTS,  2 REB,  0 AST
+Isaiah Stewart            |  2 PTS,  2 REB,  0 AST
+Javonte Green             |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: LAL @ OKC | 107 - 125
+==================================================
+Austin Reaves             | 31 PTS,  2 REB,  6 AST
+LeBron James              | 23 PTS,  2 REB,  6 AST
+Chet Holmgren             | 22 PTS,  9 REB,  3 AST
+Shai Gilgeous-Alexander   | 22 PTS,  2 REB,  2 AST
+Ajay Mitchell             | 20 PTS,  3 REB,  6 AST
+Jared McCain              | 18 PTS,  0 REB,  0 AST
+Rui Hachimura             | 16 PTS,  4 REB,  2 AST
+Marcus Smart              | 14 PTS,  4 REB,  5 AST
+Cason Wallace             | 12 PTS,  2 REB,  4 AST
+Isaiah Hartenstein        | 10 PTS,  9 REB,  1 AST
+Luke Kennard              | 10 PTS,  1 REB,  0 AST
+Jaylin Williams           |  7 PTS,  2 REB,  1 AST
+Jaxson Hayes              |  6 PTS,  3 REB,  2 AST
+Alex Caruso               |  5 PTS,  4 REB,  4 AST
+Isaiah Joe                |  4 PTS,  0 REB,  3 AST
+Deandre Ayton             |  3 PTS, 10 REB,  0 AST
+Luguentz Dort             |  3 PTS,  1 REB,  2 AST
+Nick Smith Jr.            |  2 PTS,  0 REB,  1 AST
+Dalton Knecht             |  2 PTS,  1 REB,  0 AST
+Nikola Topić              |  2 PTS,  0 REB,  0 AST
+Jake LaRavia              |  0 PTS,  0 REB,  1 AST
+Adou Thiero               |  0 PTS,  3 REB,  0 AST
+Aaron Wiggins             |  0 PTS,  0 REB,  0 AST
+Bronny James              |  0 PTS,  0 REB,  1 AST
+Kenrich Williams          |  0 PTS,  0 REB,  0 AST
+

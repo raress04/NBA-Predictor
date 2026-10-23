@@ -1,0 +1,124 @@
+--- RESULTS FOR 2026-04-06 ---
+
+==================================================
+MATCHUP: ATL @ NYK | 105 - 108
+==================================================
+Nickeil Alexander-Walker  | 36 PTS,  2 REB,  3 AST
+Jalen Brunson             | 30 PTS,  3 REB, 13 AST
+OG Anunoby                | 22 PTS,  5 REB,  1 AST
+Karl-Anthony Towns        | 21 PTS, 12 REB,  6 AST
+Jalen Johnson             | 21 PTS, 11 REB,  5 AST
+CJ McCollum               | 17 PTS,  3 REB,  6 AST
+Mikal Bridges             | 15 PTS,  5 REB,  2 AST
+Onyeka Okongwu            | 12 PTS,  8 REB,  1 AST
+Dyson Daniels             | 11 PTS, 12 REB,  3 AST
+Mitchell Robinson         |  8 PTS, 12 REB,  1 AST
+Miles McBride             |  6 PTS,  2 REB,  2 AST
+Jonathan Kuminga          |  5 PTS,  5 REB,  2 AST
+Zaccharie Risacher        |  3 PTS,  2 REB,  0 AST
+Jordan Clarkson           |  3 PTS,  2 REB,  0 AST
+Josh Hart                 |  2 PTS,  5 REB,  3 AST
+Landry Shamet             |  1 PTS,  1 REB,  1 AST
+Gabe Vincent              |  0 PTS,  2 REB,  3 AST
+Tony Bradley              |  0 PTS,  2 REB,  0 AST
+Mouhamed Gueye            |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: DET @ ORL | 107 - 123
+==================================================
+Paolo Banchero            | 31 PTS,  5 REB,  3 AST
+Desmond Bane              | 25 PTS,  3 REB,  1 AST
+Daniss Jenkins            | 18 PTS,  2 REB,  7 AST
+Jalen Duren               | 18 PTS,  9 REB,  4 AST
+Kevin Huerter             | 17 PTS,  3 REB,  5 AST
+Javonte Green             | 17 PTS,  6 REB,  2 AST
+Anthony Black             | 14 PTS,  1 REB,  2 AST
+Jalen Suggs               | 12 PTS,  6 REB, 12 AST
+Tristan da Silva          | 12 PTS,  4 REB,  1 AST
+Wendell Carter Jr.        | 12 PTS,  3 REB,  3 AST
+Paul Reed                 |  9 PTS,  6 REB,  2 AST
+Goga Bitadze              |  9 PTS,  4 REB,  1 AST
+Ausar Thompson            |  8 PTS,  3 REB,  6 AST
+Tolu Smith                |  8 PTS,  3 REB,  1 AST
+Marcus Sasser             |  5 PTS,  2 REB,  4 AST
+Ronald Holland II         |  5 PTS,  0 REB,  0 AST
+Jase Richardson           |  3 PTS,  1 REB,  0 AST
+Jamal Cain                |  3 PTS,  2 REB,  1 AST
+Chaz Lanier               |  2 PTS,  1 REB,  1 AST
+Moritz Wagner             |  2 PTS,  1 REB,  1 AST
+Jevon Carter              |  0 PTS,  4 REB,  3 AST
+Colin Castleton           |  0 PTS,  1 REB,  0 AST
+Noah Penda                |  0 PTS,  0 REB,  0 AST
+Alex Morales              |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: CLE @ MEM | 142 - 126
+==================================================
+Evan Mobley               | 24 PTS,  6 REB,  4 AST
+Olivier-Maxence Prosper   | 24 PTS,  3 REB,  0 AST
+Dennis Schröder           | 22 PTS,  5 REB, 11 AST
+Sam Merrill               | 21 PTS,  2 REB,  2 AST
+Adama Bal                 | 20 PTS,  6 REB,  0 AST
+Dariq Whitehead           | 20 PTS,  3 REB,  1 AST
+Keon Ellis                | 19 PTS,  3 REB,  8 AST
+Lucas Williamson          | 17 PTS,  5 REB,  4 AST
+Jarrett Allen             | 13 PTS,  9 REB,  1 AST
+Cedric Coward             | 12 PTS,  5 REB,  3 AST
+Craig Porter Jr.          | 11 PTS,  8 REB,  6 AST
+GG Jackson                | 11 PTS,  5 REB,  3 AST
+Nae'Qwan Tomlin           | 10 PTS,  9 REB,  2 AST
+Walter Clayton Jr.        | 10 PTS,  1 REB, 11 AST
+Tyrese Proctor            | 10 PTS,  2 REB,  1 AST
+Larry Nance Jr.           | 10 PTS,  3 REB,  1 AST
+Cam Spencer               |  9 PTS,  1 REB,  9 AST
+Toby Okani                |  3 PTS,  2 REB,  1 AST
+Tristan Enaruna           |  2 PTS,  1 REB,  0 AST
+Riley Minix               |  0 PTS,  0 REB,  0 AST
+Olivier Sarr              |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: PHI @ SAS | 102 - 115
+==================================================
+Joel Embiid               | 34 PTS, 12 REB,  1 AST
+Stephon Castle            | 19 PTS, 10 REB, 13 AST
+Dylan Harper              | 17 PTS,  3 REB,  4 AST
+Victor Wembanyama         | 17 PTS,  5 REB,  1 AST
+Paul George               | 16 PTS,  4 REB,  4 AST
+Tyrese Maxey              | 15 PTS,  3 REB,  8 AST
+VJ Edgecombe              | 14 PTS,  8 REB,  3 AST
+Keldon Johnson            | 13 PTS,  9 REB,  1 AST
+De'Aaron Fox              | 13 PTS,  0 REB,  4 AST
+Luke Kornet               | 10 PTS,  3 REB,  1 AST
+Devin Vassell             |  9 PTS,  4 REB,  4 AST
+Julian Champagnie         |  7 PTS,  9 REB,  2 AST
+Dominick Barlow           |  6 PTS,  8 REB,  0 AST
+Kelly Oubre Jr.           |  5 PTS,  8 REB,  0 AST
+Andre Drummond            |  5 PTS,  3 REB,  1 AST
+Carter Bryant             |  5 PTS,  2 REB,  1 AST
+Quentin Grimes            |  5 PTS,  2 REB,  0 AST
+Lindy Waters III          |  3 PTS,  1 REB,  0 AST
+Justin Edwards            |  2 PTS,  0 REB,  0 AST
+Harrison Barnes           |  2 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: DEN @ POR | 137 - 132
+==================================================
+Nikola Jokić              | 35 PTS, 14 REB, 13 AST
+Toumani Camara            | 30 PTS,  5 REB,  0 AST
+Deni Avdija               | 26 PTS,  4 REB,  7 AST
+Aaron Gordon              | 23 PTS,  9 REB,  5 AST
+Jamal Murray              | 20 PTS,  1 REB,  7 AST
+Jrue Holiday              | 19 PTS,  6 REB, 11 AST
+Donovan Clingan           | 18 PTS, 12 REB,  0 AST
+Scoot Henderson           | 18 PTS,  3 REB,  3 AST
+Cameron Johnson           | 17 PTS,  6 REB,  7 AST
+Matisse Thybulle          | 14 PTS,  1 REB,  3 AST
+Jonas Valančiūnas         | 14 PTS,  3 REB,  1 AST
+Julian Strawther          | 11 PTS,  0 REB,  0 AST
+Christian Braun           |  8 PTS,  6 REB,  1 AST
+Robert Williams III       |  6 PTS,  6 REB,  3 AST
+Bruce Brown               |  6 PTS,  5 REB,  2 AST
+Tim Hardaway Jr.          |  3 PTS,  1 REB,  1 AST
+Kris Murray               |  1 PTS,  1 REB,  2 AST
+Sidy Cissoko              |  0 PTS,  1 REB,  0 AST
+

@@ -99,6 +99,7 @@ TOTAL_MAX_MAE_FOR_PARLAY   = 8.0   # current: ~15.2 MAE — gate CLOSED
 
 # Minimum edge percentage required per category to consider a pick valuable
 # (replaces the old flat MIN_EDGE = 2.0 which was not granular enough)
+MIN_EDGE = 2.0
 EDGE_THRESHOLDS = {
     'POINTS':   3.0,
     'REBOUNDS': 2.5,
@@ -126,7 +127,7 @@ USE_ML_CALIBRATION = False
 ML_MODEL_PATH = 'models/'
 
 # ── Parlay / Bankroll Management ─────────────────────────────────
-BLOWOUT_SPREAD_THRESHOLD = 12.0  # Ignore picks when estimated spread > 12 (garbage time risk)
+BLOWOUT_SPREAD_THRESHOLD = 9.5  # Ignore picks when estimated spread > 9.5 (garbage time risk)
 SPREAD_SAFETY_MARGIN = 3.0       # Safety margin added/subtracted to bookmaker line
 LINE_MOVEMENT_BONUS = 5.0        # Max +/-5% confidence adjustment for line movement
 USE_KELLY = False                 # Use Kelly criterion for stake sizing

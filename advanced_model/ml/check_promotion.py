@@ -151,10 +151,16 @@ def check_calibration(conn) -> dict:
     }
 
 
-# ── Check 4: CLV ──────────────────────────────────────────────────────────────
+# ── Check 4: CLV (Informational Only) ────────────────────────────────────────
+# CLV has been downgraded from a promotion gate to informational only.
+# Reason: Player prop markets are thin and low-liquidity — closing lines are noisy
+# and do not reliably reflect model edge. 40.1% coverage on 404 live picks, mostly
+# SPREAD/TOTAL line movement proxy (not probability CLV). Coverage target of ≥80%
+# was dropped. CLV for sides/totals is kept for observation; prop CLV is skipped.
+# See Plans/2026-2027-Season-Updates.md, Task P1-2 for full audit.
 
 def check_clv(conn) -> dict:
-    """Average CLV over last 30 days must be >= 0.0."""
+    """Average line movement (CLV proxy) over last 30 days — INFORMATIONAL ONLY, not a gate."""
     row = conn.execute(f"""
         SELECT ROUND(AVG(clv), 3) AS avg_clv, COUNT(*) AS n
         FROM daily_picks dp
@@ -165,17 +171,19 @@ def check_clv(conn) -> dict:
     avg_clv = row['avg_clv'] if row and row['avg_clv'] is not None else None
     n       = row['n'] if row else 0
 
-    passing = avg_clv is not None and avg_clv >= 0.0
     if avg_clv is None:
-        detail = "  No CLV data found (need closing-line data)."
+        detail = "  No line-movement data found (SPREAD/TOTAL only, informational)."
     else:
-        detail = f"  Average CLV (last 30d): {avg_clv:+.3f} (n={n})"
+        detail = (
+            f"  Avg line movement (last 30d): {avg_clv:+.3f} (n={n})\n"
+            f"  [INFORMATIONAL — not a promotion gate. Prop CLV is excluded: thin markets, noisy close.]"
+        )
 
     return {
-        'check': 'CLV Average',
+        'check': 'Line Movement (CLV proxy)',
         'value': avg_clv,
-        'threshold': '>= 0.0',
-        'pass': passing,
+        'threshold': 'INFORMATIONAL ONLY',
+        'pass': True,  # Always passes — not a gate
         'detail': detail,
     }
 

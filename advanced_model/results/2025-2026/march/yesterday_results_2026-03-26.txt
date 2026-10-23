@@ -1,0 +1,71 @@
+MATCHUP: NYK vs. CHA    103 - 114
+Kon Knueppel           | 26 PTS, 11 REB,  8 AST
+Jalen Brunson          | 26 PTS, 2 REB,  13 AST
+LaMelo Ball            | 22 PTS, 5 REB,  6 AST
+Brandon Miller         | 21 PTS, 8 REB,  3 AST
+Miles Bridges          | 17 PTS, 5 REB,  3 AST
+OG Anunoby             | 17 PTS, 3 REB,  2 AST
+Coby White             | 17 PTS, 3 REB,  2 AST
+Josh Hart              | 16 PTS, 7 REB,  4 AST
+Mikal Bridges          | 14 PTS, 0 REB,  2 AST
+Karl-Anthony Towns     | 13 PTS, 3 REB,  2 AST
+Jordan Clarkson        | 8 PTS, 1 REB,  1 AST
+Grant Williams         | 5 PTS, 1 REB,  1 AST
+Mohamed Diawara        | 5 PTS, 1 REB,  1 AST
+Mitchell Robinson      | 4 PTS, 6 REB,  1 AST
+Ryan Kalkbrenner       | 4 PTS, 4 REB,  1 AST
+Moussa Diabaté         | 2 PTS, 5 REB,  3 AST
+Sion James             | 0 PTS, 1 REB,  1 AST
+Tyler Kolek            | 0 PTS, 1 REB,  0 AST
+Josh Green             | 0 PTS, 0 REB,  0 AST
+Jose Alvarado          | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: NOP vs. DET    108 - 129
+Jalen Duren            | 30 PTS, 10 REB,  7 AST
+Kevin Huerter          | 22 PTS, 3 REB,  2 AST
+Zion Williamson        | 21 PTS, 6 REB,  2 AST
+Daniss Jenkins         | 19 PTS, 2 REB,  9 AST
+Saddiq Bey             | 17 PTS, 1 REB,  3 AST
+Jeremiah Fears         | 13 PTS, 2 REB,  6 AST
+Dejounte Murray        | 12 PTS, 7 REB,  4 AST
+Tobias Harris          | 12 PTS, 9 REB,  7 AST
+Derik Queen            | 11 PTS, 11 REB,  2 AST
+Ausar Thompson         | 11 PTS, 4 REB,  0 AST
+Herbert Jones          | 11 PTS, 0 REB,  4 AST
+Jordan Hawkins         | 9 PTS, 3 REB,  0 AST
+Karlo Matković         | 8 PTS, 3 REB,  1 AST
+Paul Reed              | 8 PTS, 3 REB,  1 AST
+Javonte Green          | 8 PTS, 1 REB,  1 AST
+Marcus Sasser          | 7 PTS, 2 REB,  1 AST
+Chaz Lanier            | 6 PTS, 1 REB,  1 AST
+DeAndre Jordan         | 4 PTS, 5 REB,  3 AST
+Yves Missi             | 2 PTS, 4 REB,  1 AST
+Ronald Holland II      | 2 PTS, 7 REB,  4 AST
+Tolu Smith             | 2 PTS, 1 REB,  1 AST
+Bobi Klintman          | 2 PTS, 1 REB,  0 AST
+Isaac Jones            | 0 PTS, 1 REB,  0 AST
+Micah Peavy            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: SAC vs. ORL    117 - 121
+DeMar DeRozan          | 33 PTS, 6 REB,  11 AST
+Paolo Banchero         | 30 PTS, 9 REB,  7 AST
+Desmond Bane           | 23 PTS, 0 REB,  6 AST
+Daeqwon Plowden        | 23 PTS, 3 REB,  0 AST
+Tristan da Silva       | 18 PTS, 2 REB,  2 AST
+Precious Achiuwa       | 14 PTS, 9 REB,  2 AST
+Devin Carter           | 14 PTS, 3 REB,  4 AST
+Malik Monk             | 13 PTS, 2 REB,  5 AST
+Jamal Cain             | 11 PTS, 5 REB,  2 AST
+Wendell Carter Jr.     | 10 PTS, 11 REB,  0 AST
+Maxime Raynaud         | 10 PTS, 7 REB,  3 AST
+Jalen Suggs            | 8 PTS, 4 REB,  4 AST
+Jevon Carter           | 7 PTS, 0 REB,  0 AST
+Goga Bitadze           | 6 PTS, 2 REB,  0 AST
+Doug McDermott         | 6 PTS, 0 REB,  2 AST
+Jase Richardson        | 5 PTS, 1 REB,  0 AST
+Jett Howard            | 3 PTS, 1 REB,  1 AST
+Dylan Cardwell         | 2 PTS, 5 REB,  2 AST
+DaQuan Jeffries        | 2 PTS, 0 REB,  0 AST
+Killian Hayes          | 0 PTS, 0 REB,  1 AST
+Moritz Wagner          | 0 PTS, 1 REB,  0 AST
+

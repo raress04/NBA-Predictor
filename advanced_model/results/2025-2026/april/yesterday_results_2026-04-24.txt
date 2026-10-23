@@ -1,0 +1,76 @@
+--- RESULTS FOR 2026-04-24 ---
+
+==================================================
+MATCHUP: BOS @ PHI | 108 - 100
+==================================================
+Tyrese Maxey              | 31 PTS,  4 REB,  6 AST
+Jaylen Brown              | 25 PTS,  7 REB,  4 AST
+Jayson Tatum              | 25 PTS,  5 REB,  7 AST
+Paul George               | 18 PTS,  0 REB,  5 AST
+Kelly Oubre Jr.           | 17 PTS,  6 REB,  1 AST
+Payton Pritchard          | 15 PTS,  4 REB,  2 AST
+Andre Drummond            | 12 PTS,  6 REB,  0 AST
+Derrick White             | 11 PTS,  4 REB,  2 AST
+Nikola Vučević            | 11 PTS,  6 REB,  4 AST
+VJ Edgecombe              | 10 PTS, 10 REB,  5 AST
+Adem Bona                 | 10 PTS,  5 REB,  0 AST
+Neemias Queta             |  6 PTS,  7 REB,  0 AST
+Baylor Scheierman         |  6 PTS,  3 REB,  1 AST
+Sam Hauser                |  6 PTS,  3 REB,  0 AST
+Luka Garza                |  3 PTS,  2 REB,  1 AST
+Quentin Grimes            |  2 PTS,  4 REB,  1 AST
+Jordan Walsh              |  0 PTS,  4 REB,  0 AST
+Justin Edwards            |  0 PTS,  2 REB,  0 AST
+
+==================================================
+MATCHUP: POR @ SAS | 108 - 120
+==================================================
+Stephon Castle            | 33 PTS,  2 REB,  5 AST
+Jrue Holiday              | 29 PTS,  6 REB,  5 AST
+Dylan Harper              | 27 PTS, 10 REB,  3 AST
+Scoot Henderson           | 21 PTS,  2 REB,  1 AST
+Deni Avdija               | 19 PTS,  6 REB,  9 AST
+De'Aaron Fox              | 18 PTS,  4 REB,  6 AST
+Luke Kornet               | 14 PTS, 10 REB,  2 AST
+Jerami Grant              | 13 PTS,  2 REB,  0 AST
+Devin Vassell             | 11 PTS,  7 REB,  3 AST
+Robert Williams III       | 11 PTS,  9 REB,  2 AST
+Julian Champagnie         |  9 PTS,  6 REB,  1 AST
+Donovan Clingan           |  7 PTS, 11 REB,  2 AST
+Keldon Johnson            |  5 PTS,  5 REB,  3 AST
+Shaedon Sharpe            |  4 PTS,  3 REB,  1 AST
+Carter Bryant             |  3 PTS,  6 REB,  4 AST
+Toumani Camara            |  2 PTS,  3 REB,  1 AST
+Matisse Thybulle          |  2 PTS,  2 REB,  0 AST
+Yang Hansen               |  0 PTS,  1 REB,  0 AST
+Vít Krejčí                |  0 PTS,  0 REB,  0 AST
+Sidy Cissoko              |  0 PTS,  0 REB,  0 AST
+Blake Wesley              |  0 PTS,  0 REB,  0 AST
+Harrison Barnes           |  0 PTS,  0 REB,  0 AST
+Kris Murray               |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: HOU @ LAL | 108 - 112
+==================================================
+Alperen Sengun            | 33 PTS, 16 REB,  6 AST
+LeBron James              | 29 PTS, 13 REB,  6 AST
+Amen Thompson             | 26 PTS, 11 REB,  4 AST
+Jabari Smith Jr.          | 24 PTS,  6 REB,  1 AST
+Rui Hachimura             | 22 PTS,  4 REB,  2 AST
+Marcus Smart              | 21 PTS,  4 REB, 10 AST
+Reed Sheppard             | 17 PTS,  4 REB,  7 AST
+Luke Kennard              | 14 PTS,  6 REB,  6 AST
+Jaxson Hayes              | 12 PTS,  4 REB,  0 AST
+Tari Eason                |  5 PTS,  4 REB,  2 AST
+Jarred Vanderbilt         |  5 PTS,  6 REB,  1 AST
+Bronny James              |  5 PTS,  0 REB,  0 AST
+Deandre Ayton             |  2 PTS,  6 REB,  2 AST
+Jake LaRavia              |  2 PTS,  2 REB,  1 AST
+Clint Capela              |  2 PTS,  2 REB,  1 AST
+Jae'Sean Tate             |  1 PTS,  1 REB,  0 AST
+Dorian Finney-Smith       |  0 PTS,  4 REB,  0 AST
+Josh Okogie               |  0 PTS,  1 REB,  0 AST
+Nick Smith Jr.            |  0 PTS,  0 REB,  0 AST
+Aaron Holiday             |  0 PTS,  0 REB,  0 AST
+Jeff Green                |  0 PTS,  0 REB,  0 AST
+

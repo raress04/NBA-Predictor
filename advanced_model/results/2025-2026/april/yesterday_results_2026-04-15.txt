@@ -1,0 +1,44 @@
+--- RESULTS FOR 2026-04-15 ---
+
+==================================================
+MATCHUP: ORL @ PHI | 97 - 109
+==================================================
+Desmond Bane              | 34 PTS,  3 REB,  3 AST
+Tyrese Maxey              | 31 PTS,  2 REB,  6 AST
+VJ Edgecombe              | 19 PTS, 11 REB,  1 AST
+Kelly Oubre Jr.           | 19 PTS,  3 REB,  1 AST
+Paolo Banchero            | 18 PTS,  5 REB,  4 AST
+Paul George               | 16 PTS,  5 REB,  5 AST
+Andre Drummond            | 14 PTS, 10 REB,  2 AST
+Anthony Black             | 13 PTS,  6 REB,  3 AST
+Franz Wagner              | 12 PTS,  4 REB,  3 AST
+Wendell Carter Jr.        |  5 PTS, 11 REB,  1 AST
+Jamal Cain                |  5 PTS,  2 REB,  1 AST
+Quentin Grimes            |  4 PTS,  4 REB,  2 AST
+Jalen Suggs               |  4 PTS,  6 REB,  4 AST
+Tristan da Silva          |  4 PTS,  2 REB,  0 AST
+Dominick Barlow           |  4 PTS,  2 REB,  0 AST
+Adem Bona                 |  2 PTS,  3 REB,  0 AST
+Goga Bitadze              |  2 PTS,  2 REB,  0 AST
+
+==================================================
+MATCHUP: GSW @ LAC | 126 - 121
+==================================================
+Stephen Curry             | 35 PTS,  1 REB,  4 AST
+Bennedict Mathurin        | 23 PTS,  3 REB,  2 AST
+Darius Garland            | 21 PTS,  5 REB,  8 AST
+Kawhi Leonard             | 21 PTS,  7 REB,  3 AST
+Kristaps Porziņģis        | 20 PTS,  5 REB,  5 AST
+Gui Santos                | 20 PTS,  6 REB,  5 AST
+Brandin Podziemski        | 17 PTS,  7 REB,  2 AST
+Brook Lopez               | 17 PTS,  5 REB,  1 AST
+Al Horford                | 14 PTS,  3 REB,  0 AST
+Derrick Jones Jr.         | 13 PTS,  2 REB,  1 AST
+John Collins              | 11 PTS,  9 REB,  0 AST
+Draymond Green            |  7 PTS,  6 REB,  9 AST
+Kris Dunn                 |  7 PTS,  3 REB, 10 AST
+De'Anthony Melton         |  7 PTS,  5 REB,  3 AST
+Gary Payton II            |  6 PTS,  3 REB,  1 AST
+Jordan Miller             |  5 PTS,  2 REB,  2 AST
+Kobe Sanders              |  3 PTS,  0 REB,  3 AST
+

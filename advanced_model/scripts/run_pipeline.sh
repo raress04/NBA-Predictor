@@ -1,4 +1,5 @@
 #!/bin/bash
+export PYTHONIOENCODING=utf-8
 
 # Navigate to the advanced_model directory in case the script is run from elsewhere
 cd "$(dirname "$0")/.."
@@ -24,7 +25,7 @@ echo ""
 echo "========================================="
 echo "🏀 Running Live Scraper..."
 echo "========================================="
-python3 etl/live_scraper.py
+python3 -m etl.live_ingestion
 
 # Check if the python script executed successfully
 if [ $? -ne 0 ]; then
@@ -63,7 +64,7 @@ echo ""
 echo "========================================="
 echo "📄 Generating LaTeX Report (predicts_report.tex)..."
 echo "========================================="
-python3 etl/predicts_to_pdf.py
+python3 -m etl.predicts_to_pdf
 
 if [ -f "predicts_report.tex" ]; then
     pdflatex -interaction=nonstopmode predicts_report.tex
@@ -115,7 +116,7 @@ echo ""
 echo "========================================="
 echo "🤖 Phase ML.6 — Running ML Shadow Pipeline..."
 echo "========================================="
-python3 etl/live_scraper.py --shadow
+python3 -m etl.live_ingestion --shadow
 echo ""
 echo "✅ All logs generated in ${LOG_BASE}"
 

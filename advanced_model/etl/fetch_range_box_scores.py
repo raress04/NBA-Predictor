@@ -197,7 +197,7 @@ def save_daily_results_file(date_dt, logs_df):
             f.write("No box score data found.\n")
     return filepath
 
-def sync_range(start_date_str, end_date_str, run_ml.False):
+def sync_range(start_date_str, end_date_str, run_evaluate=False):
     start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
     end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
     
@@ -258,7 +258,7 @@ def sync_range(start_date_str, end_date_str, run_ml.False):
             print(f"    [OK] Results saved to {os.path.basename(results_path)}")
 
             # 4. Run Analyze Predictions (Hits/Losses)
-            if run_ml.
+            if run_evaluate:
                 print(f"    [*] Running prediction ml...")
                 # Search for prediction file for this date
                 month_sub = current.strftime('%B').lower()
@@ -268,7 +268,7 @@ def sync_range(start_date_str, end_date_str, run_ml.False):
                     pred_file = os.path.join(MODEL_DIR, 'predicts.txt')
                 
                 if os.path.exists(pred_file):
-                    analyze_predictions.generate_ml.predicts_path=pred_file, results_path=results_path, write_db=True)
+                    analyze_predictions.generate_evaluate(predicts_path=pred_file, results_path=results_path, write_db=True)
                     print(f"    [OK] Hit rates updated in pick_results.")
                 else:
                     print(f"    [!] No prediction file found for {ds_db}. Skipping ml.")

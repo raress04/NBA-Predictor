@@ -1,0 +1,99 @@
+--- RESULTS FOR 2026-04-18 ---
+
+==================================================
+MATCHUP: ATL @ NYK | 102 - 113
+==================================================
+Jalen Brunson             | 28 PTS,  5 REB,  7 AST
+CJ McCollum               | 26 PTS,  3 REB,  1 AST
+Karl-Anthony Towns        | 25 PTS,  8 REB,  4 AST
+Jalen Johnson             | 23 PTS,  7 REB,  3 AST
+Onyeka Okongwu            | 19 PTS,  8 REB,  2 AST
+OG Anunoby                | 18 PTS,  8 REB,  0 AST
+Nickeil Alexander-Walker  | 17 PTS,  1 REB,  4 AST
+Josh Hart                 | 11 PTS, 14 REB,  5 AST
+Mikal Bridges             | 11 PTS,  2 REB,  1 AST
+Jonathan Kuminga          |  8 PTS,  4 REB,  1 AST
+Jordan Clarkson           |  8 PTS,  2 REB,  1 AST
+Miles McBride             |  6 PTS,  1 REB,  2 AST
+Dyson Daniels             |  4 PTS,  9 REB, 11 AST
+Mitchell Robinson         |  3 PTS,  4 REB,  1 AST
+Mouhamed Gueye            |  3 PTS,  3 REB,  1 AST
+Landry Shamet             |  3 PTS,  1 REB,  1 AST
+Gabe Vincent              |  2 PTS,  1 REB,  2 AST
+Zaccharie Risacher        |  0 PTS,  4 REB,  0 AST
+
+==================================================
+MATCHUP: CLE @ TOR | 126 - 113
+==================================================
+Donovan Mitchell          | 32 PTS,  3 REB,  4 AST
+RJ Barrett                | 24 PTS,  2 REB,  3 AST
+Max Strus                 | 24 PTS,  3 REB,  0 AST
+James Harden              | 22 PTS,  2 REB, 10 AST
+Scottie Barnes            | 21 PTS,  1 REB,  7 AST
+Evan Mobley               | 17 PTS,  7 REB,  4 AST
+Brandon Ingram            | 17 PTS,  2 REB,  4 AST
+Jamal Shead               | 17 PTS,  1 REB,  2 AST
+Collin Murray-Boyles      | 14 PTS,  4 REB,  4 AST
+Jarrett Allen             | 10 PTS,  7 REB,  0 AST
+Sam Merrill               |  7 PTS,  4 REB,  2 AST
+Ja'Kobe Walter            |  7 PTS,  2 REB,  2 AST
+Dean Wade                 |  5 PTS,  3 REB,  1 AST
+Jakob Poeltl              |  4 PTS,  6 REB,  2 AST
+Sandro Mamukelashvili     |  3 PTS,  8 REB,  2 AST
+Keon Ellis                |  3 PTS,  3 REB,  0 AST
+A.J. Lawson               |  2 PTS,  0 REB,  3 AST
+Jaylon Tyson              |  2 PTS,  0 REB,  1 AST
+Dennis Schröder           |  2 PTS,  1 REB,  2 AST
+Jonathan Mogbo            |  2 PTS,  0 REB,  0 AST
+Trayce Jackson-Davis      |  2 PTS,  0 REB,  0 AST
+Nae'Qwan Tomlin           |  2 PTS,  0 REB,  0 AST
+Gradey Dick               |  0 PTS,  1 REB,  0 AST
+Jamison Battle            |  0 PTS,  0 REB,  0 AST
+Craig Porter Jr.          |  0 PTS,  0 REB,  0 AST
+Larry Nance Jr.           |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: DEN @ MIN | 116 - 105
+==================================================
+Jamal Murray              | 30 PTS,  5 REB,  7 AST
+Nikola Jokić              | 25 PTS, 13 REB, 11 AST
+Anthony Edwards           | 22 PTS,  9 REB,  7 AST
+Rudy Gobert               | 17 PTS, 10 REB,  2 AST
+Aaron Gordon              | 17 PTS,  8 REB,  3 AST
+Jaden McDaniels           | 16 PTS,  8 REB,  3 AST
+Julius Randle             | 16 PTS,  7 REB,  2 AST
+Ayo Dosunmu               | 14 PTS,  0 REB,  1 AST
+Donte DiVincenzo          | 12 PTS,  4 REB,  2 AST
+Christian Braun           | 12 PTS,  8 REB,  1 AST
+Cameron Johnson           | 12 PTS,  0 REB,  1 AST
+Bruce Brown               |  8 PTS,  7 REB,  3 AST
+Tim Hardaway Jr.          |  7 PTS,  3 REB,  1 AST
+Naz Reid                  |  5 PTS,  3 REB,  2 AST
+Spencer Jones             |  5 PTS,  0 REB,  0 AST
+Mike Conley               |  3 PTS,  1 REB,  2 AST
+Jonas Valančiūnas         |  0 PTS,  3 REB,  0 AST
+Kyle Anderson             |  0 PTS,  0 REB,  0 AST
+Bones Hyland              |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: HOU @ LAL | 98 - 107
+==================================================
+Luke Kennard              | 27 PTS,  4 REB,  3 AST
+LeBron James              | 19 PTS,  8 REB, 13 AST
+Deandre Ayton             | 19 PTS, 11 REB,  2 AST
+Alperen Sengun            | 19 PTS,  8 REB,  6 AST
+Amen Thompson             | 17 PTS,  7 REB,  7 AST
+Reed Sheppard             | 17 PTS,  1 REB,  8 AST
+Jabari Smith Jr.          | 16 PTS, 12 REB,  0 AST
+Tari Eason                | 16 PTS, 10 REB,  2 AST
+Marcus Smart              | 15 PTS,  2 REB,  8 AST
+Rui Hachimura             | 14 PTS,  2 REB,  0 AST
+Josh Okogie               |  7 PTS,  0 REB,  1 AST
+Jake LaRavia              |  6 PTS,  2 REB,  3 AST
+Jae'Sean Tate             |  4 PTS,  4 REB,  0 AST
+Jaxson Hayes              |  4 PTS,  1 REB,  0 AST
+Jarred Vanderbilt         |  3 PTS,  5 REB,  0 AST
+Clint Capela              |  2 PTS,  2 REB,  0 AST
+Bronny James              |  0 PTS,  0 REB,  0 AST
+Aaron Holiday             |  0 PTS,  0 REB,  0 AST
+

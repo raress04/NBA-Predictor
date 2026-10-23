@@ -1,0 +1,106 @@
+MATCHUP: BOS vs. PHI    128 - 96
+Payton Pritchard       | 32 PTS, 4 REB,  5 AST
+Jayson Tatum           | 30 PTS, 7 REB,  11 AST
+Joel Embiid            | 26 PTS, 10 REB,  6 AST
+Tyrese Maxey           | 22 PTS, 2 REB,  6 AST
+Jaylen Brown           | 20 PTS, 7 REB,  1 AST
+Paul George            | 16 PTS, 4 REB,  1 AST
+Quentin Grimes         | 12 PTS, 2 REB,  6 AST
+Neemias Queta          | 9 PTS, 8 REB,  1 AST
+Derrick White          | 6 PTS, 6 REB,  3 AST
+VJ Edgecombe           | 6 PTS, 4 REB,  1 AST
+Sam Hauser             | 6 PTS, 4 REB,  1 AST
+Baylor Scheierman      | 6 PTS, 5 REB,  0 AST
+Luka Garza             | 6 PTS, 3 REB,  2 AST
+Nikola Vučević         | 4 PTS, 5 REB,  2 AST
+Trendon Watford        | 4 PTS, 0 REB,  1 AST
+Adem Bona              | 4 PTS, 0 REB,  0 AST
+Jordan Walsh           | 3 PTS, 1 REB,  0 AST
+Max Shulga             | 3 PTS, 0 REB,  0 AST
+Ron Harper Jr.         | 3 PTS, 1 REB,  0 AST
+Andre Drummond         | 2 PTS, 0 REB,  1 AST
+Kelly Oubre Jr.        | 2 PTS, 4 REB,  1 AST
+Jabari Walker          | 2 PTS, 1 REB,  0 AST
+Dominick Barlow        | 0 PTS, 1 REB,  0 AST
+Justin Edwards         | 0 PTS, 2 REB,  2 AST
+Hugo González          | 0 PTS, 0 REB,  2 AST
+Dalano Banton          | 0 PTS, 0 REB,  0 AST
+Dalen Terry            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: CLE vs. TOR    89 - 93
+Scottie Barnes         | 23 PTS, 9 REB,  6 AST
+Brandon Ingram         | 23 PTS, 6 REB,  0 AST
+Donovan Mitchell       | 20 PTS, 6 REB,  3 AST
+James Harden           | 19 PTS, 2 REB,  8 AST
+RJ Barrett             | 18 PTS, 8 REB,  1 AST
+Collin Murray-Boyles   | 15 PTS, 10 REB,  3 AST
+Sam Merrill            | 14 PTS, 0 REB,  0 AST
+Jakob Poeltl           | 10 PTS, 6 REB,  1 AST
+Jaylon Tyson           | 9 PTS, 5 REB,  0 AST
+Dennis Schröder        | 8 PTS, 5 REB,  0 AST
+Evan Mobley            | 8 PTS, 9 REB,  3 AST
+Dean Wade              | 7 PTS, 5 REB,  0 AST
+Jarrett Allen          | 3 PTS, 15 REB,  0 AST
+Sandro Mamukelashvili  | 2 PTS, 8 REB,  1 AST
+Jamal Shead            | 2 PTS, 4 REB,  4 AST
+Max Strus              | 1 PTS, 7 REB,  0 AST
+Ja'Kobe Walter         | 0 PTS, 7 REB,  3 AST
+Keon Ellis             | 0 PTS, 2 REB,  1 AST
+Jamison Battle         | 0 PTS, 1 REB,  0 AST
+A.J. Lawson            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: SAS vs. POR    114 - 93
+De'Aaron Fox           | 28 PTS, 6 REB,  7 AST
+Victor Wembanyama      | 27 PTS, 12 REB,  3 AST
+Deni Avdija            | 26 PTS, 7 REB,  3 AST
+Jrue Holiday           | 20 PTS, 6 REB,  4 AST
+Jerami Grant           | 17 PTS, 5 REB,  1 AST
+Stephon Castle         | 16 PTS, 1 REB,  8 AST
+Devin Vassell          | 11 PTS, 6 REB,  3 AST
+Keldon Johnson         | 9 PTS, 1 REB,  1 AST
+Toumani Camara         | 8 PTS, 5 REB,  1 AST
+Julian Champagnie      | 8 PTS, 3 REB,  0 AST
+Shaedon Sharpe         | 8 PTS, 3 REB,  0 AST
+Carter Bryant          | 6 PTS, 1 REB,  1 AST
+Donovan Clingan        | 5 PTS, 6 REB,  0 AST
+Robert Williams III    | 4 PTS, 6 REB,  2 AST
+Kris Murray            | 4 PTS, 1 REB,  0 AST
+Dylan Harper           | 3 PTS, 2 REB,  1 AST
+Luke Kornet            | 2 PTS, 7 REB,  0 AST
+Jordan McLaughlin      | 2 PTS, 0 REB,  1 AST
+Harrison Barnes        | 2 PTS, 1 REB,  1 AST
+Blake Wesley           | 1 PTS, 0 REB,  0 AST
+Scoot Henderson        | 0 PTS, 0 REB,  2 AST
+Sidy Cissoko           | 0 PTS, 0 REB,  1 AST
+Mason Plumlee          | 0 PTS, 0 REB,  0 AST
+Lindy Waters III       | 0 PTS, 0 REB,  0 AST
+Bismack Biyombo        | 0 PTS, 0 REB,  0 AST
+Yang Hansen            | 0 PTS, 0 REB,  0 AST
+Vít Krejčí             | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: LAL vs. HOU    96 - 115
+Amen Thompson          | 23 PTS, 4 REB,  7 AST
+Tari Eason             | 20 PTS, 8 REB,  2 AST
+Alperen Sengun         | 19 PTS, 6 REB,  2 AST
+Deandre Ayton          | 19 PTS, 10 REB,  0 AST
+Reed Sheppard          | 17 PTS, 1 REB,  3 AST
+Jabari Smith Jr.       | 16 PTS, 8 REB,  3 AST
+Rui Hachimura          | 13 PTS, 3 REB,  1 AST
+LeBron James           | 10 PTS, 4 REB,  9 AST
+Marcus Smart           | 9 PTS, 2 REB,  5 AST
+Aaron Holiday          | 9 PTS, 0 REB,  1 AST
+Jarred Vanderbilt      | 8 PTS, 4 REB,  0 AST
+Dalton Knecht          | 8 PTS, 3 REB,  0 AST
+Luke Kennard           | 7 PTS, 3 REB,  2 AST
+Jake LaRavia           | 6 PTS, 3 REB,  0 AST
+Josh Okogie            | 5 PTS, 4 REB,  1 AST
+Bronny James           | 5 PTS, 2 REB,  4 AST
+Nick Smith Jr.         | 5 PTS, 0 REB,  0 AST
+Adou Thiero            | 3 PTS, 0 REB,  0 AST
+Dorian Finney-Smith    | 2 PTS, 1 REB,  0 AST
+Jaxson Hayes           | 2 PTS, 2 REB,  0 AST
+Jae'Sean Tate          | 2 PTS, 1 REB,  0 AST
+JD Davison             | 2 PTS, 2 REB,  0 AST
+Maxi Kleber            | 1 PTS, 1 REB,  2 AST
+Jeff Green             | 0 PTS, 0 REB,  0 AST
+

@@ -1,0 +1,54 @@
+--- RESULTS FOR 2026-05-03 ---
+
+==================================================
+MATCHUP: DET @ ORL | 116 - 94
+==================================================
+Paolo Banchero            | 38 PTS,  9 REB,  6 AST
+Cade Cunningham           | 32 PTS,  1 REB, 12 AST
+Tobias Harris             | 30 PTS,  9 REB,  2 AST
+Desmond Bane              | 16 PTS,  3 REB,  3 AST
+Daniss Jenkins            | 16 PTS,  3 REB,  5 AST
+Jalen Duren               | 15 PTS, 15 REB,  3 AST
+Wendell Carter Jr.        | 13 PTS,  5 REB,  2 AST
+Anthony Black             | 11 PTS,  5 REB,  1 AST
+Duncan Robinson           | 10 PTS,  6 REB,  3 AST
+Ausar Thompson            |  8 PTS,  4 REB,  4 AST
+Jalen Suggs               |  6 PTS,  4 REB,  4 AST
+Jamal Cain                |  5 PTS,  4 REB,  1 AST
+Moritz Wagner             |  5 PTS,  2 REB,  0 AST
+Javonte Green             |  3 PTS,  2 REB,  0 AST
+Chaz Lanier               |  2 PTS,  0 REB,  0 AST
+Jevon Carter              |  0 PTS,  1 REB,  1 AST
+Marcus Sasser             |  0 PTS,  0 REB,  1 AST
+Isaiah Stewart            |  0 PTS,  1 REB,  0 AST
+Ronald Holland II         |  0 PTS,  0 REB,  0 AST
+Tolu Smith                |  0 PTS,  0 REB,  0 AST
+Paul Reed                 |  0 PTS,  0 REB,  0 AST
+Tristan da Silva          |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: CLE @ TOR | 114 - 102
+==================================================
+Scottie Barnes            | 24 PTS,  9 REB,  6 AST
+RJ Barrett                | 23 PTS,  4 REB,  6 AST
+Jarrett Allen             | 22 PTS, 19 REB,  2 AST
+Donovan Mitchell          | 22 PTS,  3 REB,  1 AST
+James Harden              | 18 PTS,  6 REB,  3 AST
+Jamal Shead               | 14 PTS,  3 REB,  7 AST
+Evan Mobley               | 13 PTS,  7 REB,  4 AST
+Ja'Kobe Walter            | 13 PTS,  2 REB,  2 AST
+Sam Merrill               | 13 PTS,  3 REB,  2 AST
+Max Strus                 | 12 PTS,  8 REB,  5 AST
+Jakob Poeltl              |  9 PTS,  7 REB,  0 AST
+Collin Murray-Boyles      |  8 PTS,  4 REB,  3 AST
+Jaylon Tyson              |  7 PTS,  9 REB,  4 AST
+Sandro Mamukelashvili     |  6 PTS,  0 REB,  0 AST
+Dean Wade                 |  5 PTS,  4 REB,  1 AST
+Jamison Battle            |  3 PTS,  2 REB,  1 AST
+A.J. Lawson               |  2 PTS,  2 REB,  0 AST
+Dennis Schröder           |  2 PTS,  1 REB,  1 AST
+Gradey Dick               |  0 PTS,  0 REB,  0 AST
+Jonathan Mogbo            |  0 PTS,  0 REB,  0 AST
+Garrett Temple            |  0 PTS,  0 REB,  0 AST
+Trayce Jackson-Davis      |  0 PTS,  0 REB,  0 AST
+

@@ -1,0 +1,331 @@
+[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...
+[+] Loaded live Injury Report: 129 players marked Out/GTD.
+[+] ESPN: Fetched odds for 3 upcoming NBA games (source: Draft Kings)
+    [+] ESPN odds loaded for 3 events:
+        New York Knicks @ Atlanta Hawks
+        Boston Celtics @ Philadelphia 76ers
+        Denver Nuggets @ Minnesota Timberwolves
+    [+] Odds API: Found 6 events. Credits remaining: 264
+
+[+] Commencing Parallel Matchup Simulations...
+
+============================================================
+ MATCHUP: Denver Nuggets @ Minnesota Timberwolves
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    MIN 3.10 | DEN 1.39  (Draft Kings)
+     Spread: MIN +6.5 @ 1.91  (Draft Kings)
+     Total:  O/U 225.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event b981ac0f551b...
+        Found props for 15 players. Credits remaining: 258
+PROJECTED TOTAL: 233.5
+PROJECTED SCORE: MIN 103.1 - DEN 130.4
+  -> GAME TOTAL: O/U 225.5 VALUABLE: Over (68% conf (raw: 68%), 18.4% edge)
+  [BIAS CORRECTION] SPREAD | Neutral | median=-28.0 | offset=+1.06 | corrected=-26.9
+  -> HOME SPREAD: MIN +6.5 ignore
+  [BIAS CORRECTION] SPREAD | Neutral | median=-28.0 | offset=+1.06 | corrected=-26.9
+  -> AWAY SPREAD: DEN -6.5 ⛔ BANNED_CATEGORY
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=25.0 | offset=+0.47 | corrected=25.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Julius Randle        -> 25 PTS, 7 REB, 6 AST (O/U 23.5 points ignore, O/U 7.5 rebounds ignore, O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=18.0 | offset=+0.47 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Jaden McDaniels      -> 18 PTS, 4 REB, 3 AST (O/U 17.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.47 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=11.0 | offset=+0.28 | corrected=11.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  Rudy Gobert          -> 10 PTS, 11 REB, 2 AST (O/U 9.5 points ignore, O/U 10.5 rebounds ignore, O/U 1.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.47 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  Naz Reid             -> 14 PTS, 7 REB, 2 AST (O/U 12.5 points ignore, O/U 5.5 rebounds VALUABLE: Over (74% conf (raw: 74%), 24.1% edge))
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.47 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.19 | corrected=5.2
+  Bones Hyland         -> 16 PTS, 3 REB, 5 AST (O/U 11.5 points VALUABLE: Over (76% conf (raw: 76%), 26.4% edge), O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  Terrence Shannon Jr. -> 4 PTS, 1 REB, 1 AST
+  Jaylen Clark         -> 5 PTS, 2 REB, 1 AST
+  Rocco Zikarsky       -> 4 PTS, 3 REB, 0 AST
+  Enrique Freeman      -> 3 PTS, 2 REB, 0 AST
+  Julian Phillips      -> 2 PTS, 0 REB, 0 AST
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=29.0 | offset=+0.47 | corrected=29.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  Jamal Murray         -> 29 PTS, 6 REB, 7 AST (O/U 26.5 points ignore, O/U 4.5 rebounds ignore, O/U 6.5 assists ignore)
+  Nikola Jokić         -> 28 PTS, 14 REB, 10 AST
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Christian Braun      -> 17 PTS, 5 REB, 3 AST (O/U 10.5 points VALUABLE: Over (82% conf (raw: 87%), 36.6% edge), O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.47 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Cameron Johnson      -> 16 PTS, 4 REB, 3 AST (O/U 10.5 points VALUABLE: Over (79% conf (raw: 79%), 29.3% edge), O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Tim Hardaway Jr.     -> 15 PTS, 3 REB, 1 AST
+  [BIAS CORRECTION] POINTS | Bench | median=9.0 | offset=+0.60 | corrected=9.6
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  Bruce Brown          -> 9 PTS, 3 REB, 1 AST (O/U 6.5 points ignore, O/U 3.5 rebounds ignore)
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  Spencer Jones        -> 2 PTS, 3 REB, 0 AST (O/U 3.5 rebounds ignore)
+  Jalen Pickett        -> 1 PTS, 1 REB, 0 AST
+  Julian Strawther     -> 5 PTS, 2 REB, 1 AST
+  Jonas Valančiūnas    -> 5 PTS, 4 REB, 0 AST
+
+
+============================================================
+ MATCHUP: New York Knicks @ Atlanta Hawks
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    ATL 2.30 | NYK 1.65  (Draft Kings)
+     Spread: ATL +2.5 @ 1.95  (Draft Kings)
+     Total:  O/U 214.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 24992ea72a91...
+        Found props for 15 players. Credits remaining: 252
+PROJECTED TOTAL: 232.8
+PROJECTED SCORE: ATL 121.7 - NYK 111.1
+  -> GAME TOTAL: O/U 214.5 VALUABLE: Over (82% conf (raw: 86%), 36.3% edge)
+  [BIAS CORRECTION] SPREAD | Neutral | median=10.0 | offset=+1.06 | corrected=11.1
+  -> HOME SPREAD: ATL +2.5 ⛔ BANNED_CATEGORY
+  [BIAS CORRECTION] SPREAD | Neutral | median=10.0 | offset=+1.06 | corrected=11.1
+  -> AWAY SPREAD: NYK -2.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=20.0 | offset=+0.47 | corrected=20.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=9.0 | offset=+0.28 | corrected=9.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Jalen Johnson        -> 20 PTS, 9 REB, 6 AST (O/U 20.5 points ignore, O/U 9.5 rebounds ignore, O/U 5.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=21.0 | offset=+0.47 | corrected=21.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  Nickeil Alexander-Walker -> 21 PTS, 4 REB, 4 AST (O/U 17.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  Dyson Daniels        -> 12 PTS, 7 REB, 4 AST (O/U 9.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Onyeka Okongwu       -> 13 PTS, 7 REB, 3 AST (O/U 12.5 points ignore, O/U 7.5 rebounds ignore, O/U 2.5 assists ignore)
+  CJ McCollum          -> 22 PTS, 3 REB, 5 AST
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  Jonathan Kuminga     -> 13 PTS, 4 REB, 2 AST (O/U 11.5 points ignore, O/U 4.5 rebounds ignore)
+  Zaccharie Risacher   -> 7 PTS, 3 REB, 0 AST
+  Corey Kispert        -> 6 PTS, 2 REB, 1 AST
+  [BIAS CORRECTION] POINTS | Bench | median=3.0 | offset=+0.60 | corrected=3.6
+  Gabe Vincent         -> 3 PTS, 1 REB, 2 AST (O/U 3.5 points ignore)
+  Buddy Hield          -> 0 PTS, 0 REB, 0 AST
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=24.0 | offset=+0.47 | corrected=24.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  Jalen Brunson        -> 24 PTS, 3 REB, 7 AST (O/U 27.5 points ignore, O/U 3.5 rebounds ignore, O/U 6.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.47 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  OG Anunoby           -> 19 PTS, 6 REB, 2 AST (O/U 16.5 points ignore, O/U 6.5 rebounds ignore, O/U 1.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=2.0 | offset=+0.33 | corrected=2.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  Mikal Bridges        -> 13 PTS, 2 REB, 2 AST (O/U 8.5 points VALUABLE: Over (78% conf (raw: 78%), 28.0% edge), O/U 2.5 rebounds ignore, O/U 1.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=10.0 | offset=+0.28 | corrected=10.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Karl-Anthony Towns   -> 17 PTS, 10 REB, 3 AST (O/U 19.5 points ignore, O/U 12.5 rebounds VALUABLE: Under (74% conf (raw: 74%), 24.3% edge), O/U 3.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  [BIAS CORRECTION] REBOUNDS | Bench | median=1.0 | offset=+0.33 | corrected=1.3
+  Miles McBride        -> 7 PTS, 1 REB, 2 AST (O/U 7.5 points ignore, O/U 1.5 rebounds ignore)
+  Landry Shamet        -> 6 PTS, 2 REB, 1 AST
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  Mitchell Robinson    -> 7 PTS, 7 REB, 0 AST (O/U 3.5 points ignore, O/U 5.5 rebounds VALUABLE: Over (77% conf (raw: 77%), 27.0% edge))
+  Jose Alvarado        -> 5 PTS, 1 REB, 3 AST
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  Jordan Clarkson      -> 7 PTS, 3 REB, 1 AST (O/U 6.5 points ignore)
+  Tyler Kolek          -> 3 PTS, 1 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Boston Celtics @ Philadelphia 76ers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    PHI 3.00 | BOS 1.41  (Draft Kings)
+     Spread: PHI +6.5 @ 1.91  (Draft Kings)
+     Total:  O/U 212.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event b2f1e46d7adf...
+        Found props for 13 players. Credits remaining: 246
+PROJECTED TOTAL: 261.2
+PROJECTED SCORE: PHI 116.1 - BOS 145.1
+  -> GAME TOTAL: O/U 212.5 VALUABLE: Over (82% conf (raw: 100%), 49.7% edge)
+  [BIAS CORRECTION] SPREAD | Neutral | median=-29.0 | offset=+1.06 | corrected=-27.9
+  -> HOME SPREAD: PHI +6.5 ignore
+  [BIAS CORRECTION] SPREAD | Neutral | median=-29.0 | offset=+1.06 | corrected=-27.9
+  -> AWAY SPREAD: BOS -6.5 ⛔ BANNED_CATEGORY
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=27.0 | offset=+0.47 | corrected=27.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Tyrese Maxey         -> 27 PTS, 3 REB, 6 AST (O/U 24.5 points ignore, O/U 4.5 rebounds ignore, O/U 6.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=18.0 | offset=+0.47 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  VJ Edgecombe         -> 18 PTS, 4 REB, 4 AST (O/U 11.5 points VALUABLE: Over (82% conf (raw: 85%), 34.7% edge), O/U 5.5 rebounds VALUABLE: Under (69% conf (raw: 69%), 18.6% edge), O/U 3.5 assists ignore)
+  Kelly Oubre Jr.      -> 13 PTS, 7 REB, 2 AST
+  [BIAS CORRECTION] POINTS | Starter | median=22.0 | offset=+0.47 | corrected=22.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  Paul George          -> 22 PTS, 6 REB, 3 AST (O/U 15.5 points VALUABLE: Over (82% conf (raw: 82%), 31.7% edge), O/U 5.5 rebounds ignore, O/U 3.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.47 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  Quentin Grimes       -> 10 PTS, 5 REB, 2 AST (O/U 7.5 points ignore, O/U 2.5 rebounds ignore)
+  Dominick Barlow      -> 7 PTS, 5 REB, 1 AST
+  Andre Drummond       -> 2 PTS, 6 REB, 2 AST
+  Adem Bona            -> 4 PTS, 4 REB, 0 AST
+  Tyrese Martin        -> 2 PTS, 1 REB, 1 AST
+  Cameron Payne        -> 8 PTS, 3 REB, 3 AST
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.47 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Derrick White        -> 14 PTS, 4 REB, 6 AST (O/U 11.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=30.0 | offset=+0.47 | corrected=30.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.19 | corrected=5.2
+  Jaylen Brown         -> 30 PTS, 5 REB, 5 AST (O/U 25.5 points VALUABLE: Over (73% conf (raw: 73%), 23.1% edge), O/U 6.5 rebounds VALUABLE: Under (77% conf (raw: 77%), 26.8% edge), O/U 4.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  Payton Pritchard     -> 17 PTS, 3 REB, 6 AST (O/U 13.5 points VALUABLE: Over (72% conf (raw: 72%), 21.6% edge), O/U 3.5 rebounds ignore, O/U 3.5 assists ignore)
+  [BIAS CORRECTION] POINTS | Starter | median=28.0 | offset=+0.47 | corrected=28.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=10.0 | offset=+0.28 | corrected=10.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  Jayson Tatum         -> 28 PTS, 10 REB, 7 AST (O/U 24.5 points ignore, O/U 10.5 rebounds ignore, O/U 6.5 assists ignore)
+  Nikola Vučević       -> 6 PTS, 6 REB, 3 AST
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  Neemias Queta        -> 12 PTS, 6 REB, 2 AST (O/U 7.5 points VALUABLE: Over (82% conf (raw: 87%), 36.7% edge), O/U 7.5 rebounds VALUABLE: Under (77% conf (raw: 77%), 26.9% edge))
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  Sam Hauser           -> 12 PTS, 5 REB, 2 AST (O/U 6.5 points VALUABLE: Over (82% conf (raw: 85%), 35.0% edge), O/U 3.5 rebounds ignore)
+  Baylor Scheierman    -> 6 PTS, 3 REB, 1 AST
+  Jordan Walsh         -> 5 PTS, 2 REB, 1 AST
+  Luka Garza           -> 10 PTS, 3 REB, 1 AST
+
+
+============================================================
+  🎯 GENERATING OPTIMAL PARLAYS...
+============================================================
+  ⚠️  [MARKET DISCREPANCY] New York Knicks @ Atlanta Hawks: Proj Margin +10.0, Market Margin -2.5
+  ⛔  [FATAL: MARKET_INVERSION_DETECTED] New York Knicks @ Atlanta Hawks. Proj +10.0 vs Market -2.5. Spreads skip to avoid trap.
+  [BIAS CORRECTION] POINTS | Starter | median=20.0 | offset=+0.47 | corrected=20.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=9.0 | offset=+0.28 | corrected=9.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  [BIAS CORRECTION] POINTS | Starter | median=24.0 | offset=+0.47 | corrected=24.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=2.0 | offset=+0.33 | corrected=2.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=10.0 | offset=+0.28 | corrected=10.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  [BIAS CORRECTION] POINTS | Starter | median=21.0 | offset=+0.47 | corrected=21.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.47 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.24 | corrected=2.2
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  [BIAS CORRECTION] REBOUNDS | Bench | median=1.0 | offset=+0.33 | corrected=1.3
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  [BIAS CORRECTION] POINTS | Starter | median=13.0 | offset=+0.47 | corrected=13.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.60 | corrected=7.6
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.28 | corrected=7.3
+  [BIAS CORRECTION] POINTS | Bench | median=3.0 | offset=+0.60 | corrected=3.6
+  ⚠️  [MARKET DISCREPANCY] Boston Celtics @ Philadelphia 76ers: Proj Margin -29.0, Market Margin -6.5
+  [BIAS CORRECTION] SPREAD | Neutral | median=-29.0 | offset=+1.06 | corrected=-27.9
+  [BIAS CORRECTION] SPREAD | Neutral | median=-29.0 | offset=+1.06 | corrected=-27.9
+  [BIAS CORRECTION] POINTS | Starter | median=28.0 | offset=+0.47 | corrected=28.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=10.0 | offset=+0.28 | corrected=10.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.19 | corrected=7.2
+  [BIAS CORRECTION] POINTS | Starter | median=30.0 | offset=+0.47 | corrected=30.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.19 | corrected=5.2
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.47 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  [BIAS CORRECTION] POINTS | Starter | median=27.0 | offset=+0.47 | corrected=27.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.47 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.19 | corrected=6.2
+  [BIAS CORRECTION] POINTS | Starter | median=18.0 | offset=+0.47 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.28 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.19 | corrected=4.2
+  [BIAS CORRECTION] POINTS | Starter | median=22.0 | offset=+0.47 | corrected=22.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.19 | corrected=3.2
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.47 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.28 | corrected=6.3
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.47 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.28 | corrected=5.3
+  PICK VOLUME: 1 / 15 cap | 62 filtered (BANNED_CATEGORY=1 | LOW_CONFIDENCE=5 | LOW_LINE_VOLATILITY=5 | LOW_SAFE_CONF=9 | MARKET_INVERSION=1 | MINUTES_RISK=2 | MIN_GAP=37 | PARLAY_GATE_CLOSED =2)
+
+[+] Logged 62 filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)
+============================================================
+  Pick 1: [Boston Celtics @ Philadelphia 76ers] Sam Hauser Over 6.5 POINTS (Sim: 74% (raw: 85.0%) | DB: 100%(10/10) / 70%(14/20) → 90%w) @ 1.77
+          Edge: +8.9%  |  Confidence: 65% (raw: 85.0%)  |  Book: pinnacle
+  ─────────────────────────────────────────
+  Combined Odds: 1.77x
+  🔥 RECOMMENDED STAKE: 0.20% of Bankroll
+  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)
+============================================================
+  Pick 1: [Boston Celtics @ Philadelphia 76ers] Sam Hauser Over 6.5 POINTS (Sim: 74% (raw: 85.0%) | DB: 100%(10/10) / 70%(14/20) → 90%w) @ 1.77
+          Edge: +8.9%  |  Confidence: 65% (raw: 85.0%)  |  Book: pinnacle
+  ─────────────────────────────────────────
+  Combined Odds: 1.77x
+============================================================
+
+[+] Archived live projections to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/may/predicts_2026-05-01.txt

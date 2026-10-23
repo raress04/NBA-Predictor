@@ -1,0 +1,79 @@
+MATCHUP: NYK vs. ATL    108 - 109
+OG Anunoby             | 29 PTS, 9 REB,  1 AST
+Jalen Brunson          | 26 PTS, 3 REB,  4 AST
+Jalen Johnson          | 24 PTS, 10 REB,  8 AST
+CJ McCollum            | 23 PTS, 5 REB,  1 AST
+Karl-Anthony Towns     | 21 PTS, 17 REB,  4 AST
+Jonathan Kuminga       | 21 PTS, 4 REB,  0 AST
+Miles McBride          | 15 PTS, 1 REB,  1 AST
+Nickeil Alexander-Walker | 14 PTS, 3 REB,  0 AST
+Onyeka Okongwu         | 9 PTS, 7 REB,  1 AST
+Dyson Daniels          | 8 PTS, 13 REB,  6 AST
+Jordan Clarkson        | 8 PTS, 2 REB,  1 AST
+Gabe Vincent           | 5 PTS, 1 REB,  1 AST
+Mouhamed Gueye         | 5 PTS, 1 REB,  1 AST
+Jose Alvarado          | 5 PTS, 0 REB,  0 AST
+Josh Hart              | 2 PTS, 9 REB,  6 AST
+Mitchell Robinson      | 2 PTS, 4 REB,  0 AST
+Mikal Bridges          | 0 PTS, 1 REB,  2 AST
+Corey Kispert          | 0 PTS, 1 REB,  1 AST
+Landry Shamet          | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: CLE vs. TOR    104 - 126
+Scottie Barnes         | 33 PTS, 5 REB,  11 AST
+RJ Barrett             | 33 PTS, 5 REB,  5 AST
+Collin Murray-Boyles   | 22 PTS, 8 REB,  2 AST
+James Harden           | 18 PTS, 4 REB,  4 AST
+Evan Mobley            | 15 PTS, 6 REB,  7 AST
+Max Strus              | 15 PTS, 6 REB,  3 AST
+Donovan Mitchell       | 15 PTS, 5 REB,  3 AST
+Jamison Battle         | 14 PTS, 2 REB,  0 AST
+Jaylon Tyson           | 13 PTS, 2 REB,  4 AST
+Jarrett Allen          | 12 PTS, 4 REB,  1 AST
+Brandon Ingram         | 12 PTS, 3 REB,  2 AST
+Jakob Poeltl           | 8 PTS, 6 REB,  2 AST
+Dean Wade              | 5 PTS, 5 REB,  0 AST
+Thomas Bryant          | 3 PTS, 1 REB,  0 AST
+Sam Merrill            | 3 PTS, 3 REB,  0 AST
+Dennis Schröder        | 3 PTS, 1 REB,  0 AST
+Jamal Shead            | 2 PTS, 1 REB,  5 AST
+Jonathan Mogbo         | 2 PTS, 0 REB,  0 AST
+Tyrese Proctor         | 2 PTS, 0 REB,  0 AST
+Keon Ellis             | 0 PTS, 4 REB,  0 AST
+Sandro Mamukelashvili  | 0 PTS, 2 REB,  1 AST
+Ja'Kobe Walter         | 0 PTS, 2 REB,  0 AST
+Nae'Qwan Tomlin        | 0 PTS, 1 REB,  1 AST
+Garrett Temple         | 0 PTS, 0 REB,  1 AST
+Trayce Jackson-Davis   | 0 PTS, 1 REB,  0 AST
+Craig Porter Jr.       | 0 PTS, 0 REB,  0 AST
+Larry Nance Jr.        | 0 PTS, 0 REB,  0 AST
+Gradey Dick            | 0 PTS, 0 REB,  0 AST
+A.J. Lawson            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: DEN vs. MIN    96 - 113
+Nikola Jokić           | 27 PTS, 15 REB,  3 AST
+Ayo Dosunmu            | 25 PTS, 3 REB,  9 AST
+Jaden McDaniels        | 20 PTS, 10 REB,  3 AST
+Anthony Edwards        | 17 PTS, 5 REB,  3 AST
+Jamal Murray           | 16 PTS, 3 REB,  4 AST
+Julius Randle          | 15 PTS, 6 REB,  4 AST
+Donte DiVincenzo       | 15 PTS, 4 REB,  7 AST
+Tim Hardaway Jr.       | 11 PTS, 5 REB,  0 AST
+Rudy Gobert            | 10 PTS, 12 REB,  3 AST
+Zeke Nnaji             | 10 PTS, 3 REB,  1 AST
+Bruce Brown            | 9 PTS, 4 REB,  2 AST
+Bones Hyland           | 6 PTS, 4 REB,  0 AST
+Cameron Johnson        | 6 PTS, 2 REB,  1 AST
+Julian Strawther       | 6 PTS, 3 REB,  0 AST
+Spencer Jones          | 6 PTS, 1 REB,  0 AST
+Naz Reid               | 5 PTS, 6 REB,  2 AST
+Christian Braun        | 2 PTS, 2 REB,  0 AST
+Tyus Jones             | 2 PTS, 0 REB,  0 AST
+Jalen Pickett          | 1 PTS, 0 REB,  1 AST
+DaRon Holmes II        | 0 PTS, 2 REB,  0 AST
+Julian Phillips        | 0 PTS, 1 REB,  0 AST
+Joan Beringer          | 0 PTS, 2 REB,  0 AST
+Kyle Anderson          | 0 PTS, 0 REB,  0 AST
+Mike Conley            | 0 PTS, 0 REB,  0 AST
+Joe Ingles             | 0 PTS, 0 REB,  0 AST
+

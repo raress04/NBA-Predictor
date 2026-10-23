@@ -1,0 +1,50 @@
+MATCHUP: CLE vs. DET    101 - 111
+Cade Cunningham        | 23 PTS, 3 REB,  7 AST
+Donovan Mitchell       | 23 PTS, 4 REB,  2 AST
+James Harden           | 22 PTS, 8 REB,  7 AST
+Tobias Harris          | 20 PTS, 8 REB,  1 AST
+Max Strus              | 19 PTS, 5 REB,  2 AST
+Duncan Robinson        | 19 PTS, 0 REB,  2 AST
+Evan Mobley            | 14 PTS, 9 REB,  5 AST
+Daniss Jenkins         | 12 PTS, 7 REB,  3 AST
+Jalen Duren            | 11 PTS, 12 REB,  4 AST
+Ausar Thompson         | 11 PTS, 8 REB,  5 AST
+Dennis Schröder        | 9 PTS, 1 REB,  3 AST
+Isaiah Stewart         | 6 PTS, 3 REB,  1 AST
+Ronald Holland II      | 6 PTS, 1 REB,  0 AST
+Dean Wade              | 5 PTS, 3 REB,  1 AST
+Thomas Bryant          | 4 PTS, 0 REB,  0 AST
+Keon Ellis             | 3 PTS, 3 REB,  0 AST
+Javonte Green          | 3 PTS, 1 REB,  0 AST
+Jarrett Allen          | 2 PTS, 3 REB,  1 AST
+Jaylon Tyson           | 0 PTS, 5 REB,  1 AST
+Caris LeVert           | 0 PTS, 2 REB,  0 AST
+Sam Merrill            | 0 PTS, 0 REB,  1 AST
+
+MATCHUP: LAL vs. OKC    90 - 108
+LeBron James           | 27 PTS, 4 REB,  6 AST
+Chet Holmgren          | 24 PTS, 12 REB,  1 AST
+Shai Gilgeous-Alexander | 18 PTS, 2 REB,  6 AST
+Rui Hachimura          | 18 PTS, 2 REB,  2 AST
+Ajay Mitchell          | 18 PTS, 2 REB,  4 AST
+Marcus Smart           | 12 PTS, 4 REB,  7 AST
+Jared McCain           | 12 PTS, 2 REB,  2 AST
+Deandre Ayton          | 10 PTS, 12 REB,  2 AST
+Isaiah Joe             | 9 PTS, 1 REB,  1 AST
+Austin Reaves          | 8 PTS, 5 REB,  6 AST
+Isaiah Hartenstein     | 8 PTS, 9 REB,  4 AST
+Luke Kennard           | 7 PTS, 5 REB,  1 AST
+Luguentz Dort          | 6 PTS, 3 REB,  4 AST
+Alex Caruso            | 5 PTS, 2 REB,  2 AST
+Cason Wallace          | 5 PTS, 4 REB,  2 AST
+Jaylin Williams        | 3 PTS, 7 REB,  3 AST
+Jaxson Hayes           | 3 PTS, 6 REB,  1 AST
+Jake LaRavia           | 3 PTS, 1 REB,  0 AST
+Jarred Vanderbilt      | 2 PTS, 1 REB,  0 AST
+Bronny James           | 0 PTS, 0 REB,  1 AST
+Nick Smith Jr.         | 0 PTS, 1 REB,  0 AST
+Dalton Knecht          | 0 PTS, 0 REB,  0 AST
+Kenrich Williams       | 0 PTS, 0 REB,  0 AST
+Adou Thiero            | 0 PTS, 0 REB,  0 AST
+Aaron Wiggins          | 0 PTS, 0 REB,  0 AST
+
