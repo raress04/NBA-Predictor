@@ -14,13 +14,6 @@ mkdir -p "${LOG_BASE}/retro_live_alignment"
 mkdir -p "${LOG_BASE}/odds_coverage_audit"
 DATE=$(date +%Y-%m-%d)
 
-echo "========================================="
-echo "📊 Checking bias corrections staleness..."
-echo "========================================="
-# Monthly: recompute bias corrections if stale (>30 days or insufficient samples)
-python3 -m analyze.compute_retroactive_bias --auto-update
-echo "[Stage 3] Bias correction check complete."
-echo ""
 
 echo "========================================="
 echo "🔄 Preparing Yesterday's Results & Analysis..."
