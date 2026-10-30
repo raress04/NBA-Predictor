@@ -359,53 +359,68 @@ def generate_latex(parsed: PredictsParser, output_stem: str):
 
     has_frontpage_content = False
 
-    # ── Historical Performance Section (from DB) ──
-    if _HAS_TRACKER:
-        overall = query_summary()
-        total_picks = int(overall.get('total') or 0)
-        if total_picks >= 10:
-            has_frontpage_content = True
-            wins = int(overall.get('wins') or 0)
-            win_rate = overall.get('win_rate') or 0.0
-            avg_conf = overall.get('avg_conf') or 0.0
-            by_type = query_by_type()
-            bands    = query_confidence_bands()
+    # ──     # -- Top 10 by Confidence + Top 10 by Edge --
+    # Collect all evaluated picks from parlays + honorable mentions + inline props
+    _all_picks = []
+    for _tag, _p in parsed.parlays:
+        _all_picks.append(dict(_p))
+    for _p in parsed.honorable_mentions:
+        _all_picks.append(dict(_p))
+    for _g in parsed.games:
+        for _pl in _g.get('home_players', []) + _g.get('away_players', []):
+            for _pr in _pl.get('props', []):
+                _all_picks.append({
+                    'game': _g['matchup'],
+                    'pick': tex_escape(f"{_pl['name']} {_pr['direction']} {_pr['line']} {_pr['stat']}"),
+                    'conf': _pr['conf'],
+                    'edge': _pr['edge'],
+                    'odds': '',
+                })
 
-            w(r'\begin{mdframed}[linecolor=accent,linewidth=1pt,backgroundcolor=lightgray,')
-            w(r'  innertopmargin=6pt,innerbottommargin=6pt,innerrightmargin=5pt,innerleftmargin=5pt]')
-            w(r'{\bfseries\textcolor{accent}{Historical Performance (All Time)}}\\[3pt]')
-            w(r'\begin{tabular}{@{}p{0.48\linewidth}p{0.48\linewidth}@{}}')
-            # Left column: overall + by type
-            left_lines = []
-            left_lines.append(f'\\textbf{{All Picks:}} {wins}/{total_picks} ({win_rate:.1f}\\%) '
-                              f'\\textcolor{{midgray}}{{— Avg Conf declared: {avg_conf:.0f}\\%}}\\\\')
-            left_lines.append(r'\vspace{2pt}')
-            left_lines.append(r'\textbf{By Category:}\\')
-            for row in by_type:
-                bar_len = max(0, int(row['win_rate'] / 10))
-                bar = r'\textcolor{green!60!black}{' + ('$\\blacksquare$' * bar_len) + '}'
-                left_lines.append(
-                    f"  {row['stat_category']:<12} "
-                    f"{int(row['wins'])}/{int(row['total'])} "
-                    f"({row['win_rate']:.1f}\\%) {bar}\\\\"
-                )
-            w('\n'.join(left_lines))
-            w(r'&')
-            # Right column: confidence bands
-            right_lines = [r'\textbf{Confidence Band Accuracy:}\\']
-            for b in bands:
-                bar_len = max(0, int(b['win_rate'] / 10))
-                bar = r'\textcolor{green!60!black}{' + ('$\\blacksquare$' * bar_len) + '}'
-                right_lines.append(
-                    f"  {tex_escape(b['band']):<8} "
-                    f"{int(b['wins'])}/{int(b['total'])} "
-                    f"({b['win_rate']:.1f}\\%) {bar}\\\\"
-                )
-            w('\n'.join(right_lines))
-            w(r'\end{tabular}')
-            w(r'\end{mdframed}')
-            w(r'\vspace{6pt}')
-            w()
+    _seen = set()
+    _deduped = []
+    for _p in _all_picks:
+        _key = (_p.get('pick', ''), _p.get('game', ''))
+        if _key not in _seen:
+            _seen.add(_key)
+            _deduped.append(_p)
+
+    _top_conf = sorted(_deduped, key=lambda x: int(x.get('conf', 0)), reverse=True)[:10]
+    _top_edge = sorted(_deduped, key=lambda x: float(x.get('edge', 0)), reverse=True)[:10]
+
+    def _top10_table(picks, sort_label, primary_col, secondary_col):
+        if not picks:
+            return
+        w(r'\begin{mdframed}[linecolor=accent,linewidth=1pt,backgroundcolor=lightgray,')
+        w(r'  innertopmargin=5pt,innerbottommargin=5pt,innerrightmargin=5pt,innerleftmargin=5pt]')
+        w(r'{\bfseries\textcolor{accent}{Top 10 Picks \textemdash{} ' + sort_label + r'}}\\[3pt]')
+        w(r'\begin{tabular}{@{}p{0.04\linewidth}p{0.44\linewidth}p{0.24\linewidth}p{0.1\linewidth}p{0.1\linewidth}@{}}')
+        w(r'\toprule')
+        w(r'\# & \textbf{Pick} & \textbf{Game} & \textbf{' + primary_col + r'} & \textbf{' + secondary_col + r'} \\')
+        w(r'\midrule')
+        for _i, _p in enumerate(picks, 1):
+            _conf = int(_p.get('conf', 0))
+            _edge = _p.get('edge', '?')
+            _cc = conf_color(_conf)
+            _pick_str = str(_p.get('pick', ''))[:55]
+            _game_str = tex_escape(str(_p.get('game', '')))[:32]
+            if primary_col == 'Conf':
+                _pv = f'{_cc}{_conf}\\%'
+                _sv = f'+{_edge}\\%'
+            else:
+                _pv = f'+{_edge}\\%'
+                _sv = f'{_cc}{_conf}\\%'
+            w(f'  {_i} & {_pick_str} & {{\\small {_game_str}}} & {_pv} & {_sv} \\\\')
+        w(r'\bottomrule')
+        w(r'\end{tabular}')
+        w(r'\end{mdframed}')
+        w(r'\vspace{4pt}')
+        w()
+
+    if _top_conf or _top_edge:
+        has_frontpage_content = True
+        _top10_table(_top_conf, 'Confidence', 'Conf', 'Edge')
+        _top10_table(_top_edge, 'Edge', 'Edge', 'Conf')
 
     # ── Parlay Summary Box (top of page) ──
     p1_picks = [p for tag, p in parsed.parlays if tag == 'p1']
