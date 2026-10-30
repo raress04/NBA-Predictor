@@ -62,9 +62,9 @@ def tex_escape(text: str) -> str:
 
 def conf_color(conf: int) -> str:
     """Return a LaTeX color command based on confidence level."""
-    if conf >= 90:
+    if conf >= 80:
         return r'\cellcolor{highconf}'
-    elif conf >= 80:
+    elif conf >= 75:
         return r'\cellcolor{medconf}'
     else:
         return r'\cellcolor{lowconf}'
