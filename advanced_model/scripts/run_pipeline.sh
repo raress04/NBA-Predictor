@@ -66,43 +66,6 @@ echo ""
 
 echo ""
 echo "========================================="
-echo "📄 Generating LaTeX Report (predicts_report.tex)..."
-echo "========================================="
-python3 -m etl.predicts_to_pdf
-
-if [ -f "predicts_report.tex" ]; then
-    pdflatex -interaction=nonstopmode predicts_report.tex
-    
-    # Cleanup all the auxiliary LaTeX pollution files gracefully
-    rm -f *.aux *.log *.out *.fls *.fdb_latexmk texput.log
-    
-    echo ""
-    echo "✅ Finished! Your PDF is compiled (predicts_report.pdf)."
-else
-    echo "❌ predicts_report.tex not found in $(pwd)"
-fi
-
-echo ""
-echo "========================================="
-echo "🗄️ Archiving Daily Predictions..."
-echo "========================================="
-# Get current date and month (lowercase)
-DATE=$(date +%Y-%m-%d)
-MONTH=$(date +%B | tr '[:upper:]' '[:lower:]')
-
-# Ensure the month directory exists
-ARCHIVE_DIR="predictions/${MONTH}"
-mkdir -p "$ARCHIVE_DIR"
-
-if [ -f "predicts.txt" ]; then
-    cp predicts.txt "${ARCHIVE_DIR}/predicts_${DATE}.txt"
-    echo "✅ Saved exact predictions to: ${ARCHIVE_DIR}/predicts_${DATE}.txt"
-else
-    echo "⚠️  No predicts.txt found to archive."
-fi
-
-echo ""
-echo "========================================="
 echo "📈 Phase 7 — Data Seeding & Resolution..."
 echo "========================================="
 python3 -m etl.seed_all_live
