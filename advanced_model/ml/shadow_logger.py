@@ -169,16 +169,13 @@ def resolve_ml_shadow_picks(game_date: str):
     try:
         conn = sqlite3.connect(_DB_PATH)
 
-        # Join ml_shadow_picks against projection_outcomes in nba_data.db
-        nba_db = os.path.join(os.path.dirname(_DB_PATH), 'nba_data.db')
-        conn.execute(f"ATTACH DATABASE '{nba_db}' AS nba")
-
+        # projection_outcomes lives in bet_tracker.db -- same connection, no ATTACH needed
         rows = conn.execute("""
             SELECT m.id, m.player, m.stat_category, m.direction, m.line,
                    po.actual_value
             FROM ml_shadow_picks m
-            JOIN nba.projection_outcomes po
-              ON po.player  = m.player
+            JOIN projection_outcomes po
+              ON po.player    = m.player
              AND po.game_date = m.game_date
              AND po.category  = m.stat_category
             WHERE m.game_date = ?
@@ -202,7 +199,6 @@ def resolve_ml_shadow_picks(game_date: str):
             updated += 1
 
         conn.commit()
-        conn.execute("DETACH DATABASE nba")
         conn.close()
         if updated:
             print(f"[shadow_logger] Resolved {updated} ml_shadow_picks for {game_date}")
