@@ -1,0 +1,36 @@
+NBA MODEL PREDICTIONS - 2025-10-23
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Golden State Warriors
+------------------------------
+  Jonathan Kuminga     | POINTS   | Line 16.5 | Proj  8.6 | VALUABLE: Under (81% conf, 47.3% edge)
+  Brandin Podziemski   | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (75% conf, 37.4% edge)
+  Buddy Hield          | POINTS   | Line 10.5 | Proj  6.8 | VALUABLE: Under (74% conf, 35.9% edge)
+  PROJECTED TOTAL: 253.3 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (74% conf, 36.9% edge)
+  -> SPREAD: Denver Nuggets +1.5 VALUABLE: Cover (66% conf, 33.2% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Indiana Pacers
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 14.5 | Proj  8.2 | VALUABLE: Under (79% conf, 43.3% edge)
+  Pascal Siakam        | REBOUNDS | Line  7.5 | Proj  5.3 | VALUABLE: Under (74% conf, 36.0% edge)
+  Isaiah Jackson       | POINTS   | Line  7.5 | Proj  4.6 | VALUABLE: Under (76% conf, 38.1% edge)
+  PROJECTED TOTAL: 229.3 | O/U 231.5
+  -> SPREAD: Oklahoma City Thunder -7.5 VALUABLE: Cover (72% conf, 42.0% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jonathan Kuminga Under 16.5 POINTS (81% conf, 28.0% edge) | Denver Nuggets vs. Golden State Warriors
+  2. Brandin Podziemski Under 5.5 REBOUNDS (75% conf, 25.7% edge) | Denver Nuggets vs. Golden State Warriors
+  3. Aaron Wiggins Under 14.5 POINTS (79% conf, 24.4% edge) | Oklahoma City Thunder vs. Indiana Pacers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jonathan Kuminga Under 16.5 POINTS (81% conf, 28.0% edge) | Denver Nuggets vs. Golden State Warriors
+  2. Brandin Podziemski Under 5.5 REBOUNDS (75% conf, 25.7% edge) | Denver Nuggets vs. Golden State Warriors
+  3. Aaron Wiggins Under 14.5 POINTS (79% conf, 24.4% edge) | Oklahoma City Thunder vs. Indiana Pacers
+  4. Game Total Over 233.5 TOTAL (74% conf, 21.8% edge) | Denver Nuggets vs. Golden State Warriors
+
+
+Total VALUABLE picks today: 9

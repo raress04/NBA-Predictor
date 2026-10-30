@@ -1,0 +1,65 @@
+NBA MODEL PREDICTIONS - 2025-11-11
+============================================================
+
+
+MATCHUP: Oklahoma City Thunder vs. Golden State Warriors
+------------------------------
+  Jonathan Kuminga     | POINTS   | Line 14.5 | Proj  7.5 | VALUABLE: Under (81% conf, 46.1% edge)
+  PROJECTED TOTAL: 244.0 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (71% conf, 32.3% edge)
+  -> SPREAD: Oklahoma City Thunder -8.5 VALUABLE: Cover (67% conf, 34.7% edge)
+
+MATCHUP: Utah Jazz vs. Indiana Pacers
+------------------------------
+  Ace Bailey           | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (76% conf, 38.1% edge)
+  Keyonte George       | POINTS   | Line 20.5 | Proj 28.7 | VALUABLE: Over (73% conf, 34.2% edge)
+  Pascal Siakam        | ASSISTS  | Line  5.5 | Proj  2.4 | VALUABLE: Under (82% conf, 47.3% edge)
+  Tony Bradley         | POINTS   | Line  5.5 | Proj  2.6 | VALUABLE: Under (79% conf, 44.0% edge)
+  Tony Bradley         | REBOUNDS | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 43.5% edge)
+  PROJECTED TOTAL: 231.6 | O/U 233.5
+  -> SPREAD: Utah Jazz +2.5 VALUABLE: Cover (67% conf, 34.8% edge)
+
+MATCHUP: Denver Nuggets vs. Sacramento Kings
+------------------------------
+  Peyton Watson        | POINTS   | Line  7.5 | Proj 13.9 | VALUABLE: Over (75% conf, 37.0% edge)
+  Malik Monk           | POINTS   | Line 12.5 | Proj  8.6 | VALUABLE: Under (74% conf, 34.7% edge)
+  PROJECTED TOTAL: 254.4 | O/U 244.5
+  -> GAME TOTAL: O/U 244.5 VALUABLE: Over (65% conf, 21.7% edge)
+  -> SPREAD: Denver Nuggets -8.5 VALUABLE: Cover (76% conf, 48.1% edge)
+
+MATCHUP: New York Knicks vs. Memphis Grizzlies
+------------------------------
+  Miles McBride        | POINTS   | Line  7.5 | Proj 15.8 | VALUABLE: Over (77% conf, 40.3% edge)
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 41.4% edge)
+  PROJECTED TOTAL: 250.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Over (73% conf, 34.5% edge)
+  -> SPREAD: New York Knicks -10.0 VALUABLE: Cover (75% conf, 46.6% edge)
+
+MATCHUP: Toronto Raptors vs. Brooklyn Nets
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 10.5 | Proj  7.3 | VALUABLE: Under (74% conf, 35.9% edge)
+  PROJECTED TOTAL: 239.6 | O/U 231.5
+  -> GAME TOTAL: O/U 231.5 VALUABLE: Over (61% conf, 16.5% edge)
+
+MATCHUP: Philadelphia 76ers vs. Boston Celtics
+------------------------------
+  Tyrese Maxey         | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (75% conf, 36.8% edge)
+  Josh Minott          | POINTS   | Line  8.5 | Proj  4.5 | VALUABLE: Under (77% conf, 40.9% edge)
+  Josh Minott          | REBOUNDS | Line  5.5 | Proj  2.4 | VALUABLE: Under (81% conf, 47.2% edge)
+  PROJECTED TOTAL: 225.3 | O/U 230.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Pascal Siakam Under 5.5 ASSISTS (82% conf, 38.0% edge) | Utah Jazz vs. Indiana Pacers
+  2. Jonathan Kuminga Under 14.5 POINTS (81% conf, 28.3% edge) | Oklahoma City Thunder vs. Golden State Warriors
+  3. Josh Minott Under 5.5 REBOUNDS (81% conf, 25.8% edge) | Philadelphia 76ers vs. Boston Celtics
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Pascal Siakam Under 5.5 ASSISTS (82% conf, 38.0% edge) | Utah Jazz vs. Indiana Pacers
+  2. Jonathan Kuminga Under 14.5 POINTS (81% conf, 28.3% edge) | Oklahoma City Thunder vs. Golden State Warriors
+  3. Josh Minott Under 5.5 REBOUNDS (81% conf, 25.8% edge) | Philadelphia 76ers vs. Boston Celtics
+  4. Tony Bradley Under 5.5 REBOUNDS (79% conf, 24.9% edge) | Utah Jazz vs. Indiana Pacers
+
+
+Total VALUABLE picks today: 22

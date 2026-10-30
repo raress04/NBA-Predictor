@@ -1,0 +1,32 @@
+NBA MODEL PREDICTIONS - 2025-10-21
+============================================================
+
+
+MATCHUP: Houston Rockets vs. Oklahoma City Thunder
+------------------------------
+  Ajay Mitchell        | POINTS   | Line  7.5 | Proj 14.8 | VALUABLE: Over (77% conf, 40.1% edge)
+  Aaron Wiggins        | POINTS   | Line 11.5 | Proj  7.7 | VALUABLE: Under (74% conf, 35.7% edge)
+  PROJECTED TOTAL: 220.5 | O/U 225.5
+
+MATCHUP: Los Angeles Lakers vs. Golden State Warriors
+------------------------------
+  Stephen Curry        | ASSISTS  | Line  5.5 | Proj  3.6 | VALUABLE: Under (77% conf, 40.4% edge)
+  Jonathan Kuminga     | POINTS   | Line 14.5 | Proj  8.0 | VALUABLE: Under (80% conf, 44.9% edge)
+  Buddy Hield          | POINTS   | Line  9.5 | Proj  6.4 | VALUABLE: Under (73% conf, 33.4% edge)
+  PROJECTED TOTAL: 224.8 | O/U 227.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jonathan Kuminga Under 14.5 POINTS (80% conf, 28.5% edge) | Los Angeles Lakers vs. Golden State Warriors
+  2. Ajay Mitchell Over 7.5 POINTS (77% conf, 24.8% edge) | Houston Rockets vs. Oklahoma City Thunder
+  3. Stephen Curry Under 5.5 ASSISTS (77% conf, 21.5% edge) | Los Angeles Lakers vs. Golden State Warriors
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jonathan Kuminga Under 14.5 POINTS (80% conf, 28.5% edge) | Los Angeles Lakers vs. Golden State Warriors
+  2. Ajay Mitchell Over 7.5 POINTS (77% conf, 24.8% edge) | Houston Rockets vs. Oklahoma City Thunder
+  3. Stephen Curry Under 5.5 ASSISTS (77% conf, 21.5% edge) | Los Angeles Lakers vs. Golden State Warriors
+  4. Aaron Wiggins Under 11.5 POINTS (74% conf, 22.3% edge) | Houston Rockets vs. Oklahoma City Thunder
+
+
+Total VALUABLE picks today: 5

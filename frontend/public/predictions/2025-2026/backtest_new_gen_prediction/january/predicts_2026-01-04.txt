@@ -1,0 +1,85 @@
+NBA MODEL PREDICTIONS - 2026-01-04
+============================================================
+
+
+MATCHUP: Milwaukee Bucks vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 231.7 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (68% conf, 18.4% edge)
+  -> SPREAD: Milwaukee Bucks -6.5 VALUABLE: Cover (75% conf, 24.7% edge)
+
+MATCHUP: Denver Nuggets vs. Brooklyn Nets
+------------------------------
+  Aaron Gordon         | POINTS   | Line 12.5 | Proj 19.1 | VALUABLE: Over (78% conf, 33.9% edge)
+  Christian Braun      | POINTS   | Line 10.5 | Proj 15.2 | VALUABLE: Over (77% conf, 26.8% edge)
+  Day'Ron Sharpe       | POINTS   | Line 11.5 | Proj  8.3 | VALUABLE: Under (78% conf, 32.6% edge)
+  Day'Ron Sharpe       | REBOUNDS | Line 10.5 | Proj  7.9 | VALUABLE: Under (78% conf, 34.6% edge)
+  Ziaire Williams      | POINTS   | Line  5.5 | Proj 11.9 | VALUABLE: Over (78% conf, 38.1% edge)
+  PROJECTED TOTAL: 235.9 | O/U 239.5
+
+MATCHUP: Los Angeles Lakers vs. Memphis Grizzlies
+------------------------------
+  Cam Spencer          | POINTS   | Line 16.5 | Proj 11.1 | VALUABLE: Under (78% conf, 35.7% edge)
+  Cam Spencer          | ASSISTS  | Line  8.5 | Proj  5.7 | VALUABLE: Under (78% conf, 41.1% edge)
+  PROJECTED TOTAL: 233.3 | O/U 239.5
+  -> SPREAD: Los Angeles Lakers -5.5 VALUABLE: Cover (81% conf, 30.7% edge)
+
+MATCHUP: Detroit Pistons vs. Cleveland Cavaliers
+------------------------------
+  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  7.6 | VALUABLE: Under (78% conf, 31.3% edge)
+  Isaiah Stewart       | POINTS   | Line 12.5 | Proj 10.3 | VALUABLE: Under (75% conf, 24.7% edge)
+  Isaiah Stewart       | REBOUNDS | Line  8.5 | Proj  6.6 | VALUABLE: Under (78% conf, 29.5% edge)
+  Paul Reed            | POINTS   | Line 10.5 | Proj  7.7 | VALUABLE: Under (78% conf, 32.1% edge)
+  Paul Reed            | REBOUNDS | Line  9.5 | Proj  5.8 | VALUABLE: Under (78% conf, 44.4% edge)
+  Marcus Sasser        | POINTS   | Line 10.5 | Proj  7.3 | VALUABLE: Under (78% conf, 32.2% edge)
+  PROJECTED TOTAL: 222.4 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (78% conf, 33.7% edge)
+
+MATCHUP: Orlando Magic vs. Indiana Pacers
+------------------------------
+  Jarace Walker        | POINTS   | Line  7.5 | Proj 11.9 | VALUABLE: Over (78% conf, 27.8% edge)
+  Johnny Furphy        | POINTS   | Line  6.5 | Proj  4.2 | VALUABLE: Under (78% conf, 35.0% edge)
+  PROJECTED TOTAL: 234.4 | O/U 239.5
+  -> SPREAD: Orlando Magic -6.5 VALUABLE: Cover (82% conf, 32.4% edge)
+
+MATCHUP: Phoenix Suns vs. Oklahoma City Thunder
+------------------------------
+  Chet Holmgren        | POINTS   | Line 17.5 | Proj 13.7 | VALUABLE: Under (78% conf, 27.9% edge)
+  PROJECTED TOTAL: 222.4 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (78% conf, 33.7% edge)
+
+MATCHUP: Miami Heat vs. New Orleans Pelicans
+------------------------------
+  Norman Powell        | POINTS   | Line 25.5 | Proj 21.2 | VALUABLE: Under (75% conf, 25.5% edge)
+  Kel'el Ware          | REBOUNDS | Line 11.5 | Proj  8.6 | VALUABLE: Under (78% conf, 36.8% edge)
+  Bam Adebayo          | POINTS   | Line 17.5 | Proj 22.1 | VALUABLE: Over (74% conf, 23.8% edge)
+  Derik Queen          | POINTS   | Line 12.5 | Proj 10.2 | VALUABLE: Under (76% conf, 25.6% edge)
+  Zion Williamson      | POINTS   | Line 23.5 | Proj 18.9 | VALUABLE: Under (78% conf, 30.1% edge)
+  PROJECTED TOTAL: 237.9 | O/U 239.5
+  -> SPREAD: Miami Heat -7.5 VALUABLE: Cover (85% conf, 34.9% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Washington Wizards
+------------------------------
+  Rudy Gobert          | POINTS   | Line 11.5 | Proj  9.4 | VALUABLE: Under (75% conf, 25.5% edge)
+  Rudy Gobert          | REBOUNDS | Line 12.5 | Proj  9.4 | VALUABLE: Under (78% conf, 36.2% edge)
+  Tre Johnson          | POINTS   | Line 13.5 | Proj 10.2 | VALUABLE: Under (78% conf, 29.3% edge)
+  Alex Sarr            | POINTS   | Line 16.5 | Proj 12.7 | VALUABLE: Under (78% conf, 28.9% edge)
+  Alex Sarr            | REBOUNDS | Line  7.5 | Proj  5.7 | VALUABLE: Under (78% conf, 31.4% edge)
+  PROJECTED TOTAL: 240.1 | O/U 239.5
+  -> SPREAD: Minnesota Timberwolves -11.0 VALUABLE: Cover (90% conf, 40.3% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Cam Spencer Under 8.5 ASSISTS (78% conf, 29.2% edge) | Los Angeles Lakers vs. Memphis Grizzlies
+  2. Ziaire Williams Over 5.5 POINTS (78% conf, 28.2% edge) | Denver Nuggets vs. Brooklyn Nets
+  3. Day'Ron Sharpe Under 10.5 REBOUNDS (78% conf, 28.0% edge) | Denver Nuggets vs. Brooklyn Nets
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Cam Spencer Under 8.5 ASSISTS (78% conf, 29.2% edge) | Los Angeles Lakers vs. Memphis Grizzlies
+  2. Ziaire Williams Over 5.5 POINTS (78% conf, 28.2% edge) | Denver Nuggets vs. Brooklyn Nets
+  3. Day'Ron Sharpe Under 10.5 REBOUNDS (78% conf, 28.0% edge) | Denver Nuggets vs. Brooklyn Nets
+  4. Isaiah Stewart Under 8.5 REBOUNDS (78% conf, 28.0% edge) | Detroit Pistons vs. Cleveland Cavaliers
+
+
+Total VALUABLE picks today: 34

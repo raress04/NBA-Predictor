@@ -1,0 +1,445 @@
+[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...
+[+] Loaded live Injury Report: 66 players marked Out/GTD.
+[+] ESPN: Fetched odds for 8 upcoming NBA games (source: Draft Kings)
+    [+] ESPN odds loaded for 8 events:
+        Memphis Grizzlies @ Detroit Pistons
+        New York Knicks @ Indiana Pacers
+        Phoenix Suns @ Toronto Raptors
+        Cleveland Cavaliers @ Dallas Mavericks
+        New Orleans Pelicans @ Houston Rockets
+        Minnesota Timberwolves @ Golden State Warriors
+        Utah Jazz @ Portland Trail Blazers
+        Chicago Bulls @ LA Clippers
+    [+] Odds API: Found 12 events. Credits remaining: 74
+
+[+] Commencing Parallel Matchup Simulations...
+
+============================================================
+ MATCHUP: Chicago Bulls @ Los Angeles Clippers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    LAC 1.12 | CHI 6.50  (Draft Kings)
+     Spread: LAC -13.5 @ 1.93  (Draft Kings)
+     Total:  O/U 235.5 — Over 1.95 / Under 1.87  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 3e5d3f236671...
+        Found props for 9 players. Credits remaining: 56
+PROJECTED TOTAL: 236.0
+PROJECTED SCORE: LAC 125.4 - CHI 110.6
+  -> GAME TOTAL: O/U 235.5 ignore
+  -> HOME SPREAD: LAC -13.5 VALUABLE: Cover (94% conf, 44.5% edge)
+  -> AWAY SPREAD: CHI +13.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Kawhi Leonard        -> 27 PTS, 5 REB, 3 AST (O/U 29.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  Bennedict Mathurin   -> 20 PTS, 5 REB, 3 AST (O/U 20.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Kris Dunn            -> 7 PTS, 4 REB, 7 AST (O/U 7.5 points ignore, O/U 3.5 rebounds ignore, O/U 5.5 assists ignore)
+  Derrick Jones Jr.    -> 12 PTS, 3 REB, 1 AST
+  Jordan Miller        -> 12 PTS, 3 REB, 3 AST
+  Kobe Sanders         -> 10 PTS, 3 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Bogdan Bogdanović    -> 9 PTS, 3 REB, 3 AST
+  Brook Lopez          -> 12 PTS, 4 REB, 2 AST (O/U 10.5 points ignore, O/U 4.5 rebounds ignore)
+  Nicolas Batum        -> 3 PTS, 3 REB, 1 AST
+  Isaiah Jackson       -> 8 PTS, 5 REB, 1 AST
+
+[AWAY TEAM]
+  Josh Giddey          -> 10 PTS, 5 REB, 7 AST (O/U 19.5 points VALUABLE: Under (95% conf, 44.8% edge), O/U 7.5 rebounds VALUABLE: Under (89% conf, 38.6% edge), O/U 8.5 assists ignore)
+  Matas Buzelis        -> 14 PTS, 4 REB, 2 AST (O/U 22.5 points VALUABLE: Under (89% conf, 38.9% edge), O/U 5.5 rebounds VALUABLE: Under (78% conf, 27.7% edge), O/U 2.5 assists ignore)
+  Tre Jones            -> 12 PTS, 2 REB, 4 AST (O/U 16.5 points ignore, O/U 3.5 rebounds ignore, O/U 5.5 assists ignore)
+  Isaac Okoro          -> 10 PTS, 2 REB, 1 AST
+  Collin Sexton        -> 12 PTS, 1 REB, 2 AST
+  Jalen Smith          -> 11 PTS, 6 REB, 1 AST
+  Patrick Williams     -> 9 PTS, 3 REB, 2 AST
+  Guerschon Yabusele   -> 10 PTS, 5 REB, 2 AST
+  Nick Richards        -> 10 PTS, 6 REB, 0 AST
+  Rob Dillingham       -> 7 PTS, 3 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Cleveland Cavaliers @ Dallas Mavericks
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    DAL 6.25 | CLE 1.13  (Draft Kings)
+     Spread: DAL +13.5 @ 1.93  (Draft Kings)
+     Total:  O/U 236.5 — Over 1.87 / Under 1.95  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event fff92660471a...
+        Found props for 14 players. Credits remaining: 62
+PROJECTED TOTAL: 230.0
+PROJECTED SCORE: DAL 113.3 - CLE 116.8
+  -> GAME TOTAL: O/U 236.5 ignore
+  -> HOME SPREAD: DAL +13.5 ignore
+  -> AWAY SPREAD: CLE -13.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Cooper Flagg         -> 17 PTS, 5 REB, 4 AST (O/U 21.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  P.J. Washington      -> 10 PTS, 4 REB, 2 AST
+  Naji Marshall        -> 12 PTS, 3 REB, 3 AST (O/U 14.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore)
+  Max Christie         -> 10 PTS, 3 REB, 2 AST (O/U 12.5 points ignore, O/U 3.5 rebounds ignore)
+  Khris Middleton      -> 10 PTS, 3 REB, 3 AST (O/U 10.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore)
+  Brandon Williams     -> 12 PTS, 2 REB, 4 AST
+  Klay Thompson        -> 10 PTS, 1 REB, 1 AST (O/U 12.5 points ignore)
+  Daniel Gafford       -> 11 PTS, 8 REB, 1 AST
+  Marvin Bagley III    -> 12 PTS, 8 REB, 1 AST (O/U 11.5 points ignore, O/U 8.5 rebounds ignore)
+  Ryan Nembhard        -> 5 PTS, 2 REB, 4 AST
+
+[AWAY TEAM]
+  James Harden         -> 17 PTS, 4 REB, 7 AST (O/U 21.5 points ignore, O/U 5.5 rebounds ignore, O/U 8.5 assists ignore)
+  Evan Mobley          -> 15 PTS, 8 REB, 2 AST (O/U 18.5 points ignore, O/U 9.5 rebounds ignore)
+  Donovan Mitchell     -> 19 PTS, 3 REB, 4 AST (O/U 26.5 points VALUABLE: Under (85% conf, 34.6% edge), O/U 4.5 rebounds ignore, O/U 5.5 assists VALUABLE: Under (83% conf, 33.4% edge))
+  Jaylon Tyson         -> 11 PTS, 4 REB, 1 AST (O/U 10.5 points ignore, O/U 4.5 rebounds ignore)
+  Sam Merrill          -> 12 PTS, 2 REB, 2 AST (O/U 11.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  Dennis Schröder      -> 10 PTS, 2 REB, 4 AST
+  Dean Wade            -> 8 PTS, 6 REB, 1 AST (O/U 4.5 rebounds ignore)
+  Keon Ellis           -> 7 PTS, 3 REB, 1 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore)
+  Craig Porter Jr.     -> 5 PTS, 3 REB, 3 AST
+  Nae'Qwan Tomlin      -> 7 PTS, 3 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Phoenix Suns @ Toronto Raptors
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    TOR 1.49 | PHX 2.70  (Draft Kings)
+     Spread: TOR -5.5 @ 1.93  (Draft Kings)
+     Total:  O/U 218.5 — Over 1.89 / Under 1.93  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 9d9b5899c3a1...
+        Found props for 12 players. Credits remaining: 44
+PROJECTED TOTAL: 216.6
+PROJECTED SCORE: TOR 116.8 - PHX 99.8
+  -> GAME TOTAL: O/U 218.5 ignore
+  -> HOME SPREAD: TOR -5.5 VALUABLE: Cover (91% conf, 40.6% edge)
+  -> AWAY SPREAD: PHX +5.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Brandon Ingram       -> 18 PTS, 5 REB, 4 AST (O/U 22.5 points ignore, O/U 5.5 rebounds ignore, O/U 4.5 assists ignore)
+  Scottie Barnes       -> 14 PTS, 5 REB, 3 AST (O/U 17.5 points ignore, O/U 7.5 rebounds VALUABLE: Under (82% conf, 32.0% edge), O/U 4.5 assists ignore)
+  Immanuel Quickley    -> 19 PTS, 3 REB, 6 AST (O/U 16.5 points ignore, O/U 3.5 rebounds ignore, O/U 6.5 assists ignore)
+  RJ Barrett           -> 20 PTS, 6 REB, 2 AST
+  Jakob Poeltl         -> 8 PTS, 7 REB, 2 AST (O/U 10.5 points ignore, O/U 8.5 rebounds ignore, O/U 2.5 assists ignore)
+  Sandro Mamukelashvili -> 10 PTS, 4 REB, 1 AST (O/U 8.5 points ignore, O/U 4.5 rebounds ignore)
+  Collin Murray-Boyles -> 6 PTS, 4 REB, 2 AST
+  Jamal Shead          -> 6 PTS, 2 REB, 4 AST
+  Ja'Kobe Walter       -> 7 PTS, 3 REB, 1 AST
+  Gradey Dick          -> 5 PTS, 2 REB, 0 AST
+
+[AWAY TEAM]
+  Devin Booker         -> 18 PTS, 4 REB, 3 AST (O/U 25.5 points VALUABLE: Under (89% conf, 39.2% edge), O/U 3.5 rebounds ignore, O/U 5.5 assists VALUABLE: Under (88% conf, 38.0% edge))
+  Grayson Allen        -> 19 PTS, 3 REB, 3 AST (O/U 14.5 points ignore, O/U 2.5 rebounds ignore, O/U 3.5 assists ignore)
+  Royce O'Neale        -> 8 PTS, 5 REB, 2 AST (O/U 8.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  Collin Gillespie     -> 12 PTS, 4 REB, 4 AST (O/U 11.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore)
+  Jalen Green          -> 14 PTS, 3 REB, 2 AST (O/U 18.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jordan Goodwin       -> 8 PTS, 4 REB, 2 AST
+  Oso Ighodaro         -> 5 PTS, 5 REB, 2 AST (O/U 6.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore)
+  Ryan Dunn            -> 3 PTS, 3 REB, 0 AST
+  Haywood Highsmith    -> 6 PTS, 4 REB, 1 AST
+  Cole Anthony         -> 3 PTS, 1 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Memphis Grizzlies @ Detroit Pistons
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    DET 1.07 | MEM 9.50  (Draft Kings)
+     Spread: DET -15.5 @ 1.87  (Draft Kings)
+     Total:  O/U 233.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 9f90f0cfcf3b...
+        Found props for 14 players. Credits remaining: 38
+PROJECTED TOTAL: 230.6
+PROJECTED SCORE: DET 122.6 - MEM 107.9
+  -> GAME TOTAL: O/U 233.5 ignore
+  -> HOME SPREAD: DET -15.5 VALUABLE: Cover (95% conf, 45.4% edge)
+  -> AWAY SPREAD: MEM +15.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Cade Cunningham      -> 20 PTS, 4 REB, 10 AST (O/U 24.5 points ignore, O/U 5.5 rebounds ignore, O/U 9.5 assists ignore)
+  Tobias Harris        -> 12 PTS, 5 REB, 2 AST (O/U 12.5 points ignore, O/U 5.5 rebounds ignore)
+  Duncan Robinson      -> 13 PTS, 3 REB, 3 AST (O/U 10.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jalen Duren          -> 16 PTS, 7 REB, 2 AST (O/U 18.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (91% conf, 41.2% edge))
+  Ausar Thompson       -> 9 PTS, 5 REB, 4 AST
+  Isaiah Stewart       -> 10 PTS, 4 REB, 1 AST
+  Kevin Huerter        -> 9 PTS, 4 REB, 3 AST (O/U 9.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Ronald Holland II    -> 11 PTS, 4 REB, 1 AST
+  Caris LeVert         -> 8 PTS, 3 REB, 2 AST
+  Javonte Green        -> 10 PTS, 4 REB, 0 AST
+
+[AWAY TEAM]
+  Jaylen Wells         -> 11 PTS, 2 REB, 1 AST (O/U 12.5 points ignore, O/U 2.5 rebounds ignore)
+  Cedric Coward        -> 11 PTS, 6 REB, 2 AST (O/U 11.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Cam Spencer          -> 10 PTS, 3 REB, 3 AST
+  Ty Jerome            -> 15 PTS, 3 REB, 3 AST (O/U 15.5 points ignore, O/U 2.5 rebounds ignore, O/U 4.5 assists ignore)
+  Walter Clayton Jr.   -> 9 PTS, 3 REB, 4 AST
+  GG Jackson           -> 12 PTS, 6 REB, 1 AST
+  Kyle Anderson        -> 7 PTS, 4 REB, 2 AST
+  Javon Small          -> 10 PTS, 5 REB, 3 AST
+  Taylor Hendricks     -> 10 PTS, 5 REB, 1 AST (O/U 8.5 points ignore, O/U 4.5 rebounds ignore)
+  Jahmai Mashack       -> 8 PTS, 3 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Minnesota Timberwolves @ San Francisco Warriors
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    GSW 2.70 | MIN 1.49  (Draft Kings)
+     Spread: GSW +5.5 @ 1.87  (Draft Kings)
+     Total:  O/U 222.5 — Over 1.89 / Under 1.93  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 8f70af8b76f2...
+        Found props for 14 players. Credits remaining: 68
+PROJECTED TOTAL: 235.7
+PROJECTED SCORE: GSW 111.1 - MIN 124.6
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (75% conf, 25.4% edge)
+  -> HOME SPREAD: GSW +5.5 ignore
+  -> AWAY SPREAD: MIN -5.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Brandin Podziemski   -> 15 PTS, 6 REB, 3 AST (O/U 16.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  Draymond Green       -> 8 PTS, 5 REB, 4 AST (O/U 8.5 points ignore, O/U 5.5 rebounds ignore, O/U 5.5 assists ignore)
+  Kristaps Porziņģis   -> 17 PTS, 3 REB, 2 AST
+  De'Anthony Melton    -> 15 PTS, 3 REB, 2 AST (O/U 15.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 3.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 assists ⛔ DISQUALIFIED: MINUTES_RESTRICTION)
+  Al Horford           -> 11 PTS, 5 REB, 3 AST (O/U 10.5 points ignore, O/U 5.5 rebounds ignore, O/U 3.5 assists ignore)
+  Will Richard         -> 7 PTS, 2 REB, 1 AST (O/U 7.5 points ignore, O/U 2.5 rebounds ignore)
+  Gui Santos           -> 14 PTS, 5 REB, 3 AST (O/U 14.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore)
+  Pat Spencer          -> 9 PTS, 2 REB, 4 AST
+  Quinten Post         -> 6 PTS, 4 REB, 1 AST
+  Seth Curry           -> 6 PTS, 1 REB, 1 AST
+
+[AWAY TEAM]
+  Anthony Edwards      -> 28 PTS, 4 REB, 3 AST (O/U 29.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore)
+  Julius Randle        -> 18 PTS, 7 REB, 5 AST (O/U 19.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore)
+  Jaden McDaniels      -> 13 PTS, 4 REB, 3 AST (O/U 13.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Rudy Gobert          -> 9 PTS, 11 REB, 3 AST (O/U 10.5 points ignore, O/U 12.5 rebounds ignore)
+  Donte DiVincenzo     -> 11 PTS, 4 REB, 5 AST (O/U 11.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore)
+  Ayo Dosunmu          -> 12 PTS, 2 REB, 4 AST (O/U 11.5 points ignore, O/U 2.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 assists ignore)
+  Naz Reid             -> 13 PTS, 6 REB, 2 AST (O/U 13.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore)
+  Bones Hyland         -> 9 PTS, 1 REB, 3 AST
+  Terrence Shannon Jr. -> 4 PTS, 0 REB, 1 AST
+  Jaylen Clark         -> 3 PTS, 1 REB, 0 AST
+
+
+============================================================
+ MATCHUP: New Orleans Pelicans @ Houston Rockets
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    HOU 1.35 | NOP 3.30  (Draft Kings)
+     Spread: HOU -6.5 @ 1.87  (Draft Kings)
+     Total:  O/U 230.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 8d4b91d706b4...
+        Found props for 13 players. Credits remaining: 50
+PROJECTED TOTAL: 238.6
+PROJECTED SCORE: HOU 118.5 - NOP 120.0
+  -> GAME TOTAL: O/U 230.5 ignore
+  -> HOME SPREAD: HOU -6.5 ignore
+  -> AWAY SPREAD: NOP +6.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Amen Thompson        -> 16 PTS, 6 REB, 5 AST (O/U 19.5 points ignore, O/U 7.5 rebounds ignore, O/U 5.5 assists ignore)
+  Kevin Durant         -> 23 PTS, 5 REB, 4 AST (O/U 25.5 points ignore, O/U 5.5 rebounds ignore, O/U 4.5 assists ignore)
+  Jabari Smith Jr.     -> 17 PTS, 5 REB, 2 AST
+  Alperen Sengun       -> 16 PTS, 6 REB, 5 AST (O/U 19.5 points ignore, O/U 8.5 rebounds VALUABLE: Under (82% conf, 32.2% edge), O/U 5.5 assists ignore)
+  Tari Eason           -> 11 PTS, 6 REB, 3 AST (O/U 11.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore)
+  Reed Sheppard        -> 17 PTS, 3 REB, 4 AST (O/U 15.5 points ignore, O/U 2.5 rebounds ignore, O/U 4.5 assists ignore)
+  Josh Okogie          -> 5 PTS, 2 REB, 0 AST
+  Dorian Finney-Smith  -> 3 PTS, 2 REB, 1 AST
+  Aaron Holiday        -> 5 PTS, 1 REB, 1 AST
+  Tristen Newton       -> 2 PTS, 1 REB, 1 AST
+
+[AWAY TEAM]
+  Trey Murphy III      -> 21 PTS, 4 REB, 4 AST (O/U 20.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore)
+  Saddiq Bey           -> 19 PTS, 4 REB, 3 AST (O/U 16.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Zion Williamson      -> 17 PTS, 4 REB, 3 AST (O/U 20.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (80% conf, 29.5% edge), O/U 3.5 assists ignore)
+  Herbert Jones        -> 8 PTS, 3 REB, 3 AST
+  Dejounte Murray      -> 17 PTS, 4 REB, 5 AST (O/U 16.5 points ignore, O/U 5.5 rebounds ignore, O/U 5.5 assists ignore)
+  Derik Queen          -> 8 PTS, 5 REB, 2 AST (O/U 7.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jeremiah Fears       -> 11 PTS, 3 REB, 4 AST (O/U 8.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jordan Poole         -> 8 PTS, 2 REB, 2 AST
+  Yves Missi           -> 4 PTS, 4 REB, 1 AST
+  DeAndre Jordan       -> 2 PTS, 4 REB, 1 AST
+
+
+============================================================
+ MATCHUP: New York Knicks @ Indiana Pacers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    IND 7.00 | NYK 1.11  (Draft Kings)
+     Spread: IND +13.5 @ 1.89  (Draft Kings)
+     Total:  O/U 227.5 — Over 1.95 / Under 1.87  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event aef5ba1e4c95...
+        Found props for 11 players. Credits remaining: 32
+PROJECTED TOTAL: 241.6
+PROJECTED SCORE: IND 114.5 - NYK 127.2
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Over (78% conf, 28.0% edge)
+  -> HOME SPREAD: IND +13.5 ignore
+  -> AWAY SPREAD: NYK -13.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Pascal Siakam        -> 16 PTS, 3 REB, 3 AST
+  Andrew Nembhard      -> 11 PTS, 2 REB, 6 AST (O/U 13.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 5.5 assists ignore)
+  Ivica Zubac          -> 7 PTS, 5 REB, 1 AST (O/U 7.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 5.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION)
+  Aaron Nesmith        -> 11 PTS, 3 REB, 2 AST (O/U 14.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jarace Walker        -> 11 PTS, 5 REB, 3 AST (O/U 13.5 points ignore, O/U 5.5 rebounds ignore, O/U 3.5 assists ignore)
+  Ben Sheppard         -> 10 PTS, 3 REB, 2 AST
+  Jay Huff             -> 11 PTS, 3 REB, 2 AST
+  Micah Potter         -> 11 PTS, 5 REB, 1 AST
+  Obi Toppin           -> 9 PTS, 4 REB, 2 AST
+  Quenton Jackson      -> 12 PTS, 3 REB, 3 AST
+
+[AWAY TEAM]
+  Mikal Bridges        -> 15 PTS, 3 REB, 3 AST (O/U 14.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore)
+  Jalen Brunson        -> 20 PTS, 3 REB, 7 AST (O/U 28.5 points VALUABLE: Under (89% conf, 38.8% edge), O/U 3.5 rebounds ignore, O/U 7.5 assists ignore)
+  OG Anunoby           -> 17 PTS, 3 REB, 2 AST (O/U 17.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (86% conf, 35.7% edge), O/U 2.5 assists ignore)
+  Karl-Anthony Towns   -> 16 PTS, 8 REB, 3 AST
+  Josh Hart            -> 11 PTS, 6 REB, 5 AST
+  Landry Shamet        -> 13 PTS, 1 REB, 2 AST (O/U 12.5 points ignore, O/U 2.5 rebounds ignore, O/U 1.5 assists ignore)
+  Jose Alvarado        -> 7 PTS, 2 REB, 4 AST
+  Mitchell Robinson    -> 8 PTS, 8 REB, 1 AST (O/U 7.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (85% conf, 35.3% edge))
+  Jordan Clarkson      -> 11 PTS, 2 REB, 1 AST (O/U 11.5 points ignore)
+  Tyler Kolek          -> 6 PTS, 2 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Utah Jazz @ Portland Trail Blazers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    POR 1.08 | UTA 8.50  (Draft Kings)
+     Spread: POR -15.5 @ 1.91  (Draft Kings)
+     Total:  O/U 236.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event d935250226e6...
+        Found props for 12 players. Credits remaining: 26
+PROJECTED TOTAL: 233.5
+PROJECTED SCORE: POR 122.2 - UTA 111.2
+  -> GAME TOTAL: O/U 236.5 ignore
+  -> HOME SPREAD: POR -15.5 VALUABLE: Cover (94% conf, 43.7% edge)
+  -> AWAY SPREAD: UTA +15.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Toumani Camara       -> 12 PTS, 5 REB, 2 AST (O/U 13.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore)
+  Deni Avdija          -> 13 PTS, 4 REB, 5 AST (O/U 22.5 points VALUABLE: Under (95% conf, 44.6% edge), O/U 6.5 rebounds VALUABLE: Under (92% conf, 42.4% edge), O/U 6.5 assists ignore)
+  Jerami Grant         -> 16 PTS, 3 REB, 2 AST (O/U 19.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Jrue Holiday         -> 15 PTS, 3 REB, 5 AST (O/U 17.5 points ignore, O/U 4.5 rebounds ignore, O/U 5.5 assists ignore)
+  Donovan Clingan      -> 12 PTS, 9 REB, 2 AST (O/U 13.5 points ignore, O/U 12.5 rebounds VALUABLE: Under (90% conf, 39.5% edge), O/U 2.5 assists ignore)
+  Kris Murray          -> 8 PTS, 4 REB, 1 AST
+  Scoot Henderson      -> 13 PTS, 2 REB, 4 AST (O/U 14.5 points ignore, O/U 2.5 rebounds ignore, O/U 4.5 assists ignore)
+  Caleb Love           -> 12 PTS, 2 REB, 3 AST
+  Sidy Cissoko         -> 7 PTS, 3 REB, 2 AST
+  Robert Williams III  -> 10 PTS, 7 REB, 1 AST
+
+[AWAY TEAM]
+  Ace Bailey           -> 13 PTS, 4 REB, 2 AST (O/U 16.5 points ignore, O/U 4.5 rebounds ignore)
+  Isaiah Collier       -> 15 PTS, 2 REB, 7 AST (O/U 15.5 points ignore, O/U 2.5 rebounds ignore, O/U 8.5 assists ignore)
+  Svi Mykhailiuk       -> 9 PTS, 2 REB, 1 AST
+  Kyle Filipowski      -> 13 PTS, 8 REB, 3 AST (O/U 14.5 points ignore, O/U 8.5 rebounds ignore, O/U 2.5 assists ignore)
+  Brice Sensabaugh     -> 16 PTS, 3 REB, 2 AST (O/U 18.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Cody Williams        -> 8 PTS, 4 REB, 2 AST (O/U 9.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore)
+  Vince Williams Jr.   -> 7 PTS, 3 REB, 2 AST
+  Blake Hinson         -> 10 PTS, 3 REB, 0 AST
+  Kevin Love           -> 8 PTS, 6 REB, 2 AST
+  Elijah Harkless      -> 7 PTS, 2 REB, 2 AST
+
+
+============================================================
+  🎯 GENERATING OPTIMAL PARLAYS...
+============================================================
+  ⚠️  [BLOWOUT RISK] Memphis Grizzlies @ Detroit Pistons: Banning OVERs for Cade Cunningham, Jalen Duren, Tobias Harris
+  ⚠️  [BLOWOUT RISK] New York Knicks @ Indiana Pacers: Banning OVERs for Mikal Bridges, Jalen Brunson, OG Anunoby
+  ⚠️  [MARKET DISCREPANCY] Phoenix Suns @ Toronto Raptors: Proj Margin +17.0, Market Margin +5.5
+  ⚠️  [BLOWOUT RISK] Cleveland Cavaliers @ Dallas Mavericks: Banning OVERs for Evan Mobley, Donovan Mitchell, James Harden
+  ⚠️  [MARKET DISCREPANCY] Cleveland Cavaliers @ Dallas Mavericks: Proj Margin -3.0, Market Margin -13.5
+  ⚠️  [MARKET DISCREPANCY] New Orleans Pelicans @ Houston Rockets: Proj Margin -1.0, Market Margin +6.5
+  ⛔  [FATAL: MARKET_INVERSION_DETECTED] New Orleans Pelicans @ Houston Rockets. Proj -1.0 vs Market +6.5. Spreads skip to avoid trap.
+  ⚠️  [MARKET DISCREPANCY] Minnesota Timberwolves @ Golden State Warriors: Proj Margin -13.0, Market Margin -5.5
+  ⚠️  [BLOWOUT RISK] Utah Jazz @ Portland Trail Blazers: Banning OVERs for Toumani Camara, Caleb Love, Jrue Holiday
+  ⚠️  [BLOWOUT RISK] Chicago Bulls @ LA Clippers: Banning OVERs for 
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)
+============================================================
+  Pick 1: [Memphis Grizzlies @ Detroit Pistons] Detroit Pistons -15.5 → -12.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.87
+          Edge: +45.4%  |  Confidence: 95%  |  Book: Draft Kings
+  Pick 2: [Chicago Bulls @ LA Clippers] LA Clippers -13.5 → -10.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.93
+          Edge: +44.5%  |  Confidence: 94%  |  Book: Draft Kings
+  Pick 3: [Utah Jazz @ Portland Trail Blazers] Portland Trail Blazers -15.5 → -12.5 (reduced 3.0pts) | Proj margin: +11.0pts @ 1.91
+          Edge: +43.7%  |  Confidence: 93%  |  Book: Draft Kings
+  ─────────────────────────────────────────
+  Combined Odds: 6.88x
+  🔥 RECOMMENDED STAKE: 2.50% of Bankroll
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)
+============================================================
+  Pick 1: [Memphis Grizzlies @ Detroit Pistons] Detroit Pistons -15.5 → -12.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.87
+          Edge: +45.4%  |  Confidence: 95%  |  Book: Draft Kings
+  Pick 2: [Chicago Bulls @ LA Clippers] LA Clippers -13.5 → -10.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.93
+          Edge: +44.5%  |  Confidence: 94%  |  Book: Draft Kings
+  Pick 3: [Utah Jazz @ Portland Trail Blazers] Portland Trail Blazers -15.5 → -12.5 (reduced 3.0pts) | Proj margin: +11.0pts @ 1.91
+          Edge: +43.7%  |  Confidence: 93%  |  Book: Draft Kings
+  Pick 4: [Phoenix Suns @ Toronto Raptors] Toronto Raptors -5.5 → -2.5 (reduced 3.0pts) | Proj margin: +17.0pts @ 1.93
+          Edge: +40.6%  |  Confidence: 90%  |  Book: Draft Kings
+  ─────────────────────────────────────────
+  Combined Odds (all 4): 13.24x
+  System 3/4 Avg Payout: 6.94x
+  🔥 RECOMMENDED STAKE: 2.50% of Bankroll
+============================================================
+
+  🔥 HONORABLE MENTIONS (Next Best Picks)
+  ─────────────────────────────────────────
+  [Chicago Bulls @ LA Clippers] Josh Giddey Under 19.5 POINTS (Sim: 88% | DB: 65%(3/10) / 70%(5/20) → 67%w) @ 1.65
+      Edge: +44.8%  |  Conf: 82%  |  Book: pinnacle
+
+  [Chicago Bulls @ LA Clippers] Josh Giddey Under 7.5 REBOUNDS (Sim: 88% | DB: 55%(4/10) / 55%(8/20) → 55%w) ⚠️ @ 1.75
+      Edge: +38.6%  |  Conf: 80%  |  Book: pinnacle
+
+  [New York Knicks @ Indiana Pacers] OG Anunoby Under 5.5 REBOUNDS (Sim: 85% | DB: 75%(2/10) / 55%(8/20) → 68%w) @ 1.87
+      Edge: +35.7%  |  Conf: 79%  |  Book: pinnacle
+
+  [New York Knicks @ Indiana Pacers] Over 227.5 (Projected: 242.0) @ 1.95
+      Edge: +28.0%  |  Conf: 78%  |  Book: Draft Kings
+
+  📊 Analyzed 9 potential picks across all games.
+  Showing only the highest-confidence selections.
+

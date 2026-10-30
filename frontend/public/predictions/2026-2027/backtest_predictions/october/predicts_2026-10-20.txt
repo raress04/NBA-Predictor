@@ -1,0 +1,284 @@
+[+] Execution mode: BACKTEST | Date: 2026-10-20
+[+] Routing log to: C:\Users\balca\OneDrive\Projects\AiBetTool\advanced_model\predictions\2026-2027\backtest_predictions\october\predicts_2026-10-20.txt
+[+] HISTORICAL MODE: Generating projections for 2026-10-20
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 52 players marked Out/GTD.
+    [+] Found 3 games in database for 2026-10-20
+    [+] Parsed 3 unique matchups:
+        BOS @ DET
+        OKC @ SAS
+        PHI @ NYK
+
+[+] Commencing Parallel Historical Simulations...
+
+============================================================
+ MATCHUP: Philadelphia 76ers @ New York Knicks
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 234.0
+PROJECTED SCORE: NYK 117.6 - PHI 116.4
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [+] Loaded 52 player prop lines from historical_odds_cache for 2026-10-20
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=25.0 | offset=+0.53 | corrected=25.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Jalen Brunson        -> 25 PTS, 3 REB, 5 AST (O/U 26.5 points ignore, O/U 3.5 rebounds ignore, O/U 6.5 assists VALUABLE: Under (82% conf (raw: 82%), 31.7% edge)) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.53 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Mikal Bridges        -> 12 PTS, 3 REB, 2 AST (O/U 13.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=15.0 | offset=+0.53 | corrected=15.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  OG Anunoby           -> 15 PTS, 5 REB, 1 AST (O/U 17.5 points ignore, O/U 5.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.53 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.32 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Josh Hart            -> 11 PTS, 7 REB, 3 AST (O/U 11.5 points ignore, O/U 7.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Bench | median=1.0 | offset=+0.33 | corrected=1.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Landry Shamet        -> 8 PTS, 1 REB, 1 AST (O/U 7.5 points ignore, O/U 1.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.53 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.32 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Andre Drummond       -> 10 PTS, 7 REB, 2 AST (O/U 5.5 points VALUABLE: Over (82% conf (raw: 84%), 33.6% edge), O/U 6.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.53 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.32 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Karl-Anthony Towns   -> 12 PTS, 8 REB, 5 AST (O/U 18.5 points VALUABLE: Under (82% conf (raw: 88%), 38.4% edge), O/U 11.5 rebounds VALUABLE: Under (82% conf (raw: 84%), 34.5% edge), O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jose Alvarado        -> 8 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Bench | median=2.0 | offset=+0.33 | corrected=2.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Miles McBride        -> 8 PTS, 2 REB, 1 AST (O/U 6.5 points ignore, O/U 1.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jordan Clarkson      -> 6 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.53 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Tyrese Maxey         -> 19 PTS, 4 REB, 5 AST (O/U 20.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=20.0 | offset=+0.53 | corrected=20.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.32 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Jaylen Brown         -> 20 PTS, 6 REB, 3 AST (O/U 20.5 points ignore, O/U 5.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.53 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  VJ Edgecombe         -> 14 PTS, 5 REB, 3 AST (O/U 11.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.53 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.32 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=7.0 | offset=+0.17 | corrected=7.2
+  LeBron James         -> 17 PTS, 7 REB, 7 AST (O/U 15.5 points ignore, O/U 6.5 rebounds ignore, O/U 7.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=18.0 | offset=+0.53 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.32 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Joel Embiid          -> 18 PTS, 8 REB, 5 AST (O/U 22.5 points VALUABLE: Under (74% conf (raw: 74%), 24.4% edge), O/U 7.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Kentavious Caldwell-Pope -> 8 PTS, 3 REB, 1 AST (O/U 5.5 points ignore, O/U 1.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.53 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Anfernee Simons      -> 16 PTS, 3 REB, 1 AST (O/U 7.5 points VALUABLE: Over (82% conf (raw: 92%), 42.4% edge), O/U 1.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Adem Bona            -> 0 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Oklahoma City Thunder @ San Antonio Spurs
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 248.0
+PROJECTED SCORE: SAS 125.9 - OKC 122.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [+] Loaded 52 player prop lines from historical_odds_cache for 2026-10-20
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.53 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=9.0 | offset=+0.32 | corrected=9.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Victor Wembanyama    -> 17 PTS, 9 REB, 3 AST (O/U 25.5 points VALUABLE: Under (82% conf (raw: 89%), 39.0% edge), O/U 11.5 rebounds VALUABLE: Under (82% conf (raw: 82%), 32.1% edge), O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.53 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.17 | corrected=6.2
+  De'Aaron Fox         -> 19 PTS, 5 REB, 6 AST (O/U 14.5 points VALUABLE: Over (74% conf (raw: 74%), 24.5% edge), O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.53 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.17 | corrected=4.2
+  Dylan Harper         -> 16 PTS, 5 REB, 4 AST (O/U 15.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.53 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Devin Vassell        -> 14 PTS, 5 REB, 3 AST (O/U 12.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.53 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Julian Champagnie    -> 12 PTS, 4 REB, 2 AST (O/U 8.5 points VALUABLE: Over (78% conf (raw: 78%), 28.4% edge), O/U 4.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.53 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.32 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Stephon Castle       -> 17 PTS, 6 REB, 5 AST (O/U 16.5 points ignore, O/U 5.5 rebounds ignore, O/U 6.5 assists VALUABLE: Under (71% conf (raw: 71%), 20.8% edge)) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.53 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Keldon Johnson       -> 11 PTS, 5 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=4.0 | offset=+0.68 | corrected=4.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Luke Kornet          -> 4 PTS, 5 REB, 1 AST (O/U 2.5 points ignore, O/U 3.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=5.0 | offset=+0.68 | corrected=5.7
+  [BIAS CORRECTION] REBOUNDS | Bench | median=1.0 | offset=+0.33 | corrected=1.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=0.0 | offset=+0.21 | corrected=0.2
+  Harrison Barnes      -> 5 PTS, 1 REB, 0 AST (O/U 4.5 points ignore, O/U 1.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  Carter Bryant        -> 6 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=22.0 | offset=+0.53 | corrected=22.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Shai Gilgeous-Alexander -> 22 PTS, 3 REB, 5 AST (O/U 29.5 points VALUABLE: Under (82% conf (raw: 84%), 33.8% edge), O/U 3.5 rebounds ignore, O/U 6.5 assists VALUABLE: Under (77% conf (raw: 77%), 27.2% edge)) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=15.0 | offset=+0.53 | corrected=15.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.32 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Chet Holmgren        -> 15 PTS, 8 REB, 1 AST (O/U 12.5 points ignore, O/U 7.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=18.0 | offset=+0.53 | corrected=18.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Jalen Williams       -> 18 PTS, 5 REB, 3 AST (O/U 18.5 points ignore, O/U 4.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.68 | corrected=7.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Alex Caruso          -> 7 PTS, 4 REB, 2 AST (O/U 6.5 points ignore, O/U 2.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.53 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.17 | corrected=4.2
+  Ajay Mitchell        -> 14 PTS, 4 REB, 4 AST (O/U 11.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=12.0 | offset=+0.53 | corrected=12.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=2.0 | offset=+0.33 | corrected=2.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Jared McCain         -> 12 PTS, 2 REB, 1 AST (O/U 9.5 points ignore, O/U 2.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=10.0 | offset=+0.53 | corrected=10.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Cason Wallace        -> 10 PTS, 3 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.68 | corrected=7.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.32 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Isaiah Hartenstein   -> 7 PTS, 6 REB, 2 AST (O/U 7.5 points ignore, O/U 8.5 rebounds VALUABLE: Under (81% conf (raw: 81%), 31.3% edge), O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=6.0 | offset=+0.68 | corrected=6.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Jaylin Williams      -> 6 PTS, 4 REB, 2 AST (O/U 5.5 points ignore, O/U 4.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Aday Mara            -> 7 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Boston Celtics @ Detroit Pistons
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 252.6
+PROJECTED SCORE: DET 129.9 - BOS 122.7
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [+] Loaded 52 player prop lines from historical_odds_cache for 2026-10-20
+[HOME TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=29.0 | offset=+0.53 | corrected=29.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=8.0 | offset=+0.17 | corrected=8.2
+  Cade Cunningham      -> 29 PTS, 5 REB, 8 AST (O/U 23.5 points VALUABLE: Over (75% conf (raw: 75%), 24.8% edge), O/U 5.5 rebounds ignore, O/U 8.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.53 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=8.0 | offset=+0.32 | corrected=8.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.17 | corrected=4.2
+  Ausar Thompson       -> 11 PTS, 8 REB, 4 AST (O/U 9.5 points ignore, O/U 6.5 rebounds VALUABLE: Over (69% conf (raw: 69%), 19.4% edge), O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.53 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=9.0 | offset=+0.32 | corrected=9.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Jalen Duren          -> 16 PTS, 9 REB, 2 AST (O/U 16.5 points ignore, O/U 9.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=15.0 | offset=+0.53 | corrected=15.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Duncan Robinson      -> 15 PTS, 4 REB, 3 AST (O/U 10.5 points VALUABLE: Over (80% conf (raw: 80%), 29.7% edge), O/U 2.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.53 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=0.0 | offset=+0.21 | corrected=0.2
+  John Collins         -> 11 PTS, 5 REB, 0 AST (O/U 12.5 points ignore, O/U 5.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=14.0 | offset=+0.53 | corrected=14.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Isaiah Joe           -> 14 PTS, 3 REB, 1 AST (O/U 7.5 points VALUABLE: Over (82% conf (raw: 90%), 40.1% edge), O/U 1.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=6.0 | offset=+0.68 | corrected=6.7
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Kevin Huerter        -> 6 PTS, 3 REB, 3 AST (O/U 5.5 points ignore, O/U 1.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Javonte Green        -> 7 PTS, 4 REB, 0 AST [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=7.0 | offset=+0.68 | corrected=7.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.32 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Paul Reed            -> 7 PTS, 6 REB, 2 AST (O/U 7.5 points ignore, O/U 4.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=11.0 | offset=+0.53 | corrected=11.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=4.0 | offset=+0.17 | corrected=4.2
+  Daniss Jenkins       -> 11 PTS, 3 REB, 4 AST (O/U 7.5 points VALUABLE: Over (77% conf (raw: 77%), 26.5% edge), O/U 2.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  [BIAS CORRECTION] POINTS | Starter | median=25.0 | offset=+0.53 | corrected=25.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=9.0 | offset=+0.32 | corrected=9.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=6.0 | offset=+0.17 | corrected=6.2
+  Jayson Tatum         -> 25 PTS, 9 REB, 6 AST (O/U 26.5 points ignore, O/U 8.5 rebounds ignore, O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=16.0 | offset=+0.53 | corrected=16.5
+  [BIAS CORRECTION] REBOUNDS | Bench | median=3.0 | offset=+0.33 | corrected=3.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Derrick White        -> 16 PTS, 3 REB, 3 AST (O/U 15.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=19.0 | offset=+0.53 | corrected=19.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=5.0 | offset=+0.32 | corrected=5.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=3.0 | offset=+0.17 | corrected=3.2
+  Paul George          -> 19 PTS, 5 REB, 3 AST (O/U 16.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Starter | median=17.0 | offset=+0.53 | corrected=17.5
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Starter | median=5.0 | offset=+0.17 | corrected=5.2
+  Payton Pritchard     -> 17 PTS, 4 REB, 5 AST (O/U 16.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=7.0 | offset=+0.32 | corrected=7.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Neemias Queta        -> 8 PTS, 7 REB, 1 AST (O/U 8.5 points ignore, O/U 6.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=2.0 | offset=+0.21 | corrected=2.2
+  Baylor Scheierman    -> 8 PTS, 4 REB, 2 AST (O/U 4.5 points ignore, O/U 2.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=8.0 | offset=+0.68 | corrected=8.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Sam Hauser           -> 8 PTS, 4 REB, 1 AST (O/U 5.5 points ignore, O/U 2.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=5.0 | offset=+0.68 | corrected=5.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=6.0 | offset=+0.32 | corrected=6.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=0.0 | offset=+0.21 | corrected=0.2
+  Mitchell Robinson    -> 5 PTS, 6 REB, 0 AST (O/U 6.5 points ignore, O/U 8.5 rebounds VALUABLE: Under (82% conf (raw: 85%), 34.5% edge), O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  [BIAS CORRECTION] POINTS | Bench | median=6.0 | offset=+0.68 | corrected=6.7
+  [BIAS CORRECTION] REBOUNDS | Starter | median=4.0 | offset=+0.32 | corrected=4.3
+  [BIAS CORRECTION] ASSISTS | Bench | median=1.0 | offset=+0.21 | corrected=1.2
+  Jordan Walsh         -> 6 PTS, 4 REB, 1 AST (O/U 4.5 points ignore, O/U 3.5 rebounds ignore, O/U 0.5 assists ignore) [HIGH_UNCERTAINTY]
+  Hugo González        -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+[+] Historical projections for 2026-10-20 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating backtest PDF report for 2026-10-20...
+    [+] LaTeX written to: C:\Users\balca\OneDrive\Projects\AiBetTool\advanced_model\predictions\2026-2027\backtest_predictions\october\predicts_report_2026-10-20.tex
+    [-] Failed to generate PDF report: [WinError 2] The system cannot find the file specified

@@ -1,0 +1,69 @@
+NBA MODEL PREDICTIONS - 2025-11-28
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. San Antonio Spurs
+------------------------------
+  PROJECTED TOTAL: 239.3 | O/U 238.5
+  -> SPREAD: Denver Nuggets -7.5 VALUABLE: Cover (66% conf, 33.3% edge)
+
+MATCHUP: Los Angeles Lakers vs. Dallas Mavericks
+------------------------------
+  PROJECTED TOTAL: 244.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Over (67% conf, 25.5% edge)
+  -> SPREAD: Los Angeles Lakers -10.5 VALUABLE: Cover (76% conf, 49.6% edge)
+
+MATCHUP: Atlanta Hawks vs. Cleveland Cavaliers
+------------------------------
+  PROJECTED TOTAL: 233.5 | O/U 236.5
+
+MATCHUP: Milwaukee Bucks vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 238.9 | O/U 232.5
+
+MATCHUP: Brooklyn Nets vs. Philadelphia 76ers
+------------------------------
+  PROJECTED TOTAL: 220.6 | O/U 222.5
+
+MATCHUP: LA Clippers vs. Memphis Grizzlies
+------------------------------
+
+MATCHUP: Oklahoma City Thunder vs. Phoenix Suns
+------------------------------
+  PROJECTED TOTAL: 228.3 | O/U 223.5
+  -> SPREAD: Oklahoma City Thunder -14.5 VALUABLE: Cover (69% conf, 38.3% edge)
+
+MATCHUP: Sacramento Kings vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 241.5 | O/U 242.5
+
+MATCHUP: Detroit Pistons vs. Orlando Magic
+------------------------------
+  PROJECTED TOTAL: 238.1 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Over (62% conf, 17.8% edge)
+
+MATCHUP: Chicago Bulls vs. Charlotte Hornets
+------------------------------
+  PROJECTED TOTAL: 237.4 | O/U 248.5
+  -> GAME TOTAL: O/U 248.5 VALUABLE: Under (66% conf, 23.8% edge)
+
+MATCHUP: Indiana Pacers vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 225.7 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (71% conf, 30.9% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 240.5 TOTAL (71% conf, 18.4% edge) | Indiana Pacers vs. Washington Wizards
+  2. Game Total Over 232.5 TOTAL (67% conf, 14.7% edge) | Los Angeles Lakers vs. Dallas Mavericks
+  3. Game Total Under 248.5 TOTAL (66% conf, 14.0% edge) | Chicago Bulls vs. Charlotte Hornets
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 240.5 TOTAL (71% conf, 18.4% edge) | Indiana Pacers vs. Washington Wizards
+  2. Game Total Over 232.5 TOTAL (67% conf, 14.7% edge) | Los Angeles Lakers vs. Dallas Mavericks
+  3. Game Total Under 248.5 TOTAL (66% conf, 14.0% edge) | Chicago Bulls vs. Charlotte Hornets
+  4. Game Total Over 230.5 TOTAL (62% conf, 9.9% edge) | Detroit Pistons vs. Orlando Magic
+
+
+Total VALUABLE picks today: 7

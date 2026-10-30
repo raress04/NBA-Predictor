@@ -1,0 +1,71 @@
+NBA MODEL PREDICTIONS - 2025-11-01
+============================================================
+
+
+MATCHUP: Milwaukee Bucks vs. Sacramento Kings
+------------------------------
+  Giannis Antetokounmpo | POINTS   | Line 31.5 | Proj 25.2 | VALUABLE: Under (73% conf, 33.4% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 11.5 | Proj  8.0 | VALUABLE: Under (77% conf, 39.8% edge)
+  Bobby Portis         | POINTS   | Line  8.5 | Proj 18.9 | VALUABLE: Over (80% conf, 44.9% edge)
+  Cole Anthony         | POINTS   | Line 10.5 | Proj  3.5 | VALUABLE: Under (82% conf, 49.1% edge)
+  Domantas Sabonis     | REBOUNDS | Line 13.5 | Proj  9.6 | VALUABLE: Under (77% conf, 40.9% edge)
+  Zach LaVine          | POINTS   | Line 23.5 | Proj 17.4 | VALUABLE: Under (73% conf, 33.9% edge)
+  PROJECTED TOTAL: 232.8 | O/U 232.5
+
+MATCHUP: Charlotte Hornets vs. Minnesota Timberwolves
+------------------------------
+  Tre Mann             | POINTS   | Line  8.5 | Proj  5.7 | VALUABLE: Under (73% conf, 34.1% edge)
+  Kon Knueppel         | POINTS   | Line 12.5 | Proj 21.6 | VALUABLE: Over (76% conf, 38.9% edge)
+  PROJECTED TOTAL: 228.7 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (61% conf, 15.2% edge)
+
+MATCHUP: Houston Rockets vs. Boston Celtics
+------------------------------
+  Josh Okogie          | POINTS   | Line  8.5 | Proj  4.4 | VALUABLE: Under (78% conf, 41.7% edge)
+  Josh Minott          | POINTS   | Line  8.5 | Proj  4.1 | VALUABLE: Under (79% conf, 43.5% edge)
+  Josh Minott          | REBOUNDS | Line  5.5 | Proj  1.8 | VALUABLE: Under (82% conf, 49.6% edge)
+  Neemias Queta        | REBOUNDS | Line  7.5 | Proj  5.0 | VALUABLE: Under (76% conf, 38.1% edge)
+  PROJECTED TOTAL: 224.2 | O/U 226.5
+
+MATCHUP: Detroit Pistons vs. Dallas Mavericks
+------------------------------
+  Tobias Harris        | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (75% conf, 37.6% edge)
+  D'Angelo Russell     | POINTS   | Line 13.5 | Proj  7.9 | VALUABLE: Under (78% conf, 41.8% edge)
+  Cooper Flagg         | POINTS   | Line 16.5 | Proj 24.3 | VALUABLE: Over (74% conf, 36.0% edge)
+  Brandon Williams     | POINTS   | Line  9.5 | Proj 16.2 | VALUABLE: Over (75% conf, 37.2% edge)
+  Naji Marshall        | POINTS   | Line  8.5 | Proj 16.1 | VALUABLE: Over (77% conf, 40.8% edge)
+  PROJECTED TOTAL: 229.4 | O/U 227.5
+  -> SPREAD: Detroit Pistons -7.5 VALUABLE: Cover (68% conf, 36.8% edge)
+
+MATCHUP: Indiana Pacers vs. Golden State Warriors
+------------------------------
+  Pascal Siakam        | ASSISTS  | Line  5.5 | Proj  3.8 | VALUABLE: Under (75% conf, 36.9% edge)
+  Jarace Walker        | POINTS   | Line 13.5 | Proj  9.7 | VALUABLE: Under (72% conf, 32.7% edge)
+  Jonathan Kuminga     | POINTS   | Line 17.5 | Proj  8.7 | VALUABLE: Under (82% conf, 47.8% edge)
+  PROJECTED TOTAL: 228.1 | O/U 230.5
+
+MATCHUP: Orlando Magic vs. Washington Wizards
+------------------------------
+  Paolo Banchero       | POINTS   | Line 25.5 | Proj 17.1 | VALUABLE: Under (78% conf, 42.5% edge)
+  Anthony Black        | POINTS   | Line 10.5 | Proj 17.9 | VALUABLE: Over (76% conf, 37.9% edge)
+  Alex Sarr            | REBOUNDS | Line  7.5 | Proj  5.2 | VALUABLE: Under (75% conf, 37.1% edge)
+  Kyshawn George       | REBOUNDS | Line  6.5 | Proj  3.5 | VALUABLE: Under (80% conf, 45.0% edge)
+  Khris Middleton      | POINTS   | Line 11.5 | Proj  7.9 | VALUABLE: Under (75% conf, 36.9% edge)
+  PROJECTED TOTAL: 247.2 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Over (68% conf, 26.3% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Josh Minott Under 5.5 REBOUNDS (82% conf, 32.2% edge) | Houston Rockets vs. Boston Celtics
+  2. Jonathan Kuminga Under 17.5 POINTS (82% conf, 28.3% edge) | Indiana Pacers vs. Golden State Warriors
+  3. Bobby Portis Over 8.5 POINTS (80% conf, 28.2% edge) | Milwaukee Bucks vs. Sacramento Kings
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Josh Minott Under 5.5 REBOUNDS (82% conf, 32.2% edge) | Houston Rockets vs. Boston Celtics
+  2. Jonathan Kuminga Under 17.5 POINTS (82% conf, 28.3% edge) | Indiana Pacers vs. Golden State Warriors
+  3. Bobby Portis Over 8.5 POINTS (80% conf, 28.2% edge) | Milwaukee Bucks vs. Sacramento Kings
+  4. Cole Anthony Under 10.5 POINTS (82% conf, 26.6% edge) | Milwaukee Bucks vs. Sacramento Kings
+
+
+Total VALUABLE picks today: 28

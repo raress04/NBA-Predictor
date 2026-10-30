@@ -1,0 +1,56 @@
+NBA MODEL PREDICTIONS - 2025-12-07
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Charlotte Hornets
+------------------------------
+
+MATCHUP: Boston Celtics vs. Toronto Raptors
+------------------------------
+
+MATCHUP: New York Knicks vs. Orlando Magic
+------------------------------
+
+MATCHUP: Los Angeles Lakers vs. Philadelphia 76ers
+------------------------------
+  Joel Embiid          | POINTS   | Line 17.5 | Proj 24.7 | VALUABLE: Over (73% conf, 33.5% edge)
+  PROJECTED TOTAL: 241.8 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (62% conf, 18.0% edge)
+
+MATCHUP: Portland Trail Blazers vs. Memphis Grizzlies
+------------------------------
+  Shaedon Sharpe       | POINTS   | Line 22.5 | Proj 17.1 | VALUABLE: Under (72% conf, 32.2% edge)
+  Duop Reath           | POINTS   | Line  7.5 | Proj  1.7 | VALUABLE: Under (82% conf, 49.7% edge)
+  Yang Hansen          | POINTS   | Line  7.5 | Proj  2.8 | VALUABLE: Under (81% conf, 47.0% edge)
+  Zach Edey            | POINTS   | Line 14.5 | Proj  9.7 | VALUABLE: Under (77% conf, 39.5% edge)
+  PROJECTED TOTAL: 199.1 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (81% conf, 47.2% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Utah Jazz
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 15.5 | Proj  9.1 | VALUABLE: Under (79% conf, 43.0% edge)
+  Keyonte George       | POINTS   | Line 22.5 | Proj 32.0 | VALUABLE: Over (75% conf, 36.5% edge)
+  PROJECTED TOTAL: 240.1 | O/U 233.5
+  -> SPREAD: Utah Jazz +11.5 VALUABLE: Cover (72% conf, 41.7% edge)
+
+MATCHUP: Golden State Warriors vs. Chicago Bulls
+------------------------------
+  Brandin Podziemski   | POINTS   | Line  9.5 | Proj 16.5 | VALUABLE: Over (74% conf, 35.9% edge)
+  Buddy Hield          | POINTS   | Line 11.5 | Proj  8.2 | VALUABLE: Under (72% conf, 32.4% edge)
+  PROJECTED TOTAL: 227.3 | O/U 229.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Duop Reath Under 7.5 POINTS (82% conf, 32.5% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  2. Yang Hansen Under 7.5 POINTS (81% conf, 29.3% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  3. Game Total Under 232.5 TOTAL (81% conf, 28.6% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Duop Reath Under 7.5 POINTS (82% conf, 32.5% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  2. Yang Hansen Under 7.5 POINTS (81% conf, 29.3% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  3. Game Total Under 232.5 TOTAL (81% conf, 28.6% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+  4. Zach Edey Under 14.5 POINTS (77% conf, 24.7% edge) | Portland Trail Blazers vs. Memphis Grizzlies
+
+
+Total VALUABLE picks today: 12

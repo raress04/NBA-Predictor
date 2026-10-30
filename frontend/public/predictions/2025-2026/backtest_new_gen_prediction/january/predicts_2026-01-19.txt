@@ -1,0 +1,82 @@
+NBA MODEL PREDICTIONS - 2026-01-19
+============================================================
+
+
+MATCHUP: Phoenix Suns vs. Brooklyn Nets
+------------------------------
+  Ziaire Williams      | POINTS   | Line  7.5 | Proj 11.5 | VALUABLE: Over (75% conf, 24.7% edge)
+  PROJECTED TOTAL: 221.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (74% conf, 24.4% edge)
+  -> SPREAD: Phoenix Suns -9.5 VALUABLE: Cover (94% conf, 44.4% edge)
+
+MATCHUP: LA Clippers vs. Washington Wizards
+------------------------------
+  John Collins         | POINTS   | Line 14.5 | Proj 19.0 | VALUABLE: Over (74% conf, 24.4% edge)
+  Brook Lopez          | POINTS   | Line  6.5 | Proj 11.7 | VALUABLE: Over (78% conf, 33.0% edge)
+  Bub Carrington       | POINTS   | Line 12.5 | Proj  9.8 | VALUABLE: Under (76% conf, 26.2% edge)
+  Will Riley           | POINTS   | Line  7.5 | Proj 12.1 | VALUABLE: Over (78% conf, 29.3% edge)
+  PROJECTED TOTAL: 216.1 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (78% conf, 33.5% edge)
+
+MATCHUP: Atlanta Hawks vs. Milwaukee Bucks
+------------------------------
+  PROJECTED TOTAL: 236.0 | O/U 232.5
+
+MATCHUP: San Antonio Spurs vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 239.7 | O/U 232.5
+
+MATCHUP: Boston Celtics vs. Detroit Pistons
+------------------------------
+  Jaden Ivey           | POINTS   | Line  8.5 | Proj 12.3 | VALUABLE: Over (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 229.9 | O/U 232.5
+  -> SPREAD: Detroit Pistons -2.5 VALUABLE: Cover (80% conf, 30.4% edge)
+
+MATCHUP: Philadelphia 76ers vs. Indiana Pacers
+------------------------------
+  Johnny Furphy        | POINTS   | Line  6.5 | Proj  3.9 | VALUABLE: Under (78% conf, 36.8% edge)
+  Johnny Furphy        | REBOUNDS | Line  5.5 | Proj  2.6 | VALUABLE: Under (78% conf, 46.3% edge)
+  PROJECTED TOTAL: 245.0 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Over (76% conf, 26.3% edge)
+  -> SPREAD: Philadelphia 76ers -6.5 VALUABLE: Cover (93% conf, 43.1% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Cleveland Cavaliers
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 11.5 | Proj  8.7 | VALUABLE: Under (78% conf, 28.5% edge)
+  Ajay Mitchell        | POINTS   | Line 14.5 | Proj 11.1 | VALUABLE: Under (78% conf, 27.7% edge)
+  Jaylon Tyson         | POINTS   | Line 14.5 | Proj 11.5 | VALUABLE: Under (76% conf, 25.6% edge)
+  PROJECTED TOTAL: 232.0 | O/U 232.5
+  -> SPREAD: Oklahoma City Thunder -6.5 VALUABLE: Cover (75% conf, 24.7% edge)
+
+MATCHUP: Golden State Warriors vs. Miami Heat
+------------------------------
+  Norman Powell        | POINTS   | Line 22.5 | Proj 18.0 | VALUABLE: Under (78% conf, 28.1% edge)
+  PROJECTED TOTAL: 244.7 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Over (75% conf, 25.5% edge)
+  -> SPREAD: Golden State Warriors -5.5 VALUABLE: Cover (77% conf, 26.7% edge)
+
+MATCHUP: New York Knicks vs. Dallas Mavericks
+------------------------------
+  Karl-Anthony Towns   | POINTS   | Line 20.5 | Proj 17.2 | VALUABLE: Under (73% conf, 23.1% edge)
+  Jalen Brunson        | POINTS   | Line 27.5 | Proj 23.0 | VALUABLE: Under (76% conf, 25.7% edge)
+  Josh Hart            | REBOUNDS | Line  8.5 | Proj  6.1 | VALUABLE: Under (78% conf, 35.9% edge)
+  Dwight Powell        | POINTS   | Line  5.5 | Proj  3.3 | VALUABLE: Under (78% conf, 36.7% edge)
+  Dwight Powell        | REBOUNDS | Line  6.5 | Proj  3.8 | VALUABLE: Under (78% conf, 42.9% edge)
+  PROJECTED TOTAL: 233.7 | O/U 232.5
+  -> SPREAD: New York Knicks -12.5 VALUABLE: Cover (95% conf, 45.5% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Josh Hart Under 8.5 REBOUNDS (78% conf, 28.2% edge) | New York Knicks vs. Dallas Mavericks
+  2. Dwight Powell Under 6.5 REBOUNDS (78% conf, 26.5% edge) | New York Knicks vs. Dallas Mavericks
+  3. Game Total Under 232.5 TOTAL (78% conf, 25.6% edge) | LA Clippers vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Josh Hart Under 8.5 REBOUNDS (78% conf, 28.2% edge) | New York Knicks vs. Dallas Mavericks
+  2. Dwight Powell Under 6.5 REBOUNDS (78% conf, 26.5% edge) | New York Knicks vs. Dallas Mavericks
+  3. Game Total Under 232.5 TOTAL (78% conf, 25.6% edge) | LA Clippers vs. Washington Wizards
+  4. Dwight Powell Under 5.5 POINTS (78% conf, 25.2% edge) | New York Knicks vs. Dallas Mavericks
+
+
+Total VALUABLE picks today: 27

@@ -1,0 +1,51 @@
+NBA MODEL PREDICTIONS - 2025-11-18
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 261.9 | O/U 240.0
+  -> GAME TOTAL: O/U 240.0 VALUABLE: Over (75% conf, 38.3% edge)
+  -> SPREAD: Los Angeles Lakers -13.0 VALUABLE: Cover (69% conf, 37.8% edge)
+
+MATCHUP: Golden State Warriors vs. Orlando Magic
+------------------------------
+  PROJECTED TOTAL: 240.9 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Over (73% conf, 34.5% edge)
+
+MATCHUP: Atlanta Hawks vs. Detroit Pistons
+------------------------------
+  PROJECTED TOTAL: 227.4 | O/U 226.5
+
+MATCHUP: San Antonio Spurs vs. Memphis Grizzlies
+------------------------------
+  PROJECTED TOTAL: 221.3 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (68% conf, 27.1% edge)
+  -> SPREAD: San Antonio Spurs -6.0 VALUABLE: Cover (67% conf, 34.3% edge)
+
+MATCHUP: Brooklyn Nets vs. Boston Celtics
+------------------------------
+  PROJECTED TOTAL: 234.9 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Over (67% conf, 25.5% edge)
+
+MATCHUP: Phoenix Suns vs. Portland Trail Blazers
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.1 | VALUABLE: Under (78% conf, 40.8% edge)
+  PROJECTED TOTAL: 219.1 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (72% conf, 32.5% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Devin Booker Under 7.5 ASSISTS (78% conf, 23.2% edge) | Phoenix Suns vs. Portland Trail Blazers
+  2. Game Total Over 240.0 TOTAL (75% conf, 22.7% edge) | Los Angeles Lakers vs. Utah Jazz
+  3. Game Total Over 223.5 TOTAL (73% conf, 20.3% edge) | Golden State Warriors vs. Orlando Magic
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Devin Booker Under 7.5 ASSISTS (78% conf, 23.2% edge) | Phoenix Suns vs. Portland Trail Blazers
+  2. Game Total Over 240.0 TOTAL (75% conf, 22.7% edge) | Los Angeles Lakers vs. Utah Jazz
+  3. Game Total Over 223.5 TOTAL (73% conf, 20.3% edge) | Golden State Warriors vs. Orlando Magic
+  4. Game Total Under 235.5 TOTAL (72% conf, 19.4% edge) | Phoenix Suns vs. Portland Trail Blazers
+
+
+Total VALUABLE picks today: 8

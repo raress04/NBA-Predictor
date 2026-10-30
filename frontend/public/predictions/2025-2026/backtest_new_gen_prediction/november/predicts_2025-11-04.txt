@@ -1,0 +1,68 @@
+NBA MODEL PREDICTIONS - 2025-11-04
+============================================================
+
+
+MATCHUP: Phoenix Suns vs. Golden State Warriors
+------------------------------
+  Devin Booker         | ASSISTS  | Line  6.5 | Proj  4.5 | VALUABLE: Under (76% conf, 38.3% edge)
+  Ryan Dunn            | POINTS   | Line  9.5 | Proj  6.3 | VALUABLE: Under (74% conf, 34.8% edge)
+  Jonathan Kuminga     | POINTS   | Line 17.5 | Proj  7.9 | VALUABLE: Under (82% conf, 48.8% edge)
+  PROJECTED TOTAL: 217.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (73% conf, 35.1% edge)
+
+MATCHUP: Oklahoma City Thunder vs. LA Clippers
+------------------------------
+  Aaron Wiggins        | POINTS   | Line  9.5 | Proj  6.6 | VALUABLE: Under (72% conf, 32.3% edge)
+  James Harden         | POINTS   | Line 21.5 | Proj 30.9 | VALUABLE: Over (75% conf, 36.6% edge)
+  James Harden         | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (76% conf, 38.6% edge)
+  -> SPREAD: Oklahoma City Thunder -8.5 VALUABLE: Cover (67% conf, 34.9% edge)
+
+MATCHUP: Charlotte Hornets vs. New Orleans Pelicans
+------------------------------
+  Kon Knueppel         | POINTS   | Line 14.5 | Proj 25.5 | VALUABLE: Over (78% conf, 42.0% edge)
+  Tre Mann             | POINTS   | Line 13.5 | Proj  6.6 | VALUABLE: Under (80% conf, 45.7% edge)
+  Derik Queen          | POINTS   | Line  7.5 | Proj 12.4 | VALUABLE: Over (73% conf, 34.0% edge)
+  Saddiq Bey           | POINTS   | Line 10.5 | Proj 19.1 | VALUABLE: Over (77% conf, 40.9% edge)
+  Jeremiah Fears       | POINTS   | Line 14.5 | Proj 10.6 | VALUABLE: Under (73% conf, 34.0% edge)
+  Kevon Looney         | POINTS   | Line  6.5 | Proj  2.8 | VALUABLE: Under (81% conf, 46.6% edge)
+  PROJECTED TOTAL: 222.6 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (61% conf, 15.5% edge)
+
+MATCHUP: Philadelphia 76ers vs. Chicago Bulls
+------------------------------
+  Joel Embiid          | POINTS   | Line 19.5 | Proj 29.4 | VALUABLE: Over (77% conf, 40.6% edge)
+  Isaac Okoro          | POINTS   | Line  7.5 | Proj 13.5 | VALUABLE: Over (74% conf, 35.2% edge)
+  PROJECTED TOTAL: 241.4 | O/U 240.5
+
+MATCHUP: Orlando Magic vs. Atlanta Hawks
+------------------------------
+  Paolo Banchero       | POINTS   | Line 24.5 | Proj 16.8 | VALUABLE: Under (77% conf, 40.9% edge)
+  Anthony Black        | POINTS   | Line 10.5 | Proj 17.5 | VALUABLE: Over (74% conf, 36.1% edge)
+  Kristaps Porziņģis   | REBOUNDS | Line  6.5 | Proj  4.1 | VALUABLE: Under (77% conf, 39.6% edge)
+  PROJECTED TOTAL: 238.7 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (64% conf, 20.8% edge)
+
+MATCHUP: Toronto Raptors vs. Milwaukee Bucks
+------------------------------
+  Collin Murray-Boyles | POINTS   | Line  9.5 | Proj  6.2 | VALUABLE: Under (75% conf, 37.2% edge)
+  Giannis Antetokounmpo | REBOUNDS | Line 11.5 | Proj  8.0 | VALUABLE: Under (77% conf, 41.0% edge)
+  Giannis Antetokounmpo | ASSISTS  | Line  7.5 | Proj  4.8 | VALUABLE: Under (79% conf, 42.0% edge)
+  Cole Anthony         | POINTS   | Line  8.5 | Proj  3.2 | VALUABLE: Under (81% conf, 47.3% edge)
+  Bobby Portis         | POINTS   | Line  9.5 | Proj 17.1 | VALUABLE: Over (76% conf, 38.1% edge)
+  PROJECTED TOTAL: 241.3 | O/U 236.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jonathan Kuminga Under 17.5 POINTS (82% conf, 29.4% edge) | Phoenix Suns vs. Golden State Warriors
+  2. Kristaps Porziņģis Under 6.5 REBOUNDS (77% conf, 28.3% edge) | Orlando Magic vs. Atlanta Hawks
+  3. Tre Mann Under 13.5 POINTS (80% conf, 26.9% edge) | Charlotte Hornets vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jonathan Kuminga Under 17.5 POINTS (82% conf, 29.4% edge) | Phoenix Suns vs. Golden State Warriors
+  2. Kristaps Porziņģis Under 6.5 REBOUNDS (77% conf, 28.3% edge) | Orlando Magic vs. Atlanta Hawks
+  3. Tre Mann Under 13.5 POINTS (80% conf, 26.9% edge) | Charlotte Hornets vs. New Orleans Pelicans
+  4. Cole Anthony Under 8.5 POINTS (81% conf, 26.5% edge) | Toronto Raptors vs. Milwaukee Bucks
+
+
+Total VALUABLE picks today: 26

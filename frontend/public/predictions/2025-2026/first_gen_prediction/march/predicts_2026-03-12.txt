@@ -1,0 +1,479 @@
+[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...
+[+] Loaded live Injury Report: 69 players marked Out/GTD.
+[+] ESPN: Fetched odds for 9 upcoming NBA games (source: Draft Kings)
+    [+] ESPN odds loaded for 9 events:
+        Philadelphia 76ers @ Detroit Pistons
+        Phoenix Suns @ Indiana Pacers
+        Washington Wizards @ Orlando Magic
+        Brooklyn Nets @ Atlanta Hawks
+        Milwaukee Bucks @ Miami Heat
+        Dallas Mavericks @ Memphis Grizzlies
+        Denver Nuggets @ San Antonio Spurs
+        Boston Celtics @ Oklahoma City Thunder
+        Chicago Bulls @ Los Angeles Lakers
+    [CACHE HIT] Loaded from odds_api_events.json (114min remaining)
+
+[+] Commencing Parallel Matchup Simulations...
+
+============================================================
+ MATCHUP: Phoenix Suns @ Indiana Pacers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    IND 4.20 | PHX 1.24  (Draft Kings)
+     Spread: IND +8.5 @ 1.93  (Draft Kings)
+     Total:  O/U 223.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 934acadeb7fc...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/934acadeb7fcd3d3c1d79fd8b324040c/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8f5c30>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 217.3
+PROJECTED SCORE: IND 105.9 - PHX 111.4
+  -> GAME TOTAL: O/U 223.5 ignore
+  -> HOME SPREAD: IND +8.5 ignore
+  -> AWAY SPREAD: PHX -8.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Andrew Nembhard      -> 15 PTS, 3 REB, 6 AST
+  Ivica Zubac          -> 5 PTS, 6 REB, 1 AST
+  Aaron Nesmith        -> 12 PTS, 3 REB, 2 AST
+  Jarace Walker        -> 14 PTS, 7 REB, 3 AST
+  Ben Sheppard         -> 8 PTS, 3 REB, 2 AST
+  Jay Huff             -> 12 PTS, 4 REB, 1 AST
+  Micah Potter         -> 12 PTS, 6 REB, 1 AST
+  Obi Toppin           -> 9 PTS, 5 REB, 2 AST
+  Quenton Jackson      -> 10 PTS, 2 REB, 3 AST
+  Ethan Thompson       -> 4 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Devin Booker         -> 19 PTS, 4 REB, 4 AST
+  Grayson Allen        -> 20 PTS, 3 REB, 4 AST
+  Royce O'Neale        -> 8 PTS, 5 REB, 2 AST
+  Collin Gillespie     -> 14 PTS, 5 REB, 4 AST
+  Jalen Green          -> 16 PTS, 4 REB, 2 AST
+  Jordan Goodwin       -> 10 PTS, 5 REB, 2 AST
+  Oso Ighodaro         -> 6 PTS, 6 REB, 3 AST
+  Ryan Dunn            -> 4 PTS, 4 REB, 1 AST
+  Haywood Highsmith    -> 6 PTS, 4 REB, 1 AST
+  Cole Anthony         -> 4 PTS, 2 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Chicago Bulls @ Los Angeles Lakers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    LAL 1.19 | CHI 5.00  (Draft Kings)
+     Spread: LAL -11.5 @ 1.98  (Draft Kings)
+     Total:  O/U 238.5 — Over 1.89 / Under 1.93  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 4aee4f270127...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/4aee4f2701274412ad8157cdfea22caf/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc358b20>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 237.8
+PROJECTED SCORE: LAL 127.9 - CHI 110.0
+  -> GAME TOTAL: O/U 238.5 ignore
+  -> HOME SPREAD: LAL -11.5 VALUABLE: Cover (95% conf, 45.3% edge)
+  -> AWAY SPREAD: CHI +11.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Luka Dončić          -> 25 PTS, 6 REB, 7 AST
+  Austin Reaves        -> 17 PTS, 4 REB, 5 AST
+  LeBron James         -> 14 PTS, 4 REB, 7 AST
+  Rui Hachimura        -> 11 PTS, 3 REB, 1 AST
+  Marcus Smart         -> 10 PTS, 2 REB, 3 AST
+  Deandre Ayton        -> 9 PTS, 7 REB, 1 AST
+  Jake LaRavia         -> 11 PTS, 4 REB, 2 AST
+  Luke Kennard         -> 10 PTS, 2 REB, 2 AST
+  Jarred Vanderbilt    -> 6 PTS, 4 REB, 1 AST
+  Jaxson Hayes         -> 11 PTS, 5 REB, 1 AST
+
+[AWAY TEAM]
+  Josh Giddey          -> 11 PTS, 5 REB, 7 AST
+  Matas Buzelis        -> 14 PTS, 4 REB, 2 AST
+  Tre Jones            -> 12 PTS, 2 REB, 4 AST
+  Isaac Okoro          -> 10 PTS, 2 REB, 1 AST
+  Collin Sexton        -> 12 PTS, 1 REB, 1 AST
+  Jalen Smith          -> 11 PTS, 6 REB, 1 AST
+  Patrick Williams     -> 9 PTS, 3 REB, 2 AST
+  Guerschon Yabusele   -> 10 PTS, 5 REB, 2 AST
+  Nick Richards        -> 10 PTS, 6 REB, 0 AST
+  Rob Dillingham       -> 7 PTS, 3 REB, 2 AST
+
+
+============================================================
+ MATCHUP: Dallas Mavericks @ Memphis Grizzlies
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    MEM 2.70 | DAL 1.49  (Draft Kings)
+     Spread: MEM +4.5 @ 1.98  (Draft Kings)
+     Total:  O/U 239.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 8139b5bfd0d6...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/8139b5bfd0d6cb35977cd039afbbbc06/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc890610>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 241.3
+PROJECTED SCORE: MEM 119.2 - DAL 122.2
+  -> GAME TOTAL: O/U 239.5 ignore
+  -> HOME SPREAD: MEM +4.5 ignore
+  -> AWAY SPREAD: DAL -4.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jaylen Wells         -> 15 PTS, 3 REB, 1 AST
+  Cedric Coward        -> 12 PTS, 6 REB, 2 AST
+  Cam Spencer          -> 11 PTS, 3 REB, 4 AST
+  Ty Jerome            -> 19 PTS, 3 REB, 4 AST
+  Walter Clayton Jr.   -> 8 PTS, 2 REB, 5 AST
+  GG Jackson           -> 16 PTS, 6 REB, 1 AST
+  Kyle Anderson        -> 5 PTS, 3 REB, 2 AST
+  Javon Small          -> 12 PTS, 4 REB, 4 AST
+  Taylor Hendricks     -> 11 PTS, 5 REB, 1 AST
+  Jahmai Mashack       -> 7 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Cooper Flagg         -> 22 PTS, 6 REB, 4 AST
+  P.J. Washington      -> 13 PTS, 5 REB, 2 AST
+  Naji Marshall        -> 15 PTS, 4 REB, 4 AST
+  Max Christie         -> 11 PTS, 3 REB, 2 AST
+  Khris Middleton      -> 11 PTS, 3 REB, 3 AST
+  Brandon Williams     -> 13 PTS, 2 REB, 4 AST
+  Klay Thompson        -> 11 PTS, 2 REB, 1 AST
+  Daniel Gafford       -> 9 PTS, 6 REB, 1 AST
+  Marvin Bagley III    -> 10 PTS, 6 REB, 2 AST
+  Ryan Nembhard        -> 3 PTS, 2 REB, 5 AST
+
+
+============================================================
+ MATCHUP: Philadelphia 76ers @ Detroit Pistons
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    DET 1.08 | PHI 8.50  (Draft Kings)
+     Spread: DET -15.5 @ 1.93  (Draft Kings)
+     Total:  O/U 222.5 — Over 1.93 / Under 1.89  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 05abd26b6e3a...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/05abd26b6e3a0a9e4317e3948c06a097/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8946a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 208.8
+PROJECTED SCORE: DET 122.1 - PHI 86.7
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Under (79% conf, 28.7% edge)
+  -> HOME SPREAD: DET -15.5 VALUABLE: Cover (100% conf, 49.8% edge)
+  -> AWAY SPREAD: PHI +15.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Cade Cunningham      -> 19 PTS, 5 REB, 11 AST
+  Tobias Harris        -> 12 PTS, 6 REB, 2 AST
+  Duncan Robinson      -> 13 PTS, 3 REB, 3 AST
+  Jalen Duren          -> 16 PTS, 8 REB, 2 AST
+  Isaiah Stewart       -> 10 PTS, 4 REB, 1 AST
+  Kevin Huerter        -> 9 PTS, 5 REB, 3 AST
+  Ronald Holland II    -> 10 PTS, 5 REB, 1 AST
+  Javonte Green        -> 10 PTS, 4 REB, 0 AST
+  Daniss Jenkins       -> 8 PTS, 2 REB, 3 AST
+  Paul Reed            -> 12 PTS, 7 REB, 1 AST
+
+[AWAY TEAM]
+  VJ Edgecombe         -> 16 PTS, 6 REB, 2 AST
+  Paul George          -> 8 PTS, 3 REB, 2 AST
+  Quentin Grimes       -> 12 PTS, 4 REB, 2 AST
+  Dominick Barlow      -> 8 PTS, 5 REB, 1 AST
+  Andre Drummond       -> 5 PTS, 9 REB, 1 AST
+  MarJon Beauchamp     -> 6 PTS, 3 REB, 1 AST
+  Tyrese Martin        -> 6 PTS, 3 REB, 1 AST
+  Trendon Watford      -> 7 PTS, 5 REB, 2 AST
+  Cameron Payne        -> 8 PTS, 2 REB, 3 AST
+  Justin Edwards       -> 7 PTS, 3 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Milwaukee Bucks @ Miami Heat
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    MIA 1.39 | MIL 3.10  (Draft Kings)
+     Spread: MIA -6.5 @ 1.91  (Draft Kings)
+     Total:  O/U 234.5 — Over 1.89 / Under 1.93  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 4c710b462848...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/4c710b46284886c35732575897017b19/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8c61d0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 233.9
+PROJECTED SCORE: MIA 124.2 - MIL 109.6
+  -> GAME TOTAL: O/U 234.5 ignore
+  -> HOME SPREAD: MIA -6.5 VALUABLE: Cover (89% conf, 38.6% edge)
+  -> AWAY SPREAD: MIL +6.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Bam Adebayo          -> 31 PTS, 8 REB, 3 AST
+  Tyler Herro          -> 22 PTS, 4 REB, 3 AST
+  Jaime Jaquez Jr.     -> 15 PTS, 5 REB, 5 AST
+  Davion Mitchell      -> 8 PTS, 3 REB, 6 AST
+  Pelle Larsson        -> 12 PTS, 4 REB, 4 AST
+  Kel'el Ware          -> 12 PTS, 8 REB, 0 AST
+  Simone Fontecchio    -> 9 PTS, 3 REB, 1 AST
+  Dru Smith            -> 5 PTS, 3 REB, 3 AST
+  Myron Gardner        -> 4 PTS, 4 REB, 1 AST
+  Keshad Johnson       -> 3 PTS, 1 REB, 0 AST
+
+[AWAY TEAM]
+  Kevin Porter Jr.     -> 13 PTS, 5 REB, 5 AST
+  Ryan Rollins         -> 13 PTS, 5 REB, 5 AST
+  AJ Green             -> 7 PTS, 2 REB, 1 AST
+  Giannis Antetokounmpo -> 20 PTS, 9 REB, 4 AST
+  Myles Turner         -> 9 PTS, 5 REB, 1 AST
+  Kyle Kuzma           -> 14 PTS, 4 REB, 3 AST
+  Bobby Portis         -> 11 PTS, 5 REB, 1 AST
+  Cam Thomas           -> 10 PTS, 2 REB, 2 AST
+  Gary Trent Jr.       -> 5 PTS, 1 REB, 0 AST
+  Taurean Prince       -> 4 PTS, 2 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Boston Celtics @ Oklahoma City Thunder
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    OKC 1.35 | BOS 3.30  (Draft Kings)
+     Spread: OKC -7.5 @ 1.93  (Draft Kings)
+     Total:  O/U 215.5 — Over 1.87 / Under 1.95  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 54729c42f16b...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/54729c42f16b535d7db5602607b652cb/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8fd3f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 217.1
+PROJECTED SCORE: OKC 113.7 - BOS 103.4
+  -> GAME TOTAL: O/U 215.5 ignore
+  -> HOME SPREAD: OKC -7.5 VALUABLE: Cover (84% conf, 34.2% edge)
+  -> AWAY SPREAD: BOS +7.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Shai Gilgeous-Alexander -> 26 PTS, 4 REB, 5 AST
+  Chet Holmgren        -> 12 PTS, 9 REB, 2 AST
+  Luguentz Dort        -> 8 PTS, 4 REB, 1 AST
+  Cason Wallace        -> 11 PTS, 3 REB, 4 AST
+  Ajay Mitchell        -> 7 PTS, 2 REB, 2 AST
+  Aaron Wiggins        -> 9 PTS, 3 REB, 2 AST
+  Isaiah Joe           -> 13 PTS, 3 REB, 1 AST
+  Jaylin Williams      -> 8 PTS, 7 REB, 3 AST
+  Alex Caruso          -> 6 PTS, 2 REB, 2 AST
+  Jared McCain         -> 10 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Derrick White        -> 21 PTS, 4 REB, 5 AST
+  Payton Pritchard     -> 15 PTS, 3 REB, 4 AST
+  Jaylen Brown         -> 22 PTS, 6 REB, 4 AST
+  Sam Hauser           -> 11 PTS, 4 REB, 1 AST
+  Neemias Queta        -> 8 PTS, 8 REB, 1 AST
+  Jordan Walsh         -> 3 PTS, 3 REB, 0 AST
+  Baylor Scheierman    -> 10 PTS, 6 REB, 2 AST
+  Luka Garza           -> 5 PTS, 2 REB, 0 AST
+  Ron Harper Jr.       -> 5 PTS, 2 REB, 1 AST
+  Amari Williams       -> 1 PTS, 2 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Brooklyn Nets @ Atlanta Hawks
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    ATL 1.09 | BKN 7.75  (Draft Kings)
+     Spread: ATL -15.5 @ 1.91  (Draft Kings)
+     Total:  O/U 225.5 — Over 1.87 / Under 1.95  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event 262c75be6af3...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/262c75be6af3afb9a3e942e061ca61b4/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc895cc0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 226.8
+PROJECTED SCORE: ATL 128.2 - BKN 98.6
+  -> GAME TOTAL: O/U 225.5 ignore
+  -> HOME SPREAD: ATL -15.5 VALUABLE: Cover (99% conf, 49.3% edge)
+  -> AWAY SPREAD: BKN +15.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jalen Johnson        -> 16 PTS, 6 REB, 6 AST
+  Dyson Daniels        -> 11 PTS, 6 REB, 6 AST
+  Nickeil Alexander-Walker -> 16 PTS, 3 REB, 4 AST
+  Onyeka Okongwu       -> 16 PTS, 7 REB, 3 AST
+  CJ McCollum          -> 16 PTS, 3 REB, 4 AST
+  Zaccharie Risacher   -> 9 PTS, 5 REB, 1 AST
+  Jonathan Kuminga     -> 11 PTS, 5 REB, 2 AST
+  Jock Landale         -> 12 PTS, 5 REB, 1 AST
+  Corey Kispert        -> 10 PTS, 3 REB, 2 AST
+  Gabe Vincent         -> 7 PTS, 2 REB, 1 AST
+
+[AWAY TEAM]
+  Nic Claxton          -> 13 PTS, 7 REB, 4 AST
+  Noah Clowney         -> 17 PTS, 5 REB, 1 AST
+  Terance Mann         -> 10 PTS, 4 REB, 3 AST
+  Danny Wolf           -> 15 PTS, 6 REB, 4 AST
+  Drake Powell         -> 9 PTS, 3 REB, 1 AST
+  Ochai Agbaji         -> 5 PTS, 3 REB, 1 AST
+  Chaney Johnson       -> 8 PTS, 2 REB, 1 AST
+  Jalen Wilson         -> 8 PTS, 3 REB, 1 AST
+  Hunter Tyson         -> 6 PTS, 3 REB, 1 AST
+  E.J. Liddell         -> 4 PTS, 3 REB, 0 AST
+
+
+============================================================
+ MATCHUP: Washington Wizards @ Orlando Magic
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    ORL 1.10 | WAS 7.50  (Draft Kings)
+     Spread: ORL -14.5 @ 1.91  (Draft Kings)
+     Total:  O/U 233.5 — Over 1.87 / Under 1.95  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event cd2e1d8b7576...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/cd2e1d8b7576bcfeb478f6e35d9b3981/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8f87f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 232.8
+PROJECTED SCORE: ORL 135.8 - WAS 97.0
+  -> GAME TOTAL: O/U 233.5 ignore
+  -> HOME SPREAD: ORL -14.5 VALUABLE: Cover (100% conf, 49.9% edge)
+  -> AWAY SPREAD: WAS +14.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Paolo Banchero       -> 24 PTS, 7 REB, 6 AST
+  Desmond Bane         -> 24 PTS, 4 REB, 5 AST
+  Wendell Carter Jr.   -> 12 PTS, 8 REB, 2 AST
+  Jalen Suggs          -> 12 PTS, 3 REB, 7 AST
+  Tristan da Silva     -> 13 PTS, 5 REB, 3 AST
+  Goga Bitadze         -> 10 PTS, 5 REB, 1 AST
+  Jevon Carter         -> 8 PTS, 2 REB, 3 AST
+  Noah Penda           -> 7 PTS, 4 REB, 1 AST
+  Moritz Wagner        -> 10 PTS, 4 REB, 1 AST
+  Jett Howard          -> 12 PTS, 3 REB, 1 AST
+
+[AWAY TEAM]
+  Leaky Black          -> 7 PTS, 4 REB, 1 AST
+  Alex Sarr            -> 12 PTS, 6 REB, 1 AST
+  Bub Carrington       -> 7 PTS, 3 REB, 3 AST
+  Bilal Coulibaly      -> 10 PTS, 4 REB, 2 AST
+  Trae Young           -> 14 PTS, 2 REB, 5 AST
+  Tre Johnson          -> 10 PTS, 3 REB, 1 AST
+  Alondes Williams     -> 7 PTS, 4 REB, 1 AST
+  Justin Champagnie    -> 9 PTS, 5 REB, 1 AST
+  Will Riley           -> 11 PTS, 3 REB, 1 AST
+  Kadary Richmond      -> 7 PTS, 3 REB, 1 AST
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ San Antonio Spurs
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    SAS 1.52 | DEN 2.60  (Draft Kings)
+     Spread: SAS -4.5 @ 1.89  (Draft Kings)
+     Total:  O/U 239.5 — Over 1.91 / Under 1.91  (Draft Kings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+    [+] Fetching player props for event bb77f1e69f95...
+    [!] Could not fetch player props: HTTPSConnectionPool(host='api.the-odds-api.com', port=443): Max retries exceeded with url: /v4/sports/basketball_nba/events/bb77f1e69f95b7403a2ab81b5bcc7a2d/odds?apiKey=fa8ea9f80055312920d2b48468e1f11d&regions=uk%2Ceu&markets=player_points%2Cplayer_rebounds%2Cplayer_assists&oddsFormat=decimal&dateFormat=iso (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7b0fdc8f1ea0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+PROJECTED TOTAL: 263.9
+PROJECTED SCORE: SAS 137.5 - DEN 126.4
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Over (91% conf, 40.9% edge)
+  -> HOME SPREAD: SAS -4.5 VALUABLE: Cover (79% conf, 29.2% edge)
+  -> AWAY SPREAD: DEN +4.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  De'Aaron Fox         -> 17 PTS, 2 REB, 6 AST
+  Devin Vassell        -> 16 PTS, 4 REB, 3 AST
+  Stephon Castle       -> 16 PTS, 4 REB, 7 AST
+  Victor Wembanyama    -> 27 PTS, 8 REB, 3 AST
+  Julian Champagnie    -> 12 PTS, 4 REB, 2 AST
+  Harrison Barnes      -> 9 PTS, 2 REB, 2 AST
+  Keldon Johnson       -> 14 PTS, 4 REB, 1 AST
+  Dylan Harper         -> 13 PTS, 3 REB, 4 AST
+  Luke Kornet          -> 4 PTS, 4 REB, 2 AST
+  Carter Bryant        -> 6 PTS, 3 REB, 1 AST
+
+[AWAY TEAM]
+  Jamal Murray         -> 23 PTS, 3 REB, 5 AST
+  Nikola Jokić         -> 23 PTS, 9 REB, 7 AST
+  Christian Braun      -> 12 PTS, 4 REB, 3 AST
+  Cameron Johnson      -> 11 PTS, 3 REB, 2 AST
+  Aaron Gordon         -> 15 PTS, 5 REB, 3 AST
+  Tim Hardaway Jr.     -> 13 PTS, 2 REB, 1 AST
+  Bruce Brown          -> 7 PTS, 3 REB, 2 AST
+  Spencer Jones        -> 3 PTS, 3 REB, 1 AST
+  Jalen Pickett        -> 4 PTS, 2 REB, 2 AST
+  Julian Strawther     -> 10 PTS, 2 REB, 1 AST
+
+
+============================================================
+  🎯 GENERATING OPTIMAL PARLAYS...
+============================================================
+  ⚠️  [BLOWOUT RISK] Philadelphia 76ers @ Detroit Pistons: Banning OVERs for 
+  ⚠️  [BLOWOUT RISK] Washington Wizards @ Orlando Magic: Banning OVERs for 
+  ⚠️  [BLOWOUT RISK] Brooklyn Nets @ Atlanta Hawks: Banning OVERs for 
+  ⚠️  [MARKET DISCREPANCY] Milwaukee Bucks @ Miami Heat: Proj Margin +15.0, Market Margin +6.5
+  ⚠️  [MARKET DISCREPANCY] Denver Nuggets @ San Antonio Spurs: Proj Margin +12.0, Market Margin +4.5
+  ⚠️  [MARKET DISCREPANCY] Chicago Bulls @ Los Angeles Lakers: Proj Margin +18.0, Market Margin +11.5
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)
+============================================================
+  Pick 1: [Chicago Bulls @ Los Angeles Lakers] Los Angeles Lakers -11.5 → -8.5 (reduced 3.0pts) | Proj margin: +18.0pts @ 1.98
+          Edge: +45.3%  |  Confidence: 94%  |  Book: Draft Kings
+  Pick 2: [Denver Nuggets @ San Antonio Spurs] Over 239.5 (Projected: 264.0) @ 1.91
+          Edge: +40.9%  |  Confidence: 90%  |  Book: Draft Kings
+  Pick 3: [Milwaukee Bucks @ Miami Heat] Miami Heat -6.5 → -3.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.91
+          Edge: +38.6%  |  Confidence: 88%  |  Book: Draft Kings
+  ─────────────────────────────────────────
+  Combined Odds: 7.22x
+  🔥 RECOMMENDED STAKE: 2.50% of Bankroll
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)
+============================================================
+  Pick 1: [Chicago Bulls @ Los Angeles Lakers] Los Angeles Lakers -11.5 → -8.5 (reduced 3.0pts) | Proj margin: +18.0pts @ 1.98
+          Edge: +45.3%  |  Confidence: 94%  |  Book: Draft Kings
+  Pick 2: [Denver Nuggets @ San Antonio Spurs] Over 239.5 (Projected: 264.0) @ 1.91
+          Edge: +40.9%  |  Confidence: 90%  |  Book: Draft Kings
+  Pick 3: [Milwaukee Bucks @ Miami Heat] Miami Heat -6.5 → -3.5 (reduced 3.0pts) | Proj margin: +15.0pts @ 1.91
+          Edge: +38.6%  |  Confidence: 88%  |  Book: Draft Kings
+  Pick 4: [Boston Celtics @ Oklahoma City Thunder] Oklahoma City Thunder -7.5 → -4.5 (reduced 3.0pts) | Proj margin: +10.0pts @ 1.93
+          Edge: +34.2%  |  Confidence: 84%  |  Book: Draft Kings
+  ─────────────────────────────────────────
+  Combined Odds (all 4): 13.90x
+  System 3/4 Avg Payout: 7.20x
+  🔥 RECOMMENDED STAKE: 2.50% of Bankroll
+============================================================
+
+  🔥 HONORABLE MENTIONS (Next Best Picks)
+  ─────────────────────────────────────────
+  [Denver Nuggets @ San Antonio Spurs] San Antonio Spurs -4.5 → -1.5 (reduced 3.0pts) | Proj margin: +12.0pts @ 1.89
+      Edge: +29.2%  |  Conf: 79%  |  Book: Draft Kings
+
+  📊 Analyzed 5 potential picks across all games.
+  Showing only the highest-confidence selections.
+

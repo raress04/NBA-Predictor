@@ -1,0 +1,64 @@
+NBA MODEL PREDICTIONS - 2025-12-06
+============================================================
+
+
+MATCHUP: Brooklyn Nets vs. New Orleans Pelicans
+------------------------------
+
+MATCHUP: LA Clippers vs. Minnesota Timberwolves
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 23.5 | Proj 35.3 | VALUABLE: Over (78% conf, 41.8% edge)
+
+MATCHUP: Sacramento Kings vs. Miami Heat
+------------------------------
+  Keegan Murray        | REBOUNDS | Line  7.5 | Proj  5.1 | VALUABLE: Under (76% conf, 38.3% edge)
+  Maxime Raynaud       | REBOUNDS | Line  5.5 | Proj 10.3 | VALUABLE: Over (79% conf, 44.0% edge)
+  Malik Monk           | POINTS   | Line 14.5 | Proj  8.5 | VALUABLE: Under (78% conf, 41.7% edge)
+  Bam Adebayo          | POINTS   | Line 20.5 | Proj 15.0 | VALUABLE: Under (74% conf, 35.7% edge)
+  Dru Smith            | ASSISTS  | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 42.2% edge)
+  PROJECTED TOTAL: 230.4 | O/U 241.5
+  -> GAME TOTAL: O/U 241.5 VALUABLE: Under (66% conf, 23.4% edge)
+
+MATCHUP: Atlanta Hawks vs. Washington Wizards
+------------------------------
+  Zaccharie Risacher   | POINTS   | Line 12.5 | Proj  8.9 | VALUABLE: Under (73% conf, 33.4% edge)
+  Mouhamed Gueye       | POINTS   | Line  7.5 | Proj  3.1 | VALUABLE: Under (81% conf, 46.6% edge)
+  Justin Champagnie    | REBOUNDS | Line  6.5 | Proj 10.3 | VALUABLE: Over (76% conf, 38.3% edge)
+  PROJECTED TOTAL: 212.2 | O/U 237.5
+  -> GAME TOTAL: O/U 237.5 VALUABLE: Under (78% conf, 42.9% edge)
+
+MATCHUP: Milwaukee Bucks vs. Detroit Pistons
+------------------------------
+  Jericho Sims         | REBOUNDS | Line  7.0 | Proj  4.8 | VALUABLE: Under (78% conf, 41.2% edge)
+  Isaiah Stewart       | REBOUNDS | Line  6.5 | Proj  4.5 | VALUABLE: Under (74% conf, 36.1% edge)
+  PROJECTED TOTAL: 228.4 | O/U 223.5
+
+MATCHUP: Dallas Mavericks vs. Houston Rockets
+------------------------------
+  Aaron Holiday        | POINTS   | Line 10.5 | Proj  4.9 | VALUABLE: Under (80% conf, 45.7% edge)
+  Clint Capela         | POINTS   | Line  8.5 | Proj  5.0 | VALUABLE: Under (78% conf, 42.3% edge)
+  Clint Capela         | REBOUNDS | Line  9.5 | Proj  6.6 | VALUABLE: Under (76% conf, 39.3% edge)
+  PROJECTED TOTAL: 214.6 | O/U 221.5
+  -> GAME TOTAL: O/U 221.5 VALUABLE: Under (61% conf, 15.7% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Golden State Warriors
+------------------------------
+  Jonathan Kuminga     | POINTS   | Line 16.5 | Proj 11.5 | VALUABLE: Under (74% conf, 36.1% edge)
+  PROJECTED TOTAL: 208.8 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (75% conf, 37.8% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Aaron Holiday Under 10.5 POINTS (80% conf, 27.6% edge) | Dallas Mavericks vs. Houston Rockets
+  2. Mouhamed Gueye Under 7.5 POINTS (81% conf, 26.4% edge) | Atlanta Hawks vs. Washington Wizards
+  3. Jericho Sims Under 7.0 REBOUNDS (78% conf, 27.1% edge) | Milwaukee Bucks vs. Detroit Pistons
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Aaron Holiday Under 10.5 POINTS (80% conf, 27.6% edge) | Dallas Mavericks vs. Houston Rockets
+  2. Mouhamed Gueye Under 7.5 POINTS (81% conf, 26.4% edge) | Atlanta Hawks vs. Washington Wizards
+  3. Jericho Sims Under 7.0 REBOUNDS (78% conf, 27.1% edge) | Milwaukee Bucks vs. Detroit Pistons
+  4. Keegan Murray Under 7.5 REBOUNDS (76% conf, 27.2% edge) | Sacramento Kings vs. Miami Heat
+
+
+Total VALUABLE picks today: 19

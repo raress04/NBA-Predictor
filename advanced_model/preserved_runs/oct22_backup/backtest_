@@ -1,0 +1,92 @@
+[+] Execution mode: BACKTEST | Date: 2026-10-22
+[+] Routing log to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/october/predicts_2026-10-22.txt
+[+] HISTORICAL MODE: Generating projections for 2026-10-22
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 54 players marked Out/GTD.
+    [+] Found 2 games in database for 2026-10-22
+    [+] Parsed 2 unique matchups:
+        CLE @ PHI
+        DEN @ OKC
+
+[+] Commencing Parallel Historical Simulations...
+
+============================================================
+ MATCHUP: Cleveland Cavaliers @ Philadelphia 76ers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 239.6
+PROJECTED SCORE: PHI 119.5 - CLE 120.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-10-22 — projection-only mode
+[HOME TEAM]
+  Tyrese Maxey         -> 20 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jaylen Brown         -> 21 PTS, 6 REB, 3 AST [HIGH_UNCERTAINTY]
+  Joel Embiid          -> 19 PTS, 8 REB, 5 AST [HIGH_UNCERTAINTY]
+  LeBron James         -> 18 PTS, 7 REB, 7 AST [HIGH_UNCERTAINTY]
+  VJ Edgecombe         -> 14 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Kentavious Caldwell-Pope -> 8 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Anfernee Simons      -> 16 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Adem Bona            -> 0 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Donovan Mitchell     -> 26 PTS, 5 REB, 4 AST [HIGH_UNCERTAINTY]
+  Evan Mobley          -> 16 PTS, 6 REB, 3 AST [HIGH_UNCERTAINTY]
+  James Harden         -> 20 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Peyton Watson        -> 15 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Jarrett Allen        -> 11 PTS, 7 REB, 1 AST [HIGH_UNCERTAINTY]
+  Sam Merrill          -> 6 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jaylon Tyson         -> 11 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Mario Hezonja        -> 9 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Craig Porter Jr.     -> 3 PTS, 4 REB, 4 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ Oklahoma City Thunder
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+PROJECTED TOTAL: 260.8
+PROJECTED SCORE: OKC 136.3 - DEN 124.5
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-10-22 — projection-only mode
+[HOME TEAM]
+  Shai Gilgeous-Alexander -> 25 PTS, 3 REB, 6 AST [HIGH_UNCERTAINTY]
+  Jalen Williams       -> 20 PTS, 5 REB, 4 AST [HIGH_UNCERTAINTY]
+  Chet Holmgren        -> 18 PTS, 8 REB, 2 AST [HIGH_UNCERTAINTY]
+  Cason Wallace        -> 11 PTS, 3 REB, 3 AST [HIGH_UNCERTAINTY]
+  Ajay Mitchell        -> 16 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Isaiah Hartenstein   -> 8 PTS, 6 REB, 2 AST [HIGH_UNCERTAINTY]
+  Alex Caruso          -> 8 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jared McCain         -> 14 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jaylin Williams      -> 6 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Aday Mara            -> 8 PTS, 7 REB, 3 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Jamal Murray         -> 24 PTS, 4 REB, 4 AST [HIGH_UNCERTAINTY]
+  Nikola Jokić         -> 19 PTS, 9 REB, 7 AST [HIGH_UNCERTAINTY]
+  Christian Braun      -> 10 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Aaron Gordon         -> 14 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  DeMar DeRozan        -> 15 PTS, 2 REB, 3 AST [HIGH_UNCERTAINTY]
+  Alpha Diallo         -> 5 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Trevon Brazile       -> 8 PTS, 5 REB, 0 AST [HIGH_UNCERTAINTY]
+  Cameron Johnson      -> 13 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Marvin Bagley III    -> 11 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Tyus Jones           -> 4 PTS, 1 REB, 4 AST [HIGH_UNCERTAINTY]
+
+
+[+] Historical projections for 2026-10-22 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating backtest PDF report for 2026-10-22...
+    [+] LaTeX written to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/october/predicts_report_2026-10-22.tex
+    [+] PDF compiled: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/october/predicts_report_2026-10-22.pdf
+    [+] Cleaned up auxiliary files (predicts_report_2026-10-22.aux, .log, .tex)

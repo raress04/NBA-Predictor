@@ -1,0 +1,70 @@
+NBA MODEL PREDICTIONS - 2026-01-21
+============================================================
+
+
+MATCHUP: Toronto Raptors vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 217.6 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 39.3% edge)
+  -> SPREAD: Toronto Raptors -5.5 VALUABLE: Cover (66% conf, 15.6% edge)
+
+MATCHUP: Charlotte Hornets vs. Cleveland Cavaliers
+------------------------------
+  Jaylon Tyson         | POINTS   | Line 15.5 | Proj 12.4 | VALUABLE: Under (75% conf, 24.6% edge)
+  PROJECTED TOTAL: 237.6 | O/U 238.5
+
+MATCHUP: Oklahoma City Thunder vs. Milwaukee Bucks
+------------------------------
+  Ajay Mitchell        | POINTS   | Line 16.5 | Proj 12.8 | VALUABLE: Under (78% conf, 27.6% edge)
+  Giannis Antetokounmpo | POINTS   | Line 27.5 | Proj 23.5 | VALUABLE: Under (76% conf, 25.7% edge)
+  PROJECTED TOTAL: 218.3 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 38.1% edge)
+  -> SPREAD: Oklahoma City Thunder -12.5 VALUABLE: Cover (97% conf, 46.9% edge)
+
+MATCHUP: Atlanta Hawks vs. Memphis Grizzlies
+------------------------------
+  Ja Morant            | ASSISTS  | Line  8.5 | Proj  6.1 | VALUABLE: Under (78% conf, 37.2% edge)
+  PROJECTED TOTAL: 238.5 | O/U 238.5
+
+MATCHUP: Detroit Pistons vs. New Orleans Pelicans
+------------------------------
+  Jalen Duren          | POINTS   | Line 16.5 | Proj 20.8 | VALUABLE: Over (72% conf, 22.5% edge)
+  Duncan Robinson      | POINTS   | Line 10.5 | Proj 16.0 | VALUABLE: Over (78% conf, 28.6% edge)
+  Saddiq Bey           | POINTS   | Line 12.5 | Proj 17.7 | VALUABLE: Over (77% conf, 27.3% edge)
+  Jordan Poole         | POINTS   | Line 10.5 | Proj 14.9 | VALUABLE: Over (74% conf, 24.3% edge)
+  PROJECTED TOTAL: 241.6 | O/U 238.5
+  -> SPREAD: Detroit Pistons -7.5 VALUABLE: Cover (93% conf, 43.4% edge)
+
+MATCHUP: New York Knicks vs. Brooklyn Nets
+------------------------------
+  Karl-Anthony Towns   | POINTS   | Line 21.5 | Proj 17.0 | VALUABLE: Under (78% conf, 29.2% edge)
+  Karl-Anthony Towns   | REBOUNDS | Line 11.5 | Proj  8.3 | VALUABLE: Under (78% conf, 38.8% edge)
+  Josh Hart            | REBOUNDS | Line  7.5 | Proj  5.6 | VALUABLE: Under (78% conf, 32.3% edge)
+  Mitchell Robinson    | REBOUNDS | Line  8.5 | Proj  6.2 | VALUABLE: Under (78% conf, 35.0% edge)
+  Nic Claxton          | REBOUNDS | Line  7.5 | Proj  5.6 | VALUABLE: Under (78% conf, 32.5% edge)
+  PROJECTED TOTAL: 238.0 | O/U 238.5
+  -> SPREAD: New York Knicks -12.5 VALUABLE: Cover (90% conf, 39.8% edge)
+
+MATCHUP: Boston Celtics vs. Indiana Pacers
+------------------------------
+  Jaylen Brown         | POINTS   | Line 29.5 | Proj 25.8 | VALUABLE: Under (72% conf, 22.2% edge)
+  Andrew Nembhard      | ASSISTS  | Line  7.5 | Proj  5.8 | VALUABLE: Under (78% conf, 32.7% edge)
+  PROJECTED TOTAL: 224.9 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (78% conf, 28.5% edge)
+  -> SPREAD: Boston Celtics -10.5 VALUABLE: Cover (81% conf, 31.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Karl-Anthony Towns Under 11.5 REBOUNDS (78% conf, 29.2% edge) | New York Knicks vs. Brooklyn Nets
+  2. Ja Morant Under 8.5 ASSISTS (78% conf, 28.2% edge) | Atlanta Hawks vs. Memphis Grizzlies
+  3. Duncan Robinson Over 10.5 POINTS (78% conf, 25.6% edge) | Detroit Pistons vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Karl-Anthony Towns Under 11.5 REBOUNDS (78% conf, 29.2% edge) | New York Knicks vs. Brooklyn Nets
+  2. Ja Morant Under 8.5 ASSISTS (78% conf, 28.2% edge) | Atlanta Hawks vs. Memphis Grizzlies
+  3. Duncan Robinson Over 10.5 POINTS (78% conf, 25.6% edge) | Detroit Pistons vs. New Orleans Pelicans
+  4. Game Total Under 238.5 TOTAL (78% conf, 25.6% edge) | Toronto Raptors vs. Sacramento Kings
+
+
+Total VALUABLE picks today: 23

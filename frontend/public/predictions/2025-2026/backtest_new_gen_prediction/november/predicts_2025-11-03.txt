@@ -1,0 +1,90 @@
+NBA MODEL PREDICTIONS - 2025-11-03
+============================================================
+
+
+MATCHUP: Portland Trail Blazers vs. Los Angeles Lakers
+------------------------------
+  Jrue Holiday         | POINTS   | Line 16.5 | Proj 11.9 | VALUABLE: Under (72% conf, 32.4% edge)
+  Bronny James         | POINTS   | Line  5.5 | Proj  2.6 | VALUABLE: Under (78% conf, 41.3% edge)
+  Dalton Knecht        | POINTS   | Line 17.5 | Proj  8.7 | VALUABLE: Under (81% conf, 46.9% edge)
+  Jaxson Hayes         | POINTS   | Line  5.5 | Proj 11.1 | VALUABLE: Over (77% conf, 39.5% edge)
+  PROJECTED TOTAL: 220.9 | O/U 227.5
+
+MATCHUP: Denver Nuggets vs. Sacramento Kings
+------------------------------
+  Peyton Watson        | POINTS   | Line  6.5 | Proj 13.4 | VALUABLE: Over (77% conf, 39.7% edge)
+  PROJECTED TOTAL: 248.8 | O/U 237.5
+  -> GAME TOTAL: O/U 237.5 VALUABLE: Over (66% conf, 24.4% edge)
+  -> SPREAD: Denver Nuggets -11.5 VALUABLE: Cover (76% conf, 48.5% edge)
+
+MATCHUP: LA Clippers vs. Miami Heat
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 21.5 | Proj 34.4 | VALUABLE: Over (79% conf, 43.4% edge)
+  Bam Adebayo          | POINTS   | Line 18.5 | Proj 13.2 | VALUABLE: Under (74% conf, 35.6% edge)
+
+MATCHUP: Dallas Mavericks vs. Houston Rockets
+------------------------------
+  D'Angelo Russell     | POINTS   | Line 14.5 | Proj  7.3 | VALUABLE: Under (80% conf, 45.8% edge)
+  Naji Marshall        | POINTS   | Line  8.5 | Proj 14.5 | VALUABLE: Over (74% conf, 35.6% edge)
+  Brandon Williams     | POINTS   | Line  8.5 | Proj 14.4 | VALUABLE: Over (74% conf, 35.7% edge)
+  Reed Sheppard        | POINTS   | Line  9.5 | Proj 15.7 | VALUABLE: Over (72% conf, 32.6% edge)
+  Josh Okogie          | POINTS   | Line  8.5 | Proj  5.2 | VALUABLE: Under (75% conf, 36.6% edge)
+  PROJECTED TOTAL: 223.3 | O/U 226.5
+
+MATCHUP: Boston Celtics vs. Utah Jazz
+------------------------------
+  Josh Minott          | POINTS   | Line  8.5 | Proj  4.4 | VALUABLE: Under (78% conf, 41.4% edge)
+  Josh Minott          | REBOUNDS | Line  5.5 | Proj  2.0 | VALUABLE: Under (82% conf, 48.9% edge)
+  Keyonte George       | POINTS   | Line 18.5 | Proj 31.2 | VALUABLE: Over (80% conf, 44.4% edge)
+  Taylor Hendricks     | REBOUNDS | Line  5.5 | Proj  2.8 | VALUABLE: Under (80% conf, 45.2% edge)
+  PROJECTED TOTAL: 258.4 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (77% conf, 41.7% edge)
+  -> SPREAD: Utah Jazz +10.5 VALUABLE: Cover (71% conf, 41.0% edge)
+
+MATCHUP: New York Knicks vs. Washington Wizards
+------------------------------
+  Karl-Anthony Towns   | REBOUNDS | Line 12.5 | Proj  9.0 | VALUABLE: Under (76% conf, 39.1% edge)
+  Kyshawn George       | REBOUNDS | Line  6.5 | Proj  3.7 | VALUABLE: Under (79% conf, 43.9% edge)
+  PROJECTED TOTAL: 258.9 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Over (77% conf, 41.8% edge)
+  -> SPREAD: New York Knicks -13.0 VALUABLE: Cover (70% conf, 39.8% edge)
+
+MATCHUP: Detroit Pistons vs. Memphis Grizzlies
+------------------------------
+  Ja Morant            | POINTS   | Line 23.5 | Proj 17.5 | VALUABLE: Under (74% conf, 35.5% edge)
+  Ja Morant            | ASSISTS  | Line  6.5 | Proj  4.6 | VALUABLE: Under (75% conf, 37.0% edge)
+  Cam Spencer          | POINTS   | Line  5.5 | Proj 11.0 | VALUABLE: Over (73% conf, 33.7% edge)
+  PROJECTED TOTAL: 229.4 | O/U 235.5
+  -> SPREAD: Detroit Pistons -4.0 VALUABLE: Cover (67% conf, 33.9% edge)
+
+MATCHUP: Milwaukee Bucks vs. Indiana Pacers
+------------------------------
+  Cole Anthony         | POINTS   | Line  8.5 | Proj  3.6 | VALUABLE: Under (81% conf, 46.1% edge)
+  Bobby Portis         | POINTS   | Line 10.5 | Proj 19.6 | VALUABLE: Over (78% conf, 42.3% edge)
+  Pascal Siakam        | ASSISTS  | Line  5.5 | Proj  3.5 | VALUABLE: Under (77% conf, 40.1% edge)
+  Jarace Walker        | POINTS   | Line 14.5 | Proj  9.2 | VALUABLE: Under (76% conf, 39.2% edge)
+  PROJECTED TOTAL: 226.3 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (64% conf, 19.4% edge)
+  -> SPREAD: Milwaukee Bucks -6.5 VALUABLE: Cover (72% conf, 43.0% edge)
+
+MATCHUP: Minnesota Timberwolves vs. Brooklyn Nets
+------------------------------
+  Mike Conley          | ASSISTS  | Line  5.5 | Proj  2.3 | VALUABLE: Under (82% conf, 47.9% edge)
+  Noah Clowney         | POINTS   | Line  9.0 | Proj 15.6 | VALUABLE: Over (73% conf, 33.5% edge)
+  PROJECTED TOTAL: 225.5 | O/U 225.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Mike Conley Under 5.5 ASSISTS (82% conf, 35.3% edge) | Minnesota Timberwolves vs. Brooklyn Nets
+  2. Taylor Hendricks Under 5.5 REBOUNDS (80% conf, 31.1% edge) | Boston Celtics vs. Utah Jazz
+  3. Kyshawn George Under 6.5 REBOUNDS (79% conf, 30.5% edge) | New York Knicks vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Mike Conley Under 5.5 ASSISTS (82% conf, 35.3% edge) | Minnesota Timberwolves vs. Brooklyn Nets
+  2. Taylor Hendricks Under 5.5 REBOUNDS (80% conf, 31.1% edge) | Boston Celtics vs. Utah Jazz
+  3. Kyshawn George Under 6.5 REBOUNDS (79% conf, 30.5% edge) | New York Knicks vs. Washington Wizards
+  4. D'Angelo Russell Under 14.5 POINTS (80% conf, 29.0% edge) | Dallas Mavericks vs. Houston Rockets
+
+
+Total VALUABLE picks today: 36

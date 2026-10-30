@@ -23,6 +23,17 @@ echo "[Stage 3] Bias correction check complete."
 echo ""
 
 echo "========================================="
+echo "🔄 Preparing Yesterday's Results & Analysis..."
+echo "========================================="
+python3 -m etl.prepare_analyze
+if [ $? -ne 0 ]; then
+    echo "❌ Yesterday preparation failed. Aborting pipeline before model invocation."
+    exit 1
+fi
+echo "[Stage] Yesterday preparation complete."
+echo ""
+
+echo "========================================="
 echo "🏀 Running Live Scraper..."
 echo "========================================="
 python3 -m etl.live_ingestion
@@ -112,11 +123,5 @@ python3 -m ml.daily_metrics   --out "${LOG_BASE}/daily_metrics/daily_metrics_${D
 python3 -m ml.monitoring       --out "${LOG_BASE}/monitoring/monitoring_${DATE}.txt"
 python3 -m ml.compare_retro_live --out "${LOG_BASE}/retro_live_alignment/retro_live_alignment_${DATE}.txt"
 python3 -m scripts.audit_odds          --out "${LOG_BASE}/odds_coverage_audit/odds_coverage_audit_${DATE}.txt"
-echo ""
-echo "========================================="
-echo "🤖 Phase ML.6 — Running ML Shadow Pipeline..."
-echo "========================================="
-python3 -m etl.live_ingestion --shadow
-echo ""
 echo "✅ All logs generated in ${LOG_BASE}"
 

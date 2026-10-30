@@ -1,0 +1,27 @@
+NBA MODEL PREDICTIONS - 2025-11-06
+============================================================
+
+
+MATCHUP: Phoenix Suns vs. LA Clippers
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (79% conf, 42.2% edge)
+  Collin Gillespie     | POINTS   | Line  9.5 | Proj 16.6 | VALUABLE: Over (74% conf, 35.3% edge)
+  Ivica Zubac          | POINTS   | Line 18.5 | Proj 13.4 | VALUABLE: Under (74% conf, 36.2% edge)
+  Chris Paul           | POINTS   | Line  6.5 | Proj  4.2 | VALUABLE: Under (73% conf, 34.1% edge)
+  Chris Paul           | ASSISTS  | Line  5.5 | Proj  3.7 | VALUABLE: Under (76% conf, 38.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Devin Booker Under 7.5 ASSISTS (79% conf, 23.4% edge) | Phoenix Suns vs. LA Clippers
+  2. Collin Gillespie Over 9.5 POINTS (74% conf, 23.2% edge) | Phoenix Suns vs. LA Clippers
+  3. Ivica Zubac Under 18.5 POINTS (74% conf, 20.4% edge) | Phoenix Suns vs. LA Clippers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Devin Booker Under 7.5 ASSISTS (79% conf, 23.4% edge) | Phoenix Suns vs. LA Clippers
+  2. Collin Gillespie Over 9.5 POINTS (74% conf, 23.2% edge) | Phoenix Suns vs. LA Clippers
+  3. Ivica Zubac Under 18.5 POINTS (74% conf, 20.4% edge) | Phoenix Suns vs. LA Clippers
+  4. Chris Paul Under 6.5 POINTS (73% conf, 19.9% edge) | Phoenix Suns vs. LA Clippers
+
+
+Total VALUABLE picks today: 5

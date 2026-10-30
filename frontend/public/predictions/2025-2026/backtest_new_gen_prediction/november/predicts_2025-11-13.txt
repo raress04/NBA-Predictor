@@ -1,0 +1,46 @@
+NBA MODEL PREDICTIONS - 2025-11-13
+============================================================
+
+
+MATCHUP: Atlanta Hawks vs. Utah Jazz
+------------------------------
+  Zaccharie Risacher   | POINTS   | Line 13.5 | Proj  9.2 | VALUABLE: Under (74% conf, 36.0% edge)
+  Mouhamed Gueye       | POINTS   | Line  9.5 | Proj  3.2 | VALUABLE: Under (82% conf, 49.1% edge)
+  Mouhamed Gueye       | REBOUNDS | Line  5.5 | Proj  2.7 | VALUABLE: Under (81% conf, 46.0% edge)
+  Keaton Wallace       | POINTS   | Line  6.5 | Proj  3.0 | VALUABLE: Under (79% conf, 43.4% edge)
+  Keyonte George       | POINTS   | Line 19.5 | Proj 28.3 | VALUABLE: Over (74% conf, 35.6% edge)
+  PROJECTED TOTAL: 235.5 | O/U 234.5
+
+MATCHUP: Toronto Raptors vs. Cleveland Cavaliers
+------------------------------
+  Scottie Barnes       | REBOUNDS | Line  7.5 | Proj 11.7 | VALUABLE: Over (77% conf, 39.9% edge)
+  De'Andre Hunter      | POINTS   | Line 18.5 | Proj 12.8 | VALUABLE: Under (74% conf, 36.2% edge)
+  PROJECTED TOTAL: 234.0 | O/U 238.5
+
+MATCHUP: Phoenix Suns vs. Indiana Pacers
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 41.8% edge)
+  Nick Richards        | POINTS   | Line  9.5 | Proj  2.3 | VALUABLE: Under (82% conf, 49.9% edge)
+  Nick Richards        | REBOUNDS | Line  8.5 | Proj  4.5 | VALUABLE: Under (81% conf, 46.8% edge)
+  Tony Bradley         | POINTS   | Line  6.5 | Proj  2.6 | VALUABLE: Under (82% conf, 47.5% edge)
+  Tony Bradley         | REBOUNDS | Line  5.5 | Proj  3.5 | VALUABLE: Under (76% conf, 39.0% edge)
+  Isaiah Jackson       | POINTS   | Line  8.5 | Proj  5.1 | VALUABLE: Under (78% conf, 41.1% edge)
+  PROJECTED TOTAL: 212.5 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (76% conf, 38.4% edge)
+  -> SPREAD: Phoenix Suns -4.0 VALUABLE: Cover (66% conf, 32.5% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Nick Richards Under 9.5 POINTS (82% conf, 29.4% edge) | Phoenix Suns vs. Indiana Pacers
+  2. Keaton Wallace Under 6.5 POINTS (79% conf, 28.5% edge) | Atlanta Hawks vs. Utah Jazz
+  3. Devin Booker Under 7.5 ASSISTS (78% conf, 28.4% edge) | Phoenix Suns vs. Indiana Pacers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Nick Richards Under 9.5 POINTS (82% conf, 29.4% edge) | Phoenix Suns vs. Indiana Pacers
+  2. Keaton Wallace Under 6.5 POINTS (79% conf, 28.5% edge) | Atlanta Hawks vs. Utah Jazz
+  3. Devin Booker Under 7.5 ASSISTS (78% conf, 28.4% edge) | Phoenix Suns vs. Indiana Pacers
+  4. Nick Richards Under 8.5 REBOUNDS (81% conf, 26.6% edge) | Phoenix Suns vs. Indiana Pacers
+
+
+Total VALUABLE picks today: 15

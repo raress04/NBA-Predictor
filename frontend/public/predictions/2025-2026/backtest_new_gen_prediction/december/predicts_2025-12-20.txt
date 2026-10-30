@@ -1,0 +1,68 @@
+NBA MODEL PREDICTIONS - 2025-12-20
+============================================================
+
+
+MATCHUP: Memphis Grizzlies vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 218.5 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (71% conf, 31.3% edge)
+  -> SPREAD: Washington Wizards +12.5 VALUABLE: Cover (73% conf, 43.6% edge)
+
+MATCHUP: Portland Trail Blazers vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 208.4 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (79% conf, 44.6% edge)
+
+MATCHUP: Utah Jazz vs. Orlando Magic
+------------------------------
+  PROJECTED TOTAL: 248.1 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Over (61% conf, 16.3% edge)
+
+MATCHUP: Detroit Pistons vs. Charlotte Hornets
+------------------------------
+  PROJECTED TOTAL: 243.0 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Over (63% conf, 18.5% edge)
+  -> SPREAD: Detroit Pistons -10.5 VALUABLE: Cover (71% conf, 40.7% edge)
+
+MATCHUP: Houston Rockets vs. Denver Nuggets
+------------------------------
+  PROJECTED TOTAL: 230.4 | O/U 235.5
+
+MATCHUP: Boston Celtics vs. Toronto Raptors
+------------------------------
+  PROJECTED TOTAL: 210.7 | O/U 221.5
+  -> GAME TOTAL: O/U 221.5 VALUABLE: Under (66% conf, 23.6% edge)
+
+MATCHUP: LA Clippers vs. Los Angeles Lakers
+------------------------------
+
+MATCHUP: Philadelphia 76ers vs. Dallas Mavericks
+------------------------------
+  PROJECTED TOTAL: 211.6 | O/U 226.5
+  -> GAME TOTAL: O/U 226.5 VALUABLE: Under (71% conf, 31.1% edge)
+
+MATCHUP: Phoenix Suns vs. Golden State Warriors
+------------------------------
+  PROJECTED TOTAL: 230.0 | O/U 226.5
+
+MATCHUP: New Orleans Pelicans vs. Indiana Pacers
+------------------------------
+  PROJECTED TOTAL: 226.5 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (64% conf, 20.0% edge)
+  -> SPREAD: New Orleans Pelicans -2.5 VALUABLE: Cover (68% conf, 35.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 235.5 TOTAL (79% conf, 27.0% edge) | Portland Trail Blazers vs. Sacramento Kings
+  2. Game Total Under 233.5 TOTAL (71% conf, 18.7% edge) | Memphis Grizzlies vs. Washington Wizards
+  3. Game Total Under 226.5 TOTAL (71% conf, 18.6% edge) | Philadelphia 76ers vs. Dallas Mavericks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 235.5 TOTAL (79% conf, 27.0% edge) | Portland Trail Blazers vs. Sacramento Kings
+  2. Game Total Under 233.5 TOTAL (71% conf, 18.7% edge) | Memphis Grizzlies vs. Washington Wizards
+  3. Game Total Under 226.5 TOTAL (71% conf, 18.6% edge) | Philadelphia 76ers vs. Dallas Mavericks
+  4. Game Total Under 221.5 TOTAL (66% conf, 13.9% edge) | Boston Celtics vs. Toronto Raptors
+
+
+Total VALUABLE picks today: 10

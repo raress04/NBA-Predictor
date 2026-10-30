@@ -1,0 +1,61 @@
+NBA MODEL PREDICTIONS - 2025-12-31
+============================================================
+
+
+MATCHUP: Cleveland Cavaliers vs. Phoenix Suns
+------------------------------
+  PROJECTED TOTAL: 221.6 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (68% conf, 26.4% edge)
+
+MATCHUP: Atlanta Hawks vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 245.6 | O/U 240.0
+
+MATCHUP: New Orleans Pelicans vs. Chicago Bulls
+------------------------------
+  PROJECTED TOTAL: 233.6 | O/U 249.5
+  -> GAME TOTAL: O/U 249.5 VALUABLE: Under (72% conf, 32.2% edge)
+
+MATCHUP: Toronto Raptors vs. Denver Nuggets
+------------------------------
+  PROJECTED TOTAL: 229.7 | O/U 229.5
+
+MATCHUP: San Antonio Spurs vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 245.9 | O/U 236.0
+  -> GAME TOTAL: O/U 236.0 VALUABLE: Over (64% conf, 20.5% edge)
+
+MATCHUP: Charlotte Hornets vs. Golden State Warriors
+------------------------------
+  PROJECTED TOTAL: 240.0 | O/U 234.5
+
+MATCHUP: Milwaukee Bucks vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 232.1 | O/U 234.5
+  -> SPREAD: Milwaukee Bucks -10.5 VALUABLE: Cover (66% conf, 32.9% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Portland Trail Blazers
+------------------------------
+  PROJECTED TOTAL: 218.0 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (70% conf, 29.9% edge)
+  -> SPREAD: Oklahoma City Thunder -15.5 VALUABLE: Cover (73% conf, 43.8% edge)
+
+MATCHUP: Orlando Magic vs. Indiana Pacers
+------------------------------
+  PROJECTED TOTAL: 231.0 | O/U 229.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 249.5 TOTAL (72% conf, 19.2% edge) | New Orleans Pelicans vs. Chicago Bulls
+  2. Game Total Under 232.5 TOTAL (70% conf, 17.8% edge) | Oklahoma City Thunder vs. Portland Trail Blazers
+  3. Game Total Under 233.5 TOTAL (68% conf, 15.6% edge) | Cleveland Cavaliers vs. Phoenix Suns
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 249.5 TOTAL (72% conf, 19.2% edge) | New Orleans Pelicans vs. Chicago Bulls
+  2. Game Total Under 232.5 TOTAL (70% conf, 17.8% edge) | Oklahoma City Thunder vs. Portland Trail Blazers
+  3. Game Total Under 233.5 TOTAL (68% conf, 15.6% edge) | Cleveland Cavaliers vs. Phoenix Suns
+  4. Game Total Over 236.0 TOTAL (64% conf, 11.6% edge) | San Antonio Spurs vs. New York Knicks
+
+
+Total VALUABLE picks today: 6

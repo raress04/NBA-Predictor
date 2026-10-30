@@ -1,0 +1,49 @@
+MATCHUP: CLE vs. PHI    106 - 114
+Donovan Mitchell       | 32 PTS, 10 REB,  3 AST
+Tyrese Maxey           | 32 PTS, 3 REB,  6 AST
+Joel Embiid            | 24 PTS, 7 REB,  1 AST
+Jaylen Brown           | 21 PTS, 8 REB,  4 AST
+Evan Mobley            | 18 PTS, 8 REB,  2 AST
+LeBron James           | 17 PTS, 10 REB,  5 AST
+James Harden           | 16 PTS, 3 REB,  5 AST
+Jarrett Allen          | 14 PTS, 7 REB,  0 AST
+VJ Edgecombe           | 11 PTS, 7 REB,  6 AST
+Mario Hezonja          | 10 PTS, 3 REB,  2 AST
+Peyton Watson          | 8 PTS, 1 REB,  2 AST
+Sam Merrill            | 5 PTS, 5 REB,  2 AST
+Jaylon Tyson           | 3 PTS, 6 REB,  2 AST
+Kentavious Caldwell-Pope | 3 PTS, 3 REB,  2 AST
+Adem Bona              | 2 PTS, 2 REB,  0 AST
+Anfernee Simons        | 2 PTS, 3 REB,  0 AST
+Jabari Walker          | 2 PTS, 1 REB,  0 AST
+Craig Porter Jr.       | 0 PTS, 3 REB,  0 AST
+Tyrese Proctor         | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: DEN vs. OKC    84 - 96
+Jalen Williams         | 21 PTS, 5 REB,  3 AST
+Aaron Gordon           | 20 PTS, 6 REB,  1 AST
+Shai Gilgeous-Alexander | 17 PTS, 2 REB,  3 AST
+Nikola Jokić           | 13 PTS, 7 REB,  5 AST
+DeMar DeRozan          | 13 PTS, 2 REB,  0 AST
+Chet Holmgren          | 12 PTS, 17 REB,  2 AST
+Ajay Mitchell          | 12 PTS, 0 REB,  0 AST
+Cason Wallace          | 9 PTS, 1 REB,  1 AST
+Christian Braun        | 7 PTS, 6 REB,  1 AST
+Alex Caruso            | 7 PTS, 4 REB,  5 AST
+Isaiah Hartenstein     | 6 PTS, 6 REB,  2 AST
+Jamal Murray           | 6 PTS, 10 REB,  3 AST
+Cameron Johnson        | 5 PTS, 2 REB,  1 AST
+Ryan Nembhard          | 5 PTS, 1 REB,  1 AST
+Alpha Diallo           | 4 PTS, 2 REB,  3 AST
+Trevon Brazile         | 4 PTS, 12 REB,  0 AST
+Jared McCain           | 4 PTS, 0 REB,  1 AST
+Jaylin Williams        | 3 PTS, 7 REB,  3 AST
+Kenrich Williams       | 3 PTS, 1 REB,  1 AST
+DaRon Holmes II        | 3 PTS, 1 REB,  1 AST
+Aday Mara              | 2 PTS, 3 REB,  0 AST
+Marvin Bagley III      | 2 PTS, 3 REB,  1 AST
+Tyus Jones             | 2 PTS, 0 REB,  0 AST
+Brooks Barnhizer       | 0 PTS, 0 REB,  1 AST
+Bryce Hopkins          | 0 PTS, 1 REB,  0 AST
+Bennett Stirtz         | 0 PTS, 0 REB,  0 AST
+

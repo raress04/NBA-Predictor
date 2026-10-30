@@ -198,6 +198,12 @@ def resolve_results_file(
     if os.path.exists(p):
         return p
 
+    # Secondary check: cross-mode fallback (actual scores are identical regardless of mode)
+    alt_mode = 'live' if mode == 'backtest' else 'backtest'
+    alt_p = get_results_filepath(dt, mode=alt_mode, ext='txt', base_dir=base_dir)
+    if os.path.exists(alt_p):
+        return alt_p
+
     # Also check without mode prefix in 2026-2027 if saved simply under results/<season>/<month>/
     season = get_nba_season(dt)
     month = dt.strftime('%B').lower()

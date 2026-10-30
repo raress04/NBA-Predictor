@@ -1,0 +1,76 @@
+NBA MODEL PREDICTIONS - 2025-10-31
+============================================================
+
+
+MATCHUP: LA Clippers vs. New Orleans Pelicans
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 23.5 | Proj 33.3 | VALUABLE: Over (75% conf, 37.7% edge)
+  Ivica Zubac          | POINTS   | Line 16.5 | Proj 11.7 | VALUABLE: Under (74% conf, 35.9% edge)
+  Yves Missi           | POINTS   | Line  6.5 | Proj  4.0 | VALUABLE: Under (77% conf, 39.8% edge)
+  Saddiq Bey           | POINTS   | Line  7.5 | Proj 17.9 | VALUABLE: Over (81% conf, 46.1% edge)
+  Derik Queen          | POINTS   | Line  6.5 | Proj 11.7 | VALUABLE: Over (73% conf, 34.2% edge)
+
+MATCHUP: Philadelphia 76ers vs. Boston Celtics
+------------------------------
+  Joel Embiid          | POINTS   | Line 16.5 | Proj 25.2 | VALUABLE: Over (76% conf, 38.8% edge)
+  Josh Minott          | POINTS   | Line  9.5 | Proj  4.4 | VALUABLE: Under (80% conf, 45.5% edge)
+  PROJECTED TOTAL: 230.3 | O/U 233.5
+
+MATCHUP: Phoenix Suns vs. Utah Jazz
+------------------------------
+  Devin Booker         | ASSISTS  | Line  8.5 | Proj  4.6 | VALUABLE: Under (82% conf, 47.1% edge)
+  Royce O'Neale        | POINTS   | Line 12.5 | Proj  8.9 | VALUABLE: Under (72% conf, 32.7% edge)
+  Mark Williams        | POINTS   | Line 16.5 | Proj 11.2 | VALUABLE: Under (76% conf, 38.2% edge)
+  Walker Kessler       | POINTS   | Line 13.5 | Proj  9.5 | VALUABLE: Under (74% conf, 35.1% edge)
+  PROJECTED TOTAL: 234.6 | O/U 238.0
+  -> SPREAD: Utah Jazz +3.0 VALUABLE: Cover (71% conf, 41.1% edge)
+
+MATCHUP: Chicago Bulls vs. New York Knicks
+------------------------------
+  PROJECTED TOTAL: 255.6 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (75% conf, 39.0% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Toronto Raptors
+------------------------------
+  Jaylon Tyson         | POINTS   | Line 13.5 | Proj 21.7 | VALUABLE: Over (76% conf, 38.3% edge)
+  Collin Murray-Boyles | POINTS   | Line 10.5 | Proj  6.6 | VALUABLE: Under (76% conf, 39.0% edge)
+  PROJECTED TOTAL: 232.9 | O/U 236.5
+
+MATCHUP: Atlanta Hawks vs. Indiana Pacers
+------------------------------
+  Mouhamed Gueye       | POINTS   | Line  5.5 | Proj  2.9 | VALUABLE: Under (78% conf, 41.0% edge)
+  Pascal Siakam        | ASSISTS  | Line  5.5 | Proj  3.6 | VALUABLE: Under (77% conf, 39.6% edge)
+  Jarace Walker        | POINTS   | Line 14.5 | Proj 10.1 | VALUABLE: Under (74% conf, 35.0% edge)
+  PROJECTED TOTAL: 225.3 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (61% conf, 15.4% edge)
+  -> SPREAD: Atlanta Hawks -2.5 VALUABLE: Cover (68% conf, 36.6% edge)
+
+MATCHUP: Los Angeles Lakers vs. Memphis Grizzlies
+------------------------------
+  Ja Morant            | POINTS   | Line 24.5 | Proj 18.4 | VALUABLE: Under (74% conf, 35.0% edge)
+  Ja Morant            | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 41.8% edge)
+  PROJECTED TOTAL: 228.2 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (66% conf, 22.8% edge)
+
+MATCHUP: Denver Nuggets vs. Portland Trail Blazers
+------------------------------
+  Peyton Watson        | POINTS   | Line  6.5 | Proj 14.3 | VALUABLE: Over (79% conf, 43.2% edge)
+  PROJECTED TOTAL: 250.0 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Over (65% conf, 22.1% edge)
+  -> SPREAD: Denver Nuggets -5.5 VALUABLE: Cover (76% conf, 48.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Saddiq Bey Over 7.5 POINTS (81% conf, 27.2% edge) | LA Clippers vs. New Orleans Pelicans
+  2. Peyton Watson Over 6.5 POINTS (79% conf, 27.6% edge) | Denver Nuggets vs. Portland Trail Blazers
+  3. Devin Booker Under 8.5 ASSISTS (82% conf, 26.1% edge) | Phoenix Suns vs. Utah Jazz
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Saddiq Bey Over 7.5 POINTS (81% conf, 27.2% edge) | LA Clippers vs. New Orleans Pelicans
+  2. Peyton Watson Over 6.5 POINTS (79% conf, 27.6% edge) | Denver Nuggets vs. Portland Trail Blazers
+  3. Devin Booker Under 8.5 ASSISTS (82% conf, 26.1% edge) | Phoenix Suns vs. Utah Jazz
+  4. Josh Minott Under 9.5 POINTS (80% conf, 25.9% edge) | Philadelphia 76ers vs. Boston Celtics
+
+
+Total VALUABLE picks today: 26

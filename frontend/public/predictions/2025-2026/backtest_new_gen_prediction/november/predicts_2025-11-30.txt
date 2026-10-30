@@ -1,0 +1,62 @@
+NBA MODEL PREDICTIONS - 2025-11-30
+============================================================
+
+
+MATCHUP: Memphis Grizzlies vs. Sacramento Kings
+------------------------------
+  Keegan Murray        | REBOUNDS | Line  7.5 | Proj  5.1 | VALUABLE: Under (76% conf, 38.4% edge)
+  PROJECTED TOTAL: 220.5 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Under (69% conf, 28.0% edge)
+
+MATCHUP: Portland Trail Blazers vs. Oklahoma City Thunder
+------------------------------
+  PROJECTED TOTAL: 207.0 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (79% conf, 44.6% edge)
+
+MATCHUP: Minnesota Timberwolves vs. San Antonio Spurs
+------------------------------
+  PROJECTED TOTAL: 239.6 | O/U 233.5
+
+MATCHUP: Atlanta Hawks vs. Philadelphia 76ers
+------------------------------
+  PROJECTED TOTAL: 220.6 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (67% conf, 25.6% edge)
+
+MATCHUP: New York Knicks vs. Toronto Raptors
+------------------------------
+  PROJECTED TOTAL: 230.1 | O/U 229.5
+  -> SPREAD: New York Knicks -8.5 VALUABLE: Cover (69% conf, 38.1% edge)
+
+MATCHUP: Boston Celtics vs. Cleveland Cavaliers
+------------------------------
+  Jaylen Brown         | REBOUNDS | Line  5.5 | Proj  9.3 | VALUABLE: Over (77% conf, 40.1% edge)
+  PROJECTED TOTAL: 210.9 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (77% conf, 41.3% edge)
+
+MATCHUP: Houston Rockets vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 233.5 | O/U 233.5
+  -> SPREAD: Utah Jazz +11.5 VALUABLE: Cover (71% conf, 40.2% edge)
+
+MATCHUP: Los Angeles Lakers vs. New Orleans Pelicans
+------------------------------
+  Derik Queen          | REBOUNDS | Line  6.5 | Proj 10.3 | VALUABLE: Over (76% conf, 38.0% edge)
+  PROJECTED TOTAL: 221.3 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (62% conf, 17.3% edge)
+  -> SPREAD: Los Angeles Lakers -15.5 VALUABLE: Cover (74% conf, 46.0% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 234.5 TOTAL (79% conf, 27.0% edge) | Portland Trail Blazers vs. Oklahoma City Thunder
+  2. Game Total Under 234.5 TOTAL (77% conf, 24.9% edge) | Boston Celtics vs. Cleveland Cavaliers
+  3. Derik Queen Over 6.5 REBOUNDS (76% conf, 24.2% edge) | Los Angeles Lakers vs. New Orleans Pelicans
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 234.5 TOTAL (79% conf, 27.0% edge) | Portland Trail Blazers vs. Oklahoma City Thunder
+  2. Game Total Under 234.5 TOTAL (77% conf, 24.9% edge) | Boston Celtics vs. Cleveland Cavaliers
+  3. Derik Queen Over 6.5 REBOUNDS (76% conf, 24.2% edge) | Los Angeles Lakers vs. New Orleans Pelicans
+  4. Jaylen Brown Over 5.5 REBOUNDS (77% conf, 20.8% edge) | Boston Celtics vs. Cleveland Cavaliers
+
+
+Total VALUABLE picks today: 11

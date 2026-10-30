@@ -1,0 +1,87 @@
+NBA MODEL PREDICTIONS - 2025-11-14
+============================================================
+
+
+MATCHUP: Golden State Warriors vs. San Antonio Spurs
+------------------------------
+  Victor Wembanyama    | REBOUNDS | Line 12.5 | Proj  9.1 | VALUABLE: Under (76% conf, 38.9% edge)
+  Stephon Castle       | REBOUNDS | Line  5.5 | Proj  3.0 | VALUABLE: Under (79% conf, 43.7% edge)
+  Julian Champagnie    | POINTS   | Line  7.5 | Proj 13.6 | VALUABLE: Over (73% conf, 33.7% edge)
+  Keldon Johnson       | POINTS   | Line  9.5 | Proj 16.8 | VALUABLE: Over (76% conf, 38.6% edge)
+  PROJECTED TOTAL: 259.1 | O/U 233.5
+  -> GAME TOTAL: O/U 233.5 VALUABLE: Over (78% conf, 42.3% edge)
+
+MATCHUP: New York Knicks vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 246.5 | O/U 240.5
+
+MATCHUP: Sacramento Kings vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 242.2 | O/U 239.5
+
+MATCHUP: LA Clippers vs. Dallas Mavericks
+------------------------------
+  James Harden         | POINTS   | Line 23.5 | Proj 35.4 | VALUABLE: Over (78% conf, 41.8% edge)
+  James Harden         | ASSISTS  | Line  9.5 | Proj  6.8 | VALUABLE: Under (77% conf, 39.4% edge)
+  Cooper Flagg         | POINTS   | Line 17.5 | Proj 25.4 | VALUABLE: Over (74% conf, 35.9% edge)
+
+MATCHUP: Philadelphia 76ers vs. Detroit Pistons
+------------------------------
+  Tyrese Maxey         | ASSISTS  | Line  7.5 | Proj  5.3 | VALUABLE: Under (76% conf, 37.9% edge)
+  Andre Drummond       | POINTS   | Line 10.5 | Proj  6.0 | VALUABLE: Under (78% conf, 42.5% edge)
+  Paul Reed            | POINTS   | Line 13.5 | Proj  5.9 | VALUABLE: Under (82% conf, 48.5% edge)
+  Paul Reed            | REBOUNDS | Line  9.5 | Proj  5.0 | VALUABLE: Under (82% conf, 47.7% edge)
+  PROJECTED TOTAL: 205.0 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (78% conf, 42.6% edge)
+
+MATCHUP: Houston Rockets vs. Portland Trail Blazers
+------------------------------
+  Josh Okogie          | POINTS   | Line  7.5 | Proj  4.7 | VALUABLE: Under (73% conf, 34.0% edge)
+  Deni Avdija          | POINTS   | Line 23.5 | Proj 17.9 | VALUABLE: Under (73% conf, 33.4% edge)
+  Jrue Holiday         | POINTS   | Line 16.5 | Proj 10.5 | VALUABLE: Under (76% conf, 38.6% edge)
+  Jrue Holiday         | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (77% conf, 39.2% edge)
+  Toumani Camara       | POINTS   | Line 12.5 | Proj  8.6 | VALUABLE: Under (73% conf, 34.4% edge)
+  PROJECTED TOTAL: 217.8 | O/U 236.5
+  -> GAME TOTAL: O/U 236.5 VALUABLE: Under (74% conf, 36.7% edge)
+  -> SPREAD: Houston Rockets -7.5 VALUABLE: Cover (69% conf, 37.8% edge)
+
+MATCHUP: Milwaukee Bucks vs. Charlotte Hornets
+------------------------------
+  Giannis Antetokounmpo | POINTS   | Line 32.5 | Proj 24.2 | VALUABLE: Under (77% conf, 39.9% edge)
+  Cole Anthony         | POINTS   | Line  9.5 | Proj  3.3 | VALUABLE: Under (82% conf, 48.6% edge)
+  Tre Mann             | POINTS   | Line 10.5 | Proj  5.5 | VALUABLE: Under (79% conf, 43.1% edge)
+  PROJECTED TOTAL: 225.9 | O/U 238.5
+  -> GAME TOTAL: O/U 238.5 VALUABLE: Under (68% conf, 26.7% edge)
+  -> SPREAD: Milwaukee Bucks -9.5 VALUABLE: Cover (68% conf, 36.3% edge)
+
+MATCHUP: Los Angeles Lakers vs. New Orleans Pelicans
+------------------------------
+  Jeremiah Fears       | POINTS   | Line 15.5 | Proj 10.8 | VALUABLE: Under (74% conf, 35.9% edge)
+  PROJECTED TOTAL: 217.4 | O/U 227.5
+  -> GAME TOTAL: O/U 227.5 VALUABLE: Under (66% conf, 23.0% edge)
+  -> SPREAD: Los Angeles Lakers -10.0 VALUABLE: Cover (76% conf, 48.0% edge)
+
+MATCHUP: Brooklyn Nets vs. Orlando Magic
+------------------------------
+  Noah Clowney         | POINTS   | Line 11.5 | Proj 18.4 | VALUABLE: Over (73% conf, 34.4% edge)
+  Franz Wagner         | ASSISTS  | Line  5.5 | Proj  3.0 | VALUABLE: Under (79% conf, 43.2% edge)
+  Tristan da Silva     | POINTS   | Line 11.5 | Proj  6.8 | VALUABLE: Under (77% conf, 40.7% edge)
+  Anthony Black        | POINTS   | Line 11.5 | Proj 19.7 | VALUABLE: Over (77% conf, 39.5% edge)
+  PROJECTED TOTAL: 238.0 | O/U 224.5
+  -> GAME TOTAL: O/U 224.5 VALUABLE: Over (69% conf, 28.1% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Stephon Castle Under 5.5 REBOUNDS (79% conf, 31.3% edge) | Golden State Warriors vs. San Antonio Spurs
+  2. Cole Anthony Under 9.5 POINTS (82% conf, 28.5% edge) | Milwaukee Bucks vs. Charlotte Hornets
+  3. Paul Reed Under 9.5 REBOUNDS (82% conf, 28.6% edge) | Philadelphia 76ers vs. Detroit Pistons
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Stephon Castle Under 5.5 REBOUNDS (79% conf, 31.3% edge) | Golden State Warriors vs. San Antonio Spurs
+  2. Cole Anthony Under 9.5 POINTS (82% conf, 28.5% edge) | Milwaukee Bucks vs. Charlotte Hornets
+  3. Paul Reed Under 9.5 REBOUNDS (82% conf, 28.6% edge) | Philadelphia 76ers vs. Detroit Pistons
+  4. Paul Reed Under 13.5 POINTS (82% conf, 27.7% edge) | Philadelphia 76ers vs. Detroit Pistons
+
+
+Total VALUABLE picks today: 33

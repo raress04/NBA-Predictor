@@ -1,0 +1,48 @@
+NBA MODEL PREDICTIONS - 2025-11-20
+============================================================
+
+
+MATCHUP: Philadelphia 76ers vs. Milwaukee Bucks
+------------------------------
+  Justin Edwards       | POINTS   | Line  7.5 | Proj  4.4 | VALUABLE: Under (75% conf, 36.8% edge)
+  Andre Drummond       | POINTS   | Line 11.5 | Proj  6.0 | VALUABLE: Under (80% conf, 44.7% edge)
+  Cole Anthony         | POINTS   | Line 10.5 | Proj  3.7 | VALUABLE: Under (82% conf, 48.6% edge)
+  PROJECTED TOTAL: 207.9 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Under (71% conf, 31.0% edge)
+
+MATCHUP: Memphis Grizzlies vs. Sacramento Kings
+------------------------------
+  Drew Eubanks         | POINTS   | Line  9.5 | Proj  3.6 | VALUABLE: Under (82% conf, 48.3% edge)
+  Drew Eubanks         | REBOUNDS | Line  5.5 | Proj  2.5 | VALUABLE: Under (82% conf, 47.6% edge)
+  Malik Monk           | POINTS   | Line 13.5 | Proj  8.1 | VALUABLE: Under (78% conf, 41.1% edge)
+  PROJECTED TOTAL: 223.3 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (66% conf, 23.9% edge)
+
+MATCHUP: LA Clippers vs. Orlando Magic
+------------------------------
+  James Harden         | ASSISTS  | Line  7.5 | Proj  5.2 | VALUABLE: Under (77% conf, 39.0% edge)
+  Anthony Black        | POINTS   | Line 11.5 | Proj 18.3 | VALUABLE: Over (74% conf, 35.3% edge)
+  Tristan da Silva     | POINTS   | Line 11.5 | Proj  6.4 | VALUABLE: Under (79% conf, 43.0% edge)
+
+MATCHUP: Atlanta Hawks vs. San Antonio Spurs
+------------------------------
+  Onyeka Okongwu       | REBOUNDS | Line  6.5 | Proj  9.9 | VALUABLE: Over (74% conf, 35.9% edge)
+  Jeremy Sochan        | POINTS   | Line  8.5 | Proj  3.5 | VALUABLE: Under (82% conf, 47.5% edge)
+  Kelly Olynyk         | POINTS   | Line  7.5 | Proj  4.8 | VALUABLE: Under (74% conf, 35.4% edge)
+  PROJECTED TOTAL: 230.0 | O/U 233.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Drew Eubanks Under 9.5 POINTS (82% conf, 32.0% edge) | Memphis Grizzlies vs. Sacramento Kings
+  2. Cole Anthony Under 10.5 POINTS (82% conf, 28.5% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+  3. Jeremy Sochan Under 8.5 POINTS (82% conf, 28.1% edge) | Atlanta Hawks vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Drew Eubanks Under 9.5 POINTS (82% conf, 32.0% edge) | Memphis Grizzlies vs. Sacramento Kings
+  2. Cole Anthony Under 10.5 POINTS (82% conf, 28.5% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+  3. Jeremy Sochan Under 8.5 POINTS (82% conf, 28.1% edge) | Atlanta Hawks vs. San Antonio Spurs
+  4. Drew Eubanks Under 5.5 REBOUNDS (82% conf, 26.3% edge) | Memphis Grizzlies vs. Sacramento Kings
+
+
+Total VALUABLE picks today: 14

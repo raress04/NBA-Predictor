@@ -1,0 +1,71 @@
+NBA MODEL PREDICTIONS - 2026-01-27
+============================================================
+
+
+MATCHUP: Oklahoma City Thunder vs. New Orleans Pelicans
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 14.5 | Proj 10.4 | VALUABLE: Under (78% conf, 31.7% edge)
+  Kenrich Williams     | POINTS   | Line 10.5 | Proj  7.5 | VALUABLE: Under (78% conf, 32.2% edge)
+  PROJECTED TOTAL: 233.2 | O/U 232.5
+  -> SPREAD: Oklahoma City Thunder -14.5 VALUABLE: Cover (89% conf, 39.2% edge)
+
+MATCHUP: New York Knicks vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 226.9 | O/U 232.5
+  -> SPREAD: New York Knicks -14.5 VALUABLE: Cover (99% conf, 49.4% edge)
+
+MATCHUP: Brooklyn Nets vs. Phoenix Suns
+------------------------------
+  Cam Thomas           | POINTS   | Line 13.5 | Proj 17.7 | VALUABLE: Over (73% conf, 22.9% edge)
+  PROJECTED TOTAL: 209.2 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (78% conf, 41.1% edge)
+
+MATCHUP: Denver Nuggets vs. Detroit Pistons
+------------------------------
+  Bruce Brown          | POINTS   | Line  5.5 | Proj  9.8 | VALUABLE: Over (78% conf, 28.9% edge)
+  Jalen Pickett        | POINTS   | Line  8.5 | Proj  5.9 | VALUABLE: Under (78% conf, 31.7% edge)
+  Jaden Ivey           | POINTS   | Line  7.5 | Proj 11.8 | VALUABLE: Over (78% conf, 28.0% edge)
+  PROJECTED TOTAL: 226.3 | O/U 232.5
+
+MATCHUP: LA Clippers vs. Utah Jazz
+------------------------------
+  Isaiah Collier       | ASSISTS  | Line  9.5 | Proj  6.3 | VALUABLE: Under (78% conf, 42.4% edge)
+  Kevin Love           | POINTS   | Line  9.5 | Proj  6.6 | VALUABLE: Under (78% conf, 31.8% edge)
+  PROJECTED TOTAL: 226.7 | O/U 232.5
+
+MATCHUP: Washington Wizards vs. Portland Trail Blazers
+------------------------------
+  Alex Sarr            | POINTS   | Line 20.5 | Proj 14.8 | VALUABLE: Under (78% conf, 35.5% edge)
+  Kyshawn George       | POINTS   | Line 16.5 | Proj 12.4 | VALUABLE: Under (78% conf, 29.5% edge)
+  Kyshawn George       | ASSISTS  | Line  5.5 | Proj  3.9 | VALUABLE: Under (78% conf, 36.3% edge)
+  Tre Johnson          | POINTS   | Line 16.5 | Proj 11.6 | VALUABLE: Under (78% conf, 33.9% edge)
+  Will Riley           | POINTS   | Line  6.5 | Proj 11.3 | VALUABLE: Over (78% conf, 31.3% edge)
+  PROJECTED TOTAL: 214.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (78% conf, 35.1% edge)
+
+MATCHUP: Philadelphia 76ers vs. Milwaukee Bucks
+------------------------------
+  Joel Embiid          | POINTS   | Line 27.5 | Proj 22.3 | VALUABLE: Under (78% conf, 29.6% edge)
+  Ryan Rollins         | POINTS   | Line 20.5 | Proj 14.6 | VALUABLE: Under (78% conf, 35.4% edge)
+  Ryan Rollins         | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 33.9% edge)
+  Bobby Portis         | POINTS   | Line 15.5 | Proj 12.7 | VALUABLE: Under (73% conf, 22.6% edge)
+  Bobby Portis         | REBOUNDS | Line  8.5 | Proj  6.7 | VALUABLE: Under (78% conf, 29.6% edge)
+  PROJECTED TOTAL: 219.4 | O/U 232.5
+  -> GAME TOTAL: O/U 232.5 VALUABLE: Under (78% conf, 27.7% edge)
+  -> SPREAD: Philadelphia 76ers -10.0 VALUABLE: Cover (99% conf, 48.8% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Kyshawn George Under 5.5 ASSISTS (78% conf, 28.7% edge) | Washington Wizards vs. Portland Trail Blazers
+  2. Bobby Portis Under 8.5 REBOUNDS (78% conf, 28.7% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+  3. Ryan Rollins Under 6.5 ASSISTS (78% conf, 28.5% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Kyshawn George Under 5.5 ASSISTS (78% conf, 28.7% edge) | Washington Wizards vs. Portland Trail Blazers
+  2. Bobby Portis Under 8.5 REBOUNDS (78% conf, 28.7% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+  3. Ryan Rollins Under 6.5 ASSISTS (78% conf, 28.5% edge) | Philadelphia 76ers vs. Milwaukee Bucks
+  4. Isaiah Collier Under 9.5 ASSISTS (78% conf, 28.2% edge) | LA Clippers vs. Utah Jazz
+
+
+Total VALUABLE picks today: 24

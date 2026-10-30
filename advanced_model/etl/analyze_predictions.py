@@ -641,17 +641,29 @@ def analyze_medians(medians, actual_props, is_only_medians=True, output_dir=None
 
 if __name__ == "__main__":
     import argparse
+    from utils.prediction_paths import resolve_prediction_file, resolve_results_file
     parser = argparse.ArgumentParser(description='Analyze prediction accuracy')
-    parser.add_argument('--input', type=str, help='Path to predicts file (default: predicts.txt)')
-    parser.add_argument('--actuals', type=str, help='Path to actual results file (default: yesterday_results.txt)')
-    parser.add_argument('--output-dir', type=str, help='Directory to output analyze.txt and analyze.tex')
+    parser.add_argument('--date', type=str, help='Date to analyze (YYYY-MM-DD)')
+    parser.add_argument('--mode', choices=['live', 'backtest'], default='live', help='Mode (live or backtest)')
+    parser.add_argument('--input', type=str, help='Path to predicts file (default: resolves by date/mode or predicts.txt)')
+    parser.add_argument('--actuals', type=str, help='Path to actual results file (default: resolves by date/mode or yesterday_results.txt)')
+    parser.add_argument('--output-dir', type=str, help='Directory to output analyze.pdf')
     parser.add_argument('--write-db', action='store_true', help='Write evaluations to bet_tracker.db')
     parser.add_argument('--no-pdf', action='store_true', help='Skip compiling PDF report')
     parser.add_argument('--keep-txt', action='store_true', help='Keep intermediate analyze text file')
     args = parser.parse_args()
+
+    predicts_in = args.input
+    actuals_in = args.actuals
+    if args.date:
+        if not predicts_in:
+            predicts_in = resolve_prediction_file(args.date, mode=args.mode, allow_legacy=True)
+        if not actuals_in:
+            actuals_in = resolve_results_file(args.date, mode=args.mode, allow_legacy=True)
+
     generate_evaluate(
-        predicts_path=args.input,
-        results_path=args.actuals,
+        predicts_path=predicts_in,
+        results_path=actuals_in,
         output_dir=args.output_dir,
         write_db=args.write_db,
         generate_pdf=not args.no_pdf,

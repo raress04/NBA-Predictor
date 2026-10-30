@@ -1,0 +1,93 @@
+NBA MODEL PREDICTIONS - 2025-12-05
+============================================================
+
+
+MATCHUP: Miami Heat vs. Orlando Magic
+------------------------------
+
+MATCHUP: Memphis Grizzlies vs. LA Clippers
+------------------------------
+  Zach Edey            | REBOUNDS | Line 11.5 | Proj  8.4 | VALUABLE: Under (75% conf, 37.4% edge)
+  Kawhi Leonard        | POINTS   | Line 25.5 | Proj 40.4 | VALUABLE: Over (80% conf, 45.3% edge)
+  Kawhi Leonard        | REBOUNDS | Line  5.5 | Proj  9.1 | VALUABLE: Over (76% conf, 38.5% edge)
+  James Harden         | POINTS   | Line 25.5 | Proj 33.8 | VALUABLE: Over (72% conf, 32.5% edge)
+  Cam Christie         | POINTS   | Line  7.5 | Proj  3.3 | VALUABLE: Under (80% conf, 45.5% edge)
+
+MATCHUP: Denver Nuggets vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 241.6 | O/U 239.0
+
+MATCHUP: Boston Celtics vs. Los Angeles Lakers
+------------------------------
+
+MATCHUP: Portland Trail Blazers vs. Detroit Pistons
+------------------------------
+  Duop Reath           | POINTS   | Line  5.5 | Proj  1.9 | VALUABLE: Under (81% conf, 46.4% edge)
+  PROJECTED TOTAL: 238.3 | O/U 235.5
+
+MATCHUP: Houston Rockets vs. Phoenix Suns
+------------------------------
+  Aaron Holiday        | POINTS   | Line  9.5 | Proj  4.7 | VALUABLE: Under (79% conf, 44.0% edge)
+  Royce O'Neale        | REBOUNDS | Line  5.5 | Proj  3.6 | VALUABLE: Under (75% conf, 37.5% edge)
+  PROJECTED TOTAL: 206.6 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Under (70% conf, 29.4% edge)
+  -> SPREAD: Houston Rockets -9.5 VALUABLE: Cover (71% conf, 40.4% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Dallas Mavericks
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 11.5 | Proj  7.3 | VALUABLE: Under (75% conf, 37.8% edge)
+  Brandon Williams     | POINTS   | Line  7.5 | Proj 13.7 | VALUABLE: Over (75% conf, 37.7% edge)
+  PROJECTED TOTAL: 230.6 | O/U 229.5
+  -> SPREAD: Oklahoma City Thunder -15.5 VALUABLE: Cover (72% conf, 41.9% edge)
+
+MATCHUP: Cleveland Cavaliers vs. San Antonio Spurs
+------------------------------
+  Jeremy Sochan        | POINTS   | Line  7.5 | Proj  3.3 | VALUABLE: Under (81% conf, 45.9% edge)
+  Jeremy Sochan        | REBOUNDS | Line  5.5 | Proj  3.4 | VALUABLE: Under (77% conf, 40.3% edge)
+  PROJECTED TOTAL: 217.8 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (76% conf, 39.7% edge)
+
+MATCHUP: Indiana Pacers vs. Chicago Bulls
+------------------------------
+  Isaiah Jackson       | POINTS   | Line  7.5 | Proj  5.3 | VALUABLE: Under (73% conf, 33.0% edge)
+  Zach Collins         | POINTS   | Line  7.5 | Proj 12.6 | VALUABLE: Over (72% conf, 32.6% edge)
+  PROJECTED TOTAL: 223.8 | O/U 234.5
+  -> GAME TOTAL: O/U 234.5 VALUABLE: Under (66% conf, 23.1% edge)
+
+MATCHUP: New York Knicks vs. Utah Jazz
+------------------------------
+  Jalen Brunson        | ASSISTS  | Line  7.0 | Proj  5.3 | VALUABLE: Under (76% conf, 38.0% edge)
+  PROJECTED TOTAL: 250.4 | O/U 242.5
+  -> GAME TOTAL: O/U 242.5 VALUABLE: Over (61% conf, 16.2% edge)
+  -> SPREAD: Utah Jazz +16.5 VALUABLE: Cover (72% conf, 41.6% edge)
+
+MATCHUP: Toronto Raptors vs. Charlotte Hornets
+------------------------------
+  Jakob Poeltl         | POINTS   | Line 10.5 | Proj  6.8 | VALUABLE: Under (77% conf, 39.7% edge)
+  LaMelo Ball          | ASSISTS  | Line  8.5 | Proj  5.9 | VALUABLE: Under (78% conf, 40.5% edge)
+  PROJECTED TOTAL: 220.9 | O/U 230.5
+  -> GAME TOTAL: O/U 230.5 VALUABLE: Under (64% conf, 20.6% edge)
+
+MATCHUP: Milwaukee Bucks vs. Philadelphia 76ers
+------------------------------
+  Quentin Grimes       | POINTS   | Line 16.5 | Proj 11.3 | VALUABLE: Under (74% conf, 34.9% edge)
+  VJ Edgecombe         | POINTS   | Line 10.5 | Proj 17.0 | VALUABLE: Over (73% conf, 34.0% edge)
+  Andre Drummond       | POINTS   | Line  8.5 | Proj  6.0 | VALUABLE: Under (72% conf, 33.0% edge)
+  PROJECTED TOTAL: 208.1 | O/U 221.5
+  -> GAME TOTAL: O/U 221.5 VALUABLE: Under (69% conf, 27.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Duop Reath Under 5.5 POINTS (81% conf, 32.4% edge) | Portland Trail Blazers vs. Detroit Pistons
+  2. Jeremy Sochan Under 7.5 POINTS (81% conf, 27.7% edge) | Cleveland Cavaliers vs. San Antonio Spurs
+  3. LaMelo Ball Under 8.5 ASSISTS (78% conf, 28.8% edge) | Toronto Raptors vs. Charlotte Hornets
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Duop Reath Under 5.5 POINTS (81% conf, 32.4% edge) | Portland Trail Blazers vs. Detroit Pistons
+  2. Jeremy Sochan Under 7.5 POINTS (81% conf, 27.7% edge) | Cleveland Cavaliers vs. San Antonio Spurs
+  3. LaMelo Ball Under 8.5 ASSISTS (78% conf, 28.8% edge) | Toronto Raptors vs. Charlotte Hornets
+  4. Jeremy Sochan Under 5.5 REBOUNDS (77% conf, 28.0% edge) | Cleveland Cavaliers vs. San Antonio Spurs
+
+
+Total VALUABLE picks today: 29

@@ -1,0 +1,171 @@
+MATCHUP: LAL vs. UTA    132 - 123
+Luka Dončić            | 52 PTS, 8 REB,  10 AST
+Austin Reaves          | 29 PTS, 1 REB,  4 AST
+Lauri Markkanen        | 28 PTS, 7 REB,  1 AST
+Keyonte George         | 24 PTS, 9 REB,  10 AST
+Jaren Jackson Jr.      | 20 PTS, 2 REB,  1 AST
+Ace Bailey             | 17 PTS, 12 REB,  4 AST
+Collin Sexton          | 13 PTS, 2 REB,  1 AST
+Ziaire Williams        | 11 PTS, 2 REB,  1 AST
+Matisse Thybulle       | 11 PTS, 1 REB,  1 AST
+Jaxson Hayes           | 9 PTS, 5 REB,  1 AST
+Sandro Mamukelashvili  | 9 PTS, 3 REB,  0 AST
+Darryn Peterson        | 8 PTS, 3 REB,  2 AST
+Brice Sensabaugh       | 7 PTS, 6 REB,  1 AST
+Isaiah Collier         | 6 PTS, 3 REB,  6 AST
+Quentin Grimes         | 3 PTS, 1 REB,  1 AST
+Josh Okogie            | 2 PTS, 2 REB,  2 AST
+Walker Kessler         | 2 PTS, 7 REB,  0 AST
+Kevon Looney           | 2 PTS, 2 REB,  0 AST
+Svi Mykhailiuk         | 2 PTS, 3 REB,  0 AST
+Jake LaRavia           | 0 PTS, 4 REB,  1 AST
+Josh Green             | 0 PTS, 0 REB,  1 AST
+
+MATCHUP: IND vs. BKN    136 - 109
+Tyrese Haliburton      | 24 PTS, 4 REB,  10 AST
+Pascal Siakam          | 21 PTS, 7 REB,  6 AST
+Nolan Traore           | 17 PTS, 2 REB,  5 AST
+Obi Toppin             | 16 PTS, 6 REB,  2 AST
+Josh Minott            | 15 PTS, 8 REB,  2 AST
+Jay Huff               | 14 PTS, 2 REB,  3 AST
+Andrew Nembhard        | 14 PTS, 1 REB,  3 AST
+Kelly Oubre Jr.        | 14 PTS, 2 REB,  2 AST
+Aaron Nesmith          | 13 PTS, 1 REB,  2 AST
+Moritz Wagner          | 13 PTS, 3 REB,  1 AST
+Day'Ron Sharpe         | 11 PTS, 4 REB,  1 AST
+Julius Randle          | 10 PTS, 7 REB,  7 AST
+Michael Porter Jr.     | 10 PTS, 0 REB,  0 AST
+Keon Ellis             | 9 PTS, 1 REB,  3 AST
+Noah Clowney           | 9 PTS, 5 REB,  1 AST
+Jarace Walker          | 6 PTS, 7 REB,  1 AST
+Larry Nance Jr.        | 6 PTS, 6 REB,  1 AST
+Danny Wolf             | 6 PTS, 2 REB,  1 AST
+Quenton Jackson        | 5 PTS, 1 REB,  2 AST
+Chaney Johnson         | 4 PTS, 5 REB,  0 AST
+Egor Dëmin             | 3 PTS, 0 REB,  1 AST
+Ivica Zubac            | 2 PTS, 1 REB,  2 AST
+Ben Saraf              | 2 PTS, 1 REB,  0 AST
+Jalen Slawson          | 1 PTS, 2 REB,  0 AST
+Drake Powell           | 0 PTS, 2 REB,  3 AST
+Joshua Jefferson       | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: ORL vs. NYK    111 - 102
+Jalen Brunson          | 28 PTS, 3 REB,  4 AST
+Franz Wagner           | 23 PTS, 13 REB,  9 AST
+Karl-Anthony Towns     | 22 PTS, 14 REB,  4 AST
+Desmond Bane           | 22 PTS, 6 REB,  2 AST
+OG Anunoby             | 22 PTS, 3 REB,  2 AST
+Tristan da Silva       | 19 PTS, 2 REB,  2 AST
+Anthony Black          | 18 PTS, 3 REB,  5 AST
+Josh Hart              | 13 PTS, 8 REB,  2 AST
+Wendell Carter Jr.     | 9 PTS, 10 REB,  2 AST
+Mikal Bridges          | 6 PTS, 5 REB,  1 AST
+Landry Shamet          | 6 PTS, 2 REB,  1 AST
+Jase Richardson        | 6 PTS, 1 REB,  0 AST
+Nikola Vučević         | 5 PTS, 3 REB,  3 AST
+Jamal Cain             | 5 PTS, 5 REB,  0 AST
+Jalen Suggs            | 4 PTS, 6 REB,  6 AST
+Andre Drummond         | 4 PTS, 3 REB,  2 AST
+Miles McBride          | 1 PTS, 1 REB,  1 AST
+Tyler Kolek            | 0 PTS, 3 REB,  9 AST
+James Wiseman          | 0 PTS, 2 REB,  0 AST
+Jordan Clarkson        | 0 PTS, 1 REB,  0 AST
+Jaden Akins            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: TOR vs. MIN    94 - 117
+Anthony Edwards        | 26 PTS, 1 REB,  3 AST
+Ja'Kobe Walter         | 22 PTS, 4 REB,  2 AST
+RJ Barrett             | 20 PTS, 2 REB,  2 AST
+Immanuel Quickley      | 19 PTS, 3 REB,  2 AST
+LaMelo Ball            | 15 PTS, 1 REB,  8 AST
+Terrence Shannon Jr    | 15 PTS, 4 REB,  3 AST
+Jaden McDaniels        | 14 PTS, 6 REB,  3 AST
+Jonathan Kuminga       | 13 PTS, 4 REB,  1 AST
+Allen Graves           | 11 PTS, 6 REB,  4 AST
+Ayo Dosunmu            | 9 PTS, 3 REB,  3 AST
+Rudy Gobert            | 8 PTS, 13 REB,  0 AST
+Jaden Bradley          | 6 PTS, 1 REB,  1 AST
+Joan Beringer          | 6 PTS, 6 REB,  0 AST
+Jamison Battle         | 4 PTS, 1 REB,  2 AST
+Jamal Shead            | 4 PTS, 1 REB,  0 AST
+Bones Hyland           | 3 PTS, 3 REB,  2 AST
+Collin Murray-Boyles   | 3 PTS, 7 REB,  2 AST
+Trey Lyles             | 3 PTS, 6 REB,  2 AST
+Jaylen Clark           | 3 PTS, 1 REB,  0 AST
+Trayce Jackson-Davis   | 3 PTS, 1 REB,  1 AST
+Alijah Martin          | 2 PTS, 2 REB,  1 AST
+Zyon Pullin            | 2 PTS, 1 REB,  0 AST
+Scottie Barnes         | 0 PTS, 3 REB,  3 AST
+Kyle Anderson          | 0 PTS, 2 REB,  0 AST
+Isaiah Evans           | 0 PTS, 0 REB,  1 AST
+Jakob Poeltl           | 0 PTS, 1 REB,  0 AST
+Cody Williams          | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: LAC vs. OKC    101 - 108
+Shai Gilgeous-Alexander | 34 PTS, 6 REB,  5 AST
+Ajay Mitchell          | 18 PTS, 6 REB,  4 AST
+Darius Garland         | 16 PTS, 4 REB,  11 AST
+Kris Dunn              | 15 PTS, 4 REB,  6 AST
+Brook Lopez            | 15 PTS, 1 REB,  2 AST
+Alex Caruso            | 12 PTS, 7 REB,  6 AST
+Kobe Sanders           | 12 PTS, 4 REB,  2 AST
+Isaiah Hartenstein     | 12 PTS, 12 REB,  1 AST
+Derrick Jones Jr.      | 11 PTS, 6 REB,  1 AST
+Keaton Wagler          | 11 PTS, 5 REB,  4 AST
+Isaiah Jackson         | 10 PTS, 6 REB,  4 AST
+Chet Holmgren          | 10 PTS, 4 REB,  0 AST
+Jalen Williams         | 8 PTS, 2 REB,  5 AST
+Gradey Dick            | 6 PTS, 3 REB,  0 AST
+Rui Hachimura          | 5 PTS, 4 REB,  0 AST
+Cason Wallace          | 4 PTS, 3 REB,  1 AST
+Jared McCain           | 3 PTS, 1 REB,  0 AST
+Kenrich Williams       | 3 PTS, 1 REB,  0 AST
+Aday Mara              | 2 PTS, 3 REB,  1 AST
+Bennett Stirtz         | 2 PTS, 1 REB,  0 AST
+Baba Miller            | 0 PTS, 1 REB,  0 AST
+Jaylin Williams        | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: DET vs. PHI    106 - 93
+Tyrese Maxey           | 29 PTS, 5 REB,  4 AST
+Cade Cunningham        | 26 PTS, 8 REB,  8 AST
+Duncan Robinson        | 21 PTS, 3 REB,  3 AST
+Daniss Jenkins         | 18 PTS, 8 REB,  6 AST
+LeBron James           | 18 PTS, 2 REB,  5 AST
+Jaylen Brown           | 16 PTS, 4 REB,  4 AST
+John Collins           | 16 PTS, 11 REB,  0 AST
+Kevin Huerter          | 9 PTS, 3 REB,  2 AST
+Paul Reed              | 8 PTS, 8 REB,  2 AST
+Kentavious Caldwell-Pope | 7 PTS, 3 REB,  3 AST
+Dean Wade              | 7 PTS, 5 REB,  1 AST
+Adem Bona              | 6 PTS, 13 REB,  1 AST
+Anfernee Simons        | 5 PTS, 3 REB,  3 AST
+Labaron Philon Jr.     | 5 PTS, 2 REB,  1 AST
+Ronald Holland II      | 2 PTS, 9 REB,  4 AST
+Javonte Green          | 2 PTS, 3 REB,  0 AST
+Ebuka Okorie           | 2 PTS, 0 REB,  0 AST
+Isaiah Joe             | 2 PTS, 0 REB,  0 AST
+Tolu Smith             | 0 PTS, 1 REB,  0 AST
+
+MATCHUP: MEM vs. SAC    123 - 112
+Zach LaVine            | 37 PTS, 2 REB,  5 AST
+Ty Jerome              | 31 PTS, 4 REB,  7 AST
+Darius Acuff Jr.       | 22 PTS, 3 REB,  7 AST
+Cedric Coward          | 17 PTS, 11 REB,  1 AST
+Jaylen Wells           | 16 PTS, 5 REB,  3 AST
+Domantas Sabonis       | 15 PTS, 15 REB,  3 AST
+Cameron Boozer         | 14 PTS, 11 REB,  4 AST
+Isaiah Stewart         | 13 PTS, 5 REB,  2 AST
+Cam Spencer            | 13 PTS, 2 REB,  1 AST
+Precious Achiuwa       | 12 PTS, 10 REB,  0 AST
+De'Andre Hunter        | 7 PTS, 6 REB,  1 AST
+Jonathan Mogbo         | 7 PTS, 3 REB,  1 AST
+Quinten Post           | 7 PTS, 5 REB,  1 AST
+Scotty Pippen Jr.      | 6 PTS, 2 REB,  2 AST
+Malik Monk             | 6 PTS, 1 REB,  2 AST
+Jerami Grant           | 5 PTS, 5 REB,  3 AST
+Daeqwon Plowden        | 3 PTS, 3 REB,  1 AST
+Emanuel Sharp          | 3 PTS, 1 REB,  0 AST
+GG Jackson             | 1 PTS, 3 REB,  0 AST
+Taylor Hendricks       | 0 PTS, 1 REB,  0 AST
+Leaky Black            | 0 PTS, 0 REB,  0 AST
+

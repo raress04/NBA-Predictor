@@ -124,6 +124,9 @@ EWMA_SPAN = 10
 # ── ML Integration Flags (Phase 8 - ML.5) ─────────────────────────
 USE_ML_RESIDUAL_CORRECTION = False
 USE_ML_CALIBRATION = False
+# ML Shadow Tracking switch — enables passive XGB inference logging during normal live run.
+# Independent of USE_ML_CALIBRATION. Set True to collect paired (baseline, ML) observations.
+ENABLE_ML_SHADOW_TRACKING = True
 ML_MODEL_PATH = 'models/'
 
 # ── Parlay / Bankroll Management ─────────────────────────────────

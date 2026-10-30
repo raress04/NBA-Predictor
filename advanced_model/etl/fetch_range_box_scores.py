@@ -209,11 +209,12 @@ def sync_range(start_date_str, end_date_str, run_evaluate=False):
         ds_db = current.strftime('%Y-%m-%d')
         print(f"\n[*] Syncing Date: {ds_db}")
         
+        season_year = '2026-27' if current >= datetime(2026, 10, 1) else '2025-26'
         logs = None
         for attempt in range(3):
             try:
                 logs = playergamelogs.PlayerGameLogs(
-                    season_nullable='2025-26',
+                    season_nullable=season_year,
                     date_from_nullable=ds_nba,
                     date_to_nullable=ds_nba,
                     timeout=30

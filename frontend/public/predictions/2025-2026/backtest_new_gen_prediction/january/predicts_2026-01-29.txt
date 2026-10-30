@@ -1,0 +1,78 @@
+NBA MODEL PREDICTIONS - 2026-01-29
+============================================================
+
+
+MATCHUP: Milwaukee Bucks vs. Washington Wizards
+------------------------------
+  Ryan Rollins         | POINTS   | Line 22.5 | Proj 16.9 | VALUABLE: Under (78% conf, 33.2% edge)
+  Ryan Rollins         | ASSISTS  | Line  7.5 | Proj  5.7 | VALUABLE: Under (78% conf, 34.3% edge)
+  Bobby Portis         | POINTS   | Line 18.5 | Proj 14.5 | VALUABLE: Under (77% conf, 27.4% edge)
+  Alex Sarr            | POINTS   | Line 20.5 | Proj 15.4 | VALUABLE: Under (78% conf, 33.0% edge)
+  Kyshawn George       | POINTS   | Line 16.5 | Proj 12.6 | VALUABLE: Under (78% conf, 28.6% edge)
+  Kyshawn George       | ASSISTS  | Line  5.5 | Proj  4.0 | VALUABLE: Under (78% conf, 34.7% edge)
+  Tre Johnson          | POINTS   | Line 17.5 | Proj 11.8 | VALUABLE: Under (78% conf, 37.0% edge)
+  PROJECTED TOTAL: 198.2 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Under (78% conf, 43.0% edge)
+  -> SPREAD: Washington Wizards +2.0 VALUABLE: Cover (69% conf, 19.4% edge)
+
+MATCHUP: Brooklyn Nets vs. Denver Nuggets
+------------------------------
+  Jamal Murray         | POINTS   | Line 24.5 | Proj 30.4 | VALUABLE: Over (74% conf, 24.5% edge)
+  PROJECTED TOTAL: 207.5 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Under (78% conf, 33.3% edge)
+
+MATCHUP: Philadelphia 76ers vs. Sacramento Kings
+------------------------------
+  Joel Embiid          | REBOUNDS | Line  8.5 | Proj  6.5 | VALUABLE: Under (78% conf, 32.1% edge)
+  Maxime Raynaud       | POINTS   | Line  6.5 | Proj 12.4 | VALUABLE: Over (78% conf, 37.6% edge)
+  PROJECTED TOTAL: 235.8 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Over (77% conf, 27.2% edge)
+  -> SPREAD: Philadelphia 76ers -10.0 VALUABLE: Cover (95% conf, 44.7% edge)
+
+MATCHUP: Miami Heat vs. Chicago Bulls
+------------------------------
+  Jalen Smith          | REBOUNDS | Line  9.5 | Proj  7.2 | VALUABLE: Under (78% conf, 33.0% edge)
+  PROJECTED TOTAL: 236.3 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Over (76% conf, 26.4% edge)
+
+MATCHUP: Dallas Mavericks vs. Charlotte Hornets
+------------------------------
+  PROJECTED TOTAL: 226.3 | O/U 223.5
+
+MATCHUP: Houston Rockets vs. Atlanta Hawks
+------------------------------
+  CJ McCollum          | POINTS   | Line 17.5 | Proj 22.5 | VALUABLE: Over (74% conf, 24.4% edge)
+  Nickeil Alexander-Walker | POINTS   | Line 19.5 | Proj 25.0 | VALUABLE: Over (75% conf, 24.6% edge)
+  PROJECTED TOTAL: 215.9 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Under (67% conf, 17.0% edge)
+  -> SPREAD: Atlanta Hawks +6.5 VALUABLE: Cover (69% conf, 18.7% edge)
+
+MATCHUP: Oklahoma City Thunder vs. Minnesota Timberwolves
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 12.5 | Proj  9.2 | VALUABLE: Under (78% conf, 31.6% edge)
+  PROJECTED TOTAL: 230.9 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Over (66% conf, 16.0% edge)
+
+MATCHUP: Phoenix Suns vs. Detroit Pistons
+------------------------------
+  Collin Gillespie     | POINTS   | Line 14.5 | Proj 11.3 | VALUABLE: Under (75% conf, 25.1% edge)
+  Cade Cunningham      | ASSISTS  | Line  9.5 | Proj  7.7 | VALUABLE: Under (78% conf, 29.9% edge)
+  PROJECTED TOTAL: 210.9 | O/U 223.5
+  -> GAME TOTAL: O/U 223.5 VALUABLE: Under (77% conf, 27.3% edge)
+  -> SPREAD: Detroit Pistons -3.5 VALUABLE: Cover (85% conf, 34.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Ryan Rollins Under 22.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  2. Alex Sarr Under 20.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  3. Kyshawn George Under 16.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Ryan Rollins Under 22.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  2. Alex Sarr Under 20.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  3. Kyshawn George Under 16.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+  4. Tre Johnson Under 17.5 POINTS (78% conf, 28.0% edge) | Milwaukee Bucks vs. Washington Wizards
+
+
+Total VALUABLE picks today: 27

@@ -1,0 +1,58 @@
+NBA MODEL PREDICTIONS - 2025-12-21
+============================================================
+
+
+MATCHUP: Milwaukee Bucks vs. Minnesota Timberwolves
+------------------------------
+  PROJECTED TOTAL: 227.0 | O/U 226.5
+
+MATCHUP: Brooklyn Nets vs. Toronto Raptors
+------------------------------
+  Jakob Poeltl         | POINTS   | Line  9.5 | Proj  6.6 | VALUABLE: Under (72% conf, 33.0% edge)
+  Jakob Poeltl         | REBOUNDS | Line  8.5 | Proj  5.7 | VALUABLE: Under (77% conf, 40.0% edge)
+  PROJECTED TOTAL: 220.2 | O/U 216.5
+
+MATCHUP: San Antonio Spurs vs. Washington Wizards
+------------------------------
+  Stephon Castle       | REBOUNDS | Line  5.5 | Proj  3.4 | VALUABLE: Under (76% conf, 39.2% edge)
+  Keldon Johnson       | POINTS   | Line  8.5 | Proj 15.3 | VALUABLE: Over (75% conf, 37.2% edge)
+  Dylan Harper         | POINTS   | Line 14.5 | Proj  9.5 | VALUABLE: Under (76% conf, 39.0% edge)
+  PROJECTED TOTAL: 227.7 | O/U 237.5
+  -> GAME TOTAL: O/U 237.5 VALUABLE: Under (65% conf, 22.1% edge)
+  -> SPREAD: San Antonio Spurs -15.5 VALUABLE: Cover (77% conf, 49.8% edge)
+
+MATCHUP: Atlanta Hawks vs. Chicago Bulls
+------------------------------
+  Josh Giddey          | REBOUNDS | Line  8.5 | Proj  6.1 | VALUABLE: Under (74% conf, 36.0% edge)
+  Coby White           | POINTS   | Line 21.5 | Proj 14.9 | VALUABLE: Under (76% conf, 37.9% edge)
+  PROJECTED TOTAL: 256.8 | O/U 248.5
+  -> GAME TOTAL: O/U 248.5 VALUABLE: Over (63% conf, 18.6% edge)
+
+MATCHUP: New York Knicks vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 234.5 | O/U 236.5
+  -> SPREAD: New York Knicks -7.5 VALUABLE: Cover (68% conf, 36.6% edge)
+
+MATCHUP: Sacramento Kings vs. Houston Rockets
+------------------------------
+  Russell Westbrook    | ASSISTS  | Line  7.5 | Proj  5.4 | VALUABLE: Under (75% conf, 36.7% edge)
+  Keegan Murray        | REBOUNDS | Line  6.5 | Proj  4.3 | VALUABLE: Under (75% conf, 37.7% edge)
+  Clint Capela         | REBOUNDS | Line  7.5 | Proj  5.2 | VALUABLE: Under (75% conf, 36.8% edge)
+  PROJECTED TOTAL: 214.9 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Under (62% conf, 17.5% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Russell Westbrook Under 7.5 ASSISTS (75% conf, 27.5% edge) | Sacramento Kings vs. Houston Rockets
+  2. Dylan Harper Under 14.5 POINTS (76% conf, 25.3% edge) | San Antonio Spurs vs. Washington Wizards
+  3. Keldon Johnson Over 8.5 POINTS (75% conf, 25.1% edge) | San Antonio Spurs vs. Washington Wizards
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Russell Westbrook Under 7.5 ASSISTS (75% conf, 27.5% edge) | Sacramento Kings vs. Houston Rockets
+  2. Dylan Harper Under 14.5 POINTS (76% conf, 25.3% edge) | San Antonio Spurs vs. Washington Wizards
+  3. Keldon Johnson Over 8.5 POINTS (75% conf, 25.1% edge) | San Antonio Spurs vs. Washington Wizards
+  4. Jakob Poeltl Under 8.5 REBOUNDS (77% conf, 22.3% edge) | Brooklyn Nets vs. Toronto Raptors
+
+
+Total VALUABLE picks today: 15

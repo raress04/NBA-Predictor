@@ -1,0 +1,64 @@
+NBA MODEL PREDICTIONS - 2025-12-26
+============================================================
+
+
+MATCHUP: Atlanta Hawks vs. Miami Heat
+------------------------------
+  Trae Young           | ASSISTS  | Line 10.5 | Proj  7.4 | VALUABLE: Under (78% conf, 40.5% edge)
+  PROJECTED TOTAL: 241.8 | O/U 250.5
+  -> GAME TOTAL: O/U 250.5 VALUABLE: Under (63% conf, 18.3% edge)
+
+MATCHUP: Toronto Raptors vs. Washington Wizards
+------------------------------
+  PROJECTED TOTAL: 229.4 | O/U 225.5
+
+MATCHUP: Charlotte Hornets vs. Orlando Magic
+------------------------------
+  PROJECTED TOTAL: 231.6 | O/U 227.5
+
+MATCHUP: LA Clippers vs. Portland Trail Blazers
+------------------------------
+
+MATCHUP: Philadelphia 76ers vs. Chicago Bulls
+------------------------------
+  Coby White           | POINTS   | Line 21.5 | Proj 15.7 | VALUABLE: Under (73% conf, 34.2% edge)
+  Isaac Okoro          | POINTS   | Line  6.5 | Proj 12.0 | VALUABLE: Over (73% conf, 34.3% edge)
+  PROJECTED TOTAL: 252.3 | O/U 241.5
+  -> GAME TOTAL: O/U 241.5 VALUABLE: Over (65% conf, 22.8% edge)
+
+MATCHUP: Boston Celtics vs. Indiana Pacers
+------------------------------
+  PROJECTED TOTAL: 218.8 | O/U 222.5
+  -> SPREAD: Boston Celtics -8.5 VALUABLE: Cover (66% conf, 32.4% edge)
+
+MATCHUP: Memphis Grizzlies vs. Milwaukee Bucks
+------------------------------
+  PROJECTED TOTAL: 219.7 | O/U 228.5
+  -> GAME TOTAL: O/U 228.5 VALUABLE: Under (64% conf, 19.7% edge)
+
+MATCHUP: Phoenix Suns vs. New Orleans Pelicans
+------------------------------
+  Devin Booker         | ASSISTS  | Line  7.5 | Proj  5.3 | VALUABLE: Under (76% conf, 37.5% edge)
+  PROJECTED TOTAL: 233.4 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (62% conf, 16.3% edge)
+
+MATCHUP: Detroit Pistons vs. Utah Jazz
+------------------------------
+  PROJECTED TOTAL: 263.3 | O/U 245.5
+  -> GAME TOTAL: O/U 245.5 VALUABLE: Over (73% conf, 34.6% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Trae Young Under 10.5 ASSISTS (78% conf, 20.9% edge) | Atlanta Hawks vs. Miami Heat
+  2. Game Total Over 245.5 TOTAL (73% conf, 20.4% edge) | Detroit Pistons vs. Utah Jazz
+  3. Isaac Okoro Over 6.5 POINTS (73% conf, 18.8% edge) | Philadelphia 76ers vs. Chicago Bulls
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Trae Young Under 10.5 ASSISTS (78% conf, 20.9% edge) | Atlanta Hawks vs. Miami Heat
+  2. Game Total Over 245.5 TOTAL (73% conf, 20.4% edge) | Detroit Pistons vs. Utah Jazz
+  3. Isaac Okoro Over 6.5 POINTS (73% conf, 18.8% edge) | Philadelphia 76ers vs. Chicago Bulls
+  4. Devin Booker Under 7.5 ASSISTS (76% conf, 17.7% edge) | Phoenix Suns vs. New Orleans Pelicans
+
+
+Total VALUABLE picks today: 10

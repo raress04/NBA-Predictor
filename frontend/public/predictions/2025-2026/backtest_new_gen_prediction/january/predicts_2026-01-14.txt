@@ -1,0 +1,79 @@
+NBA MODEL PREDICTIONS - 2026-01-14
+============================================================
+
+
+MATCHUP: New Orleans Pelicans vs. Brooklyn Nets
+------------------------------
+  Zion Williamson      | POINTS   | Line 22.5 | Proj 18.3 | VALUABLE: Under (78% conf, 28.0% edge)
+  Derik Queen          | POINTS   | Line 12.5 | Proj 10.0 | VALUABLE: Under (78% conf, 27.6% edge)
+  Derik Queen          | REBOUNDS | Line  8.5 | Proj  6.6 | VALUABLE: Under (78% conf, 30.2% edge)
+  Nolan Traore         | POINTS   | Line  5.5 | Proj  9.7 | VALUABLE: Over (78% conf, 27.8% edge)
+  PROJECTED TOTAL: 231.7 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (74% conf, 24.1% edge)
+
+MATCHUP: LA Clippers vs. Washington Wizards
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 27.5 | Proj 36.0 | VALUABLE: Over (78% conf, 33.7% edge)
+  Tre Johnson          | POINTS   | Line 13.5 | Proj 10.3 | VALUABLE: Under (78% conf, 28.9% edge)
+  Alex Sarr            | POINTS   | Line 16.5 | Proj 13.0 | VALUABLE: Under (77% conf, 27.5% edge)
+  PROJECTED TOTAL: 223.3 | O/U 220.5
+
+MATCHUP: Toronto Raptors vs. Indiana Pacers
+------------------------------
+  Jamal Shead          | POINTS   | Line 12.5 | Proj  9.7 | VALUABLE: Under (77% conf, 27.5% edge)
+  Andrew Nembhard      | ASSISTS  | Line  7.5 | Proj  5.6 | VALUABLE: Under (78% conf, 35.2% edge)
+  Aaron Nesmith        | POINTS   | Line 15.5 | Proj 12.5 | VALUABLE: Under (74% conf, 23.6% edge)
+  PROJECTED TOTAL: 220.4 | O/U 220.5
+
+MATCHUP: Sacramento Kings vs. New York Knicks
+------------------------------
+  Nique Clifford       | POINTS   | Line  5.5 | Proj  9.1 | VALUABLE: Over (73% conf, 23.3% edge)
+  Karl-Anthony Towns   | REBOUNDS | Line 11.5 | Proj  9.0 | VALUABLE: Under (78% conf, 32.3% edge)
+  Mitchell Robinson    | REBOUNDS | Line  8.5 | Proj  6.7 | VALUABLE: Under (78% conf, 29.5% edge)
+  Jalen Brunson        | POINTS   | Line 28.5 | Proj 24.2 | VALUABLE: Under (74% conf, 23.8% edge)
+  PROJECTED TOTAL: 231.2 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (73% conf, 23.2% edge)
+
+MATCHUP: Denver Nuggets vs. Dallas Mavericks
+------------------------------
+  Jamal Murray         | POINTS   | Line 25.5 | Proj 32.6 | VALUABLE: Over (78% conf, 28.1% edge)
+  Jamal Murray         | ASSISTS  | Line  9.5 | Proj  7.6 | VALUABLE: Under (78% conf, 31.7% edge)
+  Peyton Watson        | POINTS   | Line 19.5 | Proj 16.3 | VALUABLE: Under (74% conf, 24.0% edge)
+  Jalen Pickett        | POINTS   | Line  9.5 | Proj  6.1 | VALUABLE: Under (78% conf, 35.3% edge)
+  Zeke Nnaji           | POINTS   | Line  7.5 | Proj  5.1 | VALUABLE: Under (78% conf, 33.4% edge)
+  PROJECTED TOTAL: 231.0 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (73% conf, 23.0% edge)
+
+MATCHUP: Utah Jazz vs. Chicago Bulls
+------------------------------
+  Kyle Filipowski      | POINTS   | Line 17.5 | Proj 12.8 | VALUABLE: Under (78% conf, 33.1% edge)
+  Isaiah Collier       | POINTS   | Line  8.5 | Proj 12.1 | VALUABLE: Over (73% conf, 23.3% edge)
+  Isaiah Collier       | ASSISTS  | Line  8.5 | Proj  6.4 | VALUABLE: Under (78% conf, 35.6% edge)
+  PROJECTED TOTAL: 233.6 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (77% conf, 27.0% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Philadelphia 76ers
+------------------------------
+  Donovan Mitchell     | POINTS   | Line 27.5 | Proj 22.8 | VALUABLE: Under (76% conf, 26.1% edge)
+  Jarrett Allen        | REBOUNDS | Line  9.5 | Proj  6.4 | VALUABLE: Under (78% conf, 40.4% edge)
+  Joel Embiid          | POINTS   | Line 25.5 | Proj 20.5 | VALUABLE: Under (78% conf, 29.3% edge)
+  Joel Embiid          | REBOUNDS | Line  8.5 | Proj  5.5 | VALUABLE: Under (78% conf, 40.7% edge)
+  Tyrese Maxey         | POINTS   | Line 26.5 | Proj 21.4 | VALUABLE: Under (78% conf, 28.5% edge)
+  PROJECTED TOTAL: 248.9 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (78% conf, 45.4% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Andrew Nembhard Under 7.5 ASSISTS (78% conf, 29.2% edge) | Toronto Raptors vs. Indiana Pacers
+  2. Jalen Pickett Under 9.5 POINTS (78% conf, 29.0% edge) | Denver Nuggets vs. Dallas Mavericks
+  3. Isaiah Collier Under 8.5 ASSISTS (78% conf, 29.0% edge) | Utah Jazz vs. Chicago Bulls
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Andrew Nembhard Under 7.5 ASSISTS (78% conf, 29.2% edge) | Toronto Raptors vs. Indiana Pacers
+  2. Jalen Pickett Under 9.5 POINTS (78% conf, 29.0% edge) | Denver Nuggets vs. Dallas Mavericks
+  3. Isaiah Collier Under 8.5 ASSISTS (78% conf, 29.0% edge) | Utah Jazz vs. Chicago Bulls
+  4. Jarrett Allen Under 9.5 REBOUNDS (78% conf, 29.0% edge) | Cleveland Cavaliers vs. Philadelphia 76ers
+
+
+Total VALUABLE picks today: 32

@@ -10,6 +10,20 @@ import pandas as pd
 from datetime import datetime, timedelta
 from typing import List
 
+# Capture exact script start time at process launch
+SCRIPT_START_TIME = datetime.now()
+
+def get_effective_date(dt: datetime = None, safety_hours: float = 2.5) -> datetime:
+    """
+    Returns effective datetime shifted back by safety_hours (default: 2.5 hours).
+    Ensures runs crossing or starting up to 2:00-2:30 AM before games conclude
+    are cataloged for the current night's slate rather than the following calendar day.
+    """
+    base_dt = dt or SCRIPT_START_TIME
+    return base_dt - timedelta(hours=safety_hours)
+
+CURRENT_GAME_DATE = get_effective_date().strftime('%Y-%m-%d')
+
 # Ensure the parent directory is in the path
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(MODEL_DIR)
@@ -44,14 +58,14 @@ def get_connection():
 BET_TRACKER_DB = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'bet_tracker.db')
 
 def log_live_projection(player: str, category: str, projected_value: float, bookmaker_line: float,
-                        over_odds: float = 1.91, under_odds: float = 1.91):
+                        over_odds: float = 1.91, under_odds: float = 1.91, game_date: str = None):
     """
     Log today's live projection to bet_tracker.db/projection_outcomes for Step 3.4 bias verification.
     actual_value and model_bias are set to 0.0 as placeholders — game not yet resolved.
     source_mode='live_pending' distinguishes these from retroactive resolved picks.
     """
-    from datetime import datetime
-    game_date = datetime.now().strftime('%Y-%m-%d')
+    if not game_date:
+        game_date = CURRENT_GAME_DATE
     try:
         conn = sqlite3.connect(BET_TRACKER_DB)
         conn.execute("""
@@ -656,7 +670,7 @@ def process_hist_game(game, target_date, injured_normalized):
 
             for hp in home_lineup:
                 try:
-                    matrix = get_player_stats_matrix(hp, limit=15, current_team_id=home_team['teamId'])
+                    matrix = get_player_stats_matrix(hp, limit=15, before_date=target_date, current_team_id=home_team['teamId'])
                     modifier = compute_matchup_multiplier(hp, away_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
@@ -674,7 +688,7 @@ def process_hist_game(game, target_date, injured_normalized):
             
             for ap in away_lineup:
                 try:
-                    matrix = get_player_stats_matrix(ap, limit=15, current_team_id=away_team['teamId'])
+                    matrix = get_player_stats_matrix(ap, limit=15, before_date=target_date, current_team_id=away_team['teamId'])
                     modifier = compute_matchup_multiplier(ap, home_team_full)
                     if modifier != 1.0:
                         print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
@@ -701,10 +715,10 @@ def process_hist_game(game, target_date, injured_normalized):
             away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
 
             # Team Efficiency
-            home_eff = get_team_efficiency(home_team['teamId'])
-            away_eff = get_team_efficiency(away_team['teamId'])
-            home_reb_eff = get_team_rebound_efficiency(home_team['teamId'])
-            away_reb_eff = get_team_rebound_efficiency(away_team['teamId'])
+            home_eff = get_team_efficiency(home_team['teamId'], before_date=target_date)
+            away_eff = get_team_efficiency(away_team['teamId'], before_date=target_date)
+            home_reb_eff = get_team_rebound_efficiency(home_team['teamId'], before_date=target_date)
+            away_reb_eff = get_team_rebound_efficiency(away_team['teamId'], before_date=target_date)
             
             # Dynamic Injury Matrix
             home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
@@ -726,8 +740,8 @@ def process_hist_game(game, target_date, injured_normalized):
                     away_matrix[player]['avg_reb'] *= home_reb_eff['rebound_modifier']
 
             # Pace
-            home_pace = get_team_pace(home_team['teamId'])
-            away_pace = get_team_pace(away_team['teamId'])
+            home_pace = get_team_pace(home_team['teamId'], before_date=target_date)
+            away_pace = get_team_pace(away_team['teamId'], before_date=target_date)
             expected_pace = int((home_pace + away_pace) / 2)
             print(f"  [Calculated Game Pace: ~{expected_pace} possessions per team]")
             is_fast_pace = expected_pace > 100.5
@@ -1395,8 +1409,11 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             
     return payload
 
-def generate_todays_projections(is_shadow=False):
-    print("[+] Fetching Live Scoreboard/Odds for Today's NBA Games from ESPN...")
+def generate_todays_projections(target_date: str = None):
+    global CURRENT_GAME_DATE
+    if target_date:
+        CURRENT_GAME_DATE = target_date
+    print(f"[+] Fetching Live Scoreboard/Odds for NBA Games (Slate: {CURRENT_GAME_DATE}) from ESPN...")
     
     # Pre-fetch live injuries — returns (raw_set, normalized_dict)
     injured_raw, injured_normalized = get_injured_players()
@@ -1586,53 +1603,54 @@ def generate_todays_projections(is_shadow=False):
             # Ingest shadow picks for research (Gate 4.C)
             shadow_data = parlays.get('shadow_picks', [])
             if shadow_data:
-                game_date = datetime.now().strftime("%Y-%m-%d")
+                game_date = CURRENT_GAME_DATE
                 for sp in shadow_data:
                     sp['game_date'] = game_date
                 n_shadow = ingest_shadow_picks(shadow_data)
                 print(f"\n[+] Logged {n_shadow} filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.")
 
-            # P1-3: ML Shadow Pipeline — log XGB inference on every accepted prop pick
-            # Runs always (no --shadow flag needed). USE_ML_CALIBRATION stays False.
-            _ml_log_date = datetime.now().strftime("%Y-%m-%d")
-            _ml_logged = 0
-            for _p in parlays.get('all_picks', []):
-                if _p.get('type') == 'prop' and _p.get('player') and _p.get('stat_category'):
-                    _logged = log_ml_shadow_pick(
-                        game_date     = _ml_log_date,
-                        player        = _p.get('player'),
-                        stat_category = _p.get('stat_category'),
-                        direction     = _p.get('direction', 'OVER'),
-                        line          = _p.get('line'),
-                        projection    = _p.get('projection'),
-                        sim_confidence= _p.get('confidence'),
-                        edge_pct      = _p.get('edge_pct'),
-                        base_features = None,  # feature query done inside shadow_logger
-                    )
-                    if _logged:
-                        _ml_logged += 1
-            if _ml_logged:
-                print(f"\n[P1-3] ML shadow: logged {_ml_logged} picks to ml_shadow_picks.")
-
-            if is_shadow:
-                game_date = datetime.now().strftime("%Y-%m-%d")
-                ml_shadows = []
-                for p in parlays.get('all_picks', []):
-                    if p.get('type') == 'prop':
-                        ml_shadows.append({
-                            'game_date': game_date,
-                            'player': p.get('player'),
-                            'stat_category': p.get('stat_category'),
-                            'direction': p.get('direction'),
-                            'line': p.get('line'),
-                            'projection': p.get('projection'),
-                            'sim_confidence': p.get('confidence'),
-                            'edge_pct': p.get('edge_pct'),
-                            'ban_reason': 'ML_SHADOW'
-                        })
-                if ml_shadows:
-                    n_ml = ingest_shadow_picks(ml_shadows)
-                    print(f"\n[+] Logged {n_ml} ML-modified accepted picks as ML_SHADOW.")
+            # P1-3: ML Shadow Pipeline — log XGB inference on every evaluated prop (all_picks + shadow_picks)
+            # Runs when ENABLE_ML_SHADOW_TRACKING=True. USE_ML_CALIBRATION stays False.
+            import config.settings as cfg_settings
+            if getattr(cfg_settings, 'ENABLE_ML_SHADOW_TRACKING', False):
+                _ml_log_date = CURRENT_GAME_DATE
+                _ml_logged = 0
+                # Log post-gate picks (selected cohort)
+                for _p in parlays.get('all_picks', []):
+                    if _p.get('type') == 'prop' and _p.get('player') and _p.get('stat_category'):
+                        _logged = log_ml_shadow_pick(
+                            game_date     = _ml_log_date,
+                            player        = _p.get('player'),
+                            stat_category = _p.get('stat_category'),
+                            direction     = _p.get('direction', 'OVER'),
+                            line          = _p.get('line'),
+                            projection    = _p.get('projection'),
+                            sim_confidence= _p.get('confidence'),
+                            edge_pct      = _p.get('edge_pct'),
+                            base_features = None,
+                            cohort        = 'selected',
+                        )
+                        if _logged:
+                            _ml_logged += 1
+                # Log pre-gate rejects (shadow cohort)
+                for _p in parlays.get('shadow_picks', []):
+                    if _p.get('player') and _p.get('stat_category'):
+                        _logged = log_ml_shadow_pick(
+                            game_date     = _ml_log_date,
+                            player        = _p.get('player'),
+                            stat_category = _p.get('stat_category'),
+                            direction     = _p.get('direction', 'OVER'),
+                            line          = _p.get('line'),
+                            projection    = _p.get('projection'),
+                            sim_confidence= _p.get('sim_confidence'),
+                            edge_pct      = _p.get('edge_pct'),
+                            base_features = None,
+                            cohort        = 'shadow',
+                        )
+                        if _logged:
+                            _ml_logged += 1
+                if _ml_logged:
+                    print(f"\n[P1-3] ML shadow: logged {_ml_logged} picks to ml_shadow_picks.")
 
             output = format_parlay_output(parlays)
             print(output)
@@ -1752,14 +1770,15 @@ def main():
     parser.add_argument('--date', type=str, help='Date to simulate (YYYY-MM-DD).')
     parser.add_argument('--mode', choices=['live', 'backtest'], default=None,
                         help='Explicit mode: live or backtest. Required if --date is specified.')
-    parser.add_argument('--shadow', action='store_true', help='Run in ML shadow mode, modifying confidences and saving as shadow picks.')
+    parser.add_argument('--shadow', action='store_true', help='[DEPRECATED] Formerly ran ML shadow mode. Now a no-op that exits with an error.')
     args = parser.parse_args()
 
     if args.shadow:
-        cfg_settings.USE_ML_CALIBRATION = True
-        cfg_settings.USE_ML_RESIDUAL_CORRECTION = False  # Residuals failed the gate. Calibration passed.
-        print("\n[!] RUNNING IN SHADOW MODE: ML Calibration ENABLED.")
+        print("[DEPRECATED] --shadow flag is no longer supported. ML shadow tracking runs automatically via ENABLE_ML_SHADOW_TRACKING=True in settings.py.")
+        print("Remove '--shadow' from run_pipeline.sh. Exiting.")
+        sys.exit(1)
 
+    global CURRENT_GAME_DATE
     if args.date:
         if not args.mode:
             parser.error("--date requires explicit --mode live or --mode backtest to prevent ambiguous report routing.")
@@ -1767,7 +1786,10 @@ def main():
         date_str = args.date
     else:
         exec_mode = args.mode or 'live'
-        date_str = datetime.now().strftime('%Y-%m-%d')
+        # Caught at script start, minus 2 hours safety margin for post-midnight / 2 AM runs
+        date_str = get_effective_date(SCRIPT_START_TIME, safety_hours=2.5).strftime('%Y-%m-%d')
+
+    CURRENT_GAME_DATE = date_str
 
     log_path = get_prediction_filepath(date_str, mode=exec_mode, ext='txt', base_dir=MODEL_DIR)
     out_dir  = get_prediction_dir(date_str, mode=exec_mode, base_dir=MODEL_DIR)
@@ -1775,17 +1797,18 @@ def main():
         
     sys.stdout = TeeLogger(log_path)
     print(f"[+] Execution mode: {exec_mode.upper()} | Date: {date_str}")
+    print(f"[+] Script started: {SCRIPT_START_TIME.strftime('%Y-%m-%d %H:%M:%S')} | Effective slate date (-2h): {date_str}")
     print(f"[+] Routing log to: {log_path}")
 
     if exec_mode == 'backtest':
         generate_historical_projections(date_str)
     else:
-        generate_todays_projections(is_shadow=getattr(args, 'shadow', False))
+        generate_todays_projections(target_date=date_str)
 
-
-
-    # Automatically generate the PDF/TeX report in the mode-isolated directory
-    print(f"\n[+] Generating {exec_mode} PDF report for {date_str}...")
+    # Fetch time and day when generating reports
+    report_gen_time = datetime.now()
+    report_gen_str = report_gen_time.strftime('%Y-%m-%d %H:%M:%S')
+    print(f"\n[+] Generating {exec_mode} PDF report for {date_str} (Generated at: {report_gen_str})...")
     try:
         _tex_stem = f'predicts_report_{date_str}'
         _tex_path = os.path.join(out_dir, _tex_stem + '.tex')
@@ -1796,6 +1819,7 @@ def main():
             '--input', log_path,
             '--output', _tex_path.replace('.tex', ''),
             '--date', date_str,
+            '--generated-at', report_gen_str,
         ], check=True)
         print(f"    [+] LaTeX written to: {_tex_path}")
 

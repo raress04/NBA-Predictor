@@ -1,0 +1,45 @@
+NBA MODEL PREDICTIONS - 2025-12-11
+============================================================
+
+
+MATCHUP: LA Clippers vs. Houston Rockets
+------------------------------
+  Kawhi Leonard        | POINTS   | Line 22.5 | Proj 34.6 | VALUABLE: Over (79% conf, 42.8% edge)
+  Aaron Holiday        | POINTS   | Line  8.5 | Proj  4.4 | VALUABLE: Under (78% conf, 41.8% edge)
+
+MATCHUP: Denver Nuggets vs. Sacramento Kings
+------------------------------
+  Malik Monk           | POINTS   | Line 14.5 | Proj  8.3 | VALUABLE: Under (79% conf, 43.1% edge)
+  PROJECTED TOTAL: 219.7 | O/U 239.5
+  -> GAME TOTAL: O/U 239.5 VALUABLE: Under (75% conf, 38.3% edge)
+  -> SPREAD: Denver Nuggets -10.5 VALUABLE: Cover (76% conf, 48.7% edge)
+
+MATCHUP: Milwaukee Bucks vs. Boston Celtics
+------------------------------
+  PROJECTED TOTAL: 212.3 | O/U 222.5
+  -> GAME TOTAL: O/U 222.5 VALUABLE: Under (66% conf, 22.6% edge)
+
+MATCHUP: New Orleans Pelicans vs. Portland Trail Blazers
+------------------------------
+  Derik Queen          | POINTS   | Line 16.5 | Proj 11.6 | VALUABLE: Under (75% conf, 36.4% edge)
+  Jeremiah Fears       | POINTS   | Line 14.5 | Proj  9.9 | VALUABLE: Under (75% conf, 37.3% edge)
+  Shaedon Sharpe       | POINTS   | Line 24.5 | Proj 17.9 | VALUABLE: Under (75% conf, 36.6% edge)
+  Duop Reath           | POINTS   | Line  8.5 | Proj  1.7 | VALUABLE: Under (82% conf, 49.8% edge)
+  PROJECTED TOTAL: 207.8 | O/U 242.5
+  -> GAME TOTAL: O/U 242.5 VALUABLE: Under (81% conf, 48.0% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Game Total Under 242.5 TOTAL (81% conf, 29.1% edge) | New Orleans Pelicans vs. Portland Trail Blazers
+  2. Duop Reath Under 8.5 POINTS (82% conf, 28.1% edge) | New Orleans Pelicans vs. Portland Trail Blazers
+  3. Aaron Holiday Under 8.5 POINTS (78% conf, 25.6% edge) | LA Clippers vs. Houston Rockets
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Game Total Under 242.5 TOTAL (81% conf, 29.1% edge) | New Orleans Pelicans vs. Portland Trail Blazers
+  2. Duop Reath Under 8.5 POINTS (82% conf, 28.1% edge) | New Orleans Pelicans vs. Portland Trail Blazers
+  3. Aaron Holiday Under 8.5 POINTS (78% conf, 25.6% edge) | LA Clippers vs. Houston Rockets
+  4. Malik Monk Under 14.5 POINTS (79% conf, 23.9% edge) | Denver Nuggets vs. Sacramento Kings
+
+
+Total VALUABLE picks today: 11

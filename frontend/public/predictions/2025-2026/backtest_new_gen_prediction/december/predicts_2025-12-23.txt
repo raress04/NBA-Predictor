@@ -1,0 +1,101 @@
+NBA MODEL PREDICTIONS - 2025-12-23
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Dallas Mavericks
+------------------------------
+  Jaden Hardy          | POINTS   | Line 11.5 | Proj  6.7 | VALUABLE: Under (77% conf, 40.8% edge)
+  PROJECTED TOTAL: 228.8 | O/U 236.5
+  -> GAME TOTAL: O/U 236.5 VALUABLE: Under (63% conf, 17.9% edge)
+  -> SPREAD: Denver Nuggets -6.5 VALUABLE: Cover (74% conf, 45.6% edge)
+
+MATCHUP: Detroit Pistons vs. Sacramento Kings
+------------------------------
+  PROJECTED TOTAL: 228.8 | O/U 227.5
+  -> SPREAD: Detroit Pistons -9.5 VALUABLE: Cover (76% conf, 48.8% edge)
+
+MATCHUP: New York Knicks vs. Minnesota Timberwolves
+------------------------------
+  Tyler Kolek          | POINTS   | Line 13.5 | Proj  8.5 | VALUABLE: Under (77% conf, 39.9% edge)
+  Mikal Bridges        | POINTS   | Line 20.5 | Proj 14.7 | VALUABLE: Under (74% conf, 35.1% edge)
+  PROJECTED TOTAL: 216.6 | O/U 229.5
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Under (69% conf, 27.8% edge)
+
+MATCHUP: LA Clippers vs. Houston Rockets
+------------------------------
+  Alperen Sengun       | POINTS   | Line 22.5 | Proj 16.7 | VALUABLE: Under (74% conf, 35.7% edge)
+
+MATCHUP: Memphis Grizzlies vs. Utah Jazz
+------------------------------
+  GG Jackson           | POINTS   | Line 11.5 | Proj  7.5 | VALUABLE: Under (76% conf, 38.2% edge)
+  PROJECTED TOTAL: 218.5 | O/U 242.5
+  -> GAME TOTAL: O/U 242.5 VALUABLE: Under (77% conf, 41.3% edge)
+  -> SPREAD: Utah Jazz +4.5 VALUABLE: Cover (66% conf, 33.3% edge)
+
+MATCHUP: Orlando Magic vs. Portland Trail Blazers
+------------------------------
+  Anthony Black        | POINTS   | Line 16.5 | Proj 24.2 | VALUABLE: Over (74% conf, 35.1% edge)
+  Duop Reath           | POINTS   | Line  5.5 | Proj  2.1 | VALUABLE: Under (80% conf, 45.3% edge)
+  PROJECTED TOTAL: 226.3 | O/U 230.5
+
+MATCHUP: Atlanta Hawks vs. Chicago Bulls
+------------------------------
+  Coby White           | POINTS   | Line 21.5 | Proj 15.1 | VALUABLE: Under (75% conf, 36.6% edge)
+  Isaac Okoro          | POINTS   | Line  6.5 | Proj 11.6 | VALUABLE: Over (72% conf, 32.7% edge)
+  PROJECTED TOTAL: 253.5 | O/U 254.5
+  -> SPREAD: Chicago Bulls +3.5 VALUABLE: Cover (65% conf, 31.4% edge)
+
+MATCHUP: Brooklyn Nets vs. Philadelphia 76ers
+------------------------------
+  Jared McCain         | POINTS   | Line 12.5 | Proj  8.5 | VALUABLE: Under (74% conf, 35.2% edge)
+  Justin Edwards       | POINTS   | Line  7.5 | Proj  4.8 | VALUABLE: Under (73% conf, 33.3% edge)
+  PROJECTED TOTAL: 232.8 | O/U 220.5
+  -> GAME TOTAL: O/U 220.5 VALUABLE: Over (67% conf, 25.3% edge)
+
+MATCHUP: Milwaukee Bucks vs. Indiana Pacers
+------------------------------
+  Kyle Kuzma           | POINTS   | Line 14.5 | Proj 10.6 | VALUABLE: Under (73% conf, 34.2% edge)
+  PROJECTED TOTAL: 208.0 | O/U 216.5
+  -> GAME TOTAL: O/U 216.5 VALUABLE: Under (63% conf, 19.1% edge)
+
+MATCHUP: Oklahoma City Thunder vs. San Antonio Spurs
+------------------------------
+  Stephon Castle       | REBOUNDS | Line  5.5 | Proj  3.0 | VALUABLE: Under (79% conf, 44.0% edge)
+  Keldon Johnson       | POINTS   | Line  7.5 | Proj 14.6 | VALUABLE: Over (76% conf, 38.5% edge)
+  PROJECTED TOTAL: 239.2 | O/U 237.5
+  -> SPREAD: San Antonio Spurs +6.5 VALUABLE: Cover (73% conf, 44.7% edge)
+
+MATCHUP: Toronto Raptors vs. Miami Heat
+------------------------------
+  PROJECTED TOTAL: 224.1 | O/U 227.5
+
+MATCHUP: Cleveland Cavaliers vs. New Orleans Pelicans
+------------------------------
+  Jeremiah Fears       | POINTS   | Line 15.5 | Proj 10.7 | VALUABLE: Under (74% conf, 36.0% edge)
+  PROJECTED TOTAL: 224.4 | O/U 248.5
+  -> GAME TOTAL: O/U 248.5 VALUABLE: Under (78% conf, 41.9% edge)
+
+MATCHUP: Charlotte Hornets vs. Washington Wizards
+------------------------------
+  Tre Mann             | POINTS   | Line  7.5 | Proj  4.8 | VALUABLE: Under (74% conf, 35.3% edge)
+  PROJECTED TOTAL: 241.3 | O/U 239.5
+
+MATCHUP: Phoenix Suns vs. Los Angeles Lakers
+------------------------------
+  PROJECTED TOTAL: 224.3 | O/U 226.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Duop Reath Under 5.5 POINTS (80% conf, 26.0% edge) | Orlando Magic vs. Portland Trail Blazers
+  2. GG Jackson Under 11.5 POINTS (76% conf, 26.2% edge) | Memphis Grizzlies vs. Utah Jazz
+  3. Stephon Castle Under 5.5 REBOUNDS (79% conf, 24.8% edge) | Oklahoma City Thunder vs. San Antonio Spurs
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Duop Reath Under 5.5 POINTS (80% conf, 26.0% edge) | Orlando Magic vs. Portland Trail Blazers
+  2. GG Jackson Under 11.5 POINTS (76% conf, 26.2% edge) | Memphis Grizzlies vs. Utah Jazz
+  3. Stephon Castle Under 5.5 REBOUNDS (79% conf, 24.8% edge) | Oklahoma City Thunder vs. San Antonio Spurs
+  4. Game Total Under 248.5 TOTAL (78% conf, 25.3% edge) | Cleveland Cavaliers vs. New Orleans Pelicans
+
+
+Total VALUABLE picks today: 27

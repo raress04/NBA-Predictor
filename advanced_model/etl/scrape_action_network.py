@@ -225,7 +225,7 @@ def store_day(date_str, data):
                     over_odds  = excluded.over_odds,
                     under_odds = excluded.under_odds,
                     date       = excluded.date
-            """, (f"AN_{eid}", date_str, name, stat, line, over_odds, under_odds, "ActionNetwork"))
+            """, (f"AN_{eid}", formatted_date, name, stat, line, over_odds, under_odds, "ActionNetwork"))
             upserts += 1
 
     conn.commit()

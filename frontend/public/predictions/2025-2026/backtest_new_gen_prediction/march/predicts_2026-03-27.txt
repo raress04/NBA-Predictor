@@ -1,0 +1,105 @@
+NBA MODEL PREDICTIONS - 2026-03-27
+============================================================
+
+
+MATCHUP: Denver Nuggets vs. Utah Jazz
+------------------------------
+  Cody Williams        | POINTS   | Line 14.5 | Proj 11.0 | VALUABLE: Under (78% conf, 29.5% edge)
+  PROJECTED TOTAL: 243.4 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (68% conf, 17.6% edge)
+  -> SPREAD: Denver Nuggets -19.5 VALUABLE: Cover (100% conf, 49.7% edge)
+
+MATCHUP: Los Angeles Lakers vs. Brooklyn Nets
+------------------------------
+  Noah Clowney         | POINTS   | Line  9.5 | Proj 15.1 | VALUABLE: Over (78% conf, 31.0% edge)
+  PROJECTED TOTAL: 233.1 | O/U 235.5
+  -> SPREAD: Los Angeles Lakers -18.5 VALUABLE: Cover (99% conf, 49.4% edge)
+
+MATCHUP: Boston Celtics vs. Atlanta Hawks
+------------------------------
+  Baylor Scheierman    | REBOUNDS | Line  5.5 | Proj  3.7 | VALUABLE: Under (78% conf, 36.3% edge)
+  Zaccharie Risacher   | POINTS   | Line  5.5 | Proj  9.8 | VALUABLE: Over (78% conf, 27.6% edge)
+  Corey Kispert        | POINTS   | Line  5.5 | Proj  9.5 | VALUABLE: Over (75% conf, 25.0% edge)
+  PROJECTED TOTAL: 222.9 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (76% conf, 26.2% edge)
+  -> SPREAD: Atlanta Hawks +5.0 VALUABLE: Cover (82% conf, 31.6% edge)
+
+MATCHUP: LA Clippers vs. Indiana Pacers
+------------------------------
+  Jarace Walker        | POINTS   | Line 13.5 | Proj 10.5 | VALUABLE: Under (76% conf, 25.9% edge)
+  Jarace Walker        | REBOUNDS | Line  6.5 | Proj  4.7 | VALUABLE: Under (78% conf, 33.6% edge)
+  PROJECTED TOTAL: 231.9 | O/U 235.5
+
+MATCHUP: Memphis Grizzlies vs. Houston Rockets
+------------------------------
+  GG Jackson           | POINTS   | Line 16.5 | Proj 12.2 | VALUABLE: Under (78% conf, 31.9% edge)
+  PROJECTED TOTAL: 213.4 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 40.8% edge)
+
+MATCHUP: Dallas Mavericks vs. Portland Trail Blazers
+------------------------------
+  Cooper Flagg         | ASSISTS  | Line  6.5 | Proj  4.0 | VALUABLE: Under (78% conf, 43.4% edge)
+  Naji Marshall        | POINTS   | Line 17.5 | Proj 14.3 | VALUABLE: Under (75% conf, 25.0% edge)
+  Deni Avdija          | ASSISTS  | Line  6.5 | Proj  4.8 | VALUABLE: Under (78% conf, 34.5% edge)
+  Jrue Holiday         | ASSISTS  | Line  6.5 | Proj  4.6 | VALUABLE: Under (78% conf, 36.6% edge)
+  Donovan Clingan      | POINTS   | Line 14.5 | Proj 10.9 | VALUABLE: Under (78% conf, 29.4% edge)
+  Donovan Clingan      | REBOUNDS | Line 12.5 | Proj 10.4 | VALUABLE: Under (77% conf, 26.7% edge)
+  PROJECTED TOTAL: 214.6 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 38.8% edge)
+
+MATCHUP: Golden State Warriors vs. Washington Wizards
+------------------------------
+  Gui Santos           | POINTS   | Line 16.5 | Proj 11.7 | VALUABLE: Under (78% conf, 34.5% edge)
+  PROJECTED TOTAL: 221.7 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (78% conf, 28.6% edge)
+  -> SPREAD: Golden State Warriors -12.5 VALUABLE: Cover (87% conf, 37.3% edge)
+
+MATCHUP: Chicago Bulls vs. Oklahoma City Thunder
+------------------------------
+  Collin Sexton        | POINTS   | Line 13.5 | Proj 17.8 | VALUABLE: Over (73% conf, 22.8% edge)
+  Leonard Miller       | REBOUNDS | Line  6.5 | Proj  4.3 | VALUABLE: Under (78% conf, 37.7% edge)
+  Rob Dillingham       | POINTS   | Line  9.5 | Proj  6.4 | VALUABLE: Under (78% conf, 34.1% edge)
+  Shai Gilgeous-Alexander | POINTS   | Line 29.5 | Proj 25.6 | VALUABLE: Under (73% conf, 23.2% edge)
+  Shai Gilgeous-Alexander | ASSISTS  | Line  6.5 | Proj  4.9 | VALUABLE: Under (78% conf, 33.4% edge)
+  Isaiah Hartenstein   | POINTS   | Line  9.5 | Proj  7.0 | VALUABLE: Under (78% conf, 31.1% edge)
+  Ajay Mitchell        | POINTS   | Line 13.5 | Proj 10.0 | VALUABLE: Under (78% conf, 31.6% edge)
+  PROJECTED TOTAL: 228.2 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (66% conf, 16.4% edge)
+
+MATCHUP: Cleveland Cavaliers vs. Miami Heat
+------------------------------
+  James Harden         | ASSISTS  | Line  8.5 | Proj  6.7 | VALUABLE: Under (78% conf, 31.1% edge)
+  Evan Mobley          | REBOUNDS | Line  9.5 | Proj  6.8 | VALUABLE: Under (78% conf, 37.1% edge)
+  Donovan Mitchell     | POINTS   | Line 27.5 | Proj 22.9 | VALUABLE: Under (76% conf, 25.6% edge)
+  Sam Merrill          | POINTS   | Line 12.5 | Proj 10.0 | VALUABLE: Under (75% conf, 25.3% edge)
+  Bam Adebayo          | REBOUNDS | Line  9.5 | Proj  7.4 | VALUABLE: Under (78% conf, 31.2% edge)
+  Norman Powell        | POINTS   | Line 20.5 | Proj 17.0 | VALUABLE: Under (74% conf, 24.1% edge)
+  PROJECTED TOTAL: 244.7 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Over (71% conf, 20.7% edge)
+  -> SPREAD: Cleveland Cavaliers -5.5 VALUABLE: Cover (71% conf, 20.9% edge)
+
+MATCHUP: Toronto Raptors vs. New Orleans Pelicans
+------------------------------
+  Scottie Barnes       | POINTS   | Line 18.5 | Proj 15.2 | VALUABLE: Under (74% conf, 24.3% edge)
+  RJ Barrett           | POINTS   | Line 21.5 | Proj 18.2 | VALUABLE: Under (74% conf, 23.6% edge)
+  Jordan Poole         | POINTS   | Line  7.5 | Proj 15.8 | VALUABLE: Over (78% conf, 40.7% edge)
+  Jeremiah Fears       | POINTS   | Line 15.5 | Proj 12.5 | VALUABLE: Under (74% conf, 23.9% edge)
+  PROJECTED TOTAL: 226.1 | O/U 235.5
+  -> GAME TOTAL: O/U 235.5 VALUABLE: Under (72% conf, 22.1% edge)
+  -> SPREAD: Toronto Raptors -8.5 VALUABLE: Cover (87% conf, 37.5% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. Jarace Walker Under 6.5 REBOUNDS (78% conf, 30.4% edge) | LA Clippers vs. Indiana Pacers
+  2. Bam Adebayo Under 9.5 REBOUNDS (78% conf, 29.7% edge) | Cleveland Cavaliers vs. Miami Heat
+  3. James Harden Under 8.5 ASSISTS (78% conf, 29.5% edge) | Cleveland Cavaliers vs. Miami Heat
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. Jarace Walker Under 6.5 REBOUNDS (78% conf, 30.4% edge) | LA Clippers vs. Indiana Pacers
+  2. Bam Adebayo Under 9.5 REBOUNDS (78% conf, 29.7% edge) | Cleveland Cavaliers vs. Miami Heat
+  3. James Harden Under 8.5 ASSISTS (78% conf, 29.5% edge) | Cleveland Cavaliers vs. Miami Heat
+  4. Jrue Holiday Under 6.5 ASSISTS (78% conf, 29.0% edge) | Dallas Mavericks vs. Portland Trail Blazers
+
+
+Total VALUABLE picks today: 46

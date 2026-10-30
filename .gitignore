@@ -30,8 +30,9 @@ env/
 # Logs and temp files
 *.log
 tmp/
-advanced_model/tmp_*/
-advanced_model/tmp*/
+scratch/
+*.bak*
+advanced_model/tmp*
 
 # Repaired backups
 *.py_repaired
@@ -52,6 +53,9 @@ GEMINI.md
 .cache/
 advanced_model/.cache/
 frontend/node_modules/
+
+# Commands cheatsheet
+advanced_model/commands*
 
 # Local build outputs
 *.pdf

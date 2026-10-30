@@ -1,0 +1,53 @@
+NBA MODEL PREDICTIONS - 2025-10-28
+============================================================
+
+
+MATCHUP: Milwaukee Bucks vs. New York Knicks
+------------------------------
+
+MATCHUP: Philadelphia 76ers vs. Washington Wizards
+------------------------------
+  Joel Embiid          | POINTS   | Line 17.5 | Proj 26.6 | VALUABLE: Over (77% conf, 39.7% edge)
+  Khris Middleton      | POINTS   | Line 13.5 | Proj  9.0 | VALUABLE: Under (75% conf, 37.6% edge)
+  PROJECTED TOTAL: 235.9 | O/U 239.5
+
+MATCHUP: Oklahoma City Thunder vs. Sacramento Kings
+------------------------------
+  Aaron Wiggins        | POINTS   | Line 15.5 | Proj  8.7 | VALUABLE: Under (79% conf, 43.9% edge)
+  Malik Monk           | POINTS   | Line 12.5 | Proj  8.7 | VALUABLE: Under (73% conf, 33.5% edge)
+  PROJECTED TOTAL: 224.7 | O/U 227.5
+  -> SPREAD: Oklahoma City Thunder -8.5 VALUABLE: Cover (70% conf, 39.5% edge)
+
+MATCHUP: Charlotte Hornets vs. Miami Heat
+------------------------------
+  LaMelo Ball          | ASSISTS  | Line  8.5 | Proj  6.1 | VALUABLE: Under (76% conf, 38.8% edge)
+  Kon Knueppel         | POINTS   | Line 12.5 | Proj 20.8 | VALUABLE: Over (75% conf, 37.6% edge)
+  Tre Mann             | POINTS   | Line  8.5 | Proj  5.6 | VALUABLE: Under (73% conf, 34.4% edge)
+  Bam Adebayo          | POINTS   | Line 22.5 | Proj 14.7 | VALUABLE: Under (78% conf, 42.4% edge)
+  Davion Mitchell      | POINTS   | Line 11.5 | Proj  7.1 | VALUABLE: Under (76% conf, 39.1% edge)
+  PROJECTED TOTAL: 227.5 | O/U 240.5
+  -> GAME TOTAL: O/U 240.5 VALUABLE: Under (68% conf, 26.9% edge)
+
+MATCHUP: Golden State Warriors vs. LA Clippers
+------------------------------
+  Stephen Curry        | ASSISTS  | Line  5.5 | Proj  3.1 | VALUABLE: Under (79% conf, 42.0% edge)
+  Jonathan Kuminga     | POINTS   | Line 16.5 | Proj  7.0 | VALUABLE: Under (82% conf, 49.2% edge)
+  Buddy Hield          | POINTS   | Line  8.5 | Proj  5.6 | VALUABLE: Under (73% conf, 34.1% edge)
+  James Harden         | ASSISTS  | Line  9.5 | Proj  6.0 | VALUABLE: Under (80% conf, 45.2% edge)
+  Ivica Zubac          | POINTS   | Line 15.5 | Proj 10.3 | VALUABLE: Under (76% conf, 38.8% edge)
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. James Harden Under 9.5 ASSISTS (80% conf, 30.7% edge) | Golden State Warriors vs. LA Clippers
+  2. Jonathan Kuminga Under 16.5 POINTS (82% conf, 28.5% edge) | Golden State Warriors vs. LA Clippers
+  3. LaMelo Ball Under 8.5 ASSISTS (76% conf, 27.2% edge) | Charlotte Hornets vs. Miami Heat
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. James Harden Under 9.5 ASSISTS (80% conf, 30.7% edge) | Golden State Warriors vs. LA Clippers
+  2. Jonathan Kuminga Under 16.5 POINTS (82% conf, 28.5% edge) | Golden State Warriors vs. LA Clippers
+  3. LaMelo Ball Under 8.5 ASSISTS (76% conf, 27.2% edge) | Charlotte Hornets vs. Miami Heat
+  4. Bam Adebayo Under 22.5 POINTS (78% conf, 24.9% edge) | Charlotte Hornets vs. Miami Heat
+
+
+Total VALUABLE picks today: 16

@@ -1,0 +1,40 @@
+NBA MODEL PREDICTIONS - 2025-11-25
+============================================================
+
+
+MATCHUP: Los Angeles Lakers vs. LA Clippers
+------------------------------
+  LeBron James         | REBOUNDS | Line  6.5 | Proj  4.4 | VALUABLE: Under (75% conf, 36.6% edge)
+  LeBron James         | ASSISTS  | Line  7.5 | Proj  4.9 | VALUABLE: Under (78% conf, 41.2% edge)
+  Jaxson Hayes         | REBOUNDS | Line  5.5 | Proj  3.7 | VALUABLE: Under (75% conf, 36.9% edge)
+  Ivica Zubac          | POINTS   | Line 17.5 | Proj 12.1 | VALUABLE: Under (75% conf, 37.4% edge)
+  Kawhi Leonard        | POINTS   | Line 20.5 | Proj 36.0 | VALUABLE: Over (81% conf, 46.8% edge)
+
+MATCHUP: Washington Wizards vs. Atlanta Hawks
+------------------------------
+  PROJECTED TOTAL: 237.5 | O/U 239.5
+
+MATCHUP: Orlando Magic vs. Philadelphia 76ers
+------------------------------
+  Franz Wagner         | POINTS   | Line 25.5 | Proj 18.5 | VALUABLE: Under (76% conf, 38.3% edge)
+  Tristan da Silva     | POINTS   | Line 14.5 | Proj  6.2 | VALUABLE: Under (82% conf, 48.2% edge)
+  Andre Drummond       | POINTS   | Line 11.5 | Proj  7.7 | VALUABLE: Under (75% conf, 37.3% edge)
+  Andre Drummond       | REBOUNDS | Line 13.5 | Proj 10.3 | VALUABLE: Under (75% conf, 36.5% edge)
+  Justin Edwards       | POINTS   | Line 10.5 | Proj  5.5 | VALUABLE: Under (78% conf, 41.2% edge)
+  PROJECTED TOTAL: 223.8 | O/U 229.5
+
+============================================================
+
+=== TOP 3-LEG PARLAY ===
+  1. LeBron James Under 7.5 ASSISTS (78% conf, 29.4% edge) | Los Angeles Lakers vs. LA Clippers
+  2. Kawhi Leonard Over 20.5 POINTS (81% conf, 27.6% edge) | Los Angeles Lakers vs. LA Clippers
+  3. Jaxson Hayes Under 5.5 REBOUNDS (75% conf, 27.3% edge) | Los Angeles Lakers vs. LA Clippers
+
+=== SYSTEM PARLAY (4 PICKS, 3/4) ===
+  1. LeBron James Under 7.5 ASSISTS (78% conf, 29.4% edge) | Los Angeles Lakers vs. LA Clippers
+  2. Kawhi Leonard Over 20.5 POINTS (81% conf, 27.6% edge) | Los Angeles Lakers vs. LA Clippers
+  3. Jaxson Hayes Under 5.5 REBOUNDS (75% conf, 27.3% edge) | Los Angeles Lakers vs. LA Clippers
+  4. Tristan da Silva Under 14.5 POINTS (82% conf, 24.4% edge) | Orlando Magic vs. Philadelphia 76ers
+
+
+Total VALUABLE picks today: 10
