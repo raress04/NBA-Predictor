@@ -1,0 +1,36 @@
+diff --git a/advanced_model/etl/prepare_analyze.py b/advanced_model/etl/prepare_analyze.py
+index a303d03..69b0d4a 100644
+--- a/advanced_model/etl/prepare_analyze.py
++++ b/advanced_model/etl/prepare_analyze.py
+@@ -456,6 +456,31 @@ def prepare_analyze(
+             print(f"[+] Verified no-game day for {date_iso}: 0 games scheduled and 0 predictions found.")
+             print("[+] Successful no-op. Nothing to prepare.")
+             return 0
++        
++        # Check if results file already exists in either mode (live or backtest)
++        results_file_check = resolve_results_file(date_iso, mode=mode, base_dir=base, allow_legacy=True)
++        results_valid_check, _ = validate_results_file(results_file_check, date_iso) if results_file_check else (False, '')
++        
++        # Check if cross-mode predictions exist
++        alt_mode = 'backtest' if mode == 'live' else 'live'
++        alt_pred = resolve_prediction_file(date_iso, mode=alt_mode, base_dir=base, allow_legacy=True)
++        alt_pred_valid, _ = validate_prediction_file(alt_pred, date_iso) if alt_pred else (False, '')
++        
++        if results_valid_check:
++            print(f"[+] Result file already exists for {date_iso}: {results_file_check}")
++            if alt_pred_valid:
++                print(f"[+] Found {alt_mode} predictions ({alt_pred}). Using for preparation.")
++                predicts_file = alt_pred
++                is_pred_valid = True
++                mode = alt_mode
++            else:
++                print(f"[+] Results already recorded. Bypassing {mode} prediction requirement and proceeding.")
++                return 0
++        elif alt_pred_valid:
++            print(f"[+] Found {alt_mode} predictions for {date_iso}: {alt_pred}. Using for preparation.")
++            predicts_file = alt_pred
++            is_pred_valid = True
++            mode = alt_mode
+         else:
+             print(f"[-] ACTIONABLE ERROR: Prediction file missing or invalid for {date_iso} (mode={mode}),")
+             print(f"    but {games_count} games were recorded ({box_count} box score rows).")

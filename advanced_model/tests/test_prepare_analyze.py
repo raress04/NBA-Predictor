@@ -200,11 +200,19 @@ class TestPrepareYesterday(unittest.TestCase):
             mock_gen_res.assert_not_called()
 
     def test_pending_games_and_missing_predictions(self):
-        """Actionable failure when predictions are missing but games occurred or are scheduled."""
+        """Predictions missing but games occurred:
+        live     -> warning + 0 (a missed live run must not stop the pipeline; H1 option B, 2026-11-06)
+        backtest -> actionable failure (1)."""
         # Predictions NOT created
-        with patch("etl.prepare_analyze.check_games_and_box_scores", return_value=(2, 45, ['BOS @ MIA', 'LAL @ GSW'])):
+        with patch("etl.prepare_analyze.check_games_and_box_scores", return_value=(2, 45, ['BOS @ MIA', 'LAL @ GSW'])), \
+             patch("etl.prepare_analyze.generate_results_file") as mock_gen_res, \
+             patch("etl.prepare_analyze.generate_analysis_report") as mock_gen_ana:
             code = prepare_analyze(target_date=self.target_date, mode='live', base_dir=self.test_dir)
+            self.assertEqual(code, 0)
+            code = prepare_analyze(target_date=self.target_date, mode='backtest', base_dir=self.test_dir)
             self.assertEqual(code, 1)
+            mock_gen_res.assert_not_called()
+            mock_gen_ana.assert_not_called()
 
     def test_verified_no_game_day_success_noop(self):
         """0 games in schedule and 0 predictions -> successful no-op (code 0)."""

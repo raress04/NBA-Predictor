@@ -427,7 +427,11 @@ def prepare_analyze(
     1. Resolve target date (yesterday if omitted).
     2. Check prediction file.
        - If missing and verified no-game day: success no-op (return 0).
-       - If missing and games were scheduled/played: actionable failure (return 1).
+       - If missing and games were scheduled/played:
+           live     -> WARNING "live record has a gap", skip, return 0 (pipeline continues;
+                       backtest predictions are never substituted — H1, 2026-11-06)
+           backtest -> actionable failure (return 1): an explicit backtest request
+                       for a date with no backtest predictions.
     3. Check results and analysis validity.
     4. Execute required steps according to dependency rules:
        - Both valid and not force: skip (return 0).
@@ -455,6 +459,16 @@ def prepare_analyze(
         if games_count == 0 and box_count == 0:
             print(f"[+] Verified no-game day for {date_iso}: 0 games scheduled and 0 predictions found.")
             print("[+] Successful no-op. Nothing to prepare.")
+            return 0
+
+        if mode == 'live':
+            # H1 decision (Plans/CRITICAL_BUGS_FOUND_06.11.md, owner chose option B on 2026-11-06):
+            # a missed live run must NOT stop tonight's pipeline, and must NOT be filled with
+            # backtest predictions (live and backtest are never mixed). Record the gap and move on.
+            # Backtest grading for such a date is a separate, explicit run: --mode backtest --date D.
+            print(f"[!] WARNING: no live predictions for {date_iso} — live record has a gap "
+                  f"({games_count} games were played). Live grading skipped for this date; "
+                  f"the pipeline continues.")
             return 0
         else:
             print(f"[-] ACTIONABLE ERROR: Prediction file missing or invalid for {date_iso} (mode={mode}),")

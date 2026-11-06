@@ -11,8 +11,16 @@ MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PREDICTS_PATH = os.path.join(MODEL_DIR, 'predicts.txt')
 RESULTS_PATH = os.path.join(MODEL_DIR, 'yesterday_results.txt')
 
-def write_db_results(target_date, props_results, medians_results, actual_games, actual_props):
-    db_path = os.path.join(MODEL_DIR, "database", "bet_tracker.db")
+def write_db_results(target_date, props_results, medians_results, actual_games, actual_props,
+                     mode='live', db_path=None):
+    """
+    mode: 'live' or 'backtest' — the mode of the predictions file being graded.
+    pick_results are only attached to daily_picks of the same mode. daily_picks holds live
+    picks only (backtest runs never write there), so grading a backtest file writes no
+    pick_results. Before 2026-11-06 the lookup ignored the mode, so grading a backtest file
+    could attach its result to a live pick of the same date/player/stat/direction (H1).
+    """
+    db_path = db_path or os.path.join(MODEL_DIR, "database", "bet_tracker.db")
     if not os.path.exists(db_path):
         print(f"[-] DB not found at {db_path}, skipping write.")
         return
@@ -20,8 +28,10 @@ def write_db_results(target_date, props_results, medians_results, actual_games, 
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
-    # 1. Update pick_results for VALUABLE picks
-    if props_results:
+    # 1. Update pick_results for VALUABLE picks (same-mode picks only)
+    if props_results and mode != 'live':
+        print(f"    -> {mode} predictions: no {mode} picks in daily_picks, pick_results not written.")
+    elif props_results:
         inserted_picks = 0
         for r in props_results:
             team_or_player = r['player']
@@ -29,11 +39,12 @@ def write_db_results(target_date, props_results, medians_results, actual_games, 
             direction = r['direction']
             is_win = 1 if 'WON' in r['status'] else 0
 
-            # Find pick_id
+            # Find pick_id (live picks only — never attach a grade to another mode's pick)
             cur.execute('''
-                SELECT id FROM daily_picks 
+                SELECT id FROM daily_picks
                 WHERE date = ? AND UPPER(player_or_team) = ? AND UPPER(stat_category) = ? AND UPPER(direction) = ?
-            ''', (target_date, team_or_player.upper(), stat.upper(), direction.upper()))
+                  AND source_mode = ?
+            ''', (target_date, team_or_player.upper(), stat.upper(), direction.upper(), mode))
             row = cur.fetchone()
             if row:
                 pick_id = row[0]
@@ -342,8 +353,9 @@ def generate_evaluate(predicts_path=None, results_path=None, output_dir=None, wr
         else:
             date_str = previous_slate_date()
         
-        print(f"\n[+] Writing evaluated outcomes to DB for {date_str}...")
-        write_db_results(date_str, props_results, medians_results, actual_games, actual_props)
+        db_mode = 'backtest' if 'backtest' in str(predicts_path).lower() else 'live'
+        print(f"\n[+] Writing evaluated outcomes to DB for {date_str} (mode={db_mode})...")
+        write_db_results(date_str, props_results, medians_results, actual_games, actual_props, mode=db_mode)
 
     if generate_pdf and os.path.exists(txt_out_path):
         try:
