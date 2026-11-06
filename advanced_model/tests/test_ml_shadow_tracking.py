@@ -234,24 +234,22 @@ class TestMLShadowTracking(unittest.TestCase):
 
 
     # ------------------------------------------------------------------ #
-    # Test 6: get_effective_date shifts midnight/early morning runs back #
+    # Test 6: get_effective_date = US-Eastern date of the run           #
     # ------------------------------------------------------------------ #
-    def test_effective_date_with_safety_hours(self):
-        """Runs at 1-2 AM or crossing midnight must catalog under the previous evening's slate."""
-        from datetime import datetime
+    def test_effective_date_is_us_eastern(self):
+        """Late-night runs from Europe must catalog under the US-Eastern slate date.
+        (Was local - 2.5 h until 2026-11-06; see tests/test_slate_date.py.)"""
+        from datetime import datetime, timezone
         from etl.live_ingestion import get_effective_date
 
-        dt_2am = datetime(2026, 10, 30, 2, 0, 0)
-        eff_date_2am = get_effective_date(dt_2am).strftime('%Y-%m-%d')
-        self.assertEqual(eff_date_2am, '2026-10-29')
+        # Oct 29 slate run at 00:59 Romania time on Oct 30 = 22:59 UTC Oct 29 = 18:59 EDT Oct 29
+        run = datetime(2026, 10, 29, 22, 59, tzinfo=timezone.utc)
+        self.assertEqual(get_effective_date(run).strftime('%Y-%m-%d'), '2026-10-29')
 
-        dt_1am = datetime(2026, 10, 30, 1, 15, 0)
-        eff_date_1am = get_effective_date(dt_1am, safety_hours=2).strftime('%Y-%m-%d')
-        self.assertEqual(eff_date_1am, '2026-10-29')
-
-        dt_night = datetime(2026, 10, 29, 23, 30, 0)
-        eff_date_night = get_effective_date(dt_night, safety_hours=2).strftime('%Y-%m-%d')
-        self.assertEqual(eff_date_night, '2026-10-29')
+        # 03:30 Romania time (01:30 UTC) is still the previous US evening: old rule
+        # (local - 2.5 h = 01:00 Oct 30) said Oct 30, which was wrong.
+        run = datetime(2026, 10, 30, 1, 30, tzinfo=timezone.utc)
+        self.assertEqual(get_effective_date(run).strftime('%Y-%m-%d'), '2026-10-29')
 
     # ------------------------------------------------------------------ #
     # Test 7: PredictsParser captures report generation timestamp       #

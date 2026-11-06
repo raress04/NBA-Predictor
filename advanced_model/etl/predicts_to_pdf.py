@@ -17,6 +17,16 @@ import argparse
 from datetime import date, datetime
 from typing import List, Dict, Optional
 
+
+def _slate_date() -> str:
+    """US-Eastern slate date (utils.slate_date); this file also runs as a plain script."""
+    try:
+        from utils.slate_date import slate_date
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from utils.slate_date import slate_date
+    return slate_date()
+
 # Optional: bet_tracker for historical performance section
 try:
     from etl.bet_tracker import query_summary, query_by_type, query_confidence_bands
@@ -116,7 +126,7 @@ class PredictsParser:
         if parsed_dt:
             self.run_date = parsed_dt.strftime('%B %d, %Y')
         else:
-            self.run_date = date.today().strftime('%B %d, %Y')
+            self.run_date = datetime.strptime(_slate_date(), '%Y-%m-%d').strftime('%B %d, %Y')
 
         self._parse()
 

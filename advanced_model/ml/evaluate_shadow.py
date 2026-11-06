@@ -25,6 +25,7 @@ import argparse
 import numpy as np
 import pandas as pd
 from datetime import datetime
+from utils.slate_date import slate_date
 
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH   = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
@@ -113,7 +114,7 @@ def evaluate(min_picks: int = MIN_PICKS_DEFAULT, save: bool = True):
     sim_probs = df['sim_confidence'].values / 100.0
 
     results = {
-        'eval_date':      datetime.now().strftime('%Y-%m-%d'),
+        'eval_date':      slate_date(),
         'total_resolved': total_resolved,
         'overall':        {},
         'by_category':    {},
@@ -240,7 +241,7 @@ def evaluate(min_picks: int = MIN_PICKS_DEFAULT, save: bool = True):
     if save:
         os.makedirs(LOG_DIR, exist_ok=True)
         out_path = os.path.join(
-            LOG_DIR, f"shadow_evaluation_{datetime.now().strftime('%Y-%m-%d')}.json"
+            LOG_DIR, f"shadow_evaluation_{slate_date()}.json"
         )
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2)

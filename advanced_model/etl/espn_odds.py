@@ -13,8 +13,13 @@ from typing import Dict, Optional, Tuple
 
 ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.cache')
-ESPN_CACHE_FILE = os.path.join(CACHE_DIR, 'espn_odds.json')
 CACHE_TTL = 3600  # 60 minutes
+
+
+def _espn_cache_file(slate_compact: str) -> str:
+    """One cache file per slate date, so a run just after US-Eastern midnight
+    never reuses the previous slate's games (2026-11-06)."""
+    return os.path.join(CACHE_DIR, f'espn_odds_{slate_compact}.json')
 
 
 def _load_cache(path: str) -> dict:
@@ -63,18 +68,23 @@ def fetch_espn_odds() -> Dict:
     Fetch moneyline, spreads, and totals for all today's NBA games from ESPN.
     Uses 60-minute JSON cache to avoid redundant API calls.
     """
-    # Check cache first
-    cached = _load_cache(ESPN_CACHE_FILE)
+    # ESPN/NBA schedules use US-Eastern dates. Same rule as the slate label
+    # (utils.slate_date); handles EDT/EST — the old fixed -4 h was wrong Nov-Mar.
+    try:
+        from utils.slate_date import slate_date_compact
+    except ImportError:  # imported without advanced_model/ on sys.path
+        import sys
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from utils.slate_date import slate_date_compact
+    today_date = slate_date_compact()
+    cache_file = _espn_cache_file(today_date)
+
+    # Check cache first (per slate date)
+    cached = _load_cache(cache_file)
     if cached is not None:
         return cached
-    
+
     try:
-        from datetime import timezone, timedelta
-        # ESPN/NBA schedules use US Eastern Time (UTC-4 EDT / UTC-5 EST)
-        # Always use ET date regardless of local timezone
-        et_offset = timedelta(hours=-4)  # EDT (Mar-Nov); adjust to -5 for EST if needed
-        et_now = datetime.now(timezone.utc) + et_offset
-        today_date = et_now.strftime('%Y%m%d')
         url = f"{ESPN_SCOREBOARD_URL}?dates={today_date}"
         resp = requests.get(url, timeout=15)
         resp.raise_for_status()

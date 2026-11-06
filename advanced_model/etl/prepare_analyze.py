@@ -55,7 +55,7 @@ def compute_target_date(date_str: Optional[str] = None) -> str:
     """
     Computes and validates target date string (YYYY-MM-DD).
     If date_str is provided, validates format.
-    Otherwise, returns yesterday relative to current local time.
+    Otherwise, returns the previous US-Eastern slate date (utils.slate_date).
     """
     if date_str:
         try:
@@ -63,8 +63,8 @@ def compute_target_date(date_str: Optional[str] = None) -> str:
             return dt.strftime('%Y-%m-%d')
         except ValueError:
             raise ValueError(f"Invalid date format '{date_str}'. Expected YYYY-MM-DD.")
-    yesterday_dt = datetime.now() - timedelta(days=1)
-    return yesterday_dt.strftime('%Y-%m-%d')
+    from utils.slate_date import previous_slate_date
+    return previous_slate_date()
 
 
 def validate_results_file(filepath: Optional[str], target_date: str) -> Tuple[bool, str]:

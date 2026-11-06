@@ -27,6 +27,7 @@ import sqlite3
 import pandas as pd
 import numpy as np
 from datetime import datetime, date
+from utils.slate_date import slate_date
 
 MODEL_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RETRO_DB    = os.path.join(MODEL_DIR, 'database', 'retrospective_db.db')
@@ -282,7 +283,7 @@ def main():
 
     start_d  = args.start
     end_d    = args.end
-    date_str = datetime.now().strftime('%Y-%m-%d')
+    date_str = slate_date()
     out_path = args.out if args.out else os.path.join(LOGS_DIR, f'retro_live_alignment_{date_str}.txt')
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 

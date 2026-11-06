@@ -54,6 +54,8 @@ def _get_conn() -> sqlite3.Connection:
         init_db()
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    from utils.slate_date import register_sqlite
+    register_sqlite(conn)   # SQL slate_date(): rolling windows count from the slate date
     conn.execute("PRAGMA journal_mode=WAL")
     return conn
 
@@ -169,9 +171,10 @@ def _enrich_from_predicts_tex(records: list[dict], tex_path: str) -> list[dict]:
 
 def _enrich_clv(records: list[dict], game_date: str) -> list[dict]:
     """Enrich records with CLV (Closing Line Value) from ESPN open/close odds data."""
-    # We only fetch live odds if it's today's run
-    today = datetime.now().strftime("%Y-%m-%d")
-    if game_date != today:
+    # We only fetch live odds if it's today's run (today = US-Eastern slate date,
+    # the same date the live run stamps on its picks; the local date drifted after midnight)
+    from utils.slate_date import slate_date
+    if game_date != slate_date():
         return records
 
     try:
@@ -578,7 +581,7 @@ def query_summary(days: int = None, bet_type: str = None, stat_category: str = N
         where_clauses.append("(dp.line != 0.0 AND dp.source_mode != 'synthetic_circular')")
 
     if days is not None:
-        where_clauses.append("dp.date >= date('now', ?)")
+        where_clauses.append("dp.date >= date(slate_date(), ?)")
         params.append(f'-{days} days')
     if bet_type:
         where_clauses.append("dp.bet_type = ?")

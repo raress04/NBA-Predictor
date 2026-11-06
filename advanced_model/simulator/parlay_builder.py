@@ -13,8 +13,8 @@ from utils.bias import get_tiered_bias
 import json
 import os
 import logging
-from datetime import datetime
 from ml.inference import apply_ml_corrections
+from utils.slate_date import slate_date
 
 # Configure logging for bias corrections
 LOGS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
@@ -511,10 +511,15 @@ def build_parlays(
     all_score_distributions: Dict,
     all_historical_rates: Dict = None,
     all_player_minutes: Dict = None,
+    game_date: str = None,
 ) -> dict:
     """
     Main parlay construction function.
-    
+
+    game_date: slate date 'YYYY-MM-DD' used for the ML layer and persisted parlays.
+        Pass the caller's slate date (live_ingestion.CURRENT_GAME_DATE). If omitted,
+        the US-Eastern date of now (utils.slate_date) — never the local date.
+
     Args:
         all_sim_results: List of per-game sim summaries (from live_scraper)
             Each: {'home_team': str, 'away_team': str, 'avg_home': float, 'avg_away': float, ...}
@@ -531,6 +536,10 @@ def build_parlays(
             'parlay_4':   [list of pick dicts],  # Best 4 picks (3/4 system)
         }
     """
+    # 2026-11-06 (handoff "Prevention"): the ML layer and persist_parlay() used the
+    # local clock's date, which labelled late-night runs from Europe with the next day.
+    game_date = game_date or slate_date()
+
     all_picks = []
     shadow_picks = []
 
@@ -951,7 +960,7 @@ def build_parlays(
                         continue
 
                     # ── Phase 8: ML Layer (ML.5) ──────────────────────────────
-                    game_date = datetime.now().strftime("%Y-%m-%d")
+                    # game_date = slate date (set at the top of build_parlays)
                     p_team = all_player_minutes.get(player_name, {}).get('team')
                     is_home_for_ml = (p_team == home_name)
                     opp_team_name = away_name if is_home_for_ml else home_name
@@ -1088,8 +1097,7 @@ def build_parlays(
     if len(parlay_system) < 4:
         parlay_system = all_picks[:4]
 
-    game_date = datetime.now().strftime('%Y-%m-%d')
-    parlay_ids = {}
+    parlay_ids = {}   # persisted under the slate date (game_date), not the local date
     for label, legs in [('parlay_2_3', parlay_short[:3]), ('parlay_4', parlay_system[:4])]:
         if legs:
             pid = persist_parlay(legs, game_date)

@@ -5,14 +5,20 @@ export PYTHONIOENCODING=utf-8
 cd "$(dirname "$0")/.."
 export PYTHONPATH=$PYTHONPATH:$(pwd)/..:$(pwd)
 
+# ── Dates: one rule for the whole run (utils/slate_date.py) ───
+# SLATE_DATE = US-Eastern date of this run = the date live_ingestion stamps on its picks.
+# Nightly logs are named and filed by it too, so a run after local midnight stays with its slate.
+SLATE_DATE=$(python3 -m utils.slate_date)
+DATE="${SLATE_DATE}"
+MONTH=$(date -d "${SLATE_DATE}" +%B | tr '[:upper:]' '[:lower:]')
+
 # ── Log directory structure ──────────────────────────────────
-MONTH=$(date +%B | tr '[:upper:]' '[:lower:]')
 LOG_BASE="logs/${MONTH}"
 mkdir -p "${LOG_BASE}/daily_metrics"
 mkdir -p "${LOG_BASE}/monitoring"
 mkdir -p "${LOG_BASE}/retro_live_alignment"
 mkdir -p "${LOG_BASE}/odds_coverage_audit"
-DATE=$(date +%Y-%m-%d)
+mkdir -p "${LOG_BASE}/date_audit"
 
 
 echo "========================================="
@@ -48,7 +54,7 @@ SELECT
     ROUND(AVG(ABS(po.bookmaker_line - po.projected_value)), 2) AS mae,
     COUNT(*) AS n
 FROM projection_outcomes po
-WHERE po.game_date = date('now')
+WHERE po.game_date = '${SLATE_DATE}'
   AND po.bookmaker_line IS NOT NULL
 GROUP BY po.category;
 " | awk -F'|' 'BEGIN {
@@ -79,5 +85,14 @@ python3 -m ml.daily_metrics   --out "${LOG_BASE}/daily_metrics/daily_metrics_${D
 python3 -m ml.monitoring       --out "${LOG_BASE}/monitoring/monitoring_${DATE}.txt"
 python3 -m ml.compare_retro_live --out "${LOG_BASE}/retro_live_alignment/retro_live_alignment_${DATE}.txt"
 python3 -m scripts.audit_odds          --out "${LOG_BASE}/odds_coverage_audit/odds_coverage_audit_${DATE}.txt"
+
+# Date-consistency check (read-only; never fails the pipeline). See Plans/CRITICAL_BUGS_FOUND_06.11.md §15.
+DATE_AUDIT="${LOG_BASE}/date_audit/date_audit_${DATE}.txt"
+if python3 scripts/audit_dates.py . > "${DATE_AUDIT}" 2>&1; then
+    grep -E "^Summary by status|flagged" "${DATE_AUDIT}" | grep -v " 0 flagged" || true
+    echo "[Date audit] Full report: ${DATE_AUDIT}"
+else
+    echo "⚠️  Date audit failed to run — see ${DATE_AUDIT}"
+fi
 echo "✅ All logs generated in ${LOG_BASE}"
 

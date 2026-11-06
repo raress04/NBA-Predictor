@@ -12,6 +12,7 @@ import sqlite3
 import os
 import sys
 from datetime import datetime, timedelta
+from utils.slate_date import slate_date, register_sqlite
 
 import pandas as pd
 
@@ -30,7 +31,7 @@ def compute_calibration_curve(category: str, direction: str, conn) -> list | Non
         FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
         WHERE dp.stat_category = ? AND dp.direction = ?
-          AND dp.date >= date('now', '-90 days')
+          AND dp.date >= date(slate_date(), '-90 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
     """
@@ -64,7 +65,7 @@ def compute_brier_score(category: str, direction: str, conn) -> float | None:
         FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
         WHERE dp.stat_category = ? AND dp.direction = ?
-          AND dp.date >= date('now', '-90 days')
+          AND dp.date >= date(slate_date(), '-90 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
     """
@@ -86,7 +87,7 @@ def compute_clv_stats(conn) -> list:
                COUNT(*) as n
         FROM daily_picks
         WHERE clv IS NOT NULL
-          AND date >= date('now', '-30 days')
+          AND date >= date(slate_date(), '-30 days')
         GROUP BY stat_category, direction
         HAVING COUNT(*) >= 10
     """
@@ -101,7 +102,7 @@ def check_calibration_readiness(conn) -> list:
         SELECT dp.stat_category, dp.direction, COUNT(*) as n
         FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
-        WHERE dp.date >= date('now', '-90 days')
+        WHERE dp.date >= date(slate_date(), '-90 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
         GROUP BY dp.stat_category, dp.direction
@@ -131,7 +132,7 @@ def check_kelly_criteria(conn) -> dict:
     cats = conn.execute("""
         SELECT DISTINCT stat_category, direction FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
-        WHERE dp.date >= date('now', '-90 days')
+        WHERE dp.date >= date(slate_date(), '-90 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
         GROUP BY stat_category, direction HAVING COUNT(*) >= 30
@@ -157,7 +158,7 @@ def check_kelly_criteria(conn) -> dict:
                SUM(CASE WHEN result='WIN' THEN 1 ELSE 0 END) as wins
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date('now', '-30 days')
+          AND game_date >= date(slate_date(), '-30 days')
     """).fetchone()
     parlay_n = parlay_row[0]
     parlay_wins = parlay_row[1] or 0
@@ -169,7 +170,7 @@ def check_kelly_criteria(conn) -> dict:
         SELECT dp.stat_category, dp.direction, ROUND(AVG(pr.is_win)*100,1) as wr
         FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
-        WHERE dp.date >= date('now', '-30 days')
+        WHERE dp.date >= date(slate_date(), '-30 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
         GROUP BY dp.stat_category, dp.direction
@@ -204,10 +205,11 @@ def check_kelly_criteria(conn) -> dict:
 
 def generate_monitoring_report(date_str: str = None) -> str:
     if date_str is None:
-        date_str = datetime.now().strftime('%Y-%m-%d')
+        date_str = slate_date()
 
     conn = sqlite3.connect(TRACKER_DB)
     conn.row_factory = sqlite3.Row
+    register_sqlite(conn)   # SQL slate_date(): windows count from the US-Eastern slate date
     lines = []
     sep = '=' * 55
 
@@ -221,7 +223,7 @@ def generate_monitoring_report(date_str: str = None) -> str:
                SUM(CASE WHEN pr.pick_id IS NOT NULL THEN 1 ELSE 0 END) as resolved
         FROM daily_picks dp
         LEFT JOIN pick_results pr ON dp.id = pr.pick_id
-        WHERE dp.date >= date('now', '-30 days')
+        WHERE dp.date >= date(slate_date(), '-30 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
     """).fetchone()
@@ -238,7 +240,7 @@ def generate_monitoring_report(date_str: str = None) -> str:
         SELECT dp.stat_category, dp.direction, COUNT(*) as n, ROUND(AVG(pr.is_win)*100,1) as wr
         FROM daily_picks dp
         JOIN pick_results pr ON dp.id = pr.pick_id
-        WHERE dp.date >= date('now', '-30 days')
+        WHERE dp.date >= date(slate_date(), '-30 days')
           AND dp.source_file NOT LIKE 'bulk_backtest%'
           AND dp.source_file NOT LIKE 'synthetic%'
         GROUP BY dp.stat_category, dp.direction
@@ -259,7 +261,7 @@ def generate_monitoring_report(date_str: str = None) -> str:
                ROUND(SUM(roi) * 100, 2) as total_roi_pct
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date('now', '-30 days')
+          AND game_date >= date(slate_date(), '-30 days')
     """).fetchone()
 
     lines.append("\nPARLAY PERFORMANCE:")
@@ -337,6 +339,7 @@ def end_of_season_report(start_date: str, end_date: str, output_path: str) -> st
     """
     conn = sqlite3.connect(TRACKER_DB)
     conn.row_factory = sqlite3.Row
+    register_sqlite(conn)   # SQL slate_date(): windows count from the US-Eastern slate date
 
     sep   = '=' * 62
     lines = []
@@ -518,7 +521,7 @@ def main():
         print(report.encode('ascii', 'replace').decode('ascii'))
 
     if not args.no_save:
-        date_str = args.date or datetime.now().strftime('%Y-%m-%d')
+        date_str = args.date or slate_date()
         out_path = args.out if args.out else os.path.join(LOGS_DIR, f'monitoring_{date_str}.txt')
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         with open(out_path, 'w', encoding='utf-8') as f:

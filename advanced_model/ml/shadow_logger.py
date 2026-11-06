@@ -15,7 +15,7 @@ import os
 import json
 import sqlite3
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timezone
 
 _DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                         'database', 'bet_tracker.db')
@@ -212,7 +212,8 @@ def resolve_ml_shadow_picks(game_date: str, force: bool = False,
         """, (game_date,)).fetchall()
 
         updated = 0
-        resolved_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        # UTC, same as SQLite CURRENT_TIMESTAMP / datetime('now') used by the other tables
+        resolved_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
         for row_id, player, cat, direction, line in rows:
             actual = actual_for(index, player, cat)
             if actual is None or line is None:

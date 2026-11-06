@@ -15,6 +15,7 @@ import sqlite3
 import os
 import pandas as pd
 from datetime import datetime
+from utils.slate_date import slate_date, register_sqlite
 
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRACKER_DB = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
@@ -32,6 +33,7 @@ LIVE_FILTER = """
 def _get_conn() -> sqlite3.Connection:
     conn = sqlite3.connect(TRACKER_DB)
     conn.row_factory = sqlite3.Row
+    register_sqlite(conn)   # SQL slate_date(): windows count from the US-Eastern slate date
     return conn
 
 
@@ -166,7 +168,7 @@ def check_clv(conn) -> dict:
         FROM daily_picks dp
         WHERE {LIVE_FILTER}
           AND clv IS NOT NULL
-          AND dp.date >= date('now', '-30 days')
+          AND dp.date >= date(slate_date(), '-30 days')
     """).fetchone()
     avg_clv = row['avg_clv'] if row and row['avg_clv'] is not None else None
     n       = row['n'] if row else 0
@@ -197,7 +199,7 @@ def check_parlay_performance(conn) -> dict:
                SUM(CASE WHEN result = 'WIN' THEN 1 ELSE 0 END) AS wins
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date('now', '-30 days')
+          AND game_date >= date(slate_date(), '-30 days')
     """).fetchone()
     n    = row['n']    if row else 0
     wins = row['wins'] if row and row['wins'] else 0
@@ -229,7 +231,7 @@ def check_parlay_performance(conn) -> dict:
 
 def run_promotion_check(date_str: str = None) -> str:
     if date_str is None:
-        date_str = datetime.now().strftime('%Y-%m-%d')
+        date_str = slate_date()
 
     conn   = _get_conn()
     sep    = '=' * 60
@@ -269,7 +271,7 @@ def run_promotion_check(date_str: str = None) -> str:
 
 
 def main():
-    date_str = datetime.now().strftime('%Y-%m-%d')
+    date_str = slate_date()
     report   = run_promotion_check(date_str)
 
     log_path = os.path.join(LOGS_DIR, f'promotion_check_{date_str}.log')

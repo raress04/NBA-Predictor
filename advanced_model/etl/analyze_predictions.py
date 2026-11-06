@@ -2,6 +2,7 @@ import re
 import os
 import numpy as np
 import datetime
+from utils.slate_date import slate_date, previous_slate_date
 from collections import defaultdict
 
 import sqlite3
@@ -109,7 +110,7 @@ def get_month_folder(date_str):
         dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
         return dt.strftime("%B").lower()
     except:
-        return datetime.datetime.now().strftime("%B").lower()
+        return datetime.datetime.strptime(slate_date(), "%Y-%m-%d").strftime("%B").lower()
 
 def parse_predicts(filepath):
     """Parses predicts.txt for game projections and valuable props."""
@@ -284,7 +285,7 @@ def generate_evaluate(predicts_path=None, results_path=None, output_dir=None, wr
     if path_match:
         date_str = path_match.group(1)
     else:
-        date_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+        date_str = previous_slate_date()
 
     if not output_dir:
         mode = 'backtest' if 'backtest' in str(predicts_path).lower() else 'live'
@@ -339,7 +340,7 @@ def generate_evaluate(predicts_path=None, results_path=None, output_dir=None, wr
         if match:
             date_str = match.group(1)
         else:
-            date_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+            date_str = previous_slate_date()
         
         print(f"\n[+] Writing evaluated outcomes to DB for {date_str}...")
         write_db_results(date_str, props_results, medians_results, actual_games, actual_props)

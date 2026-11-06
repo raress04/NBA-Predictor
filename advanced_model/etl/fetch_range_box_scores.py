@@ -288,7 +288,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     if not args.start:
-        yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+        from utils.slate_date import previous_slate_date   # US-Eastern 'yesterday'
+        yesterday = previous_slate_date()
         sync_range(yesterday, yesterday)
     elif not args.end:
         sync_range(args.start, args.start)

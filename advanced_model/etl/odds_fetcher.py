@@ -14,7 +14,17 @@ from typing import Dict, List, Optional, Tuple
 CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.cache')
 CACHE_TTL = 7200  # 120 minutes
 
-def _get_cache_path(name: str) -> str:
+def _get_cache_path(name: str, per_slate: bool = False) -> str:
+    """per_slate=True puts the US-Eastern slate date in the file name, so a run after
+    US-Eastern midnight never reuses the previous slate's event list / odds (2026-11-06)."""
+    if per_slate:
+        try:
+            from utils.slate_date import slate_date_compact
+        except ImportError:  # imported without advanced_model/ on sys.path
+            import sys
+            sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            from utils.slate_date import slate_date_compact
+        name = f'{name}_{slate_date_compact()}'
     return os.path.join(CACHE_DIR, f'odds_api_{name}.json')
 
 def _load_cache(path: str, force: bool = False) -> dict:
@@ -99,7 +109,7 @@ def fetch_event_ids(api_key: str = None) -> Dict:
         event_id: {'home_team': str, 'away_team': str}
     }
     """
-    cache_path = _get_cache_path('events')
+    cache_path = _get_cache_path('events', per_slate=True)
     cached = _load_cache(cache_path)
     if cached is not None:
         return cached
@@ -159,7 +169,7 @@ def fetch_game_odds(api_key: str = None, regions: str = 'uk,eu') -> Dict:
         }
     }
     """
-    cache_path = _get_cache_path('game_odds')
+    cache_path = _get_cache_path('game_odds', per_slate=True)
     cached = _load_cache(cache_path)
     if cached is not None:
         return cached

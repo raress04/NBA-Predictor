@@ -387,10 +387,14 @@ print(f'  bet_tracker.game_results — {dict(grc)}')
 
 # ── 5. run-time vs stored slate date ─────────────────────────────────────────
 print('\n## 5. Run time (created_at, UTC -> US-Eastern date) vs stored game date\n')
+# US-Eastern date with DST (was a fixed -5 h, wrong Mar-Nov) — same rule as utils/slate_date.py
+sys.path.insert(0, ROOT)
+from utils.slate_date import register_sqlite
+register_sqlite(bet)
 for t in ('shadow_picks', 'ml_shadow_picks'):
-    r = bet.execute(f"""SELECT game_date, date(created_at,'-5 hours'), COUNT(*) FROM {t}
+    r = bet.execute(f"""SELECT game_date, eastern_date(created_at), COUNT(*) FROM {t}
                         WHERE created_at IS NOT NULL AND game_date >= '2026-10-01'
-                        GROUP BY 1,2 HAVING game_date != date(created_at,'-5 hours')""").fetchall()
+                        GROUP BY 1,2 HAVING game_date != eastern_date(created_at)""").fetchall()
     print(f'  {t}: batches where stored date != run ET date: {r or "none"}')
 
 # ── 6. date-format consistency in bet_tracker ────────────────────────────────

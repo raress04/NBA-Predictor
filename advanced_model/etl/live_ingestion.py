@@ -13,20 +13,27 @@ from typing import List
 # Capture exact script start time at process launch
 SCRIPT_START_TIME = datetime.now()
 
-def get_effective_date(dt: datetime = None, safety_hours: float = 2.5) -> datetime:
-    """
-    Returns effective datetime shifted back by safety_hours (default: 2.5 hours).
-    Ensures runs crossing or starting up to 2:00-2:30 AM before games conclude
-    are cataloged for the current night's slate rather than the following calendar day.
-    """
-    base_dt = dt or SCRIPT_START_TIME
-    return base_dt - timedelta(hours=safety_hours)
-
-CURRENT_GAME_DATE = get_effective_date().strftime('%Y-%m-%d')
-
 # Ensure the parent directory is in the path
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(MODEL_DIR)
+
+from utils.slate_date import to_eastern
+
+
+def get_effective_date(dt: datetime = None) -> datetime:
+    """
+    Slate datetime of a run = the run time in US-Eastern time (America/New_York).
+
+    2026-11-06 (CRITICAL_BUGS_FOUND_06.11, handoff "Prevention"): this used to be
+    *local time - 2.5 h*, while the games themselves come from ESPN for the
+    US-Eastern date (espn_odds.fetch_espn_odds). From Europe the two rules
+    disagree, which mislabelled slates by a day. Both now use utils.slate_date,
+    so the label always matches the games that were simulated.
+    A naive `dt` is taken as this machine's local time.
+    """
+    return to_eastern(dt or SCRIPT_START_TIME)
+
+CURRENT_GAME_DATE = get_effective_date().strftime('%Y-%m-%d')
 
 from nba_api.live.nba.endpoints import scoreboard
 from simulator.matrix_builder import get_player_stats_matrix, get_team_pace, get_team_efficiency, get_team_rebound_efficiency, get_player_historical_hit_rates
@@ -1598,6 +1605,7 @@ def generate_todays_projections(target_date: str = None):
                 all_score_distributions=all_score_distributions,
                 all_historical_rates=all_historical_rates,
                 all_player_minutes=all_player_minutes,
+                game_date=CURRENT_GAME_DATE,
             )
 
             # Ingest shadow picks for research (Gate 4.C)
@@ -1792,8 +1800,8 @@ def main():
         date_str = args.date
     else:
         exec_mode = args.mode or 'live'
-        # Caught at script start, minus 2 hours safety margin for post-midnight / 2 AM runs
-        date_str = get_effective_date(SCRIPT_START_TIME, safety_hours=2.5).strftime('%Y-%m-%d')
+        # Slate date = US-Eastern date at script start (same rule ESPN uses to pick the games)
+        date_str = get_effective_date(SCRIPT_START_TIME).strftime('%Y-%m-%d')
 
     CURRENT_GAME_DATE = date_str
 
@@ -1803,7 +1811,7 @@ def main():
         
     sys.stdout = TeeLogger(log_path)
     print(f"[+] Execution mode: {exec_mode.upper()} | Date: {date_str}")
-    print(f"[+] Script started: {SCRIPT_START_TIME.strftime('%Y-%m-%d %H:%M:%S')} | Effective slate date (-2h): {date_str}")
+    print(f"[+] Script started: {SCRIPT_START_TIME.strftime('%Y-%m-%d %H:%M:%S')} | Slate date (US-Eastern): {date_str}")
     print(f"[+] Routing log to: {log_path}")
 
     if exec_mode == 'backtest':

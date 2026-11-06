@@ -465,8 +465,9 @@ def main():
             dates.append(cur.strftime('%Y-%m-%d'))
             cur += timedelta(days=1)
     else:
-        # Default: yesterday
-        yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+        # Default: the previous US-Eastern slate
+        from utils.slate_date import previous_slate_date
+        yesterday = previous_slate_date()
         dates = [yesterday]
 
     for d in dates:

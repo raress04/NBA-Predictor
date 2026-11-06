@@ -2,11 +2,12 @@ import sqlite3
 import os
 import pandas as pd
 from datetime import datetime
+from utils.slate_date import slate_date
 
 DB_PATH = 'database/bet_tracker.db'
 LOG_DIR = 'logs'
 os.makedirs(LOG_DIR, exist_ok=True)
-log_file = os.path.join(LOG_DIR, f"odds_coverage_audit_{datetime.now().strftime('%Y-%m-%d')}.txt")
+log_file = os.path.join(LOG_DIR, f"odds_coverage_audit_{slate_date()}.txt")
 
 def audit_coverage(out_path=None):
     if not os.path.exists(DB_PATH):
@@ -51,7 +52,7 @@ def audit_coverage(out_path=None):
 
     final_report = "\n".join(report)
     
-    target_out = out_path if out_path else os.path.join(LOG_DIR, f"odds_coverage_audit_{datetime.now().strftime('%Y-%m-%d')}.txt")
+    target_out = out_path if out_path else os.path.join(LOG_DIR, f"odds_coverage_audit_{slate_date()}.txt")
     os.makedirs(os.path.dirname(target_out), exist_ok=True)
     with open(target_out, 'w') as f:
         f.write(final_report)

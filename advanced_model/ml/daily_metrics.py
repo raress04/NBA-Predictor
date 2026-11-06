@@ -23,6 +23,7 @@ import json
 import sqlite3
 import argparse
 from datetime import datetime, timedelta
+from utils.slate_date import slate_date
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -178,7 +179,7 @@ def compute_daily_metrics(as_of: str = None) -> dict:
         }
     """
     if as_of is None:
-        as_of = datetime.now().strftime('%Y-%m-%d')
+        as_of = slate_date()
 
     conn = sqlite3.connect(TRACKER_DB)
     conn.row_factory = sqlite3.Row
@@ -358,7 +359,7 @@ def main():
                         help='Output raw JSON instead of formatted report')
     args = parser.parse_args()
 
-    as_of   = args.date or datetime.now().strftime('%Y-%m-%d')
+    as_of   = args.date or slate_date()
     metrics = compute_daily_metrics(as_of=as_of)
     report  = format_report(metrics)
 

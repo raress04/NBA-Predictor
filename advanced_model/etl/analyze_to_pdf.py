@@ -20,6 +20,16 @@ import subprocess
 from datetime import datetime, date
 from typing import List, Dict, Optional, Tuple
 
+
+def _slate_date() -> str:
+    """US-Eastern slate date (utils.slate_date); this file also runs as a plain script."""
+    try:
+        from utils.slate_date import slate_date
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from utils.slate_date import slate_date
+    return slate_date()
+
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -116,7 +126,7 @@ class AnalyzeParser:
             if m:
                 self.date_str = m.group(1)
         if not self.date_str:
-            self.date_str = date.today().strftime('%Y-%m-%d')
+            self.date_str = _slate_date()
 
         try:
             dt = datetime.strptime(self.date_str, '%Y-%m-%d')
