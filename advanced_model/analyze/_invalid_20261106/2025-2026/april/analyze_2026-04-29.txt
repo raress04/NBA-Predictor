@@ -1,0 +1,11 @@
+============================================================
+ 🎯 AUTOMATED PREDICTION ANALYSIS 🎯
+============================================================
+
+[-] No game result data matched for ml.
+
+Total Props Evaluated: 0
+Wins: 0 | Losses: 0 | Win Rate: 0.0%
+
+PLAYER                 | CONF | BET             | ACTUAL   | DIFF    | DIFF %   | STATUS
+----------------------------------------------------------------------------------------

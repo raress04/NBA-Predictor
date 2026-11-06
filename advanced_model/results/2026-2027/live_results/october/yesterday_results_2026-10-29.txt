@@ -1,138 +1,72 @@
-MATCHUP: CLE vs. ATL    222 - 226
-Onyeka Okongwu         | 29 PTS, 12 REB,  2 AST
+MATCHUP: CLE vs. ATL    111 - 113
 Onyeka Okongwu         | 29 PTS, 12 REB,  2 AST
 Nickeil Alexander-Walker | 25 PTS, 3 REB,  1 AST
-Nickeil Alexander-Walker | 25 PTS, 3 REB,  1 AST
-James Harden           | 24 PTS, 5 REB,  4 AST
 James Harden           | 24 PTS, 5 REB,  4 AST
 Donovan Mitchell       | 22 PTS, 3 REB,  3 AST
-Donovan Mitchell       | 22 PTS, 3 REB,  3 AST
 Aaron Wiggins          | 20 PTS, 7 REB,  3 AST
-Aaron Wiggins          | 20 PTS, 7 REB,  3 AST
-Jalen Johnson          | 16 PTS, 8 REB,  7 AST
-Sam Merrill            | 16 PTS, 2 REB,  3 AST
 Sam Merrill            | 16 PTS, 2 REB,  3 AST
 Jalen Johnson          | 16 PTS, 8 REB,  7 AST
 Jarrett Allen          | 14 PTS, 8 REB,  1 AST
-Jarrett Allen          | 14 PTS, 8 REB,  1 AST
-Evan Mobley            | 11 PTS, 4 REB,  7 AST
 Evan Mobley            | 11 PTS, 4 REB,  7 AST
 Mario Hezonja          | 10 PTS, 6 REB,  2 AST
-Mario Hezonja          | 10 PTS, 6 REB,  2 AST
 Tyrese Proctor         | 7 PTS, 6 REB,  2 AST
-Tyrese Proctor         | 7 PTS, 6 REB,  2 AST
-Luguentz Dort          | 6 PTS, 3 REB,  2 AST
-Jock Landale           | 6 PTS, 10 REB,  1 AST
 Jock Landale           | 6 PTS, 10 REB,  1 AST
 Luguentz Dort          | 6 PTS, 3 REB,  2 AST
 CJ McCollum            | 5 PTS, 3 REB,  8 AST
-CJ McCollum            | 5 PTS, 3 REB,  8 AST
-Dyson Daniels          | 4 PTS, 6 REB,  5 AST
-Peyton Watson          | 4 PTS, 4 REB,  3 AST
 Dyson Daniels          | 4 PTS, 6 REB,  5 AST
 Peyton Watson          | 4 PTS, 4 REB,  3 AST
 Jaylon Tyson           | 3 PTS, 6 REB,  1 AST
-Jaylon Tyson           | 3 PTS, 6 REB,  1 AST
 Kingston Flemings      | 2 PTS, 1 REB,  5 AST
-Kingston Flemings      | 2 PTS, 1 REB,  5 AST
-Craig Porter Jr.       | 0 PTS, 1 REB,  0 AST
 Craig Porter Jr.       | 0 PTS, 1 REB,  0 AST
 
-MATCHUP: SAC vs. NOP    240 - 264
+MATCHUP: SAC vs. NOP    120 - 132
 Darius Acuff Jr.       | 34 PTS, 6 REB,  14 AST
-Darius Acuff Jr.       | 34 PTS, 6 REB,  14 AST
-Precious Achiuwa       | 24 PTS, 9 REB,  2 AST
-De'Andre Hunter        | 24 PTS, 5 REB,  1 AST
 De'Andre Hunter        | 24 PTS, 5 REB,  1 AST
 Precious Achiuwa       | 24 PTS, 9 REB,  2 AST
-Jeremiah Fears         | 22 PTS, 8 REB,  13 AST
-Zion Williamson        | 22 PTS, 6 REB,  2 AST
 Zion Williamson        | 22 PTS, 6 REB,  2 AST
 Jeremiah Fears         | 22 PTS, 8 REB,  13 AST
 Zach LaVine            | 21 PTS, 3 REB,  5 AST
-Zach LaVine            | 21 PTS, 3 REB,  5 AST
-Trey Murphy III        | 19 PTS, 5 REB,  3 AST
 Trey Murphy III        | 19 PTS, 5 REB,  3 AST
 Herbert Jones          | 16 PTS, 4 REB,  1 AST
-Herbert Jones          | 16 PTS, 4 REB,  1 AST
-Karlo Matković         | 12 PTS, 4 REB,  1 AST
 Karlo Matković         | 12 PTS, 4 REB,  1 AST
 Saddiq Bey             | 10 PTS, 4 REB,  3 AST
 Bennedict Mathurin     | 10 PTS, 3 REB,  2 AST
-Bennedict Mathurin     | 10 PTS, 3 REB,  2 AST
-Saddiq Bey             | 10 PTS, 4 REB,  3 AST
 Domantas Sabonis       | 9 PTS, 15 REB,  7 AST
 Derik Queen            | 9 PTS, 2 REB,  3 AST
-Derik Queen            | 9 PTS, 2 REB,  3 AST
-Domantas Sabonis       | 9 PTS, 15 REB,  7 AST
-Trendon Watford        | 8 PTS, 1 REB,  2 AST
 Trendon Watford        | 8 PTS, 1 REB,  2 AST
 Alex Karaban           | 6 PTS, 0 REB,  0 AST
-Alex Karaban           | 6 PTS, 0 REB,  0 AST
 Bryce McGowens         | 4 PTS, 1 REB,  2 AST
-Bryce McGowens         | 4 PTS, 1 REB,  2 AST
-Malik Monk             | 2 PTS, 1 REB,  1 AST
 Malik Monk             | 2 PTS, 1 REB,  1 AST
 Nique Clifford         | 0 PTS, 0 REB,  1 AST
 Emanuel Sharp          | 0 PTS, 1 REB,  0 AST
-Emanuel Sharp          | 0 PTS, 1 REB,  0 AST
-Nique Clifford         | 0 PTS, 0 REB,  1 AST
 
-MATCHUP: MEM vs. POR    248 - 206
-Deni Avdija            | 24 PTS, 9 REB,  7 AST
+MATCHUP: MEM vs. POR    124 - 103
 Deni Avdija            | 24 PTS, 9 REB,  7 AST
 Isaiah Stewart         | 18 PTS, 3 REB,  0 AST
 Cameron Boozer         | 18 PTS, 12 REB,  12 AST
-Cameron Boozer         | 18 PTS, 12 REB,  12 AST
-Isaiah Stewart         | 18 PTS, 3 REB,  0 AST
-Cedric Coward          | 17 PTS, 7 REB,  4 AST
 Cedric Coward          | 17 PTS, 7 REB,  4 AST
 Ja Morant              | 14 PTS, 2 REB,  3 AST
-Ja Morant              | 14 PTS, 2 REB,  3 AST
-Zach Edey              | 13 PTS, 7 REB,  0 AST
 Toumani Camara         | 13 PTS, 2 REB,  1 AST
 Zach Edey              | 13 PTS, 7 REB,  0 AST
-Toumani Camara         | 13 PTS, 2 REB,  1 AST
-GG Jackson             | 12 PTS, 7 REB,  2 AST
 GG Jackson             | 12 PTS, 7 REB,  2 AST
 Donovan Clingan        | 11 PTS, 8 REB,  1 AST
-Donovan Clingan        | 11 PTS, 8 REB,  1 AST
-Jaylen Wells           | 10 PTS, 1 REB,  0 AST
 Ty Jerome              | 10 PTS, 2 REB,  3 AST
 Quinten Post           | 10 PTS, 4 REB,  0 AST
 Jaylen Wells           | 10 PTS, 1 REB,  0 AST
-Ty Jerome              | 10 PTS, 2 REB,  3 AST
-Quinten Post           | 10 PTS, 4 REB,  0 AST
 Damian Lillard         | 9 PTS, 2 REB,  2 AST
 Scoot Henderson        | 9 PTS, 4 REB,  0 AST
-Scoot Henderson        | 9 PTS, 4 REB,  0 AST
-Damian Lillard         | 9 PTS, 2 REB,  2 AST
-Cam Spencer            | 8 PTS, 6 REB,  8 AST
 Cam Spencer            | 8 PTS, 6 REB,  8 AST
 Jrue Holiday           | 6 PTS, 6 REB,  4 AST
-Jrue Holiday           | 6 PTS, 6 REB,  4 AST
 John Tonje             | 5 PTS, 0 REB,  0 AST
-John Tonje             | 5 PTS, 0 REB,  0 AST
-Olivier-Maxence Prosper | 4 PTS, 1 REB,  0 AST
-Sidy Cissoko           | 4 PTS, 6 REB,  2 AST
 Sidy Cissoko           | 4 PTS, 6 REB,  2 AST
 Olivier-Maxence Prosper | 4 PTS, 1 REB,  0 AST
 Yang Hansen            | 3 PTS, 2 REB,  1 AST
-Yang Hansen            | 3 PTS, 2 REB,  1 AST
-Scotty Pippen Jr.      | 2 PTS, 0 REB,  0 AST
-Vít Krejčí             | 2 PTS, 0 REB,  1 AST
-Branden Carlson        | 2 PTS, 2 REB,  1 AST
 Jerami Grant           | 2 PTS, 1 REB,  3 AST
-Jerami Grant           | 2 PTS, 1 REB,  3 AST
-Branden Carlson        | 2 PTS, 2 REB,  1 AST
 Vít Krejčí             | 2 PTS, 0 REB,  1 AST
 Scotty Pippen Jr.      | 2 PTS, 0 REB,  0 AST
-Micah Potter           | 1 PTS, 2 REB,  0 AST
+Branden Carlson        | 2 PTS, 2 REB,  1 AST
 Micah Potter           | 1 PTS, 2 REB,  0 AST
 Kris Murray            | 0 PTS, 1 REB,  0 AST
-Karim López            | 0 PTS, 1 REB,  0 AST
 Taylor Hendricks       | 0 PTS, 1 REB,  0 AST
-Taylor Hendricks       | 0 PTS, 1 REB,  0 AST
-Kris Murray            | 0 PTS, 1 REB,  0 AST
 Karim López            | 0 PTS, 1 REB,  0 AST
 

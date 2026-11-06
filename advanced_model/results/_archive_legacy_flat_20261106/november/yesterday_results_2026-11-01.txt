@@ -1,0 +1,107 @@
+--- RESULTS FOR 2026-11-01 ---
+
+==================================================
+MATCHUP: BOS @ ORL | 108 - 97
+==================================================
+Jayson Tatum              | 32 PTS,  4 REB,  7 AST
+Tristan da Silva          | 23 PTS, 10 REB,  2 AST
+Anthony Black             | 23 PTS,  8 REB,  3 AST
+Desmond Bane              | 19 PTS,  2 REB,  1 AST
+Paul George               | 17 PTS,  6 REB,  8 AST
+Franz Wagner              | 14 PTS,  6 REB, 12 AST
+Luka Garza                | 12 PTS,  6 REB,  4 AST
+Derrick White             | 12 PTS,  2 REB,  2 AST
+Baylor Scheierman         | 10 PTS,  2 REB,  1 AST
+Neemias Queta             |  8 PTS,  8 REB,  1 AST
+Payton Pritchard          |  7 PTS,  7 REB,  3 AST
+Wendell Carter Jr.        |  7 PTS, 10 REB,  0 AST
+Hugo González             |  7 PTS,  1 REB,  1 AST
+Jamal Cain                |  5 PTS,  1 REB,  1 AST
+Jase Richardson           |  4 PTS,  1 REB,  3 AST
+Sam Hauser                |  3 PTS,  2 REB,  0 AST
+Nikola Vučević            |  2 PTS,  4 REB,  2 AST
+Jordan Walsh              |  0 PTS,  3 REB,  2 AST
+Goga Bitadze              |  0 PTS,  1 REB,  0 AST
+
+==================================================
+MATCHUP: BKN @ IND | 98 - 90
+==================================================
+Michael Porter Jr.        | 23 PTS,  9 REB,  3 AST
+Andrew Nembhard           | 23 PTS,  3 REB,  4 AST
+Julius Randle             | 20 PTS,  5 REB,  6 AST
+Pascal Siakam             | 17 PTS,  5 REB,  5 AST
+Nolan Traore              | 16 PTS,  2 REB,  6 AST
+Day'Ron Sharpe            | 15 PTS, 13 REB,  4 AST
+Moritz Wagner             | 14 PTS,  6 REB,  0 AST
+Quenton Jackson           | 12 PTS,  3 REB,  2 AST
+Aaron Nesmith             | 11 PTS,  3 REB,  4 AST
+Kelly Oubre Jr.           | 11 PTS,  2 REB,  1 AST
+Noah Clowney              |  8 PTS,  3 REB,  0 AST
+Jarace Walker             |  6 PTS,  6 REB,  3 AST
+Larry Nance Jr.           |  4 PTS,  6 REB,  1 AST
+Jalen Slawson             |  3 PTS,  5 REB,  0 AST
+Kobe Brown                |  3 PTS,  1 REB,  1 AST
+Chaney Johnson            |  2 PTS,  2 REB,  0 AST
+Keon Ellis                |  0 PTS,  2 REB,  1 AST
+Jay Huff                  |  0 PTS,  3 REB,  0 AST
+Terance Mann              |  0 PTS,  1 REB,  1 AST
+Braden Smith              |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: GSW @ LAC | 124 - 112
+==================================================
+Yaxel Lendeborg           | 37 PTS,  4 REB,  6 AST
+Rui Hachimura             | 24 PTS,  7 REB,  0 AST
+De'Anthony Melton         | 21 PTS,  6 REB,  3 AST
+Brandin Podziemski        | 17 PTS,  8 REB,  8 AST
+Brandon Williams          | 17 PTS,  3 REB,  3 AST
+Kobe Sanders              | 16 PTS,  3 REB,  0 AST
+Darius Garland            | 15 PTS,  0 REB,  7 AST
+Kris Dunn                 | 12 PTS,  2 REB,  4 AST
+Nick Martinelli           | 10 PTS,  3 REB,  0 AST
+Al Horford                |  9 PTS,  5 REB,  2 AST
+Derrick Jones Jr.         |  9 PTS,  7 REB,  1 AST
+Brook Lopez               |  7 PTS,  2 REB,  0 AST
+Keaton Wagler             |  7 PTS,  4 REB,  4 AST
+Charles Bassey            |  6 PTS, 10 REB,  2 AST
+Isaiah Jackson            |  5 PTS,  8 REB,  2 AST
+Gary Payton II            |  5 PTS,  2 REB,  2 AST
+Gui Santos                |  4 PTS,  3 REB,  1 AST
+Will Richard              |  3 PTS,  0 REB,  3 AST
+Georges Niang             |  3 PTS,  1 REB,  2 AST
+Cam Christie              |  3 PTS,  1 REB,  0 AST
+Baba Miller               |  2 PTS,  2 REB,  1 AST
+Graham Ike                |  2 PTS,  2 REB,  0 AST
+Blake Wesley              |  2 PTS,  0 REB,  0 AST
+Jalen Pickett             |  0 PTS,  2 REB,  3 AST
+Gradey Dick               |  0 PTS,  1 REB,  0 AST
+LJ Cryer                  |  0 PTS,  0 REB,  0 AST
+
+==================================================
+MATCHUP: LAL @ TOR | 131 - 125
+==================================================
+Luka Dončić               | 45 PTS, 15 REB,  6 AST
+Scottie Barnes            | 29 PTS,  6 REB,  5 AST
+RJ Barrett                | 22 PTS, 10 REB,  5 AST
+Jamison Battle            | 20 PTS,  5 REB,  0 AST
+Austin Reaves             | 19 PTS,  3 REB,  4 AST
+Walker Kessler            | 16 PTS, 15 REB,  1 AST
+Collin Sexton             | 14 PTS,  3 REB,  3 AST
+Immanuel Quickley         | 12 PTS,  6 REB,  7 AST
+Sandro Mamukelashvili     | 11 PTS,  1 REB,  1 AST
+Ja'Kobe Walter            | 11 PTS,  4 REB,  2 AST
+Jamal Shead               |  9 PTS,  2 REB,  6 AST
+Jake LaRavia              |  8 PTS,  2 REB,  4 AST
+Quentin Grimes            |  7 PTS,  1 REB,  3 AST
+Matisse Thybulle          |  6 PTS,  2 REB,  3 AST
+Alijah Martin             |  5 PTS,  2 REB,  4 AST
+Trayce Jackson-Davis      |  5 PTS,  5 REB,  0 AST
+Collin Murray-Boyles      |  4 PTS,  3 REB,  1 AST
+Jarred Vanderbilt         |  4 PTS,  3 REB,  1 AST
+Jaden Bradley             |  3 PTS,  1 REB,  2 AST
+Allen Graves              |  3 PTS,  0 REB,  0 AST
+Kyle Anderson             |  2 PTS,  3 REB,  3 AST
+Jaden Hardy               |  1 PTS,  0 REB,  0 AST
+Cameron Carr              |  0 PTS,  0 REB,  0 AST
+Bronny James              |  0 PTS,  0 REB,  0 AST
+

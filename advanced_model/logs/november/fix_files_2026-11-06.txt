@@ -1,0 +1,106 @@
+
+[A] Live prediction files whose content belongs to another date
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-03.txt: run date 2026-03-04, games on target 0/10, on label 10
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-04.txt: run date 2026-03-05, games on target 0/6, on label 6
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-05.txt: run date 2026-03-06, games on target 0/4, on label 4
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-07.txt: run date 2026-03-09, games on target 0/6, on label 6
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-08.txt: run date 2026-03-09, games on target 0/10, on label 10
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-10.txt: run date 2026-03-12, games on target 0/11, on label 11
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-11.txt: run date 2026-03-12, games on target 0/6, on label 6
+  keep predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-16.txt: run date 2026-03-17, games on target 0/8, on label 8
+  MOVE predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-20.txt -> predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-19.txt   (run on 2026-04-19 (US Eastern); games played 2026-04-19)
+  MOVE predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-26.txt -> predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-25.txt   (run on 2026-04-25 (US Eastern); games played 2026-04-25)
+  MOVE predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-29.txt -> predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-28.txt   (run on 2026-04-28 (US Eastern); games played 2026-04-28)
+  MOVE predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-30.txt -> predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-29.txt   (run on 2026-04-29 (US Eastern); games played 2026-04-29)
+  MOVE predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-01.txt -> predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-30.txt   (run on 2026-04-30 (US Eastern); games played 2026-04-30)
+  MOVE predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-05.txt -> predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-04.txt   (run on 2026-05-04 (US Eastern); games played 2026-05-04)
+  MOVE predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-11.txt -> predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-10.txt   (run on 2026-05-10 (US Eastern); games played 2026-05-10)
+  keep predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-12.txt: run date 2026-05-11, games on target 0/2, on label 0
+  keep predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-13.txt: run date 2026-05-12, games on target 0/1, on label 0
+  MOVE predictions/2026-2027/live_predictions/october/predicts_2026-10-25.txt -> predictions/2026-2027/live_predictions/october/predicts_2026-10-24.txt   (run on 2026-10-24 (US Eastern); games played 2026-10-24)
+  MOVE predictions/2026-2027/live_predictions/october/predicts_report_2026-10-25.pdf -> predictions/_invalid_20261106/2026-2027/live_predictions/october/predicts_report_2026-10-25.pdf   (title says 2026-10-25; regenerated as predicts_report_2026-10-24.pdf)
+  keep predictions/2026-2027/live_predictions/october/predicts_2026-10-29.txt: run date 2026-10-30, games on target 0/3, on label 3
+
+[B] Results files
+  MOVE results/2026-2027/live_results/october/yesterday_results_2026-10-29.txt -> results/_invalid_20261106/2026-2027/live_results/october/yesterday_results_2026-10-29.txt   (built from duplicated box-score rows (players twice, scores doubled))
+  WRITE results/2026-2027/live_results/october/yesterday_results_2026-10-29.txt   (generated from de-duplicated box scores)
+  WRITE results/2026-2027/live_results/october/yesterday_results_2026-10-26.txt   (generated from de-duplicated box scores)
+  WRITE results/2026-2027/live_results/october/yesterday_results_2026-10-27.txt   (generated from de-duplicated box scores)
+  WRITE results/2026-2027/live_results/october/yesterday_results_2026-10-28.txt   (generated from de-duplicated box scores)
+  WRITE results/2026-2027/backtest_results/november/yesterday_results_2026-11-02.txt   (generated from de-duplicated box scores)
+  MOVE results/october -> results/_archive_legacy_flat_20261106/october   (legacy writer (fetch_range_box_scores) — season tree is canonical)
+  MOVE results/november -> results/_archive_legacy_flat_20261106/november   (legacy writer (fetch_range_box_scores) — season tree is canonical)
+  MOVE results/2025-2026/april/yesterday_results_2026-04-20.txt -> results/_invalid_20261106/2025-2026/april/yesterday_results_2026-04-20.txt   (players twice, scores doubled)
+  WRITE results/2025-2026/april/yesterday_results_2026-04-20.txt   (generated from de-duplicated box scores)
+  MOVE results/2025-2026/february/yesterday_results_2026-02-14.txt -> results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-14.txt   (no NBA games that day (All-Star break); file was a copy of Feb 1)
+  MOVE results/2025-2026/february/yesterday_results_2026-02-16.txt -> results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-16.txt   (no NBA games that day (All-Star break); file was a copy of Feb 1)
+  MOVE results/2025-2026/february/yesterday_results_2026-02-17.txt -> results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-17.txt   (no NBA games that day (All-Star break); file was a copy of Feb 1)
+  MOVE results/2025-2026/february/yesterday_results_2026-02-18.txt -> results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-18.txt   (no NBA games that day (All-Star break); file was a copy of Feb 1)
+  MOVE results/2025-2026/march/yesterday_results_2026-03-15.txt -> results/_invalid_20261106/2025-2026/march/yesterday_results_2026-03-15.txt   (contains the Mar 14 games; real Mar 15 games missing from nba_data.db (backfill, then regenerate))
+
+[C] Analyses graded against the wrong day
+  MOVE analyze/2025-2026/april/analyze_2026-04-20.txt -> analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-20.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2025-2026/april/analyze_2026-04-26.txt -> analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-26.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2025-2026/april/analyze_2026-04-29.txt -> analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-29.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2025-2026/april/analyze_2026-04-30.txt -> analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-30.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2025-2026/may/analyze_2026-05-01.txt -> analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-01.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2025-2026/may/analyze_2026-05-05.txt -> analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-05.txt   (predictions in it were for a different day than the results used)
+  MOVE analyze/2026-2027/live_predictions/october/analyze_report_2026-10-25.pdf -> analyze/_invalid_20261106/2026-2027/live_predictions/october/analyze_report_2026-10-25.pdf   (predictions in it were for a different day than the results used)
+
+[D] Duplicate folder
+  MOVE predictions/2025-2026/first_gen_prediction -> predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction   (95 files byte-identical to live_new_gen_prediction/)
+
+[A2] Re-compiling PDF for predictions/2026-2027/live_predictions/october/predicts_2026-10-24.txt
+  GENERATED predictions/2026-2027/live_predictions/october/predicts_report_2026-10-24.pdf   (recompiled from corrected txt)
+
+[C2] Regenerating live analyses (DB not written: write_db=False)
+[+] Running automated prediction ml.for 2026-10-24...
+    -> Output directory: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october
+    -> Running Game Accuracy Analysis.
+    -> Running Pick Analysis (47 valuable props).
+[+] Text report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-24.txt
+    -> Running Median Accuracy Analysis (134 player projections).
+[+] Text report appended at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-24.txt
+    [+] PDF compiled successfully: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-24.pdf
+    [+] Cleaned up auxiliary files (analyze_report_2026-10-24.aux, .log, .tex, .out)
+    [+] Removed raw text analysis file: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-24.txt
+[+] PDF report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-24.pdf
+  GENERATED analyze/2026-2027/live_predictions/october/analyze_report_2026-10-24.pdf   (analysis of live predictions vs same-day results)
+[+] Running automated prediction ml.for 2026-10-26...
+    -> Output directory: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october
+    -> Running Game Accuracy Analysis.
+    -> Running Pick Analysis (54 valuable props).
+[+] Text report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-26.txt
+    -> Running Median Accuracy Analysis (172 player projections).
+[+] Text report appended at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-26.txt
+    [+] PDF compiled successfully: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-26.pdf
+    [+] Cleaned up auxiliary files (analyze_report_2026-10-26.aux, .log, .tex, .out)
+    [+] Removed raw text analysis file: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-26.txt
+[+] PDF report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-26.pdf
+  GENERATED analyze/2026-2027/live_predictions/october/analyze_report_2026-10-26.pdf   (analysis of live predictions vs same-day results)
+[+] Running automated prediction ml.for 2026-10-27...
+    -> Output directory: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october
+    -> Running Game Accuracy Analysis.
+    -> Running Pick Analysis (24 valuable props).
+[+] Text report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-27.txt
+    -> Running Median Accuracy Analysis (77 player projections).
+[+] Text report appended at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-27.txt
+    [+] PDF compiled successfully: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-27.pdf
+    [+] Cleaned up auxiliary files (analyze_report_2026-10-27.aux, .log, .tex, .out)
+    [+] Removed raw text analysis file: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-27.txt
+[+] PDF report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-27.pdf
+  GENERATED analyze/2026-2027/live_predictions/october/analyze_report_2026-10-27.pdf   (analysis of live predictions vs same-day results)
+[+] Running automated prediction ml.for 2026-10-28...
+    -> Output directory: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october
+    -> Running Game Accuracy Analysis.
+    -> Running Pick Analysis (68 valuable props).
+[+] Text report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-28.txt
+    -> Running Median Accuracy Analysis (231 player projections).
+[+] Text report appended at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-28.txt
+    [+] PDF compiled successfully: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-28.pdf
+    [+] Cleaned up auxiliary files (analyze_report_2026-10-28.aux, .log, .tex, .out)
+    [+] Removed raw text analysis file: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_2026-10-28.txt
+[+] PDF report generated at: /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/am/analyze/2026-2027/live_predictions/october/analyze_report_2026-10-28.pdf
+  GENERATED analyze/2026-2027/live_predictions/october/analyze_report_2026-10-28.pdf   (analysis of live predictions vs same-day results)
+
+37 operations recorded in /sessions/rcw-014vcpq4b3hfqvvbymk19tsc/ops_apply.json

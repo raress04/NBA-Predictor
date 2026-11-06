@@ -1,0 +1,102 @@
+MATCHUP: BKN vs. BOS    124 - 125
+Jayson Tatum           | 40 PTS, 5 REB,  8 AST
+Michael Porter Jr.     | 27 PTS, 12 REB,  2 AST
+Julius Randle          | 24 PTS, 9 REB,  4 AST
+Paul George            | 20 PTS, 7 REB,  7 AST
+Mikel Brown Jr.        | 17 PTS, 5 REB,  5 AST
+Derrick White          | 16 PTS, 5 REB,  7 AST
+Moritz Wagner          | 15 PTS, 4 REB,  3 AST
+Jordan Walsh           | 15 PTS, 6 REB,  1 AST
+Nolan Traore           | 15 PTS, 1 REB,  3 AST
+Chaney Johnson         | 15 PTS, 3 REB,  2 AST
+Sam Hauser             | 11 PTS, 4 REB,  0 AST
+Mitchell Robinson      | 7 PTS, 5 REB,  0 AST
+Neemias Queta          | 7 PTS, 3 REB,  2 AST
+Payton Pritchard       | 4 PTS, 2 REB,  6 AST
+Day'Ron Sharpe         | 4 PTS, 6 REB,  0 AST
+Baylor Scheierman      | 3 PTS, 4 REB,  1 AST
+Noah Clowney           | 3 PTS, 4 REB,  1 AST
+Luka Garza             | 2 PTS, 4 REB,  0 AST
+Keon Ellis             | 2 PTS, 3 REB,  4 AST
+Egor Dëmin             | 2 PTS, 1 REB,  2 AST
+Josh Minott            | 0 PTS, 0 REB,  0 AST
+Hugo González          | 0 PTS, 2 REB,  0 AST
+
+MATCHUP: DET vs. NYK    97 - 111
+Karl-Anthony Towns     | 27 PTS, 20 REB,  3 AST
+Jalen Brunson          | 23 PTS, 1 REB,  7 AST
+Paul Reed              | 22 PTS, 9 REB,  3 AST
+Cade Cunningham        | 19 PTS, 9 REB,  8 AST
+OG Anunoby             | 13 PTS, 7 REB,  2 AST
+Landry Shamet          | 13 PTS, 2 REB,  3 AST
+Mikal Bridges          | 12 PTS, 3 REB,  4 AST
+Duncan Robinson        | 12 PTS, 0 REB,  2 AST
+Ausar Thompson         | 11 PTS, 6 REB,  2 AST
+Daniss Jenkins         | 11 PTS, 3 REB,  2 AST
+Andre Drummond         | 10 PTS, 8 REB,  1 AST
+Kevin Huerter          | 7 PTS, 1 REB,  0 AST
+Josh Hart              | 6 PTS, 4 REB,  4 AST
+Miles McBride          | 5 PTS, 1 REB,  1 AST
+Ronald Holland II      | 4 PTS, 3 REB,  2 AST
+Taurean Prince         | 3 PTS, 0 REB,  0 AST
+Javonte Green          | 3 PTS, 1 REB,  0 AST
+John Collins           | 2 PTS, 9 REB,  1 AST
+Tyler Kolek            | 2 PTS, 1 REB,  3 AST
+Chaz Lanier            | 2 PTS, 0 REB,  0 AST
+Tolu Smith             | 1 PTS, 4 REB,  0 AST
+James Wiseman          | 0 PTS, 1 REB,  0 AST
+Elijah Harkless        | 0 PTS, 0 REB,  0 AST
+Pacôme Dadiet          | 0 PTS, 1 REB,  0 AST
+Isaac Jones            | 0 PTS, 0 REB,  1 AST
+Mohamed Diawara        | 0 PTS, 0 REB,  0 AST
+Jaden Akins            | 0 PTS, 0 REB,  0 AST
+Ebuka Okorie           | 0 PTS, 0 REB,  2 AST
+
+MATCHUP: SAC vs. SAS    103 - 130
+Victor Wembanyama      | 29 PTS, 10 REB,  2 AST
+Julian Champagnie      | 26 PTS, 3 REB,  3 AST
+De'Andre Hunter        | 24 PTS, 6 REB,  2 AST
+Zach LaVine            | 22 PTS, 3 REB,  3 AST
+Domantas Sabonis       | 20 PTS, 14 REB,  8 AST
+Darius Acuff Jr.       | 19 PTS, 3 REB,  5 AST
+Stephon Castle         | 15 PTS, 5 REB,  5 AST
+Keldon Johnson         | 14 PTS, 4 REB,  0 AST
+Devin Vassell          | 14 PTS, 4 REB,  8 AST
+Dylan Harper           | 13 PTS, 6 REB,  6 AST
+De'Aaron Fox           | 11 PTS, 4 REB,  6 AST
+Emanuel Sharp          | 5 PTS, 0 REB,  2 AST
+Precious Achiuwa       | 4 PTS, 1 REB,  0 AST
+Tarris Reed Jr.        | 4 PTS, 5 REB,  0 AST
+Harrison Barnes        | 3 PTS, 0 REB,  0 AST
+Malik Monk             | 3 PTS, 2 REB,  6 AST
+Leaky Black            | 2 PTS, 1 REB,  1 AST
+Nique Clifford         | 2 PTS, 0 REB,  0 AST
+Jonathan Mogbo         | 2 PTS, 5 REB,  0 AST
+Carter Bryant          | 1 PTS, 1 REB,  2 AST
+Luke Kornet            | 0 PTS, 4 REB,  1 AST
+Jordan McLaughlin      | 0 PTS, 0 REB,  2 AST
+Daeqwon Plowden        | 0 PTS, 2 REB,  0 AST
+Alex Karaban           | 0 PTS, 1 REB,  1 AST
+
+MATCHUP: POR vs. LAL    136 - 129
+Luka Dončić            | 41 PTS, 5 REB,  9 AST
+Austin Reaves          | 26 PTS, 4 REB,  7 AST
+Ja Morant              | 23 PTS, 0 REB,  4 AST
+Deni Avdija            | 23 PTS, 4 REB,  9 AST
+Jrue Holiday           | 22 PTS, 4 REB,  3 AST
+Damian Lillard         | 21 PTS, 5 REB,  4 AST
+Sandro Mamukelashvili  | 17 PTS, 4 REB,  2 AST
+Robert Williams III    | 14 PTS, 10 REB,  1 AST
+Walker Kessler         | 13 PTS, 8 REB,  0 AST
+Toumani Camara         | 12 PTS, 1 REB,  1 AST
+Ziaire Williams        | 11 PTS, 2 REB,  4 AST
+Collin Sexton          | 9 PTS, 1 REB,  4 AST
+Donovan Clingan        | 9 PTS, 10 REB,  1 AST
+Sidy Cissoko           | 6 PTS, 2 REB,  4 AST
+Matisse Thybulle       | 5 PTS, 2 REB,  1 AST
+Jake LaRavia           | 5 PTS, 1 REB,  1 AST
+Vít Krejčí             | 4 PTS, 0 REB,  0 AST
+Quentin Grimes         | 2 PTS, 4 REB,  0 AST
+Scoot Henderson        | 2 PTS, 2 REB,  3 AST
+Kevon Looney           | 0 PTS, 0 REB,  0 AST
+

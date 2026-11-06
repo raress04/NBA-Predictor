@@ -157,45 +157,37 @@ def evaluate_ban_status():
 
 def save_daily_results_file(date_dt, logs_df):
     """
-    Generates the human-readable yesterday_results_YYYY-MM-DD.txt file.
+    Writes the canonical yesterday_results_YYYY-MM-DD.txt for a date.
+
+    2026-11-06 (CRITICAL_BUGS_FOUND_06.11, §15): this used to write a second,
+    differently formatted copy to the legacy flat folder results/<month>/, which
+    drifted from the season tree (results/<season>/<mode>_results/<month>/).
+    It now delegates to the single generator in etl/prepare_analyze.py, which
+    builds the file from the de-duplicated box scores already saved to nba_data.db.
+    The mode folder follows the prediction file that exists for the date.
     """
     iso_date = date_dt.strftime('%Y-%m-%d')
-    month_name = date_dt.strftime('%B').lower()
-    
-    results_dir = os.path.join(MODEL_DIR, 'results', month_name)
-    os.makedirs(results_dir, exist_ok=True)
-    filename = f'yesterday_results_{iso_date}.txt'
-    filepath = os.path.join(results_dir, filename)
-    
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.write(f"--- RESULTS FOR {iso_date} ---\n\n")
-        if logs_df is not None and not logs_df.empty:
-            grouped = logs_df.groupby('GAME_ID')
-            for _, group in grouped:
-                matchup = group.iloc[0]['MATCHUP']
-                
-                # Attempt to get score-formatted matchup
-                team_scores = group.groupby('TEAM_ABBREVIATION')['PTS'].sum()
-                if len(team_scores) == 2:
-                    t1, t2 = list(team_scores.index)
-                    matchup_str = f"{t1} @ {t2} | {team_scores[t1]} - {team_scores[t2]}"
-                else:
-                    matchup_str = matchup
-
-                f.write(f"{'='*50}\n")
-                f.write(f"MATCHUP: {matchup_str}\n")
-                f.write(f"{'='*50}\n")
-                
-                for _, player in group.sort_values('PTS', ascending=False).iterrows():
-                    name = player.get('PLAYER_NAME', 'Unknown')
-                    pts = int(player.get('PTS', 0))
-                    reb = int(player.get('REB', 0))
-                    ast = int(player.get('AST', 0))
-                    f.write(f"{name:25} | {pts:2} PTS, {reb:2} REB, {ast:2} AST\n")
-                f.write("\n")
-        else:
-            f.write("No box score data found.\n")
-    return filepath
+    from utils.prediction_paths import resolve_prediction_file, get_results_filepath
+    from etl.prepare_analyze import generate_results_file
+    if resolve_prediction_file(iso_date, mode='live', base_dir=MODEL_DIR):
+        mode = 'live'
+    elif resolve_prediction_file(iso_date, mode='backtest', base_dir=MODEL_DIR):
+        mode = 'backtest'
+    else:
+        mode = 'live'
+    path = generate_results_file(iso_date, mode=mode)
+    if path and iso_date < '2026-07-01':
+        # 2025-26 archive keeps its original layout: results/2025-2026/<month>/
+        legacy = os.path.join(MODEL_DIR, 'results', '2025-2026', date_dt.strftime('%B').lower(),
+                              os.path.basename(path))
+        os.makedirs(os.path.dirname(legacy), exist_ok=True)
+        os.replace(path, legacy)
+        try:
+            os.removedirs(os.path.dirname(path))   # only removes now-empty folders
+        except OSError:
+            pass
+        path = legacy
+    return path or get_results_filepath(iso_date, mode=mode, ext='txt', base_dir=MODEL_DIR)
 
 def sync_range(start_date_str, end_date_str, run_evaluate=False):
     start_date = datetime.strptime(start_date_str, '%Y-%m-%d')

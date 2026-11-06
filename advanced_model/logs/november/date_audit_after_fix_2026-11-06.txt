@@ -1,0 +1,236 @@
+====================================================================================================
+DATE CONSISTENCY AUDIT — ground truth: games 2019-09-30..2026-11-04, 9623 games
+====================================================================================================
+
+## 1. FILES (label date = date in filename)
+
+Summary by status: {'ALL_OFF': 7, 'OK': 521, 'NO_GROUND_TRUTH': 2, 'SHIFTED': 11, 'NO_MATCHUPS': 30}
+  analyze/2025-2026/april                                      {'OK': 2}
+  analyze/2025-2026/march                                      {'OK': 21, 'NO_MATCHUPS': 1}
+  analyze/2026-2027/backtest_predictions                       {'OK': 5}
+  analyze/2026-2027/live_predictions                           {'OK': 10}
+  analyze/2026-2027/ml_shadow_layer                            {'NO_MATCHUPS': 4}
+  analyze/_invalid_20261106/2025-2026                          {'NO_MATCHUPS': 6}
+  analyze/_invalid_20261106/2026-2027                          {'NO_MATCHUPS': 1}
+  predictions/2025-2026/backtest_new_gen_prediction            {'OK': 152, 'SHIFTED+NOTE': 1}
+  predictions/2025-2026/live_new_gen_prediction                {'OK': 85, 'NO_MATCHUPS': 3, 'NO_MATCHUPS+NOTE': 5, 'SHIFTED+NOTE': 2}
+  predictions/2026-2027/backtest_predictions                   {'OK': 8, 'OK+NOTE': 4}
+  predictions/2026-2027/live_predictions                       {'OK': 13, 'OK+NOTE': 7, 'NO_GROUND_TRUTH': 2}
+  predictions/_archive_duplicate_20261106/2025-2026            {'OK': 78, 'SHIFTED': 4, 'ALL_OFF': 2, 'NO_MATCHUPS': 3, 'NO_MATCHUPS+NOTE': 5, 'SHIFTED+NOTE': 3}
+  predictions/_invalid_20261106/2026-2027                      {'ALL_OFF+NOTE': 1}
+  results/2025-2026/april                                      {'OK': 22}
+  results/2025-2026/february                                   {'OK': 22, 'NO_MATCHUPS': 2}
+  results/2025-2026/january                                    {'OK': 31}
+  results/2025-2026/march                                      {'OK+NOTE': 2, 'OK': 22}
+  results/2025-2026/may                                        {'OK': 10}
+  results/2026-2027/backtest_results                           {'OK': 5}
+  results/2026-2027/live_results                               {'OK': 11}
+  results/_archive_legacy_flat_20261106/november               {'OK': 3}
+  results/_archive_legacy_flat_20261106/october                {'OK': 6}
+  results/_invalid_20261106/2025-2026                          {'OK+NOTE': 1, 'SHIFTED+NOTE': 1, 'ALL_OFF+NOTE': 4}
+  results/_invalid_20261106/2026-2027                          {'OK+NOTE': 1}
+
+Files that are NOT clean (status != OK or has notes):
+  [ALL_OFF] predictions/_invalid_20261106/2026-2027/live_predictions/october/predicts_report_2026-10-25.pdf
+      matchups: MIL/PHI played 2026-10-24; ATL/HOU played 2026-10-26; CHI/WAS played 2026-10-24; DEN/NOP played 2026-10-24; BKN/CLE played 2026-10-24; DAL/SAS played 2026-10-24; GSW/PHX played 2026-10-24
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-22.pdf
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-23.pdf
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-24.pdf
+      notes: header dates 2026-11-06
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-26.pdf
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-27.pdf
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-28.pdf
+      notes: header dates 2026-10-30
+  [OK] predictions/2026-2027/live_predictions/october/predicts_report_2026-10-29.pdf
+      notes: header dates 2026-10-30
+  [NO_GROUND_TRUTH] predictions/2026-2027/live_predictions/november/predicts_2026-11-05.txt
+      matchups: label outside games table (2019-09-30..2026-11-04)
+  [NO_GROUND_TRUTH] predictions/2026-2027/live_predictions/november/predicts_report_2026-11-05.pdf
+      matchups: label outside games table (2019-09-30..2026-11-04)
+  [OK] predictions/2026-2027/backtest_predictions/november/predicts_2026-11-02.txt
+      notes: header dates 2026-11-05
+  [OK] predictions/2026-2027/backtest_predictions/november/predicts_2026-11-04.txt
+      notes: header dates 2026-11-05
+  [OK] predictions/2026-2027/backtest_predictions/november/predicts_report_2026-11-02.pdf
+      notes: header dates 2026-11-05
+  [OK] predictions/2026-2027/backtest_predictions/november/predicts_report_2026-11-04.pdf
+      notes: header dates 2026-11-05
+  [SHIFTED(+1d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/april/predicts_2026-04-20.txt
+      matchups: POR/SAS played 2026-04-21
+  [SHIFTED(-1d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/april/predicts_2026-04-26.txt
+      matchups: DEN/MIN played 2026-04-25
+  [ALL_OFF] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/april/predicts_2026-04-29.txt
+      matchups: BOS/PHI played 2026-04-30; ATL/NYK played 2026-04-30; POR/SAS played 2026-04-28
+  [SHIFTED(-1d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/april/predicts_2026-04-30.txt
+      matchups: DET/ORL played 2026-04-29; CLE/TOR played 2026-04-29; HOU/LAL played 2026-04-29
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/march/predicts_2026-03-14.txt
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/march/predicts_2026-03-15.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-13.txt
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-14.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-15.txt
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-16.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-17.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/february/predicts_2026-02-18.txt
+      notes: no NBA games on this date in games table
+  [ALL_OFF] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/may/predicts_2026-05-01.txt
+      matchups: ATL/NYK played 2026-04-30; BOS/PHI played 2026-05-02; DEN/MIN played 2026-04-30
+  [SHIFTED(-1d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/may/predicts_2026-05-05.txt
+      matchups: NYK/PHI played 2026-05-04; MIN/SAS played 2026-05-04
+  [SHIFTED(-1d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/may/predicts_2026-05-11.txt
+      matchups: MIN/SAS played 2026-05-10
+      notes: no NBA games on this date in games table
+  [SHIFTED(-3d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/may/predicts_2026-05-12.txt
+      matchups: CLE/DET played 2026-05-09; LAL/OKC played 2026-05-09
+      notes: no NBA games on this date in games table
+  [SHIFTED(-3d)] predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction/may/predicts_2026-05-13.txt
+      matchups: MIN/SAS played 2026-05-10
+      notes: no NBA games on this date in games table
+  [SHIFTED(-3d)] predictions/2025-2026/backtest_new_gen_prediction/may/shadow_predicts_2026-05-13.txt
+      matchups: MIN/SAS played 2026-05-10
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-14.txt
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/march/predicts_2026-03-15.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-13.txt
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-14.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-15.txt
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-16.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-17.txt
+      notes: no NBA games on this date in games table
+  [NO_MATCHUPS] predictions/2025-2026/live_new_gen_prediction/february/predicts_2026-02-18.txt
+      notes: no NBA games on this date in games table
+  [SHIFTED(-3d)] predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-12.txt
+      matchups: CLE/DET played 2026-05-09; LAL/OKC played 2026-05-09
+      notes: no NBA games on this date in games table
+  [SHIFTED(-3d)] predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-13.txt
+      matchups: MIN/SAS played 2026-05-10
+      notes: no NBA games on this date in games table
+  [OK] results/_invalid_20261106/2026-2027/live_results/october/yesterday_results_2026-10-29.txt
+      notes: 3 scores differ from box scores
+  [OK] results/_invalid_20261106/2025-2026/april/yesterday_results_2026-04-20.txt
+      notes: 3 scores differ from box scores
+  [SHIFTED(-1d)] results/_invalid_20261106/2025-2026/march/yesterday_results_2026-03-15.txt
+      matchups: BKN/PHI played 2026-03-14; ATL/MIL played 2026-03-14; BOS/WAS played 2026-03-14; MIA/ORL played 2026-03-14; CHA/SAS played 2026-03-14; DEN/LAL played 2026-03-14; LAC/SAC played 2026-03-14
+      notes: no NBA games on this date in games table
+  [ALL_OFF] results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-14.txt
+      matchups: BOS/MIL played not within ±7d; ORL/SAS played not within ±7d; BKN/DET played not within ±7d; CHI/MIA played not within ±7d; TOR/UTA played not within ±7d; SAC/WAS played not within ±7d; LAL/NYK played not within ±7d; LAC/PHX played not within ±7d; CLE/POR played not within ±7d; DEN/OKC played not within ±7d
+      notes: no NBA games on this date in games table
+  [ALL_OFF] results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-16.txt
+      matchups: BOS/MIL played not within ±7d; ORL/SAS played not within ±7d; BKN/DET played not within ±7d; CHI/MIA played not within ±7d; TOR/UTA played not within ±7d; SAC/WAS played not within ±7d; LAL/NYK played not within ±7d; LAC/PHX played not within ±7d; CLE/POR played not within ±7d; DEN/OKC played not within ±7d
+      notes: no NBA games on this date in games table
+  [ALL_OFF] results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-17.txt
+      matchups: BOS/MIL played not within ±7d; ORL/SAS played not within ±7d; BKN/DET played not within ±7d; CHI/MIA played not within ±7d; TOR/UTA played not within ±7d; SAC/WAS played not within ±7d; LAL/NYK played not within ±7d; LAC/PHX played not within ±7d; CLE/POR played not within ±7d; DEN/OKC played not within ±7d
+      notes: no NBA games on this date in games table
+  [ALL_OFF] results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-18.txt
+      matchups: BOS/MIL played not within ±7d; ORL/SAS played not within ±7d; BKN/DET played not within ±7d; CHI/MIA played not within ±7d; TOR/UTA played not within ±7d; SAC/WAS played not within ±7d; LAL/NYK played not within ±7d; LAC/PHX played not within ±7d; CLE/POR played not within ±7d; DEN/OKC played not within ±7d
+      notes: no NBA games on this date in games table
+  [OK] results/2025-2026/march/yesterday_results_2026-03-01.txt
+      notes: 1 scores differ from box scores
+  [OK] results/2025-2026/march/yesterday_results_2026-03-21.txt
+      notes: 1 scores differ from box scores
+  [NO_MATCHUPS] results/2025-2026/february/yesterday_results_2026-02-13.txt
+  [NO_MATCHUPS] results/2025-2026/february/yesterday_results_2026-02-15.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2026-2027/live_predictions/october/analyze_report_2026-10-25.pdf
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-20.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-26.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-29.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-30.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-01.txt
+  [NO_MATCHUPS] analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-05.txt
+  [NO_MATCHUPS] analyze/2026-2027/ml_shadow_layer/october/analyze_ml_shadow_2026-10-22.pdf
+  [NO_MATCHUPS] analyze/2026-2027/ml_shadow_layer/october/analyze_ml_shadow_2026-10-23.pdf
+  [NO_MATCHUPS] analyze/2026-2027/ml_shadow_layer/october/analyze_ml_shadow_2026-10-24.pdf
+  [NO_MATCHUPS] analyze/2026-2027/ml_shadow_layer/october/analyze_ml_shadow_2026-10-25.pdf
+  [NO_MATCHUPS] analyze/2025-2026/march/analyze_2026-03-14.txt
+
+## 1b. 2026-27 file set per date (P=prediction txt, R=results, A=analyze pdf, L=legacy flat results)
+
+  2026-10-20  live=-     backtest=?APR  ml=-
+  2026-10-21  live=-     backtest=?APR  ml=-
+  2026-10-22  live=?APR  backtest=?APR  ml=A
+  2026-10-23  live=?APR  backtest=-     ml=A
+  2026-10-24  live=?APR  backtest=?AP   ml=A
+  2026-10-25  live=?AR   backtest=-     ml=A
+  2026-10-26  live=?APR  backtest=-     ml=-
+  2026-10-27  live=?APR  backtest=-     ml=-
+  2026-10-28  live=?APR  backtest=-     ml=-
+  2026-10-29  live=?APR  backtest=-     ml=-
+  2026-10-30  live=?APR  backtest=-     ml=-
+  2026-10-31  live=?APR  backtest=-     ml=-
+  2026-11-01  live=?APR  backtest=-     ml=-
+  2026-11-02  live=-     backtest=?PR   ml=-
+  2026-11-04  live=-     backtest=?APR  ml=-
+  2026-11-05  live=?P    backtest=-     ml=-
+
+## 1c. Legacy flat results/<month>/ vs results/2026-2027/<mode>_results/<month>/
+
+
+## 2. nba_data.db internal consistency
+
+  box_scores.game_date != games.game_date: 0 games
+  box_scores game_ids missing from games: 0
+  games without box scores: 0
+  games whose box scores do not show exactly 2 teams: 39
+  games with season label inconsistent with date: 41
+  duplicate (game_id, player_id) rows: 0
+  games.game_date formats (length: rows): [(19, 9623)]
+  box_scores.game_date formats (length: rows): [(19, 209087)]
+  historical_injuries.game_date formats (length: rows): [(10, 19712)]
+  historical_injuries distinct dates: {'date has games': 159, 'date WITHOUT games': 4}
+
+## 3. Player-level tables: do the players have a box score on the stored date?
+   (OK = >=60% of distinct players played that day; props can exist for players who end up DNP)
+
+  bet_tracker.daily_picks [stat_category IN ('POINTS','REBOUNDS','ASSISTS')] — 31148 rows, 82 dates; date formats {10: 31148}; 79 dates OK, 3 flagged, 0 outside ground truth
+      2026-03-15 n=2 played: same day 0%, day-1 100%, day+1 0% [SHIFT -1d?]
+      2026-05-12 n=14 played: same day 0%, day-1 0%, day+1 0% [LOW]
+      2026-05-13 n=7 played: same day 0%, day-1 0%, day+1 0% [LOW]
+  bet_tracker.shadow_picks [stat_category IN ('POINTS','REBOUNDS','ASSISTS') AND COALESCE(superseded,0)=0] — 5128 rows, 37 dates; date formats {10: 5128}; 34 dates OK, 2 flagged, 1 outside ground truth
+      2026-05-12 n=30 played: same day 0%, day-1 0%, day+1 0% [LOW]
+      2026-05-13 n=15 played: same day 0%, day-1 0%, day+1 0% [LOW]
+  bet_tracker.ml_shadow_picks [1=1] — 700 rows, 4 dates; date formats {10: 700}; 3 dates OK, 0 flagged, 1 outside ground truth
+  bet_tracker.projection_outcomes [category IN ('POINTS','REBOUNDS','ASSISTS')] — 12865 rows, 41 dates; date formats {10: 12865}; 38 dates OK, 2 flagged, 1 outside ground truth
+      2026-05-12 n=30 played: same day 0%, day-1 0%, day+1 0% [LOW]
+      2026-05-13 n=15 played: same day 0%, day-1 0%, day+1 0% [LOW]
+  bet_tracker.projection_outcomes_raw [category IN ('POINTS','REBOUNDS','ASSISTS')] — 32382 rows, 81 dates; date formats {10: 32382}; 81 dates OK, 0 flagged, 0 outside ground truth
+  bet_tracker.historical_odds_cache [stat_category IN ('POINTS','REBOUNDS','ASSISTS')] — 57321 rows, 177 dates; date formats {10: 57321}; 176 dates OK, 1 flagged, 0 outside ground truth
+      2026-03-15 n=115 played: same day 0%, day-1 20%, day+1 17% [LOW]
+  master_training_data.projection_outcomes [category IN ('POINTS','REBOUNDS','ASSISTS')] — 73821 rows, 152 dates; date formats {10: 73821}; 151 dates OK, 1 flagged, 0 outside ground truth
+      2026-01-31 n=229 played: same day 49%, day-1 58%, day+1 52% [LOW]
+
+## 4. Team-level rows: does the matchup exist on the stored date?
+
+  bet_tracker.daily_picks.game [1=1] — {'ok': 31553, 'unparsed': 404}
+  bet_tracker.historical_odds_cache.player_name [stat_category = 'TOTAL'] — {'unparsed': 684, 'ok': 590}
+  bet_tracker.shadow_picks.matchup [matchup IS NOT NULL] — {}
+  bet_tracker.game_results — {'ok': 173}
+
+## 5. Run time (created_at, UTC -> US-Eastern date) vs stored game date
+
+  shadow_picks: batches where stored date != run ET date: none
+  ml_shadow_picks: batches where stored date != run ET date: none
+
+## 6. Date formats per column (length: rows) — anything other than 10 (YYYY-MM-DD) is inconsistent
+
+  bet_tracker.daily_picks.date: [(10, 31957)]
+  bet_tracker.shadow_picks.game_date: [(10, 6112)]
+  bet_tracker.ml_shadow_picks.game_date: [(10, 700)]
+  bet_tracker.projection_outcomes.game_date: [(10, 13178)]
+  bet_tracker.projection_outcomes_raw.game_date: [(10, 32382)]
+  bet_tracker.parlays.game_date: [(10, 26)]
+  bet_tracker.game_results.date: [(10, 173)]
+  bet_tracker.historical_odds_cache.date: [(10, 61142)]
+  master_training_data.projection_outcomes.game_date: [(10, 76068)]
+
+END

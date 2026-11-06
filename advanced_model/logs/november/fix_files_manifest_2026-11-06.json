@@ -1,0 +1,213 @@
+[
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-20.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-19.txt",
+  "why": "run on 2026-04-19 (US Eastern); games played 2026-04-19"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-26.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-25.txt",
+  "why": "run on 2026-04-25 (US Eastern); games played 2026-04-25"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-29.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-28.txt",
+  "why": "run on 2026-04-28 (US Eastern); games played 2026-04-28"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-30.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-29.txt",
+  "why": "run on 2026-04-29 (US Eastern); games played 2026-04-29"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-01.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/april/predicts_2026-04-30.txt",
+  "why": "run on 2026-04-30 (US Eastern); games played 2026-04-30"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-05.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-04.txt",
+  "why": "run on 2026-05-04 (US Eastern); games played 2026-05-04"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-11.txt",
+  "dst": "predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-10.txt",
+  "why": "run on 2026-05-10 (US Eastern); games played 2026-05-10"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2026-2027/live_predictions/october/predicts_2026-10-25.txt",
+  "dst": "predictions/2026-2027/live_predictions/october/predicts_2026-10-24.txt",
+  "why": "run on 2026-10-24 (US Eastern); games played 2026-10-24"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2026-2027/live_predictions/october/predicts_report_2026-10-25.pdf",
+  "dst": "predictions/_invalid_20261106/2026-2027/live_predictions/october/predicts_report_2026-10-25.pdf",
+  "why": "title says 2026-10-25; regenerated as predicts_report_2026-10-24.pdf"
+ },
+ {
+  "op": "move",
+  "src": "results/2026-2027/live_results/october/yesterday_results_2026-10-29.txt",
+  "dst": "results/_invalid_20261106/2026-2027/live_results/october/yesterday_results_2026-10-29.txt",
+  "why": "built from duplicated box-score rows (players twice, scores doubled)"
+ },
+ {
+  "op": "write",
+  "dst": "results/2026-2027/live_results/october/yesterday_results_2026-10-29.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "write",
+  "dst": "results/2026-2027/live_results/october/yesterday_results_2026-10-26.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "write",
+  "dst": "results/2026-2027/live_results/october/yesterday_results_2026-10-27.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "write",
+  "dst": "results/2026-2027/live_results/october/yesterday_results_2026-10-28.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "write",
+  "dst": "results/2026-2027/backtest_results/november/yesterday_results_2026-11-02.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "move",
+  "src": "results/october",
+  "dst": "results/_archive_legacy_flat_20261106/october",
+  "why": "legacy writer (fetch_range_box_scores) \u2014 season tree is canonical"
+ },
+ {
+  "op": "move",
+  "src": "results/november",
+  "dst": "results/_archive_legacy_flat_20261106/november",
+  "why": "legacy writer (fetch_range_box_scores) \u2014 season tree is canonical"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/april/yesterday_results_2026-04-20.txt",
+  "dst": "results/_invalid_20261106/2025-2026/april/yesterday_results_2026-04-20.txt",
+  "why": "players twice, scores doubled"
+ },
+ {
+  "op": "write",
+  "dst": "results/2025-2026/april/yesterday_results_2026-04-20.txt",
+  "why": "generated from de-duplicated box scores"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/february/yesterday_results_2026-02-14.txt",
+  "dst": "results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-14.txt",
+  "why": "no NBA games that day (All-Star break); file was a copy of Feb 1"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/february/yesterday_results_2026-02-16.txt",
+  "dst": "results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-16.txt",
+  "why": "no NBA games that day (All-Star break); file was a copy of Feb 1"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/february/yesterday_results_2026-02-17.txt",
+  "dst": "results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-17.txt",
+  "why": "no NBA games that day (All-Star break); file was a copy of Feb 1"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/february/yesterday_results_2026-02-18.txt",
+  "dst": "results/_invalid_20261106/2025-2026/february/yesterday_results_2026-02-18.txt",
+  "why": "no NBA games that day (All-Star break); file was a copy of Feb 1"
+ },
+ {
+  "op": "move",
+  "src": "results/2025-2026/march/yesterday_results_2026-03-15.txt",
+  "dst": "results/_invalid_20261106/2025-2026/march/yesterday_results_2026-03-15.txt",
+  "why": "contains the Mar 14 games; real Mar 15 games missing from nba_data.db (backfill, then regenerate)"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/april/analyze_2026-04-20.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-20.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/april/analyze_2026-04-26.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-26.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/april/analyze_2026-04-29.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-29.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/april/analyze_2026-04-30.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/april/analyze_2026-04-30.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/may/analyze_2026-05-01.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-01.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2025-2026/may/analyze_2026-05-05.txt",
+  "dst": "analyze/_invalid_20261106/2025-2026/may/analyze_2026-05-05.txt",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "analyze/2026-2027/live_predictions/october/analyze_report_2026-10-25.pdf",
+  "dst": "analyze/_invalid_20261106/2026-2027/live_predictions/october/analyze_report_2026-10-25.pdf",
+  "why": "predictions in it were for a different day than the results used"
+ },
+ {
+  "op": "move",
+  "src": "predictions/2025-2026/first_gen_prediction",
+  "dst": "predictions/_archive_duplicate_20261106/2025-2026/first_gen_prediction",
+  "why": "95 files byte-identical to live_new_gen_prediction/"
+ },
+ {
+  "op": "write",
+  "dst": "predictions/2026-2027/live_predictions/october/predicts_report_2026-10-24.pdf",
+  "why": "recompiled from corrected txt"
+ },
+ {
+  "op": "write",
+  "dst": "analyze/2026-2027/live_predictions/october/analyze_report_2026-10-24.pdf",
+  "why": "analysis of live predictions vs same-day results"
+ },
+ {
+  "op": "write",
+  "dst": "analyze/2026-2027/live_predictions/october/analyze_report_2026-10-26.pdf",
+  "why": "analysis of live predictions vs same-day results"
+ },
+ {
+  "op": "write",
+  "dst": "analyze/2026-2027/live_predictions/october/analyze_report_2026-10-27.pdf",
+  "why": "analysis of live predictions vs same-day results"
+ },
+ {
+  "op": "write",
+  "dst": "analyze/2026-2027/live_predictions/october/analyze_report_2026-10-28.pdf",
+  "why": "analysis of live predictions vs same-day results"
+ }
+]
