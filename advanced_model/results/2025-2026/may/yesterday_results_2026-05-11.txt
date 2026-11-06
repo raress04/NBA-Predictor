@@ -1,0 +1,51 @@
+MATCHUP: DET vs. CLE    103 - 112
+Donovan Mitchell       | 43 PTS, 5 REB,  2 AST
+James Harden           | 24 PTS, 0 REB,  11 AST
+Caris LeVert           | 24 PTS, 4 REB,  3 AST
+Cade Cunningham        | 19 PTS, 3 REB,  6 AST
+Evan Mobley            | 17 PTS, 8 REB,  5 AST
+Tobias Harris          | 16 PTS, 8 REB,  5 AST
+Paul Reed              | 15 PTS, 4 REB,  2 AST
+Jarrett Allen          | 9 PTS, 5 REB,  1 AST
+Jalen Duren            | 8 PTS, 2 REB,  2 AST
+Dennis Schröder        | 7 PTS, 2 REB,  0 AST
+Marcus Sasser          | 7 PTS, 0 REB,  0 AST
+Sam Merrill            | 6 PTS, 1 REB,  2 AST
+Max Strus              | 5 PTS, 4 REB,  2 AST
+Ausar Thompson         | 4 PTS, 4 REB,  1 AST
+Duncan Robinson        | 4 PTS, 1 REB,  1 AST
+Isaiah Stewart         | 4 PTS, 3 REB,  0 AST
+Daniss Jenkins         | 2 PTS, 3 REB,  3 AST
+Jaylon Tyson           | 1 PTS, 3 REB,  0 AST
+Ronald Holland II      | 0 PTS, 3 REB,  0 AST
+Dean Wade              | 0 PTS, 5 REB,  0 AST
+Javonte Green          | 0 PTS, 0 REB,  0 AST
+Keon Ellis             | 0 PTS, 0 REB,  0 AST
+Nae'Qwan Tomlin        | 0 PTS, 0 REB,  0 AST
+Thomas Bryant          | 0 PTS, 0 REB,  0 AST
+Craig Porter Jr.       | 0 PTS, 0 REB,  0 AST
+Tyrese Proctor         | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: OKC vs. LAL    115 - 110
+Shai Gilgeous-Alexander | 35 PTS, 1 REB,  8 AST
+Ajay Mitchell          | 28 PTS, 3 REB,  4 AST
+Austin Reaves          | 27 PTS, 7 REB,  6 AST
+Rui Hachimura          | 25 PTS, 5 REB,  2 AST
+LeBron James           | 24 PTS, 12 REB,  3 AST
+Jaxson Hayes           | 18 PTS, 5 REB,  1 AST
+Chet Holmgren          | 16 PTS, 9 REB,  0 AST
+Jared McCain           | 13 PTS, 2 REB,  0 AST
+Alex Caruso            | 9 PTS, 4 REB,  1 AST
+Deandre Ayton          | 6 PTS, 3 REB,  1 AST
+Luguentz Dort          | 6 PTS, 2 REB,  0 AST
+Marcus Smart           | 5 PTS, 2 REB,  3 AST
+Isaiah Hartenstein     | 5 PTS, 10 REB,  5 AST
+Luke Kennard           | 5 PTS, 2 REB,  2 AST
+Cason Wallace          | 3 PTS, 2 REB,  0 AST
+Isaiah Joe             | 0 PTS, 0 REB,  1 AST
+Jarred Vanderbilt      | 0 PTS, 1 REB,  0 AST
+Jaylin Williams        | 0 PTS, 1 REB,  0 AST
+Aaron Wiggins          | 0 PTS, 0 REB,  0 AST
+Maxi Kleber            | 0 PTS, 0 REB,  0 AST
+Adou Thiero            | 0 PTS, 0 REB,  0 AST
+

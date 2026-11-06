@@ -1,0 +1,258 @@
+
+[*] Syncing Date: 2026-05-11
+    [+] Fetched 47 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-11.txt
+    [*] Resolving outcomes for 2026-05-11...
+    [OK] Results saved to yesterday_results_2026-05-11.txt
+    [*] Resolving outcomes for 2026-05-11...
+
+[*] Syncing Date: 2026-05-12
+    [+] Fetched 27 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-12.txt
+    [*] Resolving outcomes for 2026-05-12...
+    [OK] Results saved to yesterday_results_2026-05-12.txt
+    [*] Resolving outcomes for 2026-05-12...
+
+[*] Syncing Date: 2026-05-13
+    [+] Fetched 19 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-13.txt
+    [*] Resolving outcomes for 2026-05-13...
+    [OK] Results saved to yesterday_results_2026-05-13.txt
+    [*] Resolving outcomes for 2026-05-13...
+
+[*] Syncing Date: 2026-05-14
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-05-15
+    [+] Fetched 54 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-15.txt
+    [*] Resolving outcomes for 2026-05-15...
+    [OK] Results saved to yesterday_results_2026-05-15.txt
+    [*] Resolving outcomes for 2026-05-15...
+
+[*] Syncing Date: 2026-05-16
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-05-17
+    [+] Fetched 26 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-17.txt
+    [*] Resolving outcomes for 2026-05-17...
+    [OK] Results saved to yesterday_results_2026-05-17.txt
+    [*] Resolving outcomes for 2026-05-17...
+
+[*] Syncing Date: 2026-05-18
+    [+] Fetched 21 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-18.txt
+    [*] Resolving outcomes for 2026-05-18...
+    [OK] Results saved to yesterday_results_2026-05-18.txt
+    [*] Resolving outcomes for 2026-05-18...
+
+[*] Syncing Date: 2026-05-19
+    [+] Fetched 19 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-19.txt
+    [*] Resolving outcomes for 2026-05-19...
+    [OK] Results saved to yesterday_results_2026-05-19.txt
+    [*] Resolving outcomes for 2026-05-19...
+
+[*] Syncing Date: 2026-05-20
+    [+] Fetched 22 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-20.txt
+    [*] Resolving outcomes for 2026-05-20...
+    [OK] Results saved to yesterday_results_2026-05-20.txt
+    [*] Resolving outcomes for 2026-05-20...
+
+[*] Syncing Date: 2026-05-21
+    [+] Fetched 26 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-21.txt
+    [*] Resolving outcomes for 2026-05-21...
+    [OK] Results saved to yesterday_results_2026-05-21.txt
+    [*] Resolving outcomes for 2026-05-21...
+
+[*] Syncing Date: 2026-05-22
+    [+] Fetched 28 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-22.txt
+    [*] Resolving outcomes for 2026-05-22...
+    [OK] Results saved to yesterday_results_2026-05-22.txt
+    [*] Resolving outcomes for 2026-05-22...
+
+[*] Syncing Date: 2026-05-23
+    [+] Fetched 19 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-23.txt
+    [*] Resolving outcomes for 2026-05-23...
+    [OK] Results saved to yesterday_results_2026-05-23.txt
+    [*] Resolving outcomes for 2026-05-23...
+
+[*] Syncing Date: 2026-05-24
+    [+] Fetched 25 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-24.txt
+    [*] Resolving outcomes for 2026-05-24...
+    [OK] Results saved to yesterday_results_2026-05-24.txt
+    [*] Resolving outcomes for 2026-05-24...
+
+[*] Syncing Date: 2026-05-25
+    [+] Fetched 27 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-25.txt
+    [*] Resolving outcomes for 2026-05-25...
+    [OK] Results saved to yesterday_results_2026-05-25.txt
+    [*] Resolving outcomes for 2026-05-25...
+
+[*] Syncing Date: 2026-05-26
+    [+] Fetched 26 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-26.txt
+    [*] Resolving outcomes for 2026-05-26...
+    [OK] Results saved to yesterday_results_2026-05-26.txt
+    [*] Resolving outcomes for 2026-05-26...
+
+[*] Syncing Date: 2026-05-27
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-05-28
+    [+] Fetched 28 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-28.txt
+    [*] Resolving outcomes for 2026-05-28...
+    [OK] Results saved to yesterday_results_2026-05-28.txt
+    [*] Resolving outcomes for 2026-05-28...
+
+[*] Syncing Date: 2026-05-29
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-05-30
+    [+] Fetched 19 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/may/yesterday_results_2026-05-30.txt
+    [*] Resolving outcomes for 2026-05-30...
+    [OK] Results saved to yesterday_results_2026-05-30.txt
+    [*] Resolving outcomes for 2026-05-30...
+
+[*] Syncing Date: 2026-05-31
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-01
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-02
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-03
+    [+] Fetched 20 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/june/yesterday_results_2026-06-03.txt
+    [*] Resolving outcomes for 2026-06-03...
+    [OK] Results saved to yesterday_results_2026-06-03.txt
+    [*] Resolving outcomes for 2026-06-03...
+
+[*] Syncing Date: 2026-06-04
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-05
+    [+] Fetched 19 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/june/yesterday_results_2026-06-05.txt
+    [*] Resolving outcomes for 2026-06-05...
+    [OK] Results saved to yesterday_results_2026-06-05.txt
+    [*] Resolving outcomes for 2026-06-05...
+
+[*] Syncing Date: 2026-06-06
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-07
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-08
+    [+] Fetched 20 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/june/yesterday_results_2026-06-08.txt
+    [*] Resolving outcomes for 2026-06-08...
+    [OK] Results saved to yesterday_results_2026-06-08.txt
+    [*] Resolving outcomes for 2026-06-08...
+
+[*] Syncing Date: 2026-06-09
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-10
+    [+] Fetched 21 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/june/yesterday_results_2026-06-10.txt
+    [*] Resolving outcomes for 2026-06-10...
+    [OK] Results saved to yesterday_results_2026-06-10.txt
+    [*] Resolving outcomes for 2026-06-10...
+
+[*] Syncing Date: 2026-06-11
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-12
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-13
+    [+] Fetched 21 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/june/yesterday_results_2026-06-13.txt
+    [*] Resolving outcomes for 2026-06-13...
+    [OK] Results saved to yesterday_results_2026-06-13.txt
+    [*] Resolving outcomes for 2026-06-13...
+
+[*] Syncing Date: 2026-06-14
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-15
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-16
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-17
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-18
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-19
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-20
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-21
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-22
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-23
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-24
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-25
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-26
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-27
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-28
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-29
+    [!] No data found for this date.
+
+[*] Syncing Date: 2026-06-30
+    [!] No data found for this date.

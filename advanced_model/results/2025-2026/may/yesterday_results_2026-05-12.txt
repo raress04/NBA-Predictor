@@ -1,0 +1,29 @@
+MATCHUP: MIN vs. SAS    97 - 126
+Victor Wembanyama      | 27 PTS, 17 REB,  5 AST
+Keldon Johnson         | 21 PTS, 2 REB,  0 AST
+Anthony Edwards        | 20 PTS, 2 REB,  2 AST
+De'Aaron Fox           | 18 PTS, 4 REB,  5 AST
+Stephon Castle         | 17 PTS, 4 REB,  6 AST
+Julius Randle          | 17 PTS, 10 REB,  1 AST
+Jaden McDaniels        | 17 PTS, 6 REB,  2 AST
+Ayo Dosunmu            | 16 PTS, 9 REB,  4 AST
+Dylan Harper           | 12 PTS, 10 REB,  2 AST
+Naz Reid               | 12 PTS, 5 REB,  2 AST
+Devin Vassell          | 12 PTS, 3 REB,  2 AST
+Julian Champagnie      | 8 PTS, 4 REB,  0 AST
+Mike Conley            | 5 PTS, 1 REB,  2 AST
+Rudy Gobert            | 4 PTS, 5 REB,  0 AST
+Carter Bryant          | 3 PTS, 4 REB,  2 AST
+Joan Beringer          | 3 PTS, 3 REB,  0 AST
+Kelly Olynyk           | 3 PTS, 0 REB,  0 AST
+Lindy Waters III       | 3 PTS, 0 REB,  0 AST
+Terrence Shannon Jr    | 2 PTS, 0 REB,  4 AST
+Bismack Biyombo        | 2 PTS, 1 REB,  0 AST
+Kyle Anderson          | 1 PTS, 0 REB,  0 AST
+Jordan McLaughlin      | 0 PTS, 0 REB,  2 AST
+Luke Kornet            | 0 PTS, 0 REB,  0 AST
+Harrison Barnes        | 0 PTS, 1 REB,  1 AST
+Bones Hyland           | 0 PTS, 1 REB,  0 AST
+Julian Phillips        | 0 PTS, 0 REB,  0 AST
+Jaylen Clark           | 0 PTS, 0 REB,  0 AST
+

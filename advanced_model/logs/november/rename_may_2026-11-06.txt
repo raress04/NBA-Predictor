@@ -1,0 +1,5 @@
+rename_may — APPLY — 2026-11-06 01:57
+evidence: predicts_2026-05-12.txt = DET@CLE, OKC@LAL (played 2026-05-11), written 2026-05-11 19:22 ET
+          predicts_2026-05-13.txt = MIN@SAS (played 2026-05-12), written 2026-05-12 18:40 ET
+renamed 'predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-12.txt' -> 'predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-11.txt'
+renamed 'predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-13.txt' -> 'predictions/2025-2026/live_new_gen_prediction/may/predicts_2026-05-12.txt'

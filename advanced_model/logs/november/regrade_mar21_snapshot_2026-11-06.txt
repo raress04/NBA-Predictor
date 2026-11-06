@@ -1,0 +1,7 @@
+regrade_mar21 — APPLY — 2026-11-06 01:54
+pick 33900 Cody Williams POINTS UNDER 15.5: 12.0 (win=1) -> 15 (win=1)
+pick 33901 Elijah Harkless POINTS UNDER 14.5: 11.0 (win=1) -> 15 (win=0)
+pick 33902 Elijah Harkless ASSISTS UNDER 5.5: 2.0 (win=1) -> 5 (win=1)
+pick 33903 VJ Edgecombe ASSISTS UNDER 5.5: 3.0 (win=1) -> 4 (win=1)
+pick 33904 Andre Drummond REBOUNDS UNDER 10.5: 7.0 (win=1) -> 8 (win=1)
+updated 5 pick_results rows; old values in pick_results_quarantine_20261106

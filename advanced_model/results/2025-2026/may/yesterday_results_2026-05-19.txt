@@ -1,0 +1,21 @@
+MATCHUP: CLE vs. NYK    104 - 115
+Jalen Brunson          | 38 PTS, 5 REB,  6 AST
+Donovan Mitchell       | 29 PTS, 5 REB,  3 AST
+Mikal Bridges          | 18 PTS, 5 REB,  1 AST
+Evan Mobley            | 15 PTS, 14 REB,  3 AST
+James Harden           | 15 PTS, 4 REB,  3 AST
+Karl-Anthony Towns     | 13 PTS, 13 REB,  5 AST
+Josh Hart              | 13 PTS, 7 REB,  4 AST
+OG Anunoby             | 13 PTS, 5 REB,  2 AST
+Sam Merrill            | 12 PTS, 1 REB,  2 AST
+Jarrett Allen          | 10 PTS, 7 REB,  3 AST
+Dean Wade              | 10 PTS, 5 REB,  3 AST
+Landry Shamet          | 9 PTS, 1 REB,  0 AST
+Max Strus              | 8 PTS, 2 REB,  1 AST
+Mitchell Robinson      | 4 PTS, 6 REB,  1 AST
+Jose Alvarado          | 4 PTS, 1 REB,  0 AST
+Dennis Schröder        | 3 PTS, 0 REB,  5 AST
+Jordan Clarkson        | 3 PTS, 2 REB,  0 AST
+Keon Ellis             | 2 PTS, 0 REB,  0 AST
+Miles McBride          | 0 PTS, 2 REB,  1 AST
+

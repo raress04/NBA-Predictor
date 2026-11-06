@@ -1,0 +1,28 @@
+MATCHUP: CLE vs. DET    125 - 94
+Donovan Mitchell       | 26 PTS, 6 REB,  8 AST
+Jarrett Allen          | 23 PTS, 7 REB,  1 AST
+Sam Merrill            | 23 PTS, 1 REB,  2 AST
+Evan Mobley            | 21 PTS, 12 REB,  6 AST
+Daniss Jenkins         | 17 PTS, 3 REB,  5 AST
+Cade Cunningham        | 13 PTS, 4 REB,  5 AST
+Duncan Robinson        | 13 PTS, 1 REB,  1 AST
+Caris LeVert           | 11 PTS, 2 REB,  2 AST
+Max Strus              | 9 PTS, 3 REB,  2 AST
+James Harden           | 9 PTS, 5 REB,  6 AST
+Marcus Sasser          | 9 PTS, 2 REB,  1 AST
+Jalen Duren            | 7 PTS, 9 REB,  3 AST
+Tobias Harris          | 5 PTS, 5 REB,  2 AST
+Ausar Thompson         | 5 PTS, 7 REB,  0 AST
+Dean Wade              | 5 PTS, 6 REB,  1 AST
+Paul Reed              | 4 PTS, 4 REB,  1 AST
+Tolu Smith             | 4 PTS, 2 REB,  0 AST
+Ronald Holland II      | 3 PTS, 2 REB,  0 AST
+Isaiah Stewart         | 3 PTS, 0 REB,  0 AST
+Keon Ellis             | 3 PTS, 0 REB,  0 AST
+Dennis Schröder        | 2 PTS, 3 REB,  3 AST
+Nae'Qwan Tomlin        | 2 PTS, 1 REB,  0 AST
+Craig Porter Jr.       | 2 PTS, 2 REB,  1 AST
+Thomas Bryant          | 0 PTS, 4 REB,  1 AST
+Chaz Lanier            | 0 PTS, 0 REB,  1 AST
+Jaylon Tyson           | 0 PTS, 0 REB,  0 AST
+

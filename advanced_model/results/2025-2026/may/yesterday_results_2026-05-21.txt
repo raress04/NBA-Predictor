@@ -1,0 +1,28 @@
+MATCHUP: CLE vs. NYK    93 - 109
+Josh Hart              | 26 PTS, 4 REB,  7 AST
+Donovan Mitchell       | 26 PTS, 4 REB,  1 AST
+Jalen Brunson          | 19 PTS, 3 REB,  14 AST
+Mikal Bridges          | 19 PTS, 3 REB,  3 AST
+Karl-Anthony Towns     | 18 PTS, 13 REB,  1 AST
+James Harden           | 18 PTS, 6 REB,  2 AST
+OG Anunoby             | 14 PTS, 4 REB,  3 AST
+Evan Mobley            | 14 PTS, 6 REB,  3 AST
+Jarrett Allen          | 13 PTS, 10 REB,  0 AST
+Max Strus              | 5 PTS, 4 REB,  3 AST
+Miles McBride          | 5 PTS, 4 REB,  3 AST
+Dennis Schröder        | 4 PTS, 4 REB,  3 AST
+Mitchell Robinson      | 4 PTS, 4 REB,  0 AST
+Jaylon Tyson           | 4 PTS, 3 REB,  0 AST
+Jordan Clarkson        | 4 PTS, 0 REB,  0 AST
+Sam Merrill            | 4 PTS, 0 REB,  0 AST
+Dean Wade              | 3 PTS, 3 REB,  3 AST
+Nae'Qwan Tomlin        | 2 PTS, 1 REB,  0 AST
+Jose Alvarado          | 0 PTS, 1 REB,  1 AST
+Landry Shamet          | 0 PTS, 4 REB,  0 AST
+Thomas Bryant          | 0 PTS, 1 REB,  0 AST
+Craig Porter Jr.       | 0 PTS, 0 REB,  0 AST
+Tyrese Proctor         | 0 PTS, 0 REB,  0 AST
+Keon Ellis             | 0 PTS, 0 REB,  0 AST
+Pacôme Dadiet          | 0 PTS, 0 REB,  0 AST
+Tyler Kolek            | 0 PTS, 0 REB,  0 AST
+

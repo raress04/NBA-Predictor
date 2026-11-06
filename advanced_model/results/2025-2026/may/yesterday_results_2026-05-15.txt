@@ -1,0 +1,58 @@
+MATCHUP: DET vs. CLE    115 - 94
+James Harden           | 23 PTS, 7 REB,  4 AST
+Cade Cunningham        | 21 PTS, 2 REB,  8 AST
+Donovan Mitchell       | 18 PTS, 4 REB,  3 AST
+Evan Mobley            | 18 PTS, 6 REB,  2 AST
+Paul Reed              | 17 PTS, 6 REB,  1 AST
+Jalen Duren            | 15 PTS, 11 REB,  0 AST
+Daniss Jenkins         | 15 PTS, 3 REB,  3 AST
+Duncan Robinson        | 14 PTS, 2 REB,  2 AST
+Jarrett Allen          | 13 PTS, 8 REB,  1 AST
+Ausar Thompson         | 10 PTS, 9 REB,  4 AST
+Sam Merrill            | 10 PTS, 1 REB,  1 AST
+Marcus Sasser          | 9 PTS, 1 REB,  1 AST
+Caris LeVert           | 8 PTS, 3 REB,  3 AST
+Tobias Harris          | 6 PTS, 5 REB,  3 AST
+Max Strus              | 6 PTS, 8 REB,  0 AST
+Dean Wade              | 3 PTS, 3 REB,  0 AST
+Jaylon Tyson           | 2 PTS, 0 REB,  0 AST
+Nae'Qwan Tomlin        | 1 PTS, 1 REB,  0 AST
+Keon Ellis             | 0 PTS, 0 REB,  1 AST
+Dennis Schröder        | 0 PTS, 2 REB,  3 AST
+Isaiah Stewart         | 0 PTS, 1 REB,  0 AST
+Ronald Holland II      | 0 PTS, 0 REB,  0 AST
+Thomas Bryant          | 0 PTS, 0 REB,  0 AST
+Craig Porter Jr.       | 0 PTS, 0 REB,  0 AST
+Tolu Smith             | 0 PTS, 0 REB,  0 AST
+Chaz Lanier            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: SAS vs. MIN    139 - 109
+Stephon Castle         | 32 PTS, 11 REB,  6 AST
+Anthony Edwards        | 24 PTS, 2 REB,  2 AST
+De'Aaron Fox           | 21 PTS, 4 REB,  9 AST
+Terrence Shannon Jr    | 21 PTS, 2 REB,  1 AST
+Victor Wembanyama      | 19 PTS, 6 REB,  2 AST
+Julian Champagnie      | 18 PTS, 5 REB,  2 AST
+Naz Reid               | 18 PTS, 7 REB,  1 AST
+Dylan Harper           | 15 PTS, 5 REB,  2 AST
+Jaden McDaniels        | 13 PTS, 1 REB,  3 AST
+Devin Vassell          | 11 PTS, 5 REB,  4 AST
+Ayo Dosunmu            | 10 PTS, 1 REB,  9 AST
+Luke Kornet            | 6 PTS, 6 REB,  1 AST
+Mike Conley            | 6 PTS, 0 REB,  4 AST
+Joan Beringer          | 4 PTS, 2 REB,  0 AST
+Julius Randle          | 3 PTS, 7 REB,  1 AST
+Carter Bryant          | 3 PTS, 6 REB,  1 AST
+Harrison Barnes        | 3 PTS, 4 REB,  2 AST
+Kelly Olynyk           | 3 PTS, 4 REB,  1 AST
+Julian Phillips        | 3 PTS, 0 REB,  1 AST
+Bones Hyland           | 3 PTS, 1 REB,  0 AST
+Bismack Biyombo        | 2 PTS, 0 REB,  0 AST
+Kyle Anderson          | 2 PTS, 0 REB,  3 AST
+Jordan McLaughlin      | 2 PTS, 1 REB,  1 AST
+Jaylen Clark           | 2 PTS, 3 REB,  0 AST
+Lindy Waters III       | 2 PTS, 1 REB,  1 AST
+Mason Plumlee          | 2 PTS, 2 REB,  0 AST
+Keldon Johnson         | 0 PTS, 0 REB,  2 AST
+Rudy Gobert            | 0 PTS, 3 REB,  0 AST
+

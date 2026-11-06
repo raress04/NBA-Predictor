@@ -1,0 +1,24 @@
+
+[*] Syncing Date: 2026-03-01
+    [+] Fetched 244 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/march/yesterday_results_2026-03-01.txt
+    [*] Resolving outcomes for 2026-03-01...
+    [OK] Results saved to yesterday_results_2026-03-01.txt
+    [*] Resolving outcomes for 2026-03-01...
+
+[*] Syncing Date: 2026-03-15
+    [+] Fetched 145 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/march/yesterday_results_2026-03-15.txt
+    [*] Resolving outcomes for 2026-03-15...
+    [OK] Results saved to yesterday_results_2026-03-15.txt
+    [*] Resolving outcomes for 2026-03-15...
+
+[*] Syncing Date: 2026-03-21
+    [+] Fetched 204 box scores.
+    [OK] DB update complete.
+[+] Results file written atomically: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/results/2025-2026/live_results/march/yesterday_results_2026-03-21.txt
+    [*] Resolving outcomes for 2026-03-21...
+    [OK] Results saved to yesterday_results_2026-03-21.txt
+    [*] Resolving outcomes for 2026-03-21...

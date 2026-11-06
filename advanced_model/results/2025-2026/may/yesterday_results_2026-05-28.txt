@@ -1,0 +1,30 @@
+MATCHUP: OKC vs. SAS    91 - 118
+Victor Wembanyama      | 28 PTS, 10 REB,  2 AST
+Dylan Harper           | 18 PTS, 6 REB,  4 AST
+Stephon Castle         | 17 PTS, 5 REB,  9 AST
+Shai Gilgeous-Alexander | 15 PTS, 1 REB,  4 AST
+Jared McCain           | 13 PTS, 2 REB,  6 AST
+Devin Vassell          | 12 PTS, 1 REB,  2 AST
+Cason Wallace          | 11 PTS, 3 REB,  1 AST
+Julian Champagnie      | 10 PTS, 6 REB,  2 AST
+Chet Holmgren          | 10 PTS, 11 REB,  1 AST
+Isaiah Hartenstein     | 10 PTS, 5 REB,  3 AST
+Keldon Johnson         | 9 PTS, 3 REB,  0 AST
+Kenrich Williams       | 7 PTS, 6 REB,  2 AST
+Alex Caruso            | 7 PTS, 0 REB,  0 AST
+Harrison Barnes        | 6 PTS, 1 REB,  0 AST
+Kelly Olynyk           | 6 PTS, 1 REB,  0 AST
+De'Aaron Fox           | 5 PTS, 5 REB,  7 AST
+Aaron Wiggins          | 5 PTS, 0 REB,  0 AST
+Luguentz Dort          | 5 PTS, 1 REB,  0 AST
+Jaylin Williams        | 4 PTS, 9 REB,  2 AST
+Isaiah Joe             | 3 PTS, 4 REB,  2 AST
+Luke Kornet            | 3 PTS, 5 REB,  1 AST
+Lindy Waters III       | 2 PTS, 0 REB,  1 AST
+Carter Bryant          | 2 PTS, 4 REB,  0 AST
+Jalen Williams         | 1 PTS, 0 REB,  1 AST
+Jordan McLaughlin      | 0 PTS, 4 REB,  2 AST
+Nikola Topić           | 0 PTS, 0 REB,  0 AST
+Mason Plumlee          | 0 PTS, 1 REB,  0 AST
+Bismack Biyombo        | 0 PTS, 0 REB,  0 AST
+

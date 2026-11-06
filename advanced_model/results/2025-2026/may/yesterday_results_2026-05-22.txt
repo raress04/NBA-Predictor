@@ -1,0 +1,30 @@
+MATCHUP: OKC vs. SAS    123 - 108
+Shai Gilgeous-Alexander | 26 PTS, 2 REB,  12 AST
+Victor Wembanyama      | 26 PTS, 4 REB,  3 AST
+Jared McCain           | 24 PTS, 4 REB,  1 AST
+Devin Vassell          | 20 PTS, 7 REB,  2 AST
+Jaylin Williams        | 18 PTS, 5 REB,  1 AST
+De'Aaron Fox           | 15 PTS, 7 REB,  6 AST
+Alex Caruso            | 15 PTS, 3 REB,  1 AST
+Stephon Castle         | 14 PTS, 5 REB,  7 AST
+Chet Holmgren          | 14 PTS, 3 REB,  1 AST
+Cason Wallace          | 11 PTS, 5 REB,  4 AST
+Julian Champagnie      | 10 PTS, 5 REB,  2 AST
+Dylan Harper           | 6 PTS, 3 REB,  2 AST
+Isaiah Hartenstein     | 5 PTS, 8 REB,  4 AST
+Keldon Johnson         | 5 PTS, 2 REB,  0 AST
+Kenrich Williams       | 5 PTS, 1 REB,  0 AST
+Luke Kornet            | 4 PTS, 2 REB,  1 AST
+Carter Bryant          | 3 PTS, 1 REB,  1 AST
+Isaiah Joe             | 3 PTS, 0 REB,  1 AST
+Kelly Olynyk           | 3 PTS, 0 REB,  0 AST
+Ajay Mitchell          | 2 PTS, 5 REB,  1 AST
+Mason Plumlee          | 2 PTS, 0 REB,  1 AST
+Luguentz Dort          | 0 PTS, 5 REB,  3 AST
+Jordan McLaughlin      | 0 PTS, 1 REB,  1 AST
+Harrison Barnes        | 0 PTS, 0 REB,  0 AST
+Bismack Biyombo        | 0 PTS, 0 REB,  0 AST
+Lindy Waters III       | 0 PTS, 0 REB,  0 AST
+Aaron Wiggins          | 0 PTS, 0 REB,  0 AST
+Nikola Topić           | 0 PTS, 0 REB,  0 AST
+
