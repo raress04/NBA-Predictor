@@ -106,6 +106,13 @@ def get_tiered_bias(category: str, projection_value: float) -> float:
     """
     cat = category.upper()
 
+    # Step 2 (2026-11-06): the runtime offsets come from one week of March 2026
+    # live data and push MIN_GAP toward OVERs (Season-Updates entry 39). Off by
+    # default; STEP2_PROFILE=legacy restores them. A measured correction, if any,
+    # belongs to Step 3 calibration.
+    if not settings.USE_RUNTIME_BIAS:
+        return 0.0
+
     # TOTAL bias correction is DISABLED.
     # The correction was calibrated on historical-mode data (no injury matrix,
     # no synergy collapse) and was subtracting ~13.66 pts from totals that

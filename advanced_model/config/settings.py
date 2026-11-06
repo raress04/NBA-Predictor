@@ -1,3 +1,4 @@
+import os
 
 # Stat-specific weights for blending Simulation Confidence and Player History DB Confidence.
 # Assists are noisy, so we trust historical hit rate equal to the sim.
@@ -56,6 +57,9 @@ PROJECTION_TIERS = {
 # TOTAL_high zeroed per spec: negative correction contradicts expected pattern,
 #   likely reflects missing injury data in retroactive high-scoring games.
 #   Revisit after full injury matrix re-run.
+# NOTE (2026-11-06): DEAD CONFIG — nothing reads this dict. Runtime bias came from
+# utils/bias.load_all_bias_corrections (projection_outcomes) and is off since Step 2
+# (USE_RUNTIME_BIAS). Kept for reference only.
 TIERED_BIAS_CORRECTIONS = {
     ('POINTS',   'bench'):   +0.63,    # n=3,811  — computed (JSON)
     ('POINTS',   'starter'): +0.28,    # n=5,889  — computed (JSON)
@@ -143,8 +147,37 @@ TEAM_WEIGHT = 0.70    # Weight for team-level defense in matchup multiplier
 PLAYER_WEIGHT = 0.30  # Weight for individual defender in matchup multiplier
 
 # ── Back-to-Back Fatigue Adjustments ─────────────────────────────
-B2B_SHOOTING_PENALTY = 0.96  # 4% drop in FG% on B2B second game
-B2B_TOV_BOOST = 1.02         # 2% increase in turnovers on B2B second game
+# LEGACY REFERENCE, UNUSED since Step 2 (2026-11-06). These were never applied in
+# practice (B2B detection never matched the stored date format) and the data does
+# not support them (no shooting drop on B2B — Season-Updates entry 39).
+# B2B effects now come from config/adjustment_params.json (see B2B_MODEL below).
+B2B_SHOOTING_PENALTY = 0.96
+B2B_TOV_BOOST = 1.02
+
+# ── Step 2 switches (Plans/STEP2_IMPLEMENTATION_AUDIT.md) ─────────
+# STEP2_PROFILE can be overridden with the environment variable of the same name:
+#   'step2'  (default) — new behaviour
+#   'legacy'           — pre-Step-2 behaviour, for A/B replays and rollback
+# Code must read these as settings.<NAME> at call time (not `from ... import`),
+# so a profile switch in tests / the replay harness takes effect.
+STEP2_PROFILE = os.environ.get('STEP2_PROFILE', 'step2').strip().lower()
+if STEP2_PROFILE not in ('step2', 'legacy'):
+    raise ValueError(f"STEP2_PROFILE must be 'step2' or 'legacy', got {STEP2_PROFILE!r}")
+_STEP2_LEGACY = (STEP2_PROFILE == 'legacy')
+
+# A — runtime tiered bias (utils/bias.py). Legacy = the Mar 8-14 2026 offsets.
+USE_RUNTIME_BIAS = _STEP2_LEGACY
+# B — stage-2 prop gate scale: 'raw' tests the raw direction-specific sim share
+#     (same number as stage 1); 'legacy' tests the prior-3000 posterior + 75% rule.
+CONFIDENCE_GATE = 'legacy' if _STEP2_LEGACY else 'raw'
+# C — back-to-back: 'fitted' (measured role effects) or 'off' (legacy reality: never fired).
+B2B_MODEL = 'off' if _STEP2_LEGACY else 'fitted'
+# D — returning players: 'fitted' (minutes table) or 'legacy' (18/24/30 caps + rust).
+RETURNING_MODEL = 'legacy' if _STEP2_LEGACY else 'fitted'
+# Fitted parameters written by scripts/fit_adjustments.py
+ADJUSTMENT_PARAMS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'adjustment_params.json')
+# Stamped on shadow_picks rows so analyses can split pre/post Step 2.
+SHADOW_MODEL_VERSION = 'ERA_3' if _STEP2_LEGACY else 'ERA_3_STEP2'
 
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""

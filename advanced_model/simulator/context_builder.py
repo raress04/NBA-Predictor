@@ -379,11 +379,12 @@ def get_team_rebound_efficiency(team_id: int, limit: int = 15, before_date: str 
     }
 
 
-def get_player_historical_hit_rates(player_name: str, lines: dict, limit: int = 20) -> dict:
+def get_player_historical_hit_rates(player_name: str, lines: dict, limit: int = 20,
+                                    before_date: str = None) -> dict:
     '''
     Given a player name and a dict of prop lines like {'PTS': 25.5, 'REB': 7.5, 'AST': 5.5},
     query the last N games from the CURRENT SEASON and return split-window hit rates.
-    
+
     Returns per stat:
         hit:        hits over last 20 games
         total:      total games in window
@@ -392,30 +393,42 @@ def get_player_historical_hit_rates(player_name: str, lines: dict, limit: int = 
         recent_total: games in recent window
         recent_pct: hit% over last 10 games
     Falls back to include previous season if current season has <10 games.
+
+    before_date (Step 2, backtest/replay): only games before it, "current season" =
+    the season of before_date. None (live) keeps the original behaviour.
     '''
     conn = get_connection()
 
+    if before_date:
+        y, m = int(before_date[:4]), int(before_date[5:7])
+        start = y if m >= 9 else y - 1
+        season_sql, season_params = "season = ? AND game_date < ?", [f"{start}-{(start + 1) % 100:02d}", before_date[:10]]
+        fb_sql, fb_params = "season >= '2023-24' AND game_date < ?", [before_date[:10]]
+    else:
+        season_sql, season_params = "season = (SELECT MAX(season) FROM box_scores)", []
+        fb_sql, fb_params = "season >= '2023-24'", []
+
     def _fetch(lim):
-        q = '''
+        q = f'''
         SELECT pts, reb, ast, oreb + dreb as total_reb
         FROM box_scores
         WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
-        AND season = (SELECT MAX(season) FROM box_scores)
+        AND {season_sql}
         ORDER BY game_date DESC
         LIMIT ?
         '''
-        result = pd.read_sql_query(q, conn, params=(player_name, lim))
+        result = pd.read_sql_query(q, conn, params=[player_name, *season_params, lim])
         if len(result) < 5:
             # Fallback to include previous season
-            q_fb = '''
+            q_fb = f'''
             SELECT pts, reb, ast, oreb + dreb as total_reb
             FROM box_scores
             WHERE player_name = ? AND minutes IS NOT NULL AND minutes != '0:00'
-            AND season >= '2023-24'
+            AND {fb_sql}
             ORDER BY game_date DESC
             LIMIT ?
             '''
-            result = pd.read_sql_query(q_fb, conn, params=(player_name, lim))
+            result = pd.read_sql_query(q_fb, conn, params=[player_name, *fb_params, lim])
         return result
 
     df_extended = _fetch(limit)          # last 20 games

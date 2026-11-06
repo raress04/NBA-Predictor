@@ -563,6 +563,8 @@ def build_parlays(
             'sim_confidence': float(sim_conf) if sim_conf is not None else 0.0,
             'edge_pct': float(edge) if edge is not None else 0.0,
             'ban_reason': str(reason),
+            # Step 2: which gate/model profile produced this row (pre/post split)
+            'model_version': settings.SHADOW_MODEL_VERSION,
         }
         if ctx:
             for key in _CANDIDATE_CTX_KEYS:
@@ -873,11 +875,17 @@ def build_parlays(
                         target_count, edge['n_sim'], 
                         prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                     )
-                    calib_conf = post_mean * 100.0
-                    ctx['posterior_conf'] = calib_conf
+                    ctx['posterior_conf'] = post_mean * 100.0
+                    if settings.CONFIDENCE_GATE == 'raw':
+                        # Step 2 (B): gate on the same number stage 1 tested — the raw
+                        # direction-specific share of sims that cleared the line. The
+                        # posterior (prior 3000) is still logged, but no longer gates.
+                        calib_conf = target_count / edge['n_sim'] * 100.0
+                    else:
+                        calib_conf = post_mean * 100.0
 
                     if ci_width > 0.25:
-                        log_shadow(player_name, stat_key, direction, line, edge['median'], calib_conf, edge['edge_pct'], f'HIGH_VARIANCE(ci={ci_width:.2f})', ctx=ctx, conf_stage='posterior')
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], ctx['posterior_conf'], edge['edge_pct'], f'HIGH_VARIANCE(ci={ci_width:.2f})', ctx=ctx, conf_stage='posterior')
                         continue
 
                     # For props, apply a harder cap
@@ -944,17 +952,21 @@ def build_parlays(
                     # Determine inclusion threshold
                     thresh = EDGE_THRESHOLDS.get(internal_stat_key, EDGE_THRESHOLDS['combo'])
                     min_prob = thresh['min_prob']
-                    
-                    # ── Agreement Exception ("Trust ✅") ──
-                    # If BOTH the Sim and the DB history agree they are high-prob (>75%),
-                    # we lower the specific qualification bar (e.g. bypass the 82% assist rule).
-                    if hist_pct is not None and calib_conf >= 75.0 and hist_pct >= 75.0:
-                        min_prob = 75.0
-                    
-                    if hist_pct is None:
-                        # 100% Sim Confidence relied upon, raise the bar to 75%
-                        min_prob = max(min_prob, 75.0)
-                        
+
+                    if settings.CONFIDENCE_GATE != 'raw':
+                        # Legacy rules (posterior scale). On the raw scale both are
+                        # dropped: the 75% "no history" bar needed ~87% raw, and the
+                        # agreement exception would RAISE a 65-70% bar to 75%.
+                        # ── Agreement Exception ("Trust ✅") ──
+                        # If BOTH the Sim and the DB history agree they are high-prob (>75%),
+                        # we lower the specific qualification bar (e.g. bypass the 82% assist rule).
+                        if hist_pct is not None and calib_conf >= 75.0 and hist_pct >= 75.0:
+                            min_prob = 75.0
+
+                        if hist_pct is None:
+                            # 100% Sim Confidence relied upon, raise the bar to 75%
+                            min_prob = max(min_prob, 75.0)
+
                     if blended_conf < min_prob:
                         log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, 0, f'LOW_CONFIDENCE(min={min_prob:.1f})', ctx=ctx, conf_stage='blended')
                         continue

@@ -464,6 +464,11 @@ def ingest_shadow_picks(picks: list[dict]):
                  'projection', 'sim_confidence', 'edge_pct', 'ban_reason']
     stage_cols = [c for c in SHADOW_STAGE_COLUMNS if c != 'superseded']
     cols = base_cols + stage_cols
+    # Step 2: store model_version when the rows carry it (column default 'ERA_3'
+    # otherwise). Only if the table has the column (old test schemas may not).
+    existing = {r[1] for r in conn.execute("PRAGMA table_info(shadow_picks)")}
+    if 'model_version' in existing and any(p.get('model_version') for p in picks):
+        cols = cols + ['model_version']
     sql = (f"INSERT INTO shadow_picks ({', '.join(cols)}) "
            f"VALUES ({', '.join('?' * len(cols))})")
     inserted = 0

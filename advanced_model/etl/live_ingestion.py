@@ -48,6 +48,8 @@ from config.settings import (
     MAX_PROP_CONFIDENCE, B2B_SHOOTING_PENALTY, B2B_TOV_BOOST,
     CONFIDENCE_PRIOR_STRENGTH, BLOWOUT_SPREAD_THRESHOLD
 )
+import config.settings as settings  # Step 2 switches are read at call time
+from utils import adjustments
 from utils.bias import get_tiered_bias
 from simulator.parlay_builder import (
     build_parlays, format_parlay_output, EDGE_THRESHOLDS,
@@ -340,22 +342,89 @@ def get_actual_lineup_from_boxscores(team_id: int, target_date: str, conn) -> Li
 
 
 
-def evaluate_returning_player(player_name: str, team_id: int, conn) -> str:
+def season_of(date_str: str) -> str:
+    '''NBA season label for a YYYY-MM-DD date: Sep-Dec -> "YYYY-YY+1", Jan-Aug -> "YYYY-1-YY".'''
+    y, m = int(date_str[:4]), int(date_str[5:7])
+    start = y if m >= 9 else y - 1
+    return f"{start}-{(start + 1) % 100:02d}"
+
+
+def evaluate_returning_player(player_name: str, team_id: int, conn, game_date: str = None):
     '''
-    Checks the local database to see how many consecutive games a player has missed
-    leading up to today. Returns classification:
-    RETURNING_EXTENDED, RETURNING_MODERATE, RETURNING_MINOR, or None.
+    Step 2 (§5.1 of Plans/STEP2_IMPLEMENTATION_AUDIT.md) — date-aware return detection.
+
+    Looks only at the team's games BEFORE game_date in the season of game_date
+    (preseason excluded). Walking back from the most recent team game:
+      s = consecutive games the player played (0-2), then
+      k = consecutive games he missed (played = minutes > 0).
+    A return is k >= 1 and s <= 2; return_game = s + 1. Requires >= min_prior_games
+    played for this team this season before the absence (else new arrival / early
+    season -> None). baseline_min = mean minutes over his last <= 10 played games
+    before the absence.
+
+    Returns None or {'games_missed': k, 'return_game': 1..3, 'baseline_min': float}.
     '''
-    # Get team's last 15 games
+    game_date = (game_date or CURRENT_GAME_DATE)[:10]
+    season = season_of(game_date)
+    params = adjustments.load_params() or {}
+    ret = params.get('returning', {})
+    min_prior = int(ret.get('min_prior_games', 5))
+    n_base = int(ret.get('baseline_games', 10))
+    max_return_game = max(ret.get('return_games', [1, 2, 3]))
+
+    team_games = conn.execute('''
+        SELECT game_id, MIN(substr(game_date, 1, 10)) AS d
+        FROM box_scores
+        WHERE team_id = ? AND season = ? AND substr(game_date, 1, 10) < ?
+          AND substr(game_id, 1, 3) <> '001'
+        GROUP BY game_id
+        ORDER BY d DESC, game_id DESC
+    ''', (team_id, season, game_date)).fetchall()
+    if not team_games:
+        return None
+    played = dict(conn.execute('''
+        SELECT game_id, CAST(minutes AS REAL)
+        FROM box_scores
+        WHERE player_name = ? AND team_id = ? AND season = ? AND substr(game_date, 1, 10) < ?
+          AND CAST(minutes AS REAL) > 0
+    ''', (player_name, team_id, season, game_date)).fetchall())
+
+    gids = [g[0] for g in team_games]
+    i, s = 0, 0
+    while i < len(gids) and gids[i] in played:
+        s += 1
+        i += 1
+    if s >= max_return_game:
+        return None
+    k = 0
+    while i < len(gids) and gids[i] not in played:
+        k += 1
+        i += 1
+    if k == 0:
+        return None
+    prior = [played[g] for g in gids[i:] if g in played]   # most recent first
+    if len(prior) < min_prior:
+        return None
+    base = prior[:n_base]
+    return {'games_missed': k, 'return_game': s + 1, 'baseline_min': float(sum(base) / len(base))}
+
+
+def legacy_returning_class(player_name: str, team_id: int, conn, game_date: str = None) -> str:
+    '''
+    Pre-Step-2 classification (STEP2_PROFILE=legacy), made date-aware: consecutive
+    missed games counted back from the team's last 15 games BEFORE game_date.
+    Returns RETURNING_EXTENDED (>=10), RETURNING_MODERATE (>=5), RETURNING_MINOR or None.
+    '''
+    game_date = (game_date or CURRENT_GAME_DATE)[:10]
     team_query = '''
         SELECT game_id, game_date
         FROM box_scores
-        WHERE team_id = ? AND season = (SELECT MAX(season) FROM box_scores)
+        WHERE team_id = ? AND season = ? AND substr(game_date, 1, 10) < ?
         GROUP BY game_id
         ORDER BY game_date DESC
         LIMIT 15
     '''
-    team_games = pd.read_sql_query(team_query, conn, params=(team_id,))
+    team_games = pd.read_sql_query(team_query, conn, params=(team_id, season_of(game_date), game_date))
     if team_games.empty:
         return None
 
@@ -431,26 +500,68 @@ def apply_returning_restrictions(matrix: dict, classification: str, is_b2b: bool
     return matrix
 
 
-# ── B2B Fatigue Detection ────────────────────────────────────────
-# Constants sourced from config.settings (B2B_SHOOTING_PENALTY, B2B_TOV_BOOST)
+# ── B2B Detection ────────────────────────────────────────────────
 
-def is_back_to_back(team_id: int, conn) -> bool:
+def is_back_to_back(team_id: int, conn, game_date: str = None) -> bool:
     '''
-    Checks if the given team played a game yesterday.
-    Returns True if the team is on the second night of a back-to-back.
+    True if the team played on the day before game_date (2nd night of a back-to-back).
+
+    Step 2 fix: the old version compared 'YYYY-MM-DD' with the stored
+    'YYYY-MM-DDT00:00:00' (never matched) and used the local clock (wrong in
+    backtests). game_date = the slate date (live) or the backtest target date.
+    If the DB has no box scores at all for the previous day (fetch missed), the
+    status is unknown: a warning is printed and False is returned.
     '''
-    yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-    cursor = conn.cursor()
-    cursor.execute(
-        'SELECT COUNT(*) FROM box_scores WHERE team_id = ? AND game_date = ?',
-        (team_id, yesterday)
-    )
-    count = cursor.fetchone()[0]
-    return count > 0
+    game_date = (game_date or CURRENT_GAME_DATE)[:10]
+    prev_day = (datetime.strptime(game_date, '%Y-%m-%d') - timedelta(days=1)).strftime('%Y-%m-%d')
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT COUNT(*) FROM box_scores WHERE team_id = ? AND substr(game_date, 1, 10) = ? "
+        "AND substr(game_id, 1, 3) <> '001'",
+        (team_id, prev_day))
+    if cur.fetchone()[0] > 0:
+        return True
+    cur.execute("SELECT COUNT(*) FROM box_scores WHERE substr(game_date, 1, 10) = ?", (prev_day,))
+    if cur.fetchone()[0] == 0:
+        cur.execute("SELECT COUNT(*) FROM games WHERE substr(game_date, 1, 10) = ?", (prev_day,))
+        if cur.fetchone()[0] > 0:
+            print(f"  [B2B] no box scores for {prev_day} — back-to-back status unknown, assuming not B2B")
+    return False
+
+
+def adjust_player_matrix(matrix: dict, player_name: str, team_id: int, conn,
+                         game_date: str, is_b2b: bool) -> dict:
+    '''
+    Step 2: returning-player and back-to-back adjustments for one player's matrix,
+    shared by the live and backtest paths. Profile switches (config.settings):
+      RETURNING_MODEL 'fitted' -> utils.adjustments table | 'legacy' -> 18/24/30 caps
+      B2B_MODEL       'fitted' -> utils.adjustments effects | 'off' -> nothing
+    Legacy returning uses is_b2b=False: before Step 2 B2B detection never fired.
+    '''
+    if settings.RETURNING_MODEL == 'fitted':
+        info = evaluate_returning_player(player_name, team_id, conn, game_date)
+        if info:
+            if adjustments.load_params() is None:
+                print(f"  [!] adjustment params missing ({settings.ADJUSTMENT_PARAMS_PATH}) — "
+                      f"no returning adjustment for {player_name}")
+            else:
+                matrix = adjustments.apply_return_adjustment(matrix, info)
+                ri = matrix.get('return_info', {})
+                print(f"  ⚠️  [RETURNING] {player_name}: missed {info['games_missed']}, return game "
+                      f"{info['return_game']}, expected {ri.get('expected_min', 0):.1f} min "
+                      f"(pre-absence {info['baseline_min']:.1f})")
+    else:
+        ret_class = legacy_returning_class(player_name, team_id, conn, game_date)
+        if ret_class:
+            matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=False)
+            print(f"  ⚠️  [MINUTES RESTRICTION] {player_name} classified as {ret_class}.")
+    if is_b2b and settings.B2B_MODEL == 'fitted':
+        matrix = adjustments.apply_b2b_adjustment(matrix)
+    return matrix
 
 
 def apply_b2b_fatigue(player_matrix: dict) -> dict:
-    '''Applies fatigue penalty to a single player's matrix.'''
+    '''LEGACY, UNUSED since Step 2 (constants not supported by data). Kept for reference.'''
     player_matrix['fg2_pct'] *= B2B_SHOOTING_PENALTY
     player_matrix['fg3_pct'] *= B2B_SHOOTING_PENALTY
     player_matrix['tov_rate'] *= B2B_TOV_BOOST
@@ -458,18 +569,32 @@ def apply_b2b_fatigue(player_matrix: dict) -> dict:
 
 
 # ── Dynamic Injury Matrix ──────────────────────────────────────────
-def get_team_player_roles(team_id: int, conn) -> dict:
-    query = '''
-    SELECT player_name, pts, fga, minutes
-    FROM box_scores
-    WHERE team_id = ? AND minutes IS NOT NULL AND minutes != '0:00'
-    AND season = (SELECT MAX(season) FROM box_scores)
-    AND game_id IN (
-        SELECT DISTINCT game_id FROM box_scores WHERE team_id = ?
-        ORDER BY game_date DESC LIMIT 15
-    )
-    '''
-    df = pd.read_sql_query(query, conn, params=(team_id, team_id))
+def get_team_player_roles(team_id: int, conn, before_date: str = None) -> dict:
+    # Step 2 leak fix: with before_date (backtest), only games before it, in its season.
+    if before_date:
+        query = '''
+        SELECT player_name, pts, fga, minutes
+        FROM box_scores
+        WHERE team_id = ? AND minutes IS NOT NULL AND minutes != '0:00'
+        AND season = ?
+        AND game_id IN (
+            SELECT DISTINCT game_id FROM box_scores WHERE team_id = ? AND game_date < ?
+            ORDER BY game_date DESC LIMIT 15
+        )
+        '''
+        df = pd.read_sql_query(query, conn, params=(team_id, season_of(before_date), team_id, before_date[:10]))
+    else:
+        query = '''
+        SELECT player_name, pts, fga, minutes
+        FROM box_scores
+        WHERE team_id = ? AND minutes IS NOT NULL AND minutes != '0:00'
+        AND season = (SELECT MAX(season) FROM box_scores)
+        AND game_id IN (
+            SELECT DISTINCT game_id FROM box_scores WHERE team_id = ?
+            ORDER BY game_date DESC LIMIT 15
+        )
+        '''
+        df = pd.read_sql_query(query, conn, params=(team_id, team_id))
     if df.empty: return {}
     
     def parse_minutes(m):
@@ -492,13 +617,15 @@ def get_team_player_roles(team_id: int, conn) -> dict:
     return roles
 
 
-def apply_dynamic_injury_matrix(team_matrix: dict, team_id: int, team_tricode: str, conn):
+def apply_dynamic_injury_matrix(team_matrix: dict, team_id: int, team_tricode: str, conn,
+                                before_date: str = None):
     '''
     Calculates the Current Roster Rating penalties based on active roster.
     If Stars/Starters are missing, penalizes the team's efficiency natively in the matrix.
     If 3+ Starters are missing, triggers Synergy Collapse.
+    before_date: backtest target date (Step 2 leak fix); None in live.
     '''
-    roles = get_team_player_roles(team_id, conn)
+    roles = get_team_player_roles(team_id, conn, before_date=before_date)
     if not roles: return False
     
     active_names = set(team_matrix.keys())
@@ -551,12 +678,30 @@ def apply_dynamic_injury_matrix(team_matrix: dict, team_id: int, team_tricode: s
 
 
 # ── Usage Rate Redistribution ────────────────────────────────────
-def get_team_historical_usage(team_id: int, conn, limit: int = 15) -> dict:
+def get_team_historical_usage(team_id: int, conn, limit: int = 15, before_date: str = None) -> dict:
     '''
     Returns {player_name: avg_fga_per_game} for the CURRENT roster over the last N games.
     Only includes players on the active roster (from rosters.csv) to avoid
     counting traded players from old seasons.
+
+    before_date (backtest, Step 2 leak fix): games before it in its season only, and
+    no rosters.csv filter (that file is TODAY's roster); players are those who played
+    for this team in those games.
     '''
+    if before_date:
+        df = pd.read_sql_query('''
+        SELECT player_name, AVG(fga) as avg_fga
+        FROM box_scores
+        WHERE team_id = ? AND minutes IS NOT NULL AND minutes != '0:00'
+        AND season = ?
+        AND game_id IN (
+            SELECT DISTINCT game_id FROM box_scores WHERE team_id = ? AND game_date < ?
+            ORDER BY game_date DESC LIMIT ?
+        )
+        GROUP BY player_name
+        ''', conn, params=(team_id, season_of(before_date), team_id, before_date[:10], limit))
+        return dict(zip(df['player_name'], df['avg_fga']))
+
     # Get current roster to filter
     current_roster = get_active_roster(team_id)
     
@@ -632,15 +777,25 @@ def redistribute_usage(team_matrix: dict, full_roster_usage: dict, team_tricode:
 
 
 
-def process_hist_game(game, target_date, injured_normalized):
+def process_hist_game(game, target_date, injured_normalized, n_sims: int = 5000,
+                      seed=None, return_dists: bool = False):
+    '''
+    Backtest simulation of one game. Step 2 additions (defaults keep the old behaviour):
+      n_sims       number of Monte Carlo games (default 5000, as live)
+      seed         if given, random.seed(seed) before the sims (common random numbers
+                   for the old-vs-new replay, scripts/replay_step2.py)
+      return_dists add prop / score distributions, player minutes and prop lines to the
+                   payload (as the live path does) so the replay can run build_parlays
+    '''
     import io, contextlib, time, sqlite3 as _sqlite3
+    import random as _random
     from simulator.markov_engine import MarkovSimulator
     from simulator.matrix_builder import get_player_stats_matrix, get_team_pace, get_team_efficiency, get_team_rebound_efficiency
     from simulator.synergy_tracker import compute_matchup_multiplier
-    
+
     output_buffer = io.StringIO()
     payload = {'game_logs': ''}
-    
+
     with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(output_buffer):
         conn = get_connection()
         try:
@@ -668,12 +823,13 @@ def process_hist_game(game, target_date, injured_normalized):
             home_matrix = {}
             away_matrix = {}
 
-            home_b2b = is_back_to_back(home_team['teamId'], conn)
-            away_b2b = is_back_to_back(away_team['teamId'], conn)
+            # Step 2: B2B relative to the backtest date (was: the local clock)
+            home_b2b = is_back_to_back(home_team['teamId'], conn, target_date)
+            away_b2b = is_back_to_back(away_team['teamId'], conn, target_date)
             if home_b2b:
-                print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK")
+                print(f"  ⚠️  [B2B] {home_team['teamTricode']} is on a BACK-TO-BACK (model: {settings.B2B_MODEL})")
             if away_b2b:
-                print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK")
+                print(f"  ⚠️  [B2B] {away_team['teamTricode']} is on a BACK-TO-BACK (model: {settings.B2B_MODEL})")
 
             for hp in home_lineup:
                 try:
@@ -683,16 +839,11 @@ def process_hist_game(game, target_date, injured_normalized):
                         print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
                     matrix['fg2_pct'] *= modifier
                     matrix['fg3_pct'] *= modifier
-                    ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
-                    if ret_class:
-                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
-                        print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}.")
-                    if home_b2b:
-                        matrix = apply_b2b_fatigue(matrix)
+                    matrix = adjust_player_matrix(matrix, hp, home_team['teamId'], conn, target_date, home_b2b)
                     home_matrix[hp] = matrix
                 except ValueError:
                     pass
-            
+
             for ap in away_lineup:
                 try:
                     matrix = get_player_stats_matrix(ap, limit=15, before_date=target_date, current_team_id=away_team['teamId'])
@@ -701,12 +852,7 @@ def process_hist_game(game, target_date, injured_normalized):
                         print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
                     matrix['fg2_pct'] *= modifier
                     matrix['fg3_pct'] *= modifier
-                    ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
-                    if ret_class:
-                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
-                        print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}.")
-                    if away_b2b:
-                        matrix = apply_b2b_fatigue(matrix)
+                    matrix = adjust_player_matrix(matrix, ap, away_team['teamId'], conn, target_date, away_b2b)
                     away_matrix[ap] = matrix
                 except ValueError:
                     pass
@@ -715,9 +861,9 @@ def process_hist_game(game, target_date, injured_normalized):
                 print("[-] Could not build player matrices from the database.")
                 return payload
 
-            # Usage Redistribution
-            home_usage = get_team_historical_usage(home_team['teamId'], conn)
-            away_usage = get_team_historical_usage(away_team['teamId'], conn)
+            # Usage Redistribution (Step 2 leak fix: games before target_date only)
+            home_usage = get_team_historical_usage(home_team['teamId'], conn, before_date=target_date)
+            away_usage = get_team_historical_usage(away_team['teamId'], conn, before_date=target_date)
             home_matrix = redistribute_usage(home_matrix, home_usage, home_team['teamTricode'])
             away_matrix = redistribute_usage(away_matrix, away_usage, away_team['teamTricode'])
 
@@ -726,11 +872,11 @@ def process_hist_game(game, target_date, injured_normalized):
             away_eff = get_team_efficiency(away_team['teamId'], before_date=target_date)
             home_reb_eff = get_team_rebound_efficiency(home_team['teamId'], before_date=target_date)
             away_reb_eff = get_team_rebound_efficiency(away_team['teamId'], before_date=target_date)
-            
-            # Dynamic Injury Matrix
-            home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn)
-            away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn)
-            
+
+            # Dynamic Injury Matrix (Step 2 leak fix: roles from games before target_date)
+            home_collapse = apply_dynamic_injury_matrix(home_matrix, home_team['teamId'], home_team['teamTricode'], conn, before_date=target_date)
+            away_collapse = apply_dynamic_injury_matrix(away_matrix, away_team['teamId'], away_team['teamTricode'], conn, before_date=target_date)
+
             print(f"  ⚡ [TEAM RATINGS] {home_team['teamTricode']}: OffRtg {home_eff.get('off_rtg', 112):.1f} | DefRtg {home_eff.get('def_rtg', 112):.1f}")
             print(f"  ⚡ [TEAM RATINGS] {away_team['teamTricode']}: OffRtg {away_eff.get('off_rtg', 112):.1f} | DefRtg {away_eff.get('def_rtg', 112):.1f}")
 
@@ -755,18 +901,23 @@ def process_hist_game(game, target_date, injured_normalized):
 
             # Run Monte Carlo Simulations
             engine = MarkovSimulator(home_matrix, away_matrix, is_fast_pace=is_fast_pace)
-            simulations = 5000
+            simulations = n_sims
+            if seed is not None:
+                _random.seed(seed)
             aggregate_home_score = 0
             aggregate_away_score = 0
-            
-            prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []} 
+
+            prop_tracker = {player: {'PTS': [], 'REB': [], 'AST': [], 'FG3M': []}
                             for player in list(home_matrix.keys()) + list(away_matrix.keys())}
-            
+            home_scores_list, away_scores_list = [], []
+
             for i in range(simulations):
                 result = engine.run_full_game(pace=expected_pace)
                 aggregate_home_score += result['home_score']
                 aggregate_away_score += result['away_score']
-                
+                home_scores_list.append(result['home_score'])
+                away_scores_list.append(result['away_score'])
+
                 for player, stats in result['player_stats'].items():
                     if player in prop_tracker:
                         prop_tracker[player]['PTS'].append(stats['PTS'])
@@ -777,7 +928,24 @@ def process_hist_game(game, target_date, injured_normalized):
             # Output Projections
             avg_home = aggregate_home_score / simulations
             avg_away = aggregate_away_score / simulations
-            
+
+            if return_dists:
+                # Same shapes as the live path's payload (consumed by build_parlays)
+                def _minutes_entry(m, team_full):
+                    return {'team': team_full, 'mean': m.get('min_mean', 0), 'std': m.get('min_std', 0),
+                            'restriction': m.get('minutes_restriction_flag', None),
+                            'usage': m.get('avg_fga', 0), 'usage_boosted': m.get('usage_boosted', False),
+                            'return_info': m.get('return_info'), 'b2b': m.get('b2b_adjustment')}
+                payload.update({
+                    'home_team_full': home_team_full, 'away_team_full': away_team_full,
+                    'prop_dists': prop_tracker,
+                    'score_dists': {'home': home_scores_list, 'away': away_scores_list},
+                    'player_minutes': {**{p: _minutes_entry(m, home_team_full) for p, m in home_matrix.items()},
+                                       **{p: _minutes_entry(m, away_team_full) for p, m in away_matrix.items()}},
+                    'b2b': {'home': home_b2b, 'away': away_b2b},
+                    'collapse': {'home': home_collapse, 'away': away_collapse},
+                })
+
             print(f"PROJECTED TOTAL: {avg_home + avg_away:.1f}")
             print(f"PROJECTED SCORE: {home_team['teamTricode']} {avg_home:.1f} - {away_team['teamTricode']} {avg_away:.1f}")
 
@@ -1038,13 +1206,13 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             home_matrix = {}
             away_matrix = {}
 
-            # ── B2B Fatigue Detection ──────────────────────────
-            home_b2b = is_back_to_back(home_team['teamId'], conn)
-            away_b2b = is_back_to_back(away_team['teamId'], conn)
+            # ── B2B Detection (Step 2: relative to the slate date) ──────
+            home_b2b = is_back_to_back(home_team['teamId'], conn, CURRENT_GAME_DATE)
+            away_b2b = is_back_to_back(away_team['teamId'], conn, CURRENT_GAME_DATE)
             if home_b2b:
-                print(f"  ⚠️  [B2B FATIGUE] {home_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
+                print(f"  ⚠️  [B2B] {home_team['teamTricode']} is on a BACK-TO-BACK (model: {settings.B2B_MODEL})")
             if away_b2b:
-                print(f"  ⚠️  [B2B FATIGUE] {away_team['teamTricode']} is on a BACK-TO-BACK (4% shooting penalty applied)")
+                print(f"  ⚠️  [B2B] {away_team['teamTricode']} is on a BACK-TO-BACK (model: {settings.B2B_MODEL})")
 
             for hp in home_lineup:
                 try:
@@ -1054,19 +1222,12 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         print(f"  [Synergy] {hp} vs {away_team_full}: {modifier:.3f}x Offense Modifier")
                     matrix['fg2_pct'] *= modifier
                     matrix['fg3_pct'] *= modifier
-                    
-                    # Check Returning Player Restrictions
-                    ret_class = evaluate_returning_player(hp, home_team['teamId'], conn)
-                    if ret_class:
-                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=home_b2b)
-                        print(f"  ⚠️  [MINUTES RESTRICTION] {hp} classified as {ret_class}. Stats auto-scaled.")
-
-                    if home_b2b:
-                        matrix = apply_b2b_fatigue(matrix)
+                    # Returning-player + B2B adjustments (Step 2)
+                    matrix = adjust_player_matrix(matrix, hp, home_team['teamId'], conn, CURRENT_GAME_DATE, home_b2b)
                     home_matrix[hp] = matrix
                 except ValueError:
                     pass
-            
+
             for ap in away_lineup:
                 try:
                     matrix = get_player_stats_matrix(ap, limit=15, current_team_id=away_team['teamId'])
@@ -1075,15 +1236,8 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         print(f"  [Synergy] {ap} vs {home_team_full}: {modifier:.3f}x Offense Modifier")
                     matrix['fg2_pct'] *= modifier
                     matrix['fg3_pct'] *= modifier
-                    
-                    # Check Returning Player Restrictions
-                    ret_class = evaluate_returning_player(ap, away_team['teamId'], conn)
-                    if ret_class:
-                        matrix = apply_returning_restrictions(matrix, classification=ret_class, is_b2b=away_b2b)
-                        print(f"  ⚠️  [MINUTES RESTRICTION] {ap} classified as {ret_class}. Stats auto-scaled.")
-
-                    if away_b2b:
-                        matrix = apply_b2b_fatigue(matrix)
+                    # Returning-player + B2B adjustments (Step 2)
+                    matrix = adjust_player_matrix(matrix, ap, away_team['teamId'], conn, CURRENT_GAME_DATE, away_b2b)
                     away_matrix[ap] = matrix
                 except ValueError:
                     pass
@@ -1312,7 +1466,9 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                         p_prior = get_prior(stat_key, edge_data['direction'])
                                         target_count = edge_data['over_count'] if edge_data['direction'] == "Over" else (edge_data['n_sim'] - edge_data['over_count'])
                                         p_post, _ = compute_posterior_confidence(target_count, edge_data['n_sim'], prior_mean=p_prior, prior_strength=CONFIDENCE_PRIOR_STRENGTH)
-                                        best_conf = min(p_post * 100.0, MAX_PROP_CONFIDENCE)
+                                        # Step 2 (B): display the number the stage-2 gate tests
+                                        gate_conf = raw_conf if settings.CONFIDENCE_GATE == 'raw' else p_post * 100.0
+                                        best_conf = min(gate_conf, MAX_PROP_CONFIDENCE)
                                         prop_details.append(f"O/U {line} {stat_name} VALUABLE: {edge_data['direction']} ({best_conf:.0f}% conf (raw: {raw_conf:.0f}%), {abs(edge_data['edge_pct']):.1f}% edge)")
                                     else:
                                         prop_details.append(f"O/U {line} {stat_name} ignore")
