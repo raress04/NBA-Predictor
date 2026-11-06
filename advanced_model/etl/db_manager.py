@@ -435,30 +435,37 @@ def ingest_results(pick_outcomes: list[dict], game_date: str):
     return resolved
 
 
+def ensure_shadow_stage_columns(conn) -> list:
+    """Idempotent migration: add candidate stage columns to shadow_picks
+    (Step 1, CRITICAL_BUGS_FOUND_06.11). Returns the names of added columns."""
+    from database.bet_tracker_schema import SHADOW_STAGE_COLUMNS
+    existing = {r[1] for r in conn.execute("PRAGMA table_info(shadow_picks)")}
+    added = []
+    for col, ctype in SHADOW_STAGE_COLUMNS.items():
+        if existing and col not in existing:
+            conn.execute(f"ALTER TABLE shadow_picks ADD COLUMN {col} {ctype}")
+            added.append(col)
+    return added
+
+
 def ingest_shadow_picks(picks: list[dict]):
     """Insert a list of shadow picks into the shadow_picks table."""
     if not picks:
         return 0
         
+    from database.bet_tracker_schema import SHADOW_STAGE_COLUMNS
     conn = _get_conn()
+    ensure_shadow_stage_columns(conn)
     cur = conn.cursor()
+    base_cols = ['game_date', 'player', 'stat_category', 'direction', 'line',
+                 'projection', 'sim_confidence', 'edge_pct', 'ban_reason']
+    stage_cols = [c for c in SHADOW_STAGE_COLUMNS if c != 'superseded']
+    cols = base_cols + stage_cols
+    sql = (f"INSERT INTO shadow_picks ({', '.join(cols)}) "
+           f"VALUES ({', '.join('?' * len(cols))})")
     inserted = 0
     for p in picks:
-        cur.execute("""
-            INSERT INTO shadow_picks 
-                (game_date, player, stat_category, direction, line, projection, sim_confidence, edge_pct, ban_reason)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            p.get('game_date'),
-            p.get('player'),
-            p.get('stat_category'),
-            p.get('direction'),
-            p.get('line'),
-            p.get('projection'),
-            p.get('sim_confidence'),
-            p.get('edge_pct'),
-            p.get('ban_reason')
-        ))
+        cur.execute(sql, tuple(p.get(c) for c in cols))
         inserted += 1
     conn.commit()
     conn.close()

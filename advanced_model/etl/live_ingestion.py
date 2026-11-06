@@ -1625,10 +1625,12 @@ def generate_todays_projections(target_date: str = None):
                             direction     = _p.get('direction', 'OVER'),
                             line          = _p.get('line'),
                             projection    = _p.get('projection'),
-                            sim_confidence= _p.get('confidence'),
+                            # Step 1: direction-specific raw sim frequency for every cohort
+                            sim_confidence= _p.get('raw_sim_freq_pct'),
                             edge_pct      = _p.get('edge_pct'),
                             base_features = None,
                             cohort        = 'selected',
+                            conf_stage    = 'raw_dir',
                         )
                         if _logged:
                             _ml_logged += 1
@@ -1642,10 +1644,14 @@ def generate_todays_projections(target_date: str = None):
                             direction     = _p.get('direction', 'OVER'),
                             line          = _p.get('line'),
                             projection    = _p.get('projection'),
-                            sim_confidence= _p.get('sim_confidence'),
+                            # Step 1: was the legacy sim_confidence (raw P(OVER) for
+                            # early rejects, i.e. wrong side for UNDERs). Use the
+                            # direction-specific raw sim frequency instead.
+                            sim_confidence= _p.get('raw_sim_freq'),
                             edge_pct      = _p.get('edge_pct'),
                             base_features = None,
                             cohort        = 'shadow',
+                            conf_stage    = 'raw_dir',
                         )
                         if _logged:
                             _ml_logged += 1

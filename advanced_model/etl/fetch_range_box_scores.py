@@ -243,8 +243,10 @@ def sync_range(start_date_str, end_date_str, run_evaluate=False):
                     'blk', 'tov', 'pf', 'pts', 'plus_minus']
             
             cursor = conn.cursor()
-            for _, row in logs_rename[cols].iterrows():
-                cursor.execute(f"INSERT OR REPLACE INTO box_scores ({','.join(cols)}) VALUES ({','.join(['?']*len(cols))})", tuple(row[cols]))
+            # INSERT OR REPLACE had no unique key to replace on, so every re-run
+            # duplicated rows (CRITICAL_BUGS_FOUND_06.11). Refresh in place instead.
+            from utils.box_scores_io import insert_box_scores
+            insert_box_scores(conn, logs_rename, cols, replace=True)
             
             # 2. Update games table
             games_df = logs[['GAME_ID', 'GAME_DATE', 'MATCHUP', 'SEASON_YEAR']].drop_duplicates(subset=['GAME_ID'])

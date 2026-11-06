@@ -94,8 +94,15 @@ def run():
             'fgm', 'fga', 'fg3m', 'fg3a', 'ftm', 'fta', 'oreb', 'dreb', 'reb',
             'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'plus_minus']
     cols = [c for c in cols if c in box_df.columns]
-    box_df[cols].to_sql('box_scores', conn, if_exists='append', index=False)
-    print(f"    -> Inserted {len(box_df)} box score rows")
+    # Idempotent insert (CRITICAL_BUGS_FOUND_06.11): never duplicate (game_id, player_id)
+    try:
+        from utils.box_scores_io import insert_box_scores
+    except ImportError:  # run as a plain script: add advanced_model/ to sys.path
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from utils.box_scores_io import insert_box_scores
+    n_written = insert_box_scores(conn, box_df, cols)
+    print(f"    -> Inserted {n_written} new box score rows ({len(box_df) - n_written} already present)")
 
     conn.commit()
     conn.close()

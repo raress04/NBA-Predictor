@@ -146,6 +146,20 @@ KELLY_FRACTION    = settings.KELLY_FRACTION    # Fractional Kelly (Quarter Kelly
 BANKROLL_HARD_CAP = settings.BANKROLL_HARD_CAP # Max 1% of bankroll per parlay
 
 
+# Stage values attached to every logged prop candidate (shadow_picks columns).
+# All confidences are direction-specific percentages (0-100).
+_CANDIDATE_CTX_KEYS = (
+    'raw_sim_freq',     # % of sims that cleared the line in the pick's direction
+    'posterior_conf',   # Beta posterior (prior strength from settings), before cap
+    'hist_pct',         # DB historical hit rate used in the blend (None if not used)
+    'blended_conf',     # final confidence after blend/category penalty/Platt
+    'conf_stage',       # which value the legacy sim_confidence column holds
+    'min_mean', 'min_std',
+    'over_odds', 'under_odds',
+    'matchup',
+)
+
+
 def passes_min_gap(projection: float, line: float, category: str, direction: str) -> bool:
     """Return False if model projection is too close to the bookmaker line."""
     threshold = LIVE_MIN_GAP.get(category.upper(), 1.5)
@@ -520,8 +534,18 @@ def build_parlays(
     all_picks = []
     shadow_picks = []
 
-    def log_shadow(player, category, direction, line, projection, sim_conf, edge, reason):
-        shadow_picks.append({
+    def log_shadow(player, category, direction, line, projection, sim_conf, edge, reason,
+                   ctx=None, conf_stage=None):
+        """
+        Record a rejected candidate.
+
+        `sim_confidence` keeps its legacy meaning (the number the rejecting gate
+        looked at — raw P(OVER) for early gates, posterior/blended for late ones).
+        Analyses must use the explicit stage columns instead (Step 1 of
+        CRITICAL_BUGS_FOUND_06.11): raw_sim_freq / posterior_conf / hist_pct /
+        blended_conf, all direction-specific percentages, plus conf_stage.
+        """
+        row = {
             'player': player,
             'stat_category': category.upper(),
             'direction': direction.upper(),
@@ -529,8 +553,19 @@ def build_parlays(
             'projection': float(projection) if projection is not None else 0.0,
             'sim_confidence': float(sim_conf) if sim_conf is not None else 0.0,
             'edge_pct': float(edge) if edge is not None else 0.0,
-            'ban_reason': str(reason)
-        })
+            'ban_reason': str(reason),
+        }
+        if ctx:
+            for key in _CANDIDATE_CTX_KEYS:
+                row[key] = ctx.get(key)
+            # Stage values must follow the logged direction (MIN_GAP can log the
+            # gap direction, which equals edge direction, but be explicit).
+            if ctx.get('over_freq') is not None:
+                over = ctx['over_freq']
+                row['raw_sim_freq'] = over if row['direction'] == 'OVER' else 100.0 - over
+        if conf_stage is not None:
+            row['conf_stage'] = conf_stage
+        shadow_picks.append(row)
 
     for event_id, game_odds in all_game_odds.items():
         is_blowout = _is_blowout_risk(game_odds)
@@ -763,22 +798,40 @@ def build_parlays(
                     is_returning = bool(all_player_minutes[player_name].get('restriction', False))
 
                 edge = compute_prop_edge(sim_dist, line, internal_stat_key, is_returning=is_returning)
+
+                # Step 1 (CRITICAL_BUGS_FOUND_06.11): one consistent record per candidate.
+                _pm = (all_player_minutes or {}).get(player_name, {})
+                ctx = {
+                    'over_freq': (edge['over_count'] / edge['n_sim'] * 100.0)
+                                 if edge.get('n_sim') else None,
+                    'posterior_conf': None,
+                    'hist_pct': None,
+                    'blended_conf': None,
+                    'conf_stage': 'raw_over',   # legacy sim_confidence = raw P(OVER)
+                    'min_mean': _pm.get('mean'),
+                    'min_std': _pm.get('std'),
+                    'over_odds': prop_info.get('over_odds'),
+                    'under_odds': prop_info.get('under_odds'),
+                    'matchup': f"{away_name} @ {home_name}",
+                }
+
                 # ── MIN_GAP Noise Gate (Task P.2) ──────────────────────
                 gap_direction = edge['direction']
                 if not passes_min_gap(edge['median'], line, stat_key, gap_direction):
                     gap_val = edge['median'] - line if gap_direction == 'Over' else line - edge['median']
                     log_shadow(player_name, stat_key, gap_direction, line, edge['median'],
                                edge['confidence'], edge['edge_pct'],
-                               f'MIN_GAP(gap={gap_val:.2f}<{LIVE_MIN_GAP.get(stat_key.upper(), 1.5)})')
+                               f'MIN_GAP(gap={gap_val:.2f}<{LIVE_MIN_GAP.get(stat_key.upper(), 1.5)})',
+                               ctx=ctx)
                     continue
 
                 # BLOWOUT PROTOCOL: ban OVER props for the fav team's top 3 players
                 if is_blowout and edge['direction'] == "Over" and player_name in top_3_fav:
-                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BLOWOUT_RISK')
+                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BLOWOUT_RISK', ctx=ctx)
                     continue
-                    
+
                 if edge.get('returning_ban'):
-                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'MINUTES_RESTRICTION')
+                    log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'MINUTES_RESTRICTION', ctx=ctx)
                     continue
 
                 # MINUTES RISK PROTOCOL
@@ -787,14 +840,19 @@ def build_parlays(
                     p_min = all_player_minutes[player_name]
                     if p_min.get('std', 0) > 6.5 or p_min.get('mean', 30) < 18.0:
                         reason = f"MINUTES_RISK(std={p_min.get('std',0):.1f},mean={p_min.get('mean',0):.1f})"
-                        log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], reason)
+                        log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], reason, ctx=ctx)
                         continue
 
                 # Internal evaluation returns True if mathematically sound
                 if not edge['valuable'] and abs(edge.get('edge_pct', 0)) > 10.0:
-                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], edge.get('reason', 'NEAR_MISS'))
+                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], edge.get('reason', 'NEAR_MISS'), ctx=ctx)
+                elif not edge['valuable']:
+                     # Previously dropped silently — now logged so the candidate
+                     # universe is complete (needed for calibration on candidates).
+                     detail = edge.get('reason') or 'small_edge'
+                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], f'NOT_VALUABLE({detail})', ctx=ctx)
                 elif edge['valuable'] and not is_allowed(stat_key, edge['direction']):
-                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BANNED_CATEGORY')
+                     log_shadow(player_name, stat_key, edge['direction'], line, edge['median'], edge['confidence'], edge['edge_pct'], 'BANNED_CATEGORY', ctx=ctx)
 
                 if edge['valuable'] and is_allowed(stat_key, edge['direction']):
                     direction = edge['direction']
@@ -807,9 +865,10 @@ def build_parlays(
                         prior_mean=prior, prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH
                     )
                     calib_conf = post_mean * 100.0
-                    
+                    ctx['posterior_conf'] = calib_conf
+
                     if ci_width > 0.25:
-                        log_shadow(player_name, stat_key, direction, line, edge['median'], calib_conf, edge['edge_pct'], f'HIGH_VARIANCE(ci={ci_width:.2f})')
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], calib_conf, edge['edge_pct'], f'HIGH_VARIANCE(ci={ci_width:.2f})', ctx=ctx, conf_stage='posterior')
                         continue
 
                     # For props, apply a harder cap
@@ -870,6 +929,8 @@ def build_parlays(
 
                     # Phase 4.B: Platt-Style Calibration
                     blended_conf = calibrated_prob(stat_key, direction, blended_conf)
+                    ctx['hist_pct'] = hist_pct
+                    ctx['blended_conf'] = blended_conf
 
                     # Determine inclusion threshold
                     thresh = EDGE_THRESHOLDS.get(internal_stat_key, EDGE_THRESHOLDS['combo'])
@@ -886,7 +947,7 @@ def build_parlays(
                         min_prob = max(min_prob, 75.0)
                         
                     if blended_conf < min_prob:
-                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, 0, f'LOW_CONFIDENCE(min={min_prob:.1f})')
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, 0, f'LOW_CONFIDENCE(min={min_prob:.1f})', ctx=ctx, conf_stage='blended')
                         continue
 
                     # ── Phase 8: ML Layer (ML.5) ──────────────────────────────
@@ -906,13 +967,14 @@ def build_parlays(
                     blended_conf = ml_res['confidence']
                     edge['median'] = ml_res['projected']
                     ml_applied = ml_res['ml_correction_applied']
+                    ctx['blended_conf'] = blended_conf
 
                     # Phase 3.B: True EV-Based Edge
                     odds = over_o if direction == "Over" else under_o
                     ev_edge = true_edge_pct(blended_conf, odds)
 
                     if ev_edge < settings.MIN_EDGE:
-                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={settings.MIN_EDGE:.1f})')
+                        log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={settings.MIN_EDGE:.1f})', ctx=ctx, conf_stage='blended')
                         continue
 
                     # Attempt to resolve human-readable stat string
@@ -948,7 +1010,14 @@ def build_parlays(
                         'player': player_name,
                         'stat_category': stat_key,
                         'line': line,
-                        'projection': edge['median']
+                        'projection': edge['median'],
+                        # Step 1: same stage values as shadow candidates (direction-specific %)
+                        'raw_sim_freq_pct': (ctx['over_freq'] if direction.upper() == 'OVER'
+                                             else 100.0 - ctx['over_freq'])
+                                            if ctx.get('over_freq') is not None else None,
+                        'posterior_conf': ctx.get('posterior_conf'),
+                        'hist_pct': ctx.get('hist_pct'),
+                        'blended_conf': ctx.get('blended_conf'),
                     })
 
     # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap (Task P.3) ───────────
@@ -966,7 +1035,7 @@ def build_parlays(
     # Pick volume summary (for monitoring report)
     ban_counts = {}
     for sp in shadow_picks:
-        reason_key = sp['ban_reason'].split('(')[0]  # strip detail params
+        reason_key = sp['ban_reason'].split('(')[0].strip()  # strip detail params (+ stray space in 'PARLAY_GATE_CLOSED (')
         ban_counts[reason_key] = ban_counts.get(reason_key, 0) + 1
     ban_summary = ' | '.join(f"{k}={v}" for k, v in sorted(ban_counts.items()))
     pick_volume_line = (
@@ -985,12 +1054,14 @@ def build_parlays(
     banned_cat_n  = ban_counts.get('BANNED_CATEGORY', 0)
     gate_closed_n = ban_counts.get('PARLAY_GATE_CLOSED', 0)
     high_var_n    = ban_counts.get('HIGH_VARIANCE', 0)
+    not_valuable_n = ban_counts.get('NOT_VALUABLE', 0)
     print(
         f"  [GATE FUNNEL] total_evaluated={len(shadow_picks) + len(all_picks)} "
         f"| min_gap_fail={min_gap_n} | minutes_risk={min_risk_n} "
         f"| low_line={low_line_n} | low_conf={low_conf_n} "
         f"| low_safe_conf={low_safe_n} | banned={banned_cat_n} "
         f"| gate_closed={gate_closed_n} | high_variance={high_var_n} "
+        f"| not_valuable={not_valuable_n} "
         f"-> passed={len(all_picks)}"
     )
 

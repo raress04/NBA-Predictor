@@ -1,0 +1,14 @@
+repair_measurement_20261106 — APPLY — 2026-11-06 00:56
+[A] box_scores: removed 1681 duplicate rows (by season: {'2025-26': 278, '2026-27': 1403}); UNIQUE(game_id, player_id) index in place.
+[B] columns added: ['raw_sim_freq', 'posterior_conf', 'hist_pct', 'blended_conf', 'conf_stage', 'min_mean', 'min_std', 'over_odds', 'under_odds', 'matchup', 'superseded', 'ml_shadow_picks.conf_stage']
+[C] re-dated 422 rows 2026-10-25 -> 2026-10-24 (players in box scores: 100% on 2026-10-24, 12% on 2026-10-25)
+[C] re-dated 56 rows 2026-10-26 -> 2026-10-25 (players in box scores: 95% on 2026-10-25, 23% on 2026-10-26)
+[C] re-dated 314 rows 2026-10-27 -> 2026-10-26 (players in box scores: 99% on 2026-10-26, 7% on 2026-10-27)
+[C] total re-dated: 792
+[D] rows marked superseded (earlier run of the same slate): 300
+[E] stage back-fill: {'none': 87, 'raw_over': 2607, 'blended': 165, 'posterior': 49}
+[F] shadow_picks props: before 1906/2772 graded -> after 2656/2772 graded (0 pushes, 116 no box score / DNP)
+[G] ml_shadow sim_confidence -> direction-specific raw freq: 645/700 matched
+[G] ml_shadow re-graded from box scores: 605 graded, 95 unresolved
+[G] win rate by direction BEFORE (direction, n, resolved, win%): [('OVER', 475, 412, 0.0), ('UNDER', 225, 215, 100.0)]
+[G] win rate by direction AFTER  (direction, n, resolved, win%): [('OVER', 475, 396, 47.5), ('UNDER', 225, 209, 64.1)]

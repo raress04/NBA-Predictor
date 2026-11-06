@@ -18,6 +18,25 @@ import os
 DB_PATH = os.path.join(os.path.dirname(__file__), 'bet_tracker.db')
 
 
+# Candidate stage columns on shadow_picks (Step 1, CRITICAL_BUGS_FOUND_06.11).
+# All confidences are direction-specific percentages. `conf_stage` says which
+# value the legacy `sim_confidence` column holds: 'raw_over' (raw P(OVER)),
+# 'posterior' or 'blended'.
+SHADOW_STAGE_COLUMNS = {
+    'raw_sim_freq':   'REAL',
+    'posterior_conf': 'REAL',
+    'hist_pct':       'REAL',
+    'blended_conf':   'REAL',
+    'conf_stage':     'TEXT',
+    'min_mean':       'REAL',
+    'min_std':        'REAL',
+    'over_odds':      'REAL',
+    'under_odds':     'REAL',
+    'matchup':        'TEXT',
+    'superseded':     'INTEGER DEFAULT 0',   # 1 = row from an earlier run of the same slate
+}
+
+
 def get_connection() -> sqlite3.Connection:
     """Return a connection to the bet tracker DB (creating it if needed)."""
     conn = sqlite3.connect(DB_PATH)
@@ -205,6 +224,15 @@ def init_db():
     """)
     cur.execute("CREATE INDEX IF NOT EXISTS idx_msp_date ON ml_shadow_picks(game_date)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_msp_player ON ml_shadow_picks(player, stat_category)")
+
+    # -- Step 1 (CRITICAL_BUGS_FOUND_06.11): candidate stage columns (idempotent) --
+    sp_cols = {r[1] for r in cur.execute("PRAGMA table_info(shadow_picks)")}
+    for col, ctype in SHADOW_STAGE_COLUMNS.items():
+        if col not in sp_cols:
+            cur.execute(f"ALTER TABLE shadow_picks ADD COLUMN {col} {ctype}")
+    msp_cols = {r[1] for r in cur.execute("PRAGMA table_info(ml_shadow_picks)")}
+    if 'conf_stage' not in msp_cols:
+        cur.execute("ALTER TABLE ml_shadow_picks ADD COLUMN conf_stage TEXT")
 
     conn.commit()
     conn.close()

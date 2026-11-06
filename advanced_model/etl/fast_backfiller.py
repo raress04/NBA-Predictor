@@ -111,7 +111,15 @@ def run_fast_backfiller(seasons):
             cols_to_keep = [c for c in cols_to_keep if c in box_scores_df.columns]
             
             # Save to SQLite
-            box_scores_df[cols_to_keep].to_sql('box_scores', conn, if_exists='append', index=False)
+            # Idempotent insert (CRITICAL_BUGS_FOUND_06.11): never duplicate (game_id, player_id)
+            try:
+                from utils.box_scores_io import insert_box_scores
+            except ImportError:  # run as a plain script: add advanced_model/ to sys.path
+                import sys as _sys
+                _sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+                from utils.box_scores_io import insert_box_scores
+            insert_box_scores(conn, box_scores_df, cols_to_keep)
+            conn.commit()
             
             print(f"    -> Successfully appended to SQLite Database.")
             time.sleep(1) # Slight Politeness delay
