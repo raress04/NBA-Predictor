@@ -179,6 +179,25 @@ ADJUSTMENT_PARAMS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__))
 # Stamped on shadow_picks rows so analyses can split pre/post Step 2.
 SHADOW_MODEL_VERSION = 'ERA_3' if _STEP2_LEGACY else 'ERA_3_STEP2'
 
+# ── T2 (Plans/T2_T3_IMPLEMENTATION_AUDIT.md): player rate shrinkage ──
+# 'fitted' — attempt-based shrinkage from config/shrinkage_params.json (scripts/fit_shrinkage.py)
+# 'legacy' — old formula: CONFIDENCE_PRIOR_STRENGTH (3000) counted in games -> every
+#            player ~league average. Env override SHRINKAGE_MODEL; STEP2_PROFILE=legacy forces it.
+SHRINKAGE_MODEL = 'legacy' if _STEP2_LEGACY else os.environ.get('SHRINKAGE_MODEL', 'fitted').strip().lower()
+if SHRINKAGE_MODEL not in ('fitted', 'legacy'):
+    raise ValueError(f"SHRINKAGE_MODEL must be 'fitted' or 'legacy', got {SHRINKAGE_MODEL!r}")
+SHRINKAGE_PARAMS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'shrinkage_params.json')
+
+# ── T2b: engine calibration (free-throw rule + fitted shooting penalties) ──
+# Follows SHRINKAGE_MODEL unless ENGINE_CALIBRATION is set: the legacy engine errors
+# offset the legacy (league-average) shrinkage, so the two must move together.
+#   'v2'     — FT rule matches each player's FTA/FGA; fitted usage/injury penalties
+#   'legacy' — old FT rule (foul chance = fta_per_fga on every miss) and old penalties
+ENGINE_CALIBRATION = os.environ.get('ENGINE_CALIBRATION',
+                                    'v2' if SHRINKAGE_MODEL == 'fitted' else 'legacy').strip().lower()
+if ENGINE_CALIBRATION not in ('v2', 'legacy'):
+    raise ValueError(f"ENGINE_CALIBRATION must be 'v2' or 'legacy', got {ENGINE_CALIBRATION!r}")
+
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""
     return (category.upper(), direction.upper()) not in BANNED_COMBINATIONS

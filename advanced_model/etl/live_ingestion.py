@@ -617,6 +617,27 @@ def get_team_player_roles(team_id: int, conn, before_date: str = None) -> dict:
     return roles
 
 
+_ENGINE_PENALTIES_CACHE = {'mtime': None, 'params': None}
+
+
+def _engine_penalties():
+    '''T2b fitted shooting penalties (config/engine_penalties.json), or None if missing.'''
+    path = os.path.join(MODEL_DIR, 'config', 'engine_penalties.json')
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        return None
+    if _ENGINE_PENALTIES_CACHE['mtime'] != mtime:
+        try:
+            import json as _json
+            with open(path, encoding='utf-8') as f:
+                _ENGINE_PENALTIES_CACHE['params'] = _json.load(f)
+        except (OSError, ValueError):
+            _ENGINE_PENALTIES_CACHE['params'] = None
+        _ENGINE_PENALTIES_CACHE['mtime'] = mtime
+    return _ENGINE_PENALTIES_CACHE['params']
+
+
 def apply_dynamic_injury_matrix(team_matrix: dict, team_id: int, team_tricode: str, conn,
                                 before_date: str = None):
     '''
@@ -662,12 +683,33 @@ def apply_dynamic_injury_matrix(team_matrix: dict, team_id: int, team_tricode: s
     final_penalty = 1.0
     for pen in penalties[:3]:
         final_penalty *= pen
-        
+
     synergy_collapse = (missing_starters_count >= 3)
     if synergy_collapse:
         final_penalty *= 0.85
         print(f"  ⚠️  [SYNERGY COLLAPSE] {team_tricode} missing 3+ Core Players! Global 0.85x penalty applied to active roster.")
-        
+
+    ep = _engine_penalties() if settings.ENGINE_CALIBRATION == 'v2' else None
+    if ep:
+        # T2b: fitted effect of missing players on teammates' shooting (box scores
+        # 2019-26, same role definitions). Legacy 0.94/0.97/0.99/x0.85 are not supported
+        # by data (missing stars: no effect; starters/rotation: slightly positive).
+        n_star = sum(1 for p in missing_names if (p in top_2_scorers) or
+                     (roles[p]['avg_fga'] / total_fga if total_fga > 0 else 0) > 0.25)
+        n_starter = sum(1 for pen in penalties if pen == 0.97)
+        n_rot = sum(1 for pen in penalties if pen == 0.99)
+        inj, efg = ep['injury'], ep['mean_baseline_efg']
+        coef = lambda k: inj[k]['coef'] if inj[k]['significant'] else 0.0
+        delta = (coef('star') * min(n_star, 3) + coef('starter') * min(n_starter, 3)
+                 + coef('rotation') * min(n_rot, 3) + coef('collapse') * int(synergy_collapse))
+        final_penalty = 1.0 + delta / efg
+        if abs(final_penalty - 1.0) > 1e-9:
+            print(f"  [INJURY MATRIX v2] {team_tricode} teammates' shooting x{final_penalty:.4f} (fitted)")
+            for p in team_matrix:
+                team_matrix[p]['fg2_pct'] *= final_penalty
+                team_matrix[p]['fg3_pct'] *= final_penalty
+        return synergy_collapse
+
     if final_penalty < 1.0:
         print(f"  📉 [CURRENT ROSTER RATING] {team_tricode} Offense collectively scaled to {final_penalty*100:.1f}% capacity.")
         for p in team_matrix:
@@ -768,8 +810,15 @@ def redistribute_usage(team_matrix: dict, full_roster_usage: dict, team_tricode:
             if extra_fga >= 1.5 or fga_increase_pct >= 0.15:
                 team_matrix[player]['usage_boosted'] = True
                 
-            efficiency_penalty = 1.0 - (fga_increase_pct * 0.12)  # 0.12 = 3% per 25%
-            efficiency_penalty = max(efficiency_penalty, 0.88)      # Floor at 12% penalty
+            ep = _engine_penalties() if settings.ENGINE_CALIBRATION == 'v2' else None
+            if ep:
+                # T2b: fitted (box scores 2019-26): shooting x (1 + coef/eFG * increase)
+                ub = ep['usage_boost']
+                b = ub['per_unit_fga_increase']['coef'] if ub['per_unit_fga_increase']['significant'] else 0.0
+                efficiency_penalty = 1.0 + b / ep['mean_baseline_efg'] * min(fga_increase_pct, ub['inc_cap'])
+            else:
+                efficiency_penalty = 1.0 - (fga_increase_pct * 0.12)  # 0.12 = 3% per 25%
+                efficiency_penalty = max(efficiency_penalty, 0.88)      # Floor at 12% penalty
             team_matrix[player]['fg2_pct'] *= efficiency_penalty
             team_matrix[player]['fg3_pct'] *= efficiency_penalty
 

@@ -24,6 +24,50 @@ class MarkovSimulator:
         self.home_stl_weights = self._calculate_weights(self.home_roster, 'avg_stl')
         self.away_stl_weights = self._calculate_weights(self.away_roster, 'avg_stl')
 
+        # T2b (Plans/T2_T3_IMPLEMENTATION_AUDIT.md): free-throw rule.
+        # Legacy: fta_per_fga is used as the chance of a shooting foul on EVERY miss
+        # (2-3 FTs) plus a 5% and-1 -> ~0.42 FTA per FGA instead of the player's ~0.30
+        # (+~10 pts per team). 'v2': choose the foul-on-miss chance so the expected FTA
+        # per shot equals the player's own fta_per_fga.
+        import config.settings as _settings
+        self.pace_factor = 1.02   # legacy: possessions per team = int(pace * 1.02)
+        if getattr(_settings, 'ENGINE_CALIBRATION', 'legacy') == 'v2':
+            for roster in (self.home_roster, self.away_roster):
+                for m in roster.values():
+                    m['_foul_on_miss'] = self.foul_on_miss_probability(m)
+            self.pace_factor = self._fitted_pace_factor()
+
+    @staticmethod
+    def _fitted_pace_factor() -> float:
+        '''T2b: possessions factor fitted so engine FGA + TOV match real games
+        (config/engine_penalties.json, scripts/fit_engine_penalties.py). 1.02 if missing.'''
+        import json, os
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            'config', 'engine_penalties.json')
+        try:
+            with open(path, encoding='utf-8') as f:
+                return float(json.load(f)['pace']['factor'])
+        except (OSError, ValueError, KeyError):
+            return 1.02
+
+    @staticmethod
+    def foul_on_miss_probability(m: dict, and1_rate: float = 0.05) -> float:
+        '''
+        P(shooting foul | missed shot) such that
+          E[FTA per shot] = ps3*(and1*p3 + (1-p3)*f*3) + ps2*(and1*p2 + (1-p2)*f*2) = fta_per_fga
+        with p2 = fg2_pct, p3 = fg3_pct / p_shoot_3 (per-attempt 3P%). Clipped to [0, 1].
+        '''
+        ps3 = m.get('p_shoot_3', 0.0) or 0.0
+        ps2 = 1.0 - ps3
+        p2 = m.get('fg2_pct', 0.0)
+        p3 = (m.get('fg3_pct', 0.0) / ps3) if ps3 > 0 else 0.0
+        target = m.get('fta_per_fga', 0.0)
+        from_and1 = and1_rate * (ps3 * p3 + ps2 * p2)
+        per_foul = ps3 * (1 - p3) * 3 + ps2 * (1 - p2) * 2
+        if per_foul <= 0:
+            return 0.0
+        return min(max((target - from_and1) / per_foul, 0.0), 1.0)
+
     def _calculate_weights(self, roster: Dict[str, dict], key: str, apply_variance: bool = False) -> dict:
         weights = {}
         for name, p in roster.items():
@@ -97,7 +141,7 @@ class MarkovSimulator:
             shot_missed = True
 
             # SHOOTING FOUL on a miss: fta_per_fga chance → 2 FTs (or 3 for 3PT foul)
-            if random.random() < matrix['fta_per_fga']:
+            if random.random() < matrix.get('_foul_on_miss', matrix['fta_per_fga']):
                 n_fts = 3 if is_three_pointer else 2
                 stats_tracker[player_name]['FTA'] += n_fts
                 made_fts = 0
@@ -157,7 +201,7 @@ class MarkovSimulator:
         # Apply a small atmospheric modifier to pace to account for second-chance points
         # and transition variance not fully captured by the possession model.
         # NOTE: Previously 1.08 which caused ~17pt total inflation. Reduced to 1.02.
-        adjusted_pace = int(pace * 1.02)
+        adjusted_pace = int(pace * self.pace_factor)
         
         for _ in range(adjusted_pace):
             # Home Possession

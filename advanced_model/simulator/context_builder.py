@@ -25,19 +25,49 @@ LEAGUE_PRIORS = {
     'fta_per_fga': 0.27,   # league-avg FTA / FGA ratio
 }
 
-# Prior strength: pulled from settings.CONFIDENCE_PRIOR_STRENGTH (currently 3000).
-# Calibrated via multi-objective optimization (ECE, Brier, Var, AUC) on Jan-Mar 2026 retro.
-# DO NOT hardcode here — change settings.py instead.
+# LEGACY ONLY (SHRINKAGE_MODEL='legacy'): the old code reused the PICK-CONFIDENCE prior
+# (settings.CONFIDENCE_PRIOR_STRENGTH = 3000) as player shrinkage, counted in games —
+# the T2 bug. Fitted mode uses config/shrinkage_params.json instead (see below).
 PRIOR_STRENGTH = settings.CONFIDENCE_PRIOR_STRENGTH
 
 
 def _bayesian_shrink(player_value: float, league_mean: float, n_games: int) -> float:
     """
-    Bayesian shrinkage: pulls player_value toward league_mean.
-    With few games, it leans heavily on the prior.
-    With many games, the player's own data dominates.
+    LEGACY shrinkage (settings.SHRINKAGE_MODEL == 'legacy'): pulls player_value toward
+    league_mean with strength CONFIDENCE_PRIOR_STRENGTH counted in GAMES. With 3000 and
+    <= 15 games the player's own number gets ~0.5% weight (T2 bug, 2026-11-06).
     """
     return (player_value * n_games + league_mean * PRIOR_STRENGTH) / (n_games + PRIOR_STRENGTH)
+
+
+# ── T2 (2026-11-06): fitted, attempt-based shrinkage ─────────────
+# rate = (made + prior * k) / (attempts + k), k in attempts of that stat.
+# k and the league priors come from config/shrinkage_params.json
+# (scripts/fit_shrinkage.py, re-run each season).
+_SHRINK_CACHE = {'mtime': None, 'params': None}
+
+
+def load_shrinkage_params() -> dict:
+    """Fitted shrinkage params, or None if the file is missing/unreadable (cached by mtime)."""
+    path = settings.SHRINKAGE_PARAMS_PATH
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        return None
+    if _SHRINK_CACHE['mtime'] != mtime:
+        try:
+            import json
+            with open(path, encoding='utf-8') as f:
+                _SHRINK_CACHE['params'] = json.load(f)['stats']
+        except (OSError, ValueError, KeyError):
+            _SHRINK_CACHE['params'] = None
+        _SHRINK_CACHE['mtime'] = mtime
+    return _SHRINK_CACHE['params']
+
+
+def _shrink_counts(made: float, attempts: float, prior: float, k: float) -> float:
+    den = attempts + k
+    return (made + prior * k) / den if den > 0 else prior
 
 
 def get_connection():
@@ -184,6 +214,28 @@ def get_player_stats_matrix(player_name: str, limit: int = 82, before_date: str 
 
     raw_tov_rate = totals['tov'] / possessions_used
     matrix['tov_rate'] = _bayesian_shrink(raw_tov_rate, LEAGUE_PRIORS['tov_rate'], n_games)
+    matrix['_shrinkage'] = 'legacy'
+
+    # T2: fitted attempt-based shrinkage replaces the legacy values above.
+    if settings.SHRINKAGE_MODEL == 'fitted':
+        sp = load_shrinkage_params()
+        if sp is None:
+            print("  [!] shrinkage_params.json missing — using LEGACY shrinkage (players ~league average)")
+        else:
+            fg2m = totals['fgm'] - totals['fg3m']
+            fg2a = totals['fga'] - totals['fg3a']
+            poss = totals['fga'] + 0.44 * totals['fta'] + totals['tov']
+            s = lambda name, made, att: _shrink_counts(made, att, sp[name]['prior'], sp[name]['k'])
+            matrix['p_shoot_3'] = s('p_shoot_3', totals['fg3a'], totals['fga'])
+            matrix['p_shoot_2'] = 1.0 - matrix['p_shoot_3']
+            matrix['fg2_pct'] = s('fg2_pct', fg2m, fg2a)
+            # Engine contract unchanged: fg3_pct = 3PM per FGA; the engine divides by
+            # p_shoot_3, so the per-attempt make chance it uses = the shrunk 3P%.
+            matrix['fg3_pct'] = s('fg3_pct_att', totals['fg3m'], totals['fg3a']) * matrix['p_shoot_3']
+            matrix['ft_pct'] = s('ft_pct', totals['ftm'], totals['fta'])
+            matrix['fta_per_fga'] = s('fta_per_fga', totals['fta'], totals['fga'])
+            matrix['tov_rate'] = s('tov_rate', totals['tov'], poss)
+            matrix['_shrinkage'] = 'fitted'
 
     # 5. Per-game averages from EWMA (directly, not divided from totals)
     matrix['avg_reb'] = ewma_oreb + ewma_dreb

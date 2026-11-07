@@ -4,12 +4,15 @@ advanced_model/etl/scrape_historical_injuries.py
 Scrapes NBA official injury reports for the 2025-26 season
 using the nbainjuries package and stores them in nba_data.db.
 
-Run once before the retroactive pipeline re-run.
+Originally run once (2025-26). Since 2026-11-06 (T3) run_pipeline.sh calls it every
+night with --previous-slate, so the official report is stored every day.
 Idempotent: INSERT OR IGNORE prevents duplicates.
 
 Usage:
     python3 -m etl.scrape_historical_injuries
     python3 -m etl.scrape_historical_injuries --start 2026-01-01 --end 2026-03-24
+    python3 -m etl.scrape_historical_injuries --start 2026-04-07 --end 2026-11-05 --dry-run
+    python3 -m etl.scrape_historical_injuries --previous-slate          # nightly
 """
 import asyncio
 import sqlite3
@@ -80,11 +83,11 @@ async def fetch_one_day(session, dt: datetime):
         return []
 
 
-async def fetch_all(start: str, end: str):
+async def fetch_all(start: str, end: str, batch_size: int = 10, delay: float = 0.5):
     """Fetch injury data for all dates in range concurrently (batched)."""
     all_rows = []
     dates = list(date_range(start, end))
-    BATCH_SIZE = 10  # avoid hammering the server
+    BATCH_SIZE = batch_size  # avoid hammering the server (the NBA site throttles bursts)
 
     async with aiohttp.ClientSession() as session:
         for i in range(0, len(dates), BATCH_SIZE):
@@ -94,26 +97,55 @@ async def fetch_all(start: str, end: str):
             for rows in results:
                 all_rows.extend(rows)
             print(f"    Fetched {min(i + BATCH_SIZE, len(dates))}/{len(dates)} days...")
-            await asyncio.sleep(0.5)  # polite delay between batches
+            await asyncio.sleep(delay)  # polite delay between batches
 
     return all_rows
 
 
-def run(start_date: str = DEFAULT_START, end_date: str = DEFAULT_END):
+def summarize(rows: list) -> str:
+    """Counts per date and status (for dry runs and logs)."""
+    by = {}
+    for r in rows:
+        by.setdefault(r['game_date'], {}).setdefault(r['status'], 0)
+        by[r['game_date']][r['status']] += 1
+    lines = [f"    {d}: {sum(s.values()):4} rows  " +
+             ' '.join(f"{k}={v}" for k, v in sorted(s.items())) for d, s in sorted(by.items())]
+    return '\n'.join(lines)
+
+
+def run(start_date: str = DEFAULT_START, end_date: str = DEFAULT_END, dry_run: bool = False,
+        allow_empty: bool = False, db_path: str = None, batch_size: int = 10, delay: float = 0.5):
+    """
+    dry_run     : fetch and print counts per date/status; write nothing (T3, 2026-11-06).
+    allow_empty : an empty result is normal (e.g. no games that day) -> exit quietly.
+    """
     print(f"[+] Fetching injury data for {start_date} → {end_date}...")
     print(f"    Using {REPORT_HOUR}:00 ET reports")
 
-    all_rows = asyncio.run(fetch_all(start_date, end_date))
+    all_rows = asyncio.run(fetch_all(start_date, end_date, batch_size, delay))
     print(f"[+] Total rows fetched: {len(all_rows)}")
 
     if not all_rows:
+        if allow_empty:
+            print("[i] No injury report rows (no games, or report not published). Nothing to store.")
+            return
         print("[-] No data returned. Check nbainjuries package or date range.")
         sys.exit(1)
 
     # Filter out blank players
     all_rows = [r for r in all_rows if r['player'] and r['team']]
+    print(summarize(all_rows))
 
-    conn = sqlite3.connect(NBA_DB)
+    if dry_run:
+        conn = sqlite3.connect(f"file:{db_path or NBA_DB}?mode=ro", uri=True)
+        new = sum(1 for r in all_rows if not conn.execute(
+            "SELECT 1 FROM historical_injuries WHERE game_date=? AND player=? AND team=?",
+            (r['game_date'], r['player'], r['team'])).fetchone())
+        conn.close()
+        print(f"\n[dry-run] {new:,} of {len(all_rows):,} rows are new and would be inserted. Nothing written.")
+        return
+
+    conn = sqlite3.connect(db_path or NBA_DB)
     inserted = 0
     skipped  = 0
     for row in all_rows:
@@ -147,6 +179,12 @@ def run(start_date: str = DEFAULT_START, end_date: str = DEFAULT_END):
     print(f"\n[+] Done. Inserted: {inserted:,} | Skipped (duplicates): {skipped:,}")
     print(f"[+] Coverage: {days} distinct game days | {total:,} total rows in DB")
 
+    span_days = (datetime.strptime(end_date, '%Y-%m-%d') - datetime.strptime(start_date, '%Y-%m-%d')).days + 1
+    if span_days <= 60:
+        # B.4 gates belong to the original one-off 2025-26 backfill; meaningless for short ranges
+        conn.close()
+        return
+
     if days < 70:
         print(f"[!] WARNING: Only {days} days covered — gate requires >= 70")
     else:
@@ -164,5 +202,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Scrape historical NBA injury reports')
     parser.add_argument('--start', default=DEFAULT_START, help='Start date YYYY-MM-DD')
     parser.add_argument('--end',   default=DEFAULT_END,   help='End date YYYY-MM-DD')
+    parser.add_argument('--dry-run', action='store_true', help='Fetch and print counts; write nothing.')
+    parser.add_argument('--batch-size', type=int, default=10, help='Reports fetched concurrently (1 = one at a time).')
+    parser.add_argument('--delay', type=float, default=0.5, help='Seconds between batches.')
+    parser.add_argument('--previous-slate', action='store_true',
+                        help="Nightly mode: fetch the previous slate date's 5 PM ET report "
+                             "(US-Eastern). No report (no games) is not an error.")
     args = parser.parse_args()
-    run(args.start, args.end)
+    if args.previous_slate:
+        sys.path.insert(0, MODEL_DIR)
+        from utils.slate_date import previous_slate_date
+        d = previous_slate_date()
+        run(d, d, dry_run=args.dry_run, allow_empty=True)
+    else:
+        run(args.start, args.end, dry_run=args.dry_run, batch_size=args.batch_size, delay=args.delay)

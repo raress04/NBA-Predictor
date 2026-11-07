@@ -19,6 +19,7 @@ mkdir -p "${LOG_BASE}/monitoring"
 mkdir -p "${LOG_BASE}/retro_live_alignment"
 mkdir -p "${LOG_BASE}/odds_coverage_audit"
 mkdir -p "${LOG_BASE}/date_audit"
+mkdir -p "${LOG_BASE}/injuries"
 
 
 echo "========================================="
@@ -30,6 +31,17 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "[Stage] Yesterday preparation complete."
+echo ""
+
+# ── T3 (2026-11-06): store the official injury report every day ──
+# Previous slate date's 5 PM ET report -> nba_data.db historical_injuries (INSERT OR IGNORE).
+# Non-fatal: a failure here never stops the pipeline.
+echo "========================================="
+echo "🩹 Storing yesterday's official injury report..."
+echo "========================================="
+python3 -m etl.scrape_historical_injuries --previous-slate > "${LOG_BASE}/injuries/injuries_${DATE}.txt" 2>&1 \
+    && tail -3 "${LOG_BASE}/injuries/injuries_${DATE}.txt" \
+    || echo "⚠️  Injury report not stored (see ${LOG_BASE}/injuries/injuries_${DATE}.txt) — continuing."
 echo ""
 
 echo "========================================="

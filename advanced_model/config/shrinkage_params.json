@@ -1,0 +1,96 @@
+{
+  "computed_at": "2026-11-06T22:49:55Z",
+  "source": "scripts/fit_shrinkage.py (Plans/T2_T3_IMPLEMENTATION_AUDIT.md)",
+  "formula": "rate = (made + prior * k) / (attempts + k); k in attempts of that stat",
+  "data": {
+    "seasons": [
+      "2019-20",
+      "2025-26"
+    ],
+    "game_type": "regular season (002)",
+    "window_games": 15,
+    "ewma_span": 10,
+    "horizon_games": 10
+  },
+  "priors_from_season": "2025-26",
+  "stats": {
+    "fg2_pct": {
+      "made": "fg2m",
+      "attempts": "fg2a",
+      "k": 100,
+      "prior": 0.55004,
+      "k_train": 100,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.008419555146815479,
+        "mse_no_shrink": 0.010264647427010885,
+        "mse_fitted": 0.006799411984529204
+      }
+    },
+    "fg3_pct_att": {
+      "made": "fg3m",
+      "attempts": "fg3a",
+      "k": 500,
+      "prior": 0.35965,
+      "k_train": 500,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.006842467000219726,
+        "mse_no_shrink": 0.012336550290587542,
+        "mse_fitted": 0.0067882638687343745
+      }
+    },
+    "ft_pct": {
+      "made": "ftm",
+      "attempts": "fta",
+      "k": 30,
+      "prior": 0.78286,
+      "k_train": 30,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.014435360560182884,
+        "mse_no_shrink": 0.018076775286823124,
+        "mse_fitted": 0.011750928999615773
+      }
+    },
+    "p_shoot_3": {
+      "made": "fg3a",
+      "attempts": "fga",
+      "k": 10,
+      "prior": 0.41508,
+      "k_train": 10,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.03633869893112764,
+        "mse_no_shrink": 0.006538302744366041,
+        "mse_fitted": 0.0062732304919631875
+      }
+    },
+    "fta_per_fga": {
+      "made": "fta",
+      "attempts": "fga",
+      "k": 75,
+      "prior": 0.26359,
+      "k_train": 75,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.020291730000879648,
+        "mse_no_shrink": 0.015720658620844544,
+        "mse_fitted": 0.012346895822192429
+      }
+    },
+    "tov_rate": {
+      "made": "tov",
+      "attempts": "poss",
+      "k": 150,
+      "prior": 0.12185,
+      "k_train": 150,
+      "holdout": {
+        "season": "2025-26",
+        "mse_legacy": 0.00195325260414214,
+        "mse_no_shrink": 0.0021442937852231914,
+        "mse_fitted": 0.001510241778656401
+      }
+    }
+  }
+}

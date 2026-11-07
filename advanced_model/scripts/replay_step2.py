@@ -1,5 +1,6 @@
 """
 Step 2 replay — old vs new, same inputs (Plans/STEP2_IMPLEMENTATION_AUDIT.md §8).
+--compare t2: legacy vs fitted player shrinkage (Plans/T2_T3_IMPLEMENTATION_AUDIT.md 2.5).
 
 For each date with games and prop lines:
   1. Simulate every game twice with the backtest path (process_hist_game): once with the
@@ -46,19 +47,33 @@ NBA_DB = os.path.join(MODEL_DIR, 'database', 'nba_data.db')
 BET_DB = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
 OUT_DIR = os.path.join(MODEL_DIR, 'logs', 'november', 'step2_replay')
 
-PROFILES = {
-    'legacy': dict(USE_RUNTIME_BIAS=True, CONFIDENCE_GATE='legacy', B2B_MODEL='off',
-                   RETURNING_MODEL='legacy', SHADOW_MODEL_VERSION='ERA_3'),
-    'step2': dict(USE_RUNTIME_BIAS=False, CONFIDENCE_GATE='raw', B2B_MODEL='fitted',
-                  RETURNING_MODEL='fitted', SHADOW_MODEL_VERSION='ERA_3_STEP2'),
+_STEP2 = dict(USE_RUNTIME_BIAS=False, CONFIDENCE_GATE='raw', B2B_MODEL='fitted',
+              RETURNING_MODEL='fitted', SHADOW_MODEL_VERSION='ERA_3_STEP2')
+COMPARISONS = {
+    # Step 2: pre-Step-2 model vs Step 2 (both with the legacy player shrinkage, as at that time)
+    'step2': {
+        'profiles': {'legacy': dict(USE_RUNTIME_BIAS=True, CONFIDENCE_GATE='legacy', B2B_MODEL='off',
+                                    RETURNING_MODEL='legacy', SHADOW_MODEL_VERSION='ERA_3',
+                                    SHRINKAGE_MODEL='legacy', ENGINE_CALIBRATION='legacy'),
+                     'step2': dict(_STEP2, SHRINKAGE_MODEL='legacy', ENGINE_CALIBRATION='legacy')},
+        'variants': [('OLD', 'legacy', 'legacy'), ('AB', 'legacy', 'step2'), ('NEW', 'step2', 'step2')],
+    },
+    # T2: Step 2 model with legacy (league-average) vs fitted player shrinkage; same gates
+    't2': {
+        'profiles': {'legacy': dict(_STEP2, SHRINKAGE_MODEL='legacy', ENGINE_CALIBRATION='legacy'),
+                     'step2': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2')},
+        'variants': [('OLD', 'legacy', 'step2'), ('NEW', 'step2', 'step2')],
+    },
 }
-VARIANTS = [('OLD', 'legacy', 'legacy'), ('AB', 'legacy', 'step2'), ('NEW', 'step2', 'step2')]
+PROFILES = COMPARISONS['step2']['profiles']
+VARIANTS = COMPARISONS['step2']['variants']
 CAT = {'points': 'POINTS', 'rebounds': 'REBOUNDS', 'assists': 'ASSISTS'}
 SIM_KEY = {'POINTS': 'PTS', 'REBOUNDS': 'REB', 'ASSISTS': 'AST'}
 
 
-def apply_profile(name: str):
-    for k, v in PROFILES[name].items():
+def apply_profile(name: str, compare: str = None):
+    profiles = COMPARISONS[compare]['profiles'] if compare else PROFILES
+    for k, v in profiles[name].items():
         setattr(settings, k, v)
 
 
@@ -129,8 +144,8 @@ def actuals_for(d: str) -> dict:
 
 # ── Worker ─────────────────────────────────────────────────────────────────
 def sim_task(task):
-    profile, d, game, n_sims = task
-    apply_profile(profile)
+    profile, d, game, n_sims, compare = task
+    apply_profile(profile, compare)
     from simulator import parlay_builder as pb
     pb.bias_logger.disabled = True     # do not append replay lines to logs/bias_corrections.log
     from etl.live_ingestion import process_hist_game
@@ -186,7 +201,17 @@ def main():
     ap.add_argument('--sims', type=int, default=5000)
     ap.add_argument('--workers', type=int, default=os.cpu_count())
     ap.add_argument('--daily-cap', type=int, default=settings.MAX_VALUABLE_PICKS_PER_DAY)
+    ap.add_argument('--compare', choices=sorted(COMPARISONS), default='step2',
+                    help="step2: pre-Step-2 vs Step 2 | t2: legacy vs fitted player shrinkage")
+    ap.add_argument('--out-dir', default=None)
     args = ap.parse_args()
+    global PROFILES, VARIANTS, OUT_DIR
+    PROFILES = COMPARISONS[args.compare]['profiles']
+    VARIANTS = COMPARISONS[args.compare]['variants']
+    if args.out_dir:
+        OUT_DIR = args.out_dir
+    elif args.compare != 'step2':
+        OUT_DIR = os.path.join(MODEL_DIR, 'logs', 'november', f'{args.compare}_replay')
     os.makedirs(OUT_DIR, exist_ok=True)
 
     d0, d1 = date.fromisoformat(args.start), date.fromisoformat(args.end)
@@ -202,11 +227,11 @@ def main():
         plan[d] = (games, lines, src)
     print(f"[replay] dates: {len(dates)} | skipped: {skipped}", flush=True)
 
-    tasks = [(prof, d, g, args.sims) for d in dates for g in plan[d][0] for prof in ('legacy', 'step2')]
+    tasks = [(prof, d, g, args.sims, args.compare) for d in dates for g in plan[d][0] for prof in ('legacy', 'step2')]
     print(f"[replay] {len(tasks)} game simulations x {args.sims} sims on {args.workers} workers", flush=True)
     sims = {d: {'legacy': {}, 'step2': {}} for d in dates}
     remaining = {d: 2 * len(plan[d][0]) for d in dates}
-    pick_rows, proj_rows, funnel = [], [], defaultdict(lambda: defaultdict(int))
+    pick_rows, proj_rows, team_rows, funnel = [], [], [], defaultdict(lambda: defaultdict(int))
     t_start = time.time()
 
     from simulator.context_builder import get_player_historical_hit_rates
@@ -236,6 +261,21 @@ def main():
                                       edge=p['edge_pct'], score=p['score'], odds=p['odds'],
                                       actual=actual, win=grade(p['direction'], p['line'], actual),
                                       line_source=src))
+        # team score accuracy (sim mean vs actual team points)
+        nconn = _ro(NBA_DB)
+        for g in games:
+            pts = dict(nconn.execute("SELECT team_id, SUM(pts) FROM box_scores WHERE game_id = ? "
+                                     "GROUP BY team_id", (g['game_id'],)).fetchall())
+            for prof in ('legacy', 'step2'):
+                p = sims[d][prof].get(g['game_id'], {})
+                if 'score_dists' not in p:
+                    continue
+                for side, team in (('home', g['homeTeam']), ('away', g['awayTeam'])):
+                    if team['teamId'] in pts:
+                        sc = p['score_dists'][side]
+                        team_rows.append(dict(profile=prof, date=d, game=g['game_id'], side=side,
+                                              sim=sum(sc) / len(sc), actual=pts[team['teamId']]))
+        nconn.close()
         # projection accuracy (all simulated players with an actual line-up appearance)
         for prof in ('legacy', 'step2'):
             for gid, p in sims[d][prof].items():
@@ -273,13 +313,15 @@ def main():
     proj = pd.DataFrame(proj_rows)
     picks.to_csv(os.path.join(OUT_DIR, 'replay_picks.csv'), index=False)
     proj.to_csv(os.path.join(OUT_DIR, 'replay_projections.csv'), index=False)
-    report = build_report(picks, proj, funnel, dates, skipped, plan, args)
+    teams = pd.DataFrame(team_rows)
+    teams.to_csv(os.path.join(OUT_DIR, 'replay_team_scores.csv'), index=False)
+    report = build_report(picks, proj, funnel, dates, skipped, plan, args, teams)
     with open(os.path.join(OUT_DIR, 'replay_report.txt'), 'w', encoding='utf-8') as fh:
         fh.write(report)
     print(report)
 
 
-def build_report(picks, proj, funnel, dates, skipped, plan, args):
+def build_report(picks, proj, funnel, dates, skipped, plan, args, teams=None):
     L = []
     w = L.append
     w("STEP 2 REPLAY — old vs new on identical inputs")
@@ -357,6 +399,14 @@ def build_report(picks, proj, funnel, dates, skipped, plan, args):
                 rows.append(cell)
         w(pd.DataFrame(rows, columns=['group', 'cat', 'MAE old', 'bias old', 'MAE new', 'bias new', 'n'])
           .to_string(index=False))
+    if teams is not None and not teams.empty:
+        w("\n5. TEAM SCORES — sim mean vs actual team points; MAE and bias (actual - sim)")
+        for prof, label in (('legacy', 'old'), ('step2', 'new')):
+            t = teams[teams.profile == prof]
+            e = t.actual - t.sim
+            tot = (t.groupby('game').actual.sum() - t.groupby('game').sim.sum()).abs().mean()
+            w(f"   {label}: n={len(t)} team-games | MAE {e.abs().mean():.2f} | bias {e.mean():+.2f} | "
+              f"game total MAE {tot:.2f}")
     return '\n'.join(L) + '\n'
 
 

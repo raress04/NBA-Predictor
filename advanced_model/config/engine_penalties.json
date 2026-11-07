@@ -1,0 +1,64 @@
+{
+  "computed_at": "2026-11-07T00:45:24Z",
+  "source": "scripts/fit_engine_penalties.py (T2b)",
+  "data": {
+    "seasons": [
+      "2019-20",
+      "2025-26"
+    ],
+    "rows": 124645,
+    "window_games": 15
+  },
+  "mean_baseline_efg": 0.5426,
+  "injury": {
+    "star": {
+      "coef": 0.0001,
+      "ci95": 0.00108,
+      "multiplier_per_unit": 1.0,
+      "measured_multiplier": 1.0002,
+      "significant": false
+    },
+    "starter": {
+      "coef": 0.0034,
+      "ci95": 0.00074,
+      "multiplier_per_unit": 1.0063,
+      "measured_multiplier": 1.0063,
+      "significant": true
+    },
+    "rotation": {
+      "coef": 0.0022,
+      "ci95": 0.00044,
+      "multiplier_per_unit": 1.0041,
+      "measured_multiplier": 1.0041,
+      "significant": true
+    },
+    "collapse": {
+      "coef": 0.00394,
+      "ci95": 0.00188,
+      "multiplier_per_unit": 1.0073,
+      "measured_multiplier": 1.0073,
+      "significant": true
+    }
+  },
+  "usage_boost": {
+    "per_unit_fga_increase": {
+      "coef": -0.02178,
+      "ci95": 0.00292,
+      "multiplier_per_unit": 0.9599,
+      "measured_multiplier": 0.9599,
+      "significant": true
+    },
+    "inc_cap": 1.5,
+    "note": "shooting x (1 + coef/eFG * fga_increase), fga_increase = extra/own FGA"
+  },
+  "pace": {
+    "factor": 1.0172,
+    "legacy": 1.02,
+    "games": 3472,
+    "seasons": [
+      "2023-24",
+      "2025-26"
+    ],
+    "note": "engine possessions per team = int(pace * factor); matches real FGA + TOV"
+  }
+}
