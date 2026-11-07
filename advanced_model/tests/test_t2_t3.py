@@ -168,6 +168,71 @@ class TestInjuryStorage(unittest.TestCase):
         self.assertEqual(self._count(), 1)
 
 
+class TestInjuryGameDate(unittest.TestCase):
+    """T3b: rows keyed by the report's Game Date; latest report per game date wins."""
+
+    def setUp(self):
+        fd, self.path = tempfile.mkstemp(suffix='.db')
+        os.close(fd)
+        self.c = sqlite3.connect(self.path)
+        self.c.execute("""CREATE TABLE historical_injuries (game_date TEXT NOT NULL, player TEXT NOT NULL,
+                          team TEXT NOT NULL, status TEXT NOT NULL, reason TEXT, PRIMARY KEY (game_date, player, team))""")
+
+    def tearDown(self):
+        self.c.close()
+        os.unlink(self.path)
+
+    @staticmethod
+    def row(g, rep, p, st='Out'):
+        return {'game_date': g, 'report_date': rep, 'player': p, 'team': 'T', 'status': st, 'reason': ''}
+
+    def rows(self, table='historical_injuries'):
+        return sorted(self.c.execute(f"SELECT game_date, player, status FROM {table}").fetchall())
+
+    def store(self, rows):
+        from etl import scrape_historical_injuries as s
+        s.apply_store(self.c, s.plan_store(self.c, rows))
+        self.c.commit()
+
+    def test_parse_game_date(self):
+        from etl import scrape_historical_injuries as s
+        self.assertEqual(s.parse_game_date('11/04/2026', '2026-11-03'), '2026-11-04')
+        self.assertEqual(s.parse_game_date(float('nan'), '2026-11-03'), '2026-11-03')
+        self.assertEqual(s.parse_game_date(None, '2026-11-03'), '2026-11-03')
+
+    def test_latest_report_wins_and_older_is_quarantined(self):
+        self.store([self.row('2026-11-04', '2026-11-03', 'A'), self.row('2026-11-04', '2026-11-03', 'B')])
+        self.store([self.row('2026-11-04', '2026-11-04', 'A', 'Questionable')])
+        self.assertEqual(self.rows(), [('2026-11-04', 'A', 'Questionable')])
+        self.assertEqual(len(self.rows('historical_injuries_superseded')), 2)
+        self.store([self.row('2026-11-04', '2026-11-03', 'B')])          # older report again -> ignored
+        self.assertEqual(self.rows(), [('2026-11-04', 'A', 'Questionable')])
+
+    def test_same_fetch_keeps_only_latest_snapshot(self):
+        from etl import scrape_historical_injuries as s
+        kept, older = s.latest_snapshot([self.row('2026-11-05', '2026-11-04', 'A'),
+                                         self.row('2026-11-05', '2026-11-05', 'B')])
+        self.assertEqual([r['player'] for r in kept], ['B'])
+        self.assertEqual(older, 1)
+
+    def test_rekey(self):
+        from scripts import rebuild_injury_game_dates as rb
+        self.c.executemany("INSERT INTO historical_injuries VALUES (?,?,?,?,?)",
+                           [('2026-11-03', 'A', 'T', 'Out', ''), ('2026-11-04', 'A', 'T', 'Out', ''),
+                            ('2026-11-05', 'C', 'T', 'Out', '')])
+        self.c.commit()
+        cand = rb.legacy_dates(self.c)
+        fetched = [self.row('2026-11-04', '2026-11-03', 'A'),                  # 11-03 report: next day's game
+                   self.row('2026-11-04', '2026-11-04', 'A', 'Questionable'),
+                   self.row('2026-11-05', '2026-11-04', 'D')]                  # 11-05 report not fetched
+        st = rb.rekey(self.c, fetched, cand)
+        self.c.commit()
+        self.assertEqual(st['failed_dates'], ['2026-11-05'])
+        self.assertEqual(st['moved'], 2)
+        self.assertEqual(self.rows(), [('2026-11-04', 'A', 'Questionable'), ('2026-11-05', 'C', 'Out')])
+        self.assertEqual(len(self.rows('historical_injuries_superseded')), 2)
+
+
 class TestEngineCalibration(unittest.TestCase):
     """T2b: free-throw rule and fitted shooting penalties."""
 

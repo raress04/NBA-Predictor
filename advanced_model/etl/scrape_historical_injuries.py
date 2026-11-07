@@ -6,7 +6,10 @@ using the nbainjuries package and stores them in nba_data.db.
 
 Originally run once (2025-26). Since 2026-11-06 (T3) run_pipeline.sh calls it every
 night with --previous-slate, so the official report is stored every day.
-Idempotent: INSERT OR IGNORE prevents duplicates.
+T3b (2026-11-07): rows are keyed by the report's own 'Game Date' (not the publish date),
+with report_date stored. One snapshot per game date: a newer report moves the older rows
+to historical_injuries_superseded (quarantine); an older report is ignored; re-running
+the same report inserts nothing. Existing rows: scripts/rebuild_injury_game_dates.py.
 
 Usage:
     python3 -m etl.scrape_historical_injuries
@@ -49,6 +52,108 @@ def date_range(start: str, end: str):
         cur += timedelta(days=1)
 
 
+def parse_game_date(value, fallback: str) -> str:
+    """Report 'Game Date' ('MM/DD/YYYY') -> 'YYYY-MM-DD'; the report date when missing."""
+    try:
+        if value is None or pd.isna(value):
+            return fallback
+        if isinstance(value, (datetime, pd.Timestamp)):
+            return value.strftime('%Y-%m-%d')
+        s = str(value).strip()
+        for fmt in ('%m/%d/%Y', '%Y-%m-%d'):
+            try:
+                return datetime.strptime(s, fmt).strftime('%Y-%m-%d')
+            except ValueError:
+                pass
+    except (TypeError, ValueError):
+        pass
+    return fallback
+
+
+# ── T3b storage: one snapshot per game date (latest report wins) ──────────────
+SUPERSEDED_DDL = """CREATE TABLE IF NOT EXISTS historical_injuries_superseded (
+        game_date TEXT, player TEXT, team TEXT, status TEXT, reason TEXT,
+        report_date TEXT, superseded_at TEXT, note TEXT)"""
+
+
+def _report_of(row: dict) -> str:
+    return row.get('report_date') or row['game_date']
+
+
+def _has_report_col(conn) -> bool:
+    return any(r[1] == 'report_date' for r in conn.execute("PRAGMA table_info(historical_injuries)"))
+
+
+def ensure_schema(conn):
+    """Adds report_date (NULL on legacy rows = stored under the report date) and the quarantine table."""
+    if not _has_report_col(conn):
+        conn.execute("ALTER TABLE historical_injuries ADD COLUMN report_date TEXT")
+    conn.execute(SUPERSEDED_DDL)
+
+
+def latest_snapshot(rows: list):
+    """Per game date keep only rows from the latest report covering it. Returns (kept, n_older)."""
+    latest = {}
+    for r in rows:
+        g, rep = r['game_date'], _report_of(r)
+        if rep > latest.get(g, ''):
+            latest[g] = rep
+    kept = [r for r in rows if _report_of(r) == latest[r['game_date']]]
+    return kept, len(rows) - len(kept)
+
+
+def plan_store(conn, rows: list) -> dict:
+    """
+    Snapshot rule per game date G (read-only):
+      stored report newer than this one -> ignore the new rows;
+      stored rows from an older report   -> quarantine them, insert the new snapshot;
+      same report                        -> insert rows not yet stored.
+    Legacy rows (report_date NULL) count as published on their game_date.
+    """
+    kept, n_older_fetch = latest_snapshot(rows)
+    rep_expr = "COALESCE(report_date, game_date)" if _has_report_col(conn) else "game_date"
+    by_g = {}
+    for r in kept:
+        by_g.setdefault(r['game_date'], []).append(r)
+    plan = {'insert': [], 'supersede': [], 'ignored_older': 0, 'older_in_fetch': n_older_fetch}
+    for g, new in by_g.items():
+        rep = _report_of(new[0])
+        stored = conn.execute(f"SELECT player, team, {rep_expr} FROM historical_injuries WHERE game_date=?",
+                              (g,)).fetchall()
+        if any(s[2] > rep for s in stored):
+            plan['ignored_older'] += len(new)
+            continue
+        old = [(g, s[0], s[1]) for s in stored if s[2] < rep]
+        plan['supersede'].extend(old)
+        present = {(s[0], s[1]) for s in stored if s[2] == rep}
+        seen = set()
+        for r in new:
+            k = (r['player'], r['team'])
+            if k not in present and k not in seen:
+                seen.add(k)
+                plan['insert'].append(r)
+    return plan
+
+
+def apply_store(conn, plan: dict, note: str = 'newer report'):
+    """Moves superseded rows to historical_injuries_superseded, then inserts. Caller commits."""
+    ensure_schema(conn)
+    now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+    for g, p, t in plan['supersede']:
+        conn.execute("""INSERT INTO historical_injuries_superseded
+                        SELECT game_date, player, team, status, reason, report_date, ?, ?
+                        FROM historical_injuries WHERE game_date=? AND player=? AND team=?""",
+                     (now, note, g, p, t))
+        conn.execute("DELETE FROM historical_injuries WHERE game_date=? AND player=? AND team=?", (g, p, t))
+    n = 0
+    for r in plan['insert']:
+        n += conn.execute("INSERT OR IGNORE INTO historical_injuries "
+                          "(game_date, player, team, status, reason, report_date) VALUES (?,?,?,?,?,?)",
+                          (r['game_date'], r['player'], r['team'], r['status'], r['reason'],
+                           _report_of(r))).rowcount
+    return n
+
+
 async def fetch_one_day(session, dt: datetime):
     """Fetch injury report for a single date. Returns list of row dicts."""
     ts = datetime(dt.year, dt.month, dt.day, REPORT_HOUR, REPORT_MIN)
@@ -61,6 +166,7 @@ async def fetch_one_day(session, dt: datetime):
             return []
 
         rows = []
+        report_date = dt.strftime('%Y-%m-%d')
         for _, rec in df.iterrows():
             status_raw = str(rec.get('Current Status', 'Available')).strip()
             # Convert 'Last, First' → 'First Last'
@@ -71,7 +177,9 @@ async def fetch_one_day(session, dt: datetime):
             else:
                 player_name = raw_name
             rows.append({
-                'game_date': dt.strftime('%Y-%m-%d'),
+                # T3b: the game the row is about, not the day the report was published
+                'game_date':   parse_game_date(rec.get('Game Date'), report_date),
+                'report_date': report_date,
                 'player':    player_name,
                 'team':      str(rec.get('Team', '')).strip(),
                 'status':    STATUS_MAP.get(status_raw, 'Available'),
@@ -85,8 +193,12 @@ async def fetch_one_day(session, dt: datetime):
 
 async def fetch_all(start: str, end: str, batch_size: int = 10, delay: float = 0.5):
     """Fetch injury data for all dates in range concurrently (batched)."""
+    return await fetch_dates(list(date_range(start, end)), batch_size, delay)
+
+
+async def fetch_dates(dates: list, batch_size: int = 10, delay: float = 0.5):
+    """Fetch the 5 PM report for each datetime in `dates` (batched)."""
     all_rows = []
-    dates = list(date_range(start, end))
     BATCH_SIZE = batch_size  # avoid hammering the server (the NBA site throttles bursts)
 
     async with aiohttp.ClientSession() as session:
@@ -136,35 +248,24 @@ def run(start_date: str = DEFAULT_START, end_date: str = DEFAULT_END, dry_run: b
     all_rows = [r for r in all_rows if r['player'] and r['team']]
     print(summarize(all_rows))
 
+    def plan_text(plan):
+        return (f"{len(plan['insert']):,} of {len(all_rows):,} rows are new and would be inserted | "
+                f"{len(plan['supersede']):,} stored rows from an older report -> quarantine | "
+                f"{plan['ignored_older'] + plan['older_in_fetch']:,} rows ignored (a newer report exists)")
+
     if dry_run:
         conn = sqlite3.connect(f"file:{db_path or NBA_DB}?mode=ro", uri=True)
-        new = sum(1 for r in all_rows if not conn.execute(
-            "SELECT 1 FROM historical_injuries WHERE game_date=? AND player=? AND team=?",
-            (r['game_date'], r['player'], r['team'])).fetchone())
+        plan = plan_store(conn, all_rows)
         conn.close()
-        print(f"\n[dry-run] {new:,} of {len(all_rows):,} rows are new and would be inserted. Nothing written.")
+        print(f"\n[dry-run] {plan_text(plan)}. Nothing written.")
         return
 
     conn = sqlite3.connect(db_path or NBA_DB)
-    inserted = 0
-    skipped  = 0
-    for row in all_rows:
-        try:
-            cur = conn.execute(
-                "INSERT OR IGNORE INTO historical_injuries "
-                "(game_date, player, team, status, reason) VALUES (?,?,?,?,?)",
-                (row['game_date'], row['player'], row['team'],
-                 row['status'], row['reason'])
-            )
-            if cur.rowcount > 0:
-                inserted += 1
-            else:
-                skipped += 1
-        except Exception as ex:
-            print(f"    [!] DB error: {ex} — {row}")
-            skipped += 1
-
+    plan = plan_store(conn, all_rows)
+    inserted = apply_store(conn, plan)
+    skipped = len(all_rows) - inserted
     conn.commit()
+    print(f"[+] {plan_text(plan)}")
 
     # B.4 gate verification
     days = conn.execute(
