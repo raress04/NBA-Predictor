@@ -76,30 +76,7 @@ def resolve_outcomes(date_iso, logs_df):
             updated_shadow += 1
 
         # 2. Resolve parlays
-        cursor.execute("SELECT id, stake, combined_odds FROM parlays WHERE game_date = ? AND result IS NULL", (date_iso,))
-        parlays = cursor.fetchall()
-        updated_parlays = 0
-        for pid, stake, odds in parlays:
-            # Check if all legs are resolved in pick_results (which is populated by analyze_predictions)
-            cursor.execute("""
-                SELECT pl.id, pr.is_win
-                FROM parlay_legs pl
-                LEFT JOIN pick_results pr ON pr.pick_id = pl.pick_id
-                WHERE pl.parlay_id = ?
-            """, (pid,))
-            legs = cursor.fetchall()
-            
-            if not legs or any(is_win is None for _, is_win in legs):
-                continue
-                
-            won = all(is_win == 1 for _, is_win in legs)
-            result = 'WIN' if won else 'LOSS'
-            payout = round((stake or 0) * (odds or 1.0), 6) if won else 0.0
-            roi = round((payout - (stake or 0)) / stake, 4) if stake and stake > 0 else 0.0
-            
-            cursor.execute("UPDATE parlays SET result = ?, payout = ?, roi = ? WHERE id = ?", 
-                         (result, payout, roi, pid))
-            updated_parlays += 1
+        updated_parlays = len(resolve_parlays(cursor, date_iso, box_scores))
 
         conn.commit()
         conn.close()
@@ -120,6 +97,122 @@ def resolve_outcomes(date_iso, logs_df):
                 pass
     except Exception as e:
         print(f"    [!] Error resolving outcomes: {e}")
+
+
+PROP_CATEGORIES = ('POINTS', 'REBOUNDS', 'ASSISTS')
+
+
+def _lookup_player(box_scores: dict, player: str):
+    """Exact name, else fuzzy (cutoff 0.85, as for shadow picks)."""
+    if not player:
+        return None
+    if player in box_scores:
+        return box_scores[player]
+    close = difflib.get_close_matches(player, box_scores.keys(), n=1, cutoff=0.85)
+    return box_scores[close[0]] if close else None
+
+
+def leg_outcome(direction: str, line, actual):
+    """1 win, 0 loss, None push."""
+    if actual == line:
+        return None
+    return 1 if (actual > line) == (str(direction).upper() == 'OVER') else 0
+
+
+def resolve_parlays(cursor, date_iso: str, box_scores: dict, dry_run: bool = False) -> list:
+    """
+    Settles unresolved parlays for a date (fixed 2026-11-09).
+
+    Before: every leg was looked up in pick_results via parlay_legs.pick_id, which
+    persist_parlay never sets (and daily_picks has no 2026-27 rows), so no parlay was
+    ever settled. Now each prop leg is settled from the box scores (player, category,
+    direction, line); a leg with a pick_results row still uses it. A push drops the leg
+    (its odds leave the payout). A leg that cannot be settled (player not in the box
+    scores, TOTAL/SPREAD leg without pick_results) leaves the parlay open.
+    Returns [(parlay_id, result, payout, roi, [leg outcomes])].
+    """
+    settled = []
+    parlays = cursor.execute("SELECT id, stake, combined_odds FROM parlays WHERE game_date = ? AND result IS NULL",
+                             (date_iso,)).fetchall()
+    for pid, stake, _odds in parlays:
+        legs = cursor.execute("""
+            SELECT pl.player, pl.stat_category, pl.direction, pl.line, pl.odds, pr.is_win
+            FROM parlay_legs pl
+            LEFT JOIN pick_results pr ON pr.pick_id = pl.pick_id AND COALESCE(pr.voided, 0) = 0
+            WHERE pl.parlay_id = ?
+            ORDER BY pl.leg_number
+        """, (pid,)).fetchall()
+        if not legs:
+            continue
+        outcomes, odds_live, open_leg = [], 1.0, False
+        for player, cat, direction, line, odds, is_win in legs:
+            if is_win is not None:
+                res = int(is_win)
+            elif (cat or '').upper() in PROP_CATEGORIES and line is not None:
+                actual = _lookup_player(box_scores, player)
+                if actual is None or actual.get(cat.upper()) is None:
+                    print(f"    [!] parlay {pid}: no box score for leg '{player}' {cat} — left open")
+                    open_leg = True
+                    break
+                res = leg_outcome(direction, line, actual[cat.upper()])
+            else:
+                open_leg = True
+                break
+            outcomes.append(res)
+            if res is not None:
+                odds_live *= (odds or 1.0)
+        if open_leg:
+            continue
+        decided = [o for o in outcomes if o is not None]
+        if not decided:                                   # every leg pushed: stake back
+            result, payout = 'PUSH', (stake or 0)
+        else:
+            won = all(o == 1 for o in decided)
+            result = 'WIN' if won else 'LOSS'
+            payout = round((stake or 0) * odds_live, 6) if won else 0.0
+        roi = round((payout - (stake or 0)) / stake, 4) if stake and stake > 0 else 0.0
+        if not dry_run:
+            cursor.execute("UPDATE parlays SET result = ?, payout = ?, roi = ? WHERE id = ?",
+                           (result, payout, roi, pid))
+        settled.append((pid, result, payout, roi, outcomes))
+    return settled
+
+
+def box_scores_from_db(date_iso: str) -> dict:
+    """player -> {POINTS, REBOUNDS, ASSISTS} from nba_data.db (players who played)."""
+    conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
+    rows = conn.execute("""SELECT player_name, pts, reb, ast FROM box_scores
+                           WHERE substr(game_date, 1, 10) = ? AND CAST(minutes AS REAL) > 0""",
+                        (date_iso,)).fetchall()
+    conn.close()
+    return {n: {'POINTS': int(p or 0), 'REBOUNDS': int(r or 0), 'ASSISTS': int(a or 0)} for n, p, r, a in rows}
+
+
+def settle_parlays_from_db(start: str, end: str, dry_run: bool = True):
+    """Settle open parlays for a date range from stored box scores (no NBA API call)."""
+    d = datetime.strptime(start, '%Y-%m-%d')
+    end_dt = datetime.strptime(end, '%Y-%m-%d')
+    conn = sqlite3.connect(TRACKER_DB)
+    total = []
+    while d <= end_dt:
+        iso = d.strftime('%Y-%m-%d')
+        bs = box_scores_from_db(iso)
+        if bs:
+            for pid, result, payout, roi, outs in resolve_parlays(conn.cursor(), iso, bs, dry_run=dry_run):
+                total.append(result)
+                legs = ' '.join({1: 'W', 0: 'L', None: 'P'}[o] for o in outs)
+                print(f"    {iso} parlay {pid}: legs [{legs}] -> {result} payout {payout} roi {roi}")
+        d += timedelta(days=1)
+    if dry_run:
+        conn.rollback()
+        print(f"\n[dry-run] {len(total)} parlays would be settled "
+              f"({total.count('WIN')} WIN / {total.count('LOSS')} LOSS / {total.count('PUSH')} PUSH). Nothing written.")
+    else:
+        conn.commit()
+        print(f"\n[+] Settled {len(total)} parlays "
+              f"({total.count('WIN')} WIN / {total.count('LOSS')} LOSS / {total.count('PUSH')} PUSH).")
+    conn.close()
+    return total
 
 
 def evaluate_ban_status():
@@ -284,10 +377,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Synchronize box scores and resolve outcomes for a range of dates.")
     parser.add_argument('start', type=str, nargs='?', default=None, help="Start date YYYY-MM-DD (defaults to yesterday)")
     parser.add_argument('end', type=str, nargs='?', default=None, help="End date YYYY-MM-DD (defaults to yesterday)")
-    
+    parser.add_argument('--settle-parlays-only', action='store_true',
+                        help="Only settle open parlays from box scores already in nba_data.db (no API call).")
+    parser.add_argument('--apply', action='store_true', help="With --settle-parlays-only: write (default is a dry run).")
+
     args = parser.parse_args()
-    
-    if not args.start:
+
+    if args.settle_parlays_only:
+        if not args.start:
+            parser.error("--settle-parlays-only needs a start date")
+        settle_parlays_from_db(args.start, args.end or args.start, dry_run=not args.apply)
+    elif not args.start:
         from utils.slate_date import previous_slate_date   # US-Eastern 'yesterday'
         yesterday = previous_slate_date()
         sync_range(yesterday, yesterday)
