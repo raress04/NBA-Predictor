@@ -1232,7 +1232,9 @@ def persist_parlay(legs: list, game_date: str) -> int:
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 parlay_id, i,
-                leg.get('player_name') or pick_str.split(' ')[0],
+                # Full name: prop legs carry it in 'player' (the pick string's first word
+                # was stored before 2026-11-09, e.g. 'Evan' for Evan Mobley).
+                leg.get('player_name') or leg.get('player') or leg.get('team') or pick_str.split(' ')[0],
                 leg.get('stat_category', leg.get('type', 'prop')).upper(),
                 leg.get('direction', ''),
                 leg.get('line'),
