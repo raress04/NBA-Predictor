@@ -198,6 +198,21 @@ ENGINE_CALIBRATION = os.environ.get('ENGINE_CALIBRATION',
 if ENGINE_CALIBRATION not in ('v2', 'legacy'):
     raise ValueError(f"ENGINE_CALIBRATION must be 'v2' or 'legacy', got {ENGINE_CALIBRATION!r}")
 
+# ── Step 3: probability calibration (Plans/STEP3_CALIBRATION_AUDIT.md) ──
+# Turns the raw sim share into a calibrated win probability (cal_prob, model M4,
+# config/prob_calibration.json, fitted by scripts/fit_calibration.py).
+#   'off'    — exactly as before Step 3
+#   'shadow' — cal_prob computed and logged on every prop candidate; decisions unchanged
+#   'on'     — EV edge and parlay ranking use cal_prob; the stale category penalty
+#              (get_category_calibration, last season's picks) is switched off
+# Owner (2026-11-10): shadow until 2026-11-17 inclusive, then owner decides 'on'.
+PROB_CALIBRATION = 'off' if _STEP2_LEGACY else os.environ.get('PROB_CALIBRATION', 'shadow').strip().lower()
+if PROB_CALIBRATION not in ('off', 'shadow', 'on'):
+    raise ValueError(f"PROB_CALIBRATION must be 'off', 'shadow' or 'on', got {PROB_CALIBRATION!r}")
+PROB_CALIBRATION_PATH = os.environ.get(
+    'PROB_CALIBRATION_PATH',   # override only for out-of-sample replays
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), 'prob_calibration.json'))
+
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""
     return (category.upper(), direction.upper()) not in BANNED_COMBINATIONS

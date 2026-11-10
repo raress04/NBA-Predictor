@@ -64,6 +64,21 @@ COMPARISONS = {
                      'step2': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2')},
         'variants': [('OLD', 'legacy', 'step2'), ('NEW', 'step2', 'step2')],
     },
+    # Step 3 (Plans/STEP3_CALIBRATION_AUDIT.md P1): current engine only, used with
+    # --dump-candidates to build the BACKTEST calibration set R. One profile simulated.
+    'step3': {
+        'profiles': {'step2': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2')},
+        'variants': [('CUR', 'step2', 'step2')],
+    },
+    # Step 3 P4: same current-engine sims, gates with PROB_CALIBRATION shadow vs on.
+    # The stale category penalty is NOT patched out here (live-faithful: shadow keeps it).
+    'step3on': {
+        'profiles': {'cur': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2',
+                                 PROB_CALIBRATION='shadow'),
+                     'on': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2',
+                                PROB_CALIBRATION='on')},
+        'variants': [('SHADOW', 'cur', 'cur'), ('ON', 'cur', 'on')],
+    },
 }
 PROFILES = COMPARISONS['step2']['profiles']
 VARIANTS = COMPARISONS['step2']['variants']
@@ -157,10 +172,10 @@ def sim_task(task):
 
 
 # ── Gates ──────────────────────────────────────────────────────────────────
-def run_gates(d, sims_by_game, lines, gate_profile, hist_rates):
+def run_gates(d, sims_by_game, lines, gate_profile, hist_rates, compare=None):
     from simulator import parlay_builder as pb
     pb.bias_logger.disabled = True
-    apply_profile(gate_profile)
+    apply_profile(gate_profile, compare)
     odds, props, dists, minutes = {}, {}, {}, {}
     for gid, p in sims_by_game.items():
         if 'prop_dists' not in p:
@@ -169,8 +184,10 @@ def run_gates(d, sims_by_game, lines, gate_profile, hist_rates):
         props[gid] = {pl: lines[pl] for pl in p['prop_dists'] if pl in lines}
         dists.update(p['prop_dists'])
         minutes.update(p['player_minutes'])
-    with unittest.mock.patch.object(pb, 'persist_parlay', return_value=None), \
-         unittest.mock.patch.object(pb, 'get_category_calibration', return_value=1.0), \
+    import contextlib
+    penalty = (contextlib.nullcontext() if compare == 'step3on'
+               else unittest.mock.patch.object(pb, 'get_category_calibration', return_value=1.0))
+    with unittest.mock.patch.object(pb, 'persist_parlay', return_value=None), penalty, \
          unittest.mock.patch.object(settings, 'MAX_VALUABLE_PICKS_PER_DAY', 10 ** 6), \
          unittest.mock.patch('builtins.print'):
         out = pb.build_parlays([], odds, props, dists, {}, all_historical_rates=hist_rates,
@@ -204,6 +221,9 @@ def main():
     ap.add_argument('--compare', choices=sorted(COMPARISONS), default='step2',
                     help="step2: pre-Step-2 vs Step 2 | t2: legacy vs fitted player shrinkage")
     ap.add_argument('--out-dir', default=None)
+    ap.add_argument('--dump-candidates', action='store_true',
+                    help="Also write every candidate (rejected and passed) with its stage values and "
+                         "outcome to candidates.csv (Step 3 calibration set; BACKTEST data).")
     args = ap.parse_args()
     global PROFILES, VARIANTS, OUT_DIR
     PROFILES = COMPARISONS[args.compare]['profiles']
@@ -227,11 +247,13 @@ def main():
         plan[d] = (games, lines, src)
     print(f"[replay] dates: {len(dates)} | skipped: {skipped}", flush=True)
 
-    tasks = [(prof, d, g, args.sims, args.compare) for d in dates for g in plan[d][0] for prof in ('legacy', 'step2')]
+    sim_profiles = sorted({v[1] for v in VARIANTS})       # simulate only what the variants use
+    tasks = [(prof, d, g, args.sims, args.compare) for d in dates for g in plan[d][0] for prof in sim_profiles]
     print(f"[replay] {len(tasks)} game simulations x {args.sims} sims on {args.workers} workers", flush=True)
-    sims = {d: {'legacy': {}, 'step2': {}} for d in dates}
-    remaining = {d: 2 * len(plan[d][0]) for d in dates}
+    sims = {d: {prof: {} for prof in sim_profiles} for d in dates}
+    remaining = {d: len(sim_profiles) * len(plan[d][0]) for d in dates}
     pick_rows, proj_rows, team_rows, funnel = [], [], [], defaultdict(lambda: defaultdict(int))
+    cand_rows = []
     t_start = time.time()
 
     from simulator.context_builder import get_player_historical_hit_rates
@@ -248,9 +270,38 @@ def main():
             except Exception:
                 pass
         for name, sim_prof, gate_prof in VARIANTS:
-            out = run_gates(d, sims[d][sim_prof], lines, gate_prof, hist)
+            out = run_gates(d, sims[d][sim_prof], lines, gate_prof, hist, args.compare)
             for r in out['shadow_picks']:
                 funnel[name][r['ban_reason'].split('(')[0].strip()] += 1
+            if args.dump_candidates:
+                # every candidate the gates saw: rejected (shadow rows) + passed (all_picks)
+                for r in out['shadow_picks']:
+                    cat = r['stat_category']
+                    if cat not in SIM_KEY:
+                        continue
+                    actual = act.get(r['player'], {}).get(cat)
+                    odds = r.get('over_odds') if r['direction'] == 'OVER' else r.get('under_odds')
+                    cand_rows.append(dict(variant=name, date=d, player=r['player'], cat=cat,
+                                          direction=r['direction'], line=r['line'], projection=r['projection'],
+                                          raw=r.get('raw_sim_freq'), posterior=r.get('posterior_conf'),
+                                          hist_pct=r.get('hist_pct'), blended=r.get('blended_conf'),
+                                          min_mean=r.get('min_mean'), min_std=r.get('min_std'), odds=odds,
+                                          gate=r['ban_reason'], actual=actual,
+                                          win=grade(r['direction'], r['line'], actual), line_source=src,
+                                          data='BACKTEST'))
+                for p in out['all_picks']:
+                    cat = CAT.get(p['stat_category'], p['stat_category'].upper())
+                    if cat not in SIM_KEY:
+                        continue
+                    actual = act.get(p['player'], {}).get(cat)
+                    cand_rows.append(dict(variant=name, date=d, player=p['player'], cat=cat,
+                                          direction=p['direction'].upper(), line=p['line'],
+                                          projection=p['projection'], raw=p.get('raw_sim_freq_pct'),
+                                          posterior=p.get('posterior_conf'), hist_pct=p.get('hist_pct'),
+                                          blended=p.get('blended_conf'), min_mean=None, min_std=None,
+                                          odds=p['odds'], gate='PASSED', actual=actual,
+                                          win=grade(p['direction'], p['line'], actual), line_source=src,
+                                          data='BACKTEST'))
             for p in out['all_picks']:
                 cat = CAT.get(p['stat_category'], p['stat_category'].upper())
                 actual = act.get(p['player'], {}).get(cat)
@@ -266,7 +317,7 @@ def main():
         for g in games:
             pts = dict(nconn.execute("SELECT team_id, SUM(pts) FROM box_scores WHERE game_id = ? "
                                      "GROUP BY team_id", (g['game_id'],)).fetchall())
-            for prof in ('legacy', 'step2'):
+            for prof in sim_profiles:
                 p = sims[d][prof].get(g['game_id'], {})
                 if 'score_dists' not in p:
                     continue
@@ -277,7 +328,7 @@ def main():
                                               sim=sum(sc) / len(sc), actual=pts[team['teamId']]))
         nconn.close()
         # projection accuracy (all simulated players with an actual line-up appearance)
-        for prof in ('legacy', 'step2'):
+        for prof in sim_profiles:
             for gid, p in sims[d][prof].items():
                 if 'prop_dists' not in p:
                     continue
@@ -287,7 +338,7 @@ def main():
                     if pl not in act:
                         continue
                     pm = p['player_minutes'].get(pl, {})
-                    ri = sims[d]['step2'].get(gid, {}).get('player_minutes', {}).get(pl, {}).get('return_info')
+                    ri = sims[d].get('step2', {}).get(gid, {}).get('player_minutes', {}).get(pl, {}).get('return_info')
                     for cat, key in SIM_KEY.items():
                         v = sorted(dist[key])
                         proj_rows.append(dict(profile=prof, date=d, game=gid, player=pl, cat=cat,
@@ -315,6 +366,11 @@ def main():
     proj.to_csv(os.path.join(OUT_DIR, 'replay_projections.csv'), index=False)
     teams = pd.DataFrame(team_rows)
     teams.to_csv(os.path.join(OUT_DIR, 'replay_team_scores.csv'), index=False)
+    if args.dump_candidates:
+        cands = pd.DataFrame(cand_rows)
+        cands.to_csv(os.path.join(OUT_DIR, 'candidates.csv'), index=False)
+        print(f"[replay] BACKTEST candidates written: {len(cands):,} rows "
+              f"({int(cands['win'].notna().sum()) if len(cands) else 0:,} graded)", flush=True)
     report = build_report(picks, proj, funnel, dates, skipped, plan, args, teams)
     with open(os.path.join(OUT_DIR, 'replay_report.txt'), 'w', encoding='utf-8') as fh:
         fh.write(report)

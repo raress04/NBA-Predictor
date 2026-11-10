@@ -1,0 +1,66 @@
+{
+  "schema": 2,
+  "model": "M4",
+  "input": "logit(raw_sim_freq/100), clipped to [0.005, 0.995]",
+  "formula": "cal = sigmoid(a + a_offset + (b + b_offset) * x)",
+  "computed_at": "2026-11-10T19:16:31",
+  "source": "scripts/fit_calibration.py (Plans/STEP3_CALIBRATION_AUDIT.md)",
+  "data": {
+    "set": "R = BACKTEST replay of the current engine (hindsight lineups)",
+    "file": "logs/november/step3_replay/candidates.csv",
+    "dates": [
+      "2026-10-20",
+      "2026-11-08"
+    ],
+    "rows": 5117
+  },
+  "engine": {
+    "SHRINKAGE_MODEL": "fitted",
+    "ENGINE_CALIBRATION": "v2",
+    "B2B_MODEL": "fitted",
+    "RETURNING_MODEL": "fitted"
+  },
+  "lambda": 3,
+  "global": {
+    "a": 0.061246,
+    "b": 0.231341
+  },
+  "groups": {
+    "POINTS_OVER": {
+      "a_offset": -0.13054,
+      "b_offset": -0.050001,
+      "n": 937,
+      "win_rate": 0.5069
+    },
+    "POINTS_UNDER": {
+      "a_offset": 0.20272,
+      "b_offset": -0.276306,
+      "n": 827,
+      "win_rate": 0.5611
+    },
+    "REBOUNDS_OVER": {
+      "a_offset": 0.011687,
+      "b_offset": 0.234952,
+      "n": 660,
+      "win_rate": 0.5742
+    },
+    "REBOUNDS_UNDER": {
+      "a_offset": 0.128806,
+      "b_offset": -0.127988,
+      "n": 1083,
+      "win_rate": 0.566
+    },
+    "ASSISTS_OVER": {
+      "a_offset": -0.252018,
+      "b_offset": 0.13397,
+      "n": 965,
+      "win_rate": 0.5171
+    },
+    "ASSISTS_UNDER": {
+      "a_offset": 0.039883,
+      "b_offset": 0.084365,
+      "n": 645,
+      "win_rate": 0.5705
+    }
+  }
+}

@@ -33,6 +33,7 @@ SHADOW_STAGE_COLUMNS = {
     'over_odds':      'REAL',
     'under_odds':     'REAL',
     'matchup':        'TEXT',
+    'cal_prob':       'REAL',                # Step 3: calibrated win probability (%), STEP3_CALIBRATION_AUDIT.md
     'superseded':     'INTEGER DEFAULT 0',   # 1 = row from an earlier run of the same slate
 }
 

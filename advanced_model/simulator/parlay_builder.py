@@ -10,6 +10,7 @@ from config.settings import BANNED_COMBINATIONS, CATEGORY_PRIORS, get_prior, is_
 import config.settings as settings
 from simulator.markov_engine import compute_posterior_confidence
 from utils.bias import get_tiered_bias
+from utils.prob_calibration import calibrate as _calibrate   # Step 3 (STEP3_CALIBRATION_AUDIT.md)
 import json
 import os
 import logging
@@ -153,6 +154,7 @@ _CANDIDATE_CTX_KEYS = (
     'posterior_conf',   # Beta posterior (prior strength from settings), before cap
     'hist_pct',         # DB historical hit rate used in the blend (None if not used)
     'blended_conf',     # final confidence after blend/category penalty/Platt
+    'cal_prob',         # Step 3: calibrated win probability (M4) from raw_sim_freq
     'conf_stage',       # which value the legacy sim_confidence column holds
     'min_mean', 'min_std',
     'over_odds', 'under_odds',
@@ -574,6 +576,9 @@ def build_parlays(
             if ctx.get('over_freq') is not None:
                 over = ctx['over_freq']
                 row['raw_sim_freq'] = over if row['direction'] == 'OVER' else 100.0 - over
+                # Step 3: calibrated win probability for the logged direction (shadow and on)
+                if settings.PROB_CALIBRATION != 'off':
+                    row['cal_prob'] = _calibrate(row['stat_category'], row['direction'], row['raw_sim_freq'])
         if conf_stage is not None:
             row['conf_stage'] = conf_stage
         shadow_picks.append(row)
@@ -941,7 +946,9 @@ def build_parlays(
                         blended_conf = (calib_conf * sim_w) + (hist_pct * db_w)
                         
                     # ── Live Category Calibration ──
-                    calib = get_category_calibration(internal_stat_key)
+                    # Step 3: under PROB_CALIBRATION='on' the stale penalty (last season's
+                    # published picks, x0.85/0.95) is replaced by the fitted calibration.
+                    calib = 1.0 if settings.PROB_CALIBRATION == 'on' else get_category_calibration(internal_stat_key)
                     blended_conf *= calib
 
                     # Phase 4.B: Platt-Style Calibration
@@ -992,7 +999,13 @@ def build_parlays(
 
                     # Phase 3.B: True EV-Based Edge
                     odds = over_o if direction == "Over" else under_o
-                    ev_edge = true_edge_pct(blended_conf, odds)
+                    # Step 3: calibrated win probability from the raw share in this direction.
+                    cal_prob = (_calibrate(stat_key, direction, target_count / edge['n_sim'] * 100.0)
+                                if settings.PROB_CALIBRATION != 'off' else None)
+                    ctx['cal_prob'] = cal_prob
+                    # 'on': the EV edge (and ranking below) uses cal_prob; otherwise unchanged
+                    p_for_ev = cal_prob if (settings.PROB_CALIBRATION == 'on' and cal_prob is not None) else blended_conf
+                    ev_edge = true_edge_pct(p_for_ev, odds)
 
                     if ev_edge < settings.MIN_EDGE:
                         log_shadow(player_name, stat_key, direction, line, edge['median'], blended_conf, ev_edge, f'LOW_EDGE(min={settings.MIN_EDGE:.1f})', ctx=ctx, conf_stage='blended')
@@ -1026,7 +1039,8 @@ def build_parlays(
                         'edge_pct': ev_edge,
                         'confidence': blended_conf,
                         'raw_sim_freq': edge['over_count'] / edge['n_sim'],
-                        'score': ev_edge * blended_conf / 100,
+                        'score': ev_edge * p_for_ev / 100,
+                        'cal_prob': cal_prob,
                         'ml_correction_applied': ml_applied,
                         'player': player_name,
                         'stat_category': stat_key,
