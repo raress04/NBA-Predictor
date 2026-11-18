@@ -162,8 +162,9 @@ def check_kelly_criteria(conn) -> dict:
     """).fetchone()
     parlay_n = parlay_row[0]
     parlay_wins = parlay_row[1] or 0
-    parlay_hit_rate = (parlay_wins / parlay_n * 100) if parlay_n >= 30 else 0
-    parlay_pass = parlay_hit_rate >= 20
+    # Report the real rate at any n; the gate itself still needs 30+ parlays.
+    parlay_hit_rate = (parlay_wins / parlay_n * 100) if parlay_n else 0
+    parlay_pass = parlay_n >= 30 and parlay_hit_rate >= 20
 
     # 6. No category < 40% win rate in last 30 days
     low_cats = conn.execute("""
@@ -231,8 +232,16 @@ def generate_monitoring_report(date_str: str = None) -> str:
     resolved_picks = vol[1] or 0
     pending = total_picks - resolved_picks
 
+    last_pick_date = conn.execute("""
+        SELECT MAX(date) FROM daily_picks
+        WHERE source_file NOT LIKE 'bulk_backtest%' AND source_file NOT LIKE 'synthetic%'
+    """).fetchone()[0]
+
     lines.append("\nPICK VOLUME (last 30 days):")
     lines.append(f"  Total: {total_picks}  |  Resolved: {resolved_picks}  |  Pending: {pending}")
+    if total_picks == 0:
+        lines.append(f"  ⚠️ daily_picks has no live picks since {last_pick_date or 'ever'}: "
+                     "win rates and Kelly pick counts below do not cover the current season.")
 
     # Win rates by category
     lines.append("\nWIN RATES BY CATEGORY:")
@@ -258,7 +267,8 @@ def generate_monitoring_report(date_str: str = None) -> str:
         SELECT COUNT(*) as total,
                SUM(CASE WHEN result='WIN' THEN 1 ELSE 0 END) as wins,
                ROUND(SUM(CASE WHEN result='WIN' THEN 1.0 ELSE 0 END) / COUNT(*) * 100, 1) as hit_rate,
-               ROUND(SUM(roi) * 100, 2) as total_roi_pct
+               -- profit / amount staked; summing per-parlay ROI gave -174.65% on 8 parlays
+               ROUND(SUM(roi * stake) / NULLIF(SUM(stake), 0) * 100, 2) as total_roi_pct
         FROM parlays
         WHERE result IS NOT NULL
           AND game_date >= date(slate_date(), '-30 days')
@@ -304,7 +314,8 @@ def generate_monitoring_report(date_str: str = None) -> str:
     lines.append(f"  [{'✅' if kelly_data['platt_pass'] else '❌'}] 2+ Platt categories: {kelly_data['platt_count']}")
     lines.append(f"  [{'✅' if kelly_data['brier_pass'] else '❌'}] Brier < 0.20 all cats")
     lines.append(f"  [{'✅' if kelly_data['clv_pass'] else '❌'}] CLV positive rate > 60%")
-    lines.append(f"  [{'✅' if kelly_data['parlay_pass'] else '❌'}] Parlay hit rate > 20%: {kelly_data['parlay_hit_rate']:.1f}% (n={kelly_data['parlay_n']})")
+    parlay_note = "" if kelly_data['parlay_n'] >= 30 else " — needs n>=30"
+    lines.append(f"  [{'✅' if kelly_data['parlay_pass'] else '❌'}] Parlay hit rate > 20%: {kelly_data['parlay_hit_rate']:.1f}% (n={kelly_data['parlay_n']}{parlay_note})")
     lines.append(f"  [{'✅' if kelly_data['no_low_cat_pass'] else '❌'}] No category < 40% WR")
     lines.append(f"  STATUS: {'🟢 KELLY ENABLED' if kelly_data['all_pass'] else '🔴 KELLY DISABLED — USE FLAT 0.2% STAKE'}")
 
@@ -313,6 +324,8 @@ def generate_monitoring_report(date_str: str = None) -> str:
     alerts = []
     for cat, direction, wr in (kelly_data['low_cats'] or []):
         alerts.append(f"  🔴 {cat} {direction} win rate {wr}% — below 40% threshold")
+    if total_picks == 0:
+        alerts.append(f"  🔴 No live picks in daily_picks for 30 days (last: {last_pick_date or 'none'}) — pick seeding is not running")
     if not alerts:
         lines.append("  🟢 All systems nominal")
     else:

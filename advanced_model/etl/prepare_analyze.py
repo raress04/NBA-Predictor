@@ -203,8 +203,27 @@ def fetch_box_scores_if_needed(target_date: str, db_path: Optional[str] = None) 
         parts = season_full.split('-')
         season_api = f"{parts[0]}-{parts[1][-2:]}"  # e.g. '2026-27'
 
-        logs_endpoint = playergamelogs.PlayerGameLogs(season_nullable=season_api)
-        dfs = logs_endpoint.get_data_frames()
+        # Ask only for target_date (small payload) and retry transient stats.nba.com timeouts
+        import time as _time
+        y, m, d = target_date.split('-')
+        dfs = None
+        last_err = None
+        for attempt in range(1, 5):
+            try:
+                dfs = playergamelogs.PlayerGameLogs(
+                    season_nullable=season_api,
+                    date_from_nullable=f"{m}/{d}/{y}",
+                    date_to_nullable=f"{m}/{d}/{y}",
+                    timeout=60,
+                ).get_data_frames()
+                break
+            except Exception as e:
+                last_err = e
+                print(f"[!] NBA API attempt {attempt}/4 failed: {e}")
+                if attempt < 4:
+                    _time.sleep(10 * attempt)
+        if dfs is None:
+            raise last_err
         if not dfs or dfs[0].empty:
             print(f"[!] NBA API returned no game logs for season {season_api}.")
             return False

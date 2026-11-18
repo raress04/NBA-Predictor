@@ -188,11 +188,11 @@ def parse_predicts(filepath):
         # Match inline VALUABLE props: Player -> 18 PTS, 4 REB, 2 AST (O/U 12.5 points VALUABLE: Under (80% conf, 30.3% edge))
         if 'VALUABLE:' in line and current_game:
             # We want to extract the player and the specific valuable bets
-            player_match = re.search(r'^\s*([A-Za-z\s\.\'-]+)\s*->', line)
+            player_match = re.search(r'^\s*((?:[^\W\d_]|[\s\.\'-])+)\s*->', line)
             
             # Fallback for the old standalone format (no '->' on the same line)
             if not player_match:
-                player_match = re.search(r'^\s*([A-Za-z\s\.\'-]+)\s*\|', line)
+                player_match = re.search(r'^\s*((?:[^\W\d_]|[\s\.\'-])+)\s*\|', line)
                 
             if player_match:
                 player_name = player_match.group(1).strip()
@@ -210,7 +210,7 @@ def parse_predicts(filepath):
                         'conf': int(conf) if conf else None
                     })
         # Match Median Stats: Anthony Edwards      -> 29 PTS, 7 REB, 6 AST
-        median_match = re.search(r'^\s*([A-Za-z\s\.\'-]+)\s*->\s*(\d+)\s*PTS,\s*(\d+)\s*REB,\s*(\d+)\s*AST', line)
+        median_match = re.search(r'^\s*((?:[^\W\d_]|[\s\.\'-])+)\s*->\s*(\d+)\s*PTS,\s*(\d+)\s*REB,\s*(\d+)\s*AST', line)
         if median_match and current_game:
             player_name, pts, reb, ast = median_match.groups()
             medians.append({
@@ -252,7 +252,7 @@ def parse_results(filepath):
             continue
             
         # Match Player Stats: Alperen Sengun         | 32 PTS, 13 REB,  2 AST,  0 3PM
-        stat_match = re.search(r'^([A-Za-z\s\.\'-]+)\s*\|\s*(\d+)\s*PTS,\s*(\d+)\s*REB,\s*(\d+)\s*AST', line)
+        stat_match = re.search(r'^((?:[^\W\d_]|[\s\.\'-])+)\s*\|\s*(\d+)\s*PTS,\s*(\d+)\s*REB,\s*(\d+)\s*AST', line)
         if stat_match:
             player_name = stat_match.group(1).strip()
             pts, reb, ast = map(int, stat_match.groups()[1:])

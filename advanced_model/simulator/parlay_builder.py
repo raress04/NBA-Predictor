@@ -1117,14 +1117,16 @@ def build_parlays(
         )
 
     # ── Build Parlay #1: Best 2-3 Picks ──────
+    # A parlay needs 2+ legs and the 3/4 system needs exactly 4. Short slates used to
+    # emit the same 1-3 picks as both parlays, staking the same bet twice (2026-11-10).
     parlay_short = _select_diverse_picks(all_picks, target_count=3, max_per_game=2)
     if len(parlay_short) < 2:
-        parlay_short = all_picks[:3] if len(all_picks) >= 2 else all_picks
+        parlay_short = all_picks[:3] if len(all_picks) >= 2 else []
 
     # ── Build Parlay #2: Best 4 Picks (3/4 System) ──
     parlay_system = _select_diverse_picks(all_picks, target_count=4, max_per_game=2)
     if len(parlay_system) < 4:
-        parlay_system = all_picks[:4]
+        parlay_system = all_picks[:4] if len(all_picks) >= 4 else []
 
     parlay_ids = {}   # persisted under the slate date (game_date), not the local date
     for label, legs in [('parlay_2_3', parlay_short[:3]), ('parlay_4', parlay_system[:4])]:
@@ -1282,6 +1284,9 @@ def format_parlay_output(parlays: dict) -> str:
     lines.append("  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)")
     lines.append("=" * 60)
     
+    n_avail = len(parlays.get('all_picks', []))
+    if not parlays['parlay_2_3']:
+        lines.append(f"  No parlay: {n_avail} qualifying pick(s), a parlay needs at least 2.")
     combined_odds = 1.0
     for i, pick in enumerate(parlays['parlay_2_3'], 1):
         odds_str = f"@ {pick['odds']:.2f}" if pick['odds'] else ""
@@ -1290,25 +1295,28 @@ def format_parlay_output(parlays: dict) -> str:
         if pick['odds']:
             combined_odds *= pick['odds']
     
-    lines.append(f"  ─────────────────────────────────────────")
-    lines.append(f"  Combined Odds: {combined_odds:.2f}x")
-    
-    # Kelly Stake Recommendation
-    # For a parlay we treat it as a single bet with combined odds and joint probability.
-    # Joint Prob = Product of individual calibrated confidences.
-    joint_prob = 100.0
-    for p in parlays['parlay_2_3']:
-        joint_prob *= (p['confidence'] / 100.0)
-        
-    stake = compute_kelly_stake(combined_odds, joint_prob)
-    lines.append(f"  🔥 RECOMMENDED STAKE: {stake*100:.2f}% of Bankroll")
-    if not USE_KELLY:
-        lines.append(f"  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.")
+    if parlays['parlay_2_3']:
+        lines.append(f"  ─────────────────────────────────────────")
+        lines.append(f"  Combined Odds: {combined_odds:.2f}x")
+
+        # Kelly Stake Recommendation
+        # For a parlay we treat it as a single bet with combined odds and joint probability.
+        # Joint Prob = Product of individual calibrated confidences.
+        joint_prob = 100.0
+        for p in parlays['parlay_2_3']:
+            joint_prob *= (p['confidence'] / 100.0)
+
+        stake = compute_kelly_stake(combined_odds, joint_prob)
+        lines.append(f"  🔥 RECOMMENDED STAKE: {stake*100:.2f}% of Bankroll")
+        if not USE_KELLY:
+            lines.append(f"  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.")
     lines.append("")
 
     lines.append("=" * 60)
     lines.append("  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)")
     lines.append("=" * 60)
+    if not parlays['parlay_4']:
+        lines.append(f"  No 3/4 system: {n_avail} qualifying pick(s), the system needs 4.")
 
     combined_odds_4 = 1.0
     for i, pick in enumerate(parlays['parlay_4'], 1):
@@ -1338,7 +1346,7 @@ def format_parlay_output(parlays: dict) -> str:
         lines.append(f"  Combined Odds (all 4): {combined_odds_4:.2f}x")
         lines.append(f"  System 3/4 Avg Payout: {system_payout:.2f}x")
         lines.append(f"  🔥 RECOMMENDED STAKE: {stake*100:.2f}% of Bankroll")
-    else:
+    elif parlays['parlay_4']:
         lines.append(f"  ─────────────────────────────────────────")
         lines.append(f"  Combined Odds: {combined_odds_4:.2f}x")
 
@@ -1346,10 +1354,10 @@ def format_parlay_output(parlays: dict) -> str:
 
     # --- Honorable Mentions ---
     all_picks = parlays.get('all_picks', [])
-    parlay_4_picks = parlays.get('parlay_4', [])
-    
-    # Exclude picks that already made it into the main parlays
-    used_picks = {f"[{p['game']}] {p['pick']}" for p in parlay_4_picks}
+
+    # Exclude picks that already made it into either parlay
+    used_picks = {f"[{p['game']}] {p['pick']}"
+                  for p in parlays.get('parlay_2_3', []) + parlays.get('parlay_4', [])}
     remaining_picks = [p for p in all_picks if f"[{p['game']}] {p['pick']}" not in used_picks]
     
     if remaining_picks:

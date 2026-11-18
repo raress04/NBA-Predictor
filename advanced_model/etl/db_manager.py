@@ -247,7 +247,8 @@ def _parse_txt_valuable_picks(txt_path: str) -> list[dict]:
 
         # 1. Player Props
         # Example: Rudy Gobert -> 10 PTS (O/U 12.5 rebounds VALUABLE: Under (94% conf, 43.5% edge))
-        prop_container_re = re.compile(r'^\s*([A-Za-z\s\.\'-]+?)\s*->\s*\d+\s+PTS.*?(\(O/U.*\))', re.MULTILINE)
+        # [^\W\d_] = any letter, so accented names (Jović, Dončić) are not skipped
+        prop_container_re = re.compile(r'^[ \t]*((?:[^\W\d_]|[ \t\.\'-])+?)[ \t]*->[ \t]*\d+\s+PTS.*?(\(O/U.*\))', re.MULTILINE)
         for m in prop_container_re.finditer(section):
             player = m.group(1).strip()
             props_str = m.group(2)

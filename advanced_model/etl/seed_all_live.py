@@ -1,72 +1,78 @@
+"""Seed live predictions files into bet_tracker.daily_picks.
+
+Each live predicts_YYYY-MM-DD.txt is parsed for its VALUABLE picks, which go into
+daily_picks (source_mode='live'). The next morning, prepare_analyze grades them into
+pick_results.
+
+Until 2026-11-11 only the 2025-26 folders (predictions/march|april|may) were scanned,
+so no 2026-27 pick ever reached daily_picks, and the monitoring report's win rates and
+Kelly counts silently covered last season only.
+"""
 import os
-import subprocess
 import glob
 import sqlite3
-from datetime import datetime
 
-# ── Configuration ────────────────────────────────────────────────────────────
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
 PREDICTIONS_DIR = os.path.join(MODEL_DIR, 'predictions')
-MATCH_MONTHS = ["march", "april", "may"]  # extended to cover full live season
+LEGACY_MONTHS = ["march", "april", "may"]   # 2025-26 layout: predictions/<month>/
+
 
 def get_date_from_filename(filename):
     """Extracts YYYY-MM-DD from predicts_YYYY-MM-DD.txt."""
-    basename = os.path.basename(filename)
-    # predicts_2026-03-04.txt
-    parts = basename.replace(".txt", "").split("_")
-    if len(parts) >= 2:
-        return parts[1]
-    return None
+    parts = os.path.basename(filename).replace(".txt", "").split("_")
+    return parts[1] if len(parts) >= 2 else None
 
-def is_already_seeded(date_str, filename):
+
+def live_prediction_files(predictions_dir=PREDICTIONS_DIR):
+    """All live predicts_*.txt files, legacy layout and season layout, oldest first.
+    Backtest folders are never included."""
+    files = []
+    for month in LEGACY_MONTHS:
+        files += glob.glob(os.path.join(predictions_dir, month, "predicts_*.txt"))
+    # Season layout: predictions/<season>/live_predictions/<month>/predicts_*.txt
+    files += glob.glob(os.path.join(predictions_dir, "*", "live_predictions", "*", "predicts_*.txt"))
+    files = [f for f in files if get_date_from_filename(f)]
+    return sorted(set(files), key=lambda f: get_date_from_filename(f))
+
+
+def is_already_seeded(date_str, filename, db_path=DB_PATH):
     """Checks if the file has already been seeded into daily_picks."""
-    if not os.path.exists(DB_PATH):
+    if not os.path.exists(db_path):
         return False
-    
     try:
-        conn = sqlite3.connect(DB_PATH)
-        cur = conn.cursor()
-        cur.execute("SELECT 1 FROM daily_picks WHERE date=? AND source_file=? LIMIT 1", 
-                    (date_str, os.path.basename(filename)))
-        exists = cur.fetchone() is not None
+        conn = sqlite3.connect(db_path)
+        exists = conn.execute(
+            "SELECT 1 FROM daily_picks WHERE date=? AND source_file=? LIMIT 1",
+            (date_str, os.path.basename(filename))).fetchone() is not None
         conn.close()
         return exists
     except sqlite3.OperationalError:
-        # Table might not exist yet
-        return False
+        return False  # table might not exist yet
+
+
+def _results_path(date_str):
+    try:
+        from utils.prediction_paths import get_results_filepath
+        return get_results_filepath(date_str, mode='live', base_dir=MODEL_DIR)
+    except Exception:
+        return ''
+
 
 def main():
+    from etl.db_manager import seed_from_txt
+
     print(f"[*] Scanning for live-mode reports in {PREDICTIONS_DIR}...")
-    
-    for month in MATCH_MONTHS:
-        month_dir = os.path.join(PREDICTIONS_DIR, month)
-        if not os.path.exists(month_dir):
+    for f in live_prediction_files():
+        date_str = get_date_from_filename(f)
+        if is_already_seeded(date_str, f):
             continue
-        
-        files = glob.glob(os.path.join(month_dir, "predicts_*.txt"))
-        files.sort()
-        
-        for f in files:
-            date_str = get_date_from_filename(f)
-            if not date_str:
-                continue
-            
-            if is_already_seeded(date_str, f):
-                print(f"  [-] Skipping {date_str} (already seeded)")
-                continue
-            
-            print(f"  [+] Seeding {date_str} from {os.path.basename(f)}...")
-            # Call: python -m advanced_model.etl.bet_tracker seed --date <date_str>
-            cmd = ["python3", "-m", "advanced_model.etl.db_manager", "seed", "--date", date_str]
-            parent_dir = os.path.dirname(MODEL_DIR)
-            result = subprocess.run(cmd, capture_output=True, text=True, cwd=parent_dir)
-            
-            if result.returncode == 0:
-                print(f"      Successfully seeded.")
-            else:
-                print(f"      [!] Error seeding {date_str}:")
-                print(result.stderr)
+        print(f"  [+] Seeding {date_str} from {os.path.relpath(f, MODEL_DIR)}...")
+        try:
+            seed_from_txt(f, _results_path(date_str), date_str)
+        except Exception as e:
+            print(f"      [!] Error seeding {date_str}: {e}")
+
 
 if __name__ == "__main__":
     main()
