@@ -4,10 +4,16 @@ ml.compare_retro_live.py
 Task P.4 — Retro/Live Alignment Validation
 
 Compares:
-  - RETRO source : retrospective_db.projection_outcomes  (filtered to "valuable" picks)
-  - LIVE source  : bet_tracker.daily_picks               (source_mode='live' or 'seed')
+  - RETRO source : bet_tracker.projection_outcomes  (filtered to "valuable" picks)
+  - LIVE source  : bet_tracker.daily_picks          (source_mode='live' or 'seed')
 
-Window: February 2026 (2026-02-01 → 2026-02-28) — both DBs have full coverage.
+Window: the last 7 slate days ending yesterday (--start/--end override).
+
+2026-11-18: it used to read retrospective_db.db (emptied in May 2026, 0 bytes), so the
+nightly step failed with "no such table: projection_outcomes", and its window was the
+one-off Task P.4 window, Feb 2026, hard-coded. Note: in 2026-27 every projection_outcomes
+row is source_mode='live_pending' (no backtest rows), so "retro" here means the live
+projections; the report prints the source_mode counts it used.
 
 Match key: (player, category, direction)  with ±0.5 line tolerance.
 A pick is "valuable" in retro if:
@@ -26,17 +32,41 @@ import os
 import sqlite3
 import pandas as pd
 import numpy as np
-from datetime import datetime, date
-from utils.slate_date import slate_date
+from datetime import datetime, date, timedelta
+from utils.slate_date import slate_date, previous_slate_date
 
 MODEL_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RETRO_DB    = os.path.join(MODEL_DIR, 'database', 'retrospective_db.db')
+RETRO_DB    = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
 LIVE_DB     = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
 LOGS_DIR    = os.path.join(MODEL_DIR, 'logs')
 os.makedirs(LOGS_DIR, exist_ok=True)
 
-START_DATE = '2026-02-01'
-END_DATE   = '2026-02-28'
+WINDOW_DAYS = 7
+# Set by main() for the report header
+START_DATE = END_DATE = None
+
+
+def default_window(end: str = None, days: int = WINDOW_DAYS) -> tuple[str, str]:
+    """(start, end) of the last `days` slate days ending at `end` (default: yesterday)."""
+    end = end or previous_slate_date()
+    start = (date.fromisoformat(end) - timedelta(days=days - 1)).isoformat()
+    return start, end
+
+
+def _connect_ro(path: str) -> sqlite3.Connection:
+    """Read-only: never creates an empty DB file when the path is missing."""
+    return sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+
+
+def retro_source_modes(start: str, end: str) -> dict:
+    """{source_mode: rows} of projection_outcomes in the window (for the report header)."""
+    conn = _connect_ro(RETRO_DB)
+    rows = conn.execute("""
+        SELECT COALESCE(source_mode, 'NULL'), COUNT(*) FROM projection_outcomes
+        WHERE game_date >= ? AND game_date <= ? AND bookmaker_line IS NOT NULL
+        GROUP BY 1 ORDER BY 2 DESC""", (start, end)).fetchall()
+    conn.close()
+    return dict(rows)
 
 # Must match config/settings.py
 BANNED_CATS  = {('SPREAD', 'COVER')}
@@ -53,7 +83,7 @@ def load_retro(start: str, end: str) -> pd.DataFrame:
       - passes min_gap
       - not banned
     """
-    conn = sqlite3.connect(RETRO_DB)
+    conn = _connect_ro(RETRO_DB)
     df = pd.read_sql(f"""
         SELECT game_date AS date,
                player,
@@ -67,6 +97,8 @@ def load_retro(start: str, end: str) -> pd.DataFrame:
           AND bookmaker_line IS NOT NULL
     """, conn)
     conn.close()
+    if df.empty:
+        return df.assign(direction=[], gap=[], cat_up=[], dir_up=[], min_gap=[], key=[])
 
     # Derive direction
     df['direction'] = np.where(df['projected_value'] >= df['line'], 'OVER', 'UNDER')
@@ -91,7 +123,7 @@ def load_retro(start: str, end: str) -> pd.DataFrame:
 
 def load_live(start: str, end: str) -> pd.DataFrame:
     """Load live picks from bet_tracker."""
-    conn = sqlite3.connect(LIVE_DB)
+    conn = _connect_ro(LIVE_DB)
     df = pd.read_sql(f"""
         SELECT date,
                player_or_team AS player,
@@ -207,7 +239,7 @@ def analyse_divergences(retro: pd.DataFrame, live: pd.DataFrame) -> list[str]:
 # ── Report Writer ─────────────────────────────────────────────────────────────
 
 def write_report(daily_results: list[dict], retro: pd.DataFrame, live: pd.DataFrame,
-                 out_path: str) -> str:
+                 out_path: str, source_modes: dict = None) -> str:
     sep  = '=' * 68
     sep2 = '-' * 68
     lines = []
@@ -215,9 +247,21 @@ def write_report(daily_results: list[dict], retro: pd.DataFrame, live: pd.DataFr
     lines.append("  RETRO / LIVE ALIGNMENT VALIDATION REPORT")
     lines.append(f"  Window    : {START_DATE} → {END_DATE}")
     lines.append(f"  Generated : {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    lines.append(f"  Retro DB  : retrospective_db.db  | Live DB: bet_tracker.db")
+    lines.append(f"  Retro     : bet_tracker.projection_outcomes  | Live: bet_tracker.daily_picks")
+    if source_modes is not None:
+        modes = ', '.join(f"{k}={v}" for k, v in source_modes.items()) or 'none'
+        lines.append(f"  Retro rows by source_mode: {modes}")
+        if source_modes and all(str(k).startswith('live') for k in source_modes):
+            lines.append("  NOTE: no backtest rows in this window — 'retro' here is the live projections.")
     lines.append(f"  Match key : (player, category, direction) + line ±{LINE_TOL}")
     lines.append(sep)
+    if retro.empty and live.empty:
+        lines.append("\n  No retro projections and no live picks in this window — nothing to compare.")
+        lines.append("\n" + sep)
+        report = "\n".join(lines)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(report)
+        return report
 
     lines.append("\n── PER-DAY BREAKDOWN ────────────────────────────────────────────")
     hdr = f"{'Date':<12} {'Retro':>6} {'Live':>6} {'R→L%':>7} {'L→R%':>7}"
@@ -274,15 +318,18 @@ def write_report(daily_results: list[dict], retro: pd.DataFrame, live: pd.DataFr
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    global START_DATE, END_DATE
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument('--start', default=START_DATE)
-    ap.add_argument('--end',   default=END_DATE)
+    ap.add_argument('--start', default=None, help=f'Default: {WINDOW_DAYS} slate days ending at --end')
+    ap.add_argument('--end',   default=None, help='Default: yesterday (previous slate date)')
     ap.add_argument('--out',   default=None, help='Override output file path')
     args = ap.parse_args()
 
-    start_d  = args.start
-    end_d    = args.end
+    start_d, end_d = default_window(args.end)
+    if args.start:
+        start_d = args.start
+    START_DATE, END_DATE = start_d, end_d
     date_str = slate_date()
     out_path = args.out if args.out else os.path.join(LOGS_DIR, f'retro_live_alignment_{date_str}.txt')
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
@@ -304,7 +351,9 @@ def main():
         l_day = live[live['date'] == d]
         daily_results.append(compare_day(d, r_day, l_day))
 
-    report = write_report(daily_results, retro, live, out_path)
+    report = write_report(daily_results, retro, live, out_path,
+                          source_modes=retro_source_modes(start_d, end_d))
+    print(f'[+] Report saved to: {out_path}')
 
 if __name__ == '__main__':
     main()

@@ -357,6 +357,10 @@ def main():
                         help='Print only, do not save JSON snapshot')
     parser.add_argument('--json',    action='store_true',
                         help='Output raw JSON instead of formatted report')
+    # run_pipeline.sh passes --out (like ml.monitoring); it used to fail every night
+    # with "unrecognized arguments" (fixed 2026-11-18).
+    parser.add_argument('--out',     type=str, default=None,
+                        help='Also write the text report to this path')
     args = parser.parse_args()
 
     as_of   = args.date or slate_date()
@@ -376,6 +380,12 @@ def main():
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(metrics, f, indent=2, ensure_ascii=False)
         print(f'\n[+] Metrics saved: {out_path}')
+
+    if args.out:
+        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+        with open(args.out, 'w', encoding='utf-8') as f:
+            f.write(report)
+        print(f'[+] Report saved: {args.out}')
 
 
 if __name__ == '__main__':

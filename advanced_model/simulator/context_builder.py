@@ -539,6 +539,50 @@ from functools import lru_cache
 import pandas as pd
 import numpy as np
 import time
+import random
+
+# ── Synergy fetch with retries (2026-11-18) ──────────────────────
+# Each game runs in its own worker process and fetches these tables itself, so
+# stats.nba.com gets bursts and single calls time out. Before, one try and a silent
+# generic fallback. Now: a few tries with jittered backoff, and after
+# SYNERGY_MAX_FAILED_TABLES tables fail every try in this process, the rest are
+# skipped (the API is down; waiting on each would add many minutes per worker).
+SYNERGY_TRIES = 3
+SYNERGY_BACKOFF_S = (5, 15)          # wait before try 2 and try 3 (+ up to 50% jitter)
+SYNERGY_TIMEOUT_S = 60
+SYNERGY_MAX_FAILED_TABLES = 2
+_synergy_failed_tables = 0           # per process
+
+
+def _fetch_synergy(label, sleep=None, **kwargs):
+    """One SynergyPlayTypes table with retries. Returns the DataFrame, or None after
+    every try failed (or the API was already given up on in this process)."""
+    global _synergy_failed_tables
+    sleep = sleep or time.sleep
+    if _synergy_failed_tables >= SYNERGY_MAX_FAILED_TABLES:
+        return None
+    last_err = None
+    for attempt in range(1, SYNERGY_TRIES + 1):
+        try:
+            df = synergyplaytypes.SynergyPlayTypes(
+                per_mode_simple='PerGame', timeout=SYNERGY_TIMEOUT_S, **kwargs
+            ).get_data_frames()[0]
+            if attempt > 1:
+                print(f"[+] Synergy {label}: OK on try {attempt}/{SYNERGY_TRIES}")
+            return df
+        except Exception as e:
+            last_err = e
+            if attempt < SYNERGY_TRIES:
+                base = SYNERGY_BACKOFF_S[min(attempt - 1, len(SYNERGY_BACKOFF_S) - 1)]
+                print(f"[-] Synergy {label}: try {attempt}/{SYNERGY_TRIES} failed ({type(e).__name__}); retrying")
+                sleep(base * (1 + 0.5 * random.random()))
+    _synergy_failed_tables += 1
+    print(f"[-] Synergy {label}: all {SYNERGY_TRIES} tries failed: {last_err}")
+    if _synergy_failed_tables >= SYNERGY_MAX_FAILED_TABLES:
+        print(f"[SYNERGY FALLBACK] {_synergy_failed_tables} tables failed in this process; "
+              f"skipping the remaining Synergy calls (fallback values used).")
+    return None
+
 
 # Cache defensive and league average stats to avoid slow redundant API calls during simulations
 @lru_cache(maxsize=1)
@@ -546,20 +590,18 @@ def get_league_defensive_data(season='2025-26'):
     play_types = ['Isolation', 'PRBallHandler', 'Spotup', 'Transition', 'Handoff']
     team_defense = {}
     league_averages = {}
-    
+    fell_back = []
+
     print("[+] Caching NBA Synergy Defensive Play Types...")
     for pt in play_types:
         try:
-            df = synergyplaytypes.SynergyPlayTypes(
-                player_or_team_abbreviation='T',
-                play_type_nullable=pt,
-                type_grouping_nullable='defensive',
-                season=season,
-                per_mode_simple='PerGame',
-                timeout=60
-            ).get_data_frames()[0]
+            df = _fetch_synergy(f"team defense {pt}", player_or_team_abbreviation='T',
+                                play_type_nullable=pt, type_grouping_nullable='defensive',
+                                season=season)
+            if df is None:
+                raise RuntimeError("no data after retries")
             time.sleep(1) # Be nice to API
-            
+
             # PPP (Points Per Possession) is our primary defensive metric
             df = df.dropna(subset=['PPP'])
             
@@ -576,31 +618,37 @@ def get_league_defensive_data(season='2025-26'):
         except Exception as e:
             print(f"[-] Error tracking Synergy for {pt}: {e}")
             league_averages[pt] = 0.95 # Generic baseline if API fails
-            
+            fell_back.append(pt)
+
+    if fell_back:
+        print(f"[SYNERGY FALLBACK] team defense: {', '.join(fell_back)} have no team PPP, so the "
+              f"matchup multiplier skips them ({len(play_types) - len(fell_back)}/{len(play_types)} play types loaded).")
     return team_defense, league_averages
 
 @lru_cache(maxsize=1)
 def get_league_offensive_data(season='2025-26'):
     play_types = ['Isolation', 'PRBallHandler', 'Spotup', 'Transition', 'Handoff']
     league_offense = {}
-    
+    fell_back = []
+
     print("[+] Caching NBA Synergy Offensive Play Types (League-wide)...")
     for pt in play_types:
         try:
-            df = synergyplaytypes.SynergyPlayTypes(
-                player_or_team_abbreviation='P',
-                play_type_nullable=pt,
-                type_grouping_nullable='offensive',
-                season=season,
-                per_mode_simple='PerGame',
-                timeout=60
-            ).get_data_frames()[0]
+            df = _fetch_synergy(f"player offense {pt}", player_or_team_abbreviation='P',
+                                play_type_nullable=pt, type_grouping_nullable='offensive',
+                                season=season)
+            if df is None:
+                raise RuntimeError("no data after retries")
             league_offense[pt] = df
             time.sleep(1) # Be nice to API
         except Exception as e:
             print(f"[-] Error caching {pt} offense: {e}")
             league_offense[pt] = pd.DataFrame()
-            
+            fell_back.append(pt)
+
+    if fell_back:
+        print(f"[SYNERGY FALLBACK] player offense: {', '.join(fell_back)} empty, so the matchup "
+              f"multiplier skips them ({len(play_types) - len(fell_back)}/{len(play_types)} play types loaded).")
     return league_offense
 
 
@@ -615,18 +663,16 @@ def get_player_defensive_data(season='2025-26'):
     """
     play_types = ['Isolation', 'PRBallHandler', 'Spotup']  # Focus on most impactful
     player_defense = {}
+    fell_back = []
 
     print("[+] Caching NBA Synergy Individual Defensive Data...")
     for pt in play_types:
         try:
-            df = synergyplaytypes.SynergyPlayTypes(
-                player_or_team_abbreviation='P',
-                play_type_nullable=pt,
-                type_grouping_nullable='defensive',
-                season=season,
-                per_mode_simple='PerGame',
-                timeout=60
-            ).get_data_frames()[0]
+            df = _fetch_synergy(f"player defense {pt}", player_or_team_abbreviation='P',
+                                play_type_nullable=pt, type_grouping_nullable='defensive',
+                                season=season)
+            if df is None:
+                raise RuntimeError("no data after retries")
             time.sleep(1)
 
             df = df.dropna(subset=['PPP'])
@@ -646,7 +692,11 @@ def get_player_defensive_data(season='2025-26'):
 
         except Exception as e:
             print(f"[-] Error fetching individual defensive synergy for {pt}: {e}")
+            fell_back.append(pt)
 
+    if fell_back:
+        print(f"[SYNERGY FALLBACK] player defense: {', '.join(fell_back)} not loaded "
+              f"(team-level defense only for those).")
     print(f"    Loaded individual defensive data for {len(player_defense)} player-team combos.")
     return player_defense
 

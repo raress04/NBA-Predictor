@@ -1018,6 +1018,9 @@ def build_parlays(
                         stat_display = acronym
                         
                     pick_label = f"{player_name} {direction} {line} {stat_display}"
+                    # Share of sims that cleared the line in the PICK's direction. It used to be
+                    # P(OVER) for every pick, so an 85% UNDER showed "raw: 15%" (fixed 2026-11-18).
+                    raw_share = target_count / edge['n_sim']
 
                     # Trust level: HIGH if both agree (within 10%), LOW if they diverge
                     trust = ""
@@ -1033,12 +1036,12 @@ def build_parlays(
                         'team': all_player_minutes.get(player_name, {}).get('team'),
                         'direction': direction,
                         'game': f"{away_name} @ {home_name}",
-                        'pick': f"{pick_label} (Sim: {calib_conf:.0f}% (raw: {edge['over_count']/edge['n_sim']*100:.1f}%){hist_str}){trust}",
+                        'pick': f"{pick_label} (Sim: {calib_conf:.0f}% (raw: {raw_share*100:.1f}%){hist_str}){trust}",
                         'odds': odds,
                         'book': prop_info['book'],
                         'edge_pct': ev_edge,
                         'confidence': blended_conf,
-                        'raw_sim_freq': edge['over_count'] / edge['n_sim'],
+                        'raw_sim_freq': raw_share,   # 0-1, pick's direction (shown as "raw:" in reports)
                         'score': ev_edge * p_for_ev / 100,
                         'cal_prob': cal_prob,
                         'ml_correction_applied': ml_applied,
