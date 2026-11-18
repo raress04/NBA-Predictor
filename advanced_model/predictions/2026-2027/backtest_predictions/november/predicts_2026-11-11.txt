@@ -1,0 +1,467 @@
+[+] Execution mode: BACKTEST | Date: 2026-11-11
+[+] Script started: 2026-11-13 23:41:20 | Slate date (US-Eastern): 2026-11-11
+[+] Routing log to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/november/predicts_2026-11-11.txt
+[+] HISTORICAL MODE: Generating projections for 2026-11-11
+    (No live odds/props — simulation-only)
+[+] Loaded live Injury Report: 71 players marked Out/GTD.
+    [+] Found 10 games in database for 2026-11-11
+    [+] Parsed 10 unique matchups:
+        SAS @ CHI
+        OKC @ POR
+        DEN @ MEM
+        GSW @ HOU
+        LAL @ MIL
+        BOS @ TOR
+        ORL @ UTA
+        CLE @ NYK
+        WAS @ IND
+        BKN @ NOP
+
+[+] Commencing Parallel Historical Simulations...
+
+============================================================
+ MATCHUP: Oklahoma City Thunder @ Portland Trail Blazers
+============================================================
+  ⚠️  [B2B] POR is on a BACK-TO-BACK (model: fitted)
+  ⚠️  [B2B] OKC is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Robert Williams III: missed 1, return game 2, expected 16.4 min (pre-absence 16.6)
+  [INJURY MATRIX v2] POR teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] OKC teammates' shooting x1.0184 (fitted)
+PROJECTED TOTAL: 222.5
+PROJECTED SCORE: POR 110.7 - OKC 111.7
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Toumani Camara       -> 12 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Deni Avdija          -> 22 PTS, 6 REB, 6 AST [HIGH_UNCERTAINTY]
+  Damian Lillard       -> 21 PTS, 3 REB, 4 AST [HIGH_UNCERTAINTY]
+  Donovan Clingan      -> 11 PTS, 10 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jrue Holiday         -> 11 PTS, 3 REB, 4 AST [HIGH_UNCERTAINTY]
+  Sidy Cissoko         -> 9 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Scoot Henderson      -> 11 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Robert Williams III  -> 7 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Branden Carlson      -> 3 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Shai Gilgeous-Alexander -> 35 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Isaiah Hartenstein   -> 8 PTS, 9 REB, 6 AST [HIGH_UNCERTAINTY]
+  Aday Mara            -> 12 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jared McCain         -> 17 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Alex Caruso          -> 6 PTS, 4 REB, 4 AST [HIGH_UNCERTAINTY]
+  Kenrich Williams     -> 8 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Bennett Stirtz       -> 12 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Nique Clifford       -> 5 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Micah Peavy          -> 5 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: San Francisco Warriors @ Houston Rockets
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Will Richard: missed 1, return game 1, expected 14.7 min (pre-absence 17.2)
+  ⚠️  [RETURNING] LJ Cryer: missed 1, return game 2, expected 4.2 min (pre-absence 4.2)
+  ⚠️  [RETURNING] Gui Santos: missed 2, return game 3, expected 19.6 min (pre-absence 20.1)
+  [INJURY MATRIX v2] HOU teammates' shooting x1.0041 (fitted)
+  [INJURY MATRIX v2] GSW teammates' shooting x1.0081 (fitted)
+PROJECTED TOTAL: 219.8
+PROJECTED SCORE: HOU 110.6 - GSW 109.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Alperen Sengun       -> 18 PTS, 9 REB, 6 AST [HIGH_UNCERTAINTY]
+  Jabari Smith Jr.     -> 14 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+  Kevin Durant         -> 18 PTS, 6 REB, 4 AST [HIGH_UNCERTAINTY]
+  Fred VanVleet        -> 12 PTS, 3 REB, 5 AST [HIGH_UNCERTAINTY]
+  Amen Thompson        -> 13 PTS, 6 REB, 2 AST [HIGH_UNCERTAINTY]
+  Tari Eason           -> 10 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Reed Sheppard        -> 11 PTS, 1 REB, 2 AST [HIGH_UNCERTAINTY]
+  Marcus Smart         -> 8 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Bogdan Bogdanović    -> 3 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Brandin Podziemski   -> 22 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Yaxel Lendeborg      -> 23 PTS, 7 REB, 3 AST [HIGH_UNCERTAINTY]
+  Draymond Green       -> 4 PTS, 5 REB, 9 AST [HIGH_UNCERTAINTY]
+  De'Anthony Melton    -> 13 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Al Horford           -> 7 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Georges Niang        -> 11 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Will Richard         -> 5 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  LJ Cryer             -> 3 PTS, 0 REB, 1 AST [HIGH_UNCERTAINTY]
+  Charles Bassey       -> 10 PTS, 7 REB, 0 AST [HIGH_UNCERTAINTY]
+  Gui Santos           -> 7 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Los Angeles Lakers @ Milwaukee Bucks
+============================================================
+  ⚠️  [B2B] MIL is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Tyler Herro: missed 1, return game 1, expected 30.0 min (pre-absence 30.7)
+  ⚠️  [RETURNING] Ousmane Dieng: missed 1, return game 3, expected 10.9 min (pre-absence 10.1)
+  ⚠️  [RETURNING] Luka Dončić: missed 1, return game 2, expected 35.4 min (pre-absence 35.9)
+  ⚠️  [RETURNING] Austin Reaves: missed 1, return game 1, expected 35.8 min (pre-absence 36.6)
+  [INJURY MATRIX v2] MIL teammates' shooting x1.0144 (fitted)
+  [INJURY MATRIX v2] LAL teammates' shooting x1.0063 (fitted)
+PROJECTED TOTAL: 240.7
+PROJECTED SCORE: MIL 109.4 - LAL 131.2
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Tyler Herro          -> 22 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jaime Jaquez Jr.     -> 14 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Kyle Kuzma           -> 11 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Ryan Rollins         -> 11 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Brayden Burries      -> 13 PTS, 5 REB, 4 AST [HIGH_UNCERTAINTY]
+  Kel'el Ware          -> 10 PTS, 5 REB, 1 AST [HIGH_UNCERTAINTY]
+  Nate Ament           -> 10 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jericho Sims         -> 2 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Ousmane Dieng        -> 4 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  AJ Green             -> 8 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Luka Dončić          -> 39 PTS, 8 REB, 8 AST [HIGH_UNCERTAINTY]
+  Walker Kessler       -> 13 PTS, 10 REB, 3 AST [HIGH_UNCERTAINTY]
+  Sandro Mamukelashvili -> 10 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Austin Reaves        -> 26 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Matisse Thybulle     -> 6 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jake LaRavia         -> 5 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Ziaire Williams      -> 10 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Adou Thiero          -> 3 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Collin Sexton        -> 10 PTS, 2 REB, 4 AST [HIGH_UNCERTAINTY]
+  Cameron Carr         -> 7 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Boston Celtics @ Toronto Raptors
+============================================================
+  ⚠️  [B2B] BOS is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Immanuel Quickley: missed 2, return game 1, expected 31.1 min (pre-absence 31.8)
+  ⚠️  [RETURNING] Collin Murray-Boyles: missed 1, return game 1, expected 19.4 min (pre-absence 22.1)
+  ⚠️  [RETURNING] Kyle Anderson: missed 1, return game 2, expected 6.0 min (pre-absence 6.1)
+  [INJURY MATRIX v2] TOR teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] BOS teammates' shooting x1.0041 (fitted)
+PROJECTED TOTAL: 224.4
+PROJECTED SCORE: TOR 110.3 - BOS 114.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Ja'Kobe Walter       -> 12 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jakob Poeltl         -> 10 PTS, 8 REB, 1 AST [HIGH_UNCERTAINTY]
+  RJ Barrett           -> 24 PTS, 7 REB, 3 AST [HIGH_UNCERTAINTY]
+  Immanuel Quickley    -> 20 PTS, 5 REB, 6 AST [HIGH_UNCERTAINTY]
+  Jamison Battle       -> 9 PTS, 2 REB, 0 AST [HIGH_UNCERTAINTY]
+  Jamal Shead          -> 10 PTS, 3 REB, 8 AST [HIGH_UNCERTAINTY]
+  Collin Murray-Boyles -> 11 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Allen Graves         -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Alijah Martin        -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Kyle Anderson        -> 2 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Derrick White        -> 13 PTS, 3 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jayson Tatum         -> 27 PTS, 6 REB, 6 AST [HIGH_UNCERTAINTY]
+  Payton Pritchard     -> 15 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Neemias Queta        -> 10 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+  Baylor Scheierman    -> 7 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Sam Hauser           -> 8 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jordan Walsh         -> 7 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Mitchell Robinson    -> 7 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Luka Garza           -> 8 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Hugo González        -> 6 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Washington Wizards @ Indiana Pacers
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[-] Error tracking Synergy for Transition: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Kelly Oubre Jr.: missed 2, return game 3, expected 22.6 min (pre-absence 23.2)
+  ⚠️  [RETURNING] Jalen Slawson: missed 1, return game 1, expected 12.7 min (pre-absence 14.9)
+  ⚠️  [RETURNING] Jay Huff: missed 1, return game 1, expected 16.0 min (pre-absence 18.2)
+  ⚠️  [RETURNING] Anthony Davis: missed 2, return game 2, expected 32.5 min (pre-absence 33.0)
+  ⚠️  [RETURNING] Bilal Coulibaly: missed 1, return game 1, expected 25.0 min (pre-absence 25.8)
+  [INJURY MATRIX v2] IND teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] WAS teammates' shooting x1.0081 (fitted)
+PROJECTED TOTAL: 244.2
+PROJECTED SCORE: IND 122.6 - WAS 121.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Andrew Nembhard      -> 16 PTS, 2 REB, 8 AST [HIGH_UNCERTAINTY]
+  Kelly Oubre Jr.      -> 11 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Pascal Siakam        -> 24 PTS, 6 REB, 4 AST [HIGH_UNCERTAINTY]
+  Ivica Zubac          -> 9 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+  Aaron Nesmith        -> 15 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Quenton Jackson      -> 10 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Obi Toppin           -> 14 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  T.J. McConnell       -> 8 PTS, 2 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jalen Slawson        -> 3 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jay Huff             -> 8 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Kyshawn George       -> 17 PTS, 4 REB, 6 AST [HIGH_UNCERTAINTY]
+  AJ Dybantsa          -> 17 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Trae Young           -> 16 PTS, 3 REB, 10 AST [HIGH_UNCERTAINTY]
+  Anthony Davis        -> 28 PTS, 8 REB, 2 AST [HIGH_UNCERTAINTY]
+  Tre Johnson          -> 12 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Bilal Coulibaly      -> 9 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Alex Sarr            -> 11 PTS, 6 REB, 2 AST [HIGH_UNCERTAINTY]
+  Bub Carrington       -> 5 PTS, 2 REB, 3 AST [HIGH_UNCERTAINTY]
+  Deandre Ayton        -> 4 PTS, 5 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: San Antonio Spurs @ Chicago Bulls
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[-] Error tracking Synergy for Handoff: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[-] Error caching Isolation offense: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  [INJURY MATRIX v2] CHI teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] SAS teammates' shooting x1.0063 (fitted)
+PROJECTED TOTAL: 242.2
+PROJECTED SCORE: CHI 109.9 - SAS 132.3
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Matas Buzelis        -> 14 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jalen Smith          -> 11 PTS, 7 REB, 2 AST [HIGH_UNCERTAINTY]
+  Patrick Williams     -> 8 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Tre Jones            -> 11 PTS, 3 REB, 3 AST [HIGH_UNCERTAINTY]
+  Josh Giddey          -> 12 PTS, 5 REB, 9 AST [HIGH_UNCERTAINTY]
+  Jordan Hawkins       -> 6 PTS, 0 REB, 0 AST [HIGH_UNCERTAINTY]
+  Isaac Okoro          -> 7 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Nic Claxton          -> 9 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Caleb Wilson         -> 21 PTS, 6 REB, 2 AST [HIGH_UNCERTAINTY]
+  Noa Essengue         -> 7 PTS, 4 REB, 0 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Dylan Harper         -> 21 PTS, 5 REB, 5 AST [HIGH_UNCERTAINTY]
+  Julian Champagnie    -> 12 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Victor Wembanyama    -> 37 PTS, 10 REB, 3 AST [HIGH_UNCERTAINTY]
+  De'Aaron Fox         -> 14 PTS, 5 REB, 8 AST [HIGH_UNCERTAINTY]
+  Stephon Castle       -> 18 PTS, 6 REB, 7 AST [HIGH_UNCERTAINTY]
+  Keldon Johnson       -> 10 PTS, 6 REB, 4 AST [HIGH_UNCERTAINTY]
+  Carter Bryant        -> 5 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Luke Kornet          -> 4 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Harrison Barnes      -> 8 PTS, 1 REB, 0 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Orlando Magic @ Utah Jazz
+============================================================
+  ⚠️  [B2B] UTA is on a BACK-TO-BACK (model: fitted)
+  ⚠️  [B2B] ORL is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[-] Error tracking Synergy for Handoff: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[-] Error caching Isolation offense: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Keyonte George: missed 1, return game 1, expected 31.3 min (pre-absence 32.1)
+  ⚠️  [RETURNING] Mo Bamba: missed 1, return game 3, expected 18.9 min (pre-absence 17.5)
+  ⚠️  [RETURNING] Desmond Bane: missed 1, return game 2, expected 33.9 min (pre-absence 34.5)
+  [INJURY MATRIX v2] UTA teammates' shooting x1.0041 (fitted)
+  [INJURY MATRIX v2] ORL teammates' shooting x1.0238 (fitted)
+PROJECTED TOTAL: 225.7
+PROJECTED SCORE: UTA 111.1 - ORL 114.5
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Keyonte George       -> 25 PTS, 4 REB, 7 AST [HIGH_UNCERTAINTY]
+  Darryn Peterson      -> 18 PTS, 4 REB, 4 AST [HIGH_UNCERTAINTY]
+  Ace Bailey           -> 15 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jaxson Hayes         -> 7 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Josh Green           -> 5 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Brice Sensabaugh     -> 9 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Svi Mykhailiuk       -> 7 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Mo Bamba             -> 7 PTS, 7 REB, 1 AST [HIGH_UNCERTAINTY]
+  Josh Okogie          -> 6 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Isaiah Collier       -> 7 PTS, 4 REB, 4 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Franz Wagner         -> 28 PTS, 6 REB, 9 AST [HIGH_UNCERTAINTY]
+  Anthony Black        -> 19 PTS, 6 REB, 5 AST [HIGH_UNCERTAINTY]
+  Desmond Bane         -> 23 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Wendell Carter Jr.   -> 14 PTS, 9 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jevon Carter         -> 5 PTS, 1 REB, 2 AST [HIGH_UNCERTAINTY]
+  Goga Bitadze         -> 4 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jase Richardson      -> 10 PTS, 2 REB, 3 AST [HIGH_UNCERTAINTY]
+  Alex Morales         -> 3 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Nikola Vučević       -> 5 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Cleveland Cavaliers @ New York Knicks
+============================================================
+  ⚠️  [B2B] NYK is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[-] Error tracking Synergy for Transition: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[-] Error tracking Synergy for Handoff: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Josh Hart: missed 3, return game 1, expected 29.8 min (pre-absence 31.7)
+  ⚠️  [RETURNING] Jarrett Allen: missed 2, return game 2, expected 24.9 min (pre-absence 25.3)
+  ⚠️  [RETURNING] Jaylon Tyson: missed 6, return game 1, expected 17.4 min (pre-absence 20.7)
+  [INJURY MATRIX v2] NYK teammates' shooting x1.0041 (fitted)
+  [INJURY MATRIX v2] CLE teammates' shooting x1.0041 (fitted)
+PROJECTED TOTAL: 227.7
+PROJECTED SCORE: NYK 116.8 - CLE 110.9
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Jalen Brunson        -> 28 PTS, 3 REB, 4 AST [HIGH_UNCERTAINTY]
+  Karl-Anthony Towns   -> 19 PTS, 10 REB, 3 AST [HIGH_UNCERTAINTY]
+  OG Anunoby           -> 16 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Landry Shamet        -> 10 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Miles McBride        -> 7 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  Josh Hart            -> 8 PTS, 6 REB, 4 AST [HIGH_UNCERTAINTY]
+  Mikal Bridges        -> 9 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Andre Drummond       -> 5 PTS, 8 REB, 1 AST [HIGH_UNCERTAINTY]
+  Tyler Kolek          -> 4 PTS, 2 REB, 5 AST [HIGH_UNCERTAINTY]
+  Mohamed Diawara      -> 6 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Donovan Mitchell     -> 21 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  James Harden         -> 14 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Evan Mobley          -> 14 PTS, 6 REB, 4 AST [HIGH_UNCERTAINTY]
+  Jarrett Allen        -> 10 PTS, 7 REB, 1 AST [HIGH_UNCERTAINTY]
+  Peyton Watson        -> 12 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Jaylon Tyson         -> 10 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+  Tyrese Proctor       -> 5 PTS, 3 REB, 3 AST [HIGH_UNCERTAINTY]
+  Meleek Thomas        -> 13 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Mario Hezonja        -> 10 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Brooklyn Nets @ New Orleans Pelicans
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[-] Error tracking Synergy for Spotup: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[-] Error tracking Synergy for Transition: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Zion Williamson: missed 1, return game 1, expected 32.2 min (pre-absence 33.0)
+  ⚠️  [RETURNING] Keon Ellis: missed 1, return game 2, expected 21.2 min (pre-absence 22.6)
+  [INJURY MATRIX v2] NOP teammates' shooting x1.0184 (fitted)
+  [INJURY MATRIX v2] BKN teammates' shooting x1.0081 (fitted)
+PROJECTED TOTAL: 242.6
+PROJECTED SCORE: NOP 123.0 - BKN 119.6
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Zion Williamson      -> 24 PTS, 6 REB, 3 AST [HIGH_UNCERTAINTY]
+  Saddiq Bey           -> 16 PTS, 3 REB, 3 AST [HIGH_UNCERTAINTY]
+  Dejounte Murray      -> 15 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jeremiah Fears       -> 18 PTS, 4 REB, 6 AST [HIGH_UNCERTAINTY]
+  Herbert Jones        -> 8 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Karlo Matković       -> 8 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jordan Poole         -> 9 PTS, 2 REB, 3 AST [HIGH_UNCERTAINTY]
+  Derik Queen          -> 13 PTS, 6 REB, 3 AST [HIGH_UNCERTAINTY]
+  Bryce McGowens       -> 4 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  DeAndre Jordan       -> 4 PTS, 5 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Danny Wolf           -> 11 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Julius Randle        -> 22 PTS, 5 REB, 5 AST [HIGH_UNCERTAINTY]
+  Michael Porter Jr.   -> 28 PTS, 7 REB, 1 AST [HIGH_UNCERTAINTY]
+  Keon Ellis           -> 6 PTS, 1 REB, 2 AST [HIGH_UNCERTAINTY]
+  Egor Dëmin           -> 11 PTS, 2 REB, 4 AST [HIGH_UNCERTAINTY]
+  Moritz Wagner        -> 11 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Day'Ron Sharpe       -> 9 PTS, 6 REB, 7 AST [HIGH_UNCERTAINTY]
+  Noah Clowney         -> 7 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Terance Mann         -> 4 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Chaney Johnson       -> 6 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ Memphis Grizzlies
+============================================================
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[-] Error caching Isolation offense: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[-] Error caching PRBallHandler offense: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[-] Error caching Spotup offense: HTTPSConnectionPool(host='stats.nba.com', port=443): Read timed out. (read timeout=60)
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Isaiah Stewart: missed 2, return game 1, expected 16.0 min (pre-absence 18.3)
+  ⚠️  [RETURNING] GG Jackson: missed 1, return game 2, expected 15.3 min (pre-absence 15.6)
+  ⚠️  [RETURNING] DeMar DeRozan: missed 1, return game 3, expected 24.9 min (pre-absence 25.1)
+  [INJURY MATRIX v2] MEM teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] DEN teammates' shooting x1.0122 (fitted)
+PROJECTED TOTAL: 235.7
+PROJECTED SCORE: MEM 121.6 - DEN 114.1
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+    [!] No prop lines found in historical_odds_cache for 2026-11-11 — projection-only mode
+[HOME TEAM]
+  Cameron Boozer       -> 17 PTS, 8 REB, 6 AST [HIGH_UNCERTAINTY]
+  Ty Jerome            -> 26 PTS, 3 REB, 4 AST [HIGH_UNCERTAINTY]
+  Jaylen Wells         -> 10 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Cedric Coward        -> 13 PTS, 7 REB, 3 AST [HIGH_UNCERTAINTY]
+  Jerami Grant         -> 11 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Cam Spencer          -> 7 PTS, 2 REB, 6 AST [HIGH_UNCERTAINTY]
+  Zach Edey            -> 8 PTS, 8 REB, 1 AST [HIGH_UNCERTAINTY]
+  Isaiah Stewart       -> 8 PTS, 2 REB, 0 AST [HIGH_UNCERTAINTY]
+  Javon Small          -> 10 PTS, 2 REB, 4 AST [HIGH_UNCERTAINTY]
+  GG Jackson           -> 8 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Christian Braun      -> 10 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Nikola Jokić         -> 24 PTS, 10 REB, 8 AST [HIGH_UNCERTAINTY]
+  Jamal Murray         -> 23 PTS, 4 REB, 5 AST [HIGH_UNCERTAINTY]
+  Cameron Johnson      -> 10 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Aaron Gordon         -> 11 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Spencer Jones        -> 5 PTS, 2 REB, 0 AST [HIGH_UNCERTAINTY]
+  DeMar DeRozan        -> 12 PTS, 2 REB, 4 AST [HIGH_UNCERTAINTY]
+  Trevon Brazile       -> 6 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Marvin Bagley III    -> 6 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+  Tyus Jones           -> 3 PTS, 1 REB, 3 AST [HIGH_UNCERTAINTY]
+
+
+[+] Historical projections for 2026-11-11 complete.
+    Compare these against actual results in yesterday_results.txt
+
+[+] Generating backtest PDF report for 2026-11-11 (Generated at: 2026-11-13 23:45:13)...
+    [+] LaTeX written to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/november/predicts_report_2026-11-11.tex
+    [+] PDF compiled: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/backtest_predictions/november/predicts_report_2026-11-11.pdf
+    [+] Cleaned up auxiliary files (predicts_report_2026-11-11.aux, .log, .tex)

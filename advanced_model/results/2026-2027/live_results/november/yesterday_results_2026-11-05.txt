@@ -1,0 +1,56 @@
+MATCHUP: ORL vs. PHX    104 - 117
+Devin Booker           | 30 PTS, 1 REB,  8 AST
+Wendell Carter Jr.     | 27 PTS, 13 REB,  2 AST
+Dillon Brooks          | 24 PTS, 1 REB,  1 AST
+Miles Bridges          | 18 PTS, 13 REB,  5 AST
+Tristan da Silva       | 18 PTS, 2 REB,  1 AST
+Desmond Bane           | 15 PTS, 6 REB,  0 AST
+Franz Wagner           | 15 PTS, 8 REB,  15 AST
+Luke Kennard           | 12 PTS, 1 REB,  5 AST
+Ryan Dunn              | 11 PTS, 3 REB,  3 AST
+Anthony Black          | 10 PTS, 7 REB,  6 AST
+Jase Richardson        | 10 PTS, 2 REB,  3 AST
+Khaman Maluach         | 8 PTS, 6 REB,  2 AST
+Collin Gillespie       | 6 PTS, 2 REB,  2 AST
+Jalen Green            | 6 PTS, 0 REB,  3 AST
+Jamal Cain             | 5 PTS, 5 REB,  0 AST
+Goga Bitadze           | 4 PTS, 5 REB,  0 AST
+Oso Ighodaro           | 2 PTS, 5 REB,  1 AST
+Alex Morales           | 0 PTS, 0 REB,  0 AST
+Colin Castleton        | 0 PTS, 0 REB,  1 AST
+Koa Peat               | 0 PTS, 1 REB,  0 AST
+Duop Reath             | 0 PTS, 0 REB,  0 AST
+Jevon Carter           | 0 PTS, 0 REB,  0 AST
+Nikola Vučević         | 0 PTS, 0 REB,  0 AST
+Jamaree Bouyea         | 0 PTS, 0 REB,  0 AST
+Pat Spencer            | 0 PTS, 0 REB,  0 AST
+
+MATCHUP: MIA vs. GSW    100 - 120
+Stephen Curry          | 29 PTS, 1 REB,  4 AST
+Davion Mitchell        | 22 PTS, 2 REB,  8 AST
+Giannis Antetokounmpo  | 20 PTS, 14 REB,  4 AST
+Bam Adebayo            | 18 PTS, 10 REB,  0 AST
+Yaxel Lendeborg        | 17 PTS, 8 REB,  6 AST
+Pelle Larsson          | 13 PTS, 1 REB,  4 AST
+Ryan Conwell           | 13 PTS, 1 REB,  2 AST
+Georges Niang          | 13 PTS, 4 REB,  3 AST
+Klay Thompson          | 11 PTS, 0 REB,  3 AST
+Will Richard           | 10 PTS, 0 REB,  2 AST
+Brandon Williams       | 10 PTS, 1 REB,  4 AST
+Gary Payton II         | 9 PTS, 0 REB,  0 AST
+Brandin Podziemski     | 9 PTS, 6 REB,  3 AST
+Al Horford             | 8 PTS, 5 REB,  1 AST
+Charles Bassey         | 8 PTS, 7 REB,  0 AST
+De'Anthony Melton      | 5 PTS, 6 REB,  2 AST
+Draymond Green         | 2 PTS, 5 REB,  11 AST
+Andrew Wiggins         | 2 PTS, 6 REB,  4 AST
+Nikola Jović           | 1 PTS, 0 REB,  1 AST
+Bobby Portis Jr.       | 0 PTS, 5 REB,  0 AST
+Tim Hardaway Jr.       | 0 PTS, 0 REB,  1 AST
+Graham Ike             | 0 PTS, 1 REB,  0 AST
+Malevy Leons           | 0 PTS, 0 REB,  0 AST
+LJ Cryer               | 0 PTS, 0 REB,  0 AST
+Myron Gardner          | 0 PTS, 0 REB,  0 AST
+Nick Richards          | 0 PTS, 0 REB,  0 AST
+Dru Smith              | 0 PTS, 0 REB,  0 AST
+

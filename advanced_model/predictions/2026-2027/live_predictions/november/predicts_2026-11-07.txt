@@ -1,0 +1,426 @@
+[+] Execution mode: LIVE | Date: 2026-11-07
+[+] Script started: 2026-11-07 22:22:26 | Slate date (US-Eastern): 2026-11-07
+[+] Routing log to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/live_predictions/november/predicts_2026-11-07.txt
+[+] Fetching Live Scoreboard/Odds for NBA Games (Slate: 2026-11-07) from ESPN...
+[+] Loaded live Injury Report: 65 players marked Out/GTD.
+[+] ESPN: Fetched odds for 7 upcoming NBA games (source: DraftKings)
+    [+] ESPN odds loaded for 7 events:
+        Denver Nuggets @ Indiana Pacers
+        Brooklyn Nets @ Atlanta Hawks
+        New York Knicks @ Cleveland Cavaliers
+        Washington Wizards @ Oklahoma City Thunder
+        Orlando Magic @ Golden State Warriors
+        Houston Rockets @ Phoenix Suns
+        San Antonio Spurs @ Portland Trail Blazers
+    [+] Odds API: Found 12 events. Credits remaining: 434
+
+[+] Commencing Parallel Matchup Simulations...
+
+============================================================
+ MATCHUP: Brooklyn Nets @ Atlanta Hawks
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    ATL 1.35 | BKN 3.31  (DraftKings)
+     Spread: ATL -6.5 @ 1.86  (DraftKings)
+     Total:  O/U 226.5 — Over 1.91 / Under 1.91  (DraftKings)
+  ⚠️  [B2B] ATL is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Jalen Johnson: missed 3, return game 1, expected 30.7 min (pre-absence 32.6)
+  ⚠️  [RETURNING] Kingston Flemings: missed 1, return game 3, expected 19.8 min (pre-absence 20.3)
+  [INJURY MATRIX v2] ATL teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] BKN teammates' shooting x1.0081 (fitted)
+    [+] Fetching player props for event ee45341df802...
+        Found props for 13 players. Credits remaining: 410
+PROJECTED TOTAL: 236.5
+PROJECTED SCORE: ATL 117.2 - BKN 119.3
+  -> GAME TOTAL: O/U 226.5 ignore
+  -> HOME SPREAD: ATL -6.5 ignore
+  -> AWAY SPREAD: BKN +6.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Jalen Johnson        -> 16 PTS, 7 REB, 5 AST (O/U 20.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 9.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 7.5 assists ⛔ DISQUALIFIED: MINUTES_RESTRICTION) [HIGH_UNCERTAINTY]
+  Nickeil Alexander-Walker -> 20 PTS, 3 REB, 2 AST (O/U 19.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Dyson Daniels        -> 10 PTS, 6 REB, 5 AST (O/U 10.5 points ignore, O/U 7.5 rebounds VALUABLE: Under (68% conf (raw: 68%), 18.2% edge), O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  Onyeka Okongwu       -> 13 PTS, 8 REB, 2 AST (O/U 12.5 points ignore, O/U 7.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  CJ McCollum          -> 12 PTS, 3 REB, 4 AST [HIGH_UNCERTAINTY]
+  Aaron Wiggins        -> 13 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Luguentz Dort        -> 11 PTS, 4 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Kingston Flemings    -> 8 PTS, 2 REB, 4 AST (O/U 9.5 points ignore, O/U 2.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Zuby Ejiofor         -> 6 PTS, 4 REB, 2 AST [HIGH_UNCERTAINTY]
+  Corey Kispert        -> 6 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Julius Randle        -> 21 PTS, 6 REB, 5 AST (O/U 20.5 points ignore, O/U 6.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Michael Porter Jr.   -> 23 PTS, 7 REB, 1 AST [HIGH_UNCERTAINTY]
+  Day'Ron Sharpe       -> 7 PTS, 6 REB, 4 AST (O/U 8.5 points ignore, O/U 8.5 rebounds VALUABLE: Under (79% conf (raw: 79%), 29.3% edge), O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Mikel Brown Jr.      -> 15 PTS, 3 REB, 4 AST (O/U 12.5 points ignore, O/U 2.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Keon Ellis           -> 6 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Nolan Traore         -> 14 PTS, 2 REB, 4 AST (O/U 10.5 points ignore, O/U 2.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Chaney Johnson       -> 7 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Noah Clowney         -> 7 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Moritz Wagner        -> 9 PTS, 3 REB, 2 AST (O/U 10.5 points ignore, O/U 4.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Danny Wolf           -> 8 PTS, 4 REB, 3 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Denver Nuggets @ Indiana Pacers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    IND 3.61 | DEN 1.31  (DraftKings)
+     Spread: IND +7.5 @ 1.98  (DraftKings)
+     Total:  O/U 229.5 — Over 1.94 / Under 1.89  (DraftKings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Andrew Nembhard: missed 1, return game 2, expected 32.2 min (pre-absence 32.7)
+  ⚠️  [RETURNING] Pascal Siakam: missed 1, return game 2, expected 31.7 min (pre-absence 32.2)
+  ⚠️  [RETURNING] Aaron Nesmith: missed 1, return game 2, expected 21.6 min (pre-absence 23.1)
+  ⚠️  [RETURNING] Kelly Oubre Jr.: missed 2, return game 1, expected 20.4 min (pre-absence 23.2)
+  ⚠️  [RETURNING] Obi Toppin: missed 3, return game 2, expected 21.4 min (pre-absence 22.9)
+  ⚠️  [RETURNING] Larry Nance Jr.: missed 1, return game 2, expected 16.1 min (pre-absence 16.3)
+  ⚠️  [RETURNING] DeMar DeRozan: missed 1, return game 1, expected 24.3 min (pre-absence 25.1)
+  [INJURY MATRIX v2] IND teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] DEN teammates' shooting x1.0081 (fitted)
+    [+] Fetching player props for event e76682ca6c25...
+        Found props for 12 players. Credits remaining: 392
+PROJECTED TOTAL: 244.0
+PROJECTED SCORE: IND 120.9 - DEN 123.0
+  -> GAME TOTAL: O/U 229.5 VALUABLE: Over (70% conf (raw: 69%), 18.6% edge)
+  -> HOME SPREAD: IND +7.5 ignore
+  -> AWAY SPREAD: DEN -7.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Andrew Nembhard      -> 19 PTS, 2 REB, 8 AST (O/U 16.5 points ignore, O/U 2.5 rebounds ignore, O/U 7.5 assists ignore) [HIGH_UNCERTAINTY]
+  Pascal Siakam        -> 23 PTS, 5 REB, 4 AST (O/U 20.5 points ignore, O/U 6.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Aaron Nesmith        -> 11 PTS, 1 REB, 2 AST (O/U 12.5 points ignore, O/U 3.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Jarace Walker        -> 9 PTS, 5 REB, 3 AST [HIGH_UNCERTAINTY]
+  Kelly Oubre Jr.      -> 9 PTS, 2 REB, 2 AST (O/U 9.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 3.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION) [HIGH_UNCERTAINTY]
+  Obi Toppin           -> 13 PTS, 5 REB, 2 AST (O/U 11.5 points ignore, O/U 4.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Quenton Jackson      -> 12 PTS, 3 REB, 3 AST [HIGH_UNCERTAINTY]
+  Ivica Zubac          -> 8 PTS, 5 REB, 2 AST (O/U 10.5 points ignore, O/U 8.5 rebounds VALUABLE: Under (82% conf (raw: 89%), 38.8% edge)) [HIGH_UNCERTAINTY]
+  Jay Huff             -> 8 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Larry Nance Jr.      -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Jamal Murray         -> 24 PTS, 4 REB, 6 AST (O/U 22.5 points ignore, O/U 4.5 rebounds ignore, O/U 6.5 assists ignore) [HIGH_UNCERTAINTY]
+  Nikola Jokić         -> 25 PTS, 8 REB, 9 AST [HIGH_UNCERTAINTY]
+  Christian Braun      -> 12 PTS, 3 REB, 2 AST (O/U 12.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Aaron Gordon         -> 13 PTS, 4 REB, 2 AST (O/U 13.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (71% conf (raw: 71%), 20.6% edge), O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Cameron Johnson      -> 11 PTS, 3 REB, 2 AST (O/U 12.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  DeMar DeRozan        -> 12 PTS, 2 REB, 3 AST (O/U 12.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Trevon Brazile       -> 7 PTS, 5 REB, 0 AST [HIGH_UNCERTAINTY]
+  Bryce Hopkins        -> 5 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Marvin Bagley III    -> 7 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Tyus Jones           -> 3 PTS, 0 REB, 3 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Orlando Magic @ San Francisco Warriors
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    GSW 1.35 | ORL 3.31  (DraftKings)
+     Spread: GSW -7.5 @ 1.96  (DraftKings)
+     Total:  O/U 219.5 — Over 1.89 / Under 1.93  (DraftKings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Stephen Curry: missed 1, return game 3, expected 27.8 min (pre-absence 28.0)
+  ⚠️  [RETURNING] Draymond Green: missed 1, return game 3, expected 28.3 min (pre-absence 28.5)
+  ⚠️  [RETURNING] Gui Santos: missed 2, return game 1, expected 17.6 min (pre-absence 20.1)
+  ⚠️  [RETURNING] Al Horford: missed 1, return game 2, expected 17.5 min (pre-absence 18.7)
+  ⚠️  [RETURNING] Brandon Williams: missed 1, return game 2, expected 17.1 min (pre-absence 17.4)
+  ⚠️  [RETURNING] Goga Bitadze: missed 1, return game 2, expected 9.2 min (pre-absence 9.3)
+  [INJURY MATRIX v2] GSW teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] ORL teammates' shooting x1.0198 (fitted)
+    [+] Fetching player props for event 39099dc03208...
+        Found props for 10 players. Credits remaining: 416
+PROJECTED TOTAL: 229.5
+PROJECTED SCORE: GSW 120.9 - ORL 108.6
+  -> GAME TOTAL: O/U 219.5 ignore
+  -> HOME SPREAD: GSW -7.5 ⛔ BANNED_CATEGORY
+  -> AWAY SPREAD: ORL +7.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Brandin Podziemski   -> 16 PTS, 5 REB, 3 AST (O/U 15.5 points ignore, O/U 5.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Yaxel Lendeborg      -> 19 PTS, 7 REB, 3 AST (O/U 17.5 points ignore, O/U 7.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Stephen Curry        -> 30 PTS, 4 REB, 4 AST (O/U 26.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Draymond Green       -> 3 PTS, 6 REB, 8 AST (O/U 4.5 points ignore, O/U 5.5 rebounds ignore, O/U 6.5 assists ignore) [HIGH_UNCERTAINTY]
+  De'Anthony Melton    -> 10 PTS, 5 REB, 2 AST [HIGH_UNCERTAINTY]
+  Georges Niang        -> 9 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Gui Santos           -> 6 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Al Horford           -> 6 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Will Richard         -> 6 PTS, 2 REB, 1 AST (O/U 5.5 points ignore) [HIGH_UNCERTAINTY]
+  Brandon Williams     -> 12 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Franz Wagner         -> 24 PTS, 7 REB, 8 AST (O/U 24.5 points ignore, O/U 5.5 rebounds ignore, O/U 7.5 assists ignore) [HIGH_UNCERTAINTY]
+  Wendell Carter Jr.   -> 14 PTS, 10 REB, 2 AST [HIGH_UNCERTAINTY]
+  Tristan da Silva     -> 18 PTS, 4 REB, 2 AST (O/U 12.5 points VALUABLE: Over (78% conf (raw: 78%), 28.1% edge), O/U 3.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Anthony Black        -> 16 PTS, 5 REB, 5 AST (O/U 15.5 points ignore, O/U 4.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jase Richardson      -> 10 PTS, 2 REB, 3 AST (O/U 10.5 points ignore, O/U 3.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jamal Cain           -> 8 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+  Jevon Carter         -> 5 PTS, 1 REB, 3 AST [HIGH_UNCERTAINTY]
+  Goga Bitadze         -> 3 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+  Nikola Vučević       -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+  Alex Morales         -> 2 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: New York Knicks @ Cleveland Cavaliers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    CLE 2.79 | NYK 1.46  (DraftKings)
+     Spread: CLE +5.5 @ 1.85  (DraftKings)
+     Total:  O/U 223.5 — Over 1.87 / Under 1.95  (DraftKings)
+  ⚠️  [B2B] CLE is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Peyton Watson: missed 2, return game 2, expected 28.1 min (pre-absence 28.6)
+  [INJURY MATRIX v2] CLE teammates' shooting x1.0122 (fitted)
+  [INJURY MATRIX v2] NYK teammates' shooting x1.0103 (fitted)
+    [+] Fetching player props for event fdf3b77f50b2...
+        Found props for 13 players. Credits remaining: 404
+PROJECTED TOTAL: 232.7
+PROJECTED SCORE: CLE 113.8 - NYK 118.9
+  -> GAME TOTAL: O/U 223.5 ignore
+  -> HOME SPREAD: CLE +5.5 ignore
+  -> AWAY SPREAD: NYK -5.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Donovan Mitchell     -> 21 PTS, 4 REB, 6 AST (O/U 24.5 points ignore, O/U 4.5 rebounds ignore, O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  James Harden         -> 16 PTS, 5 REB, 5 AST (O/U 17.5 points ignore, O/U 4.5 rebounds ignore, O/U 6.5 assists VALUABLE: Under (72% conf (raw: 72%), 21.9% edge)) [HIGH_UNCERTAINTY]
+  Evan Mobley          -> 17 PTS, 6 REB, 3 AST (O/U 18.5 points ignore, O/U 9.5 rebounds VALUABLE: Under (82% conf (raw: 87%), 37.1% edge), O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Peyton Watson        -> 13 PTS, 5 REB, 3 AST (O/U 11.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Meleek Thomas        -> 13 PTS, 2 REB, 1 AST (O/U 11.5 points ignore, O/U 2.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Mario Hezonja        -> 11 PTS, 7 REB, 2 AST (O/U 10.5 points ignore, O/U 6.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Tyrese Proctor       -> 6 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Thomas Bryant        -> 7 PTS, 3 REB, 0 AST [HIGH_UNCERTAINTY]
+  Tristan Enaruna      -> 5 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Craig Porter Jr.     -> 0 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Jalen Brunson        -> 30 PTS, 3 REB, 5 AST (O/U 26.5 points ignore, O/U 3.5 rebounds ignore, O/U 6.5 assists VALUABLE: Under (71% conf (raw: 71%), 21.3% edge)) [HIGH_UNCERTAINTY]
+  OG Anunoby           -> 19 PTS, 6 REB, 2 AST (O/U 17.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Karl-Anthony Towns   -> 17 PTS, 12 REB, 4 AST (O/U 20.5 points VALUABLE: Under (73% conf (raw: 73%), 23.3% edge), O/U 12.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Mikal Bridges        -> 9 PTS, 3 REB, 3 AST (O/U 10.5 points ignore, O/U 2.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Landry Shamet        -> 10 PTS, 2 REB, 2 AST (O/U 10.5 points ignore, O/U 2.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Miles McBride        -> 7 PTS, 2 REB, 1 AST (O/U 7.5 points ignore, O/U 1.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Andre Drummond       -> 7 PTS, 8 REB, 1 AST (O/U 5.5 points ignore, O/U 7.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Tyler Kolek          -> 4 PTS, 1 REB, 5 AST [HIGH_UNCERTAINTY]
+  Jose Alvarado        -> 5 PTS, 1 REB, 2 AST [HIGH_UNCERTAINTY]
+  Jordan Clarkson      -> 7 PTS, 2 REB, 0 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Houston Rockets @ Phoenix Suns
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    PHX 3.21 | HOU 1.37  (DraftKings)
+     Spread: PHX +6.5 @ 1.89  (DraftKings)
+     Total:  O/U 224.5 — Over 1.95 / Under 1.87  (DraftKings)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Jordan Goodwin: missed 2, return game 1, expected 16.4 min (pre-absence 18.7)
+  ⚠️  [RETURNING] Fred VanVleet: missed 1, return game 3, expected 30.2 min (pre-absence 30.4)
+  [INJURY MATRIX v2] PHX teammates' shooting x1.0081 (fitted)
+  [INJURY MATRIX v2] HOU teammates' shooting x1.0041 (fitted)
+    [+] Fetching player props for event af8d920f175d...
+        Found props for 15 players. Credits remaining: 428
+PROJECTED TOTAL: 227.0
+PROJECTED SCORE: PHX 109.0 - HOU 117.9
+  -> GAME TOTAL: O/U 224.5 ignore
+  -> HOME SPREAD: PHX +6.5 ignore
+  -> AWAY SPREAD: HOU -6.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Devin Booker         -> 23 PTS, 3 REB, 4 AST (O/U 23.5 points ignore, O/U 3.5 rebounds ignore, O/U 5.5 assists VALUABLE: Under (71% conf (raw: 71%), 21.0% edge)) [HIGH_UNCERTAINTY]
+  Miles Bridges        -> 15 PTS, 7 REB, 3 AST (O/U 16.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Dillon Brooks        -> 17 PTS, 4 REB, 2 AST (O/U 15.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jalen Green          -> 13 PTS, 3 REB, 3 AST (O/U 14.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Collin Gillespie     -> 8 PTS, 2 REB, 3 AST (O/U 8.5 points ignore, O/U 2.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Oso Ighodaro         -> 6 PTS, 5 REB, 3 AST (O/U 6.5 points ignore, O/U 5.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Khaman Maluach       -> 6 PTS, 6 REB, 1 AST (O/U 5.5 points ignore, O/U 5.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Jordan Goodwin       -> 7 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Luke Kennard         -> 7 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Ryan Dunn            -> 5 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Alperen Sengun       -> 19 PTS, 9 REB, 7 AST (O/U 20.5 points ignore, O/U 9.5 rebounds ignore, O/U 6.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jabari Smith Jr.     -> 14 PTS, 6 REB, 2 AST [HIGH_UNCERTAINTY]
+  Kevin Durant         -> 16 PTS, 4 REB, 3 AST (O/U 22.5 points VALUABLE: Under (82% conf (raw: 83%), 33.1% edge), O/U 5.5 rebounds VALUABLE: Under (75% conf (raw: 75%), 24.8% edge), O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Amen Thompson        -> 14 PTS, 5 REB, 3 AST (O/U 14.5 points ignore, O/U 6.5 rebounds VALUABLE: Under (72% conf (raw: 72%), 22.1% edge), O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Fred VanVleet        -> 12 PTS, 3 REB, 5 AST (O/U 12.5 points ignore, O/U 3.5 rebounds ignore, O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  Tari Eason           -> 11 PTS, 6 REB, 1 AST (O/U 9.5 points ignore, O/U 5.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Marcus Smart         -> 10 PTS, 3 REB, 3 AST (O/U 6.5 points VALUABLE: Over (76% conf (raw: 76%), 25.8% edge), O/U 2.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Reed Sheppard        -> 12 PTS, 2 REB, 3 AST (O/U 8.5 points VALUABLE: Over (74% conf (raw: 74%), 24.4% edge), O/U 1.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Bogdan Bogdanović    -> 4 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  Oscar Tshiebwe       -> 2 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: San Antonio Spurs @ Portland Trail Blazers
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    POR 2.71 | SAS 1.49  (DraftKings)
+     Spread: POR +5.5 @ 1.89  (DraftKings)
+     Total:  O/U 229.5 — Over 1.92 / Under 1.90  (DraftKings)
+  ⚠️  [B2B] POR is on a BACK-TO-BACK (model: fitted)
+  ⚠️  [B2B] SAS is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Carter Bryant: missed 1, return game 2, expected 9.6 min (pre-absence 9.8)
+  [INJURY MATRIX v2] POR teammates' shooting x1.0122 (fitted)
+    [+] Fetching player props for event 08d47dd5e50e...
+        Found props for 13 players. Credits remaining: 398
+PROJECTED TOTAL: 231.0
+PROJECTED SCORE: POR 112.5 - SAS 118.5
+  -> GAME TOTAL: O/U 229.5 ignore
+  -> HOME SPREAD: POR +5.5 ignore
+  -> AWAY SPREAD: SAS -5.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Deni Avdija          -> 22 PTS, 6 REB, 6 AST (O/U 23.5 points ignore, O/U 6.5 rebounds ignore, O/U 6.5 assists ignore) [HIGH_UNCERTAINTY]
+  Damian Lillard       -> 20 PTS, 3 REB, 4 AST (O/U 20.5 points ignore, O/U 3.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Toumani Camara       -> 11 PTS, 4 REB, 1 AST (O/U 11.5 points ignore, O/U 3.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jrue Holiday         -> 12 PTS, 4 REB, 5 AST (O/U 12.5 points ignore, O/U 4.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Donovan Clingan      -> 12 PTS, 9 REB, 1 AST (O/U 11.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (69% conf (raw: 69%), 18.6% edge), O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Scoot Henderson      -> 9 PTS, 2 REB, 1 AST (O/U 12.5 points VALUABLE: Under (73% conf (raw: 73%), 22.7% edge), O/U 2.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Sidy Cissoko         -> 5 PTS, 3 REB, 2 AST [HIGH_UNCERTAINTY]
+  Robert Williams III  -> 8 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Chris Youngblood     -> 5 PTS, 1 REB, 1 AST [HIGH_UNCERTAINTY]
+  Jayson Kent          -> 4 PTS, 2 REB, 0 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Dylan Harper         -> 17 PTS, 4 REB, 4 AST (O/U 17.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (73% conf (raw: 73%), 23.1% edge), O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Devin Vassell        -> 12 PTS, 4 REB, 3 AST (O/U 11.5 points ignore, O/U 4.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Victor Wembanyama    -> 30 PTS, 10 REB, 3 AST (O/U 27.5 points ignore, O/U 11.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  De'Aaron Fox         -> 12 PTS, 3 REB, 6 AST (O/U 15.5 points VALUABLE: Under (74% conf (raw: 74%), 24.5% edge), O/U 3.5 rebounds ignore, O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  Stephon Castle       -> 16 PTS, 5 REB, 6 AST (O/U 16.5 points ignore, O/U 5.5 rebounds ignore, O/U 6.5 assists ignore) [HIGH_UNCERTAINTY]
+  Julian Champagnie    -> 8 PTS, 4 REB, 2 AST (O/U 8.5 points ignore, O/U 3.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Keldon Johnson       -> 8 PTS, 5 REB, 3 AST (O/U 9.5 points ignore, O/U 4.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Luke Kornet          -> 2 PTS, 4 REB, 1 AST [HIGH_UNCERTAINTY]
+  Harrison Barnes      -> 5 PTS, 1 REB, 0 AST [HIGH_UNCERTAINTY]
+  Carter Bryant        -> 3 PTS, 1 REB, 0 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+ MATCHUP: Washington Wizards @ Oklahoma City Thunder
+============================================================
+  📊 SPORTSBOOK ODDS:
+     H2H:    OKC 1.17 | WAS 5.43  (DraftKings)
+     Spread: OKC -11.5 @ 1.85  (DraftKings)
+     Total:  O/U 222.5 — Over 1.91 / Under 1.91  (DraftKings)
+  ⚠️  [B2B] OKC is on a BACK-TO-BACK (model: fitted)
+  ⚠️  [B2B] WAS is on a BACK-TO-BACK (model: fitted)
+[+] Caching NBA Synergy Defensive Play Types...
+[+] Caching NBA Synergy Offensive Play Types (League-wide)...
+[+] Caching NBA Synergy Individual Defensive Data...
+    Loaded individual defensive data for 0 player-team combos.
+  ⚠️  [RETURNING] Brooks Barnhizer: missed 2, return game 2, expected 5.0 min (pre-absence 5.1)
+  ⚠️  [RETURNING] Anthony Davis: missed 1, return game 1, expected 32.2 min (pre-absence 33.0)
+  ⚠️  [RETURNING] Alex Sarr: missed 1, return game 3, expected 25.2 min (pre-absence 25.4)
+  ⚠️  [RETURNING] Khris Middleton: missed 3, return game 1, expected 11.6 min (pre-absence 13.7)
+  [INJURY MATRIX v2] OKC teammates' shooting x1.0184 (fitted)
+  [INJURY MATRIX v2] WAS teammates' shooting x1.0041 (fitted)
+    [+] Fetching player props for event 6faeaee3bdf2...
+        Found props for 14 players. Credits remaining: 422
+PROJECTED TOTAL: 230.3
+PROJECTED SCORE: OKC 121.2 - WAS 109.1
+  -> GAME TOTAL: O/U 222.5 ignore
+  -> HOME SPREAD: OKC -11.5 ⛔ BANNED_CATEGORY
+  -> AWAY SPREAD: WAS +11.5 ignore
+----------------------------------------
+   TOP PLAYER PROP PROJECTIONS (MEDIAN)
+----------------------------------------
+[HOME TEAM]
+  Shai Gilgeous-Alexander -> 32 PTS, 4 REB, 6 AST (O/U 31.5 points ignore, O/U 4.5 rebounds ignore, O/U 5.5 assists ignore) [HIGH_UNCERTAINTY]
+  Ajay Mitchell        -> 23 PTS, 4 REB, 5 AST (O/U 19.5 points ignore, O/U 4.5 rebounds ignore, O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Jared McCain         -> 16 PTS, 4 REB, 2 AST (O/U 13.5 points ignore, O/U 3.5 rebounds ignore, O/U 1.5 assists ignore) [HIGH_UNCERTAINTY]
+  Isaiah Hartenstein   -> 8 PTS, 9 REB, 5 AST (O/U 8.5 points ignore, O/U 10.5 rebounds VALUABLE: Under (71% conf (raw: 71%), 20.6% edge), O/U 3.5 assists ignore) [HIGH_UNCERTAINTY]
+  Alex Caruso          -> 8 PTS, 4 REB, 4 AST (O/U 7.5 points ignore, O/U 3.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Aday Mara            -> 8 PTS, 7 REB, 2 AST (O/U 7.5 points ignore, O/U 6.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Kenrich Williams     -> 8 PTS, 5 REB, 2 AST (O/U 7.5 points ignore, O/U 4.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Bennett Stirtz       -> 8 PTS, 2 REB, 2 AST (O/U 8.5 points ignore) [HIGH_UNCERTAINTY]
+  Josh Dix             -> 5 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Brooks Barnhizer     -> 2 PTS, 1 REB, 0 AST [HIGH_UNCERTAINTY]
+
+[AWAY TEAM]
+  Trae Young           -> 12 PTS, 2 REB, 8 AST (O/U 19.5 points VALUABLE: Under (82% conf (raw: 89%), 38.9% edge), O/U 2.5 rebounds ignore, O/U 9.5 assists ignore) [HIGH_UNCERTAINTY]
+  Kyshawn George       -> 13 PTS, 3 REB, 5 AST (O/U 15.5 points ignore, O/U 4.5 rebounds ignore, O/U 4.5 assists ignore) [HIGH_UNCERTAINTY]
+  Anthony Davis        -> 18 PTS, 7 REB, 2 AST (O/U 20.5 points ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 9.5 rebounds ⛔ DISQUALIFIED: MINUTES_RESTRICTION, O/U 2.5 assists ⛔ DISQUALIFIED: MINUTES_RESTRICTION) [HIGH_UNCERTAINTY]
+  AJ Dybantsa          -> 15 PTS, 4 REB, 2 AST (O/U 17.5 points ignore, O/U 5.5 rebounds VALUABLE: Under (71% conf (raw: 71%), 21.5% edge), O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Bilal Coulibaly      -> 7 PTS, 3 REB, 1 AST (O/U 7.5 points ignore, O/U 3.5 rebounds ignore) [HIGH_UNCERTAINTY]
+  Alex Sarr            -> 10 PTS, 6 REB, 2 AST (O/U 11.5 points ignore, O/U 6.5 rebounds ignore, O/U 2.5 assists ignore) [HIGH_UNCERTAINTY]
+  Tre Johnson          -> 10 PTS, 2 REB, 1 AST [HIGH_UNCERTAINTY]
+  Bub Carrington       -> 8 PTS, 2 REB, 2 AST [HIGH_UNCERTAINTY]
+  Deandre Ayton        -> 7 PTS, 6 REB, 1 AST [HIGH_UNCERTAINTY]
+  Khris Middleton      -> 6 PTS, 3 REB, 1 AST [HIGH_UNCERTAINTY]
+
+
+============================================================
+  🎯 GENERATING OPTIMAL PARLAYS...
+============================================================
+  [PLATT] calibration_params.json is empty or missing.
+  Platt scaling is INACTIVE. Confidences use raw posterior values.
+  Will activate after ~200 resolved picks are logged.
+  ⚠️  [MARKET DISCREPANCY] Brooklyn Nets @ Atlanta Hawks: Proj Margin -2.0, Market Margin +6.5
+  ⛔  [FATAL: MARKET_INVERSION_DETECTED] Brooklyn Nets @ Atlanta Hawks. Proj -2.0 vs Market +6.5. Spreads skip to avoid trap.
+[!] XGBoost not installed. ML features disabled.
+  ⚠️  [BLOWOUT RISK] Washington Wizards @ Oklahoma City Thunder: Banning OVERs for Jared McCain, Ajay Mitchell, Shai Gilgeous-Alexander
+  PICK VOLUME: 2 / 15 cap | 215 filtered (BANNED_CATEGORY=5 | BLOWOUT_RISK=3 | LOW_CONFIDENCE=3 | LOW_LINE_VOLATILITY=5 | LOW_SAFE_CONF=6 | MARKET_INVERSION=1 | MINUTES_RESTRICTION=5 | MINUTES_RISK=15 | MIN_GAP=171 | PARLAY_GATE_CLOSED=1)
+  [GATE FUNNEL] total_evaluated=217 | min_gap_fail=171 | minutes_risk=15 | low_line=5 | low_conf=3 | low_safe_conf=6 | banned=5 | gate_closed=1 | high_variance=0 | not_valuable=0 -> passed=2
+
+[+] Logged 215 filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.
+
+[P1-3] ML shadow: logged 210 picks to ml_shadow_picks.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #1 (2-3 PICKS)
+============================================================
+  Pick 1: [Brooklyn Nets @ Atlanta Hawks] Day'Ron Sharpe Under 8.5 REBOUNDS (Sim: 79% (raw: 20.7%) | DB: 90%(1/10) / 91%(1/11) → 90%w) @ 1.69
+          Edge: +17.2%  |  Confidence: 76% (raw: 20.7%)  |  Book: pinnacle
+  Pick 2: [New York Knicks @ Cleveland Cavaliers] Evan Mobley Under 9.5 REBOUNDS (Sim: 82% (raw: 12.9%) | DB: 60%(4/10) / 67%(4/12) → 62%w) @ 1.75
+          Edge: +18.9%  |  Confidence: 76% (raw: 12.9%)  |  Book: pinnacle
+  ─────────────────────────────────────────
+  Combined Odds: 2.96x
+  🔥 RECOMMENDED STAKE: 0.20% of Bankroll
+  ⚠️ [STAKING] 0.2% Flat Stake per parlay. Kelly disabled — insufficient calibration data.
+
+============================================================
+  🏀 PARLAY RECOMMENDATION #2 (4 PICKS — 3/4 SYSTEM)
+============================================================
+  Pick 1: [Brooklyn Nets @ Atlanta Hawks] Day'Ron Sharpe Under 8.5 REBOUNDS (Sim: 79% (raw: 20.7%) | DB: 90%(1/10) / 91%(1/11) → 90%w) @ 1.69
+          Edge: +17.2%  |  Confidence: 76% (raw: 20.7%)  |  Book: pinnacle
+  Pick 2: [New York Knicks @ Cleveland Cavaliers] Evan Mobley Under 9.5 REBOUNDS (Sim: 82% (raw: 12.9%) | DB: 60%(4/10) / 67%(4/12) → 62%w) @ 1.75
+          Edge: +18.9%  |  Confidence: 76% (raw: 12.9%)  |  Book: pinnacle
+  ─────────────────────────────────────────
+  Combined Odds: 2.96x
+============================================================
+
+[+] Generating live PDF report for 2026-11-07 (Generated at: 2026-11-07 22:27:00)...
+    [+] LaTeX written to: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/live_predictions/november/predicts_report_2026-11-07.tex
+    [+] PDF compiled: /mnt/c/Users/balca/OneDrive/Projects/AiBetTool/advanced_model/predictions/2026-2027/live_predictions/november/predicts_report_2026-11-07.pdf
+    [+] Cleaned up auxiliary files (predicts_report_2026-11-07.aux, .log, .tex)
