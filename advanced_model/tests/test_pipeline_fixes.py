@@ -77,8 +77,15 @@ class TestSynergyRetries(unittest.TestCase):
         cb._synergy_failed_tables = 0
         _FakeSynergy.calls = 0
         self.df = pd.DataFrame({'TEAM_NAME': ['A', 'B'], 'PPP': [0.9, 1.1]})
+        # these tests are about the API retries: no disk cache, no politeness pause
+        self._p = [unittest.mock.patch.object(settings, 'SYNERGY_CACHE', 'off'),
+                   unittest.mock.patch.object(cb, 'SYNERGY_POLITE_PAUSE_S', 0)]
+        for p in self._p:
+            p.start()
 
     def tearDown(self):
+        for p in self._p:
+            p.stop()
         self.cb._synergy_failed_tables = 0
         for f in (self.cb.get_league_defensive_data, self.cb.get_league_offensive_data,
                   self.cb.get_player_defensive_data):
@@ -126,6 +133,85 @@ class TestSynergyRetries(unittest.TestCase):
         self.assertAlmostEqual(avgs['Isolation'], 1.0)
         printed = ' '.join(str(c.args[0]) for c in pr.call_args_list if c.args)
         self.assertNotIn('FALLBACK', printed)
+
+
+class TestSynergyCache(unittest.TestCase):
+    """Step 4 P0: Synergy tables come from a disk cache, so replays get the same input."""
+
+    KW = dict(player_or_team_abbreviation='T', play_type_nullable='Isolation',
+              type_grouping_nullable='defensive', season='2025-26')
+
+    def setUp(self):
+        from simulator import context_builder as cb
+        self.cb = cb
+        self.tmp = tempfile.TemporaryDirectory()
+        cb._synergy_failed_tables = 0
+        _FakeSynergy.calls = 0
+        self.df = pd.DataFrame({'TEAM_NAME': ['A'], 'PPP': [0.9]})
+        self._p = [unittest.mock.patch.object(settings, 'SYNERGY_CACHE_DIR', self.tmp.name),
+                   unittest.mock.patch.object(cb, 'SYNERGY_POLITE_PAUSE_S', 0)]
+        for p in self._p:
+            p.start()
+
+    def tearDown(self):
+        for p in self._p:
+            p.stop()
+        self.cb._synergy_failed_tables = 0
+        self.tmp.cleanup()
+
+    def _fetch(self, mode, fails=0):
+        with unittest.mock.patch.object(settings, 'SYNERGY_CACHE', mode), \
+             unittest.mock.patch.object(self.cb.synergyplaytypes, 'SynergyPlayTypes', _FakeSynergy(fails, self.df)), \
+             unittest.mock.patch('builtins.print'):
+            return self.cb._fetch_synergy('t', sleep=lambda s: None, **self.KW)
+
+    def _age(self, hours):
+        path = self.cb._synergy_cache_path(**self.KW)
+        t = os.path.getmtime(path) - hours * 3600
+        os.utime(path, (t, t))
+
+    def test_second_call_reads_cache(self):
+        self._fetch('daily')
+        self._fetch('daily')
+        self.assertEqual(_FakeSynergy.calls, 1)
+        self.assertTrue(os.path.exists(self.cb._synergy_cache_path(**self.KW)))
+
+    def test_daily_refreshes_old_file(self):
+        self._fetch('daily')
+        self._age(25)
+        self._fetch('daily')
+        self.assertEqual(_FakeSynergy.calls, 2)
+
+    def test_frozen_never_refreshes(self):
+        self._fetch('daily')
+        self._age(24 * 30)
+        df = self._fetch('frozen')
+        self.assertEqual(_FakeSynergy.calls, 1)
+        self.assertAlmostEqual(df['PPP'].iloc[0], 0.9)
+
+    def test_api_failure_uses_old_cache(self):
+        self._fetch('daily')
+        self._age(25)
+        _FakeSynergy.calls = 0
+        df = self._fetch('daily', fails=99)
+        self.assertIsNotNone(df)
+        self.assertEqual(_FakeSynergy.calls, self.cb.SYNERGY_TRIES)
+
+    def test_failure_not_cached(self):
+        self.assertIsNone(self._fetch('daily', fails=99))
+        self.assertFalse(os.path.exists(self.cb._synergy_cache_path(**self.KW)))
+
+    def test_off_always_calls_api(self):
+        self._fetch('off')
+        self._fetch('off')
+        self.assertEqual(_FakeSynergy.calls, 2)
+        self.assertFalse(os.path.exists(self.cb._synergy_cache_path(**self.KW)))
+
+    def test_invalid_mode_rejected(self):
+        import subprocess
+        r = subprocess.run([sys.executable, '-c', 'import config.settings'], cwd=MODEL_DIR,
+                           env={**os.environ, 'SYNERGY_CACHE': 'bogus'}, capture_output=True)
+        self.assertNotEqual(r.returncode, 0)
 
 
 class TestDailyMetricsOut(unittest.TestCase):

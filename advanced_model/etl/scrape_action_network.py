@@ -38,6 +38,17 @@ def american_to_decimal(american: int) -> float:
     except Exception:
         return 1.909
 
+def consensus_prices(quotes, line):
+    """Decimal (over, under) odds AT `line`: the most common American price for each side
+    among the quotes on that exact line. A side with no quote on that line gets 1.909
+    (-110 default), which downstream code treats as 'no real odds'."""
+    out = []
+    for side in ('over', 'under'):
+        prices = [p for (v, s, p) in quotes if s == side and v == line]
+        out.append(american_to_decimal(max(set(prices), key=prices.count)) if prices else 1.909)
+    return out[0], out[1]
+
+
 def fetch_props(date_str, stat_name, market_key, results):
     """
     Fetch prop markets (Points, Rebounds, Assists).
@@ -54,7 +65,11 @@ def fetch_props(date_str, stat_name, market_key, results):
         players_map = {p['id']: p['full_name'] for p in data.get('players', [])}
         all_groups = data.get('markets', {})
 
-        # Temp: { (eid, pid): {'lines': [], 'over_odds': [], 'under_odds': []} }
+        # Temp: { (eid, pid): {'lines': [], 'over_odds': [], 'under_odds': [], 'quotes': []} }
+        # 'quotes' keeps (line, side, price) together. Before 2026-11-19 the over and under
+        # prices were the most common prices across ALL books and lines, so a price could
+        # belong to another line: 23% of stored pairs had 1/over + 1/under < 1 (no bookmaker
+        # margin), which made fake value bets in backtests (Plans/STEP4_GATES_AUDIT.md F1).
         temp = {}
         for book_id, info in all_groups.items():
             for ev in info.get('event', {}).get(market_key, []):
@@ -63,7 +78,10 @@ def fetch_props(date_str, stat_name, market_key, results):
                 pid  = ev.get('player_id')
                 # Action Network stores over/under as separate entries with 'type'
                 # type: 'over' or 'under', price / ml / odds depending on version
-                otype = ev.get('type', '').lower()
+                # The API puts over/under in 'side'; 'type' is the bet type name
+                # (e.g. core_bet_type_23_rebounds). Reading 'type' sent every quote to the
+                # 'no tag' branch, so over and under got the SAME price (fixed 2026-11-19).
+                otype = (ev.get('side') or ev.get('type') or '').lower()
                 price = ev.get('ml') or ev.get('odds') or ev.get('price')  # American odds
 
                 if val is None or not eid or not pid:
@@ -71,17 +89,20 @@ def fetch_props(date_str, stat_name, market_key, results):
 
                 k = (eid, pid)
                 if k not in temp:
-                    temp[k] = {'lines': [], 'over_odds': [], 'under_odds': []}
+                    temp[k] = {'lines': [], 'over_odds': [], 'under_odds': [], 'quotes': []}
 
                 temp[k]['lines'].append(float(val))
                 if otype == 'over' and price is not None:
                     temp[k]['over_odds'].append(int(price))
+                    temp[k]['quotes'].append((float(val), 'over', int(price)))
                 elif otype == 'under' and price is not None:
                     temp[k]['under_odds'].append(int(price))
+                    temp[k]['quotes'].append((float(val), 'under', int(price)))
                 elif price is not None:
                     # No type tag — treat as symmetric (both sides same odds)
                     temp[k]['over_odds'].append(int(price))
                     temp[k]['under_odds'].append(int(price))
+                    temp[k]['quotes'] += [(float(val), 'over', int(price)), (float(val), 'under', int(price))]
 
         for (eid, pid), d in temp.items():
             name = players_map.get(pid)
@@ -89,19 +110,8 @@ def fetch_props(date_str, stat_name, market_key, results):
                 continue
 
             consensus_line = max(set(d['lines']), key=d['lines'].count)
-
-            # Consensus odds: most common American price, then convert to decimal
-            if d['over_odds']:
-                consensus_over_am  = max(set(d['over_odds']),  key=d['over_odds'].count)
-                consensus_over_dec = american_to_decimal(consensus_over_am)
-            else:
-                consensus_over_dec = 1.909  # -110 default
-
-            if d['under_odds']:
-                consensus_under_am  = max(set(d['under_odds']), key=d['under_odds'].count)
-                consensus_under_dec = american_to_decimal(consensus_under_am)
-            else:
-                consensus_under_dec = 1.909  # -110 default
+            # Prices from quotes on the consensus line only (see consensus_prices)
+            consensus_over_dec, consensus_under_dec = consensus_prices(d['quotes'], consensus_line)
 
             res_key = (eid, name)
             if res_key not in results:
@@ -139,7 +149,7 @@ def fetch_game_odds(date_str, results):
                 for m in ev.get('total', []):
                     val   = m.get('value')
                     price = m.get('ml') or m.get('odds') or m.get('price')
-                    otype = m.get('type', '').lower()
+                    otype = (m.get('side') or m.get('type') or '').lower()
                     if val is None:
                         continue
                     

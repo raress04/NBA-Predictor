@@ -551,12 +551,62 @@ SYNERGY_TRIES = 3
 SYNERGY_BACKOFF_S = (5, 15)          # wait before try 2 and try 3 (+ up to 50% jitter)
 SYNERGY_TIMEOUT_S = 60
 SYNERGY_MAX_FAILED_TABLES = 2
+SYNERGY_POLITE_PAUSE_S = 1
 _synergy_failed_tables = 0           # per process
 
 
+def _synergy_cache_path(**kwargs):
+    key = '_'.join(str(kwargs.get(k, '')) for k in
+                   ('season', 'player_or_team_abbreviation', 'type_grouping_nullable', 'play_type_nullable'))
+    return os.path.join(settings.SYNERGY_CACHE_DIR, f"{key}.pkl")
+
+
 def _fetch_synergy(label, sleep=None, **kwargs):
-    """One SynergyPlayTypes table with retries. Returns the DataFrame, or None after
-    every try failed (or the API was already given up on in this process)."""
+    """One SynergyPlayTypes table, through the disk cache (settings.SYNERGY_CACHE, P0 of
+    Plans/STEP4_GATES_AUDIT.md). A fresh cached file is used as is; otherwise the API is
+    called (with retries) and a good result is saved. If the API fails, an older cached
+    file is used before giving up. Returns the DataFrame or None."""
+    mode = getattr(settings, 'SYNERGY_CACHE', 'off')
+    if mode == 'off':
+        return _fetch_synergy_api(label, sleep=sleep, **kwargs)
+    path = _synergy_cache_path(**kwargs)
+    cached = None
+    if os.path.exists(path):
+        age_h = (time.time() - os.path.getmtime(path)) / 3600.0
+        try:
+            cached = pd.read_pickle(path)
+        except Exception as e:
+            print(f"[-] Synergy cache unreadable ({os.path.basename(path)}): {e}")
+        if cached is not None and (mode == 'frozen' or age_h < settings.SYNERGY_CACHE_MAX_AGE_H):
+            return cached
+    df = _fetch_synergy_api(label, sleep=sleep, **kwargs)
+    if df is not None:
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            tmp = f"{path}.{os.getpid()}.tmp"
+            df.to_pickle(tmp)
+            os.replace(tmp, path)          # atomic: parallel workers never read half a file
+        except Exception as e:
+            print(f"[-] Synergy cache not saved ({os.path.basename(path)}): {e}")
+        return df
+    if cached is not None:
+        print(f"[SYNERGY FALLBACK] {label}: API failed, using the cached copy from "
+              f"{time.strftime('%Y-%m-%d %H:%M', time.localtime(os.path.getmtime(path)))}.")
+        return cached
+    return None
+
+
+def warm_synergy_cache(season='2025-26'):
+    """Load the Synergy tables once in the parent process, before the worker pool starts,
+    so the workers read the same files instead of each calling the API."""
+    get_league_defensive_data(season)
+    get_league_offensive_data(season)
+    get_player_defensive_data(season)
+
+
+def _fetch_synergy_api(label, sleep=None, **kwargs):
+    """One SynergyPlayTypes table from the API with retries. Returns the DataFrame, or None
+    after every try failed (or the API was already given up on in this process)."""
     global _synergy_failed_tables
     sleep = sleep or time.sleep
     if _synergy_failed_tables >= SYNERGY_MAX_FAILED_TABLES:
@@ -569,6 +619,7 @@ def _fetch_synergy(label, sleep=None, **kwargs):
             ).get_data_frames()[0]
             if attempt > 1:
                 print(f"[+] Synergy {label}: OK on try {attempt}/{SYNERGY_TRIES}")
+            time.sleep(SYNERGY_POLITE_PAUSE_S)   # be nice to the API (only after a real call)
             return df
         except Exception as e:
             last_err = e
@@ -600,7 +651,6 @@ def get_league_defensive_data(season='2025-26'):
                                 season=season)
             if df is None:
                 raise RuntimeError("no data after retries")
-            time.sleep(1) # Be nice to API
 
             # PPP (Points Per Possession) is our primary defensive metric
             df = df.dropna(subset=['PPP'])
@@ -640,7 +690,6 @@ def get_league_offensive_data(season='2025-26'):
             if df is None:
                 raise RuntimeError("no data after retries")
             league_offense[pt] = df
-            time.sleep(1) # Be nice to API
         except Exception as e:
             print(f"[-] Error caching {pt} offense: {e}")
             league_offense[pt] = pd.DataFrame()
@@ -673,7 +722,6 @@ def get_player_defensive_data(season='2025-26'):
                                 season=season)
             if df is None:
                 raise RuntimeError("no data after retries")
-            time.sleep(1)
 
             df = df.dropna(subset=['PPP'])
             # Only keep players with enough possessions to be meaningful

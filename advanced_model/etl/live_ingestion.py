@@ -825,6 +825,40 @@ def redistribute_usage(team_matrix: dict, full_roster_usage: dict, team_tricode:
     return team_matrix
 
 
+def _write_step4_shadow(rows, game_date):
+    """Write the step4 verdict for every prop candidate to
+    logs/<month>/step4_shadow/step4_shadow_<date>.csv (overwritten on a re-run). Never fatal."""
+    if not rows:
+        return
+    try:
+        import csv
+        from datetime import date as _date
+        month = _date.fromisoformat(game_date).strftime('%B').lower()
+        out_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                               'logs', month, 'step4_shadow')
+        os.makedirs(out_dir, exist_ok=True)
+        path = os.path.join(out_dir, f'step4_shadow_{game_date}.csv')
+        cols = ['game_date', 'gate_model'] + list(rows[0].keys())
+        with open(path, 'w', newline='', encoding='utf-8') as f:
+            w = csv.DictWriter(f, fieldnames=cols)
+            w.writeheader()
+            for r in rows:
+                w.writerow(dict(r, game_date=game_date, gate_model=settings.GATE_MODEL))
+        n_pass = sum(1 for r in rows if r.get('passed'))
+        print(f"[+] Step 4 verdicts: {n_pass} of {len(rows)} candidates pass -> {path}")
+    except Exception as e:
+        print(f"[-] Step 4 shadow log failed: {e}")
+
+
+def _warm_synergy():
+    """Step 4 P0: load the Synergy tables once (disk cache) before the worker pool starts,
+    so the workers share them instead of each calling stats.nba.com. Never fatal."""
+    try:
+        from simulator.context_builder import warm_synergy_cache
+        warm_synergy_cache()
+    except Exception as e:
+        print(f"[-] Synergy warm-up failed (workers will try themselves): {e}")
+
 
 def process_hist_game(game, target_date, injured_normalized, n_sims: int = 5000,
                       seed=None, return_dists: bool = False):
@@ -1169,6 +1203,7 @@ def generate_historical_projections(target_date: str):
         print(f"        {g['awayTeam']['teamTricode']} @ {g['homeTeam']['teamTricode']}")
 
 
+    _warm_synergy()
     print("\n[+] Commencing Parallel Historical Simulations...")
     with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
         futures = [executor.submit(process_hist_game, game, target_date, injured_normalized) for game in games]
@@ -1741,6 +1776,7 @@ def generate_todays_projections(target_date: str = None):
 
 
     # Run in parallel
+    _warm_synergy()
     print("\n[+] Commencing Parallel Matchup Simulations...")
     with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
         futures = [executor.submit(process_live_game, game, odds_available, all_game_odds, odds_api_events, injured_normalized) for game in games]
@@ -1821,6 +1857,10 @@ def generate_todays_projections(target_date: str = None):
                     sp['game_date'] = game_date
                 n_shadow = ingest_shadow_picks(shadow_data)
                 print(f"\n[+] Logged {n_shadow} filtered picks (REBOUNDS, Banned, Under-EV) to shadow_picks table.")
+
+            # Step 4 (Plans/STEP4_GATES_AUDIT.md): what the cal_prob gate decided / would decide
+            # on every prop candidate, for the forward check. CSV only, no DB change.
+            _write_step4_shadow(parlays.get('step4_shadow', []), CURRENT_GAME_DATE)
 
             # P1-3: ML Shadow Pipeline — log XGB inference on every evaluated prop (all_picks + shadow_picks)
             # Runs when ENABLE_ML_SHADOW_TRACKING=True. USE_ML_CALIBRATION stays False.

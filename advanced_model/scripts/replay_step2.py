@@ -79,6 +79,15 @@ COMPARISONS = {
                                 PROB_CALIBRATION='on')},
         'variants': [('SHADOW', 'cur', 'cur'), ('ON', 'cur', 'on')],
     },
+    # Step 4 P5 (Plans/STEP4_GATES_AUDIT.md): same sims, today's raw gates (live-faithful,
+    # category penalty kept) vs the cal_prob gate from config/gate_params.json.
+    'step4': {
+        'profiles': {'raw': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2',
+                                 PROB_CALIBRATION='shadow', GATE_MODEL='raw'),
+                     'step4': dict(_STEP2, SHRINKAGE_MODEL='fitted', ENGINE_CALIBRATION='v2',
+                                   PROB_CALIBRATION='on', GATE_MODEL='step4')},
+        'variants': [('RAW', 'raw', 'raw'), ('STEP4', 'raw', 'step4')],
+    },
 }
 PROFILES = COMPARISONS['step2']['profiles']
 VARIANTS = COMPARISONS['step2']['variants']
@@ -171,6 +180,16 @@ def sim_task(task):
     return profile, d, game['game_id'], p
 
 
+# Step 4 P1 (Plans/STEP4_GATES_AUDIT.md): every filter's outcome per candidate (True = passes)
+FILTER_COLS = ('gap', 'f_min_gap', 'f_blowout', 'f_restriction', 'f_minutes', 'f_line_vol',
+               'f_stage1', 'stage1_reason', 'f_banned', 'ci_width', 'f_variance')
+
+
+def _filter_cols(f):
+    f = f or {}
+    return {k: f.get(k) for k in FILTER_COLS}
+
+
 # ── Gates ──────────────────────────────────────────────────────────────────
 def run_gates(d, sims_by_game, lines, gate_profile, hist_rates, compare=None):
     from simulator import parlay_builder as pb
@@ -185,7 +204,7 @@ def run_gates(d, sims_by_game, lines, gate_profile, hist_rates, compare=None):
         dists.update(p['prop_dists'])
         minutes.update(p['player_minutes'])
     import contextlib
-    penalty = (contextlib.nullcontext() if compare == 'step3on'
+    penalty = (contextlib.nullcontext() if compare in ('step3on', 'step4')
                else unittest.mock.patch.object(pb, 'get_category_calibration', return_value=1.0))
     with unittest.mock.patch.object(pb, 'persist_parlay', return_value=None), penalty, \
          unittest.mock.patch.object(settings, 'MAX_VALUABLE_PICKS_PER_DAY', 10 ** 6), \
@@ -288,7 +307,7 @@ def main():
                                           min_mean=r.get('min_mean'), min_std=r.get('min_std'), odds=odds,
                                           gate=r['ban_reason'], actual=actual,
                                           win=grade(r['direction'], r['line'], actual), line_source=src,
-                                          data='BACKTEST'))
+                                          data='BACKTEST', **_filter_cols(r.get('filters'))))
                 for p in out['all_picks']:
                     cat = CAT.get(p['stat_category'], p['stat_category'].upper())
                     if cat not in SIM_KEY:
@@ -301,7 +320,7 @@ def main():
                                           blended=p.get('blended_conf'), min_mean=None, min_std=None,
                                           odds=p['odds'], gate='PASSED', actual=actual,
                                           win=grade(p['direction'], p['line'], actual), line_source=src,
-                                          data='BACKTEST'))
+                                          data='BACKTEST', **_filter_cols(p.get('filters'))))
             for p in out['all_picks']:
                 cat = CAT.get(p['stat_category'], p['stat_category'].upper())
                 actual = act.get(p['player'], {}).get(cat)
@@ -350,6 +369,14 @@ def main():
         sims[d] = None
         print(f"[replay] {d} graded ({len(games)} games, lines: {src}) "
               f"[{(time.time() - t_start) / 60:.1f} min]", flush=True)
+
+    # Step 4 P0: same Synergy input on every replay (frozen disk cache), loaded once here
+    # so the workers share it instead of each calling stats.nba.com (F9).
+    os.environ.setdefault('SYNERGY_CACHE', 'frozen')
+    settings.SYNERGY_CACHE = os.environ['SYNERGY_CACHE']
+    from simulator.context_builder import warm_synergy_cache
+    warm_synergy_cache()
+    print(f"[replay] Synergy cache: {settings.SYNERGY_CACHE} ({settings.SYNERGY_CACHE_DIR})", flush=True)
 
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
         futs = [ex.submit(sim_task, t) for t in tasks]

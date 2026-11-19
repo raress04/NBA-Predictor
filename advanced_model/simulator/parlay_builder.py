@@ -162,6 +162,101 @@ _CANDIDATE_CTX_KEYS = (
 )
 
 
+MINUTES_RISK_MAX_STD = 6.5
+MINUTES_RISK_MIN_MEAN = 18.0
+HIGH_VARIANCE_MAX_CI = 0.25
+LOW_LINE_MIN = 5.5
+
+
+def _candidate_filters(edge: dict, line: float, stat_key: str, player: str, pm: dict,
+                       blowout_banned_player: bool, all_player_minutes: dict) -> dict:
+    """Step 4 P1 (Plans/STEP4_GATES_AUDIT.md): the outcome of EVERY prop filter for one
+    candidate, in the sim's direction, not only the first one that fails. True = passes.
+    Same rules and thresholds as the gate chain in build_parlays."""
+    d = edge.get('direction', 'Over')
+    n = edge.get('n_sim') or 0
+    tc = (edge['over_count'] if d == 'Over' else n - edge['over_count']) if n else 0
+    gap = (edge['median'] - line) if d == 'Over' else (line - edge['median'])
+    ci = None
+    if n:
+        _, ci = compute_posterior_confidence(tc, n, prior_mean=get_prior(stat_key, d),
+                                             prior_strength=settings.CONFIDENCE_PRIOR_STRENGTH)
+    has_min = bool(all_player_minutes) and player in all_player_minutes
+    return {
+        'gap': gap,
+        'f_min_gap': passes_min_gap(edge['median'], line, stat_key, d),
+        'f_blowout': not (blowout_banned_player and d == 'Over'),
+        'f_restriction': not edge.get('returning_ban'),
+        'f_minutes': not (has_min and ((pm.get('std', 0) or 0) > MINUTES_RISK_MAX_STD
+                                       or (pm.get('mean', 30) or 0) < MINUTES_RISK_MIN_MEAN)),
+        'f_line_vol': line >= LOW_LINE_MIN,
+        'f_stage1': bool(edge.get('stage1_valuable')),
+        'stage1_reason': edge.get('stage1_reason'),
+        'f_banned': is_allowed(stat_key, d),
+        'ci_width': ci,
+        'f_variance': ci is None or ci <= HIGH_VARIANCE_MAX_CI,
+    }
+
+
+_gate_cache = {'mtime': None, 'path': None, 'params': None, 'warned': False}
+
+
+def load_gate_params():
+    """Step 4 params (config/gate_params.json, written by scripts/fit_gates.py), or None
+    when missing, unreadable, or fitted on another engine / calibration than the running one."""
+    path = getattr(settings, 'GATE_PARAMS_PATH', None)
+    if not path or not os.path.exists(path):
+        return None
+    mtime = os.path.getmtime(path)
+    if _gate_cache['path'] != path or _gate_cache['mtime'] != mtime:
+        try:
+            with open(path, encoding='utf-8') as f:
+                p = json.load(f)
+            if p.get('schema') != 1 or p.get('gate_model') != 'step4':
+                p = None
+        except (OSError, ValueError):
+            p = None
+        if p is not None:
+            from utils.prob_calibration import engine_signature, load_params
+            cal = load_params() or {}
+            if p.get('engine') != engine_signature() or p.get('calibration') != cal.get('data'):
+                if not _gate_cache['warned']:
+                    print("[STEP4] gate_params.json was fitted on another engine/calibration; step4 disabled.")
+                    _gate_cache['warned'] = True
+                p = None
+        _gate_cache.update(path=path, mtime=mtime, params=p)
+    return _gate_cache['params']
+
+
+def step4_verdict(stat_key: str, edge: dict, prop_info: dict, filters: dict, params: dict) -> dict:
+    """Step 4 decision for one prop candidate (Plans/STEP4_GATES_AUDIT.md):
+    pass when cal_prob/100 - 1/odds > margin, the category is allowed, and every kept
+    filter passes. Returns pass/reason plus cal (%), odds, edge vs break-even, EV."""
+    d = edge.get('direction', 'Over')
+    n = edge.get('n_sim') or 0
+    tc = (edge['over_count'] if d == 'Over' else n - edge['over_count']) if n else 0
+    raw = tc / n * 100.0 if n else None
+    odds = prop_info.get('over_odds' if d == 'Over' else 'under_odds') or 1.909
+    cal = _calibrate(stat_key, d, raw) if raw is not None else None
+    out = dict(passed=False, reason=None, raw=raw, cal=cal, odds=odds, edge_be=None, ev=None)
+    if cal is None:
+        out['reason'] = 'STEP4_NO_CAL'
+        return out
+    out['edge_be'] = cal / 100.0 - 1.0 / odds
+    out['ev'] = cal / 100.0 * odds - 1.0
+    if out['edge_be'] <= params['margin']:
+        out['reason'] = f"STEP4_LOW_EDGE({out['edge_be'] * 100:.1f}<={params['margin'] * 100:.0f})"
+    elif not filters.get('f_banned', True):
+        out['reason'] = 'BANNED_CATEGORY'
+    else:
+        failed = [f for f in params.get('filters', []) if not filters.get(f, True)]
+        if failed:
+            out['reason'] = f"STEP4_{failed[0].upper()}"
+        else:
+            out['passed'] = True
+    return out
+
+
 def passes_min_gap(projection: float, line: float, category: str, direction: str) -> bool:
     """Return False if model projection is too close to the bookmaker line."""
     threshold = LIVE_MIN_GAP.get(category.upper(), 1.5)
@@ -341,6 +436,9 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
             if abs_conf < thresh['min_prob']: reason = f"LOW_CONF({abs_conf:.1f}%<{thresh['min_prob']}%)"
             elif abs_edge < thresh['min_edge']: reason = f"LOW_EDGE({abs_edge:.1f}%<{thresh['min_edge']}%)"
 
+    # Step 4 P1: the stage-1 verdict on its own, before the line/returning overrides below
+    stage1_valuable, stage1_reason = valuable, reason
+
     # High Volatility Filter: Never include small lines (< 5.5)
     if book_line < 5.5:
         valuable = False
@@ -362,7 +460,9 @@ def compute_prop_edge(sim_distribution: list, book_line: float, stat_key: str = 
         'valuable': valuable,
         'direction': direction,
         'returning_ban': returning_ban,
-        'reason': reason
+        'reason': reason,
+        'stage1_valuable': stage1_valuable,
+        'stage1_reason': stage1_reason,
     }
 
 
@@ -544,6 +644,14 @@ def build_parlays(
 
     all_picks = []
     shadow_picks = []
+    # Step 4: params for the cal_prob gate. 'step4' decides with them; 'raw' only records
+    # what step4 would have done (step4_shadow), when STEP4_SHADOW is on.
+    gate_params = load_gate_params() if settings.PROB_CALIBRATION != 'off' else None
+    use_step4 = settings.GATE_MODEL == 'step4' and gate_params is not None
+    if settings.GATE_MODEL == 'step4' and gate_params is None:
+        print("  [STEP4] GATE_MODEL=step4 but no valid config/gate_params.json: using the raw gates.")
+    record_step4 = gate_params is not None and (use_step4 or settings.STEP4_SHADOW)
+    step4_shadow = []
 
     def log_shadow(player, category, direction, line, projection, sim_conf, edge, reason,
                    ctx=None, conf_stage=None):
@@ -579,6 +687,7 @@ def build_parlays(
                 # Step 3: calibrated win probability for the logged direction (shadow and on)
                 if settings.PROB_CALIBRATION != 'off':
                     row['cal_prob'] = _calibrate(row['stat_category'], row['direction'], row['raw_sim_freq'])
+            row['filters'] = ctx.get('filters')    # Step 4 P1 (in memory only, not a DB column)
         if conf_stage is not None:
             row['conf_stage'] = conf_stage
         shadow_picks.append(row)
@@ -830,6 +939,54 @@ def build_parlays(
                     'under_odds': prop_info.get('under_odds'),
                     'matchup': f"{away_name} @ {home_name}",
                 }
+                ctx['filters'] = _candidate_filters(edge, line, stat_key, player_name, _pm,
+                                                    is_blowout and player_name in top_3_fav,
+                                                    all_player_minutes)
+
+                # ── Step 4: gate on cal_prob (Plans/STEP4_GATES_AUDIT.md) ──
+                if record_step4:
+                    v = step4_verdict(stat_key, edge, prop_info, ctx['filters'], gate_params)
+                    step4_shadow.append(dict(player=player_name, stat_category=stat_key.upper(),
+                                             direction=edge['direction'].upper(), line=line,
+                                             projection=edge['median'], raw=v['raw'], cal_prob=v['cal'],
+                                             odds=v['odds'], edge_be=v['edge_be'], ev=v['ev'],
+                                             passed=v['passed'], reason=v['reason'],
+                                             matchup=ctx['matchup']))
+                    if use_step4:
+                        if not v['passed']:
+                            log_shadow(player_name, stat_key, edge['direction'], line, edge['median'],
+                                       edge['confidence'], edge['edge_pct'], v['reason'], ctx=ctx)
+                            continue
+                        d = edge['direction']
+                        ctx['cal_prob'] = v['cal']
+                        stat_display = stat_key.upper()
+                        all_picks.append({
+                            'type': 'prop',
+                            'event_id': event_id,
+                            'team': all_player_minutes.get(player_name, {}).get('team') if all_player_minutes else None,
+                            'direction': d,
+                            'game': f"{away_name} @ {home_name}",
+                            'pick': (f"{player_name} {d} {line} {stat_display} (Win chance: {v['cal']:.0f}% "
+                                     f"(raw: {v['raw']:.1f}%), EV {v['ev'] * 100:+.1f}%)"),
+                            'odds': v['odds'],
+                            'book': prop_info.get('book'),
+                            'edge_pct': v['edge_be'] * 100.0,
+                            'confidence': v['cal'],
+                            'raw_sim_freq': v['raw'] / 100.0,
+                            'score': v['ev'],
+                            'cal_prob': v['cal'],
+                            'ml_correction_applied': 'NONE',
+                            'player': player_name,
+                            'stat_category': stat_key,
+                            'line': line,
+                            'projection': edge['median'],
+                            'raw_sim_freq_pct': v['raw'],
+                            'posterior_conf': None,
+                            'hist_pct': None,
+                            'blended_conf': None,
+                            'filters': ctx['filters'],
+                        })
+                        continue
 
                 # ── MIN_GAP Noise Gate (Task P.2) ──────────────────────
                 gap_direction = edge['direction']
@@ -1056,13 +1213,20 @@ def build_parlays(
                         'posterior_conf': ctx.get('posterior_conf'),
                         'hist_pct': ctx.get('hist_pct'),
                         'blended_conf': ctx.get('blended_conf'),
+                        'filters': ctx.get('filters'),
                     })
 
     # ── Decision 4: MAX_VALUABLE_PICKS_PER_DAY Cap (Task P.3) ───────────
     # Sort by confidence + score, then slice, logging filtered picks as DAILY_CAP.
-    all_picks.sort(key=lambda p: (p['confidence'], p['score']), reverse=True)
-    cap_filtered = all_picks[settings.MAX_VALUABLE_PICKS_PER_DAY:]
-    all_picks    = all_picks[:settings.MAX_VALUABLE_PICKS_PER_DAY]
+    daily_cap = settings.MAX_VALUABLE_PICKS_PER_DAY
+    if use_step4:
+        # Step 4: rank by expected value; the cap comes from the fitted params (None = default)
+        all_picks.sort(key=lambda p: p['score'], reverse=True)
+        daily_cap = min(gate_params.get('cap') or daily_cap, daily_cap)
+    else:
+        all_picks.sort(key=lambda p: (p['confidence'], p['score']), reverse=True)
+    cap_filtered = all_picks[daily_cap:]
+    all_picks    = all_picks[:daily_cap]
     for p in cap_filtered:
         log_shadow(
             p.get('pick', '?'), p.get('type', 'prop').upper(),
@@ -1139,6 +1303,7 @@ def build_parlays(
         'parlay_4': parlay_system[:4],
         'all_picks': all_picks,
         'shadow_picks': shadow_picks,
+        'step4_shadow': step4_shadow,
         'parlay_ids': parlay_ids,
         'pick_volume': pick_volume_line,
     }

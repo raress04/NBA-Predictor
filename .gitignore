@@ -62,3 +62,6 @@ advanced_model/commands*
 advanced_model/*.pdf
 advanced_model/*.tex
 !advanced_model/predicts_report.tex
+
+# Synergy disk cache (Step 4 P0)
+advanced_model/database/cache/

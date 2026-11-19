@@ -213,6 +213,35 @@ PROB_CALIBRATION_PATH = os.environ.get(
     'PROB_CALIBRATION_PATH',   # override only for out-of-sample replays
     os.path.join(os.path.dirname(os.path.abspath(__file__)), 'prob_calibration.json'))
 
+# ── Synergy cache (Plans/STEP4_GATES_AUDIT.md P0) ─────────────────
+# Synergy tables came from stats.nba.com on every run and in every worker, so a replay of
+# the same date gave different sims depending on whether the API answered (F9).
+#   daily  : read database/cache/synergy/; refresh a table only if its file is > 24 h old (live default)
+#   frozen : always use the cached file when one exists (replays: same input every run)
+#   off    : old behaviour, always call the API
+SYNERGY_CACHE = os.environ.get('SYNERGY_CACHE', 'daily').strip().lower()
+if SYNERGY_CACHE not in ('daily', 'frozen', 'off'):
+    raise ValueError(f"SYNERGY_CACHE must be 'daily', 'frozen' or 'off', got {SYNERGY_CACHE!r}")
+SYNERGY_CACHE_DIR = os.environ.get(
+    'SYNERGY_CACHE_DIR',
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', 'cache', 'synergy'))
+SYNERGY_CACHE_MAX_AGE_H = 24
+
+# ── Step 4: pick filters on cal_prob (Plans/STEP4_GATES_AUDIT.md) ──
+#   raw   : today's gate chain (default)
+#   step4 : bet a prop only if cal_prob beats break-even by the fitted margin, plus the
+#           filters kept by scripts/fit_gates.py; ranked by EV (config/gate_params.json)
+# In 'raw' mode the step4 verdict is still computed and logged for every candidate
+# (STEP4_SHADOW), so it can be judged on live slates before it is switched on.
+GATE_MODEL = os.environ.get('GATE_MODEL', 'raw').strip().lower()
+if GATE_MODEL not in ('raw', 'step4'):
+    raise ValueError(f"GATE_MODEL must be 'raw' or 'step4', got {GATE_MODEL!r}")
+if GATE_MODEL == 'step4' and PROB_CALIBRATION == 'off':
+    raise ValueError("GATE_MODEL=step4 needs PROB_CALIBRATION 'shadow' or 'on' (it gates on cal_prob)")
+GATE_PARAMS_PATH = os.environ.get(
+    'GATE_PARAMS_PATH', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gate_params.json'))
+STEP4_SHADOW = os.environ.get('STEP4_SHADOW', '1') != '0'
+
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""
     return (category.upper(), direction.upper()) not in BANNED_COMBINATIONS
