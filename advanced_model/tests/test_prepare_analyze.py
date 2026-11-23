@@ -64,8 +64,12 @@ class TestPrepareYesterday(unittest.TestCase):
     def setUp(self):
         self.test_dir = tempfile.mkdtemp(prefix="test_prep_yesterday_")
         self.target_date = "2026-10-24"
+        # Unit tests never reach the NBA API or the real nba_data.db
+        self._backfill = patch("etl.prepare_analyze.backfill_recent_box_scores", return_value=[])
+        self._backfill.start()
 
     def tearDown(self):
+        self._backfill.stop()
         shutil.rmtree(self.test_dir, ignore_errors=True)
 
     def _create_prediction_file(self, content=SAMPLE_PREDICTS_TEXT, filename="predicts_2026-10-24.txt"):
@@ -283,6 +287,54 @@ class TestPrepareYesterday(unittest.TestCase):
         for root, dirs, files in os.walk(self.test_dir):
             for f in files:
                 self.assertFalse(f.endswith(".tmp") or ".tmp." in f)
+
+
+class TestBackfillRecentBoxScores(unittest.TestCase):
+    """Nights without a pipeline run must not stay empty in nba_data.db (Nov 19 2026)."""
+
+    def setUp(self):
+        import sqlite3
+        self.tmp = tempfile.mkdtemp(prefix="test_backfill_")
+        self.db = os.path.join(self.tmp, "nba.db")
+        c = sqlite3.connect(self.db)
+        c.execute("CREATE TABLE games (game_id TEXT, game_date TEXT, matchup TEXT, season TEXT)")
+        c.execute("CREATE TABLE box_scores (game_id TEXT, game_date TEXT, player_name TEXT)")
+        for d in ("2026-11-17", "2026-11-18", "2026-11-20"):   # 11-19 missing
+            c.execute("INSERT INTO box_scores VALUES ('g', ?, 'p')", (d + "T00:00:00",))
+        c.commit()
+        c.close()
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def _run(self, target, today, api_result):
+        from etl import prepare_analyze as pa
+        with patch("etl.prepare_analyze._fetch_and_store_box_scores", return_value=api_result) as m, \
+             patch("utils.slate_date.slate_date", return_value=today):
+            filled = pa.backfill_recent_box_scores(target, days=4, db_path=self.db)
+        return filled, m
+
+    def test_fills_only_missing_dates_in_one_call(self):
+        filled, m = self._run("2026-11-20", "2026-11-21", {"2026-11-19": 89})
+        self.assertEqual(filled, ["2026-11-19"])
+        m.assert_called_once_with("2026-11-19", "2026-11-19", self.db)
+
+    def test_never_touches_tonights_slate(self):
+        filled, m = self._run("2026-11-21", "2026-11-21", {"2026-11-19": 89})
+        m.assert_called_once_with("2026-11-19", "2026-11-19", self.db)   # 11-21 excluded
+
+    def test_nothing_missing_makes_no_call(self):
+        from etl import prepare_analyze as pa
+        with patch("etl.prepare_analyze._fetch_and_store_box_scores") as m2, \
+             patch("utils.slate_date.slate_date", return_value="2026-11-21"):
+            pa.backfill_recent_box_scores("2026-11-18", days=2, db_path=self.db)
+        m2.assert_not_called()
+
+    def test_api_failure_is_reported_not_raised(self):
+        from etl import prepare_analyze as pa
+        with patch("etl.prepare_analyze._fetch_and_store_box_scores", side_effect=RuntimeError("down")), \
+             patch("utils.slate_date.slate_date", return_value="2026-11-21"):
+            self.assertEqual(pa.backfill_recent_box_scores("2026-11-20", days=4, db_path=self.db), [])
 
 
 if __name__ == '__main__':

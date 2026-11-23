@@ -198,94 +198,135 @@ def fetch_box_scores_if_needed(target_date: str, db_path: Optional[str] = None) 
 
     print(f"[*] Box scores for {target_date} missing from DB. Fetching from NBA API...")
     try:
-        from nba_api.stats.endpoints import playergamelogs
-        season_full = get_nba_season(target_date)  # e.g. '2026-2027'
-        parts = season_full.split('-')
-        season_api = f"{parts[0]}-{parts[1][-2:]}"  # e.g. '2026-27'
-
-        # Ask only for target_date (small payload) and retry transient stats.nba.com timeouts
-        import time as _time
-        y, m, d = target_date.split('-')
-        dfs = None
-        last_err = None
-        for attempt in range(1, 5):
-            try:
-                dfs = playergamelogs.PlayerGameLogs(
-                    season_nullable=season_api,
-                    date_from_nullable=f"{m}/{d}/{y}",
-                    date_to_nullable=f"{m}/{d}/{y}",
-                    timeout=60,
-                ).get_data_frames()
-                break
-            except Exception as e:
-                last_err = e
-                print(f"[!] NBA API attempt {attempt}/4 failed: {e}")
-                if attempt < 4:
-                    _time.sleep(10 * attempt)
-        if dfs is None:
-            raise last_err
-        if not dfs or dfs[0].empty:
-            print(f"[!] NBA API returned no game logs for season {season_api}.")
-            return False
-
-        logs = dfs[0]
-        # Filter for rows matching target_date
-        date_logs = logs[logs['GAME_DATE'].astype(str).str.startswith(target_date)]
-        if date_logs.empty:
-            print(f"[!] NBA API has no completed game logs for {target_date} yet.")
-            return False
-
-        conn = sqlite3.connect(db)
-        existing_games = set(
-            r[0] for r in conn.execute("SELECT game_id FROM games WHERE season = ?", (season_api,)).fetchall()
-        )
-
-        new_games_df = date_logs[['GAME_ID', 'GAME_DATE', 'MATCHUP', 'SEASON_YEAR']].drop_duplicates(subset=['GAME_ID'])
-        new_games_to_insert = new_games_df[~new_games_df['GAME_ID'].isin(existing_games)].rename(columns={
-            'GAME_ID': 'game_id',
-            'GAME_DATE': 'game_date',
-            'MATCHUP': 'matchup',
-            'SEASON_YEAR': 'season'
-        })
-        if not new_games_to_insert.empty:
-            new_games_to_insert.to_sql('games', conn, if_exists='append', index=False)
-
-        if 'MIN' in date_logs.columns:
-            date_logs = date_logs.copy()
-            date_logs['minutes'] = date_logs['MIN']
-
-        box_df = date_logs.rename(columns={
-            'SEASON_YEAR': 'season',
-            'GAME_ID': 'game_id',
-            'GAME_DATE': 'game_date',
-            'TEAM_ID': 'team_id',
-            'PLAYER_ID': 'player_id',
-            'PLAYER_NAME': 'player_name',
-            'FGM': 'fgm', 'FGA': 'fga',
-            'FG3M': 'fg3m', 'FG3A': 'fg3a',
-            'FTM': 'ftm', 'FTA': 'fta',
-            'OREB': 'oreb', 'DREB': 'dreb', 'REB': 'reb',
-            'AST': 'ast', 'STL': 'stl', 'BLK': 'blk',
-            'TOV': 'tov', 'PF': 'pf', 'PTS': 'pts',
-            'PLUS_MINUS': 'plus_minus'
-        })
-        cols = ['season', 'game_id', 'game_date', 'team_id', 'player_id', 'player_name', 'minutes',
-                'fgm', 'fga', 'fg3m', 'fg3a', 'ftm', 'fta', 'oreb', 'dreb', 'reb',
-                'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'plus_minus']
-        cols = [c for c in cols if c in box_df.columns]
-        # Idempotent insert (CRITICAL_BUGS_FOUND_06.11): re-running a date no longer duplicates rows
-        from utils.box_scores_io import insert_box_scores
-        n_written = insert_box_scores(conn, box_df, cols)
-        conn.commit()
-        conn.close()
-
-        print(f"[+] Ingested {n_written} new box score rows for {target_date} "
-              f"({len(box_df) - n_written} already present).")
-        return True
-
+        written = _fetch_and_store_box_scores(target_date, target_date, db)
     except Exception as e:
         print(f"[-] Box score fetch failed: {e}")
         return False
+    if target_date not in written:
+        print(f"[!] NBA API has no completed game logs for {target_date} yet.")
+        return False
+    return True
+
+
+def backfill_recent_box_scores(target_date: str, days: int = 7, db_path: Optional[str] = None) -> list:
+    """
+    Fill box scores for any date in the `days` days up to target_date that has none.
+    One NBA API call covers the whole gap. Nights the pipeline was not run used to stay
+    empty forever (Nov 19 2026: 4 games missing), feeding stale form into the model.
+    Returns the dates that got rows. Never raises: a failed fetch is reported and skipped.
+    """
+    db = db_path or NBA_DB
+    end = datetime.strptime(target_date, '%Y-%m-%d')
+    window = [(end - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(days - 1, -1, -1)]
+    # Never touch tonight's slate: a half-played day would later count as "already present".
+    from utils.slate_date import slate_date
+    today = slate_date()
+    window = [d for d in window if d < today]
+    missing = [d for d in window if check_games_and_box_scores(d, db_path=db)[1] == 0]
+    if not missing:
+        return []
+    print(f"[*] No box scores in DB for {', '.join(missing)}. Checking NBA API...")
+    try:
+        written = _fetch_and_store_box_scores(missing[0], missing[-1], db)
+    except Exception as e:
+        print(f"[-] Box score backfill failed: {e}")
+        return []
+    filled = [d for d in missing if d in written]
+    if not filled:
+        print("[+] No games were played on those dates.")
+    return filled
+
+
+def _fetch_and_store_box_scores(date_from: str, date_to: str, db: str) -> dict:
+    """Fetch player game logs for date_from..date_to (inclusive, YYYY-MM-DD) and store
+    them idempotently. Returns {date: rows_in_api} for dates with games. Raises on API failure."""
+    from nba_api.stats.endpoints import playergamelogs
+    season_full = get_nba_season(date_to)  # e.g. '2026-2027'
+    parts = season_full.split('-')
+    season_api = f"{parts[0]}-{parts[1][-2:]}"  # e.g. '2026-27'
+
+    def _api(d):
+        y, m, dd = d.split('-')
+        return f"{m}/{dd}/{y}"
+
+    # Small date-filtered request, retrying transient stats.nba.com timeouts
+    import time as _time
+    dfs = None
+    last_err = None
+    for attempt in range(1, 5):
+        try:
+            dfs = playergamelogs.PlayerGameLogs(
+                season_nullable=season_api,
+                date_from_nullable=_api(date_from),
+                date_to_nullable=_api(date_to),
+                timeout=60,
+            ).get_data_frames()
+            break
+        except Exception as e:
+            last_err = e
+            print(f"[!] NBA API attempt {attempt}/4 failed: {e}")
+            if attempt < 4:
+                _time.sleep(10 * attempt)
+    if dfs is None:
+        raise last_err
+    if not dfs or dfs[0].empty:
+        return {}
+
+    logs = dfs[0]
+    logs = logs.assign(_day=logs['GAME_DATE'].astype(str).str[:10])
+    date_logs = logs[(logs['_day'] >= date_from) & (logs['_day'] <= date_to)]
+    if date_logs.empty:
+        return {}
+    per_day = date_logs.groupby('_day').size().to_dict()
+    date_logs = date_logs.drop(columns=['_day'])
+
+    conn = sqlite3.connect(db)
+    existing_games = set(
+        r[0] for r in conn.execute("SELECT game_id FROM games WHERE season = ?", (season_api,)).fetchall()
+    )
+
+    new_games_df = date_logs[['GAME_ID', 'GAME_DATE', 'MATCHUP', 'SEASON_YEAR']].drop_duplicates(subset=['GAME_ID'])
+    new_games_to_insert = new_games_df[~new_games_df['GAME_ID'].isin(existing_games)].rename(columns={
+        'GAME_ID': 'game_id',
+        'GAME_DATE': 'game_date',
+        'MATCHUP': 'matchup',
+        'SEASON_YEAR': 'season'
+    })
+    if not new_games_to_insert.empty:
+        new_games_to_insert.to_sql('games', conn, if_exists='append', index=False)
+
+    if 'MIN' in date_logs.columns:
+        date_logs = date_logs.copy()
+        date_logs['minutes'] = date_logs['MIN']
+
+    box_df = date_logs.rename(columns={
+        'SEASON_YEAR': 'season',
+        'GAME_ID': 'game_id',
+        'GAME_DATE': 'game_date',
+        'TEAM_ID': 'team_id',
+        'PLAYER_ID': 'player_id',
+        'PLAYER_NAME': 'player_name',
+        'FGM': 'fgm', 'FGA': 'fga',
+        'FG3M': 'fg3m', 'FG3A': 'fg3a',
+        'FTM': 'ftm', 'FTA': 'fta',
+        'OREB': 'oreb', 'DREB': 'dreb', 'REB': 'reb',
+        'AST': 'ast', 'STL': 'stl', 'BLK': 'blk',
+        'TOV': 'tov', 'PF': 'pf', 'PTS': 'pts',
+        'PLUS_MINUS': 'plus_minus'
+    })
+    cols = ['season', 'game_id', 'game_date', 'team_id', 'player_id', 'player_name', 'minutes',
+            'fgm', 'fga', 'fg3m', 'fg3a', 'ftm', 'fta', 'oreb', 'dreb', 'reb',
+            'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'plus_minus']
+    cols = [c for c in cols if c in box_df.columns]
+    # Idempotent insert (CRITICAL_BUGS_FOUND_06.11): re-running a date no longer duplicates rows
+    from utils.box_scores_io import insert_box_scores
+    n_written = insert_box_scores(conn, box_df, cols)
+    conn.commit()
+    conn.close()
+
+    print(f"[+] Ingested {n_written} new box score rows for {date_from}..{date_to} "
+          f"({len(box_df) - n_written} already present).")
+    return per_day
 
 
 def generate_results_file(
@@ -470,6 +511,12 @@ def prepare_analyze(
     is_pred_valid = False
     if predicts_file:
         is_pred_valid, pred_reason = validate_prediction_file(predicts_file, date_iso)
+
+    # Fill box scores for recent nights the pipeline was not run (incl. date_iso), so the
+    # no-game check below and tonight's form inputs see what was actually played.
+    # The old check read only the local DB and called Nov 20 2026 (9 games) a no-game day.
+    if mode == 'live':
+        backfill_recent_box_scores(date_iso, db_path=db_path)
 
     # Check for verified no-game day if predictions are missing or invalid
     games_count, box_count, matchups = check_games_and_box_scores(date_iso, db_path=db_path)
