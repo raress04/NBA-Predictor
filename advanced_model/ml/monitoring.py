@@ -13,6 +13,7 @@ import os
 import sys
 from datetime import datetime, timedelta
 from utils.slate_date import slate_date, register_sqlite
+from utils.rerun import current_only   # W1: skip rows superseded by a re-run
 
 import pandas as pd
 
@@ -153,12 +154,12 @@ def check_kelly_criteria(conn) -> dict:
         clv_pass = all(r >= 60 for r in pos_rates)
 
     # 5. Parlay hit rate
-    parlay_row = conn.execute("""
+    parlay_row = conn.execute(f"""
         SELECT COUNT(*) as total,
                SUM(CASE WHEN result='WIN' THEN 1 ELSE 0 END) as wins
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date(slate_date(), '-30 days')
+          AND game_date >= date(slate_date(), '-30 days'){current_only(conn, 'parlays')}
     """).fetchone()
     parlay_n = parlay_row[0]
     parlay_wins = parlay_row[1] or 0
@@ -263,7 +264,7 @@ def generate_monitoring_report(date_str: str = None) -> str:
         lines.append(f"  {cat} {direction}:  {wr}% (n={n}) [{brier_str}]{flag}")
 
     # Parlay performance
-    parlay_row = conn.execute("""
+    parlay_row = conn.execute(f"""
         SELECT COUNT(*) as total,
                SUM(CASE WHEN result='WIN' THEN 1 ELSE 0 END) as wins,
                ROUND(SUM(CASE WHEN result='WIN' THEN 1.0 ELSE 0 END) / COUNT(*) * 100, 1) as hit_rate,
@@ -271,7 +272,7 @@ def generate_monitoring_report(date_str: str = None) -> str:
                ROUND(SUM(roi * stake) / NULLIF(SUM(stake), 0) * 100, 2) as total_roi_pct
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date(slate_date(), '-30 days')
+          AND game_date >= date(slate_date(), '-30 days'){current_only(conn, 'parlays')}
     """).fetchone()
 
     lines.append("\nPARLAY PERFORMANCE:")
@@ -453,13 +454,13 @@ def end_of_season_report(start_date: str, end_date: str, output_path: str) -> st
     roi_s = ((wins_s * 0.909) - (n_s - wins_s)) / n_s * 100 if n_s > 0 else 0.0
     lines.append(f"  Singles — flat -110 stake  : {roi_s:+.2f}%  [n={n_s}]")
 
-    p_row = conn.execute("""
+    p_row = conn.execute(f"""
         SELECT COUNT(*) AS n,
                SUM(CASE WHEN result='WIN' THEN 1 ELSE 0 END) AS wins,
                ROUND(SUM(CASE WHEN roi IS NOT NULL THEN roi ELSE 0 END)*100, 2) AS total_roi
         FROM parlays
         WHERE game_date >= ? AND game_date <= ?
-          AND result IS NOT NULL
+          AND result IS NOT NULL{current_only(conn, 'parlays')}
     """, (start_date, end_date)).fetchone()
 
     n_p    = p_row['n']         if p_row else 0

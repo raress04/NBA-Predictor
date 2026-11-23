@@ -722,7 +722,8 @@ def build_parlays(
                 if (expected_margin > 0 and market_margin < 0) or (expected_margin < 0 and market_margin > 0):
                     print(f"  \u26d4  [FATAL: MARKET_INVERSION_DETECTED] {away_name} @ {home_name}. Proj {expected_margin:+.1f} vs Market {market_margin:+.1f}. Spreads skip to avoid trap.")
                     market_inversion = True
-                    log_shadow(home_name, 'SPREAD', 'COVER', market_margin, expected_margin, 0, 0, 'MARKET_INVERSION')
+                    log_shadow(home_name, 'SPREAD', 'COVER', market_margin, expected_margin, 0, 0, 'MARKET_INVERSION',
+                               ctx={'matchup': f"{away_name} @ {home_name}"})
 
         # ── Spread Picks ──────────────────────
         if not market_inversion and game_odds.get('spreads') and event_id in all_score_distributions:
@@ -786,7 +787,8 @@ def build_parlays(
             
             # Action 2: Bayesian Posterior Confidence
             if not is_allowed('SPREAD', 'COVER'):
-                log_shadow(away_name, 'SPREAD', 'COVER', spread_data['away_spread'], away_edge['projected_margin'], 0, 0, 'BANNED_CATEGORY')
+                log_shadow(away_name, 'SPREAD', 'COVER', spread_data['away_spread'], away_edge['projected_margin'], 0, 0, 'BANNED_CATEGORY',
+                           ctx={'matchup': f"{away_name} @ {home_name}"})
 
             if is_allowed('SPREAD', 'COVER'):
                 prior = get_prior('SPREAD', 'COVER')
@@ -841,7 +843,8 @@ def build_parlays(
 
             # Valuable flag internally sets strict thresholds
             if total_edge['valuable'] and not is_allowed('TOTAL', total_edge['direction']):
-                log_shadow('Game Total', 'TOTAL', total_edge['direction'], totals_data['total'], total_edge['projected_total'], 0, 0, 'BANNED_CATEGORY')
+                log_shadow('Game Total', 'TOTAL', total_edge['direction'], totals_data['total'], total_edge['projected_total'], 0, 0, 'BANNED_CATEGORY',
+                           ctx={'matchup': f"{away_name} @ {home_name}"})
 
             if total_edge['valuable'] and is_allowed('TOTAL', total_edge['direction']):
                 thresh = EDGE_THRESHOLDS['totals']
@@ -885,7 +888,8 @@ def build_parlays(
                         if is_gate_open:
                             all_picks.append(pick_obj)
                         else:
-                            log_shadow('Game Total', 'TOTAL', direction, totals_data['total'], total_edge['projected_total'], calib_conf, ev_edge, 'PARLAY_GATE_CLOSED (n<200 or MAE>8)')
+                            log_shadow('Game Total', 'TOTAL', direction, totals_data['total'], total_edge['projected_total'], calib_conf, ev_edge, 'PARLAY_GATE_CLOSED (n<200 or MAE>8)',
+                                       ctx={'matchup': f"{away_name} @ {home_name}"})
 
         # ── Player Prop Picks ─────────────────
         if event_id not in all_player_props:
@@ -1228,10 +1232,18 @@ def build_parlays(
     cap_filtered = all_picks[daily_cap:]
     all_picks    = all_picks[:daily_cap]
     for p in cap_filtered:
+        # W1: store the real candidate (it used to store the pick label with line 0,
+        # so a cap reject could never be graded or matched to a re-run).
         log_shadow(
-            p.get('pick', '?'), p.get('type', 'prop').upper(),
-            p.get('direction', '?'), 0, 0,
-            p.get('confidence', 0), p.get('edge_pct', 0), 'DAILY_CAP'
+            p.get('player') or p.get('bet_team') or p.get('pick', '?'),
+            p.get('stat_category') or p.get('type', 'prop').upper(),
+            p.get('direction') or 'COVER', p.get('line') if p.get('line') is not None else p.get('spread_val'),
+            p.get('projection'), p.get('confidence', 0), p.get('edge_pct', 0), 'DAILY_CAP',
+            ctx={'matchup': p.get('game'), 'raw_sim_freq': p.get('raw_sim_freq_pct'),
+                 'posterior_conf': p.get('posterior_conf'), 'hist_pct': p.get('hist_pct'),
+                 'blended_conf': p.get('blended_conf'), 'cal_prob': p.get('cal_prob'),
+                 'filters': p.get('filters')},
+            conf_stage='blended',
         )
 
     # Pick volume summary (for monitoring report)

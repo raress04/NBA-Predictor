@@ -38,6 +38,31 @@ SHADOW_STAGE_COLUMNS = {
 }
 
 
+# W1 (Plans/W1_RERUN_AUDIT.md): a re-run of a slate flags the earlier run's rows
+# superseded = 1 instead of adding a second set. table -> {column: type}
+RERUN_COLUMNS = {
+    'ml_shadow_picks':     {'superseded': 'INTEGER DEFAULT 0'},
+    'projection_outcomes': {'superseded': 'INTEGER DEFAULT 0', 'matchup': 'TEXT'},
+    'parlays':             {'superseded': 'INTEGER DEFAULT 0'},
+    'shadow_picks':        {'superseded': 'INTEGER DEFAULT 0', 'matchup': 'TEXT'},
+}
+
+
+def ensure_rerun_columns(conn) -> list:
+    """Idempotent migration for W1: add the columns above to the tables that exist.
+    Returns ['table.column', ...] for the columns it added. Caller commits."""
+    added = []
+    for table, cols in RERUN_COLUMNS.items():
+        existing = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+        if not existing:
+            continue  # table not created yet
+        for col, ctype in cols.items():
+            if col not in existing:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {ctype}")
+                added.append(f"{table}.{col}")
+    return added
+
+
 def get_connection() -> sqlite3.Connection:
     """Return a connection to the bet tracker DB (creating it if needed)."""
     conn = sqlite3.connect(DB_PATH)
@@ -234,6 +259,9 @@ def init_db():
     msp_cols = {r[1] for r in cur.execute("PRAGMA table_info(ml_shadow_picks)")}
     if 'conf_stage' not in msp_cols:
         cur.execute("ALTER TABLE ml_shadow_picks ADD COLUMN conf_stage TEXT")
+
+    # -- W1: superseded flags for re-runs (idempotent) --
+    ensure_rerun_columns(conn)
 
     conn.commit()
     conn.close()

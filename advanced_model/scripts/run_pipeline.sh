@@ -68,6 +68,7 @@ SELECT
 FROM projection_outcomes po
 WHERE po.game_date = '${SLATE_DATE}'
   AND po.bookmaker_line IS NOT NULL
+  AND COALESCE(po.superseded, 0) = 0
 GROUP BY po.category;
 " | awk -F'|' 'BEGIN {
     printf "%-12s %8s %8s %6s  %s\n", "CATEGORY", "AVG_GAP", "MAE", "N", "STATUS"

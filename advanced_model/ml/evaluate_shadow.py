@@ -76,7 +76,8 @@ def roi_estimate(y_true, y_prob, odds=1.91):
 
 def evaluate(min_picks: int = MIN_PICKS_DEFAULT, save: bool = True):
     conn = sqlite3.connect(DB_PATH)
-    df = pd.read_sql_query("""
+    from utils.rerun import current_only   # W1: skip rows superseded by a re-run
+    df = pd.read_sql_query(f"""
         SELECT game_date, player, stat_category, direction,
                line, projection, sim_confidence, xgb_confidence,
                edge_pct, actual_value, is_win
@@ -84,7 +85,7 @@ def evaluate(min_picks: int = MIN_PICKS_DEFAULT, save: bool = True):
         WHERE is_win IS NOT NULL
           AND sim_confidence IS NOT NULL
           AND actual_value IS NOT NULL
-          AND (cohort IS NULL OR cohort = 'selected')
+          AND (cohort IS NULL OR cohort = 'selected'){current_only(conn, 'ml_shadow_picks')}
     """, conn)
     conn.close()
 

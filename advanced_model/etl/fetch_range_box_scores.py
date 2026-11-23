@@ -132,8 +132,9 @@ def resolve_parlays(cursor, date_iso: str, box_scores: dict, dry_run: bool = Fal
     Returns [(parlay_id, result, payout, roi, [leg outcomes])].
     """
     settled = []
-    parlays = cursor.execute("SELECT id, stake, combined_odds FROM parlays WHERE game_date = ? AND result IS NULL",
-                             (date_iso,)).fetchall()
+    from utils.rerun import current_only   # W1: a superseded parlay (earlier run) is not settled
+    parlays = cursor.execute("SELECT id, stake, combined_odds FROM parlays WHERE game_date = ? AND result IS NULL"
+                             + current_only(cursor, 'parlays'), (date_iso,)).fetchall()
     for pid, stake, _odds in parlays:
         legs = cursor.execute("""
             SELECT pl.player, pl.stat_category, pl.direction, pl.line, pl.odds, pr.is_win
@@ -223,13 +224,14 @@ def evaluate_ban_status():
     """
     try:
         conn = sqlite3.connect(TRACKER_DB)
-        rows = conn.execute("""
+        from utils.rerun import current_only   # W1: count each candidate once
+        rows = conn.execute(f"""
             SELECT stat_category, direction,
                    COUNT(*) as n,
                    ROUND(AVG(actual_result) * 100, 1) as win_rate_pct
             FROM shadow_picks
             WHERE actual_result IS NOT NULL
-              AND ban_reason = 'BANNED_CATEGORY'
+              AND ban_reason = 'BANNED_CATEGORY'{current_only(conn, 'shadow_picks')}
             GROUP BY stat_category, direction
             HAVING COUNT(*) >= 50
             ORDER BY win_rate_pct DESC

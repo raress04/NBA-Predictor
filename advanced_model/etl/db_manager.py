@@ -457,10 +457,20 @@ def ingest_shadow_picks(picks: list[dict]):
     if not picks:
         return 0
         
-    from database.bet_tracker_schema import SHADOW_STAGE_COLUMNS
+    from database.bet_tracker_schema import SHADOW_STAGE_COLUMNS, ensure_rerun_columns
+    from utils.rerun import candidate_key, supersede_keys
     conn = _get_conn()
     ensure_shadow_stage_columns(conn)
+    ensure_rerun_columns(conn)
     cur = conn.cursor()
+    # W1: a re-run of the slate replaces the earlier run's rows for the same candidates
+    by_date = {}
+    for p in picks:
+        if p.get('game_date'):
+            by_date.setdefault(p['game_date'], set()).add(
+                candidate_key(p.get('player'), p.get('stat_category'), p.get('matchup')))
+    for game_date, keys in by_date.items():
+        supersede_keys(conn, 'shadow_picks', game_date, keys)
     base_cols = ['game_date', 'player', 'stat_category', 'direction', 'line',
                  'projection', 'sim_confidence', 'edge_pct', 'ban_reason']
     stage_cols = [c for c in SHADOW_STAGE_COLUMNS if c != 'superseded']

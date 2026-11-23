@@ -16,6 +16,7 @@ import os
 import pandas as pd
 from datetime import datetime
 from utils.slate_date import slate_date, register_sqlite
+from utils.rerun import current_only   # W1: skip rows superseded by a re-run
 
 MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRACKER_DB = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
@@ -194,12 +195,12 @@ def check_clv(conn) -> dict:
 
 def check_parlay_performance(conn) -> dict:
     """At least 30 resolved parlays in last 30d; hit rate >= 20%."""
-    row = conn.execute("""
+    row = conn.execute(f"""
         SELECT COUNT(*) AS n,
                SUM(CASE WHEN result = 'WIN' THEN 1 ELSE 0 END) AS wins
         FROM parlays
         WHERE result IS NOT NULL
-          AND game_date >= date(slate_date(), '-30 days')
+          AND game_date >= date(slate_date(), '-30 days'){current_only(conn, 'parlays')}
     """).fetchone()
     n    = row['n']    if row else 0
     wins = row['wins'] if row and row['wins'] else 0

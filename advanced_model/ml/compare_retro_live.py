@@ -34,6 +34,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, date, timedelta
 from utils.slate_date import slate_date, previous_slate_date
+from utils.rerun import current_only   # W1: skip rows superseded by a re-run
 
 MODEL_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RETRO_DB    = os.path.join(MODEL_DIR, 'database', 'bet_tracker.db')
@@ -61,9 +62,10 @@ def _connect_ro(path: str) -> sqlite3.Connection:
 def retro_source_modes(start: str, end: str) -> dict:
     """{source_mode: rows} of projection_outcomes in the window (for the report header)."""
     conn = _connect_ro(RETRO_DB)
-    rows = conn.execute("""
+    rows = conn.execute(f"""
         SELECT COALESCE(source_mode, 'NULL'), COUNT(*) FROM projection_outcomes
         WHERE game_date >= ? AND game_date <= ? AND bookmaker_line IS NOT NULL
+        {current_only(conn, 'projection_outcomes')}
         GROUP BY 1 ORDER BY 2 DESC""", (start, end)).fetchall()
     conn.close()
     return dict(rows)
@@ -94,7 +96,7 @@ def load_retro(start: str, end: str) -> pd.DataFrame:
         FROM projection_outcomes
         WHERE game_date >= '{start}'
           AND game_date <= '{end}'
-          AND bookmaker_line IS NOT NULL
+          AND bookmaker_line IS NOT NULL{current_only(conn, 'projection_outcomes')}
     """, conn)
     conn.close()
     if df.empty:

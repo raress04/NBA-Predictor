@@ -67,27 +67,61 @@ def get_connection():
 BET_TRACKER_DB = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'database', 'bet_tracker.db')
 
 def log_live_projection(player: str, category: str, projected_value: float, bookmaker_line: float,
-                        over_odds: float = 1.91, under_odds: float = 1.91, game_date: str = None):
+                        over_odds: float = 1.91, under_odds: float = 1.91, game_date: str = None,
+                        matchup: str = None):
     """
     Log today's live projection to bet_tracker.db/projection_outcomes for Step 3.4 bias verification.
     actual_value and model_bias are set to 0.0 as placeholders — game not yet resolved.
     source_mode='live_pending' distinguishes these from retroactive resolved picks.
+
+    W1 (Plans/W1_RERUN_AUDIT.md): a re-run of the slate flags the earlier run's row for the
+    same (player, category) — and, for TOTAL rows, the same matchup — as superseded first.
     """
     if not game_date:
         game_date = CURRENT_GAME_DATE
     try:
-        conn = sqlite3.connect(BET_TRACKER_DB)
-        conn.execute("""
-            INSERT OR IGNORE INTO projection_outcomes
-                (game_date, player, category, projected_value, bookmaker_line,
-                 actual_value, model_bias, source_mode, source_file)
-            VALUES (?, ?, ?, ?, ?, 0.0, 0.0, 'live_pending', ?)
-        """, (game_date, player, category, round(projected_value, 2),
-              bookmaker_line, f"predicts_{game_date}.txt"))
+        conn = sqlite3.connect(BET_TRACKER_DB, timeout=30)
+        try:
+            from utils.rerun import candidate_key, supersede_keys
+            supersede_keys(conn, 'projection_outcomes', game_date,
+                           [candidate_key(player, category, matchup)], category_col='category',
+                           extra_where="AND source_mode = 'live_pending'")
+            conn.execute("""
+                INSERT OR IGNORE INTO projection_outcomes
+                    (game_date, player, category, projected_value, bookmaker_line,
+                     actual_value, model_bias, source_mode, source_file, matchup)
+                VALUES (?, ?, ?, ?, ?, 0.0, 0.0, 'live_pending', ?, ?)
+            """, (game_date, player, category, round(projected_value, 2),
+                  bookmaker_line, f"predicts_{game_date}.txt", matchup))
+        except sqlite3.OperationalError:
+            # W1 columns missing (old schema): log as before rather than lose the row
+            conn.rollback()
+            conn.execute("""
+                INSERT OR IGNORE INTO projection_outcomes
+                    (game_date, player, category, projected_value, bookmaker_line,
+                     actual_value, model_bias, source_mode, source_file)
+                VALUES (?, ?, ?, ?, ?, 0.0, 0.0, 'live_pending', ?)
+            """, (game_date, player, category, round(projected_value, 2),
+                  bookmaker_line, f"predicts_{game_date}.txt"))
         conn.commit()
         conn.close()
     except Exception:
         pass  # Non-critical — don't crash the scraper over logging
+
+
+def ensure_rerun_schema():
+    """W1: add the superseded / matchup columns once, in the parent process, before the
+    worker pool writes projections in parallel. Never fatal."""
+    try:
+        from database.bet_tracker_schema import ensure_rerun_columns
+        conn = sqlite3.connect(BET_TRACKER_DB, timeout=30)
+        added = ensure_rerun_columns(conn)
+        conn.commit()
+        conn.close()
+        if added:
+            print(f"[+] W1 schema: added {', '.join(added)}")
+    except Exception as e:
+        print(f"[-] W1 schema check failed (re-runs may duplicate rows): {e}")
 
 def get_latest_season(conn) -> str:
     '''Auto-detect the latest season available in the database.'''
@@ -1461,7 +1495,8 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                     t_data = g_odds['totals']
                     log_live_projection('Game Total', 'TOTAL', avg_home + avg_away, t_data['total'],
                                         over_odds=t_data.get('over_odds', 1.91),
-                                        under_odds=t_data.get('under_odds', 1.91))
+                                        under_odds=t_data.get('under_odds', 1.91),
+                                        matchup=matchup_str)
                     t_edge = compute_total_edge(home_scores_list, away_scores_list, t_data['total'])
                     if t_edge['valuable']:
                         raw_conf = t_edge['confidence_over'] if t_edge['direction'] == 'Over' else t_edge['confidence_under']
@@ -1541,7 +1576,8 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                                     edge_data = compute_prop_edge(dist, line, stat_key, is_returning=is_returning)
                                     
                                     # Log for Step 3.4 verification (POINTS/REBOUNDS/ASSISTS vs bookmaker line)
-                                    log_live_projection(p, stat_key.upper(), median_proj, line)
+                                    log_live_projection(p, stat_key.upper(), median_proj, line,
+                                                        matchup=matchup_str)
                                     
                                     if edge_data.get('returning_ban'):
                                         prop_details.append(f"O/U {line} {stat_name} \u26d4 DISQUALIFIED: MINUTES_RESTRICTION")
@@ -1777,6 +1813,7 @@ def generate_todays_projections(target_date: str = None):
 
     # Run in parallel
     _warm_synergy()
+    ensure_rerun_schema()   # W1: columns exist before the workers write projections
     print("\n[+] Commencing Parallel Matchup Simulations...")
     with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
         futures = [executor.submit(process_live_game, game, odds_available, all_game_odds, odds_api_events, injured_normalized) for game in games]
@@ -1849,6 +1886,21 @@ def generate_todays_projections(target_date: str = None):
                 game_date=CURRENT_GAME_DATE,
             )
 
+            # W1: this run's parlays are the record for the slate; flag earlier ones
+            try:
+                from etl.db_manager import _get_conn as _bt_conn
+                from database.bet_tracker_schema import ensure_rerun_columns
+                from utils.rerun import supersede_parlays
+                _c = _bt_conn()
+                ensure_rerun_columns(_c)
+                _n = supersede_parlays(_c, CURRENT_GAME_DATE, parlays.get('parlay_ids', {}).values())
+                _c.commit()
+                _c.close()
+                if _n:
+                    print(f"[+] Re-run: {_n} earlier parlay(s) of {CURRENT_GAME_DATE} marked superseded.")
+            except Exception as e:
+                print(f"[-] Could not supersede earlier parlays: {e}")
+
             # Ingest shadow picks for research (Gate 4.C)
             shadow_data = parlays.get('shadow_picks', [])
             if shadow_data:
@@ -1868,6 +1920,12 @@ def generate_todays_projections(target_date: str = None):
             if getattr(cfg_settings, 'ENABLE_ML_SHADOW_TRACKING', False):
                 _ml_log_date = CURRENT_GAME_DATE
                 _ml_logged = 0
+                # W1: a re-run replaces the earlier run's rows for the same candidates
+                from ml.shadow_logger import supersede_ml_shadow
+                supersede_ml_shadow(_ml_log_date, [
+                    (_p.get('player'), _p.get('stat_category'))
+                    for _p in parlays.get('all_picks', []) + parlays.get('shadow_picks', [])
+                    if _p.get('type', 'prop') == 'prop'])
                 # Log post-gate picks (selected cohort)
                 for _p in parlays.get('all_picks', []):
                     if _p.get('type') == 'prop' and _p.get('player') and _p.get('stat_category'):

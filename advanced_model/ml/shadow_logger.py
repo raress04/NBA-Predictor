@@ -90,7 +90,34 @@ def _ensure_ml_shadow_columns(conn) -> None:
     cols = {r[1] for r in conn.execute("PRAGMA table_info(ml_shadow_picks)")}
     if cols and 'conf_stage' not in cols:
         conn.execute("ALTER TABLE ml_shadow_picks ADD COLUMN conf_stage TEXT")
+    if cols and 'superseded' not in cols:   # W1: re-runs flag the earlier run's rows
+        conn.execute("ALTER TABLE ml_shadow_picks ADD COLUMN superseded INTEGER DEFAULT 0")
     _ML_SHADOW_COLUMNS_OK.add(_DB_PATH)
+
+
+def supersede_ml_shadow(game_date: str, players_stats, db_path: str = None) -> int:
+    """W1 (Plans/W1_RERUN_AUDIT.md): before a live run logs its candidates, flag the rows an
+    earlier run of the same slate wrote for the same (player, stat_category).
+    players_stats: iterable of (player, stat_category). Returns rows flagged. Never raises."""
+    from utils.rerun import candidate_key, supersede_keys
+    keys = {candidate_key(p, c) for p, c in players_stats if p and c}
+    if not keys:
+        return 0
+    try:
+        conn = sqlite3.connect(db_path or _DB_PATH)
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(ml_shadow_picks)")}
+        if not cols:
+            conn.close()
+            return 0
+        if 'superseded' not in cols:
+            conn.execute("ALTER TABLE ml_shadow_picks ADD COLUMN superseded INTEGER DEFAULT 0")
+        n = supersede_keys(conn, 'ml_shadow_picks', game_date, keys)
+        conn.commit()
+        conn.close()
+        return n
+    except Exception as e:
+        print(f"  [shadow_logger] WARN: could not supersede earlier rows for {game_date}: {e}")
+        return 0
 
 
 def log_ml_shadow_pick(
