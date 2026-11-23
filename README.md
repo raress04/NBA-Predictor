@@ -1,115 +1,88 @@
-# 🏀 AiBetTool — Quantitative NBA Prop & Betting Engine
+# NBA Prediction Engine
 
-An end-to-end quantitative analytics and decision-support engine for NBA player proposition markets (Points, Rebounds, Assists) and game lines. Built to model true distribution tails, exploit sportsbook pricing inefficiencies, and calibrate confidence using Bayesian methods and gradient boosting.
+This engine simulates NBA games one possession at a time, turns the results into probabilities for player points, rebounds and assists, and compares them with bookmaker prices.
 
----
+The pipeline runs on live slates. Evaluation of its picks is ongoing.
 
-## ⚡ Core Architecture
+<!-- Screenshot: add docs/report_sample.png (one page of a daily PDF report) and link it here. -->
 
-```
-                    [ Live Ingestion & Scrapers ]
-                                 │
-                     (Odds, Rosters, Injuries)
-                                 ▼
-                 [ Markov Chain / MCMC Simulation ]
-                     5,000 iterations per game
-                                 │
-                     (Raw Prop Distributions)
-                                 ▼
-                     [ ML Calibration Layer ]
-               XGBoost Regressors + Beta-Posterior Tuning
-                                 │
-                     (Calibrated Probabilities)
-                                 ▼
-                 [ Production Decision Engine ]
-               Kelly EV Gates • Min Edge • Blowout Filter
-                   │                                │
-            (Passed Gates)                   (Filtered Out)
-                   ▼                                ▼
-       [ Production Bets / Parlays ]        [ Shadow Logging ]
-       Logged to bet_tracker.db          Continuous evaluation
-                   │                                │
-                   ▼                                ▼
-              [ Automated Daily LaTeX / PDF Reports ]
+## Highlights
+
+- Each possession is a short Markov chain (shooter, turnover or shot, make or miss, free throws, rebound). Monte Carlo plays every matchup 5,000 times and keeps the full distribution of each player's stats, so any line can be priced.
+- Player form is the last 15 games, weighted toward recent ones, with shooting rates shrunk toward the league average for players with few attempts. Back-to-back and returning-player effects are fitted on 2019 to 2026 box scores.
+- Raw frequencies are recalibrated into win probabilities with a logistic model tested out of sample in date order. It runs in shadow mode, logged next to every decision before it makes any.
+- Every candidate is logged, rejected ones included with the reason, so each filter can be measured. Grading uses official box scores only.
+- Replays of a date give the same result, and box-score ingestion can be re-run without duplicates.
+
+## How it works
+
+```mermaid
+flowchart TD
+  BOX[Box scores, stats.nba.com] --> DB[(SQLite)]
+  DB --> FORM[Player form]
+  INJ[Injuries, CBS Sports] --> FORM
+  ESPN[Games and lines, ESPN] --> FORM
+  FORM --> SIM[Possession simulator, 5,000 games per matchup]
+  SIM --> PICK[Probabilities, edge, filters]
+  PROPS[Player props, The Odds API] --> PICK
+  PICK --> OUT[Picks, parlays, PDF report]
+  OUT --> GRADE[Next night: grading]
+  GRADE --> DB
 ```
 
-1. **ETL & Live Ingestion**:
-   - Automated ingestion of historical box scores, live rotowire/injury designations, and real-time sportsbook consensus lines.
-   - Dual-database SQLite storage (`nba_data.db` for stats, `bet_tracker.db` for ledger and audit logs).
+A pick's probability is the share of simulated games that clear the bookmaker's line. Its edge is that probability minus the bookmaker's implied probability (1 / decimal odds), and it must be at least 2 points. Picks also have to pass filters on the gap to the line, minutes stability and blowout risk. Up to 15 picks a day feed two parlays (2 to 3 legs, and a 4-leg "3 of 4" system) at a flat 0.2% stake.
 
-2. **Simulation & Projection**:
-   - Positional Markov Chain Monte Carlo simulations estimating possessions, rotation minutes, shot distributions, and rebound opportunities.
-   - Computes empirical prop distributions rather than static point projections.
+Data comes from stats.nba.com (box scores and Synergy play-type defence), ESPN (games and DraftKings lines), The Odds API (player props), CBS Sports (injuries) and Action Network (historical lines for backtests). Rosters are kept in `database/rosters.csv`.
 
-3. **Machine Learning & Calibration**:
-   - **XGBoost Layer**: Gradient boosted trees refine projection distributions against market lines.
-   - **Bayesian Beta-Posterior Calibration**: Mitigates overconfidence by tuning stated probability against empirical historical hit rate via grid search on Expected Calibration Error (ECE).
-   - **Risk Gates**: Filters on fractional Kelly Criterion, minimum expected value (EV), confidence interval width, and blowout susceptibility.
+## Setup
 
-4. **Shadow Pipeline**:
-   - Stores rejected candidate picks (`shadow_picks`) and ML candidate props (`ml_shadow_picks`) to eliminate survivorship bias and validate production gates over long sample horizons.
-
-5. **Automated Settlement & Reporting**:
-   - Daily automated pipelines compile publication-ready LaTeX PDF dossiers for morning projections, yesterday's settled performance analysis, and ML shadow diagnostics.
-
----
-
-## 📁 Repository Structure
-
-```plaintext
-AiBetTool/
-├── advanced_model/
-│   ├── analyze/          # Historical LaTeX and PDF analysis audits
-│   ├── config/           # Calibration parameters, team maps, model configs
-│   ├── database/         # SQLite storage (nba_data.db, bet_tracker.db)
-│   ├── etl/              # Live scrapers, backfillers, settlement scripts
-│   ├── ml/               # XGBoost models, training scripts, feature engineering
-│   ├── predictions/      # Daily prediction outputs and compiled PDFs
-│   ├── results/          # Yesterday box score settlement artifacts
-│   └── scripts/          # run_pipeline.sh and automation wrappers
-├── frontend/             # Interactive UI dashboard
-└── Plans/                # Technical audit documents and architecture specs
-```
-
----
-
-## 🚀 Getting Started
-
-### 1. Requirements & Setup
+Needs Linux or WSL, Python 3.14, `pdflatex`, the `sqlite3` CLI and a key from [The Odds API](https://the-odds-api.com) (about 6 credits per game per night).
 
 ```bash
-# Clone repository
-git clone https://github.com/your-repo/AiBetTool.git
-cd AiBetTool
-
-# Virtual environment setup
-python3 -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-pip install -r advanced_model/requirements.txt  # or install pandas numpy xgboost requests beautifulsoup4
-
-# Configuration
-echo "ODDS_API_KEY=your_the_odds_api_key" > advanced_model/.env
+git clone https://github.com/raress04/NBA-Predictor.git
+cd NBA-Predictor/advanced_model
+python3 -m venv ../venv && source ../venv/bin/activate
+pip install nba_api pandas numpy scipy requests beautifulsoup4 nbainjuries aiohttp xgboost scikit-learn pyarrow
+cp .env.example .env                     # add your Odds API key
+export PYTHONPATH=.
+python3 -m database.bet_tracker_schema   # tracking database
+python3 -m etl.fast_backfiller           # box scores 2019-20 to 2025-26 (type YES; rebuilds the tables)
+python3 -m etl.incremental_backfill      # current season
 ```
 
-### 2. Daily Pipeline
-
-Run the automated morning run:
+## Usage
 
 ```bash
-cd advanced_model
-./scripts/run_pipeline.sh
+bash scripts/run_pipeline.sh                                      # nightly run, before the first tip-off
+python3 -m etl.live_ingestion --mode backtest --date 2026-11-10   # backtest a past date
+python3 -m pytest tests -q                                        # tests
 ```
 
-The script automatically:
-1. Reconciles and grades yesterday's props against official box scores (`prepare_analyze.py`).
-2. Scrapes today's injuries, rosters, and live market lines (`live_ingestion.py`).
-3. Runs MCMC simulations and applies ML calibration.
-4. Compiles the daily projection report into `predictions/.../predicts_report_YYYY-MM-DD.pdf`.
+The nightly run grades last night's picks, simulates tonight's games, and writes a text log and a PDF report to `predictions/<season>/live_predictions/<month>/`. Monitoring reports go to `logs/<month>/`. Thresholds and switches are in `config/settings.py`; fitted parameters are in `config/*.json`.
 
----
+## Project structure
 
-## 📊 Evaluation & Diagnostics
+```text
+advanced_model/
+├── etl/          ingestion, nightly run, grading, reports
+├── simulator/    player form, possession engine, picks and parlays
+├── ml/           monitoring, candidate logging, experimental XGBoost
+├── utils/        dates, calibration, adjustments
+├── config/       settings and fitted parameters
+├── scripts/      run_pipeline.sh, parameter fitting, replays
+└── tests/        pytest suite
+```
 
-- **Model Win Rate & Ledger**: `python3 -m etl.bet_tracker summary`
-- **ML Shadow Diagnostics**: `python3 -m etl.analyze_ml_shadow --date YYYY-MM-DD`
-- **Manual Backtesting**: `python3 -m etl.live_scraper --date YYYY-MM-DD`
+## Roadmap
+
+- Score the XGBoost calibration model live and compare it with the logistic one
+- Let the calibrated probability drive decisions once it wins on live slates
+- Use the current season's play-type defence data
+- Schedule the nightly run
+- Fractional Kelly staking once calibration holds up live
+
+## Disclaimer
+
+Research and educational project. Not betting or financial advice, and no profit is claimed. Data comes from public sources under their terms. Not affiliated with the NBA or any bookmaker.
+
+No license yet; all rights reserved.
