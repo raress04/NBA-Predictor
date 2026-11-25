@@ -304,6 +304,89 @@ def fetch_game_odds(api_key: str = None, regions: str = 'uk,eu') -> Dict:
     _save_cache(cache_path, results)
     return results
 
+PROP_MAP = {
+    'player_points': 'points',
+    'player_rebounds': 'rebounds',
+    'player_assists': 'assists',
+}
+
+
+def _lines_by_player(market: dict) -> Dict[str, Dict[float, dict]]:
+    """One bookmaker market -> {player: {line: {'Over': price, 'Under': price}}}.
+    Prices are grouped by player AND line, so an over and an under are only ever
+    paired when they belong to the same line (a book may list alternate lines)."""
+    out = {}
+    for outcome in market.get('outcomes', []):
+        pname = outcome.get('description', '')
+        side = outcome.get('name')
+        if not pname or side not in ('Over', 'Under'):
+            continue
+        point = outcome.get('point', 0)
+        out.setdefault(pname, {}).setdefault(point, {}).setdefault(side, outcome['price'])
+    return out
+
+
+def _main_line(lines: Dict[float, dict], need_over: bool = False) -> Optional[Tuple[float, dict]]:
+    """Pick the main line: among lines priced on both sides, the most balanced one
+    (smallest gap between the two implied probabilities). If no line has both sides,
+    the first one-sided line (the first with an over when need_over)."""
+    both = [(pt, s) for pt, s in lines.items() if 'Over' in s and 'Under' in s]
+    if both:
+        return min(both, key=lambda x: abs(1 / x[1]['Over'] - 1 / x[1]['Under']))
+    for pt, s in lines.items():
+        if not need_over or 'Over' in s:
+            return pt, s
+    return None
+
+
+def parse_player_props(data: dict, preferred_books=None) -> Dict:
+    """Odds API event-odds JSON -> {player: {prop: {line, over_odds, under_odds, book}}}.
+    First pass: the first bookmaker that lists a prop sets it; a missing side is filled
+    from a later bookmaker only at the same line. Second pass: a preferred bookmaker
+    with an over price replaces it (the last preferred bookmaker in the feed wins)."""
+    preferred_books = PREFERRED_BOOKS if preferred_books is None else preferred_books
+    players = {}
+
+    def entry(point, sides, book_key):
+        return {'line': point, 'over_odds': sides.get('Over'),
+                'under_odds': sides.get('Under'), 'book': book_key}
+
+    # First pass: grab any bookmaker's data
+    for bookmaker in data.get('bookmakers', []):
+        book_key = bookmaker['key']
+        for market in bookmaker.get('markets', []):
+            prop_type = PROP_MAP.get(market['key'])
+            if not prop_type:
+                continue
+            for pname, lines in _lines_by_player(market).items():
+                current = players.setdefault(pname, {}).get(prop_type)
+                if current is None:
+                    point, sides = _main_line(lines)
+                    players[pname][prop_type] = entry(point, sides, book_key)
+                    continue
+                same = lines.get(current['line'], {})   # fill a missing side at the same line only
+                if current['over_odds'] is None and 'Over' in same:
+                    current['over_odds'] = same['Over']
+                if current['under_odds'] is None and 'Under' in same:
+                    current['under_odds'] = same['Under']
+
+    # Second pass: prefer data from preferred bookmakers
+    for bookmaker in data.get('bookmakers', []):
+        book_key = bookmaker['key']
+        if book_key not in preferred_books:
+            continue
+        for market in bookmaker.get('markets', []):
+            prop_type = PROP_MAP.get(market['key'])
+            if not prop_type:
+                continue
+            for pname, lines in _lines_by_player(market).items():
+                picked = _main_line(lines, need_over=True)
+                if picked:
+                    players.setdefault(pname, {})[prop_type] = entry(*picked, book_key)
+
+    return players
+
+
 def fetch_player_props(event_id: str, api_key: str = None, regions: str = 'uk,eu', force_cache: bool = False) -> Dict:
     """
     Fetch player prop lines (points, rebounds, assists) for a single NBA event.
@@ -333,90 +416,8 @@ def fetch_player_props(event_id: str, api_key: str = None, regions: str = 'uk,eu
 
     data = resp.json()
     remaining = resp.headers.get('x-requests-remaining', '?')
-    
-    PROP_MAP = {
-        'player_points': 'points',
-        'player_rebounds': 'rebounds',
-        'player_assists': 'assists',
-    }
 
-    players = {}
-
-    # First pass: grab any bookmaker's data
-    for bookmaker in data.get('bookmakers', []):
-        book_key = bookmaker['key']
-        for market in bookmaker.get('markets', []):
-            mk = market['key']
-            prop_type = PROP_MAP.get(mk)
-            if not prop_type:
-                continue
-
-            for outcome in market.get('outcomes', []):
-                pname = outcome.get('description', '')
-                if not pname:
-                    continue
-
-                if pname not in players:
-                    players[pname] = {}
-
-                if prop_type not in players[pname]:
-                    if outcome['name'] == 'Over':
-                        players[pname][prop_type] = {
-                            'line': outcome.get('point', 0),
-                            'over_odds': outcome['price'],
-                            'under_odds': None,
-                            'book': book_key,
-                        }
-                    elif outcome['name'] == 'Under':
-                        if prop_type in players[pname]:
-                            players[pname][prop_type]['under_odds'] = outcome['price']
-                        else:
-                            players[pname][prop_type] = {
-                                'line': outcome.get('point', 0),
-                                'over_odds': None,
-                                'under_odds': outcome['price'],
-                                'book': book_key,
-                            }
-                else:
-                    # Fill in the missing side
-                    if outcome['name'] == 'Over' and players[pname][prop_type]['over_odds'] is None:
-                        players[pname][prop_type]['over_odds'] = outcome['price']
-                    elif outcome['name'] == 'Under' and players[pname][prop_type]['under_odds'] is None:
-                        players[pname][prop_type]['under_odds'] = outcome['price']
-
-    # Second pass: prefer data from preferred bookmakers
-    for bookmaker in data.get('bookmakers', []):
-        book_key = bookmaker['key']
-        if book_key not in PREFERRED_BOOKS:
-            continue
-        for market in bookmaker.get('markets', []):
-            mk = market['key']
-            prop_type = PROP_MAP.get(mk)
-            if not prop_type:
-                continue
-
-            # Group Over/Under by player
-            player_outcomes = {}
-            for outcome in market.get('outcomes', []):
-                pname = outcome.get('description', '')
-                if not pname:
-                    continue
-                if pname not in player_outcomes:
-                    player_outcomes[pname] = {}
-                player_outcomes[pname][outcome['name']] = outcome
-
-            for pname, sides in player_outcomes.items():
-                over = sides.get('Over')
-                under = sides.get('Under')
-                if over:
-                    if pname not in players:
-                        players[pname] = {}
-                    players[pname][prop_type] = {
-                        'line': over.get('point', 0),
-                        'over_odds': over['price'],
-                        'under_odds': under['price'] if under else None,
-                        'book': book_key,
-                    }
+    players = parse_player_props(data)
 
     print(f"        Found props for {len(players)} players. Credits remaining: {remaining}")
     _save_cache(cache_path, players)
