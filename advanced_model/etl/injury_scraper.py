@@ -4,6 +4,15 @@ import re
 from bs4 import BeautifulSoup
 from typing import Set
 
+def _alert(level: str, source: str, message: str) -> None:
+    """W2: one [ALERT ...] line (utils/run_alerts.py); falls back to a plain print."""
+    try:
+        from utils.run_alerts import alert
+    except ImportError:
+        print(f"[ALERT {level}] {source}: {message}")
+        return
+    alert(level, source, message)
+
 # Suffixes that appear in one source but not the other
 _SUFFIXES = {'jr', 'sr', 'ii', 'iii', 'iv', 'v'}
 
@@ -66,20 +75,21 @@ def get_injured_players() -> Set[str]:
             injured_set.add(name)
             injured_normalized[_normalize(name)] = name
 
-        if not injured_set:
-            # Fallback: try broader selector if CBS changed their HTML
-            player_nodes = soup.select('a[href*="/nba/players/"]')
-            for node in player_nodes:
-                name = node.text.strip()
-                if name and len(name.split()) >= 2:
-                    injured_set.add(name)
-                    injured_normalized[_normalize(name)] = name
+        if not rows:
+            # W2 (2026-11-25, owner decision): the page loaded but the injury table was not
+            # found, so CBS changed its layout. The old fallback marked every player linked
+            # anywhere on the page as out (headlines, side panels), which could bench healthy
+            # players. Removed: say so loudly and treat everyone as healthy.
+            _alert('ERROR', 'cbs_injuries', "page loaded but the injury table was not found "
+                                            "(layout changed?) -> all players treated as healthy tonight")
+            return injured_set, injured_normalized
 
         print(f"[+] Loaded live Injury Report: {len(injured_set)} players marked Out/GTD.")
-        
+
     except Exception as e:
         print(f"[-] Failed to fetch CBS Injury Report: {e}")
-        
+        _alert('ERROR', 'cbs_injuries', f"fetch failed ({e}) -> all players treated as healthy tonight")
+
     return injured_set, injured_normalized
 
 

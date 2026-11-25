@@ -645,6 +645,58 @@ def prepare_analyze(
 # Backward compatibility alias
 prepare_yesterday = prepare_analyze
 
+
+def find_ungraded_live_dates(target_date: str, days: int = 7,
+                             base_dir: Optional[str] = None,
+                             earliest: Optional[str] = None) -> List[str]:
+    """W2: live dates in the `days` days BEFORE target_date that have a valid live
+    predictions file but no valid results file or analysis report, oldest first.
+    These are nights whose grading failed (or never ran); target_date itself is left
+    to the normal run. Dates before `earliest` (YYYY-MM-DD) are skipped."""
+    base = base_dir or MODEL_DIR
+    target = datetime.strptime(target_date, '%Y-%m-%d')
+    found = []
+    for back in range(days, 0, -1):
+        d = (target - timedelta(days=back)).strftime('%Y-%m-%d')
+        if earliest and d < earliest:
+            continue
+        pred =resolve_prediction_file(d, mode='live', base_dir=base, allow_legacy=True)
+        if not pred or not validate_prediction_file(pred, d)[0]:
+            continue
+        res_ok, _ = validate_results_file(resolve_results_file(d, mode='live', base_dir=base, allow_legacy=True), d)
+        ana_ok, _ = validate_analysis_file(resolve_analyze_file(d, mode='live', base_dir=base, allow_legacy=True), d)
+        if not (res_ok and ana_ok):
+            found.append(d)
+    return found
+
+
+def catch_up_missed_grading(target_date: str, days: int = 7, base_dir: Optional[str] = None,
+                            db_path: Optional[str] = None, runner=None,
+                            earliest: Optional[str] = None) -> Dict[str, int]:
+    """W2: grade the recent live nights whose grading failed, before grading target_date.
+    A failure on one date never stops the others or the night. Returns {date: exit_code}.
+    `earliest` defaults to settings.GRADING_CATCHUP_FROM."""
+    from utils.run_alerts import alert
+    if earliest is None:
+        import config.settings as _cfg
+        earliest = getattr(_cfg, 'GRADING_CATCHUP_FROM', None)
+    runner = runner or prepare_analyze
+    out = {}
+    for d in find_ungraded_live_dates(target_date, days=days, base_dir=base_dir, earliest=earliest):
+        print(f"[*] Catch-up: {d} has live predictions but no complete grading. Grading it now...")
+        try:
+            code = runner(target_date=d, mode='live', base_dir=base_dir, db_path=db_path)
+        except Exception as e:
+            print(f"[-] Catch-up for {d} raised: {e}")
+            code = 1
+        out[d] = code
+        if code == 0:
+            print(f"[+] Catch-up: {d} graded.")
+        else:
+            alert('ERROR', 'prepare_analyze', f"catch-up grading of {d} failed -> retried next night "
+                                              f"(up to {days} days back)")
+    return out
+
 def main():
     parser = argparse.ArgumentParser(
         description="ETL preparation step: Validate or prepare yesterday's results and analysis before running model."
@@ -667,6 +719,13 @@ def main():
         help="Force regeneration of artifacts even if currently valid."
     )
     args = parser.parse_args()
+
+    # W2: a night whose grading failed is graded on a later night (live, default date only)
+    if args.mode == 'live' and not args.date:
+        try:
+            catch_up_missed_grading(compute_target_date(None))
+        except Exception as e:
+            print(f"[-] Catch-up step failed: {e}")
 
     try:
         exit_code = prepare_analyze(

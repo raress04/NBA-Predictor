@@ -42,7 +42,8 @@ from etl.injury_scraper import get_injured_players, is_player_injured
 from simulator.synergy_tracker import compute_matchup_multiplier
 
 from etl.espn_odds import fetch_espn_odds, match_espn_odds_to_game
-from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game
+from etl.odds_fetcher import fetch_player_props, fetch_event_ids, match_event_id_to_game, get_credits_remaining
+from utils.run_alerts import alert
 from config.settings import (
     CATEGORY_PRIORS, get_prior, PROJECTION_TIERS, is_allowed,
     MAX_PROP_CONFIDENCE, B2B_SHOOTING_PENALTY, B2B_TOV_BOOST,
@@ -1274,7 +1275,9 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
         'event_id': None,
         'home_team_full': None,
         'away_team_full': None,
-        'excluded': False
+        'excluded': False,
+        'props_status': 'not reached (game failed before the props fetch)',
+        'props_http_status': None,
     }
 
     with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(output_buffer):
@@ -1469,16 +1472,28 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
                         
             # ── Fetch player props via Odds API (props only) ─────────
             game_props = {}
+            # W2: why a game ended without props, summed up after the pool (props_summary)
+            if not event_id:
+                payload['props_status'] = 'no ESPN odds for this game'
+            elif not odds_api_events:
+                payload['props_status'] = 'no Odds API event list'
             if event_id and odds_api_events:
                 odds_api_eid = match_event_id_to_game(odds_api_events, home_team_full, away_team_full)
+                if not odds_api_eid:
+                    payload['props_status'] = 'game not found in the Odds API event list'
                 if odds_api_eid:
                     try:
                         game_props = fetch_player_props(odds_api_eid)
                         if game_props:
                             payload['cached_props'] = game_props
+                            payload['props_status'] = 'ok'
+                        else:
+                            payload['props_status'] = 'Odds API returned no props'
                         time.sleep(0.5)
                     except Exception as e:
                         print(f"    [!] Could not fetch player props: {e}")
+                        payload['props_status'] = f'fetch failed: {e}'
+                        payload['props_http_status'] = getattr(getattr(e, 'response', None), 'status_code', None)
 
             # 5. Output Projections
             avg_home = aggregate_home_score / simulations
@@ -1692,6 +1707,91 @@ def process_live_game(game, odds_available, all_game_odds, odds_api_events, inju
             
     return payload
 
+# ── W2: loud, non-fatal checks for the unattended run (utils/run_alerts.py) ──
+
+def read_odds_credits():
+    """Credits left on the Odds API key (free call), or None. Never raises."""
+    try:
+        remaining, _ = get_credits_remaining()
+        return remaining
+    except Exception as e:
+        alert('WARN', 'odds_api', f"could not read credits left: {e}")
+        return None
+
+
+def report_odds_credits(start_remaining=None, n_games=0, warn_below=None):
+    """One clear credits line per night, WARN below the threshold, ERROR at 0.
+    Returns the credits left (None when unknown)."""
+    if warn_below is None:
+        import config.settings as _cfg
+        warn_below = getattr(_cfg, 'ODDS_CREDITS_WARN', 120)
+    remaining = read_odds_credits()
+    if remaining is None:
+        alert('WARN', 'odds_api', "credits left unknown (no header) -> check the key by hand")
+        return None
+    used = (start_remaining - remaining) if start_remaining is not None else None
+    extra = f" (used tonight: {used}, {n_games} games)" if used is not None else ''
+    print(f"[CREDITS] Odds API credits left: {remaining}{extra}")
+    if remaining <= 0:
+        alert('ERROR', 'odds_api', "0 credits left -> no props, so no prop picks, "
+                                    "until the key is topped up or replaced")
+    elif remaining < warn_below:
+        nights = f", about {remaining // used} more night(s) at tonight's use" if used else ''
+        alert('WARN', 'odds_api', f"{remaining} credits left (below {warn_below}){nights} "
+                                  f"-> top up or replace the key soon")
+    return remaining
+
+
+def espn_status() -> dict:
+    """Why the last ESPN fetch returned what it did (etl/espn_odds.LAST_FETCH_STATUS)."""
+    from etl import espn_odds
+    return dict(espn_odds.LAST_FETCH_STATUS or {})
+
+
+def _espn_empty_outcome(st: dict) -> str:
+    """ESPN gave no usable games: say why, loudly unless it is a real no-game day."""
+    state = st.get('state')
+    if state == 'fetch_failed':
+        alert('ERROR', 'espn', f"scoreboard fetch failed ({st.get('error')}) -> no predictions tonight")
+        return 'failed'
+    if state == 'no_games':
+        print(f"    [+] No NBA games on the ESPN scoreboard for {CURRENT_GAME_DATE}. Nothing to predict.")
+        return 'no_games'
+    if state == 'all_started':
+        alert('WARN', 'espn', f"all {st.get('n_events')} games had already started -> "
+                              f"run too late, no predictions tonight")
+        return 'late'
+    if state == 'no_odds':
+        alert('ERROR', 'espn', f"{st.get('n_events')} games on the scoreboard but none has odds "
+                               f"({st.get('n_started')} already started) -> no predictions tonight")
+        return 'failed'
+    alert('ERROR', 'espn', f"ESPN returned 0 usable games (state {state!r}) -> no predictions tonight")
+    return 'failed'
+
+
+def summarize_props(statuses, n_games):
+    """statuses: [(matchup, props_status, http_status)] from the workers.
+    Prints '[PROPS] ...' and raises alerts for games without props. Returns the ok count."""
+    ok = sum(1 for _, s, _ in statuses if s == 'ok')
+    print(f"[PROPS] Odds API props for {ok} of {n_games} games")
+    missing = [(m, s, h) for m, s, h in statuses if s != 'ok']
+    if any(h in (401, 429) for _, _, h in missing):
+        alert('ERROR', 'odds_api', "props call refused (HTTP 401/429): credits used up, "
+                                    "key invalid or rate limit -> those games have no props")
+    if n_games and ok == 0:
+        reasons = sorted({s for _, s, _ in missing}) or ['unknown']
+        alert('ERROR', 'odds_api', f"no props for any of {n_games} games ({'; '.join(reasons)[:300]}) "
+                                    f"-> no prop picks tonight")
+    else:
+        for m, s, _ in missing:
+            alert('WARN', 'odds_api', f"no props for {m}: {s[:200]}")
+    lost = n_games - len(statuses)
+    if lost > 0:
+        alert('WARN', 'live_ingestion', f"{lost} game(s) crashed in the worker -> "
+                                        f"no projections or props for them")
+    return ok
+
+
 def generate_todays_projections(target_date: str = None):
     global CURRENT_GAME_DATE
     if target_date:
@@ -1702,6 +1802,8 @@ def generate_todays_projections(target_date: str = None):
     injured_raw, injured_normalized = get_injured_players()
 
     # ── STEP 0: Fetch live odds from ESPN. THIS IS NOW OUR SOURCE OF TRUTH FOR MATCHUPS ──
+    # W2: returns 'ok', 'no_games', 'late' (all games started) or 'failed' (no predictions
+    # although games were on). main() exits 1 on 'failed' so the night is marked FAILED.
     all_game_odds = {}
     odds_available = False
     try:
@@ -1711,12 +1813,14 @@ def generate_todays_projections(target_date: str = None):
             print(f"    [+] ESPN odds loaded for {len(all_game_odds)} events:")
             for eid, ev in all_game_odds.items():
                 print(f"        {ev['away_team']} @ {ev['home_team']}")
+            for m in espn_status().get('skipped_no_odds', []):
+                alert('WARN', 'espn', f"{m} has no ESPN odds -> not simulated tonight")
         else:
-            print("    [!] ESPN returned 0 upcoming events (games may already be in progress).")
-            return
+            return _espn_empty_outcome(espn_status())
     except Exception as e:
         print(f"[!] Could not fetch ESPN odds: {e}")
-        return
+        alert('ERROR', 'espn', f"could not load tonight's games ({e}) -> no predictions tonight")
+        return 'failed'
 
     # Mock the `games` list format using ESPN odds so the rest of the script is unaffected
     from nba_api.stats.static import teams
@@ -1790,15 +1894,22 @@ def generate_todays_projections(target_date: str = None):
             
     if not games:
         print("[!] No matched NBA games found between ESPN and local DB.")
-        return
+        alert('ERROR', 'live_ingestion', f"none of the {len(all_game_odds)} ESPN games matched an NBA team "
+                                         f"-> no predictions tonight")
+        return 'failed'
+    if len(games) < len(all_game_odds):
+        alert('WARN', 'live_ingestion', f"{len(all_game_odds) - len(games)} ESPN game(s) matched no NBA team "
+                                        f"-> not simulated")
 
     # ── STEP 0b: Fetch Odds API event IDs for player prop lookups ────
     odds_api_events = {}
+    start_credits = read_odds_credits()
     try:
         odds_api_events = fetch_event_ids()
     except Exception as e:
         print(f"[!] Could not fetch Odds API event list: {e}")
         print("    Player props will not be available.")
+        alert('ERROR', 'odds_api', f"could not fetch the event list ({e}) -> no props tonight")
 
     conn = get_connection()
 
@@ -1815,6 +1926,7 @@ def generate_todays_projections(target_date: str = None):
     _warm_synergy()
     ensure_rerun_schema()   # W1: columns exist before the workers write projections
     print("\n[+] Commencing Parallel Matchup Simulations...")
+    props_statuses = []   # W2: (matchup, props_status, http_status) per game
     with ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
         futures = [executor.submit(process_live_game, game, odds_available, all_game_odds, odds_api_events, injured_normalized) for game in games]
         
@@ -1823,7 +1935,10 @@ def generate_todays_projections(target_date: str = None):
                 res = future.result()
                 # Print the buffered output for this game
                 sys.stdout.write(res['game_logs'])
-                
+                props_statuses.append((
+                    f"{res.get('away_team_full')} @ {res.get('home_team_full')}",
+                    res.get('props_status', 'unknown'), res.get('props_http_status')))
+
                 # Merge accumulators
                 if res['sim_results']:
                     all_sim_results.append(res['sim_results'])
@@ -1849,6 +1964,11 @@ def generate_todays_projections(target_date: str = None):
 
 
     conn.close()
+
+    # W2: how many games got props, and the credits left — one clear line each
+    print("")
+    summarize_props(props_statuses, len(games))
+    report_odds_credits(start_credits, len(games))
 
     # ══════════════════════════════════════════════════════════════
     #  PARLAY GENERATION — After ALL simulations are complete
@@ -1976,6 +2096,7 @@ def generate_todays_projections(target_date: str = None):
             print(f"\n[!] Error generating parlays: {e}")
             import traceback
             traceback.print_exc()
+            alert('ERROR', 'parlay_builder', f"parlay generation failed ({e}) -> no picks published tonight")
     elif not odds_available:
         if not all_game_odds:
             print("\n[!] Skipping parlay generation — Odds API returned no upcoming NBA events.")
@@ -1987,6 +2108,10 @@ def generate_todays_projections(target_date: str = None):
         print("\n[!] No matched events found for parlay generation.")
         print(f"    Odds events: {list(all_game_odds.keys())[:3]}")
         print(f"    Sims collected for: {list(all_score_distributions.keys())[:3]}")
+    if not all_sim_results:
+        alert('ERROR', 'live_ingestion', f"0 of {len(games)} games simulated -> no predictions tonight")
+        return 'failed'
+    return 'ok'
 
 class TeeLogger:
     def __init__(self, filename):
@@ -2117,10 +2242,15 @@ def main():
     print(f"[+] Script started: {SCRIPT_START_TIME.strftime('%Y-%m-%d %H:%M:%S')} | Slate date (US-Eastern): {date_str}")
     print(f"[+] Routing log to: {log_path}")
 
+    run_outcome = None
     if exec_mode == 'backtest':
         generate_historical_projections(date_str)
     else:
-        generate_todays_projections(target_date=date_str)
+        run_outcome = generate_todays_projections(target_date=date_str)
+        if run_outcome == 'failed':
+            # W2: no predictions although games were on -> exit 1, the night is marked FAILED
+            print("[-] Live run produced no predictions (see the [ALERT ERROR] lines above).")
+            sys.exit(1)
 
     # Fetch time and day when generating reports
     report_gen_time = datetime.now()

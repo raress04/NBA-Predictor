@@ -233,7 +233,8 @@ class TestDailyMetricsOut(unittest.TestCase):
     def test_pipeline_args_match(self):
         """Every flag run_pipeline.sh passes to ml.daily_metrics is accepted."""
         with open(os.path.join(MODEL_DIR, 'scripts', 'run_pipeline.sh'), encoding='utf-8') as f:
-            line = next(l for l in f if l.startswith('python3 -m ml.daily_metrics'))
+            # W2: the call is wrapped as `run_step daily_metrics python3 -m ml.daily_metrics ...`
+            line = next(l for l in f if 'python3 -m ml.daily_metrics' in l and not l.lstrip().startswith('#'))
         flags = [t for t in line.split() if t.startswith('--')]
         with open(os.path.join(MODEL_DIR, 'ml', 'daily_metrics.py'), encoding='utf-8') as f:
             src = f.read()

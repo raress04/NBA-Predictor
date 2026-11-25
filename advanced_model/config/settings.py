@@ -242,6 +242,13 @@ GATE_PARAMS_PATH = os.environ.get(
     'GATE_PARAMS_PATH', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gate_params.json'))
 STEP4_SHADOW = os.environ.get('STEP4_SHADOW', '1') != '0'
 
+# W2 (2026-11-25): warn when the Odds API key has fewer credits left than this.
+# 120 = about 2 full nights at the old 6 credits per game, ~5 nights at 3 per game ('eu' only).
+ODDS_CREDITS_WARN = int(os.environ.get('ODDS_CREDITS_WARN', '120'))
+# W2: prepare_analyze grades recent live nights whose grading failed, but only from this
+# slate date on. Older gaps (Nov 19, Nov 21) are a one-off data change for the owner to approve.
+GRADING_CATCHUP_FROM = os.environ.get('GRADING_CATCHUP_FROM', '2026-11-25')
+
 def is_allowed(category: str, direction: str) -> bool:
     """Returns True if the category/direction combination is not banned."""
     return (category.upper(), direction.upper()) not in BANNED_COMBINATIONS

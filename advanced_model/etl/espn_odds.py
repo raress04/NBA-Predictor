@@ -63,6 +63,19 @@ def _american_to_decimal(american_str: str) -> float:
 
 from datetime import datetime
 
+# W2: why the last fetch_espn_odds() call returned what it did, so the live run can tell an
+# ESPN outage from a no-game day or a run after tip-off (all three used to return {}).
+#   state: 'ok' | 'cached' | 'fetch_failed' | 'no_games' | 'all_started' | 'no_odds'
+LAST_FETCH_STATUS: Dict = {}
+
+
+def _set_status(state: str, **kw) -> None:
+    LAST_FETCH_STATUS.clear()
+    LAST_FETCH_STATUS.update({'state': state, 'error': None, 'n_events': 0,
+                              'n_started': 0, 'skipped_no_odds': []})
+    LAST_FETCH_STATUS.update(kw)
+
+
 def fetch_espn_odds() -> Dict:
     """
     Fetch moneyline, spreads, and totals for all today's NBA games from ESPN.
@@ -82,6 +95,7 @@ def fetch_espn_odds() -> Dict:
     # Check cache first (per slate date)
     cached = _load_cache(cache_file)
     if cached is not None:
+        _set_status('cached', n_events=len(cached))
         return cached
 
     try:
@@ -91,9 +105,13 @@ def fetch_espn_odds() -> Dict:
         data = resp.json()
     except Exception as e:
         print(f"[!] ESPN odds fetch failed: {e}")
+        _set_status('fetch_failed', error=str(e))
         return {}
 
     all_odds = {}
+    n_events = 0
+    n_started = 0
+    skipped_no_odds = []
 
     for event in data.get('events', []):
         event_id = event['id']
@@ -110,15 +128,18 @@ def fetch_espn_odds() -> Dict:
 
         if not home_team or not away_team:
             continue
+        n_events += 1
 
         # Only process scheduled (pre-game) events
         status = competition.get('status', {}).get('type', {}).get('state', '')
         if status != 'pre':
+            n_started += 1
             continue
 
         # Extract odds from ESPN's DraftKings integration
         odds_list = competition.get('odds', [])
         if not odds_list:
+            skipped_no_odds.append(f"{away_team} @ {home_team}")
             continue
 
         odds_data = odds_list[0]  # Primary provider (DraftKings)
@@ -220,6 +241,16 @@ def fetch_espn_odds() -> Dict:
                     pass
 
         all_odds[event_id] = game_odds
+
+    if all_odds:
+        state = 'ok'
+    elif n_events == 0:
+        state = 'no_games'
+    elif n_started == n_events:
+        state = 'all_started'
+    else:
+        state = 'no_odds'
+    _set_status(state, n_events=n_events, n_started=n_started, skipped_no_odds=skipped_no_odds)
 
     print(f"[+] ESPN: Fetched odds for {len(all_odds)} upcoming NBA games (source: {provider_name if all_odds else 'N/A'})")
     return all_odds

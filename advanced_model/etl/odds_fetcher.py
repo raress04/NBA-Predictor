@@ -82,6 +82,29 @@ _load_env_file()
 API_BASE = "https://api.the-odds-api.com/v4"
 SPORT = "basketball_nba"
 
+# W2 (2026-11-25, owner decision): player props from the 'eu' region only.
+# Cost per game = markets x regions, so 3 credits instead of 6. Pinnacle and BetOnline,
+# the two books that set 99.4% of cached props, are both in 'eu'; 'uk' added only
+# Betway / Sky Bet (78 of 12,296 cached props).
+PROPS_REGIONS = 'eu'
+
+
+def get_credits_remaining(api_key: str = None):
+    """Credits left on the Odds API key, read from the free /sports endpoint
+    (it does not count against the quota). Returns (remaining, used) as ints, or
+    (None, None) when the headers are missing. Raises on HTTP / network errors."""
+    if api_key is None:
+        api_key = _get_api_key()
+    resp = requests.get(f"{API_BASE}/sports", params={'apiKey': api_key}, timeout=15)
+    resp.raise_for_status()
+
+    def _int(name):
+        try:
+            return int(float(resp.headers.get(name)))
+        except (TypeError, ValueError):
+            return None
+    return _int('x-requests-remaining'), _int('x-requests-used')
+
 # Preferred bookmakers in order — Unibet first, then Pinnacle for sharp reference
 PREFERRED_BOOKS = ['unibet', 'unibet_eu', 'pinnacle', 'betsson', 'onexbet']
 
@@ -387,7 +410,7 @@ def parse_player_props(data: dict, preferred_books=None) -> Dict:
     return players
 
 
-def fetch_player_props(event_id: str, api_key: str = None, regions: str = 'uk,eu', force_cache: bool = False) -> Dict:
+def fetch_player_props(event_id: str, api_key: str = None, regions: str = PROPS_REGIONS, force_cache: bool = False) -> Dict:
     """
     Fetch player prop lines (points, rebounds, assists) for a single NBA event.
     Cached for 60 min. Pass force_cache=True to load stale cache (for historical mode).
